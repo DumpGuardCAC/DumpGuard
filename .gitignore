@@ -1,0 +1,8 @@
+spec.md
+training/MODEL_CARD.md
+training/.venv/
+training/data/
+__pycache__/
+*.pyc
+*.log
+.claude/

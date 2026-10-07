@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>DumpGuard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Belleza&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav id="nav">
+    <img class="logo" data-go="home" src="images/logo.png" alt="DumpGuard home">
+    <ul>
+        <li><a data-go="home">Home</a></li>
+        <li><a data-go="identify">Identify</a></li>
+        <li><a data-go="report">Report</a></li>
+        <li><a data-go="map">Map</a></li>
+        <li><a data-go="about">About</a></li>
+        <li><a class="pill" id="pill" data-go="login">Log in</a></li>
+    </ul>
+</nav>
+
+<!-- ===== HOME ===== -->
+<div class="view" id="v-home">
+    <header class="hero">
+        <svg viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 220 C240 120 420 260 700 190 C980 120 1180 240 1440 160 V400 H0Z" fill="#b7dc8f" opacity=".75"/>
+            <path d="M0 290 C260 220 480 330 760 270 C1040 210 1240 320 1440 250 V400 H0Z" fill="#7cbd5a" opacity=".85"/>
+            <path d="M0 350 C300 310 560 380 840 340 C1100 305 1280 370 1440 335 V400 H0Z" fill="#4e8b5e"/>
+        </svg>
+        <div class="in"><h1 class="brand">DumpGuard</h1><p>Dispose of anything, the right way</p><a class="btn green" data-go="identify">Get started</a></div>
+        <div class="scroll">Scroll ↓</div>
+    </header>
+    <section class="s">
+        <div class="eyebrow">How it works</div>
+        <h2>Clear answers from<br>your own district.</h2>
+        <p class="lead">Local disposal websites are outdated and hard to follow. DumpGuard replaces the confusion with one clear, sourced answer.</p>
+        <div class="steps">
+            <div class="step"><div class="n">01</div><h3>Snap or search</h3><p>Photograph a couch, a battery, or 3D-printed robot parts. Or simply type it in.</p></div>
+            <div class="step"><div class="n">02</div><h3>Get exact steps</h3><p>What to do, what not to do, and why, based on your town's official rules.</p></div>
+            <div class="step"><div class="n">03</div><h3>Report dumping</h3><p>Spot an illegal dump? Report it anonymously and help your community respond.</p></div>
+        </div>
+    </section>
+    <div class="tint-b"><section class="s">
+        <div class="eyebrow">Every kind of waste</div>
+        <h2>Color-coded so<br>it makes sense.</h2>
+        <p class="lead">From electronics to yard trimmings, each category has its own rules in your town.</p>
+        <div class="cats">
+            <span class="chip" style="background:#dc2626">Electronics</span><span class="chip" style="background:#dc2626">Batteries</span>
+            <span class="chip" style="background:#2563eb">Plastics</span><span class="chip" style="background:#15803d">Yard waste</span>
+            <span class="chip" style="background:#4b5563">Furniture</span><span class="chip" style="background:#4b5563">Appliances</span><span class="chip" style="background:#0f766e">Tires</span>
+        </div>
+    </section></div>
+    <div class="tint-g"><section class="s">
+        <div class="eyebrow">For your community</div>
+        <h2>Cleaner towns, with<br>privacy built in.</h2>
+        <p class="lead">Photos have location data removed, and public hotspot maps only show coarse zones once several people report the same area.</p>
+    </section></div>
+    <div class="cta"><section class="s">
+        <div class="eyebrow">Ready?</div><h2>Find out how to dispose<br>of anything in seconds.</h2>
+        <p class="lead">Free for residents. Built for local government.</p>
+        <a class="btn" data-go="signup">Create an account</a>
+    </section></div>
+</div>
+
+<!-- ===== IDENTIFY ===== -->
+<div class="view" id="v-identify"><section class="s page">
+    <div class="eyebrow">Identify</div><h2>What are you<br>getting rid of?</h2>
+    <div class="tool">
+        <div>
+            <label for="town">Your town</label>
+            <select id="town"><option>Edison</option><option>Piscataway</option><option>Woodbridge</option><option>New Brunswick</option></select>
+            <label for="q">Search an item</label>
+            <input id="q" placeholder="couch, TV, battery, 3D printed parts…">
+            <label>Or use a photo</label>
+            <label class="drop" for="photo"><span id="droptxt">📷 Take or upload a photo</span><input id="photo" type="file" accept="image/*" capture="environment" hidden></label>
+            <div id="pick" style="display:none"><label for="cat">Not sure. Pick a category</label><select id="cat"></select></div>
+        </div>
+        <div class="card" id="result"><p class="empty">Your disposal guide will appear here.</p></div>
+    </div>
+</section></div>
+
+<!-- ===== REPORT ===== -->
+<div class="view" id="v-report"><section class="s page">
+    <div class="eyebrow">Report illegal dumping</div><h2>Saw something dumped<br>where it shouldn't be?</h2>
+    <p class="lead">This form is only for illegal dumping: piles left on roadsides, lots, or private property. For everyday disposal questions, use <a class="link" data-go="identify" href="#">Identify</a>.</p>
+    <div class="tool">
+        <div>
+            <label for="rtown">Town</label><select id="rtown"></select>
+            <label for="rwhere">Street address or location</label><input id="rwhere" placeholder="e.g. 120 Oak Tree Rd, or behind the strip mall on Route 1">
+            <label for="rcat">Type of dumping</label><select id="rcat"></select>
+            <label for="rdesc">Description</label><textarea id="rdesc" rows="3" placeholder="What was dumped and roughly how much?"></textarea>
+            <label for="rnote">Additional notes (optional)</label><textarea id="rnote" rows="2" placeholder="How long it's been there, how to access it, any hazards"></textarea>
+        </div>
+        <div>
+            <label>Photo (optional)</label>
+            <label class="drop" for="rphoto" style="margin-top:0"><span id="rtxt">📷 Take or upload a picture</span><input id="rphoto" type="file" accept="image/*" capture="environment" hidden></label>
+            <p class="ok" id="priv" style="display:none">Privacy check: location data removed from photo.</p>
+            <p class="sm">Please don't include people, license plates, or names in your photo or notes.</p><br>
+            <button class="btn dark" id="send">Submit report</button>
+            <p class="err" id="rerr"></p><p class="ok" id="sent" style="display:none"></p>
+        </div>
+    </div>
+    <div class="card" style="margin-top:50px"><h3>Track a report</h3><p class="sm">You get a tracking code when you submit, even without an account. Enter it to see whether officials have noticed or resolved the report.</p>
+        <div class="row2"><input id="tcode" placeholder="e.g. DG-4F7K2"><button class="btn dark" id="tgo" type="button">Check</button></div>
+        <div id="tres" style="margin-top:14px"></div><div id="tmine"></div></div>
+</section></div>
+
+<!-- ===== MAP ===== -->
+<div class="view" id="v-map"><section class="s page">
+    <div class="eyebrow">Community map</div><h2>Illegal dumping spots.</h2>
+    <p class="lead">See where illegal dumping has been reported and whether officials have addressed it. Public locations are approximate, and photos and details are only visible to local staff.</p>
+    <div class="row"><select id="mfilter" aria-label="Filter by type"></select>
+        <select id="mtown" aria-label="Filter by town"></select><select id="mstat" aria-label="Status"><option value="">All statuses</option><option value="new">New</option><option value="noticed">Noticed</option><option value="progress">In progress</option><option value="resolved">Resolved</option></select>
+        <span class="sm" id="mcount"></span><button class="btn" id="tltoggle" style="border:1px solid #cbd5e1;padding:10px 18px;margin-left:auto">Town labels: off</button><button class="btn dark" id="gtoggle" style="padding:10px 22px">🔒 Government sign-in</button></div>
+    <div id="lock" class="card lockcard" style="display:none"><h3>Government access</h3><p class="sm">Staff can see exact locations, photos and details, and update report status.</p>
+        <label for="gcode">Access code</label><input id="gcode" type="password" placeholder="Demo code: GOV2026"><p class="err" id="gerr"></p><button class="btn dark full" id="gunlock">Unlock</button></div>
+    <div class="notice" id="mbanner">Street map tiles are blocked in this preview. Open the file locally to see the full street map.</div>
+    <div class="gwrap"><div class="mapbox" id="gmap"></div><div class="card" id="gpanel"></div></div>
+    <div id="glist"></div>
+</section></div>
+
+<!-- ===== ABOUT ===== -->
+<div class="view" id="v-about"><section class="s page">
+    <div class="eyebrow">About</div><h2>Built for our community.</h2>
+    <p class="lead">DumpGuard is a student-built project that makes waste disposal simple for residents and gives towns a clearer picture of where dumping happens.</p>
+</section></div>
+
+<!-- ===== DASHBOARD ===== -->
+<div class="view" id="v-dash"><section class="s page">
+    <div class="eyebrow">Your dashboard</div><h2>Hi, <span id="dname"></span>.</h2>
+    <p class="lead" id="dloc"></p>
+    <div class="stats"><div class="stat"><b id="st1">0</b>Items looked up</div><div class="stat"><b id="st2">0</b>Reports filed</div><div class="stat"><b id="st3">0</b>Resolved</div></div>
+    <div class="row" style="margin-bottom:10px"><a class="btn dark" data-go="identify">Look up an item</a><a class="btn green" data-go="report">Report dumping</a><button class="btn" id="logout" style="border:1px solid #cbd5e1">Log out</button></div>
+    <h3 style="margin-top:50px;font-size:1.8rem">My reports</h3><div id="myrep"></div>
+    <h3 style="margin-top:50px;font-size:1.8rem">Disposal history</h3><div id="hist"></div>
+</section></div>
+
+<!-- ===== LOGIN ===== -->
+<div class="view" id="v-login"><div class="auth"><div class="card">
+    <h2>Welcome back</h2><p class="sub">Log in to your DumpGuard account</p>
+    <label for="le">Email</label><input id="le" type="email" autocomplete="email">
+    <label for="lp">Password</label><input id="lp" type="password" autocomplete="current-password">
+    <label>Verify you're human</label>
+    <div class="cap"><div class="capbox" id="lcap"></div><button class="mini" type="button" data-cap="lcap" aria-label="New code">↻</button></div>
+    <input id="lci" placeholder="Type the code above" style="margin-top:10px">
+    <p class="err" id="lerr"></p>
+    <button class="btn dark full" id="lgo">Log in</button>
+    <p class="alt"><a data-go="forgot">Forgot password?</a></p>
+    <p class="alt">Not a user yet? <a data-go="signup">Create an account</a></p>
+</div></div></div>
+
+<!-- ===== FORGOT ===== -->
+<div class="view" id="v-forgot"><div class="auth"><div class="card">
+    <h2>Reset password</h2><p class="sub">We'll email you a reset link</p>
+    <label for="fe">Email</label><input id="fe" type="email">
+    <p class="err" id="ferr"></p><p class="ok" id="fok"></p>
+    <button class="btn dark full" id="fgo">Send reset link</button>
+    <p class="alt"><a data-go="login">← Back to log in</a></p>
+</div></div></div>
+
+<!-- ===== SIGNUP ===== -->
+<div class="view" id="v-signup"><div class="auth"><div class="card">
+    <h2>Create account</h2><p class="sub">Get disposal rules for your town</p>
+    <label for="se">Email</label>
+    <div class="row2"><input id="se" type="email" autocomplete="email"><button class="btn dark" id="scode" type="button">Send code</button></div>
+    <label for="sc">Email verification code</label><input id="sc" inputmode="numeric" maxlength="6" placeholder="6-digit code">
+    <p class="ok" id="cmsg"></p>
+    <label for="sp">Password</label><input id="sp" type="password" autocomplete="new-password" placeholder="At least 8 characters">
+    <label for="sp2">Confirm password</label><input id="sp2" type="password" autocomplete="new-password">
+    <label for="sco">Country</label>
+    <select id="sco"><option>United States</option><option>Canada</option><option>United Kingdom</option><option>India</option><option>Other</option></select>
+    <div class="two">
+        <div><label for="sst">State / Region</label><input id="sst" list="states" value="New Jersey"></div>
+        <div><label for="sct">County</label><input id="sct" list="counties" placeholder="e.g. Middlesex"></div>
+    </div>
+    <label for="sci">City / Town</label><input id="sci" list="towns" placeholder="e.g. Edison">
+    <datalist id="states"></datalist><datalist id="towns"></datalist><datalist id="counties"></datalist>
+    <p class="err" id="serr"></p>
+    <button class="btn green full" id="sgo">Sign up</button>
+    <p class="alt">Already have an account? <a data-go="login">Log in</a></p>
+</div></div></div>
+
+<footer><b>DumpGuard</b>Cleaner towns, one item at a time.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

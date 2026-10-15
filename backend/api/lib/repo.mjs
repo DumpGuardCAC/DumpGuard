@@ -219,3 +219,26 @@ function announcementMethods(db) {
 export function makeAlertsRepo(db = getPool()) {
   return { ...makeRepo(db), ...makeBulkRepo(db), ...announcementMethods(db) };
 }
+
+// ---- impact counters ----
+export function makeImpactRepo(db = getPool()) {
+  const bulk = makeBulkRepo(db);
+  return {
+    hit: bulk.hit,
+    isPublishedTown: bulk.isPublishedTown,
+    async count({ day, regionId, material, outcome }) {
+      await db.query(
+        `INSERT INTO impact_counts (day, region_id, material, outcome, n) VALUES ($1, $2, $3, $4, 1)
+         ON CONFLICT (day, region_id, material, outcome) DO UPDATE SET n = impact_counts.n + 1`,
+        [day, regionId, material, outcome],
+      );
+    },
+    async totals(town) {
+      const { rows } = await db.query(
+        `SELECT material, outcome, sum(n)::int AS n FROM impact_counts WHERE ($1::text IS NULL OR region_id = $1) GROUP BY material, outcome`,
+        [town],
+      );
+      return rows;
+    },
+  };
+}

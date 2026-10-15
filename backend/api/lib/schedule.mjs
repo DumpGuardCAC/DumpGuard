@@ -9,6 +9,7 @@
 import { occurrences, addDays } from './occurrences.mjs';
 import { buildIcs } from './ics.mjs';
 import { localParts } from './hours.mjs';
+import { toEs } from './es_labels.mjs';
 
 const json = (body, status = 200, extra = {}) =>
   new Response(JSON.stringify(body), {
@@ -48,12 +49,16 @@ export async function handleSchedule(request, zip, repo, { today = todayIso(), n
   }
 
   const groupOf = (key) => (key.includes(':') ? key.split(':')[0] : 'area');
-  const areas = [...new Map(all.filter((r) => r.area_key).map((r) => [r.area_key, r])).values()].map((r) => ({
-    key: r.area_key,
-    group: groupOf(r.area_key),
-    label: r.area_note.split(':')[0].replace(/\s*\(.*\)$/, ''),
-    description: r.area_note.includes(':') ? r.area_note.split(':').slice(1).join(':').trim() : '',
-  }));
+const splitNote = (n) => ({
+    label: n.split(':')[0].replace(/\s*\(.*\)$/, ''),
+    description: n.includes(':') ? n.split(':').slice(1).join(':').trim() : '',
+  });
+  // Translate the whole note, then split it the same way, so rules can see the full line.
+  const areas = [...new Map(all.filter((r) => r.area_key).map((r) => [r.area_key, r])).values()].map((r) => {
+    const en = splitNote(r.area_note);
+    const es = splitNote(toEs(r.area_note));
+    return { key: r.area_key, group: groupOf(r.area_key), ...en, label_es: es.label, description_es: es.description };
+  });
   const groups = [...new Set(areas.map((a) => a.group))];
   let rows = all;
   let selected = [];
@@ -100,7 +105,11 @@ export async function handleSchedule(request, zip, repo, { today = todayIso(), n
     dtstart: r.dtstart,
     overrides: r.overrides,
     dates: r.dates || [],
-    next: occurrences(r, today, to).slice(0, 6),
+    next: occurrences(r, today, to).slice(0, 6).map((o) => ({
+      ...o,
+      ...(o.reason ? { reason_es: toEs(o.reason) } : {}),
+      ...(o.label ? { label_es: toEs(o.label) } : {}),
+    })),
   }));
   // Same query with the section choice, as a link a calendar app can subscribe to (webcal:// opens the app directly).
   const q = new URLSearchParams({ town: town.id, format: 'ics', subscribe: '1' });

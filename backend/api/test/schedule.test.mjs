@@ -213,6 +213,14 @@ test('handler: New Brunswick asks for a zone, then returns both zone streams plu
   assert.equal((await need.json()).needs, 'area');
   const ok = await handleSchedule(new Request('http://x/api/v1/schedule/08901?area=zone-2'), '08901', repo, { today: '2026-10-06' });
   assert.equal(ok.status, 200);
+  const cal = (await ok.json()).calendar;
+  assert.equal(cal.webcal, 'webcal://x/api/v1/schedule/08901?town=new-brunswick&format=ics&subscribe=1&area=zone-2');
+  const feed = await handleSchedule(new Request(cal.https), '08901', repo, { today: '2026-10-06' });
+  assert.equal(feed.status, 200);
+  assert.equal(feed.headers.get('content-disposition'), null);
+  assert.match(await feed.text(), /REFRESH-INTERVAL;VALUE=DURATION:PT12H/);
+  const dl = await handleSchedule(new Request('http://x/s/08901?format=ics&area=zone-2'), '08901', repo, { today: '2026-10-06' });
+  assert.match(dl.headers.get('content-disposition'), /attachment/);
 });
 
 // ---- Long Branch: dates below are read from the city's 2026 calendar pages ----

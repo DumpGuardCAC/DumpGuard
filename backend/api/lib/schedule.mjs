@@ -25,6 +25,7 @@ export async function handleSchedule(request, zip, repo, { today = todayIso(), n
   const townParam = url.searchParams.get('town');
   const areaParams = url.searchParams.getAll('area').flatMap((v) => v.split(',')).filter(Boolean);
   const wantIcs = url.searchParams.get('format') === 'ics';
+  const subscribe = wantIcs && url.searchParams.get('subscribe') === '1';
   if (url.searchParams.get('format') && !wantIcs && url.searchParams.get('format') !== 'json') {
     return json({ error: 'invalid_format' }, 400);
   }
@@ -73,13 +74,14 @@ export async function handleSchedule(request, zip, repo, { today = todayIso(), n
   const area = selected[0] ?? null;
 
   if (wantIcs) {
-    const body = buildIcs({ townName: town.name, rows, today, now });
+    const body = buildIcs({ townName: town.name, rows, today, now, subscribe });
     return new Response(body, {
       status: 200,
       headers: {
         'content-type': 'text/calendar; charset=utf-8',
-        'content-disposition': `attachment; filename="dumpguard-${town.id}${selected.length ? `-${selected.map((a) => a.key.replace(':', '-')).join('-')}` : ''}.ics"`,
-        'cache-control': 'public, s-maxage=3600',
+        // A subscribed feed is fetched by the calendar app, not saved, so no attachment header; it refreshes every 12 h.
+        ...(subscribe ? {} : { 'content-disposition': `attachment; filename="dumpguard-${town.id}${selected.length ? `-${selected.map((a) => a.key.replace(':', '-')).join('-')}` : ''}.ics"` }),
+        'cache-control': subscribe ? 'public, max-age=3600, s-maxage=3600' : 'public, s-maxage=3600',
       },
     });
   }
@@ -100,5 +102,10 @@ export async function handleSchedule(request, zip, repo, { today = todayIso(), n
     dates: r.dates || [],
     next: occurrences(r, today, to).slice(0, 6),
   }));
-  return json({ zip, town, area, selected, schedules });
+  // Same query with the section choice, as a link a calendar app can subscribe to (webcal:// opens the app directly).
+  const q = new URLSearchParams({ town: town.id, format: 'ics', subscribe: '1' });
+  for (const a of selected) q.append('area', a.key);
+  const feed = `${url.host}${url.pathname}?${q}`;
+  const calendar = { https: `https://${feed}`, webcal: `webcal://${feed}` };
+  return json({ zip, town, area, selected, schedules, calendar });
 }

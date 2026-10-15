@@ -10,7 +10,7 @@
 | `GET /health` | DB ping |
 | `GET /meta` | exact UI strings: `check_with_town` ("Double check with your town") and `bulk_demo_notice` (EN/ES) |
 | `GET /towns` | published towns with ZIPs |
-| `GET /schedule/:zip` | `?town=` `?area=` (repeat per group) `?format=ics`. Returns `needs: town/area` until chosen |
+| `GET /schedule/:zip` | `?town=` `?area=` (repeat per group) `?format=ics` (download) `&subscribe=1` (calendar feed, no attachment, refreshes every 12 h). JSON includes `calendar.https` / `calendar.webcal` links once town and section are chosen. Returns `needs: town/area` until chosen |
 | `GET /search` | `?q=` `?town=` `?limit=`: English and Spanish names and aliases, accent-insensitive, typo-tolerant, per-town resolved rule |
 | `GET /items` | all items with raw verified rules + facility list. `?town=<id>` resolves a rule per item (town > county > state > default). When only the default exists, `resolved.check_local` is true and `resolved.message` is "Double check with your town" (EN/ES). Prefer `?town=`: the server resolves it, the response is small and CDN cached per town; the raw bundle is for offline use |
 | `GET /materials/:material` | `?town=`. Turns the camera model's class (`rigid_plastic`, ... ) into its items with resolved rules, rule counts and a `consensus` only when verified rules agree. `no_object` answers 404 with a message |

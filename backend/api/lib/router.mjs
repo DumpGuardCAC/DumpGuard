@@ -5,7 +5,9 @@ import { handleItems, handleItem } from './items.mjs';
 import { handleSearch } from './search.mjs';
 import { handleTowns, handleFacilities, handleWoodbridgeStreets, buildStreetLookup, handleHealth } from './places.mjs';
 import { handleBulkRequest, handlePurge } from './bulk.mjs';
-import { makeRepo, makeBulkRepo } from './repo.mjs';
+import { makeRepo, makeBulkRepo, makePushRepo } from './repo.mjs';
+import { handlePushKey, handleSubscribe, handleUnsubscribe, handleReminders } from './push.mjs';
+import { makeSender } from './webpush.mjs';
 import { json, jsonWithEtag } from './http.mjs';
 import { CHECK_WITH_TOWN, BULK_DEMO_NOTICE } from './strings.mjs';
 
@@ -32,9 +34,17 @@ async function route(request) {
   let seg;
 
   if (m === 'POST' && path === '/bulk-request') return handleBulkRequest(request, makeBulkRepo());
+  if (m === 'POST' && path === '/push/subscribe') return handleSubscribe(request, makePushRepo());
+  if (m === 'POST' && path === '/push/unsubscribe') return handleUnsubscribe(request, makePushRepo());
   if (m !== 'GET' && m !== 'HEAD') return json({ error: 'method_not_allowed' }, 405, { 'cache-control': 'no-store' });
 
   if (path === '/health') return handleHealth(makeRepo());
+  if (path === '/push/key') return handlePushKey();
+  if (path === '/cron/reminders') {
+    const send = makeSender();
+    if (!send) return json({ error: 'push_not_configured' }, 503, { 'cache-control': 'no-store' });
+    return handleReminders(request, makePushRepo(), send);
+  }
   if (path === '/cron/purge') return handlePurge(request, makeBulkRepo());
   if (path === '/meta') return jsonWithEtag(request, { check_with_town: CHECK_WITH_TOWN, bulk_demo_notice: BULK_DEMO_NOTICE });
   if (path === '/towns') return handleTowns(request, makeRepo());

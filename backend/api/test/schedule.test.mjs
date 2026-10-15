@@ -73,7 +73,7 @@ test('handler: validation and not-covered', async () => {
 test('handler: asks for the area first, then returns schedules', async () => {
   const first = await (await call('', '08817')).json();
   assert.equal(first.needs, 'area');
-  assert.deepEqual(first.groups, ['area', 'garbage']);
+  assert.deepEqual([...first.groups].sort(), ['area', 'garbage']);
   assert.equal(first.areas.filter((a) => a.group === 'area').length, 10);
   assert.equal((await call('?area=rs-99', '08817')).status, 400);
   // one pick is not enough for Edison: recycling section AND garbage day

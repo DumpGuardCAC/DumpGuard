@@ -17,6 +17,10 @@
 | `GET /facilities` | `?town=` `?zip=` or `?lat=&lng=` (all sites, nearest first), optional `?material=` `?radius_km=`. Each site has `open_now`, `next_open`, `distance_km` |
 | `GET /woodbridge/streets?q=` | street (optionally with house number) to pickup-zone key for `?area=zone:...` |
 | `POST /bulk-request` | DEMO only, 5 per hour per hashed IP, 90-day retention. Response includes `notice`: "Currently, bulk pickup is demo until permission is acquired from townships" (the app must show it) |
+| `GET /push/key` | public VAPID key for `pushManager.subscribe` |
+| `POST /push/subscribe` | `{subscription, town, areas?, streams?, lang?}`: nightly reminder the evening before a pickup (6 pm Eastern). Validated against the town's real schedule |
+| `POST /push/unsubscribe` | `{endpoint}` |
+| `GET /cron/reminders` | Bearer `CRON_SECRET`; Vercel cron daily 22:00 UTC |
 | `GET /cron/purge` | Bearer `CRON_SECRET`; Vercel cron daily 05:00 UTC |
 
 Only verified rows of published towns are ever returned (the `public_*` views). Read endpoints send ETag and cache headers; GET is CORS-open, POST only for `ALLOWED_ORIGIN`.

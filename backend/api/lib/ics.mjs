@@ -37,7 +37,7 @@ export function eventTitle(row) {
 }
 
 /** rows: public_schedules rows with `id`. today: 'YYYY-MM-DD' (injected for tests). */
-export function buildIcs({ townName, rows, today, now = new Date() }) {
+export function buildIcs({ townName, rows, today, now = new Date(), subscribe = false }) {
   const stamp = now.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
   const horizon = addDays(today, 400);
   const lines = [
@@ -46,6 +46,7 @@ export function buildIcs({ townName, rows, today, now = new Date() }) {
     'PRODID:-//DumpGuard//Collection schedule//EN',
     'CALSCALE:GREGORIAN',
     `X-WR-CALNAME:${esc(`${townName} collection`)}`,
+    ...(subscribe ? ['REFRESH-INTERVAL;VALUE=DURATION:PT12H', 'X-PUBLISHED-TTL:PT12H'] : []),
   ];
 
   const alarm = [

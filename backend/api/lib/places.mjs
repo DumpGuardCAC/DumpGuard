@@ -1,8 +1,9 @@
 // Towns, facilities, Woodbridge street lookup, health.
 //   GET /api/v1/towns                            published towns with their ZIPs
-//   GET /api/v1/facilities?town=|zip=&material=  drop-off sites run by the town or its county
+//   GET /api/v1/facilities?town=|zip=|lat=&lng=  drop-off sites (open_now, distance_km); optional material, radius_km
 //   GET /api/v1/woodbridge/streets?q=...         street -> recycling-calendar zone(s)
 //   GET /api/v1/health
+import { openStatus, HOURS_NOTE } from './hours.mjs';
 import { json, jsonWithEtag, badRequest, notFound, validId } from './http.mjs';
 
 const MATERIALS = new Set(['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard', 'other']);
@@ -11,25 +12,63 @@ export async function handleTowns(request, repo) {
   return jsonWithEtag(request, { towns: await repo.publishedTowns() });
 }
 
-export async function handleFacilities(request, repo) {
+const rad = (d) => (d * Math.PI) / 180;
+export function distanceKm(a, b) {
+  const h = Math.sin(rad(b.lat - a.lat) / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(rad(b.lng - a.lng) / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
+// GET /facilities?town=<id> | ?zip=<zip> | ?lat=&lng=   [&material=] [&radius_km=]
+// Every facility carries open_now / next_open (from hours_struct). With lat+lng, results get distance_km and sort nearest first.
+export async function handleFacilities(request, repo, { now = new Date() } = {}) {
   const url = new URL(request.url);
   const townParam = url.searchParams.get('town');
   const zip = url.searchParams.get('zip');
   const material = url.searchParams.get('material');
+  const latP = url.searchParams.get('lat');
+  const lngP = url.searchParams.get('lng');
   if (material !== null && !MATERIALS.has(material)) return badRequest('invalid_material', { allowed: [...MATERIALS] });
-  if (!townParam && !zip) return badRequest('town_or_zip_required');
 
-  let towns;
-  if (townParam) {
-    if (!validId(townParam)) return badRequest('invalid_town');
-    towns = [townParam];
-  } else {
-    if (!/^\d{5}$/.test(zip)) return badRequest('invalid_zip');
-    towns = (await repo.townsForZip(zip)).map((t) => t.id);
-    if (towns.length === 0) return notFound('zip_not_covered');
+  let here = null;
+  if (latP !== null || lngP !== null) {
+    const lat = Number(latP);
+    const lng = Number(lngP);
+    if (latP === '' || lngP === '' || !Number.isFinite(lat) || !Number.isFinite(lng) || Math.abs(lat) > 90 || Math.abs(lng) > 180) {
+      return badRequest('invalid_location');
+    }
+    here = { lat, lng };
   }
-  const facilities = await repo.facilitiesForTowns(towns, material);
-  return jsonWithEtag(request, { towns, count: facilities.length, facilities });
+  if (!townParam && !zip && !here) return badRequest('town_or_zip_required');
+
+  let towns = null;
+  let facilities;
+  if (townParam || zip) {
+    if (townParam) {
+      if (!validId(townParam)) return badRequest('invalid_town');
+      towns = [townParam];
+    } else {
+      if (!/^\d{5}$/.test(zip)) return badRequest('invalid_zip');
+      towns = (await repo.townsForZip(zip)).map((t) => t.id);
+      if (towns.length === 0) return notFound('zip_not_covered');
+    }
+    facilities = await repo.facilitiesForTowns(towns, material);
+  } else {
+    facilities = await repo.allFacilities(material);
+  }
+
+  const radius = url.searchParams.get('radius_km') ? Number(url.searchParams.get('radius_km')) : null;
+  let out = facilities.map(({ hours_struct: hs, ...f }) => ({
+    ...f,
+    ...(here && f.lat != null ? { distance_km: Math.round(distanceKm(here, f) * 10) / 10 } : {}),
+    ...openStatus(hs, now),
+    hours_note: HOURS_NOTE,
+  }));
+  if (here) {
+    if (radius !== null && Number.isFinite(radius)) out = out.filter((f) => f.distance_km !== undefined && f.distance_km <= radius);
+    out.sort((a, b) => (a.distance_km ?? Infinity) - (b.distance_km ?? Infinity));
+  }
+  // open_now depends on the clock, so keep CDN and browser caches short for this endpoint.
+  return jsonWithEtag(request, { towns, count: out.length, facilities: out }, { maxAge: 60, sMaxAge: 300 });
 }
 
 // ---- Woodbridge street index ----

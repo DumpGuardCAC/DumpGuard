@@ -44,12 +44,25 @@ export function makeRepo(db = getPool()) {
     async facilitiesForTowns(townIds, material = null) {
       const { rows } = await db.query(
         `SELECT f.key, f.region_id AS region, f.name, f.address, f.zip, f.phone, f.hours, f.residents_only,
-                f.accepts::text[] AS accepts, f.notes_en, f.notes_es, f.source_url, to_char(f.last_verified, 'YYYY-MM-DD') AS last_verified
+                f.lat, f.lng, f.hours_struct, f.accepts::text[] AS accepts, f.notes_en, f.notes_es, f.source_url, to_char(f.last_verified, 'YYYY-MM-DD') AS last_verified
            FROM public_facilities f
           WHERE (f.region_id = ANY($1) OR f.region_id IN (SELECT county_id FROM regions WHERE id = ANY($1)))
             AND ($2::material_t IS NULL OR $2::material_t = ANY(f.accepts))
           ORDER BY f.region_id, f.name`,
         [townIds, material],
+      );
+      return rows;
+    },
+    // Every public facility with coordinates, for "near me" without choosing a town first.
+    async allFacilities(material = null) {
+      const { rows } = await db.query(
+        `SELECT f.key, f.region_id AS region, f.name, f.address, f.zip, f.phone, f.hours, f.residents_only,
+                f.lat, f.lng, f.hours_struct, f.accepts::text[] AS accepts, f.notes_en, f.notes_es, f.source_url,
+                to_char(f.last_verified, 'YYYY-MM-DD') AS last_verified
+           FROM public_facilities f
+          WHERE ($1::material_t IS NULL OR $1::material_t = ANY(f.accepts))
+          ORDER BY f.region_id, f.name`,
+        [material],
       );
       return rows;
     },
@@ -71,7 +84,7 @@ export function makeRepo(db = getPool()) {
         ),
         db.query(
           `SELECT f.key, f.region_id AS region, f.name, f.address, f.zip, f.phone, f.hours, f.residents_only,
-                  f.accepts::text[] AS accepts, f.notes_en, f.notes_es, f.source_url, to_char(f.last_verified, 'YYYY-MM-DD') AS last_verified
+                  f.lat, f.lng, f.hours_struct, f.accepts::text[] AS accepts, f.notes_en, f.notes_es, f.source_url, to_char(f.last_verified, 'YYYY-MM-DD') AS last_verified
              FROM public_facilities f WHERE f.key IS NOT NULL ORDER BY f.key`,
         ),
       ]);

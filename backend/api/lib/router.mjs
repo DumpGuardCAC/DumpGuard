@@ -5,7 +5,8 @@ import { handleItems, handleItem } from './items.mjs';
 import { handleSearch } from './search.mjs';
 import { handleTowns, handleFacilities, handleWoodbridgeStreets, buildStreetLookup, handleHealth } from './places.mjs';
 import { handleBulkRequest, handlePurge } from './bulk.mjs';
-import { makeRepo, makeBulkRepo, makePushRepo } from './repo.mjs';
+import { makeRepo, makeBulkRepo, makePushRepo, makeAlertsRepo } from './repo.mjs';
+import { handleAlerts, handleCreateAlert, handleDeleteAlert } from './alerts.mjs';
 import { handlePushKey, handleSubscribe, handleUnsubscribe, handleReminders } from './push.mjs';
 import { makeSender } from './webpush.mjs';
 import { json, jsonWithEtag } from './http.mjs';
@@ -21,7 +22,7 @@ function cors(res, request) {
   const origin = process.env.ALLOWED_ORIGIN;
   const h = new Headers(res.headers);
   h.set('access-control-allow-origin', origin ?? '*');
-  h.set('access-control-allow-methods', origin ? 'GET, POST, OPTIONS' : 'GET, OPTIONS');
+  h.set('access-control-allow-methods', origin ? 'GET, POST, DELETE, OPTIONS' : 'GET, OPTIONS');
   h.set('access-control-allow-headers', 'content-type, if-none-match');
   h.set('x-content-type-options', 'nosniff');
   return new Response(res.body, { status: res.status, headers: h });
@@ -34,11 +35,14 @@ async function route(request) {
   let seg;
 
   if (m === 'POST' && path === '/bulk-request') return handleBulkRequest(request, makeBulkRepo());
+  if (m === 'POST' && path === '/admin/alerts') return handleCreateAlert(request, makeAlertsRepo());
+  if (m === 'DELETE' && path === '/admin/alerts') return handleDeleteAlert(request, makeAlertsRepo());
   if (m === 'POST' && path === '/push/subscribe') return handleSubscribe(request, makePushRepo());
   if (m === 'POST' && path === '/push/unsubscribe') return handleUnsubscribe(request, makePushRepo());
   if (m !== 'GET' && m !== 'HEAD') return json({ error: 'method_not_allowed' }, 405, { 'cache-control': 'no-store' });
 
   if (path === '/health') return handleHealth(makeRepo());
+  if (path === '/alerts') return handleAlerts(request, makeAlertsRepo());
   if (path === '/push/key') return handlePushKey();
   if (path === '/cron/reminders') {
     const send = makeSender();

@@ -16,7 +16,7 @@
 ## Known gaps
 10. Spanish is machine-drafted and served without review, as you asked. Section labels, holiday reasons and one-off date labels now have Spanish (`label_es`, `description_es`, `reason_es`, `label_es` on dates); a test fails if a new label has no translation.
 11. Middlesex HHW dates are 2026 only and go stale after Nov 15, 2026. `python data/check_sources.py` flags this and any changed or stale source; run it monthly and after it reports CHANGED, re-read the page, fix the build script, then `--update`.
-12. Not readable from here: monmouthcountynj.gov (403), Middlesex shredding flyer PDF, NJ battery and bag-ban state pages. Nothing verified depends on them.
+12. Two middlesexcountynj.gov pages return 403 to scripts but load in a normal browser; I re-read the recycling and events pages by hand on 2026-10-15 and the county still publishes only the 2026 hazardous-waste schedule, so there are no 2027 dates to add yet. Still not read: the Middlesex shredding flyer PDF and NJ battery and bag-ban state pages. Nothing verified depends on them.
 13. Everything was tested on local Postgres 17, never on a real Neon project.
 
 ## New features (all in the README endpoint table)

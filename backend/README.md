@@ -11,6 +11,7 @@
 | `GET /meta` | exact UI strings: `check_with_town` ("Double check with your town") and `bulk_demo_notice` (EN/ES) |
 | `GET /towns` | published towns with ZIPs |
 | `GET /schedule/:zip` | `?town=` `?area=` (repeat per group) `?format=ics`. Returns `needs: town/area` until chosen |
+| `GET /search` | `?q=` `?town=` `?limit=`: English and Spanish names and aliases, accent-insensitive, typo-tolerant, per-town resolved rule |
 | `GET /items` | all items with raw verified rules + facility list. `?town=<id>` resolves a rule per item (town > county > state > default). When only the default exists, `resolved.check_local` is true and `resolved.message` is "Double check with your town" (EN/ES). Prefer `?town=`: the server resolves it, the response is small and CDN cached per town; the raw bundle is for offline use |
 | `GET /items/:id` | one item, same options |
 | `GET /facilities` | `?town=` or `?zip=`, optional `?material=` |

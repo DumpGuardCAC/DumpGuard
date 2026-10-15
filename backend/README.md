@@ -13,6 +13,7 @@
 | `GET /schedule/:zip` | `?town=` `?area=` (repeat per group) `?format=ics`. Returns `needs: town/area` until chosen |
 | `GET /search` | `?q=` `?town=` `?limit=`: English and Spanish names and aliases, accent-insensitive, typo-tolerant, per-town resolved rule |
 | `GET /items` | all items with raw verified rules + facility list. `?town=<id>` resolves a rule per item (town > county > state > default). When only the default exists, `resolved.check_local` is true and `resolved.message` is "Double check with your town" (EN/ES). Prefer `?town=`: the server resolves it, the response is small and CDN cached per town; the raw bundle is for offline use |
+| `GET /materials/:material` | `?town=`. Turns the camera model's class (`rigid_plastic`, ... ) into its items with resolved rules, rule counts and a `consensus` only when verified rules agree. `no_object` answers 404 with a message |
 | `GET /items/:id` | one item, same options |
 | `GET /facilities` | `?town=` `?zip=` or `?lat=&lng=` (all sites, nearest first), optional `?material=` `?radius_km=`. Each site has `open_now`, `next_open`, `distance_km` |
 | `GET /woodbridge/streets?q=` | street (optionally with house number) to pickup-zone key for `?area=zone:...` |

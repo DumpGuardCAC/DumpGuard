@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { handleSchedule } from './schedule.mjs';
 import { handleItems, handleItem } from './items.mjs';
 import { handleSearch } from './search.mjs';
+import { handleMaterial } from './materials.mjs';
 import { handleTowns, handleFacilities, handleWoodbridgeStreets, buildStreetLookup, handleHealth } from './places.mjs';
 import { handleBulkRequest, handlePurge } from './bulk.mjs';
 import { makeRepo, makeBulkRepo, makePushRepo, makeAlertsRepo } from './repo.mjs';
@@ -56,6 +57,7 @@ async function route(request) {
   if (path === '/search') return handleSearch(request, makeRepo());
   if (path === '/items') return handleItems(request, makeRepo());
   if (path === '/woodbridge/streets') return handleWoodbridgeStreets(request, streets());
+  if ((seg = path.match(/^\/materials\/([a-z_]+)$/))) return handleMaterial(request, seg[1], makeRepo());
   if ((seg = path.match(/^\/items\/([^/]+)$/))) return handleItem(request, decodeURIComponent(seg[1]), makeRepo());
   if ((seg = path.match(/^\/schedule\/([^/]+)$/))) return handleSchedule(request, decodeURIComponent(seg[1]), makeRepo());
   return json({ error: 'not_found' }, 404, { 'cache-control': 'public, s-maxage=60' });

@@ -14,7 +14,7 @@
 | `GET /search` | `?q=` `?town=` `?limit=`: English and Spanish names and aliases, accent-insensitive, typo-tolerant, per-town resolved rule |
 | `GET /items` | all items with raw verified rules + facility list. `?town=<id>` resolves a rule per item (town > county > state > default). When only the default exists, `resolved.check_local` is true and `resolved.message` is "Double check with your town" (EN/ES). Prefer `?town=`: the server resolves it, the response is small and CDN cached per town; the raw bundle is for offline use |
 | `GET /items/:id` | one item, same options |
-| `GET /facilities` | `?town=` or `?zip=`, optional `?material=` |
+| `GET /facilities` | `?town=` `?zip=` or `?lat=&lng=` (all sites, nearest first), optional `?material=` `?radius_km=`. Each site has `open_now`, `next_open`, `distance_km` |
 | `GET /woodbridge/streets?q=` | street (optionally with house number) to pickup-zone key for `?area=zone:...` |
 | `POST /bulk-request` | DEMO only, 5 per hour per hashed IP, 90-day retention. Response includes `notice`: "Currently, bulk pickup is demo until permission is acquired from townships" (the app must show it) |
 | `GET /cron/purge` | Bearer `CRON_SECRET`; Vercel cron daily 05:00 UTC |

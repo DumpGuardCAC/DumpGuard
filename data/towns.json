@@ -21,7 +21,27 @@
       "notes_es": "Solo residentes del condado de Monmouth. No necesita cita. Límite de 20 galones de líquido o 220 libras de material seco por visita; envases de líquido de 5 galones o menos; los químicos deben estar etiquetados. Permanezca en su vehículo con los materiales en el baúl.",
       "status": "verified",
       "source_url": "https://www.visitmonmouth.com/Page.aspx?Id=4371",
-      "last_verified": "2026-10-06"
+      "last_verified": "2026-10-06",
+      "lat": 40.231546,
+      "lng": -74.112526,
+      "hours_struct": [
+        {
+          "days": [
+            2,
+            3,
+            5
+          ],
+          "open": "11:00",
+          "close": "16:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "open": "08:00",
+          "close": "16:00"
+        }
+      ]
     },
     {
       "key": "long-branch-drop-off",
@@ -44,7 +64,29 @@
       "notes_es": "Frente al campo de béisbol de Pleasure Bay. Aplane y ate el cartón (máximo 50 lb). Latas, vidrio y botellas de plástico #1/#2 mezclados van sueltos, sin bolsas. Desechos electrónicos obligatorios: televisores, computadoras, monitores, impresoras, faxes, laptops (no se recogen en la acera). Las hojas y ramas de hasta 6 pulgadas de grosor requieren identificación de residente.",
       "status": "verified",
       "source_url": "https://longbranch.org/305/Voluntary-Recycling-Drop-Off-Center",
-      "last_verified": "2026-10-06"
+      "last_verified": "2026-10-06",
+      "lat": 40.312588,
+      "lng": -73.99757,
+      "hours_struct": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "07:30",
+          "close": "15:00"
+        },
+        {
+          "days": [
+            6
+          ],
+          "open": "09:00",
+          "close": "13:00"
+        }
+      ]
     },
     {
       "key": "asbury-park-recycling-center",
@@ -66,7 +108,30 @@
       "notes_es": "Los electrónicos no se recogen en la acera. Se aceptan: televisores, computadoras, monitores, impresoras, escáneres, copiadoras, equipos de sonido, videograbadoras, reproductores de DVD, celulares, cámaras, cables. No se acepta césped cortado. El teléfono es el de Obras Públicas.",
       "status": "verified",
       "source_url": "https://www.cityofasburypark.com/182/Bulk-Waste-Electronics-Yard-Waste-More",
-      "last_verified": "2026-10-06"
+      "last_verified": "2026-10-06",
+      "lat": 40.214463,
+      "lng": -74.013991,
+      "hours_struct": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "16:00",
+          "close": "20:00"
+        },
+        {
+          "days": [
+            0,
+            6
+          ],
+          "open": "10:00",
+          "close": "14:00"
+        }
+      ]
     },
     {
       "key": "edison-recycling-center",
@@ -87,7 +152,23 @@
       "notes_es": "Solo residentes de Edison, se requiere comprobante de residencia. Sin vehículos comerciales ni remolques alquilados. Acepta hojas, césped, ramas, muebles, colchones envueltos en plástico, artículos de metal, lavadoras, secadoras, microondas, electrónicos, cartón, accesorios. NO acepta pintura ni otros desechos domésticos peligrosos, llantas, baterías de auto, textiles, material de construcción, vidrio, alfombras, puertas ni cercas. El teléfono es el de Obras Públicas (8 a. m.-4:30 p. m. entre semana).",
       "status": "verified",
       "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
-      "last_verified": "2026-10-06"
+      "last_verified": "2026-10-06",
+      "lat": 40.540288,
+      "lng": -74.383869,
+      "hours_struct": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "06:30",
+          "close": "14:00"
+        }
+      ]
     },
     {
       "key": "new-brunswick-second-saturday",
@@ -105,7 +186,17 @@
       "notes_es": "Residentes de la ciudad: laptops, computadoras de escritorio, monitores, impresoras, televisores, faxes. Residentes del condado: pintura de látex y al aceite, barniz, laca, diluyente, pintura en aerosol, sellador de entradas de autos, todo etiquetado. Sin latas vacías ni pintura de látex seca (séquela y póngala en la basura). Sin desechos comerciales ni industriales. El teléfono es el del Coordinador de Reciclaje de la ciudad.",
       "status": "verified",
       "source_url": "https://www.cityofnewbrunswick.org/residents/departments/engineering_and_public_works/recycling_-_paint___electronics.php",
-      "last_verified": "2026-10-06"
+      "last_verified": "2026-10-06",
+      "lat": 40.483774,
+      "lng": -74.463607,
+      "hours_struct": [
+        {
+          "nth": 2,
+          "day": 6,
+          "open": "08:00",
+          "close": "12:00"
+        }
+      ]
     },
     {
       "region": "woodbridge",
@@ -128,7 +219,23 @@
         "soft_plastic_foam",
         "other"
       ],
-      "notes_en": "Woodbridge residents only, proof of residency required; check in with the guard. Accepts all single-stream recyclables, shredded paper, Styrofoam, plastic bags and film wrap, cooking oil, textiles, cardboard, and bulky rigid plastic (no plastic with metal, fabric or motors attached). No commercial vehicles, commercial plates, out-of-state plates, box trucks or rental vehicles. Township main number: 732-634-4500."
+      "notes_en": "Woodbridge residents only, proof of residency required; check in with the guard. Accepts all single-stream recyclables, shredded paper, Styrofoam, plastic bags and film wrap, cooking oil, textiles, cardboard, and bulky rigid plastic (no plastic with metal, fabric or motors attached). No commercial vehicles, commercial plates, out-of-state plates, box trucks or rental vehicles. Township main number: 732-634-4500.",
+      "lat": 40.514821,
+      "lng": -74.301688,
+      "hours_struct": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "08:00",
+          "close": "14:00"
+        }
+      ]
     },
     {
       "region": "woodbridge",
@@ -148,7 +255,23 @@
         "ewaste_hazard",
         "other"
       ],
-      "notes_en": "Same site as the Recycling Center. Woodbridge residents only, proof of residency required. Accepts appliances, mixed metals, bulky items, brush, leaves, propane tanks, electronics, paint, tires and motor oil. Small homeowner repair debris (concrete, asphalt, brick, lumber, sheetrock) has monthly limits, call first. No commercial vehicles, out-of-state plates, box trucks or rental vehicles. Township main number: 732-634-4500. Saturdays are busy."
+      "notes_en": "Same site as the Recycling Center. Woodbridge residents only, proof of residency required. Accepts appliances, mixed metals, bulky items, brush, leaves, propane tanks, electronics, paint, tires and motor oil. Small homeowner repair debris (concrete, asphalt, brick, lumber, sheetrock) has monthly limits, call first. No commercial vehicles, out-of-state plates, box trucks or rental vehicles. Township main number: 732-634-4500. Saturdays are busy.",
+      "lat": 40.514821,
+      "lng": -74.301688,
+      "hours_struct": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "08:00",
+          "close": "14:00"
+        }
+      ]
     },
     {
       "key": "middlesex-hhw",
@@ -166,7 +289,36 @@
       "notes_es": "Gratis, solo residentes del condado de Middlesex, solo material residencial y placas residenciales, sin vehículos comerciales. Sin envases de más de 10 galones. Permanezca en su vehículo con los materiales en el baúl o área de carga. Traiga: adhesivos, aerosoles, anticongelante, líquido de frenos, baterías de auto, limpiadores, destapacaños, extintores, bombillas fluorescentes, gasolina, queroseno, líquido para encendedores, mercurio, aceite de motor y filtros, pintura de látex y al aceite, diluyente de pintura, pesticidas y herbicidas, químicos fotográficos, químicos de piscina, tanques de propano, tintes y barnices, termómetros, termostatos, pilas recargables y de botón (cada una en una bolsa o con los terminales cubiertos con cinta). No traiga: electrodomésticos, muebles, electrónicos, envases vacíos, explosivos, desechos médicos, detectores de humo, llantas. Asbesto: llame para registrarse antes. Las pilas alcalinas pueden ir en la basura normal. Preguntas: solidwaste@co.middlesex.nj.us.",
       "status": "verified",
       "source_url": "https://www.middlesexcountynj.gov/home/showpublisheddocument/9531/639071131240300000",
-      "last_verified": "2026-10-13"
+      "last_verified": "2026-10-13",
+      "lat": null,
+      "lng": null,
+      "hours_struct": [
+        {
+          "date": "2026-03-15",
+          "open": "08:00",
+          "close": "14:00"
+        },
+        {
+          "date": "2026-05-16",
+          "open": "08:00",
+          "close": "14:00"
+        },
+        {
+          "date": "2026-06-28",
+          "open": "08:00",
+          "close": "14:00"
+        },
+        {
+          "date": "2026-09-19",
+          "open": "08:00",
+          "close": "14:00"
+        },
+        {
+          "date": "2026-11-15",
+          "open": "08:00",
+          "close": "14:00"
+        }
+      ]
     }
   ],
   "schedules": [
@@ -182,368 +334,203 @@
       "notes_es": "Los desechos de jardín en bolsas (ramas pequeñas, arbustos, enredaderas) se sacan el día de la basura. Las ramas atadas en paquetes, máximo 60 lb y 4 pies. Sin césped ni tocones. Árboles de Navidad: en enero, el día de la basura, sin bolsas ni adornos. La recogida de hojas es del 1 de abril al 15 de mayo y del 15 de octubre al 31 de diciembre: use bolsas biodegradables o montones sueltos a 6 pulgadas del borde de la acera. El césped cortado no se recoge (hágalo compost o llévelo al Centro de Recuperación del condado de Monmouth, con tarifa). Árboles de Navidad: hasta el 31 de enero."
     },
     {
-      "region": "asbury-park",
+      "region": "edison",
       "stream": "trash",
       "weekday": 1,
       "week_pattern": "weekly",
-      "area_key": "zone-1",
-      "area_note": "Zone 1: Areas east of, and including, Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=MO",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "area_key": "garbage:mon",
+      "area_note": "Garbage Monday: municipal garbage district collected on Mondays",
+      "dtstart": "2026-01-05",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20261231",
+      "overrides": [
+        {
+          "date": "2026-01-19",
+          "to": "2026-01-20",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-16",
+          "to": "2026-02-17",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-26",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-07",
+          "to": "2026-09-08",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-12",
+          "to": "2026-10-13",
+          "reason": "Columbus Day"
+        }
+      ],
+      "notes_en": "Municipal garbage, once a week, in your Township-supplied can. Put it out after 6 p.m. the night before and take the empty can in by the evening of collection day. Bagged household garbage only, no recyclables, leaves or grass. Not sure of your garbage day? It depends on your address: check the Recycle Coach app or call Public Works 732-248-7288. Holiday weeks: see the dates listed.",
+      "notes_es": "Basura municipal, una vez por semana, en el bote que da el municipio. Sáquelo después de las 6 p. m. de la noche anterior y guarde el bote vacío antes del anochecer del día de recogida. Solo basura doméstica en bolsas, sin reciclables, hojas ni césped. ¿No sabe su día? Depende de su dirección: use la aplicación Recycle Coach o llame a Obras Públicas al 732-248-7288. Semanas con feriado: vea las fechas indicadas.",
+      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
       "status": "verified",
       "last_verified": "2026-10-06"
     },
     {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 4,
-      "week_pattern": "weekly",
-      "area_key": "zone-1",
-      "area_note": "Zone 1: Areas east of, and including, Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "bulk",
-      "weekday": 4,
-      "week_pattern": "weekly",
-      "area_key": "zone-1",
-      "area_note": "Zone 1: Areas east of, and including, Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH",
-      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
-      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "recycling",
-      "weekday": 2,
-      "week_pattern": "weekly",
-      "area_key": "zone-1",
-      "area_note": "Zone 1: Areas east of, and including, Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=TU",
-      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
-      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 1,
-      "week_pattern": "weekly",
-      "area_key": "zone-1a",
-      "area_note": "Zone 1A (Oct 1 to Apr 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
-      "rrule": "FREQ=WEEKLY;BYDAY=MO;BYMONTH=10,11,12,1,2,3,4",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "zone-1a",
-      "area_note": "Zone 1A (Oct 1 to Apr 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;BYMONTH=10,11,12,1,2,3,4",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 1,
-      "week_pattern": "weekly",
-      "area_key": "zone-1a",
-      "area_note": "Zone 1A (May 1 to Sep 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
-      "rrule": "FREQ=WEEKLY;BYDAY=MO;BYMONTH=5,6,7,8,9",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "zone-1a",
-      "area_note": "Zone 1A (May 1 to Sep 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE;BYMONTH=5,6,7,8,9",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "zone-1a",
-      "area_note": "Zone 1A (May 1 to Sep 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;BYMONTH=5,6,7,8,9",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "bulk",
-      "weekday": 4,
-      "week_pattern": "weekly",
-      "area_key": "zone-1a",
-      "area_note": "Zone 1A: Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH",
-      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
-      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "recycling",
-      "weekday": 2,
-      "week_pattern": "weekly",
-      "area_key": "zone-1a",
-      "area_note": "Zone 1A: Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
-      "rrule": "FREQ=WEEKLY;BYDAY=TU",
-      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
-      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
+      "region": "edison",
       "stream": "trash",
       "weekday": 2,
       "week_pattern": "weekly",
-      "area_key": "zone-2",
-      "area_note": "Zone 2: All areas between Grand Ave and Comstock St / Prospect Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=TU",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "area_key": "garbage:tue",
+      "area_note": "Garbage Tuesday: municipal garbage district collected on Tuesdays",
+      "dtstart": "2026-01-06",
+      "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20261231",
+      "overrides": [
+        {
+          "date": "2026-01-20",
+          "to": "2026-01-21",
+          "reason": "Martin Luther King Jr. Day (Monday's pickup moved a day)"
+        },
+        {
+          "date": "2026-02-17",
+          "to": "2026-02-18",
+          "reason": "Presidents' Day (Monday's pickup moved a day)"
+        },
+        {
+          "date": "2026-05-26",
+          "to": "2026-05-27",
+          "reason": "Memorial Day (Monday's pickup moved a day)"
+        },
+        {
+          "date": "2026-09-08",
+          "to": "2026-09-09",
+          "reason": "Labor Day (Monday's pickup moved a day)"
+        },
+        {
+          "date": "2026-10-13",
+          "to": "2026-10-14",
+          "reason": "Columbus Day (Monday's pickup moved a day)"
+        },
+        {
+          "date": "2026-11-03",
+          "to": "2026-11-04",
+          "reason": "Election Day"
+        }
+      ],
+      "notes_en": "Municipal garbage, once a week, in your Township-supplied can. Put it out after 6 p.m. the night before and take the empty can in by the evening of collection day. Bagged household garbage only, no recyclables, leaves or grass. Not sure of your garbage day? It depends on your address: check the Recycle Coach app or call Public Works 732-248-7288. Holiday weeks: see the dates listed.",
+      "notes_es": "Basura municipal, una vez por semana, en el bote que da el municipio. Sáquelo después de las 6 p. m. de la noche anterior y guarde el bote vacío antes del anochecer del día de recogida. Solo basura doméstica en bolsas, sin reciclables, hojas ni césped. ¿No sabe su día? Depende de su dirección: use la aplicación Recycle Coach o llame a Obras Públicas al 732-248-7288. Semanas con feriado: vea las fechas indicadas.",
+      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
       "status": "verified",
       "last_verified": "2026-10-06"
     },
     {
-      "region": "asbury-park",
+      "region": "edison",
       "stream": "trash",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "zone-2",
-      "area_note": "Zone 2: All areas between Grand Ave and Comstock St / Prospect Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "bulk",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "zone-2",
-      "area_note": "Zone 2: All areas between Grand Ave and Comstock St / Prospect Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR",
-      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
-      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "recycling",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "zone-2",
-      "area_note": "Zone 2: All areas between Grand Ave and Comstock St / Prospect Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE",
-      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
-      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 1,
-      "week_pattern": "weekly",
-      "area_key": "zone-2a",
-      "area_note": "Zone 2A (Oct 1 to Apr 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=MO;BYMONTH=10,11,12,1,2,3,4",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "zone-2a",
-      "area_note": "Zone 2A (Oct 1 to Apr 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;BYMONTH=10,11,12,1,2,3,4",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 1,
-      "week_pattern": "weekly",
-      "area_key": "zone-2a",
-      "area_note": "Zone 2A (May 1 to Sep 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=MO;BYMONTH=5,6,7,8,9",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "zone-2a",
-      "area_note": "Zone 2A (May 1 to Sep 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE;BYMONTH=5,6,7,8,9",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "zone-2a",
-      "area_note": "Zone 2A (May 1 to Sep 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;BYMONTH=5,6,7,8,9",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "bulk",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "zone-2a",
-      "area_note": "Zone 2A: All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR",
-      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
-      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "recycling",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "zone-2a",
-      "area_note": "Zone 2A: All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE",
-      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
-      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "zone-3",
-      "area_note": "Zone 3: All areas west of, and including, Comstock St / Prospect Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "trash",
-      "weekday": 6,
-      "week_pattern": "weekly",
-      "area_key": "zone-3",
-      "area_note": "Zone 3: All areas west of, and including, Comstock St / Prospect Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=SA",
-      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
-      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "bulk",
-      "weekday": 6,
-      "week_pattern": "weekly",
-      "area_key": "zone-3",
-      "area_note": "Zone 3: All areas west of, and including, Comstock St / Prospect Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=SA",
-      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
-      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "asbury-park",
-      "stream": "recycling",
       "weekday": 4,
       "week_pattern": "weekly",
-      "area_key": "zone-3",
-      "area_note": "Zone 3: All areas west of, and including, Comstock St / Prospect Ave",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH",
-      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
-      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
-      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "area_key": "garbage:thu",
+      "area_note": "Garbage Thursday: municipal garbage district collected on Thursdays",
+      "dtstart": "2026-01-01",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20261231",
+      "overrides": [
+        {
+          "date": "2026-01-01",
+          "to": "2025-12-31",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-02-12",
+          "to": "2026-02-11",
+          "reason": "Lincoln's Birthday"
+        },
+        {
+          "date": "2026-04-02",
+          "to": "2026-04-01",
+          "reason": "Good Friday week"
+        },
+        {
+          "date": "2026-07-02",
+          "to": "2026-07-01",
+          "reason": "Independence Day (observed) week"
+        },
+        {
+          "date": "2026-11-26",
+          "to": null,
+          "reason": "Thanksgiving week has only one garbage pick-up; confirm with Public Works 732-248-7288"
+        }
+      ],
+      "notes_en": "Municipal garbage, once a week, in your Township-supplied can. Put it out after 6 p.m. the night before and take the empty can in by the evening of collection day. Bagged household garbage only, no recyclables, leaves or grass. Not sure of your garbage day? It depends on your address: check the Recycle Coach app or call Public Works 732-248-7288. Holiday weeks: see the dates listed.",
+      "notes_es": "Basura municipal, una vez por semana, en el bote que da el municipio. Sáquelo después de las 6 p. m. de la noche anterior y guarde el bote vacío antes del anochecer del día de recogida. Solo basura doméstica en bolsas, sin reciclables, hojas ni césped. ¿No sabe su día? Depende de su dirección: use la aplicación Recycle Coach o llame a Obras Públicas al 732-248-7288. Semanas con feriado: vea las fechas indicadas.",
+      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
       "status": "verified",
       "last_verified": "2026-10-06"
+    },
+    {
+      "region": "edison",
+      "stream": "trash",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "garbage:fri",
+      "area_note": "Garbage Friday: municipal garbage district collected on Fridays",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20261231",
+      "overrides": [
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-02",
+          "reason": "Good Friday"
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-02",
+          "reason": "Independence Day (observed)"
+        },
+        {
+          "date": "2026-11-27",
+          "to": null,
+          "reason": "Thanksgiving week has only one garbage pick-up; confirm with Public Works 732-248-7288"
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-24",
+          "reason": "Christmas Day"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2026-12-31",
+          "reason": "New Year's Day"
+        }
+      ],
+      "notes_en": "Municipal garbage, once a week, in your Township-supplied can. Put it out after 6 p.m. the night before and take the empty can in by the evening of collection day. Bagged household garbage only, no recyclables, leaves or grass. Not sure of your garbage day? It depends on your address: check the Recycle Coach app or call Public Works 732-248-7288. Holiday weeks: see the dates listed.",
+      "notes_es": "Basura municipal, una vez por semana, en el bote que da el municipio. Sáquelo después de las 6 p. m. de la noche anterior y guarde el bote vacío antes del anochecer del día de recogida. Solo basura doméstica en bolsas, sin reciclables, hojas ni césped. ¿No sabe su día? Depende de su dirección: use la aplicación Recycle Coach o llame a Obras Públicas al 732-248-7288. Semanas con feriado: vea las fechas indicadas.",
+      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "edison",
+      "stream": "trash",
+      "weekday": null,
+      "week_pattern": "custom",
+      "notes_es": "En estas zonas la basura la recoge una empresa privada, no el municipio, y el municipio no programa recogidas de objetos grandes ni especiales. Pregunte a su administración o a la empresa por sus días. El reciclaje y los programas de jardín siguen su sección de reciclaje.",
+      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
+      "status": "verified",
+      "last_verified": "2026-10-06",
+      "area_key": "garbage:private",
+      "area_note": "Private hauler: condos, townhouses, apartments and private garbage districts",
+      "notes_en": "Garbage here is collected by a private hauler, not the Township, and the Township does not schedule bulk or special pick-ups for these areas. Ask your management office or hauler for your days. Recycling and the yard programs still follow your recycling section."
+    },
+    {
+      "region": "edison",
+      "stream": "trash",
+      "weekday": null,
+      "week_pattern": "custom",
+      "notes_es": "El día de la basura depende de su dirección y el municipio no ha publicado una lista de calles. Use la aplicación Recycle Coach (busque su dirección en edisonnj.gov, en Obras Públicas) o llame a Obras Públicas al 732-248-7288, de lunes a viernes de 8 a. m. a 4:30 p. m.",
+      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
+      "status": "verified",
+      "last_verified": "2026-10-06",
+      "area_key": "garbage:unknown",
+      "area_note": "I do not know my garbage day",
+      "notes_en": "Garbage day depends on your address and the Township has not published a street list. Use the Recycle Coach app (search your address on edisonnj.gov under Public Works) or call Public Works at 732-248-7288, Monday to Friday 8 a.m. to 4:30 p.m."
     },
     {
       "region": "edison",
@@ -1109,203 +1096,368 @@
       "last_verified": "2026-10-06"
     },
     {
-      "region": "edison",
+      "region": "asbury-park",
       "stream": "trash",
       "weekday": 1,
       "week_pattern": "weekly",
-      "area_key": "garbage:mon",
-      "area_note": "Garbage Monday: municipal garbage district collected on Mondays",
-      "dtstart": "2026-01-05",
-      "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20261231",
-      "overrides": [
-        {
-          "date": "2026-01-19",
-          "to": "2026-01-20",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-16",
-          "to": "2026-02-17",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-25",
-          "to": "2026-05-26",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-07",
-          "to": "2026-09-08",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-12",
-          "to": "2026-10-13",
-          "reason": "Columbus Day"
-        }
-      ],
-      "notes_en": "Municipal garbage, once a week, in your Township-supplied can. Put it out after 6 p.m. the night before and take the empty can in by the evening of collection day. Bagged household garbage only, no recyclables, leaves or grass. Not sure of your garbage day? It depends on your address: check the Recycle Coach app or call Public Works 732-248-7288. Holiday weeks: see the dates listed.",
-      "notes_es": "Basura municipal, una vez por semana, en el bote que da el municipio. Sáquelo después de las 6 p. m. de la noche anterior y guarde el bote vacío antes del anochecer del día de recogida. Solo basura doméstica en bolsas, sin reciclables, hojas ni césped. ¿No sabe su día? Depende de su dirección: use la aplicación Recycle Coach o llame a Obras Públicas al 732-248-7288. Semanas con feriado: vea las fechas indicadas.",
-      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
+      "area_key": "zone-1",
+      "area_note": "Zone 1: Areas east of, and including, Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
       "status": "verified",
       "last_verified": "2026-10-06"
     },
     {
-      "region": "edison",
-      "stream": "trash",
-      "weekday": 2,
-      "week_pattern": "weekly",
-      "area_key": "garbage:tue",
-      "area_note": "Garbage Tuesday: municipal garbage district collected on Tuesdays",
-      "dtstart": "2026-01-06",
-      "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20261231",
-      "overrides": [
-        {
-          "date": "2026-01-20",
-          "to": "2026-01-21",
-          "reason": "Martin Luther King Jr. Day (Monday's pickup moved a day)"
-        },
-        {
-          "date": "2026-02-17",
-          "to": "2026-02-18",
-          "reason": "Presidents' Day (Monday's pickup moved a day)"
-        },
-        {
-          "date": "2026-05-26",
-          "to": "2026-05-27",
-          "reason": "Memorial Day (Monday's pickup moved a day)"
-        },
-        {
-          "date": "2026-09-08",
-          "to": "2026-09-09",
-          "reason": "Labor Day (Monday's pickup moved a day)"
-        },
-        {
-          "date": "2026-10-13",
-          "to": "2026-10-14",
-          "reason": "Columbus Day (Monday's pickup moved a day)"
-        },
-        {
-          "date": "2026-11-03",
-          "to": "2026-11-04",
-          "reason": "Election Day"
-        }
-      ],
-      "notes_en": "Municipal garbage, once a week, in your Township-supplied can. Put it out after 6 p.m. the night before and take the empty can in by the evening of collection day. Bagged household garbage only, no recyclables, leaves or grass. Not sure of your garbage day? It depends on your address: check the Recycle Coach app or call Public Works 732-248-7288. Holiday weeks: see the dates listed.",
-      "notes_es": "Basura municipal, una vez por semana, en el bote que da el municipio. Sáquelo después de las 6 p. m. de la noche anterior y guarde el bote vacío antes del anochecer del día de recogida. Solo basura doméstica en bolsas, sin reciclables, hojas ni césped. ¿No sabe su día? Depende de su dirección: use la aplicación Recycle Coach o llame a Obras Públicas al 732-248-7288. Semanas con feriado: vea las fechas indicadas.",
-      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "edison",
+      "region": "asbury-park",
       "stream": "trash",
       "weekday": 4,
       "week_pattern": "weekly",
-      "area_key": "garbage:thu",
-      "area_note": "Garbage Thursday: municipal garbage district collected on Thursdays",
-      "dtstart": "2026-01-01",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20261231",
-      "overrides": [
-        {
-          "date": "2026-01-01",
-          "to": "2025-12-31",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-02-12",
-          "to": "2026-02-11",
-          "reason": "Lincoln's Birthday"
-        },
-        {
-          "date": "2026-04-02",
-          "to": "2026-04-01",
-          "reason": "Good Friday week"
-        },
-        {
-          "date": "2026-07-02",
-          "to": "2026-07-01",
-          "reason": "Independence Day (observed) week"
-        },
-        {
-          "date": "2026-11-26",
-          "to": null,
-          "reason": "Thanksgiving week has only one garbage pick-up; confirm with Public Works 732-248-7288"
-        }
-      ],
-      "notes_en": "Municipal garbage, once a week, in your Township-supplied can. Put it out after 6 p.m. the night before and take the empty can in by the evening of collection day. Bagged household garbage only, no recyclables, leaves or grass. Not sure of your garbage day? It depends on your address: check the Recycle Coach app or call Public Works 732-248-7288. Holiday weeks: see the dates listed.",
-      "notes_es": "Basura municipal, una vez por semana, en el bote que da el municipio. Sáquelo después de las 6 p. m. de la noche anterior y guarde el bote vacío antes del anochecer del día de recogida. Solo basura doméstica en bolsas, sin reciclables, hojas ni césped. ¿No sabe su día? Depende de su dirección: use la aplicación Recycle Coach o llame a Obras Públicas al 732-248-7288. Semanas con feriado: vea las fechas indicadas.",
-      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
+      "area_key": "zone-1",
+      "area_note": "Zone 1: Areas east of, and including, Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
       "status": "verified",
       "last_verified": "2026-10-06"
     },
     {
-      "region": "edison",
+      "region": "asbury-park",
+      "stream": "bulk",
+      "weekday": 4,
+      "week_pattern": "weekly",
+      "area_key": "zone-1",
+      "area_note": "Zone 1: Areas east of, and including, Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH",
+      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
+      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "recycling",
+      "weekday": 2,
+      "week_pattern": "weekly",
+      "area_key": "zone-1",
+      "area_note": "Zone 1: Areas east of, and including, Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=TU",
+      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
+      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 1,
+      "week_pattern": "weekly",
+      "area_key": "zone-1a",
+      "area_note": "Zone 1A (Oct 1 to Apr 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO;BYMONTH=10,11,12,1,2,3,4",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
       "stream": "trash",
       "weekday": 5,
       "week_pattern": "weekly",
-      "area_key": "garbage:fri",
-      "area_note": "Garbage Friday: municipal garbage district collected on Fridays",
-      "dtstart": "2026-01-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20261231",
-      "overrides": [
-        {
-          "date": "2026-04-03",
-          "to": "2026-04-02",
-          "reason": "Good Friday"
-        },
-        {
-          "date": "2026-07-03",
-          "to": "2026-07-02",
-          "reason": "Independence Day (observed)"
-        },
-        {
-          "date": "2026-11-27",
-          "to": null,
-          "reason": "Thanksgiving week has only one garbage pick-up; confirm with Public Works 732-248-7288"
-        },
-        {
-          "date": "2026-12-25",
-          "to": "2026-12-24",
-          "reason": "Christmas Day"
-        },
-        {
-          "date": "2027-01-01",
-          "to": "2026-12-31",
-          "reason": "New Year's Day"
-        }
-      ],
-      "notes_en": "Municipal garbage, once a week, in your Township-supplied can. Put it out after 6 p.m. the night before and take the empty can in by the evening of collection day. Bagged household garbage only, no recyclables, leaves or grass. Not sure of your garbage day? It depends on your address: check the Recycle Coach app or call Public Works 732-248-7288. Holiday weeks: see the dates listed.",
-      "notes_es": "Basura municipal, una vez por semana, en el bote que da el municipio. Sáquelo después de las 6 p. m. de la noche anterior y guarde el bote vacío antes del anochecer del día de recogida. Solo basura doméstica en bolsas, sin reciclables, hojas ni césped. ¿No sabe su día? Depende de su dirección: use la aplicación Recycle Coach o llame a Obras Públicas al 732-248-7288. Semanas con feriado: vea las fechas indicadas.",
-      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
+      "area_key": "zone-1a",
+      "area_note": "Zone 1A (Oct 1 to Apr 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;BYMONTH=10,11,12,1,2,3,4",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
       "status": "verified",
       "last_verified": "2026-10-06"
     },
     {
-      "region": "edison",
+      "region": "asbury-park",
       "stream": "trash",
-      "weekday": null,
-      "week_pattern": "custom",
-      "notes_es": "En estas zonas la basura la recoge una empresa privada, no el municipio, y el municipio no programa recogidas de objetos grandes ni especiales. Pregunte a su administración o a la empresa por sus días. El reciclaje y los programas de jardín siguen su sección de reciclaje.",
-      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
+      "weekday": 1,
+      "week_pattern": "weekly",
+      "area_key": "zone-1a",
+      "area_note": "Zone 1A (May 1 to Sep 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO;BYMONTH=5,6,7,8,9",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
       "status": "verified",
-      "last_verified": "2026-10-06",
-      "area_key": "garbage:private",
-      "area_note": "Private hauler: condos, townhouses, apartments and private garbage districts",
-      "notes_en": "Garbage here is collected by a private hauler, not the Township, and the Township does not schedule bulk or special pick-ups for these areas. Ask your management office or hauler for your days. Recycling and the yard programs still follow your recycling section."
+      "last_verified": "2026-10-06"
     },
     {
-      "region": "edison",
+      "region": "asbury-park",
       "stream": "trash",
-      "weekday": null,
-      "week_pattern": "custom",
-      "notes_es": "El día de la basura depende de su dirección y el municipio no ha publicado una lista de calles. Use la aplicación Recycle Coach (busque su dirección en edisonnj.gov, en Obras Públicas) o llame a Obras Públicas al 732-248-7288, de lunes a viernes de 8 a. m. a 4:30 p. m.",
-      "source_url": "https://www.edisonnj.org/Departments/DPW/Garbage-Recycling%202026%20Calendar%20for%20web.pdf",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "zone-1a",
+      "area_note": "Zone 1A (May 1 to Sep 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE;BYMONTH=5,6,7,8,9",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
       "status": "verified",
-      "last_verified": "2026-10-06",
-      "area_key": "garbage:unknown",
-      "area_note": "I do not know my garbage day",
-      "notes_en": "Garbage day depends on your address and the Township has not published a street list. Use the Recycle Coach app (search your address on edisonnj.gov under Public Works) or call Public Works at 732-248-7288, Monday to Friday 8 a.m. to 4:30 p.m."
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "zone-1a",
+      "area_note": "Zone 1A (May 1 to Sep 30): Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;BYMONTH=5,6,7,8,9",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "bulk",
+      "weekday": 4,
+      "week_pattern": "weekly",
+      "area_key": "zone-1a",
+      "area_note": "Zone 1A: Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH",
+      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
+      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "recycling",
+      "weekday": 2,
+      "week_pattern": "weekly",
+      "area_key": "zone-1a",
+      "area_note": "Zone 1A: Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St",
+      "rrule": "FREQ=WEEKLY;BYDAY=TU",
+      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
+      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 2,
+      "week_pattern": "weekly",
+      "area_key": "zone-2",
+      "area_note": "Zone 2: All areas between Grand Ave and Comstock St / Prospect Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=TU",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "zone-2",
+      "area_note": "Zone 2: All areas between Grand Ave and Comstock St / Prospect Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "bulk",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "zone-2",
+      "area_note": "Zone 2: All areas between Grand Ave and Comstock St / Prospect Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR",
+      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
+      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "recycling",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "zone-2",
+      "area_note": "Zone 2: All areas between Grand Ave and Comstock St / Prospect Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE",
+      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
+      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 1,
+      "week_pattern": "weekly",
+      "area_key": "zone-2a",
+      "area_note": "Zone 2A (Oct 1 to Apr 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO;BYMONTH=10,11,12,1,2,3,4",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "zone-2a",
+      "area_note": "Zone 2A (Oct 1 to Apr 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;BYMONTH=10,11,12,1,2,3,4",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 1,
+      "week_pattern": "weekly",
+      "area_key": "zone-2a",
+      "area_note": "Zone 2A (May 1 to Sep 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO;BYMONTH=5,6,7,8,9",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "zone-2a",
+      "area_note": "Zone 2A (May 1 to Sep 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE;BYMONTH=5,6,7,8,9",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "zone-2a",
+      "area_note": "Zone 2A (May 1 to Sep 30): All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;BYMONTH=5,6,7,8,9",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "bulk",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "zone-2a",
+      "area_note": "Zone 2A: All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR",
+      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
+      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "recycling",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "zone-2a",
+      "area_note": "Zone 2A: All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE",
+      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
+      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "zone-3",
+      "area_note": "Zone 3: All areas west of, and including, Comstock St / Prospect Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "trash",
+      "weekday": 6,
+      "week_pattern": "weekly",
+      "area_key": "zone-3",
+      "area_note": "Zone 3: All areas west of, and including, Comstock St / Prospect Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=SA",
+      "notes_en": "Household garbage. Set out after 5 p.m. the day before; remove by 6 p.m. on collection day. Canceled on New Year's Day, Thanksgiving and Christmas; the pickup then happens on the next scheduled day.",
+      "notes_es": "Basura doméstica. Sáquela después de las 5 p. m. del día anterior y retire el recipiente antes de las 6 p. m. del día de recogida. Se cancela el Día de Año Nuevo, Acción de Gracias y Navidad; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "bulk",
+      "weekday": 6,
+      "week_pattern": "weekly",
+      "area_key": "zone-3",
+      "area_note": "Zone 3: All areas west of, and including, Comstock St / Prospect Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=SA",
+      "notes_en": "Weekly, limit 3 items. No TVs, electronics, white goods or yard waste (see the city's recycling page). Call 732-775-0900 to confirm.",
+      "notes_es": "Cada semana, límite de 3 artículos. Sin televisores, electrónicos, electrodomésticos grandes ni desechos de jardín (vea la página de reciclaje de la ciudad). Llame al 732-775-0900 para confirmar.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "asbury-park",
+      "stream": "recycling",
+      "weekday": 4,
+      "week_pattern": "weekly",
+      "area_key": "zone-3",
+      "area_note": "Zone 3: All areas west of, and including, Comstock St / Prospect Ave",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH",
+      "notes_en": "Single stream, do not bag. Max 60 lb per container. Set out after 5 p.m. the day before. Canceled on municipal holidays; the pickup then happens on the next scheduled day.",
+      "notes_es": "Reciclaje mezclado, sin bolsas. Máximo 60 lb por recipiente. Sáquelo después de las 5 p. m. del día anterior. Se cancela en los días feriados municipales; la recogida pasa al siguiente día programado.",
+      "source_url": "https://www.cityofasburypark.com/DocumentCenter/View/264/Garbage-and-Recycling-Collection-Map-with-Zones-PDF",
+      "status": "verified",
+      "last_verified": "2026-10-06"
     },
     {
       "region": "long-branch",
@@ -1767,6 +1919,1404 @@
       "notes_en": "Leaves are collected curbside in spring and fall by leaf zone, in PAPER bags only, never plastic. Pick up 20 free paper bags per property (more cost $5 per bundle of 10, check or money order). The leaf-zone dates are on the city's printed schedule: call the Recycling Division at 732-745-5059 to confirm yours. Real, bare Christmas trees go curbside Tuesday night for pickup every Wednesday in January (dates listed). Artificial trees need a bulk appointment. Brush is by appointment, see the bulk entry.",
       "notes_es": "Las hojas se recogen en la acera en primavera y otoño por zona de hojas, solo en bolsas de PAPEL, nunca de plástico. Recoja 20 bolsas de papel gratis por propiedad (más cuestan $5 por paquete de 10, con cheque o giro postal). Las fechas de su zona de hojas están en el calendario impreso de la ciudad: llame a la División de Reciclaje al 732-745-5059 para confirmar la suya. Los árboles de Navidad naturales y sin adornos se sacan a la acera el martes por la noche para la recogida de cada miércoles de enero (fechas indicadas). Los árboles artificiales necesitan cita para objetos grandes. Las ramas son con cita; vea la entrada de objetos grandes.",
       "source_url": "https://www.cityofnewbrunswick.org/residents/departments/engineering_and_public_works/recycling_-_by_item.php",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 2,
+      "week_pattern": "weekly",
+      "area_key": "avenel",
+      "area_note": "Avenel",
+      "dtstart": "2026-01-06",
+      "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-20",
+          "to": "2026-01-21",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-17",
+          "to": "2026-02-18",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-26",
+          "to": "2026-05-27",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-08",
+          "to": "2026-09-09",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-13",
+          "to": "2026-10-14",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-03",
+          "to": "2026-11-04",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2027-01-19",
+          "to": "2027-01-20",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 2.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 2.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 4,
+      "week_pattern": "weekly",
+      "area_key": "avenel",
+      "area_note": "Avenel",
+      "dtstart": "2026-01-01",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-22",
+          "to": "2026-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-19",
+          "to": "2026-02-20",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-28",
+          "to": "2026-05-29",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-10",
+          "to": "2026-09-11",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-15",
+          "to": "2026-10-16",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-05",
+          "to": "2026-11-06",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-12",
+          "to": "2026-11-13",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-27",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2027-01-21",
+          "to": "2027-01-22",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 4.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 4.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 2,
+      "week_pattern": "weekly",
+      "area_key": "colonia",
+      "area_note": "Colonia",
+      "dtstart": "2026-01-06",
+      "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-20",
+          "to": "2026-01-21",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-17",
+          "to": "2026-02-18",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-26",
+          "to": "2026-05-27",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-08",
+          "to": "2026-09-09",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-13",
+          "to": "2026-10-14",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-03",
+          "to": "2026-11-04",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2027-01-19",
+          "to": "2027-01-20",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 2.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 2.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 4,
+      "week_pattern": "weekly",
+      "area_key": "colonia",
+      "area_note": "Colonia",
+      "dtstart": "2026-01-01",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-22",
+          "to": "2026-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-19",
+          "to": "2026-02-20",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-28",
+          "to": "2026-05-29",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-10",
+          "to": "2026-09-11",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-15",
+          "to": "2026-10-16",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-05",
+          "to": "2026-11-06",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-12",
+          "to": "2026-11-13",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-27",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2027-01-21",
+          "to": "2027-01-22",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 4.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 4.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "fords",
+      "area_note": "Fords",
+      "dtstart": "2026-01-07",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-21",
+          "to": "2026-01-22",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-18",
+          "to": "2026-02-19",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-27",
+          "to": "2026-05-28",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-09",
+          "to": "2026-09-10",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-14",
+          "to": "2026-10-15",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-04",
+          "to": "2026-11-05",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-11",
+          "to": "2026-11-12",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2027-01-20",
+          "to": "2027-01-21",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "fords",
+      "area_note": "Fords",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-02",
+          "to": "2026-01-03",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-23",
+          "to": "2026-01-24",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-20",
+          "to": "2026-02-21",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-04",
+          "reason": "Good Friday"
+        },
+        {
+          "date": "2026-05-29",
+          "to": "2026-05-30",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-06-19",
+          "to": "2026-06-20",
+          "reason": "Juneteenth"
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-04",
+          "reason": "Independence Day (observed)"
+        },
+        {
+          "date": "2026-09-11",
+          "to": "2026-09-12",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-16",
+          "to": "2026-10-17",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-06",
+          "to": "2026-11-07",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-13",
+          "to": "2026-11-14",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-27",
+          "to": "2026-11-28",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-26",
+          "reason": "Christmas Day"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2027-01-22",
+          "to": "2027-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "hopelawn",
+      "area_note": "Hopelawn",
+      "dtstart": "2026-01-07",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-21",
+          "to": "2026-01-22",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-18",
+          "to": "2026-02-19",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-27",
+          "to": "2026-05-28",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-09",
+          "to": "2026-09-10",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-14",
+          "to": "2026-10-15",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-04",
+          "to": "2026-11-05",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-11",
+          "to": "2026-11-12",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2027-01-20",
+          "to": "2027-01-21",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "hopelawn",
+      "area_note": "Hopelawn",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-02",
+          "to": "2026-01-03",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-23",
+          "to": "2026-01-24",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-20",
+          "to": "2026-02-21",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-04",
+          "reason": "Good Friday"
+        },
+        {
+          "date": "2026-05-29",
+          "to": "2026-05-30",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-06-19",
+          "to": "2026-06-20",
+          "reason": "Juneteenth"
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-04",
+          "reason": "Independence Day (observed)"
+        },
+        {
+          "date": "2026-09-11",
+          "to": "2026-09-12",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-16",
+          "to": "2026-10-17",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-06",
+          "to": "2026-11-07",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-13",
+          "to": "2026-11-14",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-27",
+          "to": "2026-11-28",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-26",
+          "reason": "Christmas Day"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2027-01-22",
+          "to": "2027-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 1,
+      "week_pattern": "weekly",
+      "area_key": "iselin",
+      "area_note": "Iselin",
+      "dtstart": "2026-01-05",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-19",
+          "to": "2026-01-20",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-16",
+          "to": "2026-02-17",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-26",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-07",
+          "to": "2026-09-08",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-12",
+          "to": "2026-10-13",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2027-01-18",
+          "to": "2027-01-19",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 1.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 1.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 4,
+      "week_pattern": "weekly",
+      "area_key": "iselin",
+      "area_note": "Iselin",
+      "dtstart": "2026-01-01",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-22",
+          "to": "2026-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-19",
+          "to": "2026-02-20",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-28",
+          "to": "2026-05-29",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-10",
+          "to": "2026-09-11",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-15",
+          "to": "2026-10-16",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-05",
+          "to": "2026-11-06",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-12",
+          "to": "2026-11-13",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-27",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2027-01-21",
+          "to": "2027-01-22",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 4.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 4.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "keasbey",
+      "area_note": "Keasbey",
+      "dtstart": "2026-01-07",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-21",
+          "to": "2026-01-22",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-18",
+          "to": "2026-02-19",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-27",
+          "to": "2026-05-28",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-09",
+          "to": "2026-09-10",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-14",
+          "to": "2026-10-15",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-04",
+          "to": "2026-11-05",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-11",
+          "to": "2026-11-12",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2027-01-20",
+          "to": "2027-01-21",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "keasbey",
+      "area_note": "Keasbey",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-02",
+          "to": "2026-01-03",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-23",
+          "to": "2026-01-24",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-20",
+          "to": "2026-02-21",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-04",
+          "reason": "Good Friday"
+        },
+        {
+          "date": "2026-05-29",
+          "to": "2026-05-30",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-06-19",
+          "to": "2026-06-20",
+          "reason": "Juneteenth"
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-04",
+          "reason": "Independence Day (observed)"
+        },
+        {
+          "date": "2026-09-11",
+          "to": "2026-09-12",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-16",
+          "to": "2026-10-17",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-06",
+          "to": "2026-11-07",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-13",
+          "to": "2026-11-14",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-27",
+          "to": "2026-11-28",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-26",
+          "reason": "Christmas Day"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2027-01-22",
+          "to": "2027-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "menlo-park-terrace",
+      "area_note": "Menlo Park Terrace",
+      "dtstart": "2026-01-07",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-21",
+          "to": "2026-01-22",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-18",
+          "to": "2026-02-19",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-27",
+          "to": "2026-05-28",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-09",
+          "to": "2026-09-10",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-14",
+          "to": "2026-10-15",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-04",
+          "to": "2026-11-05",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-11",
+          "to": "2026-11-12",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2027-01-20",
+          "to": "2027-01-21",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "menlo-park-terrace",
+      "area_note": "Menlo Park Terrace",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-02",
+          "to": "2026-01-03",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-23",
+          "to": "2026-01-24",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-20",
+          "to": "2026-02-21",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-04",
+          "reason": "Good Friday"
+        },
+        {
+          "date": "2026-05-29",
+          "to": "2026-05-30",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-06-19",
+          "to": "2026-06-20",
+          "reason": "Juneteenth"
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-04",
+          "reason": "Independence Day (observed)"
+        },
+        {
+          "date": "2026-09-11",
+          "to": "2026-09-12",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-16",
+          "to": "2026-10-17",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-06",
+          "to": "2026-11-07",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-13",
+          "to": "2026-11-14",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-27",
+          "to": "2026-11-28",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-26",
+          "reason": "Christmas Day"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2027-01-22",
+          "to": "2027-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "port-reading",
+      "area_note": "Port Reading",
+      "dtstart": "2026-01-07",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-21",
+          "to": "2026-01-22",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-18",
+          "to": "2026-02-19",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-27",
+          "to": "2026-05-28",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-09",
+          "to": "2026-09-10",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-14",
+          "to": "2026-10-15",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-04",
+          "to": "2026-11-05",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-11",
+          "to": "2026-11-12",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2027-01-20",
+          "to": "2027-01-21",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "port-reading",
+      "area_note": "Port Reading",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-02",
+          "to": "2026-01-03",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-23",
+          "to": "2026-01-24",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-20",
+          "to": "2026-02-21",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-04",
+          "reason": "Good Friday"
+        },
+        {
+          "date": "2026-05-29",
+          "to": "2026-05-30",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-06-19",
+          "to": "2026-06-20",
+          "reason": "Juneteenth"
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-04",
+          "reason": "Independence Day (observed)"
+        },
+        {
+          "date": "2026-09-11",
+          "to": "2026-09-12",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-16",
+          "to": "2026-10-17",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-06",
+          "to": "2026-11-07",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-13",
+          "to": "2026-11-14",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-27",
+          "to": "2026-11-28",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-26",
+          "reason": "Christmas Day"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2027-01-22",
+          "to": "2027-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 3,
+      "week_pattern": "weekly",
+      "area_key": "sewaren",
+      "area_note": "Sewaren",
+      "dtstart": "2026-01-07",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-21",
+          "to": "2026-01-22",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-18",
+          "to": "2026-02-19",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-27",
+          "to": "2026-05-28",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-09",
+          "to": "2026-09-10",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-14",
+          "to": "2026-10-15",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-04",
+          "to": "2026-11-05",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-11",
+          "to": "2026-11-12",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2027-01-20",
+          "to": "2027-01-21",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "sewaren",
+      "area_note": "Sewaren",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-02",
+          "to": "2026-01-03",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-23",
+          "to": "2026-01-24",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-20",
+          "to": "2026-02-21",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-04",
+          "reason": "Good Friday"
+        },
+        {
+          "date": "2026-05-29",
+          "to": "2026-05-30",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-06-19",
+          "to": "2026-06-20",
+          "reason": "Juneteenth"
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-04",
+          "reason": "Independence Day (observed)"
+        },
+        {
+          "date": "2026-09-11",
+          "to": "2026-09-12",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-16",
+          "to": "2026-10-17",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-06",
+          "to": "2026-11-07",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-13",
+          "to": "2026-11-14",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-27",
+          "to": "2026-11-28",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-26",
+          "reason": "Christmas Day"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2027-01-22",
+          "to": "2027-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "trash",
+      "weekday": 1,
+      "week_pattern": "weekly",
+      "area_key": "woodbridge",
+      "area_note": "Woodbridge",
+      "dtstart": "2026-01-05",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-19",
+          "to": "2026-01-20",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-16",
+          "to": "2026-02-17",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-26",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-09-07",
+          "to": "2026-09-08",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-12",
+          "to": "2026-10-13",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2027-01-18",
+          "to": "2027-01-19",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 1.)",
+      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 1.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "recycling",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "woodbridge",
+      "area_note": "Woodbridge",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
+      "overrides": [
+        {
+          "date": "2026-01-02",
+          "to": "2026-01-03",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-01-23",
+          "to": "2026-01-24",
+          "reason": "Martin Luther King Jr. Day"
+        },
+        {
+          "date": "2026-02-20",
+          "to": "2026-02-21",
+          "reason": "Presidents' Day"
+        },
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-04",
+          "reason": "Good Friday"
+        },
+        {
+          "date": "2026-05-29",
+          "to": "2026-05-30",
+          "reason": "Memorial Day"
+        },
+        {
+          "date": "2026-06-19",
+          "to": "2026-06-20",
+          "reason": "Juneteenth"
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-04",
+          "reason": "Independence Day (observed)"
+        },
+        {
+          "date": "2026-09-11",
+          "to": "2026-09-12",
+          "reason": "Labor Day"
+        },
+        {
+          "date": "2026-10-16",
+          "to": "2026-10-17",
+          "reason": "Columbus Day"
+        },
+        {
+          "date": "2026-11-06",
+          "to": "2026-11-07",
+          "reason": "Election Day"
+        },
+        {
+          "date": "2026-11-13",
+          "to": "2026-11-14",
+          "reason": "Veterans Day"
+        },
+        {
+          "date": "2026-11-27",
+          "to": "2026-11-28",
+          "reason": "Thanksgiving Day"
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-26",
+          "reason": "Christmas Day"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-02",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2027-01-22",
+          "to": "2027-01-23",
+          "reason": "Martin Luther King Jr. Day"
+        }
+      ],
+      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
+      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
+      "status": "verified",
+      "last_verified": "2026-10-06"
+    },
+    {
+      "region": "woodbridge",
+      "stream": "bulk",
+      "weekday": null,
+      "week_pattern": "custom",
+      "area_key": "",
+      "area_note": "Township-wide, by appointment",
+      "notes_en": "Bulk pickup (furniture, mattresses, carpeting, garbage cans, refrigerators, freezers, washers, dryers, playsets, ride-on toys) is scheduled by calling Sanitation at 732-738-1311 ext. 3600, Mon-Fri 7:30 a.m.-3:30 p.m. The township page lists no fee or item limit; ask when you call. Or drop items at the Convenience Center (Mon-Sat 8 a.m.-2 p.m., residents only).",
+      "notes_es": "La recogida de objetos grandes (muebles, colchones, alfombras, botes de basura, refrigeradores, congeladores, lavadoras, secadoras, estructuras de juego, juguetes de montar) se programa llamando a Sanidad al 732-738-1311 ext. 3600, lun-vie 7:30 a. m.-3:30 p. m. La página del municipio no indica tarifa ni límite de artículos; pregunte al llamar. O lleve los artículos al Centro de Conveniencia (lun-sáb 8 a. m.-2 p. m., solo residentes).",
+      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
       "status": "verified",
       "last_verified": "2026-10-06"
     },
@@ -3655,1404 +5205,6 @@
       "area_note": "I do not know my street zone",
       "notes_en": "Brush, leaf and Christmas tree days depend on your street. Look your street up in the Street Index of the township 2026 calendar (RD and Zone numbers) or call Sanitation at 732-738-1311 ext. 3600.",
       "notes_es": "Los días de ramas, hojas y árboles de Navidad dependen de su calle. Busque su calle en el índice de calles del calendario 2026 del municipio (números de RD y zona) o llame a Sanidad al 732-738-1311 ext. 3600.",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 2,
-      "week_pattern": "weekly",
-      "area_key": "avenel",
-      "area_note": "Avenel",
-      "dtstart": "2026-01-06",
-      "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-20",
-          "to": "2026-01-21",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-17",
-          "to": "2026-02-18",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-26",
-          "to": "2026-05-27",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-08",
-          "to": "2026-09-09",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-13",
-          "to": "2026-10-14",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-03",
-          "to": "2026-11-04",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2027-01-19",
-          "to": "2027-01-20",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 2.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 2.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 4,
-      "week_pattern": "weekly",
-      "area_key": "avenel",
-      "area_note": "Avenel",
-      "dtstart": "2026-01-01",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-01",
-          "to": "2026-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-22",
-          "to": "2026-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-19",
-          "to": "2026-02-20",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-28",
-          "to": "2026-05-29",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-10",
-          "to": "2026-09-11",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-15",
-          "to": "2026-10-16",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-05",
-          "to": "2026-11-06",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-12",
-          "to": "2026-11-13",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-26",
-          "to": "2026-11-27",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2027-01-21",
-          "to": "2027-01-22",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 4.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 4.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 2,
-      "week_pattern": "weekly",
-      "area_key": "colonia",
-      "area_note": "Colonia",
-      "dtstart": "2026-01-06",
-      "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-20",
-          "to": "2026-01-21",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-17",
-          "to": "2026-02-18",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-26",
-          "to": "2026-05-27",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-08",
-          "to": "2026-09-09",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-13",
-          "to": "2026-10-14",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-03",
-          "to": "2026-11-04",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2027-01-19",
-          "to": "2027-01-20",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 2.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 2.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 4,
-      "week_pattern": "weekly",
-      "area_key": "colonia",
-      "area_note": "Colonia",
-      "dtstart": "2026-01-01",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-01",
-          "to": "2026-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-22",
-          "to": "2026-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-19",
-          "to": "2026-02-20",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-28",
-          "to": "2026-05-29",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-10",
-          "to": "2026-09-11",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-15",
-          "to": "2026-10-16",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-05",
-          "to": "2026-11-06",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-12",
-          "to": "2026-11-13",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-26",
-          "to": "2026-11-27",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2027-01-21",
-          "to": "2027-01-22",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 4.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 4.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "fords",
-      "area_note": "Fords",
-      "dtstart": "2026-01-07",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-21",
-          "to": "2026-01-22",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-18",
-          "to": "2026-02-19",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-27",
-          "to": "2026-05-28",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-09",
-          "to": "2026-09-10",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-14",
-          "to": "2026-10-15",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-04",
-          "to": "2026-11-05",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-11",
-          "to": "2026-11-12",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2027-01-20",
-          "to": "2027-01-21",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "fords",
-      "area_note": "Fords",
-      "dtstart": "2026-01-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-02",
-          "to": "2026-01-03",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-23",
-          "to": "2026-01-24",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-20",
-          "to": "2026-02-21",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-04-03",
-          "to": "2026-04-04",
-          "reason": "Good Friday"
-        },
-        {
-          "date": "2026-05-29",
-          "to": "2026-05-30",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-06-19",
-          "to": "2026-06-20",
-          "reason": "Juneteenth"
-        },
-        {
-          "date": "2026-07-03",
-          "to": "2026-07-04",
-          "reason": "Independence Day (observed)"
-        },
-        {
-          "date": "2026-09-11",
-          "to": "2026-09-12",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-16",
-          "to": "2026-10-17",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-06",
-          "to": "2026-11-07",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-13",
-          "to": "2026-11-14",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-27",
-          "to": "2026-11-28",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2026-12-25",
-          "to": "2026-12-26",
-          "reason": "Christmas Day"
-        },
-        {
-          "date": "2027-01-01",
-          "to": "2027-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2027-01-22",
-          "to": "2027-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "hopelawn",
-      "area_note": "Hopelawn",
-      "dtstart": "2026-01-07",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-21",
-          "to": "2026-01-22",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-18",
-          "to": "2026-02-19",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-27",
-          "to": "2026-05-28",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-09",
-          "to": "2026-09-10",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-14",
-          "to": "2026-10-15",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-04",
-          "to": "2026-11-05",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-11",
-          "to": "2026-11-12",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2027-01-20",
-          "to": "2027-01-21",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "hopelawn",
-      "area_note": "Hopelawn",
-      "dtstart": "2026-01-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-02",
-          "to": "2026-01-03",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-23",
-          "to": "2026-01-24",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-20",
-          "to": "2026-02-21",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-04-03",
-          "to": "2026-04-04",
-          "reason": "Good Friday"
-        },
-        {
-          "date": "2026-05-29",
-          "to": "2026-05-30",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-06-19",
-          "to": "2026-06-20",
-          "reason": "Juneteenth"
-        },
-        {
-          "date": "2026-07-03",
-          "to": "2026-07-04",
-          "reason": "Independence Day (observed)"
-        },
-        {
-          "date": "2026-09-11",
-          "to": "2026-09-12",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-16",
-          "to": "2026-10-17",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-06",
-          "to": "2026-11-07",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-13",
-          "to": "2026-11-14",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-27",
-          "to": "2026-11-28",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2026-12-25",
-          "to": "2026-12-26",
-          "reason": "Christmas Day"
-        },
-        {
-          "date": "2027-01-01",
-          "to": "2027-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2027-01-22",
-          "to": "2027-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 1,
-      "week_pattern": "weekly",
-      "area_key": "iselin",
-      "area_note": "Iselin",
-      "dtstart": "2026-01-05",
-      "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-19",
-          "to": "2026-01-20",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-16",
-          "to": "2026-02-17",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-25",
-          "to": "2026-05-26",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-07",
-          "to": "2026-09-08",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-12",
-          "to": "2026-10-13",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2027-01-18",
-          "to": "2027-01-19",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 1.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 1.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 4,
-      "week_pattern": "weekly",
-      "area_key": "iselin",
-      "area_note": "Iselin",
-      "dtstart": "2026-01-01",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-01",
-          "to": "2026-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-22",
-          "to": "2026-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-19",
-          "to": "2026-02-20",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-28",
-          "to": "2026-05-29",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-10",
-          "to": "2026-09-11",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-15",
-          "to": "2026-10-16",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-05",
-          "to": "2026-11-06",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-12",
-          "to": "2026-11-13",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-26",
-          "to": "2026-11-27",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2027-01-21",
-          "to": "2027-01-22",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 4.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 4.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "keasbey",
-      "area_note": "Keasbey",
-      "dtstart": "2026-01-07",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-21",
-          "to": "2026-01-22",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-18",
-          "to": "2026-02-19",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-27",
-          "to": "2026-05-28",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-09",
-          "to": "2026-09-10",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-14",
-          "to": "2026-10-15",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-04",
-          "to": "2026-11-05",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-11",
-          "to": "2026-11-12",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2027-01-20",
-          "to": "2027-01-21",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "keasbey",
-      "area_note": "Keasbey",
-      "dtstart": "2026-01-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-02",
-          "to": "2026-01-03",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-23",
-          "to": "2026-01-24",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-20",
-          "to": "2026-02-21",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-04-03",
-          "to": "2026-04-04",
-          "reason": "Good Friday"
-        },
-        {
-          "date": "2026-05-29",
-          "to": "2026-05-30",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-06-19",
-          "to": "2026-06-20",
-          "reason": "Juneteenth"
-        },
-        {
-          "date": "2026-07-03",
-          "to": "2026-07-04",
-          "reason": "Independence Day (observed)"
-        },
-        {
-          "date": "2026-09-11",
-          "to": "2026-09-12",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-16",
-          "to": "2026-10-17",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-06",
-          "to": "2026-11-07",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-13",
-          "to": "2026-11-14",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-27",
-          "to": "2026-11-28",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2026-12-25",
-          "to": "2026-12-26",
-          "reason": "Christmas Day"
-        },
-        {
-          "date": "2027-01-01",
-          "to": "2027-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2027-01-22",
-          "to": "2027-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "menlo-park-terrace",
-      "area_note": "Menlo Park Terrace",
-      "dtstart": "2026-01-07",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-21",
-          "to": "2026-01-22",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-18",
-          "to": "2026-02-19",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-27",
-          "to": "2026-05-28",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-09",
-          "to": "2026-09-10",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-14",
-          "to": "2026-10-15",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-04",
-          "to": "2026-11-05",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-11",
-          "to": "2026-11-12",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2027-01-20",
-          "to": "2027-01-21",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "menlo-park-terrace",
-      "area_note": "Menlo Park Terrace",
-      "dtstart": "2026-01-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-02",
-          "to": "2026-01-03",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-23",
-          "to": "2026-01-24",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-20",
-          "to": "2026-02-21",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-04-03",
-          "to": "2026-04-04",
-          "reason": "Good Friday"
-        },
-        {
-          "date": "2026-05-29",
-          "to": "2026-05-30",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-06-19",
-          "to": "2026-06-20",
-          "reason": "Juneteenth"
-        },
-        {
-          "date": "2026-07-03",
-          "to": "2026-07-04",
-          "reason": "Independence Day (observed)"
-        },
-        {
-          "date": "2026-09-11",
-          "to": "2026-09-12",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-16",
-          "to": "2026-10-17",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-06",
-          "to": "2026-11-07",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-13",
-          "to": "2026-11-14",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-27",
-          "to": "2026-11-28",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2026-12-25",
-          "to": "2026-12-26",
-          "reason": "Christmas Day"
-        },
-        {
-          "date": "2027-01-01",
-          "to": "2027-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2027-01-22",
-          "to": "2027-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "port-reading",
-      "area_note": "Port Reading",
-      "dtstart": "2026-01-07",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-21",
-          "to": "2026-01-22",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-18",
-          "to": "2026-02-19",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-27",
-          "to": "2026-05-28",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-09",
-          "to": "2026-09-10",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-14",
-          "to": "2026-10-15",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-04",
-          "to": "2026-11-05",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-11",
-          "to": "2026-11-12",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2027-01-20",
-          "to": "2027-01-21",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "port-reading",
-      "area_note": "Port Reading",
-      "dtstart": "2026-01-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-02",
-          "to": "2026-01-03",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-23",
-          "to": "2026-01-24",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-20",
-          "to": "2026-02-21",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-04-03",
-          "to": "2026-04-04",
-          "reason": "Good Friday"
-        },
-        {
-          "date": "2026-05-29",
-          "to": "2026-05-30",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-06-19",
-          "to": "2026-06-20",
-          "reason": "Juneteenth"
-        },
-        {
-          "date": "2026-07-03",
-          "to": "2026-07-04",
-          "reason": "Independence Day (observed)"
-        },
-        {
-          "date": "2026-09-11",
-          "to": "2026-09-12",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-16",
-          "to": "2026-10-17",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-06",
-          "to": "2026-11-07",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-13",
-          "to": "2026-11-14",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-27",
-          "to": "2026-11-28",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2026-12-25",
-          "to": "2026-12-26",
-          "reason": "Christmas Day"
-        },
-        {
-          "date": "2027-01-01",
-          "to": "2027-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2027-01-22",
-          "to": "2027-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 3,
-      "week_pattern": "weekly",
-      "area_key": "sewaren",
-      "area_note": "Sewaren",
-      "dtstart": "2026-01-07",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-21",
-          "to": "2026-01-22",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-18",
-          "to": "2026-02-19",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-27",
-          "to": "2026-05-28",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-09",
-          "to": "2026-09-10",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-14",
-          "to": "2026-10-15",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-04",
-          "to": "2026-11-05",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-11",
-          "to": "2026-11-12",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2027-01-20",
-          "to": "2027-01-21",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 3.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 3.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "sewaren",
-      "area_note": "Sewaren",
-      "dtstart": "2026-01-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-02",
-          "to": "2026-01-03",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-23",
-          "to": "2026-01-24",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-20",
-          "to": "2026-02-21",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-04-03",
-          "to": "2026-04-04",
-          "reason": "Good Friday"
-        },
-        {
-          "date": "2026-05-29",
-          "to": "2026-05-30",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-06-19",
-          "to": "2026-06-20",
-          "reason": "Juneteenth"
-        },
-        {
-          "date": "2026-07-03",
-          "to": "2026-07-04",
-          "reason": "Independence Day (observed)"
-        },
-        {
-          "date": "2026-09-11",
-          "to": "2026-09-12",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-16",
-          "to": "2026-10-17",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-06",
-          "to": "2026-11-07",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-13",
-          "to": "2026-11-14",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-27",
-          "to": "2026-11-28",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2026-12-25",
-          "to": "2026-12-26",
-          "reason": "Christmas Day"
-        },
-        {
-          "date": "2027-01-01",
-          "to": "2027-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2027-01-22",
-          "to": "2027-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "trash",
-      "weekday": 1,
-      "week_pattern": "weekly",
-      "area_key": "woodbridge",
-      "area_note": "Woodbridge",
-      "dtstart": "2026-01-05",
-      "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-19",
-          "to": "2026-01-20",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-16",
-          "to": "2026-02-17",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-05-25",
-          "to": "2026-05-26",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-09-07",
-          "to": "2026-09-08",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-12",
-          "to": "2026-10-13",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2027-01-18",
-          "to": "2027-01-19",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Trash, once a week, in your township cart. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected, nothing beside it. No bulk items unless you scheduled a pickup (732-738-1311 ext. 3600). Holiday weeks: pickups move one day later (see dates). (SWD 1.)",
-      "notes_es": "Basura, una vez por semana, en el carrito del municipio. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito, nada a su lado. Sin objetos grandes a menos que haya programado una recogida (732-738-1311 ext. 3600). Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). (SWD 1.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "recycling",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "woodbridge",
-      "area_note": "Woodbridge",
-      "dtstart": "2026-01-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [
-        {
-          "date": "2026-01-02",
-          "to": "2026-01-03",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2026-01-23",
-          "to": "2026-01-24",
-          "reason": "Martin Luther King Jr. Day"
-        },
-        {
-          "date": "2026-02-20",
-          "to": "2026-02-21",
-          "reason": "Presidents' Day"
-        },
-        {
-          "date": "2026-04-03",
-          "to": "2026-04-04",
-          "reason": "Good Friday"
-        },
-        {
-          "date": "2026-05-29",
-          "to": "2026-05-30",
-          "reason": "Memorial Day"
-        },
-        {
-          "date": "2026-06-19",
-          "to": "2026-06-20",
-          "reason": "Juneteenth"
-        },
-        {
-          "date": "2026-07-03",
-          "to": "2026-07-04",
-          "reason": "Independence Day (observed)"
-        },
-        {
-          "date": "2026-09-11",
-          "to": "2026-09-12",
-          "reason": "Labor Day"
-        },
-        {
-          "date": "2026-10-16",
-          "to": "2026-10-17",
-          "reason": "Columbus Day"
-        },
-        {
-          "date": "2026-11-06",
-          "to": "2026-11-07",
-          "reason": "Election Day"
-        },
-        {
-          "date": "2026-11-13",
-          "to": "2026-11-14",
-          "reason": "Veterans Day"
-        },
-        {
-          "date": "2026-11-27",
-          "to": "2026-11-28",
-          "reason": "Thanksgiving Day"
-        },
-        {
-          "date": "2026-12-25",
-          "to": "2026-12-26",
-          "reason": "Christmas Day"
-        },
-        {
-          "date": "2027-01-01",
-          "to": "2027-01-02",
-          "reason": "New Year's Day"
-        },
-        {
-          "date": "2027-01-22",
-          "to": "2027-01-23",
-          "reason": "Martin Luther King Jr. Day"
-        }
-      ],
-      "notes_en": "Single stream recycling, once a week, in the blue township cart. Do not bag recyclables. Put the cart out after 4 p.m. the day before and bring it in by 9 p.m. on collection day. Only items inside the cart are collected. Holiday weeks: pickups move one day later (see dates). Questions: Recycling Office 732-738-1311 ext. 3035. (RD 5.)",
-      "notes_es": "Reciclaje mezclado, una vez por semana, en el carrito azul del municipio. No ponga los reciclables en bolsas. Saque el carrito después de las 4 p. m. del día anterior y guárdelo antes de las 9 p. m. del día de recogida. Solo se recoge lo que está dentro del carrito. Semanas con feriado: la recogida se mueve un día más tarde (vea las fechas). Preguntas: Oficina de Reciclaje 732-738-1311 ext. 3035. (RD 5.)",
-      "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
-      "status": "verified",
-      "last_verified": "2026-10-06"
-    },
-    {
-      "region": "woodbridge",
-      "stream": "bulk",
-      "weekday": null,
-      "week_pattern": "custom",
-      "area_key": "",
-      "area_note": "Township-wide, by appointment",
-      "notes_en": "Bulk pickup (furniture, mattresses, carpeting, garbage cans, refrigerators, freezers, washers, dryers, playsets, ride-on toys) is scheduled by calling Sanitation at 732-738-1311 ext. 3600, Mon-Fri 7:30 a.m.-3:30 p.m. The township page lists no fee or item limit; ask when you call. Or drop items at the Convenience Center (Mon-Sat 8 a.m.-2 p.m., residents only).",
-      "notes_es": "La recogida de objetos grandes (muebles, colchones, alfombras, botes de basura, refrigeradores, congeladores, lavadoras, secadoras, estructuras de juego, juguetes de montar) se programa llamando a Sanidad al 732-738-1311 ext. 3600, lun-vie 7:30 a. m.-3:30 p. m. La página del municipio no indica tarifa ni límite de artículos; pregunte al llamar. O lleve los artículos al Centro de Conveniencia (lun-sáb 8 a. m.-2 p. m., solo residentes).",
       "source_url": "https://www.twp.woodbridge.nj.us/1272/Recycling-Calendar",
       "status": "verified",
       "last_verified": "2026-10-06"

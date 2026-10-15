@@ -94,10 +94,11 @@ try {
   await client.query('DELETE FROM facilities');
   for (const f of towns.facilities) {
     await client.query(
-      `INSERT INTO facilities (key, region_id, name, address, zip, phone, hours, residents_only, accepts, notes_en, notes_es, status, source_url, last_verified)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9::material_t[],$10,$11,$12,$13,$14)`,
+      `INSERT INTO facilities (key, region_id, name, address, zip, phone, hours, residents_only, accepts, notes_en, notes_es, status, source_url, last_verified, lat, lng, hours_struct)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9::material_t[],$10,$11,$12,$13,$14,$15,$16,$17)`,
       [f.key, f.region, f.name, f.address, f.zip, f.phone, f.hours, f.residents_only, f.accepts, f.notes_en, f.notes_es,
-        f.status, f.source_url, f.status === 'verified' ? f.last_verified ?? retrieved : null],
+        f.status, f.source_url, f.status === 'verified' ? f.last_verified ?? retrieved : null, f.lat ?? null, f.lng ?? null,
+        JSON.stringify(f.hours_struct ?? [])],
     );
   }
   await client.query('DELETE FROM collection_schedules');

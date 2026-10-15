@@ -6,9 +6,10 @@ import { handleSearch } from './search.mjs';
 import { handleMaterial } from './materials.mjs';
 import { handleTowns, handleFacilities, handleWoodbridgeStreets, buildStreetLookup, handleHealth } from './places.mjs';
 import { handleBulkRequest, handlePurge } from './bulk.mjs';
-import { makeRepo, makeBulkRepo, makePushRepo, makeAlertsRepo, makeImpactRepo } from './repo.mjs';
+import { makeRepo, makeBulkRepo, makePushRepo, makeAlertsRepo, makeImpactRepo, makeReportsRepo } from './repo.mjs';
 import { handleAlerts, handleCreateAlert, handleDeleteAlert } from './alerts.mjs';
 import { handlePushKey, handleSubscribe, handleUnsubscribe, handleReminders } from './push.mjs';
+import { handleReport, handleListReports, handleResolveReport } from './reports.mjs';
 import { handleEvent, handleStats } from './impact.mjs';
 import { makeSender } from './webpush.mjs';
 import { json, jsonWithEtag } from './http.mjs';
@@ -39,12 +40,15 @@ async function route(request) {
   if (m === 'POST' && path === '/bulk-request') return handleBulkRequest(request, makeBulkRepo());
   if (m === 'POST' && path === '/admin/alerts') return handleCreateAlert(request, makeAlertsRepo());
   if (m === 'DELETE' && path === '/admin/alerts') return handleDeleteAlert(request, makeAlertsRepo());
+  if (m === 'POST' && path === '/reports') return handleReport(request, makeReportsRepo());
+  if (m === 'POST' && path === '/admin/reports/resolve') return handleResolveReport(request, makeReportsRepo());
   if (m === 'POST' && path === '/events') return handleEvent(request, makeImpactRepo());
   if (m === 'POST' && path === '/push/subscribe') return handleSubscribe(request, makePushRepo());
   if (m === 'POST' && path === '/push/unsubscribe') return handleUnsubscribe(request, makePushRepo());
   if (m !== 'GET' && m !== 'HEAD') return json({ error: 'method_not_allowed' }, 405, { 'cache-control': 'no-store' });
 
   if (path === '/health') return handleHealth(makeRepo());
+  if (path === '/admin/reports') return handleListReports(request, makeReportsRepo());
   if (path === '/stats') return handleStats(request, makeImpactRepo());
   if (path === '/alerts') return handleAlerts(request, makeAlertsRepo());
   if (path === '/push/key') return handlePushKey();

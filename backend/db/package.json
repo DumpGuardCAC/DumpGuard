@@ -1,0 +1,13 @@
+{
+  "name": "dumpguard-db",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "migrate": "node migrate.mjs",
+    "seed": "node seed.mjs",
+    "publish": "node publish.mjs"
+  },
+  "dependencies": {
+    "pg": "^8.23.1"
+  }
+}

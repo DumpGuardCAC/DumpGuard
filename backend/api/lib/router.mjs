@@ -2,6 +2,7 @@
 import { readFileSync } from 'node:fs';
 import { handleSchedule } from './schedule.mjs';
 import { handleItems, handleItem } from './items.mjs';
+import { handleSearch } from './search.mjs';
 import { handleTowns, handleFacilities, handleWoodbridgeStreets, buildStreetLookup, handleHealth } from './places.mjs';
 import { handleBulkRequest, handlePurge } from './bulk.mjs';
 import { makeRepo, makeBulkRepo } from './repo.mjs';
@@ -38,6 +39,7 @@ async function route(request) {
   if (path === '/meta') return jsonWithEtag(request, { check_with_town: CHECK_WITH_TOWN, bulk_demo_notice: BULK_DEMO_NOTICE });
   if (path === '/towns') return handleTowns(request, makeRepo());
   if (path === '/facilities') return handleFacilities(request, makeRepo());
+  if (path === '/search') return handleSearch(request, makeRepo());
   if (path === '/items') return handleItems(request, makeRepo());
   if (path === '/woodbridge/streets') return handleWoodbridgeStreets(request, streets());
   if ((seg = path.match(/^\/items\/([^/]+)$/))) return handleItem(request, decodeURIComponent(seg[1]), makeRepo());

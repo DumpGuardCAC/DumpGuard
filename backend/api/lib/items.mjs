@@ -46,7 +46,7 @@ function levelOf(chain, region) {
   return 'county';
 }
 
-async function chainFor(repo, regionId) {
+export async function chainFor(repo, regionId) {
   if (!regionId) return { chain: ['nj'], region: null };
   const region = await repo.region(regionId);
   if (!region) return { chain: null, region: null };

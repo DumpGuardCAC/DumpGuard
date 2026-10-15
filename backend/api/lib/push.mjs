@@ -119,25 +119,29 @@ const STREAM_NAME = {
   es: { trash: 'basura', recycling: 'reciclaje', bulk: 'objetos grandes', yard: 'desechos de jardín' },
 };
 
-export function reminderText(lang, townName, streams) {
+export function reminderText(lang, townName, streams, { moved = false, announcement = '' } = {}) {
   const names = streams.map((s) => STREAM_NAME[lang][s]);
   const list = names.length > 1 ? `${names.slice(0, -1).join(', ')} ${lang === 'es' ? 'y' : 'and'} ${names.at(-1)}` : names[0];
+  const shifted = moved ? (lang === 'es' ? ' Esta fecha cambió por un feriado.' : ' This date moved because of a holiday.') : '';
+  const extra = announcement ? ` ${announcement}` : '';
   return lang === 'es'
-    ? { title: `Mañana: ${list}`, body: `Saque lo de ${list} esta noche. ${townName}. Confirme con su municipio si hay cambios por feriado.` }
-    : { title: `Tomorrow: ${list}`, body: `Set out your ${list} tonight. ${townName}. Double check with your town for holiday changes.` };
+    ? { title: `Mañana: ${list}`, body: `Saque lo de ${list} esta noche. ${townName}.${shifted}${extra} Confirme con su municipio si hay cambios.` }
+    : { title: `Tomorrow: ${list}`, body: `Set out your ${list} tonight. ${townName}.${shifted}${extra} Double check with your town for changes.` };
 }
 
-// Which of a subscription's streams have a pickup on `date`?
-export function streamsOn(rows, sub, date) {
+// What is picked up on `date` for this subscription: [{ stream, moved, from }]
+export function pickupsOn(rows, sub, date) {
   const keys = new Set(sub.area_keys);
-  const found = new Set();
+  const found = new Map();
   for (const r of rows) {
     if (r.area_key && !keys.has(r.area_key)) continue;
     if (!sub.streams.includes(r.stream)) continue;
-    if (occurrences(r, date, date).length) found.add(r.stream);
+    const o = occurrences(r, date, date)[0];
+    if (o && !found.has(r.stream)) found.set(r.stream, { stream: r.stream, moved: !!o.moved, from: o.from ?? null });
   }
-  return STREAMS.filter((s) => found.has(s));
+  return STREAMS.filter((s) => found.has(s)).map((s) => found.get(s));
 }
+export const streamsOn = (rows, sub, date) => pickupsOn(rows, sub, date).map((p) => p.stream);
 
 // send(sub, payload) -> resolves, or rejects with { statusCode }. Called once per due subscription.
 export async function handleReminders(request, repo, send, { secret = process.env.CRON_SECRET, now = new Date() } = {}) {
@@ -149,11 +153,14 @@ export async function handleReminders(request, repo, send, { secret = process.en
   const stats = { checked: subs.length, sent: 0, skipped: 0, removed: 0, failed: 0 };
   for (const sub of subs) {
     if (!cache.has(sub.region_id)) cache.set(sub.region_id, await repo.schedulesForTown(sub.region_id));
-    const streams = streamsOn(cache.get(sub.region_id), sub, tomorrow);
-    if (streams.length === 0) { stats.skipped++; continue; }
+    const pickups = pickupsOn(cache.get(sub.region_id), sub, tomorrow);
+    if (pickups.length === 0) { stats.skipped++; continue; }
     const townName = (await repo.townName(sub.region_id)) ?? sub.region_id;
+    const notes = repo.activeAnnouncements ? await repo.activeAnnouncements(sub.region_id, tomorrow) : [];
+    const announcement = notes[0] ? (sub.lang === 'es' && notes[0].message_es ? notes[0].message_es : notes[0].message_en) : '';
     try {
-      await send(sub, JSON.stringify({ ...reminderText(sub.lang, townName, streams), date: tomorrow, town: sub.region_id }));
+      const text = reminderText(sub.lang, townName, pickups.map((p) => p.stream), { moved: pickups.some((p) => p.moved), announcement });
+      await send(sub, JSON.stringify({ ...text, date: tomorrow, town: sub.region_id }));
       await repo.markSent(sub.id, today);
       stats.sent++;
     } catch (err) {

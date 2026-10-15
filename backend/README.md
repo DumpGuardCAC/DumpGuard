@@ -17,6 +17,8 @@
 | `GET /facilities` | `?town=` `?zip=` or `?lat=&lng=` (all sites, nearest first), optional `?material=` `?radius_km=`. Each site has `open_now`, `next_open`, `distance_km` |
 | `GET /woodbridge/streets?q=` | street (optionally with house number) to pickup-zone key for `?area=zone:...` |
 | `POST /bulk-request` | DEMO only, 5 per hour per hashed IP, 90-day retention. Response includes `notice`: "Currently, bulk pickup is demo until permission is acquired from townships" (the app must show it) |
+| `GET /alerts` | `?town=` `?area=` (repeat) `?days=`: active announcements plus holiday shifts already in the verified schedule. Without `area`, shifts for every section of the town come back |
+| `POST/DELETE /admin/alerts` | Bearer `ADMIN_TOKEN` (16+ chars; unset disables it). Weather cancellations and similar, 60 days max; included in push reminders |
 | `GET /push/key` | public VAPID key for `pushManager.subscribe` |
 | `POST /push/subscribe` | `{subscription, town, areas?, streams?, lang?}`: nightly reminder the evening before a pickup (6 pm Eastern). Validated against the town's real schedule |
 | `POST /push/unsubscribe` | `{endpoint}` |

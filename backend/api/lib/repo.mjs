@@ -154,6 +154,7 @@ export function makePushRepo(db = getPool()) {
   return {
     ...makeRepo(db),
     ...makeBulkRepo(db),
+    ...announcementMethods(db),
     async townName(id) {
       const { rows } = await db.query(`SELECT name FROM regions WHERE id = $1`, [id]);
       return rows[0]?.name ?? null;
@@ -186,4 +187,35 @@ export function makePushRepo(db = getPool()) {
       await db.query(`UPDATE push_subscriptions SET failures = failures + 1 WHERE id = $1`, [id]);
     },
   };
+}
+
+function announcementMethods(db) {
+  return {
+    async activeAnnouncements(townId, date) {
+      const { rows } = await db.query(
+        `SELECT id, region_id, message_en, message_es, source_url, to_char(starts_on, 'YYYY-MM-DD') AS starts_on,
+                to_char(ends_on, 'YYYY-MM-DD') AS ends_on
+           FROM announcements
+          WHERE (region_id IS NULL OR region_id = $1) AND starts_on <= $2::date AND ends_on >= $2::date
+          ORDER BY created_at DESC LIMIT 5`,
+        [townId, date],
+      );
+      return rows;
+    },
+    async createAnnouncement({ regionId, messageEn, messageEs, sourceUrl, startsOn, endsOn }) {
+      const { rows } = await db.query(
+        `INSERT INTO announcements (region_id, message_en, message_es, source_url, starts_on, ends_on)
+         VALUES ($1,$2,$3,$4,$5,$6) RETURNING id`,
+        [regionId, messageEn, messageEs, sourceUrl, startsOn, endsOn],
+      );
+      return rows[0].id;
+    },
+    async deleteAnnouncement(id) {
+      await db.query(`DELETE FROM announcements WHERE id = $1`, [id]);
+    },
+  };
+}
+
+export function makeAlertsRepo(db = getPool()) {
+  return { ...makeRepo(db), ...makeBulkRepo(db), ...announcementMethods(db) };
 }

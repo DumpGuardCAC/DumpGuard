@@ -6,3 +6,7 @@ __pycache__/
 *.pyc
 *.log
 .claude/
+node_modules/
+.vercel/
+.env
+.env.local

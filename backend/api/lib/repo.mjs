@@ -148,3 +148,42 @@ export function makeBulkRepo(db = getPool()) {
     },
   };
 }
+
+// ---- push reminders ----
+export function makePushRepo(db = getPool()) {
+  return {
+    ...makeRepo(db),
+    ...makeBulkRepo(db),
+    async townName(id) {
+      const { rows } = await db.query(`SELECT name FROM regions WHERE id = $1`, [id]);
+      return rows[0]?.name ?? null;
+    },
+    async upsert({ endpoint, p256dh, auth, regionId, areaKeys, streams, lang }) {
+      await db.query(
+        `INSERT INTO push_subscriptions (endpoint, p256dh, auth, region_id, area_keys, streams, lang)
+         VALUES ($1,$2,$3,$4,$5,$6::stream_t[],$7)
+         ON CONFLICT (endpoint) DO UPDATE SET p256dh = $2, auth = $3, region_id = $4, area_keys = $5, streams = $6::stream_t[],
+           lang = $7, failures = 0, expires_at = now() + interval '1 year'`,
+        [endpoint, p256dh, auth, regionId, areaKeys, streams, lang],
+      );
+    },
+    async remove(endpoint) {
+      await db.query(`DELETE FROM push_subscriptions WHERE endpoint = $1`, [endpoint]);
+    },
+    async dueSubscriptions(today) {
+      const { rows } = await db.query(
+        `SELECT s.id, s.endpoint, s.p256dh, s.auth, s.region_id, s.area_keys, s.streams::text[] AS streams, s.lang
+           FROM push_subscriptions s JOIN regions g ON g.id = s.region_id AND g.published
+          WHERE (s.last_sent_on IS NULL OR s.last_sent_on < $1::date) AND s.expires_at > now() AND s.failures < 5`,
+        [today],
+      );
+      return rows;
+    },
+    async markSent(id, today) {
+      await db.query(`UPDATE push_subscriptions SET last_sent_on = $2::date, failures = 0 WHERE id = $1`, [id, today]);
+    },
+    async fail(id) {
+      await db.query(`UPDATE push_subscriptions SET failures = failures + 1 WHERE id = $1`, [id]);
+    },
+  };
+}

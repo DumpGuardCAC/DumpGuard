@@ -8,6 +8,7 @@
 // user has chosen, and never guesses.
 import { occurrences, addDays } from './occurrences.mjs';
 import { buildIcs } from './ics.mjs';
+import { localParts } from './hours.mjs';
 
 const json = (body, status = 200, extra = {}) =>
   new Response(JSON.stringify(body), {
@@ -15,7 +16,8 @@ const json = (body, status = 200, extra = {}) =>
     headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, s-maxage=3600', ...extra },
   });
 
-const todayIso = () => new Date().toISOString().slice(0, 10);
+// New Jersey calendar date, not UTC: after 8 pm Eastern UTC is already tomorrow.
+const todayIso = () => localParts(new Date()).date;
 
 export async function handleSchedule(request, zip, repo, { today = todayIso(), now = new Date() } = {}) {
   if (!/^\d{5}$/.test(zip ?? '')) return json({ error: 'invalid_zip', message: 'ZIP must be 5 digits.' }, 400);

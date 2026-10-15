@@ -24,6 +24,9 @@
 | `POST /push/subscribe` | `{subscription, town, areas?, streams?, lang?}`: nightly reminder the evening before a pickup (6 pm Eastern). Validated against the town's real schedule |
 | `POST /events` | `{outcome: recycling\|trash\|special_dropoff, material?, town?}`: one item sorted. Stores only a daily counter, no user/device/IP. 120/hour per client |
 | `GET /stats` | `?town=`: items sorted, by outcome, and `estimated_pounds_diverted` (an estimate from average item weights; say so in the UI) |
+| `POST /reports` | `{kind: item_rule\|schedule\|facility\|scan\|other, message, item?, town?, facility?}`: "report a wrong answer". No contact info stored. 10/hour per client |
+| `GET /admin/reports` | Bearer `ADMIN_TOKEN`. `?status=open\|resolved\|dismissed`: the review queue |
+| `POST /admin/reports/resolve` | Bearer `ADMIN_TOKEN`. `{id, status: resolved\|dismissed}`. A report never edits a rule; check the primary source, fix the data build, then resolve |
 | `POST /push/unsubscribe` | `{endpoint}` |
 | `GET /cron/reminders` | Bearer `CRON_SECRET`; Vercel cron daily 22:00 UTC |
 | `GET /cron/purge` | Bearer `CRON_SECRET`; Vercel cron daily 05:00 UTC |

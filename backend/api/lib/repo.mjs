@@ -242,3 +242,30 @@ export function makeImpactRepo(db = getPool()) {
     },
   };
 }
+
+// ---- wrong-answer reports ----
+export function makeReportsRepo(db = getPool()) {
+  const bulk = makeBulkRepo(db);
+  return {
+    hit: bulk.hit,
+    isPublishedTown: bulk.isPublishedTown,
+    async insertReport({ kind, itemId, regionId, facilityKey, message }) {
+      await db.query(
+        `INSERT INTO reports (kind, item_id, region_id, facility_key, message) VALUES ($1, $2, $3, $4, $5)`,
+        [kind, itemId, regionId, facilityKey, message],
+      );
+    },
+    async listReports(status) {
+      const { rows } = await db.query(
+        `SELECT id, kind, item_id, region_id, facility_key, message, status, created_at, resolved_at
+           FROM reports WHERE status = $1 ORDER BY created_at LIMIT 200`,
+        [status],
+      );
+      return rows;
+    },
+    async setReportStatus(id, status) {
+      const { rowCount } = await db.query(`UPDATE reports SET status = $2, resolved_at = now() WHERE id = $1`, [id, status]);
+      return rowCount > 0;
+    },
+  };
+}

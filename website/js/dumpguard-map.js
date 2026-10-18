@@ -134,7 +134,7 @@
     box.appendChild(h('p', {}, r.location_text));
     box.appendChild(h('p', {}, r.description));
     if (r.notes) box.appendChild(h('p', { class: 'sm' }, r.notes));
-    box.appendChild(h('p', { class: 'sm' }, 'Filed ' + new Date(r.created_at).toLocaleString('en-US') + (r.lat == null ? '. No map point.' : '')));
+    box.appendChild(h('p', { class: 'sm' }, 'Filed ' + new Date(r.created_at).toLocaleString(DG.lang() === 'es' ? 'es-US' : 'en-US') + (r.lat == null ? '. No map point.' : '')));
     if (r.has_photo) {
       var img = h('img', { alt: 'Report photo', style: 'max-width:100%;border-radius:10px;display:none' });
       var msg = h('p', { class: 'sm' }, 'Loading photo...');

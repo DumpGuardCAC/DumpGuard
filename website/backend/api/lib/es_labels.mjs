@@ -47,7 +47,7 @@ function street(s) {
   for (const [re, es] of PLACES) if (re.test(s)) return es;
   if (s === 'locate street in Green Booklet 2026 alphabetical list') return 'busque su calle en la lista alfabética del Folleto Verde 2026';
   const d = /^2026 dates: (.*)$/.exec(s);
-  if (d) return 'fechas de 2026: ' + d[1].replace(/b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)b/g, (m) => MES[m]);
+  if (d) return 'fechas de 2026: ' + d[1].replace(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/g, (m) => MES[m]);
   return s;
 }
 

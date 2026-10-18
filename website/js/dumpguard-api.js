@@ -311,11 +311,12 @@
     var picks = {};
     chosen.forEach(function (k) { picks[k.indexOf(':') > -1 ? k.split(':')[0] : 'area'] = k; });
     b.groups.forEach(function (g) {
-      var sel = h('select', { 'aria-label': g }, h('option', { value: '' }, t('choose')));
+      var sel = h('select', { 'aria-label': STREAM(g) }, h('option', { value: '' }, t('choose')));
+      if (b.groups.length > 1) box.appendChild(h('label', { class: 'pick-label' }, STREAM(g)));
       b.areas.filter(function (a) { return a.group === g; }).forEach(function (a) {
         var label = (state.lang === 'es' ? a.label_es : a.label) || a.label;
         var desc = (state.lang === 'es' ? a.description_es : a.description) || '';
-        sel.appendChild(h('option', { value: a.key }, desc ? label + ': ' + desc : label));
+        sel.appendChild(h('option', { value: a.key }, desc ? label + ': ' + (desc.length > 60 ? desc.slice(0, 57) + '...' : desc) : label));
       });
       sel.value = picks[g] || '';
       sel.addEventListener('change', function () {

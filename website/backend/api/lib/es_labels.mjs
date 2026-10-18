@@ -2,6 +2,8 @@
 // Machine-drafted and unreviewed, like the other Spanish text. Anything not covered comes back unchanged (English),
 // and the test below fails the build if a label in towns.json is missing, so gaps cannot ship quietly.
 
+import { EXTRA } from './es_labels_extra.mjs';
+
 const WORDS = [
   [/^Garbage (Monday|Tuesday|Wednesday|Thursday|Friday): municipal garbage district collected on (\w+)$/, (d) => `Basura ${DAYS[d[1]]}: distrito municipal con recogida los ${DAYS[d[1]]}`],
   [/^I do not know my garbage day$/, () => 'No sé mi día de basura'],
@@ -60,7 +62,7 @@ const REASONS = [
 /** Spanish for a label, or the original text when no rule matches. */
 export function toEs(text) {
   if (!text) return text;
-  for (const [re, f] of [...WORDS, ...REASONS]) {
+  for (const [re, f] of [...WORDS, ...REASONS, ...EXTRA]) {
     const m = re.exec(text);
     if (m) return typeof f === 'function' ? f(m) : f;
   }

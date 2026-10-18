@@ -1,0 +1,157 @@
+{
+  "loch-arbour": {
+    "verified": true,
+    "corrections": {
+      "dpw": {
+        "address": null
+      },
+      "notes": "Village 2026 bulk Mondays listed on locharbournj.us/trash-recycling. Sanitation provided via Borough of Deal (contacts page: 732-531-1454). Deal refuse page was not retrievable (HTTP 500); Loch Arbour pages do not state weekly trash/recycling weekdays, so those streams remain absent. dpw.address cleared because contacts list sanitation location as Borough of Deal only, not 550 Main Street."
+    },
+    "issues": [
+      "Weekly curbside trash and recycling weekdays are not published on locharbournj.us; do not infer from Borough of Deal schedules.",
+      "Linked Deal 'Refuse & Recyclable Materials Disposal Information' page returned HTTP 500 during verification.",
+      "dpw.address previously used Village Hall (550 Main Street); official contacts page assigns sanitation to Borough of Deal without a street address on the Loch Arbour site."
+    ],
+    "confirmed": [
+      "ZIP 07711 on official contacts/footer (550 Main Street, Loch Arbour, NJ 07711).",
+      "2026 bulk collection dates (all Mondays): 2026-01-26, 2026-03-09, 2026-05-11, 2026-07-13, 2026-09-14, 2026-11-16 on https://www.locharbournj.us/trash-recycling.",
+      "Sanitation contact: Borough of Deal, telephone 732-531-1454 on departments-services contacts page.",
+      "Village municipal office: 550 Main Street; phone 732-531-4740 (footer on official pages).",
+      "No trash/recycling weekday schedules on Loch Arbour primary pages reviewed."
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.locharbournj.us/",
+        "status": "ok",
+        "role": "official_site"
+      },
+      {
+        "url": "https://www.locharbournj.us/trash-recycling",
+        "status": "ok",
+        "role": "bulk_schedule_source"
+      },
+      {
+        "url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts",
+        "status": "ok",
+        "role": "dpw_sanitation_zip_source"
+      },
+      {
+        "url": "https://dealborough.com/departments/public-works/refuse-recyclable-materials-disposal-information/",
+        "status": "error_500",
+        "role": "deal_refuse_link_from_loch_arbour_contacts_not_used_for_weekdays"
+      }
+    ]
+  },
+  "matawan": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "Borough recycling landing page still states boroughwide TRASH Monday and RECYCLING Thursday with RTS contact (1-833-787-4636); superseded by 2026 contract PDF (Jersey Specialized Hauling, zoned days effective May 11, 2026).",
+      "Schedule entries apply from contract effective date May 11, 2026; pre-transition days not documented on primary PDF reviewed."
+    ],
+    "confirmed": [
+      "Official 2026 contract PDF: Jersey Specialized Hauling, Inc.; effective May 11, 2026; pickup concerns 732-251-5747.",
+      "Zone trash/recycling weekdays from PDF: Zone 1–2 Friday trash / Thursday recycling; Zone 3 Monday trash / Wednesday recycling; Zone 4 Tuesday trash / Wednesday recycling.",
+      "Alternating White Week (commingled) and Blue Week (paper/cardboard) per PDF.",
+      "2026 brush/yard waste dates and leaf pickup weeks match PDF (Areas 1–4).",
+      "Holiday delay rule and closed holidays list match PDF.",
+      "ZIP 07747 and coordinator Grace Rainforth 732-566-3898 ext. 132 on recycling landing page.",
+      "Public Works / borough mailing: 201 Broad Street, Matawan, NJ 07747; 732-566-3898.",
+      "Matawan Recycling Center: 62 Main Street; hours Mon–Fri 7:00 a.m.–7:00 p.m., Sat–Sun 9:00 a.m.–3:00 p.m.; access card via appointment 732-566-3898 x600."
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.matawanborough.com/",
+        "status": "ok",
+        "role": "official_site"
+      },
+      {
+        "url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/",
+        "status": "ok",
+        "role": "outdated_summary_and_pdf_links"
+      },
+      {
+        "url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Public%20Works/",
+        "status": "ok",
+        "role": "dpw_source"
+      },
+      {
+        "url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "status": "ok",
+        "role": "primary_schedule_pdf"
+      },
+      {
+        "url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/Recycling%20Center/",
+        "status": "ok",
+        "role": "dropoff_source"
+      }
+    ]
+  },
+  "middletown": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "Current curbside garbage and recycling pages do not publish weekday or zone collection days in plain text; they direct residents to Recycle Coach (and zone lookup via address).",
+      "Archived 2017 CivicAlerts (AID=394, AID=401) list North/South zone weekdays but are not current primary schedule pages; must not be restored into towns_research.json.",
+      "Fall 2026 curbside leaf schedule not yet posted on collection page ('coming soon').",
+      "Staff directory page reviewed lists 07748 for DPW address only; additional township ZIP codes not enumerated on pages fetched."
+    ],
+    "confirmed": [
+      "Garbage page: Recycle Coach for zone lookup; cart rules; no collection New Year's Day, Thanksgiving Day, Christmas Day; next scheduled garbage day after holidays.",
+      "Recycling page: Recycle Coach; single-stream in blue cart; same three holidays with Saturday catch-up if recycling falls on those dates.",
+      "Bulk scheduling (Sept 2025 newsflash): register by 3:00 p.m. Sun–Thu during scheduled recycling week; pickup within 48 hours; one request per household per recycling week; up to 4 items, 75 lb max, under 6 ft; contractor IWS.",
+      "Brush/leaf: spring brush and fall leaves; Fall 2026 leaf schedule not yet posted.",
+      "Middletown Recycling Center: 52 Kanes Lane, 07748; Thu–Mon 8:30 a.m.–4:30 p.m.; closed Tue–Wed and listed major holidays.",
+      "Train Station satellite center: main parking lot off Middletown-Lincroft Road (Church Street); 24/7 for listed commingled/paper materials.",
+      "DPW: 52 Kanes Lane, 07748; 732-615-2090 on staff directory.",
+      "towns_research.json correctly omits 2017 weekday trash/recycling entries; only bulk, yard, holiday rules, and dropoff remain."
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.middletownnj.org/",
+        "status": "ok",
+        "role": "official_site"
+      },
+      {
+        "url": "https://middletownnj.org/Directory.aspx?did=31",
+        "status": "ok",
+        "role": "dpw_zip_source"
+      },
+      {
+        "url": "https://www.middletownnj.org/571/Curbside-Garbage-Collection",
+        "status": "ok",
+        "role": "garbage_rules_recycle_coach_only"
+      },
+      {
+        "url": "https://www.middletownnj.org/583/Curbside-Recycling-Collection",
+        "status": "ok",
+        "role": "recycling_rules_recycle_coach_only"
+      },
+      {
+        "url": "https://www.middletownnj.org/collection",
+        "status": "ok",
+        "role": "brush_leaf"
+      },
+      {
+        "url": "https://middletownnj.org/m/newsflash/Home/Detail/1657",
+        "status": "ok",
+        "role": "bulk_scheduling_2025"
+      },
+      {
+        "url": "https://www.middletownnj.org/bulk",
+        "status": "ok",
+        "role": "bulk_accepted_items"
+      },
+      {
+        "url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
+        "status": "ok",
+        "role": "dropoff_source"
+      },
+      {
+        "url": "https://www.middletownnj.org/CivicAlerts.aspx?AID=394&ARC=639",
+        "status": "ok_archived_2017",
+        "role": "excluded_weekday_source_not_current"
+      }
+    ]
+  }
+}

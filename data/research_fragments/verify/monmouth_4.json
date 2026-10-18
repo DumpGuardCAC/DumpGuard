@@ -1,0 +1,142 @@
+{
+  "keansburg": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "Municipal Public Works page contradicts itself: summary line allows two 33-gallon cans plus one bulk item; FAQ #2 allows TWO 30-gallon cans (50 lb max each). File notes both; no single authoritative gallon size.",
+      "FAQ #11 directs callers to 732-787-0215 ext. 450; department header lists Superintendent/Recycling Coordinator at ext. 451.",
+      "Leaf and branch pickup months are referenced (FAQ #7) but the Leaf and Branch Pick Up schedule document was not present on the fetched Public Works page.",
+      "Garbage contractor name is not published on the municipal page (hauler correctly null)."
+    ],
+    "confirmed": [
+      "official_site https://www.keansburgnj.gov/ (fetched 2026-10-18)",
+      "zip 07734 (site footer on contact and home pages)",
+      "dpw.phone 732-787-0215 Ext. 451 and dpw.address 40 Frazee Place, Keansburg, NJ 07734",
+      "Trash Mon/Thu: south of Church St, entire Church St, east of Main St; Tue/Fri: north of Church and west of Main, entire Main St up to Church St",
+      "Recycling: townwide every Wednesday (co-mingled)",
+      "Bulk: one item per household garbage pickup day; furniture OK; construction materials excluded",
+      "Holiday: no solid waste or recycling on Thanksgiving, Christmas, New Year's Day",
+      "Borough Yard hours (winter/summer) and Recycling Center hours match dropoff entries",
+      "Bulk not accepted at Recycling Center; metals/appliances/electronics at Borough Yard with fees noted on page"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.keansburgnj.gov/",
+        "status": "ok",
+        "type": "official"
+      },
+      {
+        "url": "https://www.keansburgnj.gov/contact",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://www.keansburgnj.gov/departments/public-works/",
+        "status": "ok",
+        "type": "source_url"
+      }
+    ]
+  },
+  "keyport": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "2026 map PDF references bulk collection on the municipal recycling calendar but does not list specific bulk pickup days in extracted text; file week_pattern for bulk is not present (correct omission).",
+      "Linked '2026 Leaf and Branch pickup (PDF)' from recycling page returned 404 at https://keyportonline.com/wp-content/uploads/2026/04/2026_Leaf_and_Branch_pickup.pdf; leaf/branch dates verified from Public Works page instead.",
+      "PDF OCR is partially garbled; 2026 recycling dates in file match readable PDF content and recycling web page for zones 1–4."
+    ],
+    "confirmed": [
+      "official_site https://keyportonline.com/",
+      "zips: 07735 (Borough Hall/mailing on about page); 07732 (DPW physical address 120 Francis Street)",
+      "dpw.phone 732-739-5428 and dpw.address 120 Francis Street, Keyport, NJ 07732",
+      "Trash: Zone 1 Monday, Zone 2 Tuesday, Zone 3 Thursday, Zone 4 Friday (weekly)",
+      "Recycling: every other Wednesday; Zone 1&2 and Zone 3&4 date lists match 2026_Recycling_Schedule_and_Map.pdf",
+      "Electronic/metal curbside: call 732-739-5136 before placing at curb; AC/refrigeration permit from Municipal Clerk",
+      "Yard leaf/branch 2026 section dates match Public Works page (Veterans Day Nov 11 moved to Nov 12 for sections 1&2)",
+      "dropoff Keyport Recycling Center, Florence Avenue; Saturdays 9:00 a.m.–12:00 noon; Keyport residents only",
+      "Container limits: 50 gal / 50 lb; single-family 3 garbage cans, multifamily 6, commercial 4",
+      "No pickup New Year's Day, Christmas Day, Thanksgiving Day (following day when weather permits)"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://keyportonline.com/about/",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://keyportonline.com/departments/public-works/",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://keyportonline.com/government/recycling/",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Leaf_and_Branch_pickup.pdf",
+        "status": "404",
+        "type": "official_linked_pdf"
+      }
+    ]
+  },
+  "little-silver": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "January 2026 Recycling Update (DocumentCenter/View/888) still instructs residents to arrange private disposal for TVs/computers; August 28, 2026 Civic Alert (AID=131) adds yard drop-off for electronics in a designated green container. File notes correctly flag alert as newer.",
+      "dpw.phone remains null on Public Works page (only Borough Hall 732-842-2400); recycling coordinator contact appears on alert and 2026 Recycling Update, not as DPW direct line.",
+      "dropoff.residents_only true is supported by 2026 Recycling Update PDF linked from Recycling/Garbage page, not by the dropoff source_url alone (Recycling-Garbage page omits residents-only wording)."
+    ],
+    "confirmed": [
+      "official_site https://www.littlesilvernj.gov/",
+      "zip 07739 (Public Works physical address 22 Fairview Avenue)",
+      "dpw.address 22 Fairview Avenue, Little Silver, NJ 07739",
+      "Trash Zone 1 Mon/Thu; Zone 2 Tue/Fri (DocumentCenter/View/886, 2026)",
+      "Recycling every other Wednesday by zone; 2026 date lists match DocumentCenter/View/886",
+      "Bulk: second trash day of week (Thu Zone 1, Fri Zone 2); max 3 items; furniture/carpeting; no appliances/electronics/construction (Recycling-Garbage page)",
+      "Brush Jan–Oct continuous curbside; 4 ft / 12 in max; no grass; no bamboo (DocumentCenter/View/887)",
+      "Leaves Nov 2–Dec 27 curbside; do not mix brush and leaves (DocumentCenter/View/887)",
+      "Electronics drop-off at Public Works Yard only, not curbside; items list matches Civic Alert AID=131",
+      "Drop-off hours Mon–Fri 8–2, Sat 8–12; closed Borough holidays (Recycling-Garbage and View/888)",
+      "No trash/recycling curbside Thanksgiving, Christmas, New Year's Day (View/886, View/888)"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.littlesilvernj.gov/199/Public-Works",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://www.littlesilvernj.gov/235/Recycling-Garbage",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://www.littlesilvernj.gov/DocumentCenter/View/887",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://www.littlesilvernj.gov/CivicAlerts.aspx?AID=131",
+        "status": "ok",
+        "type": "source_url"
+      },
+      {
+        "url": "https://www.littlesilvernj.gov/DocumentCenter/View/888",
+        "status": "ok",
+        "type": "official_linked_pdf"
+      }
+    ]
+  }
+}

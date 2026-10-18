@@ -1,0 +1,310 @@
+{
+  "loch-arbour": {
+    "name": "Loch Arbour",
+    "county": "monmouth",
+    "official_site": "https://www.locharbournj.us/",
+    "zips": [
+      {
+        "zip": "07711",
+        "shared_with": [],
+        "source_url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts"
+      }
+    ],
+    "dpw": {
+      "phone": "732-531-1454",
+      "address": "550 Main Street, Loch Arbour, NJ 07711",
+      "source_url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts",
+      "hauler": "Borough of Deal (shared sanitation service; contact Borough of Deal at 732-531-1454)"
+    },
+    "schedules": [
+      {
+        "stream": "bulk",
+        "weekday": "Monday",
+        "week_pattern": "2026-01-26",
+        "area_note": null,
+        "source_url": "https://www.locharbournj.us/trash-recycling",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "Monday",
+        "week_pattern": "2026-03-09",
+        "area_note": null,
+        "source_url": "https://www.locharbournj.us/trash-recycling",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "Monday",
+        "week_pattern": "2026-05-11",
+        "area_note": null,
+        "source_url": "https://www.locharbournj.us/trash-recycling",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "Monday",
+        "week_pattern": "2026-07-13",
+        "area_note": null,
+        "source_url": "https://www.locharbournj.us/trash-recycling",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "Monday",
+        "week_pattern": "2026-09-14",
+        "area_note": null,
+        "source_url": "https://www.locharbournj.us/trash-recycling",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "Monday",
+        "week_pattern": "2026-11-16",
+        "area_note": null,
+        "source_url": "https://www.locharbournj.us/trash-recycling",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [],
+    "status": "partial",
+    "notes": "Village site lists 2026 bulk collection dates only. Sanitation is provided through a shared-services agreement with the Borough of Deal; the linked Deal refuse/recycling disposal page was not retrievable during research. Weekly trash and recycling curbside days are not published on locharbournj.us."
+  },
+  "matawan": {
+    "name": "Matawan",
+    "county": "monmouth",
+    "official_site": "https://www.matawanborough.com/",
+    "zips": [
+      {
+        "zip": "07747",
+        "shared_with": [],
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/"
+      }
+    ],
+    "dpw": {
+      "phone": "732-566-3898",
+      "address": "201 Broad Street, Matawan, NJ 07747",
+      "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Public%20Works/",
+      "hauler": "Jersey Specialized Hauling, Inc. (732-251-5747 for pickup concerns; contract effective May 11, 2026)"
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "Friday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 1 (Route 34 South). Streets (Area 1): Center Ave, Claire Ct, Eisenhower Ct, Freneau Ave (Rt 79), Lola Ln, Macarthur Dr, Magnolia Ct, Main St (Rt 79), Mill Rd, Olden Ln, Onyx Pl, Overbrook Ln, Poet Dr, Ryers Ln, Sapphire Ln. Effective May 11, 2026.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "week_pattern": "weekly; alternating White Week (commingled) and Blue Week (mixed paper, newspaper, cardboard)",
+        "area_note": "Zone 1 (Route 34 South). Streets (Area 1): Center Ave, Claire Ct, Eisenhower Ct, Freneau Ave (Rt 79), Lola Ln, Macarthur Dr, Magnolia Ct, Main St (Rt 79), Mill Rd, Olden Ln, Onyx Pl, Overbrook Ln, Poet Dr, Ryers Ln, Sapphire Ln. Effective May 11, 2026.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Friday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 2 (Route 34 South). Streets (Area 2): Annmar Dr, Broad St, Crescent Pl, Crown Pl, Danemar Dr, Edgemere Dr, Elizabeth Dr, Elm Pl, Fierro Ave, Kimberly Dr, Kourtney Ln, Lakeland Dr, Lakeside Dr, Main St (Rt 79). Effective May 11, 2026.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "week_pattern": "weekly; alternating White Week (commingled) and Blue Week (mixed paper, newspaper, cardboard)",
+        "area_note": "Zone 2 (Route 34 South). Streets (Area 2): Annmar Dr, Broad St, Crescent Pl, Crown Pl, Danemar Dr, Edgemere Dr, Elizabeth Dr, Elm Pl, Fierro Ave, Kimberly Dr, Kourtney Ln, Lakeland Dr, Lakeside Dr, Main St (Rt 79). Effective May 11, 2026.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Monday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 3 (Route 34 North). Streets (Area 3): Atlantic Ave, Atlantic St, Beechwood Ter, Bellevue Ln, Boston Ln, Broad St, Center St, Christine Ct, Church St, Clinton St, Crestwood Rd, Dock St, Edgewater Dr, Fountain Ave, Franklin St, Harrel St, Highfield Ave, Hoyt St, Jackson St, Johnson Ave, Little St, Lower Main St, Maiden Ln. Effective May 11, 2026.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "weekly; alternating White Week (commingled) and Blue Week (mixed paper, newspaper, cardboard)",
+        "area_note": "Zone 3 & 4 (Route 34 North). Zone 3 streets (Area 3): Atlantic Ave, Atlantic St, Beechwood Ter, Bellevue Ln, Boston Ln, Broad St, Center St, Christine Ct, Church St, Clinton St, Crestwood Rd, Dock St, Edgewater Dr, Fountain Ave, Franklin St, Harrel St, Highfield Ave, Hoyt St, Jackson St, Johnson Ave, Little St, Lower Main St, Maiden Ln. Effective May 11, 2026.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 4 (Route 34 North). Streets (Area 4 index from borough 2026 contract map): Aberdeen Rd, Angelica Ct, Bank St, Cedar St, Chestnut Dr, Cliffwood Ave, Colonial Dr, Crest Cir, Cross Rd, Daniel Dr, Essie Dr, Fawn Dr, Forest Ave, Fredwood Pl, Grant St, Harding Blvd, High St, Highland Ave, Hillside Ave, Indian Trl, Ivy Ct, Liberty St, Little St, Marc Dr, Matawan Ave, Middlesex Rd, Mohawk Dr, Morristown Rd, Ned Dr, Oak St, Oak Knoll Dr, Oakland St, Olivia Ct, Ravine Dr, Robert St, Rustic Ln, Sarah Ct, Scenic Ln, Shainy Ln, Skylark Ct, Somerset Pl, State Route 79, Sutphin Ave, Texas Rd, Tina Pl, Vermont Ct, Victoria Ct, Villanova Pl, West Ct, William St, Wilson Ave, Miriam Dr, Monroe St (North of Rt 34), New Brunswick Ave (Route 516), Oak Ln, Schenck Ave, State Route 34 South, Sunset Ave, Taylor Rd, Weldon Rd, Woodland Ave, Ziegler Pl, Main St (Rt 79), Maple Ave, Matawan Green Ln, Mill Ln, Monroe St (South of Rt 34), North St, Northfield Rd, Orchard St, Overhill Rd, Park Ave, Prospect Pl, Rabbit Ln, South St, Spring St, State Route 34 North, Steamboat Aly, Stillwell St, Washington St, Water St, Westerly Pl, Wyckoff St, Sonia Ave, Sutton Dr, Union St, Washington Ave. Effective May 11, 2026.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "weekly; alternating White Week (commingled) and Blue Week (mixed paper, newspaper, cardboard)",
+        "area_note": "Zone 4 (Route 34 North). Same street index as Zone 4 trash (Area 4). Effective May 11, 2026.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "2026 boroughwide bundled brush and biodegradable paper-bag yard waste (Area 1: Mar 4, Apr 7, May 5, Jun 2, Jul 7, Aug 4, Sep 1; Area 2: Mar 11, Apr 14, May 12, Jun 9, Jul 14, Aug 11, Sep 8; Area 3: Mar 18, Apr 21, May 19, Jun 16, Jul 21, Aug 18, Sep 15; Area 4: Mar 25, Apr 28, May 26, Jun 23, Jul 28, Aug 25, Sep 24)",
+        "area_note": "Zones aligned with leaf collection Areas 1–4 per 2026 contract materials.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "2026 leaf pickup weeks (Area 4: Oct 12, Nov 9; Area 3: Oct 19, Nov 16; Area 2: Oct 26, Nov 30; Area 1: Nov 2, Dec 7)",
+        "area_note": "Leaf pickup for the week (2026) by Area 1–4.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "If pickup is missed due to a holiday or severe weather, remaining pickups that week move one day later. Holidays closed: New Years Day, Memorial Day, Labor Day, Thanksgiving Day, Christmas Day, New Years Day 2027.",
+        "area_note": null,
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Matawan Recycling Center",
+        "address": "62 Main Street, Matawan, NJ",
+        "hours": "Monday through Friday 7:00 a.m.–7:00 p.m.; Saturday and Sunday 9:00 a.m.–3:00 p.m.",
+        "residents_only": true,
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/Recycling%20Center/"
+      }
+    ],
+    "status": "complete",
+    "notes": "2026 hauler and zone schedule from borough PDF (effective May 11, 2026). Recycling coordinator: Grace Rainforth, 732-566-3898 ext. 132. Access card required for recycling center (appointment 732-566-3898 x600). Borough recycling landing page still lists prior Monday/Thursday schedule and RTS contact; superseded by 2026 contract PDF."
+  },
+  "middletown": {
+    "name": "Middletown Township",
+    "county": "monmouth",
+    "official_site": "https://www.middletownnj.org/",
+    "zips": [
+      {
+        "zip": "07748",
+        "shared_with": [],
+        "source_url": "https://middletownnj.org/Directory.aspx?did=31"
+      }
+    ],
+    "dpw": {
+      "phone": "732-615-2090",
+      "address": "52 Kanes Lane, Middletown, NJ 07748",
+      "source_url": "https://middletownnj.org/Directory.aspx?did=31",
+      "hauler": "Interstate Waste Services (IWS)"
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "Monday",
+        "week_pattern": "weekly",
+        "area_note": "North Zone = North of State Highway 35",
+        "source_url": "https://www.middletownnj.org/CivicAlerts.aspx?AID=394&ARC=639",
+        "source_date": "2017-11-25"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Thursday",
+        "week_pattern": "weekly",
+        "area_note": "North Zone = North of State Highway 35",
+        "source_url": "https://www.middletownnj.org/CivicAlerts.aspx?AID=394&ARC=639",
+        "source_date": "2017-11-25"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Tuesday",
+        "week_pattern": "weekly",
+        "area_note": "South Zone = South of State Highway 35",
+        "source_url": "https://www.middletownnj.org/CivicAlerts.aspx?AID=394&ARC=639",
+        "source_date": "2017-11-25"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Friday",
+        "week_pattern": "weekly",
+        "area_note": "South Zone = South of State Highway 35",
+        "source_url": "https://www.middletownnj.org/CivicAlerts.aspx?AID=394&ARC=639",
+        "source_date": "2017-11-25"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "every other Wednesday (alternating weeks by zone)",
+        "area_note": "North Zone = North of State Highway 35. Single-stream in Township-provided blue cart.",
+        "source_url": "https://www.middletownnj.org/CivicAlerts.aspx?AID=401&ARC=662",
+        "source_date": "2017-12-19"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "every other Wednesday (alternating weeks by zone; offset from North Zone)",
+        "area_note": "South Zone = South of State Highway 35. Single-stream in Township-provided blue cart.",
+        "source_url": "https://www.middletownnj.org/CivicAlerts.aspx?AID=401&ARC=662",
+        "source_date": "2017-12-19"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": "Register by 3:00 p.m. Sunday–Thursday during your scheduled recycling week for pickup within 48 hours; one bulk request per household per recycling week",
+        "area_note": "Township-wide; schedule tied to each address's recycling week. Up to 4 items, 75 lb max each, less than 6 ft long.",
+        "source_url": "https://middletownnj.org/m/newsflash/Home/Detail/1657",
+        "source_date": "2025-09-12"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "Curbside brush in spring and leaves in fall; Fall 2026 leaf schedule not yet posted",
+        "area_note": null,
+        "source_url": "https://www.middletownnj.org/collection",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "No garbage collection on New Year's Day, Thanksgiving Day, and Christmas Day; collected on next scheduled garbage collection day",
+        "area_note": null,
+        "source_url": "https://www.middletownnj.org/571/Curbside-Garbage-Collection",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "No recycling collection on New Year's Day, Thanksgiving Day, and Christmas Day; collected the following Saturday if scheduled on those dates",
+        "area_note": null,
+        "source_url": "https://www.middletownnj.org/583/Curbside-Recycling-Collection",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Middletown Recycling Center",
+        "address": "52 Kanes Lane, Middletown, NJ 07748",
+        "hours": "Thursday through Monday 8:30 a.m.–4:30 p.m.; closed Tuesday, Wednesday, and major holidays (New Year's Day, Easter Sunday, Memorial Day, Independence Day, Labor Day, Thanksgiving, Christmas Day)",
+        "residents_only": true,
+        "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers"
+      },
+      {
+        "name": "Middletown Train Station satellite recycling center",
+        "address": "Main parking lot of Middletown Train Station off Middletown-Lincroft Road (Church Street)",
+        "hours": "24/7",
+        "residents_only": true,
+        "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers"
+      }
+    ],
+    "status": "partial",
+    "notes": "Zone boundary text from township program announcement (North/South of State Highway 35). Garbage/recycling weekday patterns from archived 2017 program launch pages; still referenced in 2026 township communications. Bulk rules updated September 2025 (advance scheduling during recycling week). Zone map page is graphical only; no street list on fetched pages. Additional township ZIP codes not listed on official pages reviewed."
+  }
+}

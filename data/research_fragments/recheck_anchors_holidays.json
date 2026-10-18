@@ -1,0 +1,1762 @@
+{
+  "meta": {
+    "pass": 2,
+    "generated": "2026-10-18",
+    "description": "DumpGuard NJ recheck: alternating-week anchors, holidays, ZIP sharing, drop-off, source dates.",
+    "primary_sources_only": true
+  },
+  "alternating_recycling_anchors": [
+    {
+      "town": "old-bridge",
+      "zone": "Ward 1",
+      "weekday": "monday",
+      "anchor_date": "2026-01-05",
+      "next_date": "2026-01-19",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://5il.co/3symt",
+      "notes": null
+    },
+    {
+      "town": "old-bridge",
+      "zone": "Ward 2",
+      "weekday": "tuesday",
+      "anchor_date": "2026-01-06",
+      "next_date": "2026-01-20",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://5il.co/3symt",
+      "notes": null
+    },
+    {
+      "town": "old-bridge",
+      "zone": "Ward 3_and_4",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-07",
+      "next_date": "2026-01-21",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://5il.co/3symt",
+      "notes": null
+    },
+    {
+      "town": "old-bridge",
+      "zone": "Ward 5",
+      "weekday": "thursday",
+      "anchor_date": "2026-01-08",
+      "next_date": "2026-01-22",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://5il.co/3symt",
+      "notes": null
+    },
+    {
+      "town": "old-bridge",
+      "zone": "Ward 6",
+      "weekday": "friday",
+      "anchor_date": "2026-01-09",
+      "next_date": "2026-01-23",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://5il.co/3symt",
+      "notes": null
+    },
+    {
+      "town": "old-bridge",
+      "zone": "Central Park exception (Ward 3 map)",
+      "weekday": "monday",
+      "anchor_date": "2026-01-05",
+      "next_date": "2026-01-19",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://5il.co/3symt",
+      "notes": "Stone Ct, Aimy Ct, Rachele Ct; Monday pickup though mapped Ward 3."
+    },
+    {
+      "town": "old-bridge",
+      "zone": "Arbors exception (Ward 4 map)",
+      "weekday": "tuesday",
+      "anchor_date": "2026-01-06",
+      "next_date": "2026-01-20",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://5il.co/3symt",
+      "notes": "Arbors, Sonoma Court, Lakeridge West; Tuesday though mapped Ward 4."
+    },
+    {
+      "town": "piscataway",
+      "zone": "Sec 4,5,6,7",
+      "weekday": "monday",
+      "anchor_date": "2026-01-05",
+      "next_date": "2026-01-19",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+      "notes": null
+    },
+    {
+      "town": "piscataway",
+      "zone": "Sec 1,2,3,10",
+      "weekday": "tuesday",
+      "anchor_date": "2026-01-06",
+      "next_date": "2026-01-20",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+      "notes": null
+    },
+    {
+      "town": "piscataway",
+      "zone": "Sec 8,9",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-07",
+      "next_date": "2026-01-21",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+      "notes": null
+    },
+    {
+      "town": "sayreville",
+      "zone": "MCIA Tuesday district",
+      "weekday": "tuesday",
+      "anchor_date": "2026-01-13",
+      "next_date": "2026-01-27",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+      "notes": null
+    },
+    {
+      "town": "sayreville",
+      "zone": "MCIA Wednesday district",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-14",
+      "next_date": "2026-01-28",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+      "notes": null
+    },
+    {
+      "town": "sayreville",
+      "zone": "MCIA Thursday district",
+      "weekday": "thursday",
+      "anchor_date": "2026-01-03",
+      "next_date": "2026-01-15",
+      "next_interval_days": 12,
+      "confirmed_plus_14": false,
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+      "notes": "Jan 1 2026 Thursday moved to Saturday Jan 3 per borough 2026 page."
+    },
+    {
+      "town": "sayreville",
+      "zone": "MCIA Friday district",
+      "weekday": "friday",
+      "anchor_date": "2026-01-02",
+      "next_date": "2026-01-16",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+      "notes": null
+    },
+    {
+      "town": "south-amboy",
+      "zone": "Borough-wide MCIA",
+      "weekday": "friday",
+      "anchor_date": "2026-01-02",
+      "next_date": "2026-01-16",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.southamboynj.gov/_Content/pdf/2026-Recycling-Schedule.pdf",
+      "notes": null
+    },
+    {
+      "town": "south-plainfield",
+      "zone": "Thursday recycling district",
+      "weekday": "thursday",
+      "anchor_date": "2026-01-08",
+      "next_date": "2026-01-22",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+      "notes": null
+    },
+    {
+      "town": "south-plainfield",
+      "zone": "Friday recycling district",
+      "weekday": "friday",
+      "anchor_date": "2026-01-09",
+      "next_date": "2026-01-23",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+      "notes": null
+    },
+    {
+      "town": "fair-haven",
+      "zone": "All zones",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-07",
+      "next_date": "2026-01-21",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.fairhavennj.org/sites/g/files/vyhlif4411/f/uploads/2026_municipal_calendar_final-edit_9-14-2026.pdf",
+      "notes": null
+    },
+    {
+      "town": "hazlet",
+      "zone": "Zone 1",
+      "weekday": "tuesday",
+      "anchor_date": "2026-01-06",
+      "next_date": "2026-01-20",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "notes": null
+    },
+    {
+      "town": "hazlet",
+      "zone": "Zone 2",
+      "weekday": "tuesday",
+      "anchor_date": "2026-01-13",
+      "next_date": "2026-01-27",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "notes": null
+    },
+    {
+      "town": "hazlet",
+      "zone": "Zone 3",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-07",
+      "next_date": "2026-01-21",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "notes": null
+    },
+    {
+      "town": "hazlet",
+      "zone": "Zone 4",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-14",
+      "next_date": "2026-01-28",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "notes": null
+    },
+    {
+      "town": "hazlet",
+      "zone": "Zone 5",
+      "weekday": "thursday",
+      "anchor_date": "2026-01-08",
+      "next_date": "2026-01-22",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "notes": null
+    },
+    {
+      "town": "hazlet",
+      "zone": "Zone 6",
+      "weekday": "thursday",
+      "anchor_date": "2026-01-05",
+      "next_date": "2026-01-15",
+      "next_interval_days": 10,
+      "confirmed_plus_14": false,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "notes": "Jan 5 is Monday; zone 6 list uses holiday-shifted dates."
+    },
+    {
+      "town": "hazlet",
+      "zone": "Zone 7",
+      "weekday": "friday",
+      "anchor_date": "2026-01-09",
+      "next_date": "2026-01-23",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "notes": null
+    },
+    {
+      "town": "hazlet",
+      "zone": "Zone 8",
+      "weekday": "friday",
+      "anchor_date": "2026-01-02",
+      "next_date": "2026-01-16",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "notes": null
+    },
+    {
+      "town": "keyport",
+      "zone": "Zones 1-2",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-07",
+      "next_date": "2026-01-21",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+      "notes": null
+    },
+    {
+      "town": "keyport",
+      "zone": "Zones 3-4",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-14",
+      "next_date": "2026-01-28",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+      "notes": null
+    },
+    {
+      "town": "little-silver",
+      "zone": "Zone 1",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-07",
+      "next_date": "2026-01-21",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
+      "notes": null
+    },
+    {
+      "town": "little-silver",
+      "zone": "Zone 2",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-14",
+      "next_date": "2026-01-28",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
+      "notes": null
+    },
+    {
+      "town": "neptune-city",
+      "zone": "Zone 1 (east of Union Ave)",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-14",
+      "next_date": "2026-01-28",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.neptunecitynj.com/sites/g/files/vyhlif5316/f/uploads/2026_calendar.pdf",
+      "notes": null
+    },
+    {
+      "town": "neptune-city",
+      "zone": "Zone 2 (west of Union Ave)",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-07",
+      "next_date": "2026-01-21",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.neptunecitynj.com/sites/g/files/vyhlif5316/f/uploads/2026_calendar.pdf",
+      "notes": null
+    },
+    {
+      "town": "neptune-township",
+      "zone": "Recycling sub-zone A1",
+      "weekday": "monday",
+      "anchor_date": "2026-01-12",
+      "next_date": "2026-01-26",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "notes": null
+    },
+    {
+      "town": "neptune-township",
+      "zone": "Recycling sub-zone A2",
+      "weekday": "monday",
+      "anchor_date": "2026-01-05",
+      "next_date": "2026-01-21",
+      "next_interval_days": 16,
+      "confirmed_plus_14": false,
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "notes": "Jan 19 pickup moved to Wed Jan 21 (MLK)."
+    },
+    {
+      "town": "neptune-township",
+      "zone": "Recycling sub-zone B1",
+      "weekday": "tuesday",
+      "anchor_date": "2026-01-13",
+      "next_date": "2026-01-27",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "notes": null
+    },
+    {
+      "town": "neptune-township",
+      "zone": "Recycling sub-zone B2",
+      "weekday": "tuesday",
+      "anchor_date": "2026-01-06",
+      "next_date": "2026-01-20",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "notes": null
+    },
+    {
+      "town": "neptune-township",
+      "zone": "Recycling sub-zone C1",
+      "weekday": "friday",
+      "anchor_date": "2026-01-02",
+      "next_date": "2026-01-16",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "notes": null
+    },
+    {
+      "town": "neptune-township",
+      "zone": "Recycling sub-zone C2",
+      "weekday": "friday",
+      "anchor_date": "2026-01-09",
+      "next_date": "2026-01-23",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "notes": null
+    },
+    {
+      "town": "neptune-township",
+      "zone": "Recycling sub-zone D1",
+      "weekday": "thursday",
+      "anchor_date": "2026-01-15",
+      "next_date": "2026-01-29",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "notes": "Jan 1 D1 moved to Wed Dec 31 2025 per calendar."
+    },
+    {
+      "town": "neptune-township",
+      "zone": "Recycling sub-zone D2",
+      "weekday": "thursday",
+      "anchor_date": "2026-01-08",
+      "next_date": "2026-01-22",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "notes": null
+    },
+    {
+      "town": "union-beach",
+      "zone": "Section A",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-14",
+      "next_date": "2026-01-28",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+      "notes": null
+    },
+    {
+      "town": "union-beach",
+      "zone": "Section B",
+      "weekday": "wednesday",
+      "anchor_date": "2026-01-07",
+      "next_date": "2026-01-21",
+      "next_interval_days": 14,
+      "confirmed_plus_14": true,
+      "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+      "notes": null
+    },
+    {
+      "town": "matawan",
+      "zone": "Zone 1_and_2",
+      "weekday": "thursday",
+      "week_type": "White Week (commingled)",
+      "anchor_date": "2026-05-14",
+      "next_same_type_date": "2026-05-28",
+      "next_same_type_interval_days": 14,
+      "confirmed_plus_14_same_type": true,
+      "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+      "notes": "Contract effective May 11 2026; first White Week after May 11."
+    },
+    {
+      "town": "matawan",
+      "zone": "Zone 1_and_2",
+      "weekday": "thursday",
+      "week_type": "Blue Week (mixed paper/newspaper/cardboard)",
+      "anchor_date": "2026-05-21",
+      "next_same_type_date": "2026-06-04",
+      "next_same_type_interval_days": 14,
+      "confirmed_plus_14_same_type": true,
+      "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+      "notes": "First Blue Week after May 11 2026."
+    },
+    {
+      "town": "matawan",
+      "zone": "Zone 3_and_4",
+      "weekday": "wednesday",
+      "week_type": "White Week (commingled)",
+      "anchor_date": "2026-05-13",
+      "next_same_type_date": "2026-05-27",
+      "next_same_type_interval_days": 14,
+      "confirmed_plus_14_same_type": true,
+      "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+      "notes": "Contract effective May 11 2026; first White Week after May 11."
+    },
+    {
+      "town": "matawan",
+      "zone": "Zone 3_and_4",
+      "weekday": "wednesday",
+      "week_type": "Blue Week (mixed paper/newspaper/cardboard)",
+      "anchor_date": "2026-05-20",
+      "next_same_type_date": "2026-06-03",
+      "next_same_type_interval_days": 14,
+      "confirmed_plus_14_same_type": true,
+      "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+      "notes": "First Blue Week after May 11 2026."
+    }
+  ],
+  "holiday_rules": {
+    "old-bridge": {
+      "source_url": "https://5il.co/3symt",
+      "holiday_rule": "If a Holiday falls on your recycling day, pickup that Saturday.",
+      "override_dates_2026": [
+        {
+          "holiday": "Memorial Day 2026-05-25",
+          "pickup": "2026-05-30"
+        },
+        {
+          "holiday": "Thanksgiving 2026-11-26",
+          "pickup": "2026-11-28"
+        },
+        {
+          "holiday": "Christmas 2026-12-25",
+          "pickup": "2026-12-26"
+        }
+      ]
+    },
+    "piscataway": {
+      "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+      "holiday_rule": "If collection day falls on a holiday, collection rescheduled for the following Saturday.",
+      "override_dates_2026": [
+        {
+          "holiday": "Memorial Day 2026-05-25",
+          "pickup": "2026-05-30"
+        }
+      ]
+    },
+    "sayreville": {
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+      "holiday_rule": "Municipal Public Works holidays do NOT affect MCIA recycling collection."
+    },
+    "south-amboy": {
+      "source_url": "https://www.southamboynj.gov/_Content/pdf/2026-Recycling-Schedule.pdf",
+      "holiday_rule": "2026 dates listed on borough PDF; MCIA hotline for weather changes."
+    },
+    "south-plainfield": {
+      "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+      "holiday_rule": "No collection Thanksgiving or Christmas; makeup dates on calendar table.",
+      "override_dates_2026": [
+        {
+          "holiday": "Thanksgiving 2026-11-26",
+          "thursday_district_pickup": "2026-11-28"
+        },
+        {
+          "holiday": "Christmas 2026-12-25",
+          "friday_district_pickup": "2026-12-26"
+        }
+      ]
+    },
+    "fair-haven": {
+      "source_url": "https://www.fairhavennj.org/sites/g/files/vyhlif4411/f/uploads/2026_municipal_calendar_final-edit_9-14-2026.pdf",
+      "holiday_rule": "Borough office/DPW holiday closures listed on 2026 municipal calendar; check website for collection shifts."
+    },
+    "hazlet": {
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "holiday_rule": "Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2).",
+      "override_dates_2026": [
+        {
+          "note": "Apr 3 zone 7 to Apr 6"
+        },
+        {
+          "note": "Nov 26 zone 5 to Nov 23"
+        },
+        {
+          "note": "Nov 27 zone 7 to Nov 30"
+        },
+        {
+          "note": "Dec 24 zone 5 to Dec 21"
+        },
+        {
+          "note": "Dec 25 zone 7 to Dec 28"
+        },
+        {
+          "note": "June 19 zone 8 to June 22"
+        },
+        {
+          "note": "July 3 zone 8 to July 6"
+        },
+        {
+          "note": "Nov 3 zone 2 to Nov 2"
+        },
+        {
+          "note": "Nov 11 zone 3 to Nov 9"
+        }
+      ]
+    },
+    "keyport": {
+      "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+      "holiday_rule": "No garbage/recycling pickup New Year's Day, Christmas Day, or Thanksgiving Day; following day when weather permits."
+    },
+    "little-silver": {
+      "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
+      "holiday_rule": "No trash or recycling curbside collection on Thanksgiving Day, Christmas Day, or New Year's Day."
+    },
+    "neptune-city": {
+      "source_url": "https://www.neptunecitynj.com/sites/g/files/vyhlif5316/f/uploads/2026_calendar.pdf",
+      "holiday_rule": "No recycling or garbage collection Thanksgiving, Christmas, New Year's, or July 4."
+    },
+    "neptune-township": {
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "holiday_rule": "Neptune Township: garbage/recycling on holiday moved to Wednesday same week. Ocean Grove: garbage canceled that day; if holiday is Wednesday OG recycling moves to Friday."
+    },
+    "union-beach": {
+      "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+      "holiday_rule": "2026 calendar lists no-trash overrides only.",
+      "override_dates_2026": [
+        {
+          "section": "A",
+          "note": "No trash pickup 2026-12-25 (Friday)"
+        },
+        {
+          "section": "B",
+          "note": "No trash pickup 2026-01-01 and 2026-11-26 (Thursdays)"
+        }
+      ]
+    },
+    "matawan": {
+      "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+      "holiday_rule": "If pickup missed due to holiday or severe weather, remaining pickups that week move one day later.",
+      "holidays_closed": [
+        "New Years Day",
+        "Memorial Day",
+        "Labor Day",
+        "Thanksgiving Day",
+        "Christmas Day",
+        "New Years Day 2027"
+      ]
+    },
+    "carteret": {
+      "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+      "holiday_rule": "See 2026 Sanitation Calendar for holiday week shifts."
+    },
+    "highland-park": {
+      "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183",
+      "holiday_rule": "Collection date subject to change in the event of a holiday."
+    },
+    "metuchen": {
+      "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1753-october-december-2026-calendar/file",
+      "holiday_rule": "Holiday-week shifts on 2026 DPW calendar PDFs."
+    },
+    "perth-amboy": {
+      "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
+      "holiday_rule": "If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day.",
+      "override_dates_2026": [
+        {
+          "holiday": "2026-01-01",
+          "note": "Listed in 2025 holiday guidelines PDF"
+        }
+      ]
+    },
+    "aberdeen": {
+      "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+      "holiday_rule": "If recycling or garbage day falls on New Year's Day, Thanksgiving, or Christmas Day, pick-up on the next scheduled pick-up day."
+    },
+    "allenhurst": {
+      "source_url": "https://www.allenhurstnj.org/264/Public-Works",
+      "holiday_rule": "No explicit holiday override text on Public Works page (undated)."
+    },
+    "atlantic-highlands": {
+      "source_url": "https://www.atlantichighlands.org/departments/public-works/",
+      "holiday_rule": "See borough 2026 sanitation calendar PDF on Public Works page for holiday trash delays."
+    },
+    "bradley-beach": {
+      "source_url": "https://www.bradleybeachnj.gov/departments/public-works/",
+      "holiday_rule": "2026 sanitation calendar PDF on site; holiday trash delays on Public Works page."
+    },
+    "deal": {
+      "source_url": "https://www.dealborough.com/public-works",
+      "holiday_rule": "See Deal refuse/recycling pages (undated)."
+    },
+    "highlands": {
+      "source_url": "https://highlandsnj.gov/wp-content/uploads/2026/02/22936_BoroHighlands_Calendar_2026_PROOF_06P.pdf",
+      "holiday_rule": "No trash pickup Thanksgiving, Christmas, and New Year's Day (2026 calendar)."
+    },
+    "interlaken": {
+      "source_url": "https://www.interlakenboro.com/public-works.html",
+      "holiday_rule": "On holidays, pick up will be the next day."
+    },
+    "keansburg": {
+      "source_url": "https://www.keansburgnj.gov/departments/public-works/",
+      "holiday_rule": "No curbside collection Thanksgiving, Christmas, or New Year's Day."
+    },
+    "loch-arbour": {
+      "source_url": "https://www.locharbournj.us/trash-recycling",
+      "holiday_rule": "Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page)."
+    },
+    "middletown": {
+      "source_url": "https://www.middletownnj.org/571/Curbside-Garbage-Collection",
+      "holiday_rule": "No garbage on New Year's Day, Thanksgiving, Christmas; next scheduled garbage day. Recycling on those holidays collected following Saturday if scheduled."
+    },
+    "monmouth-beach": {
+      "source_url": "https://www.monmouthbeach.org/departments/public-works/",
+      "holiday_rule": "No pickup Thanksgiving, Christmas, or New Year's Day; next regularly scheduled day."
+    },
+    "oceanport": {
+      "source_url": "https://www.oceanportnj.org/departments/public-works",
+      "holiday_rule": "See borough site; 2026 holiday garbage/recycling schedule referenced on Public Works page."
+    },
+    "red-bank": {
+      "source_url": "https://www.redbanknj.org/208/Public-Utilities",
+      "holiday_rule": "Public Utilities page (undated); no 2026 override table on fetched page."
+    },
+    "rumson": {
+      "source_url": "https://www.rumsonnj.gov/departments/public-works/",
+      "holiday_rule": "See Rumson Public Works / 2026 calendar references on borough site."
+    },
+    "sea-bright": {
+      "source_url": "https://www.seabrightnj.org/departments/public-works/",
+      "holiday_rule": "No pickup Thanksgiving Day on weekly schedules listed on Public Works page."
+    },
+    "west-long-branch": {
+      "source_url": "https://www.westlongbranch.org/1345/Garbage-Collection",
+      "holiday_rule": "No collection New Year's Day, Independence Day, Election Day, Thanksgiving, Christmas. Recycling: no pickup Thanksgiving, Christmas, or New Year's Day (next regular day)."
+    }
+  },
+  "zip_shared_with": {
+    "07711": {
+      "towns": [
+        "Allenhurst Borough",
+        "Loch Arbour Village"
+      ],
+      "source_url": "https://www.allenhurstnj.org/264/Public-Works",
+      "source_note": "Both municipalities list 07711 on official contact/Public Works pages."
+    },
+    "07735": {
+      "towns": [
+        "Aberdeen Township",
+        "Keyport Borough",
+        "Union Beach Borough"
+      ],
+      "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+      "source_note": "Aberdeen and Keyport zips in towns_research; Union Beach Contact Us lists 07735."
+    },
+    "07734": {
+      "towns": [
+        "Hazlet Township",
+        "Keansburg Borough"
+      ],
+      "source_url": "https://www.hazlettwp.org/866/Mobile-Home-Parks",
+      "source_note": "Hazlet 07734 mobile-home page; Keansburg contact lists 07734."
+    },
+    "07732": {
+      "towns": [
+        "Highlands Borough",
+        "Keyport Borough"
+      ],
+      "source_url": "https://keyportonline.com/departments/public-works/",
+      "source_note": "Keyport DPW address Keyport NJ 07732; Highlands DPW lists 07732."
+    },
+    "07747": {
+      "towns": [
+        "Aberdeen Township",
+        "Matawan Borough"
+      ],
+      "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/",
+      "source_note": "Both municipalities publish 07747 on official recycling/ trash pages."
+    },
+    "07753": {
+      "towns": [
+        "Neptune City Borough",
+        "Neptune Township"
+      ],
+      "source_url": "https://neptunetownship.org/departments/public-works",
+      "source_note": "Both use 07753 on official public works pages."
+    },
+    "07760": {
+      "towns": [
+        "Rumson Borough",
+        "Sea Bright Borough"
+      ],
+      "source_url": "https://www.rumsonnj.gov/",
+      "source_note": "Rumson and Sea Bright official sites list 07760."
+    },
+    "07701": {
+      "towns": [
+        "Red Bank Borough",
+        "Middletown Township",
+        "Shrewsbury Borough",
+        "Fair Haven Borough"
+      ],
+      "source_url": "https://www.redbanknj.org/Faq.aspx?QID=83",
+      "source_note": "Red Bank FAQ: 07701 is mail delivery only; many addresses are in Middletown, Shrewsbury, or Fair Haven."
+    }
+  },
+  "dropoff": [
+    {
+      "town": "carteret",
+      "index": 0,
+      "name": "Carteret Recycling Center / DPW Building",
+      "source_url": "https://www.carteret.net/publicworks/",
+      "hours": "7am-3pm Mon-Fri; 7am-11am Sat",
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "highland-park",
+      "index": 0,
+      "name": "DPW electronics / cardboard drop-off",
+      "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183",
+      "hours": "Cardboard Mon-Fri 7:00am-2:30pm; DPW Mon-Fri 6:30am-3:00pm",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "metuchen",
+      "index": 0,
+      "name": "Public Works yard cardboard drop-off (scheduled Saturdays)",
+      "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1753-october-december-2026-calendar/file",
+      "hours": "Cardboard only Sat Dec 26 2026 and Sat Jan 2 2027, 8:00am-12:00pm",
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "old-bridge",
+      "index": 0,
+      "name": "Recycling Drop-Off Center (Township Municipal Complex, behind Animal Shelter)",
+      "source_url": "https://www.oldbridge.com/page/recycling-information/",
+      "hours": "Tuesday and Thursday 7:00 a.m.\u20133:00 p.m.; Saturday 8:00 a.m.\u201312:00 p.m.",
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": "Extra cardboard can be brought to the Recycling Center (2026 curbside recycling PDF)."
+    },
+    {
+      "town": "piscataway",
+      "index": 0,
+      "name": "Piscataway Mini-Dump (Recycling & Trash Center)",
+      "source_url": "https://www.piscatawaynj.org/departments/public_works/mini-dump.php",
+      "hours": "Tuesday and Thursday 2:00 p.m.\u20138:00 p.m. (gates close 7:45 p.m.); Saturday 8:30 a.m.\u20134:30 p.m. (gates close 4:15 p.m.); closed Sun\u2013Mon and Wed\u2013Fri; closed on holidays falling on Tue or Thu",
+      "residents_only": true,
+      "proof_required": "Piscataway Service Card",
+      "accepts_text": "The following items may NOT be brought to the Mini-Dump: Contractor debris; Dirt; Hazardous waste; Kitchen garbage; Paint; Rocks; Stones."
+    },
+    {
+      "town": "sayreville",
+      "index": 0,
+      "name": "Fort Grumpy Recycling Center",
+      "source_url": "https://www.sayreville.com/documents/Sayreville%20Recycling%20Sanitation%202025%20Guide.pdf",
+      "hours": "Monday and Friday 7:30 a.m.\u20131:00 p.m. (gates close 12:55); 1st and 3rd Saturday 7:00 a.m.\u201312:00 p.m. (gates close 11:55)",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "south-plainfield",
+      "index": 0,
+      "name": "Mary B. Mazepa South Plainfield Recycling Drop-off Center",
+      "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+      "hours": "Tuesday 11:00 a.m.\u20137:00 p.m.; Thursday, Friday, Saturday 8:00 a.m.\u20134:00 p.m. (gates close 10 minutes early; closed borough holidays)",
+      "residents_only": false,
+      "proof_required": null,
+      "accepts_text": "Drop-off: newspaper, mixed paper, cardboard (flattened), glass bottles, aluminum/steel/tin cans, plastic bottles/jugs/jars/tubs (separated by material at site). Residents only extras: clothes, used motor oil (up to 5 gal), cooking oil, rechargeable batteries, cell phones, paint (3rd Sat/month), appliances, computers, monitors, printers, TVs, scrap metal."
+    },
+    {
+      "town": "south-plainfield",
+      "index": 1,
+      "name": "South Plainfield Yard Waste Site",
+      "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+      "hours": "Jan 1\u2013Mar 31: Saturday 8:00 a.m.\u20134:00 p.m.; Apr 1\u2013Dec 31: Mon\u2013Sat hours vary (see Curbside page); closed borough holidays; decal required",
+      "residents_only": false,
+      "proof_required": null,
+      "accepts_text": "Drop-off: newspaper, mixed paper, cardboard (flattened), glass bottles, aluminum/steel/tin cans, plastic bottles/jugs/jars/tubs (separated by material at site). Residents only extras: clothes, used motor oil (up to 5 gal), cooking oil, rechargeable batteries, cell phones, paint (3rd Sat/month), appliances, computers, monitors, printers, TVs, scrap metal."
+    },
+    {
+      "town": "aberdeen",
+      "index": 0,
+      "name": "Aberdeen Public Works Garage drop-off",
+      "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+      "hours": "Monday through Saturday, 7 am to 3 pm",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "atlantic-highlands",
+      "index": 0,
+      "name": "Borough Yard recycling facility",
+      "source_url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/",
+      "hours": "Monday\u2013Friday 8:30 a.m.\u20134:00 p.m.; Saturday until 11:00 a.m. (recycling only). 2026 calendar also lists Mon\u2013Fri 6:00 a.m.\u20134:00 p.m. and Sat 6:00 a.m.\u201311:00 a.m. for recycling; Nov\u2013Dec Sat\u2013Sun 8:00 a.m.\u201312:00 p.m. for leaves and brush.",
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "bradley-beach",
+      "index": 0,
+      "name": "Trash/Recycling Lot",
+      "source_url": "https://www.bradleybeachnj.gov/public-works/",
+      "hours": "Monday, Thursday\u2013Sunday 8:00 a.m.\u201312:00 p.m.; closed Tuesday and Wednesday; closed when borough closed on holidays",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "fair-haven",
+      "index": 0,
+      "name": "Public Works Recycling Center",
+      "source_url": "https://www.fairhavennj.org/recycling",
+      "hours": "Monday\u2013Friday 7:00 a.m.\u20133:30 p.m.; Saturday 9:00 a.m.\u20133:00 p.m.; closed Sunday",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": "Recycling (i.e. cardboard, bottles, cans). Electronics and Clothing items. This area is NOT for TRASH!"
+    },
+    {
+      "town": "hazlet",
+      "index": 0,
+      "name": "Hazlet Township DPW Recycling Yard",
+      "source_url": "https://www.hazlettwp.org/229/Recycling",
+      "hours": "Regular: Mon\u2013Fri 7:30 a.m.\u20133:00 p.m., Sat 8:15 a.m.\u20131:45 p.m., Sun closed; Memorial Day\u2013Labor Day weekdays 7:00 a.m.\u20132:30 p.m.; closed municipal holidays",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": "See Green Booklet 2026 and HazletTwp.org/Recycling for acceptable curbside and yard materials; grass clippings not accepted at recycling yard."
+    },
+    {
+      "town": "highlands",
+      "index": 0,
+      "name": "Highlands Borough Recycling Center",
+      "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
+      "hours": "Mon\u2013Fri 7:00 a.m.\u20133:00 p.m., Sat 7:00 a.m.\u201312:00 p.m., Sun closed",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "keansburg",
+      "index": 0,
+      "name": "Borough Yard",
+      "source_url": "https://www.keansburgnj.gov/departments/public-works/",
+      "hours": "Winter: Monday\u2013Saturday 7:30 a.m.\u20133:00 p.m.; Summer: Monday\u2013Saturday 7:30 a.m.\u20132:30 p.m.; closed Sunday and holidays",
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "keansburg",
+      "index": 1,
+      "name": "Recycling Center",
+      "source_url": "https://www.keansburgnj.gov/departments/public-works/",
+      "hours": "Monday\u2013Friday 7:30 a.m.\u20132:30 p.m.; Saturday 8:00 a.m.\u20132:00 p.m.; closed Sunday and holidays",
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "keyport",
+      "index": 0,
+      "name": "Keyport Recycling Center",
+      "source_url": "https://keyportonline.com/government/recycling/",
+      "hours": "Saturdays 9:00 a.m.\u201312:00 noon (except holidays); drop-off of recyclables and pick-up of leaf bags",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": "Saturdays 9:00 a.m.-12:00 noon drop-off of recyclables and pick-up of leaf bags (Keyport recycling page / 2026 schedule PDF)."
+    },
+    {
+      "town": "little-silver",
+      "index": 0,
+      "name": "Borough Recycling Center / Public Works Yard",
+      "source_url": "https://www.littlesilvernj.gov/235/Recycling-Garbage",
+      "hours": "Monday\u2013Friday 8:00 a.m.\u20132:00 p.m.; Saturday 8:00 a.m.\u201312:00 noon; closed Borough holidays",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "matawan",
+      "index": 0,
+      "name": "Matawan Recycling Center",
+      "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/Recycling%20Center/",
+      "hours": "Monday through Friday 7:00 a.m.\u20137:00 p.m.; Saturday and Sunday 9:00 a.m.\u20133:00 p.m.",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "middletown",
+      "index": 0,
+      "name": "Middletown Recycling Center",
+      "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
+      "hours": "Thursday through Monday 8:30 a.m.\u20134:30 p.m.; closed Tuesday, Wednesday, and major holidays (New Year's Day, Easter Sunday, Memorial Day, Independence Day, Labor Day, Thanksgiving, Christmas Day)",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "middletown",
+      "index": 1,
+      "name": "Middletown Train Station satellite recycling center",
+      "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
+      "hours": "24/7",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "monmouth-beach",
+      "index": 0,
+      "name": "Borough yard",
+      "source_url": "https://www.monmouthbeach.org/departments/public-works/",
+      "hours": null,
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": "cardboard, newspaper, mixed paper, cans/bottles/plastic"
+    },
+    {
+      "town": "neptune-city",
+      "index": 0,
+      "name": "Neptune City Recycling Center",
+      "source_url": "https://www.neptunecitynj.com/sites/g/files/vyhlif5316/f/uploads/2026_calendar.pdf",
+      "hours": "Tuesday 7 a.m.\u20135 p.m.; Wednesday\u2013Friday 7 a.m.\u20132 p.m.; Saturday 7 a.m.\u201312 noon (except holidays)",
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "neptune-township",
+      "index": 0,
+      "name": "Neptune Township Recycling Center",
+      "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+      "hours": "Monday\u2013Friday 8:00 a.m.\u20135:00 p.m.; Saturday\u2013Sunday 8:00 a.m.\u20133:00 p.m.",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "red-bank",
+      "index": 0,
+      "name": "Borough of Red Bank Recycling Center",
+      "source_url": "https://www.redbanknj.org/208/Public-Utilities",
+      "hours": "Tuesday\u2013Friday 7:05 AM\u20132:55 PM; Saturday 8:00 AM\u20132:00 PM; closed Sunday and Monday",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "rumson",
+      "index": 0,
+      "name": "Rumson Recycling Center",
+      "source_url": "https://www.rumsonnj.gov/rumson-dpw",
+      "hours": "Monday\u2013Friday 7:00 AM\u20135:00 PM; Saturday 8:00 AM\u201312:00 PM; Sunday 8:00 AM\u201312:00 PM; closed borough holidays",
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "sea-bright",
+      "index": 0,
+      "name": "Long Branch Recycling Center (Sea Bright shared services \u2014 electronics only)",
+      "source_url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Recycling%20Pick-up/",
+      "hours": "Monday\u2013Friday 7:30 a.m.\u20133:00 p.m.; Saturday 9:00 a.m.\u20131:00 p.m.",
+      "residents_only": true,
+      "proof_required": null,
+      "accepts_text": null
+    },
+    {
+      "town": "union-beach",
+      "index": 0,
+      "name": "Union Beach Department of Public Works and Recycling Center",
+      "source_url": "https://www.unionbeachnj.gov/ubnj/Departments/Public%20Works/",
+      "hours": "Monday\u2013Friday 7:00 a.m.\u20133:00 p.m.; 1st and 3rd Saturday 8:00 a.m.\u201312:00 p.m.; closed Sundays and holidays",
+      "residents_only": true,
+      "proof_required": "Identification if asked; sign in at office",
+      "accepts_text": null
+    },
+    {
+      "town": "west-long-branch",
+      "index": 0,
+      "name": "West Long Branch DPW Recycling Center",
+      "source_url": "https://www.westlongbranch.org/1342/Recycling-Collection",
+      "hours": "Monday\u2013Friday 7:00 a.m.\u20133:30 p.m.; Saturday 8:00 a.m.\u20131:00 p.m.; Sunday 8:00 a.m.\u201312:00 p.m.",
+      "residents_only": null,
+      "proof_required": null,
+      "accepts_text": null
+    }
+  ],
+  "source_dates": {
+    "highland-park": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "Monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.hpboro.com/departments/public-works"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "Friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.hpboro.com/departments/public-works"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "Monday, Friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.hpboro.com/departments/public-works"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183"
+      },
+      {
+        "schedule_index": 4,
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183"
+      }
+    ],
+    "sayreville": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945"
+      }
+    ],
+    "south-amboy": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "trash",
+        "weekday": "friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf"
+      }
+    ],
+    "allenhurst": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.allenhurstnj.org/264/Public-Works"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.allenhurstnj.org/264/Public-Works"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.allenhurstnj.org/268/Refuse-and-Recycling-Guide"
+      }
+    ],
+    "atlantic-highlands": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "trash",
+        "weekday": "friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf"
+      },
+      {
+        "schedule_index": 4,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf"
+      },
+      {
+        "schedule_index": 5,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf"
+      }
+    ],
+    "bradley-beach": [
+      {
+        "schedule_index": 4,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/"
+      }
+    ],
+    "deal": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://dealnj.gov/departments/public-works/"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://dealnj.gov/departments/public-works/"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://dealnj.gov/departments/public-works/"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "recycling",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://dealnj.gov/departments/public-works/"
+      },
+      {
+        "schedule_index": 4,
+        "stream": "recycling",
+        "weekday": "thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://dealnj.gov/departments/public-works/"
+      }
+    ],
+    "fair-haven": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.fairhavennj.org/recycling"
+      }
+    ],
+    "highlands": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "Monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "Thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "Tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "trash",
+        "weekday": "Friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/"
+      }
+    ],
+    "interlaken": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "Monday, Thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.interlakenboro.com/public-works.html"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.interlakenboro.com/public-works.html"
+      }
+    ],
+    "keansburg": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday, thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "tuesday, friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/"
+      }
+    ],
+    "matawan": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "Friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "Friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf"
+      },
+      {
+        "schedule_index": 4,
+        "stream": "trash",
+        "weekday": "Monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf"
+      },
+      {
+        "schedule_index": 5,
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf"
+      },
+      {
+        "schedule_index": 6,
+        "stream": "trash",
+        "weekday": "Tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf"
+      },
+      {
+        "schedule_index": 7,
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf"
+      }
+    ],
+    "monmouth-beach": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday, thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.monmouthbeach.org/departments/public-works/"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "tuesday, friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.monmouthbeach.org/departments/public-works/"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.monmouthbeach.org/departments/public-works/"
+      }
+    ],
+    "neptune-city": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday, thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.neptunecitynj.com/public-works/pages/garbage-collection-schedule-information"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "tuesday, friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.neptunecitynj.com/public-works/pages/garbage-collection-schedule-information"
+      }
+    ],
+    "oceanport": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.oceanportboro.com/resident/trash"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.oceanportboro.com/resident/trash"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.oceanportboro.com/resident/trash"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "trash",
+        "weekday": "friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.oceanportboro.com/resident/trash"
+      },
+      {
+        "schedule_index": 4,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.oceanportboro.com/departments/dpw"
+      }
+    ],
+    "red-bank": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "trash",
+        "weekday": "friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "schedule_index": 4,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.redbanknj.org/208/Public-Utilities"
+      }
+    ],
+    "rumson": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "trash",
+        "weekday": "friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "schedule_index": 4,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "schedule_index": 5,
+        "stream": "trash",
+        "weekday": "friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "schedule_index": 6,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "schedule_index": 7,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "schedule_index": 8,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Weekday published without document year.",
+        "source_url": "https://www.rumsonnj.gov/rumson-dpw"
+      }
+    ],
+    "sea-bright": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Garbage%20Pickup/"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Garbage%20Pickup/"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Recycling%20Pick-up/"
+      }
+    ],
+    "west-long-branch": [
+      {
+        "schedule_index": 0,
+        "stream": "trash",
+        "weekday": "monday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.westlongbranch.org/1345/Garbage-Collection"
+      },
+      {
+        "schedule_index": 1,
+        "stream": "trash",
+        "weekday": "thursday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.westlongbranch.org/1345/Garbage-Collection"
+      },
+      {
+        "schedule_index": 2,
+        "stream": "trash",
+        "weekday": "tuesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.westlongbranch.org/1345/Garbage-Collection"
+      },
+      {
+        "schedule_index": 3,
+        "stream": "trash",
+        "weekday": "friday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.westlongbranch.org/1345/Garbage-Collection"
+      },
+      {
+        "schedule_index": 4,
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "source_date": "standing",
+        "reason": "Standing weekly day on official page; no calendar year on source.",
+        "source_url": "https://www.westlongbranch.org/1214/Public-Works"
+      }
+    ]
+  }
+}

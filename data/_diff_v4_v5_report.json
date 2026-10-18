@@ -1,0 +1,1072 @@
+{
+  "aberdeen": {
+    "slug": "aberdeen",
+    "changes": [
+      {
+        "field": "notes",
+        "v4": "Curbside recycling weekdays not published as standing plain text on Trash/Recycling (Recycle Coach linked; not used for weekdays). Condo/apartment complexes excluded from township contracted hauler. First trash weekdays are supported by 2026 DPW storm notices on the township site, not a permanent schedule page; flagged in notes.",
+        "v5": "UNRESOLVABLE: curbside recycling weekdays - not published as standing plain text on https://www.aberdeennj.org/271/Trash-Recycling (Recycle Coach linked; archive flyers only; not used for weekdays). Section I/II trash weekdays retained (second day + bulk from Trash/Recycling; first days supported by 2026 Winter Storm Information Center notices). Condo/apartment complexes excluded from township contracted hauler."
+      },
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07747",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.aberdeennj.org/"
+          },
+          {
+            "zip": "07735",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.aberdeennj.org/271/Trash-Recycling"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07747",
+            "shared_with": [
+              "matawan"
+            ],
+            "source_url": "https://www.aberdeennj.org/"
+          },
+          {
+            "zip": "07735",
+            "shared_with": [
+              "keyport",
+              "union-beach"
+            ],
+            "source_url": "https://www.aberdeennj.org/271/Trash-Recycling"
+          }
+        ]
+      },
+      {
+        "field": "dpw",
+        "changed": true
+      },
+      {
+        "field": "schedules",
+        "v4_count": 6,
+        "v5_count": 7,
+        "removed": [],
+        "added": [
+          {
+            "stream": "recycling",
+            "weekday": null,
+            "week_pattern": "custom",
+            "anchor_date": null,
+            "area_note": "Curbside recycling weekdays are not published as standing plain text on the current Trash/Recycling ",
+            "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+            "source_quote": "",
+            "source_date": "standing"
+          }
+        ],
+        "meta_changed": []
+      }
+    ]
+  },
+  "allenhurst": {
+    "slug": "allenhurst",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07711",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.allenhurstnj.org/264/Public-Works"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07711",
+            "shared_with": [
+              "loch-arbour"
+            ],
+            "source_url": "https://www.allenhurstnj.org/264/Public-Works"
+          }
+        ]
+      }
+    ]
+  },
+  "atlantic-highlands": {
+    "slug": "atlantic-highlands",
+    "changes": [
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Borough Yard recycling facility",
+            "address": "West Lincoln Avenue (dead end of West Lincoln Avenue; turn left into driveway)",
+            "hours": "Monday–Friday 8:30 a.m.–4:00 p.m.; Saturday until 11:00 a.m. (recycling only). 2026 calendar also lists Mon–Fri 6:00 a.m.–4:00 p.m. and Sat 6:00 a.m.–11:00 a.m. for recycling; Nov–Dec Sat–Sun 8:00 a.m.–12:00 p.m. for leaves and brush.",
+            "residents_only": null,
+            "source_url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Borough Yard recycling facility",
+            "address": "West Lincoln Avenue (dead end of West Lincoln Avenue; turn left into driveway)",
+            "hours": "Monday–Friday 8:30 a.m.–4:00 p.m.; Saturday until 11:00 a.m. (recycling only). 2026 calendar also lists Mon–Fri 6:00 a.m.–4:00 p.m. and Sat 6:00 a.m.–11:00 a.m. for recycling; Nov–Dec Sat–Sun 8:00 a.m.–12:00 p.m. for leaves and brush.",
+            "residents_only": null,
+            "source_url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/",
+            "accepts_text": "Borough Yard open for recycling (Mon-Fri 8:30-4:00; Saturday until 11:00 a.m.)."
+          }
+        ]
+      }
+    ]
+  },
+  "bradley-beach": {
+    "slug": "bradley-beach",
+    "changes": [
+      {
+        "field": "notes",
+        "v4": "Trash weekdays from 2026 sanitation calendar (Zone 1 Mon/Thu, Zone 2 Tue/Fri, Zone 3 Mon/Fri). Borough does not publish distinct non-overlapping street boundaries for trash zones: street-sweeper page lists Zone 1 and Zone 3 with the same boundary text (LaReine Ave. to Lake Terrace) and Zone 2 as Brinley Ave. to Bradley Blvd. area_note uses Zone 1/2/3 labels only.",
+        "v5": "Trash weekdays from 2026 sanitation calendar (Zone 1 Mon/Thu, Zone 2 Tue/Fri, Zone 3 Mon/Fri). Holiday makeups from trash-recycling page (also reflected on 2026 sanitation calendar PDF). UNRESOLVABLE: distinct non-overlapping street boundaries for trash zones - street-sweeper page lists Zone 1 and Zone 3 with the same boundary text (LaReine Ave. to Lake Terrace) and Zone 2 as Brinley Ave. to Bradley Blvd.; Zone 4 duplicates Zone 2 text for opposite curb sides. area_note uses Zone 1/2/3 labels only. Source: https://www.bradleybeachnj.gov/street-sweeper/ (zones in accordance with trash collection zones). Schedule changes also at https://www.bradleybeachnj.gov/trash-recycling-information/."
+      },
+      {
+        "field": "holiday_rule",
+        "v4": "2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar.",
+        "v5": "2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05."
+      },
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Trash/Recycling Lot",
+            "address": "1011 Main Street, Bradley Beach, NJ",
+            "hours": "Monday, Thursday–Sunday 8:00 a.m.–12:00 p.m.; closed Tuesday and Wednesday; closed when borough closed on holidays",
+            "residents_only": true,
+            "source_url": "https://www.bradleybeachnj.gov/public-works/",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Trash/Recycling Lot",
+            "address": "1011 Main Street, Bradley Beach, NJ 07720",
+            "hours": "Monday, Thursday–Sunday 8:00 a.m.–12:00 p.m.; closed Tuesday and Wednesday; closed when borough closed on holidays",
+            "residents_only": true,
+            "source_url": "https://www.bradleybeachnj.gov/public-works/",
+            "accepts_text": "Trash, recycling, plastic film, brush, yard waste, leaves, electronics (stickers required), and bulk items; proof of residency required."
+          }
+        ]
+      }
+    ]
+  },
+  "carteret": {
+    "slug": "carteret",
+    "changes": [
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Carteret Recycling Center / DPW Building",
+            "address": "339 Roosevelt Avenue, Carteret, NJ 07008",
+            "hours": "7am-3pm Mon-Fri; 7am-11am Sat",
+            "residents_only": null,
+            "source_url": "https://www.carteret.net/publicworks/",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Carteret Recycling Center / DPW Building",
+            "address": "339 Roosevelt Avenue, Carteret, NJ 07008",
+            "hours": "Monday–Friday 7:00 a.m.–3:00 p.m.; Saturday 7:00 a.m.–11:00 a.m.",
+            "residents_only": null,
+            "source_url": "https://www.carteret.net/publicworks/",
+            "accepts_text": "Recycling drop-off at DPW/Recycling Center (see borough Recycling Information)."
+          }
+        ]
+      }
+    ]
+  },
+  "hazlet": {
+    "slug": "hazlet",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07730",
+            "shared_with": [],
+            "source_url": "https://www.hazlettwp.org/154/Finance-Purchasing"
+          },
+          {
+            "zip": "07734",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.hazlettwp.org/866/Mobile-Home-Parks"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07730",
+            "shared_with": [],
+            "source_url": "https://www.hazlettwp.org/154/Finance-Purchasing"
+          },
+          {
+            "zip": "07734",
+            "shared_with": [
+              "keansburg"
+            ],
+            "source_url": "https://www.hazlettwp.org/866/Mobile-Home-Parks"
+          }
+        ]
+      }
+    ]
+  },
+  "highland-park": {
+    "slug": "highland-park",
+    "changes": [
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "DPW electronics / cardboard drop-off",
+            "address": "444 Valentine Street, Highland Park, NJ 08904",
+            "hours": "Cardboard Mon-Fri 7:00am-2:30pm; DPW Mon-Fri 6:30am-3:00pm",
+            "residents_only": true,
+            "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "DPW electronics / cardboard drop-off",
+            "address": "444 Valentine Street, Highland Park, NJ 08904",
+            "hours": "Cardboard Mon-Fri 7:00am-2:30pm; DPW Mon-Fri 6:30am-3:00pm",
+            "residents_only": true,
+            "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183",
+            "accepts_text": "DPW garage drop-off: corrugated cardboard (flattened; Mon-Fri 7:00 a.m.-2:30 p.m.); electronics (computers, fax, laptops, monitors, printer/scanners, TVs - residential only); fluorescent lamps; rechargeable/button-cell batteries. No after-hours dumping."
+          }
+        ]
+      }
+    ]
+  },
+  "highlands": {
+    "slug": "highlands",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07732",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://highlandsnj.gov/departments/department-of-public-works/"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07732",
+            "shared_with": [
+              "keyport"
+            ],
+            "source_url": "https://highlandsnj.gov/departments/department-of-public-works/"
+          }
+        ]
+      },
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Highlands Borough Recycling Center",
+            "address": "151 Navesink Ave., Highlands, NJ 07732",
+            "hours": "Mon–Fri 7:00 a.m.–3:00 p.m., Sat 7:00 a.m.–12:00 p.m., Sun closed",
+            "residents_only": true,
+            "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Highlands Borough Recycling Center",
+            "address": "151 Navesink Ave., Highlands, NJ 07732",
+            "hours": "Monday–Friday 7:00 a.m.–3:00 p.m.; Saturday 7:00 a.m.–12:00 p.m.",
+            "residents_only": true,
+            "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
+            "accepts_text": "Convenient Recycling Yard for residents to dispose of recyclables (DPW page)."
+          }
+        ]
+      }
+    ]
+  },
+  "keansburg": {
+    "slug": "keansburg",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07734",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.keansburgnj.gov/contact"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07734",
+            "shared_with": [
+              "hazlet"
+            ],
+            "source_url": "https://www.keansburgnj.gov/contact"
+          }
+        ]
+      }
+    ]
+  },
+  "keyport": {
+    "slug": "keyport",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07735",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://keyportonline.com/about/"
+          },
+          {
+            "zip": "07732",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://keyportonline.com/departments/public-works/"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07735",
+            "shared_with": [
+              "aberdeen",
+              "union-beach"
+            ],
+            "source_url": "https://keyportonline.com/about/"
+          },
+          {
+            "zip": "07732",
+            "shared_with": [
+              "highlands"
+            ],
+            "source_url": "https://keyportonline.com/departments/public-works/"
+          }
+        ]
+      }
+    ]
+  },
+  "little-silver": {
+    "slug": "little-silver",
+    "changes": [
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Borough Recycling Center / Public Works Yard",
+            "address": "22 Fairview Avenue, Little Silver, NJ 07739",
+            "hours": "Monday–Friday 8:00 a.m.–2:00 p.m.; Saturday 8:00 a.m.–12:00 noon; closed Borough holidays",
+            "residents_only": true,
+            "source_url": "https://www.littlesilvernj.gov/235/Recycling-Garbage",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Borough Recycling Center / Public Works Yard",
+            "address": "22 Fairview Avenue, Little Silver, NJ 07739",
+            "hours": "Monday–Friday 8:00 a.m.–2:00 p.m.; Saturday 8:00 a.m.–12:00 noon; closed Borough holidays",
+            "residents_only": true,
+            "source_url": "https://www.littlesilvernj.gov/235/Recycling-Garbage",
+            "accepts_text": "Marked recycling containers at Public Works Yard; does not accept electronics (computers/monitors/TVs), motor oils/antifreeze, or paint."
+          }
+        ]
+      }
+    ]
+  },
+  "loch-arbour": {
+    "slug": "loch-arbour",
+    "changes": [
+      {
+        "field": "notes",
+        "v4": "Sanitation administered via Borough of Deal contact on village contacts page; weekly trash/recycling weekdays are not published on locharbournj.us. Bulk 2026 Mondays from village trash-recycling page retained as shape (d).",
+        "v5": "UNRESOLVABLE: weekly trash/recycling weekdays - not published on locharbournj.us (https://www.locharbournj.us/trash-recycling; contacts https://www.locharbournj.us/departments-services/pages/departments-services-contacts). Sanitation administered via Borough of Deal contact; do not invent Deal borough days. Bulk 2026 Mondays from village trash-recycling page retained as ISO date rows."
+      },
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07711",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07711",
+            "shared_with": [
+              "allenhurst"
+            ],
+            "source_url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts"
+          }
+        ]
+      },
+      {
+        "field": "schedules",
+        "v4_count": 7,
+        "v5_count": 8,
+        "removed": [
+          {
+            "stream": "trash",
+            "weekday": null,
+            "week_pattern": "custom",
+            "anchor_date": null,
+            "area_note": "Village Sanitation contact is Borough of Deal (732-531-1454) per Departments and Services Contacts; ",
+            "source_url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts",
+            "source_quote": "",
+            "source_date": "standing"
+          }
+        ],
+        "added": [
+          {
+            "stream": "trash",
+            "weekday": null,
+            "week_pattern": "custom",
+            "anchor_date": null,
+            "area_note": "Village Sanitation contact is Borough of Deal (732-531-1454) per Departments and Services Contacts; ",
+            "source_url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts",
+            "source_quote": "",
+            "source_date": "standing"
+          },
+          {
+            "stream": "recycling",
+            "weekday": null,
+            "week_pattern": "custom",
+            "anchor_date": null,
+            "area_note": "Loch Arbour trash-recycling page does not publish weekly recycling weekdays; sanitation contact is B",
+            "source_url": "https://www.locharbournj.us/trash-recycling",
+            "source_quote": "",
+            "source_date": "standing"
+          }
+        ],
+        "meta_changed": []
+      }
+    ]
+  },
+  "matawan": {
+    "slug": "matawan",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07747",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07747",
+            "shared_with": [
+              "aberdeen"
+            ],
+            "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/"
+          }
+        ]
+      },
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Matawan Recycling Center",
+            "address": "62 Main Street, Matawan, NJ",
+            "hours": "Monday through Friday 7:00 a.m.–7:00 p.m.; Saturday and Sunday 9:00 a.m.–3:00 p.m.",
+            "residents_only": true,
+            "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/Recycling%20Center/",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Matawan Recycling Center",
+            "address": "62 Main Street, Matawan, NJ 07747",
+            "hours": "Monday through Friday 7:00 a.m.–7:00 p.m.; Saturday and Sunday 9:00 a.m.–3:00 p.m.",
+            "residents_only": true,
+            "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/Recycling%20Center/",
+            "accepts_text": "Commingled bottles (glass & plastic) and cans (no paint cans); flattened corrugated cardboard; newspaper/mixed paper; brush (branches ≤3 in diameter); yard debris (no grass, mulch, wood chips, soil, stones); metals (aluminum/steel, no paint cans); listed electronics. Access card required; no trash/construction debris; no propane tanks; no plastic bags."
+          }
+        ]
+      }
+    ]
+  },
+  "middletown": {
+    "slug": "middletown",
+    "changes": [
+      {
+        "field": "notes",
+        "v4": "Garbage and recycling weekdays are Recycle Coach address-lookup only; no static PDF or zone day list on township collection pages. Informational trash row documents that fact.",
+        "v5": "UNRESOLVABLE: static garbage/recycling weekdays - Recycle Coach address-lookup only; no static PDF or zone day list on https://www.middletownnj.org/571/Curbside-Garbage-Collection and https://www.middletownnj.org/collection. Informational trash and recycling custom rows document that fact."
+      },
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Middletown Recycling Center",
+            "address": "52 Kanes Lane, Middletown, NJ 07748",
+            "hours": "Thursday through Monday 8:30 a.m.–4:30 p.m.; closed Tuesday, Wednesday, and major holidays (New Year's Day, Easter Sunday, Memorial Day, Independence Day, Labor Day, Thanksgiving, Christmas Day)",
+            "residents_only": true,
+            "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
+            "accepts_text": null
+          },
+          {
+            "name": "Middletown Train Station satellite recycling center",
+            "address": "Main parking lot of Middletown Train Station off Middletown-Lincroft Road (Church Street)",
+            "hours": "24/7",
+            "residents_only": true,
+            "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Middletown Recycling Center",
+            "address": "52 Kanes Lane, Middletown, NJ",
+            "hours": "Thursday through Monday 8:30 a.m.–4:30 p.m.; closed Tuesday, Wednesday, and major holidays (New Year's Day, Easter Sunday, Memorial Day, Independence Day, Labor Day, Thanksgiving, Christmas Day)",
+            "residents_only": true,
+            "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
+            "accepts_text": "Motor oil, antifreeze, vegetable cooking oil; lead-acid/rechargeable batteries (not household alkaline); scrap metal; appliances (freon fee); electronics; bulky/rigid plastics; tires (fees); plastic toys; clean plastic bags; EPS/Styrofoam; cans; glass bottles/jars; mixed paper; plastic bottles/containers #1/#2/#5; cardboard; brush; leaves Nov 1–May 31. Residents only; no commercial vehicles."
+          },
+          {
+            "name": "Middletown Train Station satellite recycling center",
+            "address": "Main parking lot of Middletown Train Station off Middletown-Lincroft Road (Church Street)",
+            "hours": "24/7",
+            "residents_only": true,
+            "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
+            "accepts_text": "24/7 satellite: cardboard; mixed paper; plastic bottles/containers #1/#2/#5; aluminum/tin/steel cans; glass bottles/jars; EPS/Styrofoam (specified bins)."
+          }
+        ]
+      },
+      {
+        "field": "schedules",
+        "v4_count": 3,
+        "v5_count": 4,
+        "removed": [],
+        "added": [
+          {
+            "stream": "recycling",
+            "weekday": null,
+            "week_pattern": "custom",
+            "anchor_date": null,
+            "area_note": "Curbside recycling weekdays are Recycle Coach address-lookup only; township collection pages publish",
+            "source_url": "https://www.middletownnj.org/collection",
+            "source_quote": "",
+            "source_date": "standing"
+          }
+        ],
+        "meta_changed": []
+      }
+    ]
+  },
+  "neptune-city": {
+    "slug": "neptune-city",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07753",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.neptunecitynj.com/public-works/pages/garbage-collection-schedule-information"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07753",
+            "shared_with": [
+              "neptune-township"
+            ],
+            "source_url": "https://www.neptunecitynj.com/public-works/pages/garbage-collection-schedule-information"
+          }
+        ]
+      }
+    ]
+  },
+  "neptune-township": {
+    "slug": "neptune-township",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07753",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://neptunetownship.org/departments/public-works"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07753",
+            "shared_with": [
+              "neptune-city"
+            ],
+            "source_url": "https://neptunetownship.org/departments/public-works"
+          }
+        ]
+      }
+    ]
+  },
+  "old-bridge": {
+    "slug": "old-bridge",
+    "changes": [
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Recycling Drop-Off Center (Township Municipal Complex, behind Animal Shelter)",
+            "address": "1 Old Bridge Plaza, Old Bridge, NJ",
+            "hours": "Tuesday and Thursday 7:00 a.m.–3:00 p.m.; Saturday 8:00 a.m.–12:00 p.m.",
+            "residents_only": null,
+            "source_url": "https://www.oldbridge.com/page/recycling-information/",
+            "accepts_text": "Extra cardboard can be brought to the Recycling Center (2026 curbside recycling PDF)."
+          }
+        ],
+        "v5": [
+          {
+            "name": "Recycling Drop-Off Center (Township Municipal Complex, behind Animal Shelter)",
+            "address": "1 Old Bridge Plaza, Old Bridge, NJ 08857 (behind Animal Shelter)",
+            "hours": "Tuesdays & Thursdays 7:00 a.m.–3:00 p.m.; Saturdays 8:00 a.m.–12:00 p.m.",
+            "residents_only": null,
+            "source_url": "https://www.oldbridge.com/page/recycling-information/",
+            "accepts_text": "Township Recycling Drop-Off Center; extra cardboard accepted (2026 curbside recycling PDF / recycling-information page)."
+          }
+        ]
+      },
+      {
+        "field": "schedules",
+        "v4_count": 8,
+        "v5_count": 8,
+        "removed": [
+          {
+            "stream": "trash",
+            "weekday": null,
+            "week_pattern": "custom",
+            "anchor_date": null,
+            "area_note": "Garbage is privatized in Old Bridge. Residents can hire the garbage company of their choice.",
+            "source_url": "https://www.oldbridge.com/page/recycling-information/",
+            "source_quote": "",
+            "source_date": "standing"
+          }
+        ],
+        "added": [
+          {
+            "stream": "trash",
+            "weekday": null,
+            "week_pattern": "custom",
+            "anchor_date": null,
+            "area_note": "Please note garbage is privatized in Old Bridge. Residents can hire the garbage company of their cho",
+            "source_url": "https://www.oldbridge.com/page/recycling-information/",
+            "source_quote": "",
+            "source_date": "standing"
+          }
+        ],
+        "meta_changed": []
+      }
+    ]
+  },
+  "perth-amboy": {
+    "slug": "perth-amboy",
+    "changes": [
+      {
+        "field": "notes",
+        "v4": "No 2026 garbage holiday/sanitation calendar PDF found on https://www.perthamboynj.org/government/departments/public_works as of v4 research. Trash rows retained from 2025 Holiday Annual Guidelines PDF (North Mon/Thu, South Tue/Fri, Conrail boundary). source_date remains 2025 so merge keeps them hidden until a 2026 source is published. Recycling weekdays not published as standing text on recycling_guidelines page.",
+        "v5": "UNRESOLVABLE: verified 2026 trash weekdays until a 2026 garbage/holiday calendar PDF is published on https://www.perthamboynj.org/government/departments/public_works. Prior 2025 Holiday Annual Guidelines (North Mon/Thu, South Tue/Fri, Conrail boundary) are not carried forward as verified 2026 days. Informational custom trash row documents municipal collection without inventing weekdays. Recycling weekdays not published as standing text on recycling_guidelines page."
+      },
+      {
+        "field": "schedules",
+        "v4_count": 4,
+        "v5_count": 1,
+        "removed": [
+          {
+            "stream": "trash",
+            "weekday": "Monday",
+            "week_pattern": "every week",
+            "anchor_date": null,
+            "area_note": "NORTH SIDE (Areas above the Conrail train tracks). The Conrail train tracks serve as the official bo",
+            "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
+            "source_quote": "",
+            "source_date": "2025"
+          },
+          {
+            "stream": "trash",
+            "weekday": "Thursday",
+            "week_pattern": "every week",
+            "anchor_date": null,
+            "area_note": "NORTH SIDE (Areas above the Conrail train tracks). The Conrail train tracks serve as the official bo",
+            "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
+            "source_quote": "",
+            "source_date": "2025"
+          },
+          {
+            "stream": "trash",
+            "weekday": "Tuesday",
+            "week_pattern": "every week",
+            "anchor_date": null,
+            "area_note": "SOUTH SIDE (Areas below the Conrail train tracks). Same Conrail boundary. Holiday: resume next sched",
+            "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
+            "source_quote": "",
+            "source_date": "2025"
+          },
+          {
+            "stream": "trash",
+            "weekday": "Friday",
+            "week_pattern": "every week",
+            "anchor_date": null,
+            "area_note": "SOUTH SIDE (Areas below the Conrail train tracks). Same Conrail boundary. Holiday: resume next sched",
+            "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
+            "source_quote": "",
+            "source_date": "2025"
+          }
+        ],
+        "added": [
+          {
+            "stream": "trash",
+            "weekday": null,
+            "week_pattern": "custom",
+            "anchor_date": null,
+            "area_note": "City of Perth Amboy Department of Public Works collects residential garbage, but a 2026 garbage/holi",
+            "source_url": "https://www.perthamboynj.org/government/departments/public_works",
+            "source_quote": "",
+            "source_date": "standing"
+          }
+        ],
+        "meta_changed": []
+      }
+    ]
+  },
+  "red-bank": {
+    "slug": "red-bank",
+    "changes": [
+      {
+        "field": "notes",
+        "v4": "Missed trash/recycling/bulk: call DeLisa Waste Services at 732-988-2525. E-waste accepted at recycling center (dedicated container), not curbside.",
+        "v5": "Missed trash/recycling/bulk: call DeLisa Waste Services at 732-988-2525. E-waste accepted at recycling center (dedicated container), not curbside. UNRESOLVABLE: yard Zones 1-5 brush Apr-Oct / leaves Nov-Dec on 2nd FULL week Mon-Fri by zone (Public-Utilities + leaf zone map) - borough does not define 2nd-full-week calendar math for ISO expansion; not shape-c (2nd weekday of month)."
+      },
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07701",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.redbanknj.org/Faq.aspx?QID=83"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07701",
+            "shared_with": [],
+            "source_url": "https://www.redbanknj.org/Faq.aspx?QID=83"
+          }
+        ]
+      },
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Borough of Red Bank Recycling Center",
+            "address": "110 Sunset Avenue, Red Bank, NJ 07701",
+            "hours": "Tuesday–Friday 7:05 AM–2:55 PM; Saturday 8:00 AM–2:00 PM; closed Sunday and Monday",
+            "residents_only": true,
+            "source_url": "https://www.redbanknj.org/208/Public-Utilities",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Borough of Red Bank Recycling Center",
+            "address": "110 Sunset Avenue, Red Bank, NJ 07701",
+            "hours": "Tuesday–Friday 7:05 AM–2:55 PM; Saturday 8:00 AM–2:00 PM; closed Sunday and Monday",
+            "residents_only": true,
+            "source_url": "https://www.redbanknj.org/208/Public-Utilities",
+            "accepts_text": "Single-stream recyclables (glass bottles/jars, metal cans, mixed paper, cardboard, #1 and #2 plastics); dedicated e-waste container (computers, TVs, monitors, phones, speakers, etc.). Red Bank residents only."
+          }
+        ]
+      }
+    ]
+  },
+  "rumson": {
+    "slug": "rumson",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07760",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.rumsonnj.gov/"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07760",
+            "shared_with": [
+              "sea-bright"
+            ],
+            "source_url": "https://www.rumsonnj.gov/"
+          }
+        ]
+      },
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Rumson Recycling Center",
+            "address": "Behind Borough Hall at the foot of Avenue of Two Rivers, next to the municipal boat ramp",
+            "hours": "Monday–Friday 7:00 AM–5:00 PM; Saturday 8:00 AM–12:00 PM; Sunday 8:00 AM–12:00 PM; closed borough holidays",
+            "residents_only": null,
+            "source_url": "https://www.rumsonnj.gov/rumson-dpw",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Rumson Recycling Center",
+            "address": "Behind Borough Hall at the foot of Avenue of Two Rivers, next to the municipal boat ramp",
+            "hours": "Monday–Friday 7:00 a.m.–5:00 p.m.; Saturday & Sunday 8:00 a.m.–12:00 p.m.; closed borough holidays",
+            "residents_only": true,
+            "source_url": "https://www.rumsonnj.gov/rumson-dpw",
+            "accepts_text": "Recycling only (newspapers/mixed paper, cardboard, commingled recyclables); no trash, bulk, brush, or household hazardous waste."
+          }
+        ]
+      }
+    ]
+  },
+  "sayreville": {
+    "slug": "sayreville",
+    "changes": [
+      {
+        "field": "notes",
+        "v4": "Curbside recycling is Middlesex County Improvement Authority (MCIA), missed pickups 800-488-6242. Borough holidays do not affect MCIA recycling schedule per 2026 page. Sanitation main office 732-390-7043; recycling coordinator 732-390-7008. 2025 guide PDF on site; 2026 recycling dates on dedicated borough page.",
+        "v5": "Curbside recycling is Middlesex County Improvement Authority (MCIA), missed pickups 800-488-6242. Borough holidays do not affect MCIA recycling schedule per 2026 page. Sanitation main office 732-390-7043; recycling coordinator 732-390-7008. 2025 guide PDF on site; 2026 recycling dates on dedicated borough page. MCIA Thursday district 2026-01-01 recycling makeup to 2026-01-03 per https://www.sayreville.com/cn/webpage.cfm?tpid=18888."
+      },
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "08872",
+            "shared_with": [],
+            "source_url": "https://www.sayreville.com/cn/contactinfo/?did=1496"
+          },
+          {
+            "zip": "08859",
+            "shared_with": [
+              "Parlin (USPS name)"
+            ],
+            "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=9296"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "08872",
+            "shared_with": [],
+            "source_url": "https://www.sayreville.com/cn/contactinfo/?did=1496"
+          },
+          {
+            "zip": "08859",
+            "shared_with": [],
+            "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=9296"
+          }
+        ]
+      },
+      {
+        "field": "overrides",
+        "v4_count": 1,
+        "v5_count": 1,
+        "removed": [
+          {
+            "date": "2026-01-01",
+            "stream": null,
+            "action": null,
+            "reason": "MCIA Thursday district: January 1 2026 Thursday recycling moved to Saturday January 3 (borough 2026 bi-weekly page)",
+            "area_note": "",
+            "new_date": null,
+            "source_url": null,
+            "source_quote": ""
+          }
+        ],
+        "added": [
+          {
+            "date": "2026-01-01",
+            "stream": null,
+            "action": null,
+            "reason": "MCIA Thursday: January 1 2026 Thursday recycling moved to Saturday January 3 (borough 2026 bi-weekly page)",
+            "area_note": "",
+            "new_date": null,
+            "source_url": null,
+            "source_quote": ""
+          }
+        ]
+      }
+    ]
+  },
+  "sea-bright": {
+    "slug": "sea-bright",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07760",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.seabrightnj.org/sbnj/Contact%20Us/"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07760",
+            "shared_with": [
+              "rumson"
+            ],
+            "source_url": "https://www.seabrightnj.org/sbnj/Contact%20Us/"
+          }
+        ]
+      },
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "Long Branch Recycling Center (Sea Bright shared services — electronics only)",
+            "address": "378 Atlantic Avenue, Long Branch, NJ (opposite Pleasure Bay ball field/playground)",
+            "hours": "Monday–Friday 7:30 a.m.–3:00 p.m.; Saturday 9:00 a.m.–1:00 p.m.",
+            "residents_only": true,
+            "source_url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Recycling%20Pick-up/",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "Long Branch Recycling Center (Sea Bright shared services - electronics only)",
+            "address": "378 Atlantic Avenue, Long Branch, NJ (opposite Pleasure Bay ball field/playground)",
+            "hours": "Monday–Friday 7:30 a.m.–3:00 p.m.; Saturday 9:00 a.m.–1:00 p.m.",
+            "residents_only": true,
+            "source_url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Recycling%20Pick-up/",
+            "accepts_text": null
+          }
+        ]
+      }
+    ]
+  },
+  "union-beach": {
+    "slug": "union-beach",
+    "changes": [
+      {
+        "field": "zips",
+        "v4": [
+          {
+            "zip": "07735",
+            "shared_with": [
+              "towns",
+              "source_url",
+              "source_note"
+            ],
+            "source_url": "https://www.unionbeachnj.gov/ubnj/Contact%20Us/"
+          }
+        ],
+        "v5": [
+          {
+            "zip": "07735",
+            "shared_with": [
+              "aberdeen",
+              "keyport"
+            ],
+            "source_url": "https://www.unionbeachnj.gov/ubnj/Contact%20Us/"
+          }
+        ]
+      }
+    ]
+  },
+  "west-long-branch": {
+    "slug": "west-long-branch",
+    "changes": [
+      {
+        "field": "dropoff",
+        "v4": [
+          {
+            "name": "West Long Branch DPW Recycling Center",
+            "address": "379 Monmouth Road, West Long Branch, NJ 07764",
+            "hours": "Monday–Friday 7:00 a.m.–3:30 p.m.; Saturday 8:00 a.m.–1:00 p.m.; Sunday 8:00 a.m.–12:00 p.m.",
+            "residents_only": null,
+            "source_url": "https://www.westlongbranch.org/1342/Recycling-Collection",
+            "accepts_text": null
+          }
+        ],
+        "v5": [
+          {
+            "name": "West Long Branch DPW Recycling Center",
+            "address": "379 Monmouth Road, West Long Branch, NJ 07764",
+            "hours": "Monday–Friday 7:00 a.m.–3:30 p.m.; Saturday 8:00 a.m.–1:00 p.m.; Sunday 8:00 a.m.–12:00 p.m.",
+            "residents_only": null,
+            "source_url": "https://www.westlongbranch.org/1342/Recycling-Collection",
+            "accepts_text": "Borough Recycling Center (see Recycling Collection page / borough calendar)."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,818 @@
+====================================================================== bradley-beach
+NOTES: Trash weekdays from 2026 sanitation calendar (Zone 1 Mon/Thu, Zone 2 Tue/Fri, Zone 3 Mon/Fri). Holiday makeups from trash-recycling page (also reflected on 2026 sanitation calendar PDF). UNRESOLVABLE: distinct non-overlapping street boundaries for trash zones - street-sweeper page lists Zone 1 and Zone 3 with the same boundary text (LaReine Ave. to Lake Terrace) and Zone 2 as Brinley Ave. to Bradley Blvd.; Zone 4 duplicates Zone 2 text for opposite curb sides. area_note uses Zone 1/2/3 labels only. Source: https://www.bradleybeachnj.gov/street-sweeper/ (zones in accordance with trash collection zones). Schedule changes also at https://www.bradleybeachnj.gov/trash-recycling-information/.
+HOLIDAY: 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05.
+SCHEDULES:
+  [0] trash wd='Monday' pat='every week' anchor=None date=2026
+      note='Zone 1'
+      url=https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf
+      quote=''
+  [1] trash wd='Thursday' pat='every week' anchor=None date=2026
+      note='Zone 1'
+      url=https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf
+      quote=''
+  [2] trash wd='Tuesday' pat='every week' anchor=None date=2026
+      note='Zone 2'
+      url=https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf
+      quote=''
+  [3] trash wd='Friday' pat='every week' anchor=None date=2026
+      note='Zone 2'
+      url=https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf
+      quote=''
+  [4] trash wd='Monday' pat='every week' anchor=None date=2026
+      note='Zone 3'
+      url=https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf
+      quote=''
+  [5] trash wd='Friday' pat='every week' anchor=None date=2026
+      note='Zone 3'
+      url=https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf
+      quote=''
+  [6] recycling wd='Wednesday' pat='every week' anchor=None date=2026
+      note='All zones'
+      url=https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf
+      quote=''
+  [7] bulk wd='Thursday' pat='2026-01-08' anchor=None date=2026
+      note='Zone 1 and north side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [8] bulk wd='Thursday' pat='2026-03-12' anchor=None date=2026
+      note='Zone 1 and north side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [9] bulk wd='Thursday' pat='2026-05-14' anchor=None date=2026
+      note='Zone 1 and north side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [10] bulk wd='Thursday' pat='2026-07-09' anchor=None date=2026
+      note='Zone 1 and north side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [11] bulk wd='Thursday' pat='2026-09-10' anchor=None date=2026
+      note='Zone 1 and north side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [12] bulk wd='Thursday' pat='2026-11-12' anchor=None date=2026
+      note='Zone 1 and north side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [13] bulk wd='Thursday' pat='2026-02-12' anchor=None date=2026
+      note='Zone 2 and south side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [14] bulk wd='Thursday' pat='2026-04-09' anchor=None date=2026
+      note='Zone 2 and south side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [15] bulk wd='Thursday' pat='2026-06-11' anchor=None date=2026
+      note='Zone 2 and south side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [16] bulk wd='Thursday' pat='2026-08-13' anchor=None date=2026
+      note='Zone 2 and south side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [17] bulk wd='Thursday' pat='2026-10-08' anchor=None date=2026
+      note='Zone 2 and south side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [18] bulk wd='Thursday' pat='2026-12-10' anchor=None date=2026
+      note='Zone 2 and south side of Zone 3; bulk stickers required; max 5 items'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [19] yard wd='Monday' pat='2026-03-09' anchor=None date=2026
+      note='Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [20] yard wd='Monday' pat='2026-04-13' anchor=None date=2026
+      note='Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [21] yard wd='Monday' pat='2026-04-27' anchor=None date=2026
+      note='Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [22] yard wd='Monday' pat='2026-05-11' anchor=None date=2026
+      note='Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [23] yard wd='Monday' pat='2026-06-08' anchor=None date=2026
+      note='Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [24] yard wd='Monday' pat='2026-09-14' anchor=None date=2026
+      note='Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [25] yard wd='Tuesday' pat='2026-10-13' anchor=None date=2026
+      note='Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [26] yard wd='Monday' pat='2026-11-09' anchor=None date=2026
+      note='Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [27] yard wd='Monday' pat='2026-12-14' anchor=None date=2026
+      note='Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [28] yard wd=None pat='seasonal' anchor=None date=standing
+      note='Leaf collection loose or biodegradable bags April 1 through May 31 and September 15 through December 1 (possible extension per borough website); not within 10 feet of drain inlets.'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+  [29] other wd=None pat='by appointment' anchor=None date=standing
+      note='Computer/electronic/metal curbside by appointment; minimum 4 bulk stickers per item; call Borough Hall 732-776-2999 ext. 1010.'
+      url=https://www.bradleybeachnj.gov/trash-recycling-information/
+      quote=''
+OVERRIDES (6):
+  [0] date=2026-01-01 stream=None action=None new=None
+      reason="Zone 1: New Year's Day trash moved to 2026-01-05 (trash-recycling page)"
+      url=None
+      quote=''
+  [1] date=2026-11-26 stream=None action=None new=None
+      reason='Zone 1: Thanksgiving trash moved to 2026-11-30 (trash-recycling page)'
+      url=None
+      quote=''
+  [2] date=2026-12-25 stream=None action=None new=None
+      reason='Zone 2: Christmas trash moved to 2026-12-29 (trash-recycling page)'
+      url=None
+      quote=''
+  [3] date=2026-12-25 stream=None action=None new=None
+      reason='Zone 3: Christmas trash moved to 2026-12-28 (trash-recycling page)'
+      url=None
+      quote=''
+  [4] date=2027-01-01 stream=None action=None new=None
+      reason="Zone 2: New Year's Day 2027 trash moved to 2027-01-05 (trash-recycling page)"
+      url=None
+      quote=''
+  [5] date=2027-01-01 stream=None action=None new=None
+      reason="Zone 3: New Year's Day 2027 trash moved to 2027-01-04 (trash-recycling page)"
+      url=None
+      quote=''
+DROPOFF: [{"name": "Trash/Recycling Lot", "address": "1011 Main Street, Bradley Beach, NJ 07720", "hours": "Monday, Thursday–Sunday 8:00 a.m.–12:00 p.m.; closed Tuesday and Wednesday; closed when borough closed on holidays", "residents_only": true, "source_url": "https://www.bradleybeachnj.gov/public-works/", "accepts_text": "Trash, recycling, plastic film, brush, yard waste, leaves, electronics (stickers required), and bulk items; proof of residency required."}]
+ZIPS: [{"zip": "07720", "shared_with": [], "source_url": "https://www.bradleybeachnj.gov/"}]
+
+====================================================================== sayreville
+NOTES: Curbside recycling is Middlesex County Improvement Authority (MCIA), missed pickups 800-488-6242. Borough holidays do not affect MCIA recycling schedule per 2026 page. Sanitation main office 732-390-7043; recycling coordinator 732-390-7008. 2025 guide PDF on site; 2026 recycling dates on dedicated borough page. MCIA Thursday district 2026-01-01 recycling makeup to 2026-01-03 per https://www.sayreville.com/cn/webpage.cfm?tpid=18888.
+HOLIDAY: Municipal Public Works holidays do NOT affect MCIA recycling collection.
+SCHEDULES:
+  [0] trash wd='Monday' pat='every week' anchor=None date=standing
+      note="Sanitation Zone I: Sayrewoods, Parkway Homes, Melrose, President Park, Oaktree North, Sherwood Forest, Patriot Hill, Upper Main Street (Hilltop Avenue area), Old Bridge, Munn's Vil"
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [1] trash wd='Tuesday' pat='every week' anchor=None date=standing
+      note='Sanitation Zone II: Morgan, Appletree Village, Morgan Heights, Oaktree East, Spinnaker Point, Laurel Park, Parlin area (North Edward Street to end of Deerfield Road; South Edward S'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [2] trash wd='Wednesday' pat='every week' anchor=None date=standing
+      note='Sanitation Zone III: Sayreville Proper, Tangletown, Winding River, Towne Lake, Sayre Park, Lower Sayreville (lower Pine Brook), Natures Walk, Horseshoe Road area, Oaktree West, Gre'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [3] recycling wd='Tuesday' pat='every other week' anchor='2026-01-13' date=2026
+      note='MCIA county program (not sanitation zones): Sayrebrook Townhomes, President Park, Oaktree North, Sherwood Forest, Patriot Hill, Horseshoe Road area, Melrose, Morgan, Appletree Vill'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=18888
+      quote=''
+  [4] recycling wd='Wednesday' pat='every other week' anchor='2026-01-14' date=2026
+      note='MCIA: Laurel Park, Ernston Estates, Ernston Hill Estates, Woodside Estates, Parkway Homes, Oaktree East, LaMer, Old Bridge section, Bordentown Avenue west of Garden State Parkway, '
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=18888
+      quote=''
+  [5] recycling wd='Thursday' pat='every other week' anchor='2026-01-15' date=2026
+      note='MCIA: Lower Sayreville (Van Loan through River Road), Jernee Mill Road, Sayre Park, White Oaks, Pine Brook Homes, Hillcrest Homes, Deerfield Road through Marchut Court, Oaktree Wes'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=18888
+      quote=''
+  [6] recycling wd='Friday' pat='every other week' anchor='2026-01-02' date=2026
+      note='MCIA: Sayreville proper, Tangletown, Winding River, Towne Lake'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=18888
+      quote=''
+  [7] bulk wd='Thursday' pat='2026-04-09' anchor=None date=2026
+      note='Zone 1 heavy/bulk trash; place out Monday of scheduled week'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [8] bulk wd='Thursday' pat='2026-07-09' anchor=None date=2026
+      note='Zone 1 heavy/bulk trash; place out Monday of scheduled week'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [9] bulk wd='Thursday' pat='2026-10-01' anchor=None date=2026
+      note='Zone 1 heavy/bulk trash; place out Monday of scheduled week'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [10] bulk wd='Thursday' pat='2026-04-16' anchor=None date=2026
+      note='Zone 2 heavy/bulk trash; place out Monday of scheduled week'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [11] bulk wd='Thursday' pat='2026-07-16' anchor=None date=2026
+      note='Zone 2 heavy/bulk trash; place out Monday of scheduled week'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [12] bulk wd='Thursday' pat='2026-10-08' anchor=None date=2026
+      note='Zone 2 heavy/bulk trash; place out Monday of scheduled week'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [13] bulk wd='Thursday' pat='2026-04-23' anchor=None date=2026
+      note='Zone 3 heavy/bulk trash; place out Monday of scheduled week'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [14] bulk wd='Thursday' pat='2026-07-23' anchor=None date=2026
+      note='Zone 3 heavy/bulk trash; place out Monday of scheduled week'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [15] bulk wd='Thursday' pat='2026-10-22' anchor=None date=2026
+      note='Zone 3 heavy/bulk trash; place out Monday of scheduled week'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [16] yard wd=None pat='seasonal' anchor=None date=standing
+      note='Leaf collection November and December; spring leaf collection March and May; Christmas trees and branches collected in winter months per Sanitation Division; no single weekday publ'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [17] yard wd='Monday' pat='2026-05-04' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [18] yard wd='Monday' pat='2026-05-11' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [19] yard wd='Monday' pat='2026-05-18' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [20] yard wd='Monday' pat='2026-05-25' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [21] yard wd='Monday' pat='2026-06-01' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [22] yard wd='Monday' pat='2026-06-08' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [23] yard wd='Monday' pat='2026-06-15' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [24] yard wd='Monday' pat='2026-06-22' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [25] yard wd='Monday' pat='2026-06-29' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [26] yard wd='Monday' pat='2026-07-06' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [27] yard wd='Monday' pat='2026-07-13' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [28] yard wd='Monday' pat='2026-07-20' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [29] yard wd='Monday' pat='2026-07-27' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [30] yard wd='Monday' pat='2026-08-03' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [31] yard wd='Monday' pat='2026-08-10' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [32] yard wd='Monday' pat='2026-08-17' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [33] yard wd='Monday' pat='2026-08-24' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [34] yard wd='Monday' pat='2026-08-31' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [35] yard wd='Monday' pat='2026-09-07' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [36] yard wd='Monday' pat='2026-09-14' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [37] yard wd='Monday' pat='2026-09-21' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [38] yard wd='Monday' pat='2026-09-28' anchor=None date=2026
+      note='Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [39] yard wd='Tuesday' pat='2026-05-05' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [40] yard wd='Tuesday' pat='2026-05-12' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [41] yard wd='Tuesday' pat='2026-05-19' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [42] yard wd='Tuesday' pat='2026-05-26' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [43] yard wd='Tuesday' pat='2026-06-02' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [44] yard wd='Tuesday' pat='2026-06-09' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [45] yard wd='Tuesday' pat='2026-06-16' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [46] yard wd='Tuesday' pat='2026-06-23' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [47] yard wd='Tuesday' pat='2026-06-30' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [48] yard wd='Tuesday' pat='2026-07-07' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [49] yard wd='Tuesday' pat='2026-07-14' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [50] yard wd='Tuesday' pat='2026-07-21' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [51] yard wd='Tuesday' pat='2026-07-28' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [52] yard wd='Tuesday' pat='2026-08-04' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [53] yard wd='Tuesday' pat='2026-08-11' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [54] yard wd='Tuesday' pat='2026-08-18' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [55] yard wd='Tuesday' pat='2026-08-25' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [56] yard wd='Tuesday' pat='2026-09-01' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [57] yard wd='Tuesday' pat='2026-09-08' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [58] yard wd='Tuesday' pat='2026-09-15' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [59] yard wd='Tuesday' pat='2026-09-22' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [60] yard wd='Tuesday' pat='2026-09-29' anchor=None date=2026
+      note='Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [61] yard wd='Wednesday' pat='2026-05-06' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [62] yard wd='Wednesday' pat='2026-05-13' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [63] yard wd='Wednesday' pat='2026-05-20' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [64] yard wd='Wednesday' pat='2026-05-27' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [65] yard wd='Wednesday' pat='2026-06-03' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [66] yard wd='Wednesday' pat='2026-06-10' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [67] yard wd='Wednesday' pat='2026-06-17' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [68] yard wd='Wednesday' pat='2026-06-24' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [69] yard wd='Wednesday' pat='2026-07-01' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [70] yard wd='Wednesday' pat='2026-07-08' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [71] yard wd='Wednesday' pat='2026-07-15' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [72] yard wd='Wednesday' pat='2026-07-22' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [73] yard wd='Wednesday' pat='2026-07-29' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [74] yard wd='Wednesday' pat='2026-08-05' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [75] yard wd='Wednesday' pat='2026-08-12' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [76] yard wd='Wednesday' pat='2026-08-19' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [77] yard wd='Wednesday' pat='2026-08-26' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [78] yard wd='Wednesday' pat='2026-09-02' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [79] yard wd='Wednesday' pat='2026-09-09' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [80] yard wd='Wednesday' pat='2026-09-16' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [81] yard wd='Wednesday' pat='2026-09-23' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+  [82] yard wd='Wednesday' pat='2026-09-30' anchor=None date=2026
+      note='Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags'
+      url=https://www.sayreville.com/cn/webpage.cfm?tpid=8945
+      quote=''
+OVERRIDES (1):
+  [0] date=2026-01-01 stream=None action=None new=None
+      reason='MCIA Thursday: January 1 2026 Thursday recycling moved to Saturday January 3 (borough 2026 bi-weekly page)'
+      url=None
+      quote=''
+DROPOFF: [{"name": "Fort Grumpy Recycling Center", "address": "3750 Bordentown Avenue, Sayreville, NJ", "hours": "Monday and Friday 7:30 a.m.–1:00 p.m. (gates close 12:55); 1st and 3rd Saturday 7:00 a.m.–12:00 p.m. (gates close 11:55)", "residents_only": true, "source_url": "https://www.sayreville.com/documents/Sayreville%20Recycling%20Sanitation%202025%20Guide.pdf", "accepts_text": null}]
+ZIPS: [{"zip": "08872", "shared_with": [], "source_url": "https://www.sayreville.com/cn/contactinfo/?did=1496"}, {"zip": "08859", "shared_with": [], "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=9296"}]
+
+====================================================================== perth-amboy
+NOTES: UNRESOLVABLE: verified 2026 trash weekdays until a 2026 garbage/holiday calendar PDF is published on https://www.perthamboynj.org/government/departments/public_works. Prior 2025 Holiday Annual Guidelines (North Mon/Thu, South Tue/Fri, Conrail boundary) are not carried forward as verified 2026 days. Informational custom trash row documents municipal collection without inventing weekdays. Recycling weekdays not published as standing text on recycling_guidelines page.
+HOLIDAY: If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day.
+SCHEDULES:
+  [0] trash wd=None pat='custom' anchor=None date=standing
+      note='City of Perth Amboy Department of Public Works collects residential garbage, but a 2026 garbage/holiday sanitation calendar PDF is not published on the Public Works page as of rese'
+      url=https://www.perthamboynj.org/government/departments/public_works
+      quote=''
+OVERRIDES (0):
+DROPOFF: []
+ZIPS: [{"zip": "08861", "shared_with": [], "source_url": "https://www.perthamboynj.org/government/departments/public_works"}]
+
+====================================================================== middletown
+NOTES: UNRESOLVABLE: static garbage/recycling weekdays - Recycle Coach address-lookup only; no static PDF or zone day list on https://www.middletownnj.org/571/Curbside-Garbage-Collection and https://www.middletownnj.org/collection. Informational trash and recycling custom rows document that fact.
+HOLIDAY: Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates.
+SCHEDULES:
+  [0] trash wd=None pat='custom' anchor=None date=standing
+      note='Township provides curbside garbage in township black carts but publishes no static weekday or zone list; residents must enter their address in the Recycle Coach app to find their z'
+      url=https://www.middletownnj.org/571/Curbside-Garbage-Collection
+      quote=''
+  [1] recycling wd=None pat='custom' anchor=None date=standing
+      note='Curbside recycling weekdays are Recycle Coach address-lookup only; township collection pages publish no static recycling weekday or zone list PDF.'
+      url=https://www.middletownnj.org/collection
+      quote=''
+  [2] bulk wd=None pat='by appointment' anchor=None date=standing
+      note='Register by 3:00 p.m. Sunday-Thursday during your scheduled recycling week for pickup within 48 hours; one bulk request per household per recycling week; up to 4 items, 75 lb max e'
+      url=https://middletownnj.org/m/newsflash/Home/Detail/1657
+      quote=''
+  [3] yard wd=None pat='seasonal' anchor=None date=standing
+      note='Curbside brush in spring and leaves in fall; Fall 2026 leaf schedule not yet posted on collection page as of research.'
+      url=https://www.middletownnj.org/collection
+      quote=''
+OVERRIDES (0):
+DROPOFF: [{"name": "Middletown Recycling Center", "address": "52 Kanes Lane, Middletown, NJ", "hours": "Thursday through Monday 8:30 a.m.–4:30 p.m.; closed Tuesday, Wednesday, and major holidays (New Year's Day, Easter Sunday, Memorial Day, Independence Day, Labor Day, Thanksgiving, Christmas Day)", "residents_only": true, "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers", "accepts_text": "Motor oil, antifreeze, vegetable cooking oil; lead-acid/rechargeable batteries (not household alkaline); scrap metal; appliances (freon fee); electronics; bulky/rigid plastics; tires (fees); plastic toys; clean plastic bags; EPS/Styrofoam; cans; glass bottles/jars; mixed paper; plastic bottles/containers #1/#2/#5; cardboard; brush; leaves Nov 1–May 31. Residents only; no commercial veh
+ZIPS: [{"zip": "07748", "shared_with": [], "source_url": "https://middletownnj.org/Directory.aspx?did=31"}]
+
+====================================================================== loch-arbour
+NOTES: UNRESOLVABLE: weekly trash/recycling weekdays - not published on locharbournj.us (https://www.locharbournj.us/trash-recycling; contacts https://www.locharbournj.us/departments-services/pages/departments-services-contacts). Sanitation administered via Borough of Deal contact; do not invent Deal borough days. Bulk 2026 Mondays from village trash-recycling page retained as ISO date rows.
+HOLIDAY: Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page).
+SCHEDULES:
+  [0] trash wd=None pat='custom' anchor=None date=standing
+      note='Village Sanitation contact is Borough of Deal (732-531-1454) per Departments and Services Contacts; Loch Arbour trash-recycling page lists 2026 bulk Mondays only and does not state'
+      url=https://www.locharbournj.us/departments-services/pages/departments-services-contacts
+      quote=''
+  [1] recycling wd=None pat='custom' anchor=None date=standing
+      note='Loch Arbour trash-recycling page does not publish weekly recycling weekdays; sanitation contact is Borough of Deal (732-531-1454). Do not infer Deal days.'
+      url=https://www.locharbournj.us/trash-recycling
+      quote=''
+  [2] bulk wd='Monday' pat='2026-01-26' anchor=None date=2026
+      note='Village bulk collection day'
+      url=https://www.locharbournj.us/trash-recycling
+      quote=''
+  [3] bulk wd='Monday' pat='2026-03-09' anchor=None date=2026
+      note='Village bulk collection day'
+      url=https://www.locharbournj.us/trash-recycling
+      quote=''
+  [4] bulk wd='Monday' pat='2026-05-11' anchor=None date=2026
+      note='Village bulk collection day'
+      url=https://www.locharbournj.us/trash-recycling
+      quote=''
+  [5] bulk wd='Monday' pat='2026-07-13' anchor=None date=2026
+      note='Village bulk collection day'
+      url=https://www.locharbournj.us/trash-recycling
+      quote=''
+  [6] bulk wd='Monday' pat='2026-09-14' anchor=None date=2026
+      note='Village bulk collection day'
+      url=https://www.locharbournj.us/trash-recycling
+      quote=''
+  [7] bulk wd='Monday' pat='2026-11-16' anchor=None date=2026
+      note='Village bulk collection day'
+      url=https://www.locharbournj.us/trash-recycling
+      quote=''
+OVERRIDES (0):
+DROPOFF: []
+ZIPS: [{"zip": "07711", "shared_with": ["allenhurst"], "source_url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts"}]
+
+====================================================================== aberdeen
+NOTES: UNRESOLVABLE: curbside recycling weekdays - not published as standing plain text on https://www.aberdeennj.org/271/Trash-Recycling (Recycle Coach linked; archive flyers only; not used for weekdays). Section I/II trash weekdays retained (second day + bulk from Trash/Recycling; first days supported by 2026 Winter Storm Information Center notices). Condo/apartment complexes excluded from township contracted hauler.
+HOLIDAY: If recycling or garbage day falls on New Year's Day, Thanksgiving, or Christmas Day, pick-up on the next scheduled pick-up day.
+SCHEDULES:
+  [0] trash wd='Monday' pat='every week' anchor=None date=2026
+      note='Section I first collection day (Cliffwood Beach, Cliffwood, River Gardens, Oakshades, Freneau, Heritage Estates). First weekday derived from official Winter Storm Information Cente'
+      url=https://www.aberdeennj.org/437/Winter-Storm-Information-Center
+      quote=''
+  [1] trash wd='Thursday' pat='every week' anchor=None date=standing
+      note='Section I second collection day / bulk day (Trash/Recycling page).'
+      url=https://www.aberdeennj.org/271/Trash-Recycling
+      quote=''
+  [2] trash wd='Tuesday' pat='every week' anchor=None date=2026
+      note='Section II first collection day (Strathmore, High School Area, Woodbrook Drive, Randall Way, Storyland, Santa Fe, Heather Glenn). First weekday from Winter Storm Information Center'
+      url=https://www.aberdeennj.org/437/Winter-Storm-Information-Center
+      quote=''
+  [3] trash wd='Friday' pat='every week' anchor=None date=standing
+      note='Section II second collection day / bulk day (Trash/Recycling page).'
+      url=https://www.aberdeennj.org/271/Trash-Recycling
+      quote=''
+  [4] recycling wd=None pat='custom' anchor=None date=standing
+      note='Curbside recycling weekdays are not published as standing plain text on the current Trash/Recycling page (Recycle Coach linked; archive flyers only). Do not invent weekdays from ol'
+      url=https://www.aberdeennj.org/271/Trash-Recycling
+      quote=''
+  [5] bulk wd='Thursday' pat='every week' anchor=None date=standing
+      note='Section I; limit two items per pick-up; effective January 1, 2018 (still on current Trash/Recycling page).'
+      url=https://www.aberdeennj.org/271/Trash-Recycling
+      quote=''
+  [6] bulk wd='Friday' pat='every week' anchor=None date=standing
+      note='Section II; limit two items per pick-up; effective January 1, 2018 (still on current Trash/Recycling page).'
+      url=https://www.aberdeennj.org/271/Trash-Recycling
+      quote=''
+OVERRIDES (0):
+DROPOFF: [{"name": "Aberdeen Public Works Garage drop-off", "address": "147 Lenox Road, Cliffwood Beach, NJ 07735", "hours": "Monday through Saturday, 7 am to 3 pm", "residents_only": true, "source_url": "https://www.aberdeennj.org/271/Trash-Recycling", "accepts_text": "All cans, bottles, jars, cardboard, newspapers, office paper and mixed paper; electronics (TVs, computers, laptops, power tools, microwaves, stereos, sound systems, fans, camcorders, vacuums); brush, metal, concrete and asphalt; refrigerators, air conditioners, stoves, washers and dryers, water heaters. Aberdeen residents only; IDs checked."}]
+ZIPS: [{"zip": "07747", "shared_with": ["matawan"], "source_url": "https://www.aberdeennj.org/"}, {"zip": "07735", "shared_with": ["keyport", "union-beach"], "source_url": "https://www.aberdeennj.org/271/Trash-Recycling"}]
+
+====================================================================== old-bridge
+NOTES: Municipal curbside trash not provided; garbage privatized per recycling-information page. 2026 MCIA bi-weekly recycling from ward calendar PDF. Holiday overrides limited to wards whose regular weekday matches the holiday (Mon Memorial Day, Thu Thanksgiving, Fri Christmas).
+HOLIDAY: If a Holiday falls on your recycling day, pickup that Saturday.
+SCHEDULES:
+  [0] trash wd=None pat='custom' anchor=None date=standing
+      note='Please note garbage is privatized in Old Bridge. Residents can hire the garbage company of their choice.'
+      url=https://www.oldbridge.com/page/recycling-information/
+      quote=''
+  [1] recycling wd='Monday' pat='every other week' anchor='2026-01-05' date=2026
+      note='Ward 1; confirm ward at gis.oldbridge.com (WHAT WARD AM I IN?)'
+      url=https://5il.co/3symt
+      quote=''
+  [2] recycling wd='Tuesday' pat='every other week' anchor='2026-01-06' date=2026
+      note='Ward 2; confirm ward at gis.oldbridge.com'
+      url=https://5il.co/3symt
+      quote=''
+  [3] recycling wd='Wednesday' pat='every other week' anchor='2026-01-07' date=2026
+      note='Wards 3 and 4; confirm ward at gis.oldbridge.com'
+      url=https://5il.co/3symt
+      quote=''
+  [4] recycling wd='Thursday' pat='every other week' anchor='2026-01-08' date=2026
+      note='Ward 5; confirm ward at gis.oldbridge.com'
+      url=https://5il.co/3symt
+      quote=''
+  [5] recycling wd='Friday' pat='every other week' anchor='2026-01-09' date=2026
+      note='Ward 6; confirm ward at gis.oldbridge.com'
+      url=https://5il.co/3symt
+      quote=''
+  [6] recycling wd='Monday' pat='every other week' anchor='2026-01-05' date=2026
+      note='Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct) collected Mondays though mapped in Ward 3'
+      url=https://5il.co/3symt
+      quote=''
+  [7] recycling wd='Tuesday' pat='every other week' anchor='2026-01-06' date=2026
+      note='Exception: The Arbors section, Sonoma Court, and Lakeridge West collected Tuesdays though mapped in Ward 4'
+      url=https://5il.co/3symt
+      quote=''
+OVERRIDES (4):
+  [0] date=2026-05-25 stream=None action=None new=None
+      reason='Ward 1: Memorial Day recycling moved to Saturday May 30 (2026 ward PDF Monday column May 11, 30*)'
+      url=None
+      quote=''
+  [1] date=2026-05-25 stream=None action=None new=None
+      reason='Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct): Memorial Day recycling moved to Saturday May 30 (Monday pickup)'
+      url=None
+      quote=''
+  [2] date=2026-11-26 stream=None action=None new=None
+      reason='Ward 5: Thanksgiving recycling moved to Saturday Nov 28 (2026 ward PDF Thursday column Nov 12, 28*)'
+      url=None
+      quote=''
+  [3] date=2026-12-25 stream=None action=None new=None
+      reason='Ward 6: Christmas recycling moved to Saturday Dec 26 (2026 ward PDF Friday column Dec 11, 26*)'
+      url=None
+      quote=''
+DROPOFF: [{"name": "Recycling Drop-Off Center (Township Municipal Complex, behind Animal Shelter)", "address": "1 Old Bridge Plaza, Old Bridge, NJ 08857 (behind Animal Shelter)", "hours": "Tuesdays & Thursdays 7:00 a.m.–3:00 p.m.; Saturdays 8:00 a.m.–12:00 p.m.", "residents_only": null, "source_url": "https://www.oldbridge.com/page/recycling-information/", "accepts_text": "Township Recycling Drop-Off Center; extra cardboard accepted (2026 curbside recycling PDF / recycling-information page)."}]
+ZIPS: [{"zip": "08857", "shared_with": [], "source_url": "https://www.oldbridge.com/page/public-works/"}]
+
+====================================================================== red-bank
+NOTES: Missed trash/recycling/bulk: call DeLisa Waste Services at 732-988-2525. E-waste accepted at recycling center (dedicated container), not curbside. UNRESOLVABLE: yard Zones 1-5 brush Apr-Oct / leaves Nov-Dec on 2nd FULL week Mon-Fri by zone (Public-Utilities + leaf zone map) - borough does not define 2nd-full-week calendar math for ISO expansion; not shape-c (2nd weekday of month).
+HOLIDAY: Public Utilities page (undated); no 2026 override table on fetched page.
+SCHEDULES:
+  [0] trash wd='monday' pat='every week' anchor=None date=standing
+      note='East of Broad Street'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [1] trash wd='thursday' pat='every week' anchor=None date=standing
+      note='East of Broad Street'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [2] trash wd='tuesday' pat='every week' anchor=None date=standing
+      note='West of Broad Street'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [3] trash wd='friday' pat='every week' anchor=None date=standing
+      note='West of Broad Street'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [4] recycling wd='wednesday' pat='every week' anchor=None date=standing
+      note='Borough-wide single-stream curbside'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [5] bulk wd='Thursday' pat='2026-01-08' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [6] bulk wd='Thursday' pat='2026-02-12' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [7] bulk wd='Thursday' pat='2026-03-12' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [8] bulk wd='Thursday' pat='2026-04-09' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [9] bulk wd='Thursday' pat='2026-05-14' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [10] bulk wd='Thursday' pat='2026-06-11' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [11] bulk wd='Thursday' pat='2026-07-09' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [12] bulk wd='Thursday' pat='2026-08-13' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [13] bulk wd='Thursday' pat='2026-09-10' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [14] bulk wd='Thursday' pat='2026-10-08' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [15] bulk wd='Thursday' pat='2026-11-12' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [16] bulk wd='Thursday' pat='2026-12-10' anchor=None date=2026
+      note='East of Broad Street; 2nd Thursday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [17] bulk wd='Friday' pat='2026-01-16' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [18] bulk wd='Friday' pat='2026-02-20' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [19] bulk wd='Friday' pat='2026-03-20' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [20] bulk wd='Friday' pat='2026-04-17' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [21] bulk wd='Friday' pat='2026-05-15' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [22] bulk wd='Friday' pat='2026-06-19' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [23] bulk wd='Friday' pat='2026-07-17' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [24] bulk wd='Friday' pat='2026-08-21' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [25] bulk wd='Friday' pat='2026-09-18' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [26] bulk wd='Friday' pat='2026-10-16' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [27] bulk wd='Friday' pat='2026-11-20' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [28] bulk wd='Friday' pat='2026-12-18' anchor=None date=2026
+      note='West of Broad Street; 3rd Friday bulk; max 2 items'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [29] yard wd='monday' pat='custom' anchor=None date=standing
+      note='Zone 1 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec)'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [30] yard wd='tuesday' pat='custom' anchor=None date=standing
+      note='Zone 2 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec)'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [31] yard wd='wednesday' pat='custom' anchor=None date=standing
+      note='Zone 3 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec)'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [32] yard wd='thursday' pat='custom' anchor=None date=standing
+      note='Zone 4 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec)'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [33] yard wd='friday' pat='custom' anchor=None date=standing
+      note='Zone 5 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec)'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+  [34] other wd=None pat='seasonal' anchor=None date=standing
+      note='Christmas trees curbside January 1 through second week of February.'
+      url=https://www.redbanknj.org/208/Public-Utilities
+      quote=''
+OVERRIDES (0):
+DROPOFF: [{"name": "Borough of Red Bank Recycling Center", "address": "110 Sunset Avenue, Red Bank, NJ 07701", "hours": "Tuesday–Friday 7:05 AM–2:55 PM; Saturday 8:00 AM–2:00 PM; closed Sunday and Monday", "residents_only": true, "source_url": "https://www.redbanknj.org/208/Public-Utilities", "accepts_text": "Single-stream recyclables (glass bottles/jars, metal cans, mixed paper, cardboard, #1 and #2 plastics); dedicated e-waste container (computers, TVs, monitors, phones, speakers, etc.). Red Bank residents only."}]
+ZIPS: [{"zip": "07701", "shared_with": [], "source_url": "https://www.redbanknj.org/Faq.aspx?QID=83"}]
+
+OVERRIDE DIFF bradley-beach
+v4: [{"date": "2026-01-01", "to": "2026-01-05", "reason": "Zone 1: New Year's Day trash moved to 2026-01-05 (trash-recycling page)"}, {"date": "2026-11-26", "to": "2026-11-30", "reason": "Zone 1: Thanksgiving trash moved to 2026-11-30 (trash-recycling page)"}, {"date": "2026-12-25", "to": "2026-12-28", "reason": "Zone 3: Christmas trash moved to 2026-12-28 (trash-recycling page)"}, {"date": "2026-12-25", "to": "2026-12-29", "reason": "Zone 2: Christmas trash moved to 2026-12-29 (trash-recycling page)"}, {"date": "2027-01-01", "to": "2027-01-04", "reason": "Zone 3: New Year's Day 2027 trash moved to 2027-01-04 (trash-recycling page)"}, {"date": "2027-01-01", "to": "2027-01-05", "reason": "Zone 2: New Year's Day 2027 trash moved to 2027-01-05 (trash-recycling page)"}]
+v5: [{"date": "2026-01-01", "to": "2026-01-05", "reason": "Zone 1: New Year's Day trash moved to 2026-01-05 (trash-recycling page)"}, {"date": "2026-11-26", "to": "2026-11-30", "reason": "Zone 1: Thanksgiving trash moved to 2026-11-30 (trash-recycling page)"}, {"date": "2026-12-25", "to": "2026-12-29", "reason": "Zone 2: Christmas trash moved to 2026-12-29 (trash-recycling page)"}, {"date": "2026-12-25", "to": "2026-12-28", "reason": "Zone 3: Christmas trash moved to 2026-12-28 (trash-recycling page)"}, {"date": "2027-01-01", "to": "2027-01-05", "reason": "Zone 2: New Year's Day 2027 trash moved to 2027-01-05 (trash-recycling page)"}, {"date": "2027-01-01", "to": "2027-01-04", "reason": "Zone 3: New Year's Day 2027 trash moved to 2027-01-04 (trash-recycling page)"}]
+OVERRIDE DIFF sayreville
+v4: [{"date": "2026-01-01", "to": "2026-01-03", "reason": "MCIA Thursday district: January 1 2026 Thursday recycling moved to Saturday January 3 (borough 2026 bi-weekly page)"}]
+v5: [{"date": "2026-01-01", "to": "2026-01-03", "reason": "MCIA Thursday: January 1 2026 Thursday recycling moved to Saturday January 3 (borough 2026 bi-weekly page)"}]

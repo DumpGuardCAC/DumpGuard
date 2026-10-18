@@ -1,0 +1,191 @@
+{
+  "old-bridge": {
+    "name": "Old Bridge",
+    "county": "middlesex",
+    "official_site": "https://www.oldbridge.com/",
+    "zips": [
+      {
+        "zip": "08857",
+        "shared_with": [],
+        "source_url": "https://www.oldbridge.com/page/public-works/"
+      }
+    ],
+    "dpw": {
+      "phone": "732-721-5600 ext. 6140",
+      "address": "1 Old Bridge Plaza, Old Bridge, NJ 08857",
+      "source_url": "https://www.oldbridge.com/page/public-works/",
+      "hauler": "Curbside recycling: Middlesex County Improvement Authority (MCIA); household garbage: private carter chosen by resident (municipality does not assign hauler or publish trash days)"
+    },
+    "schedules": [
+      {
+        "stream": "recycling",
+        "weekday": "monday",
+        "week_pattern": "bi-weekly (2026 ward calendar; holiday on collection day moves to following Saturday)",
+        "area_note": "Ward 1; confirm ward at gis.oldbridge.com (WHAT WARD AM I IN?)",
+        "source_url": "https://www.oldbridge.com/page/recycling-information/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "tuesday",
+        "week_pattern": "bi-weekly (2026 ward calendar; holiday on collection day moves to following Saturday)",
+        "area_note": "Ward 2; confirm ward at gis.oldbridge.com",
+        "source_url": "https://www.oldbridge.com/page/recycling-information/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "bi-weekly (2026 ward calendar; holiday on collection day moves to following Saturday)",
+        "area_note": "Wards 3 and 4; confirm ward at gis.oldbridge.com",
+        "source_url": "https://www.oldbridge.com/page/recycling-information/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "thursday",
+        "week_pattern": "bi-weekly (2026 ward calendar; holiday on collection day moves to following Saturday)",
+        "area_note": "Ward 5; confirm ward at gis.oldbridge.com",
+        "source_url": "https://www.oldbridge.com/page/recycling-information/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "friday",
+        "week_pattern": "bi-weekly (2026 ward calendar; holiday on collection day moves to following Saturday)",
+        "area_note": "Ward 6; confirm ward at gis.oldbridge.com",
+        "source_url": "https://www.oldbridge.com/page/recycling-information/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "monday",
+        "week_pattern": "bi-weekly (2026 ward calendar)",
+        "area_note": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct) collected Mondays though mapped in Ward 3",
+        "source_url": "https://www.oldbridge.com/page/recycling-information/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "tuesday",
+        "week_pattern": "bi-weekly (2026 ward calendar)",
+        "area_note": "Exception: The Arbors section, Sonoma Court, and Lakeridge West collected Tuesdays though mapped in Ward 4",
+        "source_url": "https://www.oldbridge.com/page/recycling-information/",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Recycling Drop-Off Center (Township Municipal Complex, behind Animal Shelter)",
+        "address": "1 Old Bridge Plaza, Old Bridge, NJ",
+        "hours": "Tuesday and Thursday 7:00 a.m.–3:00 p.m.; Saturday 8:00 a.m.–12:00 p.m.",
+        "residents_only": null,
+        "source_url": "https://www.oldbridge.com/page/recycling-information/"
+      }
+    ],
+    "status": "partial",
+    "notes": "Township states garbage is privatized; residents choose a private hauler and no municipal curbside trash schedule is published. MCIA provides bi-weekly single-stream recycling (6:00 a.m.–6:00 p.m.; leave cart at curb if missed). 2026 schedule linked from recycling-information page (town-hosted PDF via https://5il.co/3symt). MCIA missed pickup: 800-488-6242 / mciarecycling@mciauth.com; township recycling office ext. 6107 / recycling@oldbridge.com. ASL 95-gallon carts required where delivered."
+  },
+  "perth-amboy": {
+    "name": "Perth Amboy",
+    "county": "middlesex",
+    "official_site": "https://www.perthamboynj.org/",
+    "zips": [
+      {
+        "zip": "08861",
+        "shared_with": [],
+        "source_url": "https://www.perthamboynj.org/government/departments/public_works"
+      }
+    ],
+    "dpw": {
+      "phone": "732-826-2010",
+      "address": "599 Fayette Street, Perth Amboy, NJ 08861",
+      "source_url": "https://www.perthamboynj.org/government/departments/public_works",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "Monday, Thursday",
+        "week_pattern": "every week",
+        "area_note": "NORTH SIDE (Areas above the Conrail train tracks). The Conrail train tracks serve as the official boundary separating the North and South sections of the city for trash collection scheduling. If a holiday falls on your regularly scheduled garbage collection day, service will resume on the next scheduled collection day.",
+        "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
+        "source_date": "2025"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Tuesday, Friday",
+        "week_pattern": "every week",
+        "area_note": "SOUTH SIDE (Areas below the Conrail train tracks). Same Conrail boundary. Holiday: resume next scheduled collection day.",
+        "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
+        "source_date": "2025"
+      }
+    ],
+    "dropoff": [],
+    "status": "partial",
+    "notes": "Official Recycling & Garbage Collection and Recycling Guidelines pages do not state collection days on the municipal site; they embed a third-party my-waste.mobi schedule widget and link to a '2021 Guidelines Recycling Sanitation' PDF that returned HTTP 404 when fetched from the city site (not used). No 2026 town-hosted trash or recycling day schedule found on perthamboynj.org. Trash weekly days taken from city-hosted Holiday Annual Guidelines PDF labeled 2025 that states REGULAR HOUSEHOLD GARBAGE COLLECTION SCHEDULE (treated as permanent weekly days; PDF also lists Jan 1 2026 holiday). Curbside recycling weekday not stated as plain text on fetched municipal pages (my-waste widget / Recycle Coach only); recycling schedule left null. FLAG: trash source_date 2025."
+  },
+  "piscataway": {
+    "name": "Piscataway",
+    "county": "middlesex",
+    "official_site": "https://www.piscatawaynj.org/",
+    "zips": [
+      {
+        "zip": "08854",
+        "shared_with": [],
+        "source_url": "https://www.piscatawaynj.org/departments/public_works/index.php"
+      }
+    ],
+    "dpw": {
+      "phone": "732-562-2390",
+      "address": "505 Sidney Rd, Piscataway, NJ",
+      "source_url": "https://piscatawaynj.org/departments/public_works/recycling_and_solid_waste.php",
+      "hauler": "Private haulers retained by residents (not township): Grand Sanitation (908-222-1566); Republic Residential Services (908-561-8380); Republic Commercial & Industrial (732-545-8988); RGB Disposal (732-968-1131); Total Trash Removal (908-756-3867); Waste Management (908-879-5616). Township does not regulate or endorse."
+    },
+    "schedules": [
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "alternating weeks (2026 dates listed on township map PDF); holiday on collection day -> following Saturday; Memorial Day 2026 pickup May 30",
+        "area_note": "Sec 4, 5, 6, 7. MONDAYS bordered by North Randolphville Road on the north; Overbrook Avenue on the east; River Road on the south; William Street and Baekland Avenue on the west.",
+        "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "alternating weeks (2026 dates on township map PDF); holiday -> following Saturday",
+        "area_note": "Sec 1, 2, 3, 10. TUESDAYS bordered by the City of Plainfield on the north; South Avenue, Center Street, Marsh Avenue and West 4th Street on the east; North Randolphville Road and the RR tracks on the south; West 7th Street and New Brunswick Avenue on the west.",
+        "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "alternating weeks (2026 dates on township map PDF); holiday -> following Saturday",
+        "area_note": "Sec 8, 9. WEDNESDAY bordered by Stelton Road and New Durham Road on the north; Hoes Lane and Centennial Avenue on the east; River Road on the south; Brotherhood Road and Ethel Road on the west.",
+        "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": "by appointment Jan through first week of Oct; 2 bulk and 1 branch pickup per household per year (call to schedule)",
+        "area_note": "Homeowners with Piscataway Service Card only; not for businesses or multi-family dwellings",
+        "source_url": "https://www.piscatawaynj.org/departments/public_works/bulk_pick-up.php",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Piscataway Mini-Dump (Recycling & Trash Center)",
+        "address": "505 Sidney Road, Piscataway, NJ",
+        "hours": "Tuesday and Thursday 2:00 p.m.–8:00 p.m. (gates close 7:45 p.m.); Saturday 8:30 a.m.–4:30 p.m. (gates close 4:15 p.m.); closed Sun–Mon and Wed–Fri; closed on holidays falling on Tue or Thu",
+        "residents_only": true,
+        "source_url": "https://www.piscatawaynj.org/departments/public_works/mini-dump.php"
+      }
+    ],
+    "status": "partial",
+    "notes": "Household trash is private-hauler only (no municipal trash weekday). Recycling via MCIA; 2026 map PDF boundaries transcribed. Township states household trash is collected by private haulers retained by residents; no municipal trash day schedule published. Curbside recycling is MCIA single-stream in 95-gallon ASL carts. Mini-Dump requires Service Card; kitchen garbage, paint, and other listed items not accepted at Mini-Dump."
+  }
+}

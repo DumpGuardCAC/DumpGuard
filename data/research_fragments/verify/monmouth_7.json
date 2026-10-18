@@ -1,0 +1,318 @@
+{
+  "oceanport": {
+    "verified": false,
+    "corrections": [
+      {
+        "field": "schedules[2].area_note",
+        "current": "Garbage District 2 (calendar also labels District 3 with same days)",
+        "should_be": "Garbage District 2",
+        "reason": "Live municipal garbage text lists only District 1 (Monday and Thursday) and District 2 (Tuesday and Friday); 2025-04-21 news states zones reduced from three to two."
+      },
+      {
+        "field": "schedules[3].area_note",
+        "current": "Garbage District 2 (calendar also labels District 3 with same days)",
+        "should_be": "Garbage District 2",
+        "reason": "Same as above."
+      },
+      {
+        "field": "notes",
+        "current": "Borough news (2025-04-21) documents Suburban Disposal contract changes effective 2025-06-01",
+        "should_be": "Official news post dated 2025-04-21 states changes beginning JUNE 1, 2025 (URL slug references July 1 but body text says June 1).",
+        "reason": "Primary source headline and body say June 1, 2025."
+      }
+    ],
+    "issues": [
+      "DPW and trash pages still contain outdated recycling intro text ('TWICE a month') above 'EVERY WEDNESDAY-ALL ZONES' / district Wednesday lines; operators should treat weekly Wednesday as authoritative.",
+      "Recycling drop-off site referenced ('specially marked bin at the drop off site') but no municipal address or hours found on fetched official pages.",
+      "Hauler name appears on government directory, not on DPW or trash schedule pages.",
+      "Zip 07757 not quoted as text on fetched DPW page (only implied via borough address)."
+    ],
+    "confirmed": [
+      {
+        "item": "dpw.phone",
+        "value": "732-222-8221",
+        "source": "https://www.oceanportboro.com/departments/dpw"
+      },
+      {
+        "item": "dpw.address",
+        "value": "910 Oceanport Way, Oceanport, NJ 07757",
+        "source": "https://www.oceanportboro.com/departments/dpw"
+      },
+      {
+        "item": "dpw.hauler",
+        "value": "Suburban Disposal (contractor phone 973-227-7020)",
+        "source": "https://oceanportboro.com/government/directory"
+      },
+      {
+        "item": "trash District 1",
+        "value": "Monday and Thursday",
+        "source": "https://www.oceanportboro.com/resident/trash"
+      },
+      {
+        "item": "trash District 2",
+        "value": "Tuesday and Friday",
+        "source": "https://www.oceanportboro.com/resident/trash"
+      },
+      {
+        "item": "recycling",
+        "value": "Every Wednesday, all zones / both districts",
+        "source": "https://www.oceanportboro.com/departments/dpw"
+      },
+      {
+        "item": "bulk",
+        "value": "By appointment via Citizen Request; DPW assigns date; max 3 items",
+        "source": "https://www.oceanportboro.com/resident/trash"
+      },
+      {
+        "item": "yard brush",
+        "value": "After first Monday of each month, April through November",
+        "source": "https://www.oceanportboro.com/departments/dpw"
+      },
+      {
+        "item": "yard leaves",
+        "value": "Curbside April, October, November, December only; no zones",
+        "source": "https://www.oceanportboro.com/departments/dpw"
+      },
+      {
+        "item": "electronics",
+        "value": "Weekly Friday pickup by appointment; max 3 items",
+        "source": "https://www.oceanportboro.com/departments/dpw"
+      },
+      {
+        "item": "contract changes",
+        "value": "Weekly Wednesday recycling borough-wide; former Wed/Sat trash becomes Tue/Fri; Suburban Disposal contract; effective June 1, 2025",
+        "source": "https://www.oceanportboro.com/government/news/915-trash-and-recycling-updates-beginning-july-1-2025"
+      }
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.oceanportboro.com",
+        "type": "official_site",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.oceanportboro.com/departments/dpw",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.oceanportboro.com/resident/trash",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://oceanportboro.com/government/directory",
+        "type": "official_hauler",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.oceanportboro.com/government/news/915-trash-and-recycling-updates-beginning-july-1-2025",
+        "type": "official_news",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      }
+    ]
+  },
+  "red-bank": {
+    "verified": true,
+    "corrections": [
+      {
+        "field": "dropoff[0].address",
+        "current": "110 West Sunset Avenue, Red Bank, NJ 07701",
+        "should_be": "110 Sunset Avenue, Red Bank, NJ 07701",
+        "reason": "Public Utilities contact block lists Physical Address '110 Sunset Avenue'; page also refers to center on West Sunset Avenue."
+      }
+    ],
+    "issues": [
+      "Brush/leaf zone numbers (1–5) and weekday mapping confirmed, but street-level zone boundaries are not in fetched page text (bulletin/map referenced).",
+      "Minor address wording: 'West Sunset Avenue' vs '110 Sunset Avenue' on same official page."
+    ],
+    "confirmed": [
+      {
+        "item": "dpw.phone",
+        "value": "732-530-2770",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "dpw.address",
+        "value": "75 Chestnut Street, Red Bank, NJ 07701",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "dpw.hauler",
+        "value": "DeLisa Waste Services",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "hauler missed pickup",
+        "value": "732-988-2525",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "trash zones (Broad Street)",
+        "value": "East of Broad Street: Mondays and Thursdays; West of Broad Street: Tuesdays and Fridays",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "recycling",
+        "value": "Curbside every Wednesday, borough-wide single-stream",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "bulk",
+        "value": "East of Broad Street: 2nd Thursday of month; West of Broad Street: 3rd Friday; max 2 items",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "dropoff hours",
+        "value": "Tuesday–Friday 7:05 AM–2:55 PM; Saturday 8:00 AM–2:00 PM; closed Sunday and Monday",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "dropoff residents_only",
+        "value": true,
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "zip 07701 shared_with",
+        "value": "Middletown Township, Shrewsbury Borough, Fair Haven Borough (mail delivery only; must physically live in Red Bank)",
+        "source": "https://www.redbanknj.org/Faq.aspx?QID=83"
+      },
+      {
+        "item": "yard zones",
+        "value": "Brush/leaves 2nd full week of month by weekday zone (Mon–Fri zones 1–5); brush Apr–Oct, leaves Nov–Dec",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "christmas trees",
+        "value": "Curbside January 1 through second week of February",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      },
+      {
+        "item": "e-waste",
+        "value": "At recycling center dedicated container; not curbside",
+        "source": "https://www.redbanknj.org/208/Public-Utilities"
+      }
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.redbanknj.org",
+        "type": "official_site",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.redbanknj.org/208/Public-Utilities",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.redbanknj.org/Faq.aspx?QID=83",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      }
+    ]
+  },
+  "rumson": {
+    "verified": false,
+    "corrections": [
+      {
+        "field": "dropoff[0].hours",
+        "current": "Monday–Friday 7:00 AM–5:00 PM; Saturday 8:00 AM–12:00 PM; closed Sunday and borough holidays",
+        "should_be": "Monday–Friday 7:00 AM–5:00 PM; Saturday 8:00 AM–12:00 PM; Sunday 8:00 AM–12:00 PM; closed borough holidays",
+        "reason": "DPW page states '8 AM - 12 PM Saturday & Sunday' and 'Closed Borough Holidays'."
+      }
+    ],
+    "issues": [
+      "residents_only not stated on official recycling center section.",
+      "No Broad Street zone (N/A); Bingham Avenue split confirmed for curbside only."
+    ],
+    "confirmed": [
+      {
+        "item": "dpw.phone",
+        "value": "732-842-8941",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "dpw.hauler",
+        "value": "Suburban Disposal, Inc.",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "curbside trash (Bingham Avenue)",
+        "value": "East of Bingham Avenue: Monday and Thursday; Bingham Avenue and west: Tuesday and Friday",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "drive-in trash",
+        "value": "Borough-wide Tuesday and Friday",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "curbside recycling (Bingham Avenue)",
+        "value": "East of Bingham Avenue: 1st and 3rd Wednesday; Bingham Avenue and west: 2nd and 4th Wednesday",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "drive-in recycling",
+        "value": "Borough-wide 2nd and 4th Wednesday of each month",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "bulk",
+        "value": "By appointment; 1st and 3rd Wednesdays January–October; two pickups per year, 5 cu yd each",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "dropoff location",
+        "value": "Behind Borough Hall at foot of Avenue of Two Rivers, next to municipal boat ramp",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "dropoff accepted materials",
+        "value": "Recycling only; no trash, bulk, brush, or HHW",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "set-out time",
+        "value": "7:00 AM",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "Green Day",
+        "value": "First Saturday of May and October (electronics/document shredding)",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "2026 holiday schedule",
+        "value": "Listed on DPW page (including holidays with asterisk garbage collection)",
+        "source": "https://www.rumsonnj.gov/rumson-dpw"
+      },
+      {
+        "item": "borough main line",
+        "value": "732-842-3300",
+        "source": "https://www.rumsonnj.gov/"
+      }
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.rumsonnj.gov/",
+        "type": "official_site",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.rumsonnj.gov/rumson-dpw",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      }
+    ]
+  }
+}

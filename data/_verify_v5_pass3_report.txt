@@ -1,0 +1,42 @@
+========================================================================
+DumpGuard v5 — PASS 3 PURE VERIFICATION
+v4=towns_research_v4.json  v5=towns_research_v5.json
+RESULT: PASS
+========================================================================
+
+## Dropoff / zips.shared_with changed towns
+aberdeen, allenhurst, atlantic-highlands, bradley-beach, carteret, hazlet, highland-park, highlands, keansburg, keyport, little-silver, loch-arbour, matawan, middletown, neptune-city, neptune-township, old-bridge, red-bank, rumson, sayreville, sea-bright, union-beach, west-long-branch
+
+## Structural diff summary (focus + drop/zip changed)
+  aberdeen: notes, zips, schedules +1/-0
+  allenhurst: zips
+  atlantic-highlands: dropoff
+  bradley-beach: notes, holiday_rule, dropoff, overrides
+  carteret: dropoff, overrides
+  hazlet: notes, zips, overrides
+  highland-park: dropoff
+  highlands: zips, dropoff
+  keansburg: zips
+  keyport: zips
+  little-silver: dropoff
+  loch-arbour: notes, zips, schedules +2/-1
+  matawan: zips, dropoff
+  middletown: notes, dropoff, schedules +1/-0
+  neptune-city: zips
+  neptune-township: zips
+  old-bridge: dropoff, overrides, schedules +1/-1
+  perth-amboy: notes, schedules +2/-4
+  red-bank: notes, zips, dropoff
+  rumson: zips, dropoff
+  sayreville: notes, zips, overrides
+  sea-bright: zips, dropoff
+  union-beach: zips
+  west-long-branch: dropoff
+
+## Exit criterion (trash + recycling)
+  All 33 towns PASS (classify-ok or custom-informational for both streams).
+
+## Mismatches (machine-readable also in JSON)
+  (none) — zero mismatches
+
+checks_ok=41 mismatch_count=0

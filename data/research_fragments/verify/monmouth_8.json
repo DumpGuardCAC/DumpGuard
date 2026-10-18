@@ -1,0 +1,310 @@
+{
+  "sea-bright": {
+    "verified": true,
+    "corrections": [],
+    "issues": [
+      "zips[0].source_url (Contact Us) does not display ZIP 07760 in fetched page body; 07760 appears in borough footer on DPW and garbage subpages.",
+      "dpw.address remains null; no municipal DPW street address published on official Sea Bright pages reviewed."
+    ],
+    "confirmed": [
+      {
+        "item": "dpw.phone",
+        "value": "732-842-0099 ext. 136 (Robert Smith, Director)",
+        "source": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/"
+      },
+      {
+        "item": "trash",
+        "value": "Monday and Thursday mornings; curbside after 7:00 p.m. evening before; no pickup Thanksgiving Day",
+        "source": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Garbage%20Pickup/"
+      },
+      {
+        "item": "recycling",
+        "value": "Wednesday mornings; single-stream; no plastic bags; no batteries or aerosol cans",
+        "source": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Recycling%20Pick-up/"
+      },
+      {
+        "item": "bulk",
+        "value": "Every Thursday morning; curbside after 7:00 p.m. evening before; no pickup Thanksgiving Day",
+        "source": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Bulk%20Pick-up/"
+      },
+      {
+        "item": "yard leaves",
+        "value": "1st and 3rd Tuesdays in April, May, June, October, November; bagged; no grass mixed in",
+        "source": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Leaf%20Pick-up/"
+      },
+      {
+        "item": "yard brush",
+        "value": "1st and 3rd Tuesdays in April, May, June, October, November; bundled; max 3 in. diameter, 4 ft lengths",
+        "source": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Tree%20and%20Branch%20Pick-up/"
+      },
+      {
+        "item": "christmas trees",
+        "value": "Curbside during January",
+        "source": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Garbage%20Pickup/"
+      },
+      {
+        "item": "appliances",
+        "value": "$25 per appliance; appointment and form/fee at Borough Hall; 732-842-0099 ext. 119",
+        "source": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Residential%20Appliance%20Pick-up/"
+      },
+      {
+        "item": "electronics dropoff",
+        "value": "Long Branch Recycling Center, 378 Atlantic Avenue; Mon–Fri 7:30 a.m.–3:00 p.m., Sat 9:00 a.m.–1:00 p.m.; proof of residency",
+        "source": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Recycling%20Pick-up/"
+      }
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.seabrightnj.org/sbnj/",
+        "type": "official_site",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.seabrightnj.org/sbnj/Contact%20Us/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Garbage%20Pickup/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Recycling%20Pick-up/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Bulk%20Pick-up/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Leaf%20Pick-up/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Tree%20and%20Branch%20Pick-up/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Residential%20Appliance%20Pick-up/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      }
+    ]
+  },
+  "union-beach": {
+    "verified": true,
+    "corrections": [],
+    "issues": [
+      "Public Works FAQ lists garbage as Monday/Thursday or Tuesday/Friday without Section A/B labels; 2026 calendar PDF maps Section A to Tuesday/Friday and Section B to Monday/Thursday.",
+      "FAQ bulk/recycling wording is generic; 2026 PDF is authoritative for alternating Section A/B Wednesday recycling and bulk dates.",
+      "FAQ #5 emphasizes drop-off at the recycling center for metals/appliances; 2026 PDF states appliances, electronics, and metals curbside by appointment only (732-264-1133)."
+    ],
+    "confirmed": [
+      {
+        "item": "dpw.phone",
+        "value": "732-264-1133",
+        "source": "https://www.unionbeachnj.gov/ubnj/Departments/Public%20Works/"
+      },
+      {
+        "item": "dpw.address",
+        "value": "1400 Florence Avenue, Union Beach, NJ 07735",
+        "source": "https://www.unionbeachnj.gov/ubnj/Departments/Public%20Works/"
+      },
+      {
+        "item": "dpw.hauler",
+        "value": "Roselle (garbage contractor per Public Works FAQ)",
+        "source": "https://www.unionbeachnj.gov/ubnj/Departments/Public%20Works/"
+      },
+      {
+        "item": "trash Section A",
+        "value": "Tuesday and Friday weekly; max 3 cans/bags, 50 lb each; no pickup Friday December 25, 2026",
+        "source": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf"
+      },
+      {
+        "item": "trash Section B",
+        "value": "Monday and Thursday weekly; max 3 cans/bags, 50 lb each; no pickup Thursday January 1 or Thursday November 26, 2026",
+        "source": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf"
+      },
+      {
+        "item": "recycling Section A 2026",
+        "value": "Wednesdays Jan 7 & 21, Feb 4 & 18, Mar 4 & 18, Apr 1/15/29, May 13 & 27, Jun 10 & 24, Jul 8 & 22, Aug 5 & 19, Sep 2/16/30, Oct 14 & 28, Nov 11 & 25, Dec 9 & 23",
+        "source": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf"
+      },
+      {
+        "item": "recycling Section B 2026",
+        "value": "Wednesdays Jan 14 & 28, Feb 11 & 25, Mar 11 & 25, Apr 8 & 22, May 6 & 20, Jun 3 & 17, Jul 1/15/29, Aug 12 & 26, Sep 9 & 23, Oct 7 & 21, Nov 4 & 18, Dec 2/16/30",
+        "source": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf"
+      },
+      {
+        "item": "bulk Section A 2026",
+        "value": "Wednesdays Jan 14 & 28, Feb 11 & 25, Mar 11 & 25, Apr 8 & 22, May 6 & 20, Jun 3 & 17, Jul 1/15/29, Aug 12 & 26, Sep 9 & 23, Oct 7 & 21, Nov 4 & 18, Dec 2/16/30; limit 3 items",
+        "source": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf"
+      },
+      {
+        "item": "bulk Section B 2026",
+        "value": "Wednesdays Jan 7 & 21, Feb 4 & 18, Mar 4 & 18, Apr 1/15/29, May 13 & 27, Jun 10 & 24, Jul 8 & 22, Aug 5 & 19, Sep 2/16/30, Oct 14 & 28, Nov 11 & 25, Dec 9 & 23; limit 3 items",
+        "source": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf"
+      },
+      {
+        "item": "yard leaves",
+        "value": "Fall curbside; Section B on Tuesdays, Section A on Wednesdays; paper bags only",
+        "source": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf"
+      },
+      {
+        "item": "dropoff hours",
+        "value": "Mon–Fri 7:00 a.m.–3:00 p.m.; 1st and 3rd Sat 8:00 a.m.–12:00 p.m.; closed Sundays and holidays; residents only",
+        "source": "https://www.unionbeachnj.gov/ubnj/Departments/Public%20Works/"
+      }
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.unionbeachnj.gov/ubnj/",
+        "type": "official_site",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.unionbeachnj.gov/ubnj/Contact%20Us/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.unionbeachnj.gov/ubnj/Departments/Public%20Works/",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+        "type": "2026_pdf",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      }
+    ]
+  },
+  "west-long-branch": {
+    "verified": true,
+    "corrections": [],
+    "issues": [
+      "Public Works page brush window reads \"December 12th to December 3rd\" (end before start); reliable brush timing not confirmed from primary text.",
+      "Standalone 2026 borough calendar PDF not published; January 2026 page inside 2025 calendar PDF directs residents to check the website for updates.",
+      "Recycling Collection page defers to borough calendar; weekly Wednesday rule confirmed on Public Works page and January 2026 calendar grid (Wednesdays 7, 14, 21, 28 marked RECYCLE).",
+      "dropoff.residents_only left null; official pages reviewed do not state residency requirement for the yard."
+    ],
+    "confirmed": [
+      {
+        "item": "dpw.phone",
+        "value": "732-571-5967",
+        "source": "https://www.westlongbranch.org/1214/Public-Works"
+      },
+      {
+        "item": "dpw.address",
+        "value": "379 Monmouth Road, West Long Branch, NJ 07764",
+        "source": "https://www.westlongbranch.org/1214/Public-Works"
+      },
+      {
+        "item": "trash North Zone",
+        "value": "Monday and Thursday from 6:00 a.m.; holiday exceptions New Year's Day, Independence Day, Election Day, Thanksgiving, Christmas",
+        "source": "https://www.westlongbranch.org/1345/Garbage-Collection"
+      },
+      {
+        "item": "trash South Zone",
+        "value": "Tuesday and Friday from 6:00 a.m.; same holiday exceptions as North",
+        "source": "https://www.westlongbranch.org/1345/Garbage-Collection"
+      },
+      {
+        "item": "recycling",
+        "value": "Wednesday weekly all streets; no pickup Thanksgiving, Christmas, or New Year's Day (next pickup on next regular day); loose in solid containers, no plastic bags",
+        "source": "https://www.westlongbranch.org/1214/Public-Works"
+      },
+      {
+        "item": "bulk furniture North",
+        "value": "Every Thursday; limit 3 sit/sleep/eat furniture items",
+        "source": "https://www.westlongbranch.org/1214/Public-Works"
+      },
+      {
+        "item": "bulk furniture South",
+        "value": "Every Friday (second weekly garbage day); limit 3 items",
+        "source": "https://www.westlongbranch.org/1347/Bulk-Item-Collection"
+      },
+      {
+        "item": "bulk metal",
+        "value": "4th week of each month borough-wide (washers, dryers, miscellaneous metal)",
+        "source": "https://www.westlongbranch.org/1347/Bulk-Item-Collection"
+      },
+      {
+        "item": "yard leaves",
+        "value": "Loose leaves at curb November 3 through December 12; no brush during leaf period; bamboo not collected",
+        "source": "https://www.westlongbranch.org/1214/Public-Works"
+      },
+      {
+        "item": "dropoff hours",
+        "value": "Mon–Fri 7:00 a.m.–3:30 p.m.; Sat 8:00 a.m.–1:00 p.m.; Sun 8:00 a.m.–12:00 p.m.",
+        "source": "https://www.westlongbranch.org/1342/Recycling-Collection"
+      },
+      {
+        "item": "container limits",
+        "value": "Refuse and recycling containers max 32 gallons, 50 lb",
+        "source": "https://www.westlongbranch.org/1214/Public-Works"
+      }
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.westlongbranch.org/",
+        "type": "official_site",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.westlongbranch.org/1345/Garbage-Collection",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.westlongbranch.org/1214/Public-Works",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.westlongbranch.org/1347/Bulk-Item-Collection",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.westlongbranch.org/1342/Recycling-Collection",
+        "type": "source_url",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      },
+      {
+        "url": "https://www.westlongbranch.org/DocumentCenter/View/254/2025_calendar",
+        "type": "2026_partial_pdf",
+        "status": "ok",
+        "rejected_as_aggregator": false
+      }
+    ]
+  }
+}

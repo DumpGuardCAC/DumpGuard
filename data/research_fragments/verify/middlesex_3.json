@@ -1,0 +1,88 @@
+{
+  "sayreville": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "Zip 08859 source_url is President Park Fire Company (Parlin, NJ 08859), not a borough ZIP roster page.",
+      "Sayreville Recycling Sanitation 2025 Guide PDF reachable but not text-extractable via fetch; dropoff gate-close times (12:55 / 11:55) not re-checked against PDF.",
+      "Fort Grumpy open hours on Sanitation page match Mon/Fri 7:30 a.m.–1:00 p.m. and 1st/3rd Sat 7:00 a.m.–12:00 p.m.; gate-close detail only cited to PDF.",
+      "Trash, yard, and bulk sanitation rows use source_date undated on official Sanitation Division page.",
+      "2026 recycling page documents Jan 1, 2026 Thursday pickup moved to Jan 3, 2026 Saturday; not captured as a schedule exception row."
+    ],
+    "confirmed": [
+      "official_site https://www.sayreville.com/ (borough footer 167 Main Street, Sayreville, NJ 08872)",
+      "DPW main 732-390-7042 at 167 Main Street, Sayreville, NJ 08872",
+      "Municipal Sanitation Division automated refuse; trash zones Mon/Tue/Wed (Zones I/II/III) per Sanitation page",
+      "2026 MCIA bi-weekly recycling Tue/Wed/Thu/Fri district lists and date tables on tpid=18888",
+      "2026 bulk dates Zone 1 Apr 9, Jul 9, Oct 1; Zone 2 Apr 16, Jul 16, Oct 8; Zone 3 Apr 23, Jul 23, Oct 22",
+      "Grass collection May 4–Sep 30 by sanitation zone weekday",
+      "Fort Grumpy 3750 Bordentown Avenue; Mon/Fri and 1st/3rd Sat hours on Sanitation page",
+      "Curbside recycling MCIA; missed pickups 800-488-6242; borough holidays do not affect MCIA schedule per 2026 page",
+      "status complete appropriate for published trash zones, 2026 recycling, bulk, yard, and drop-off"
+    ],
+    "sources_checked": [
+      "https://www.sayreville.com/",
+      "https://www.sayreville.com/cn/contactinfo/?did=1496",
+      "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+      "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+      "https://www.sayreville.com/cn/webpage.cfm?tpid=9296",
+      "https://www.sayreville.com/documents/Sayreville%20Recycling%20Sanitation%202025%20Guide.pdf"
+    ]
+  },
+  "south-amboy": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "Trash Collection Schedule PDF has no publication year on fetched document.",
+      "No municipal bulk or yard curbside schedule on official site (empty dropoff array is correct).",
+      "Jay Kennedy recycling coordinator listed as 732-439-9916 on Sanitation page and 732-727-4600 ext 5973 on 2026 recycling PDF (both official)."
+    ],
+    "confirmed": [
+      "official_site https://www.southamboynj.gov/",
+      "DPW 732-721-8100; 140 North Broadway, South Amboy, NJ 08879",
+      "ZIP 08879 on Public Works contact block",
+      "One-time-per-week municipal trash per Public Works (effective Sep 7, 2010)",
+      "Trash map PDF: Monday, Tuesday, Thursday, Friday routes (no Wednesday trash)",
+      "2026 MCIA recycling Fridays; dates Jan 2/16/30, Feb 13/27, Mar 13/27, Apr 10/24, May 8/22, Jun 5/19, Jul 3/17/31, Aug 14/28, Sep 11/25, Oct 9/23, Nov 6/20, Dec 4/18",
+      "MCIA hotline 800-488-6242 on Public Works and 2026 PDF",
+      "dropoff [] matches no municipal drop-off listed on checked pages"
+    ],
+    "sources_checked": [
+      "https://www.southamboynj.gov/",
+      "https://www.southamboynj.gov/Departments/public-works",
+      "https://www.southamboynj.gov/Departments/sanitation",
+      "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf",
+      "https://www.southamboynj.gov/_Content/pdf/2026-Recycling-Schedule.pdf"
+    ]
+  },
+  "south-plainfield": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "https://www.southplainfieldnj.com/ returned HTTP 500 during verification; department URLs fetched successfully.",
+      "Recycling Districts PDF linked from Curbside page not fetched; street-level Thu/Fri district boundaries not re-verified line-by-line.",
+      "Curbside page references Recycle Coach for reminders; weekday facts taken from borough 2026 table on Curbside page only.",
+      "status partial correct: no municipal curbside household garbage day or hauler list on official site.",
+      "Mary B. Mazepa drop-off open to residents and businesses; residents_only false is accurate (not residents-only)."
+    ],
+    "confirmed": [
+      "official department site paths under southplainfieldnj.com",
+      "DPW 405 Spicer Avenue, South Plainfield, NJ 07080; phone 908-755-2187",
+      "ZIP 07080 on Public Works page",
+      "Curbside recycling Thu/Fri districts with 2026 date grid on Curbside page",
+      "Thanksgiving 2026 no collection; Thursday district makeup 11/28/26; Christmas makeup 12/26/26 for Friday district",
+      "Bulk: 2 free curbside appointments/year; no bulk during 8 weeks of fall leaf bag collection; max pile 3'W x 3'H x 8'L",
+      "Leaf curbside mid-October through mid-December in biodegradable paper bags",
+      "2026 compactor Sat dates Apr 4, Apr 18, May 9, Jun 6, Jun 20, Aug 29, Oct 3, Nov 7; 7:00 a.m.–3:00 p.m.; closed Jan–Mar, Jul, Sep, Dec",
+      "Drop-off 882 Kenneth Avenue: Tue 11 a.m.–7 p.m.; Thu/Fri/Sat 8 a.m.–4 p.m.; yard waste site decal required residents only",
+      "MCIA curbside recycling; coordinator Kristina Nieradka 908-226-7621; hotline 908-226-7620"
+    ],
+    "sources_checked": [
+      "https://www.southplainfieldnj.com/",
+      "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/",
+      "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+      "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/Bulk%20Waste/",
+      "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/Compactor%20Hours/"
+    ]
+  }
+}

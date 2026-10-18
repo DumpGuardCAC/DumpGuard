@@ -1,0 +1,236 @@
+{
+  "hazlet": {
+    "name": "Hazlet Township",
+    "county": "monmouth",
+    "official_site": "https://www.hazlettwp.org/",
+    "zips": [
+      {
+        "zip": "07730",
+        "shared_with": [],
+        "source_url": "https://www.hazlettwp.org/154/Finance-Purchasing"
+      },
+      {
+        "zip": "07734",
+        "shared_with": [],
+        "source_url": "https://www.hazlettwp.org/866/Mobile-Home-Parks"
+      }
+    ],
+    "dpw": {
+      "phone": "732-217-8654",
+      "address": "39 Leocadia Court, Hazlet, NJ 07730",
+      "source_url": "https://www.hazlettwp.org/229/Recycling",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "recycling",
+        "weekday": null,
+        "week_pattern": "custom",
+        "area_note": "Zones 1–8; locate zone via alphabetical street list in Green Booklet 2026, then follow that zone’s printed recycling pickup dates for the year.",
+        "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+        "source_date": "2026"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "custom",
+        "area_note": "Brush and bagged leaves: six curbside collections per year per zone on dates in Green Booklet 2026; place out no earlier than seven days before scheduled date; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags.",
+        "source_url": "https://www.hazlettwp.org/235/What-Is-Recyclable",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "custom",
+        "area_note": "White metal (large appliances and metal items): four curbside collections per year per zone on dates in Green Booklet 2026, or drop off at recycling yard during operating hours; curbside by 7:00 a.m. on scheduled day.",
+        "source_url": "https://www.hazlettwp.org/610/White-Metal-Collection",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": "custom",
+        "area_note": "Two residential curbside bulk pickups per year by appointment; zones 1–4 on Tuesdays, zones 5–8 on Thursdays; program pauses mid-November through early spring; call DPW to schedule.",
+        "source_url": "https://www.hazlettwp.org/695/Bulk-Item-Pickup-in-2026",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Hazlet Township DPW Recycling Yard",
+        "address": "39 Leocadia Court, Hazlet, NJ 07730",
+        "hours": "Regular: Mon–Fri 7:30 a.m.–3:00 p.m., Sat 8:15 a.m.–1:45 p.m., Sun closed; Memorial Day–Labor Day weekdays 7:00 a.m.–2:30 p.m.; closed municipal holidays",
+        "residents_only": true,
+        "source_url": "https://www.hazlettwp.org/229/Recycling"
+      }
+    ],
+    "status": "partial",
+    "notes": "Municipal site publishes recycling, yard waste, white metal, and bulk programs; regular household trash collection days are not published (residents use private garbage contractors per Green Booklet). Grass clippings are not collected curbside or accepted at the recycling yard."
+  },
+  "highlands": {
+    "name": "Borough of Highlands",
+    "county": "monmouth",
+    "official_site": "https://highlandsnj.gov/",
+    "zips": [
+      {
+        "zip": "07732",
+        "shared_with": [],
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/"
+      }
+    ],
+    "dpw": {
+      "phone": "732-872-1224 x250",
+      "address": "151 Navesink Ave., Highlands, NJ 07732",
+      "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
+      "hauler": "Surburban/Roselle Disposal"
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": 1,
+        "week_pattern": "weekly",
+        "area_note": "Zones 1 and 3",
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": 4,
+        "week_pattern": "weekly",
+        "area_note": "Zones 1 and 3",
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": 2,
+        "week_pattern": "weekly",
+        "area_note": "Zones 2 and 4",
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": 5,
+        "week_pattern": "weekly",
+        "area_note": "Zones 2 and 4",
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": 3,
+        "week_pattern": "custom",
+        "area_note": "Zones 1 and 3: 1st and 3rd Wednesday of each month; no residential recycling on the fifth Wednesday of a month",
+        "source_url": "https://highlandsnj.gov/wp-content/uploads/2026/02/22936_BoroHighlands_Calendar_2026_PROOF_06P.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": 3,
+        "week_pattern": "custom",
+        "area_note": "Zones 2 and 4: 2nd and 4th Wednesday of each month; no residential recycling on the fifth Wednesday of a month",
+        "source_url": "https://highlandsnj.gov/wp-content/uploads/2026/02/22936_BoroHighlands_Calendar_2026_PROOF_06P.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "bulk",
+        "weekday": 5,
+        "week_pattern": "custom",
+        "area_note": "Regular bulk by zone on first Friday (zone 1), second Friday (zone 2), third Friday (zone 3), fourth Friday (zone 4) in March, June, September, and December; additional permit bulk/Freon pickups 2nd and 4th Monday of month ($50 permit at Borough Hall)",
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": 5,
+        "week_pattern": "custom",
+        "area_note": "Brush by zone on Fridays in April, October, and December (zone 4 also has additional June brush per 2026 calendar); leaves picked up October, November, and December",
+        "source_url": "https://highlandsnj.gov/wp-content/uploads/2026/02/22936_BoroHighlands_Calendar_2026_PROOF_06P.pdf",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Highlands Borough Recycling Center",
+        "address": "151 Navesink Ave., Highlands, NJ 07732",
+        "hours": "Mon–Fri 7:00 a.m.–3:00 p.m., Sat 7:00 a.m.–12:00 p.m., Sun closed",
+        "residents_only": true,
+        "source_url": "https://highlandsnj.gov/departments/department-of-public-works/"
+      }
+    ],
+    "status": "complete",
+    "notes": "Curbside trash and recycling issues: contact Surburban/Roselle Disposal at 973-675-5451. No trash pickup on Thanksgiving, Christmas, and New Year’s Day (2026 calendar)."
+  },
+  "interlaken": {
+    "name": "Borough of Interlaken",
+    "county": "monmouth",
+    "official_site": "https://www.interlakenboro.com/",
+    "zips": [
+      {
+        "zip": "07712",
+        "shared_with": [],
+        "source_url": "https://www.interlakenboro.com/directory.html"
+      }
+    ],
+    "dpw": {
+      "phone": "732-517-0005",
+      "address": "725 Bridlemere Ave, Interlaken, NJ 07712",
+      "source_url": "https://www.interlakenboro.com/directory.html",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": 1,
+        "week_pattern": "weekly",
+        "area_note": "Regular refuse; holiday pickup moves to next day",
+        "source_url": "https://www.interlakenboro.com/public-works.html",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": 4,
+        "week_pattern": "weekly",
+        "area_note": "Regular refuse; holiday pickup moves to next day",
+        "source_url": "https://www.interlakenboro.com/public-works.html",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": 2,
+        "week_pattern": "custom",
+        "area_note": "All recyclables (bottles, cans, glass, plastic, corrugated cardboard, newspaper, mixed paper); 1st and 3rd Tuesday; place at curb before 7:00 a.m.; recycling must be loose, not in plastic bags",
+        "source_url": "https://www.interlakenboro.com/public-works.html",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": 1,
+        "week_pattern": "custom",
+        "area_note": "4th Monday of each month except October, November, and December; 2026 last bulk 2026-09-28, suspended Oct–Dec 2026, resumes 2027-01-25 (borough homepage); place curbside before 7:00 a.m. (not before 7:00 p.m. evening prior)",
+        "source_url": "https://www.interlakenboro.com/public-works.html",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "custom",
+        "area_note": "Brush, branches, leaves: Mon–Thu collection; one pile per household, max 4 ft limbs, 1 ft from curb. Grass clippings and dirt: Tue–Thu only, containerized up to 40 lb.",
+        "source_url": "https://www.interlakenboro.com/public-works.html",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": 1,
+        "week_pattern": "custom",
+        "area_note": "Metals on 4th Monday of month; $15 fee for items containing freon; call Borough Hall 732-531-7405 for appointment",
+        "source_url": "https://www.interlakenboro.com/public-works.html",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [],
+    "status": "complete",
+    "notes": "Borough Public Works conducts curbside collection. No municipal drop-off site listed on borough site; homepage references Monmouth County Reclamation Center for household items when bulk is suspended."
+  }
+}

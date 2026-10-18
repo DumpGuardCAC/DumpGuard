@@ -1,0 +1,82 @@
+{
+  "old-bridge": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "No municipal curbside trash schedule on town site (garbage privatized per recycling-information page); status partial is expected.",
+      "dpw.hauler combines MCIA recycling (2026 PDF + recycling-information) and privatized garbage (recycling-information); not stated on dpw.source_url (public-works) alone."
+    ],
+    "confirmed": [
+      "official_site https://www.oldbridge.com/",
+      "county middlesex",
+      "zip 08857 (official_site and public-works footer)",
+      "dpw.phone 732-721-5600 ext. 6140 and dpw.address 1 Old Bridge Plaza, Old Bridge, NJ 08857 (public-works)",
+      "Recycling ward weekdays W1 Mon–W6 Fri, W3&4 Wed, bi-weekly 2026 dates (5il.co/3symt PDF linked from recycling-information)",
+      "Central Park / Arbors exceptions (2026 PDF)",
+      "Holiday on collection day → following Saturday (2026 PDF)",
+      "dropoff hours Tue/Thu 7AM–3PM, Sat 8AM–12PM at 1 Old Bridge Plaza (recycling-information)",
+      "MCIA bi-weekly recycling 6AM–6PM; missed pickup 800-488-6242 (2026 PDF + recycling-information)",
+      "Garbage privatized; residents choose hauler (recycling-information page body)"
+    ],
+    "sources_checked": [
+      "https://www.oldbridge.com/",
+      "https://www.oldbridge.com/page/public-works/",
+      "https://www.oldbridge.com/page/recycling-information/",
+      "https://5il.co/3symt"
+    ]
+  },
+  "perth-amboy": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "FLAG pre-2026: trash schedules source_date 2025; city-hosted PDF titled 2025 GARBAGE COLLECTION HOLIDAY SCHEDULE (path includes /2025/).",
+      "No 2026 town-hosted plain-text trash or recycling collection-day schedule found on perthamboynj.org.",
+      "Recycling & Garbage Collection / Recycling Guidelines pages embed app.my-waste.mobi iframe (aggregator); not used for schedule fields.",
+      "Linked 2021 Guidelines Recycling Sanitation PDF on recycling pages; schedule data not taken from that link in file."
+    ],
+    "confirmed": [
+      "official_site https://www.perthamboynj.org/",
+      "county middlesex",
+      "zip 08861 (public works department address)",
+      "dpw.phone 732-826-2010 and dpw.address 599 Fayette Street, Perth Amboy, NJ 08861 (public works)",
+      "Trash North Mon & Thu, South Tue & Fri weekly; Conrail tracks boundary (2025 Holiday Annual Guidelines PDF on cdnsm5-hosted.civiclive.com)",
+      "Holiday: service resumes next scheduled collection day (same PDF)",
+      "dropoff empty array matches no municipal dropoff on checked pages"
+    ],
+    "sources_checked": [
+      "https://www.perthamboynj.org/",
+      "https://www.perthamboynj.org/government/departments/public_works",
+      "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
+      "https://www.perthamboynj.org/services/recycling___garbage_collection",
+      "https://www.perthamboynj.org/government/departments/public_works/recycling_guidelines"
+    ]
+  },
+  "piscataway": {
+    "verified": true,
+    "corrections": {},
+    "issues": [
+      "FLAG undated: bulk pick-up schedule source_date undated (bulk_pick-up.php has no publication year).",
+      "No municipal household trash weekday; private haulers only (recycling_and_solid_waste.php).",
+      "zips.source_url is public_works/index.php; zip 08854 appears on township footer (index and recycling pages), not as a dedicated zip list on that URL."
+    ],
+    "confirmed": [
+      "official_site https://www.piscatawaynj.org/",
+      "county middlesex",
+      "zip 08854 (township site footer on public works / recycling pages)",
+      "dpw.phone 732-562-2390 and dpw.address 505 Sidney Rd (public works index + recycling_and_solid_waste)",
+      "Private hauler list and disclaimer (recycling_and_solid_waste.php)",
+      "2026 recycling Mon/Tue/Wed sections, boundaries, and dates (Recycling curbside pick-up map 2026.pdf on cms9files.revize.com)",
+      "Memorial Day 2026 Monday-section pickup May 30 (2026 map PDF)",
+      "bulk: appointment Jan–first week Oct; 2 bulk + 1 branch per year; Service Card required (bulk_pick-up.php)",
+      "Mini-Dump 505 Sidney Road; Tue/Thu 2–8PM, Sat 8:30AM–4:30PM; Service Card; residents_only implied by Service Card (mini-dump.php)"
+    ],
+    "sources_checked": [
+      "https://www.piscatawaynj.org/",
+      "https://www.piscatawaynj.org/departments/public_works/index.php",
+      "https://piscatawaynj.org/departments/public_works/recycling_and_solid_waste.php",
+      "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+      "https://www.piscatawaynj.org/departments/public_works/bulk_pick-up.php",
+      "https://www.piscatawaynj.org/departments/public_works/mini-dump.php"
+    ]
+  }
+}

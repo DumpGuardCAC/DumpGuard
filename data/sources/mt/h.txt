@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Cache-Control: private, s-maxage=600,no-transform
+Content-Type: image/jpeg
+p3p: CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+Set-Cookie: CP_IsMobile=false; path=/; secure
+Set-Cookie: CP_IsMobile=false; path=/; secure
+Set-Cookie: ASP.NET_SessionId=toqsdygtswvr05wlcoizytvs; path=/; secure; HttpOnly; SameSite=None
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=()
+Content-Security-Policy: frame-ancestors 'self' https://*.granicus.com https://*.civicplus.com; img-src * data: blob:; worker-src * data: blob: 'unsafe-eval' 'unsafe-inline'; script-src * about: 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; media-src * blob:; font-src * data:; default-src *
+Date: Sun, 18 Oct 2026 20:32:17 GMT
+Content-Length: 86883
+

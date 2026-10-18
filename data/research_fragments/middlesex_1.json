@@ -1,0 +1,366 @@
+{
+  "carteret": {
+    "name": "Carteret",
+    "county": "middlesex",
+    "official_site": "https://www.carteret.net/",
+    "zips": [
+      {
+        "zip": "07008",
+        "shared_with": [],
+        "source_url": "https://www.carteret.net/random-recycling-inspections/"
+      }
+    ],
+    "dpw": {
+      "phone": "732-541-3881",
+      "address": "339 Roosevelt Avenue, Carteret, NJ 07008",
+      "source_url": "https://www.carteret.net/publicworks/",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "Monday",
+        "week_pattern": "one day per week; additional Thursday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 1 / Sanitation District A (bulk paper 1st and 3rd Monday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "one day per week; additional Thursday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 1 / Sanitation District A (bulk paper 1st and 3rd Monday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Monday",
+        "week_pattern": "one day per week; additional Thursday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 2 (bulk paper 1st and 3rd Tuesday of month; confirm district by address at carteret.net/publicworks)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "one day per week; additional Thursday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 2 (bulk paper 1st and 3rd Tuesday of month; confirm district by address at carteret.net/publicworks)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Monday",
+        "week_pattern": "one day per week; additional Thursday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 3 (bulk paper 2nd and 4th Monday of month; confirm district by address at carteret.net/publicworks)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "one day per week; additional Thursday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 3 (bulk paper 2nd and 4th Monday of month; confirm district by address at carteret.net/publicworks)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Thursday",
+        "week_pattern": "one day per week; additional Monday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 4 / Sanitation District B (bulk paper 2nd and 4th Tuesday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "week_pattern": "one day per week; additional Monday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 4 / Sanitation District B (bulk paper 2nd and 4th Tuesday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Tuesday",
+        "week_pattern": "one day per week; additional Friday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 5 / Sanitation District C (bulk paper 1st and 3rd Wednesday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "one day per week; additional Friday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 5 / Sanitation District C (bulk paper 1st and 3rd Wednesday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Tuesday",
+        "week_pattern": "one day per week; additional Friday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 6 / Sanitation District C (bulk paper 1st and 3rd Thursday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "one day per week; additional Friday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 6 / Sanitation District C (bulk paper 1st and 3rd Thursday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Friday",
+        "week_pattern": "one day per week; additional Tuesday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 7 / Sanitation District D (bulk paper 2nd and 4th Wednesday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Friday",
+        "week_pattern": "one day per week; additional Tuesday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 7 / Sanitation District D (bulk paper 2nd and 4th Wednesday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Friday",
+        "week_pattern": "one day per week; additional Tuesday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 8 / Sanitation District D (bulk paper 2nd and 4th Thursday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Friday",
+        "week_pattern": "one day per week; additional Tuesday pickup during summer per 2026 calendar",
+        "area_note": "Recycling District 8 / Sanitation District D (bulk paper 2nd and 4th Thursday of month)",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Carteret DPW Recycling Center",
+        "address": "339 Roosevelt Avenue, Carteret, NJ 07008",
+        "hours": "Mon–Fri 7:00 a.m.–3:00 p.m.; Sat 7:00 a.m.–11:00 a.m. (also cited as Mon–Sat 7:00 a.m.–12:00 p.m. on inspections page)",
+        "residents_only": true,
+        "source_url": "https://www.carteret.net/publicworks/"
+      }
+    ],
+    "status": "complete",
+    "notes": "Collection day depends on recycling district (1–8); use address lookup and district map at carteret.net/publicworks. Sanitation and recycling are collected together on the district day. Summer second pickup day and holiday changes are on the 2026 PDF. Recycling districts 2–3 section titles were not legible in PDF text extraction; district numbers match borough district map/spreadsheet and 2026 calendar section order. No private residential hauler stated."
+  },
+  "highland-park": {
+    "name": "Highland Park",
+    "county": "middlesex",
+    "official_site": "https://www.hpboro.com/",
+    "zips": [
+      {
+        "zip": "08904",
+        "shared_with": [],
+        "source_url": "https://www.hpboro.com/departments/public-works"
+      }
+    ],
+    "dpw": {
+      "phone": "732-514-1277",
+      "address": "444 Valentine Street, Highland Park, NJ 08904",
+      "source_url": "https://www.hpboro.com/departments/public-works",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "Monday",
+        "week_pattern": "every week",
+        "area_note": "North Side and Triangle Area",
+        "source_url": "https://www.hpboro.com/departments/public-works",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Friday",
+        "week_pattern": "every week",
+        "area_note": "South Side",
+        "source_url": "https://www.hpboro.com/departments/public-works",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Monday, Friday",
+        "week_pattern": "twice per week",
+        "area_note": "Business District",
+        "source_url": "https://www.hpboro.com/departments/public-works",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "every week",
+        "area_note": "Business District, North Side, and Triangle Area",
+        "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "week_pattern": "every week",
+        "area_note": "South Side",
+        "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "Wednesday",
+        "week_pattern": "by appointment; scheduled Wednesdays in April, May, June, September, and October (max two collections per household per year)",
+        "area_note": null,
+        "source_url": "https://www.hpboro.com/departments/public-works/bulk-waste-collection",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "leaves: biodegradable bags placed curbside by Monday morning, collected during the week in November and December; brush on regular garbage collection day when bundled per guidelines",
+        "area_note": null,
+        "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Highland Park DPW corrugated cardboard drop-off",
+        "address": "444 Valentine Street, Highland Park, NJ 08904",
+        "hours": "Mon–Fri 7:00 a.m.–2:30 p.m.",
+        "residents_only": true,
+        "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183"
+      },
+      {
+        "name": "Highland Park DPW (electronics, fluorescent lamps, batteries)",
+        "address": "444 Valentine Street, Highland Park, NJ 08904",
+        "hours": "Mon–Fri 6:30 a.m.–3:00 p.m. (department hours; drop-offs only during operating hours)",
+        "residents_only": true,
+        "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183"
+      }
+    ],
+    "status": "complete",
+    "notes": "Residential garbage is once weekly by area; businesses receive twice-weekly collection. Metal bulk items go out on regular garbage day. Electronics and other specialty items are DPW drop-off only. Automated garbage routes use borough-issued carts; second cart specifications on DPW page. No private residential hauler stated."
+  },
+  "metuchen": {
+    "name": "Metuchen",
+    "county": "middlesex",
+    "official_site": "https://www.metuchennj.org/",
+    "zips": [
+      {
+        "zip": "08840",
+        "shared_with": [],
+        "source_url": "https://metuchennj.org/departments/dpw"
+      }
+    ],
+    "dpw": {
+      "phone": "732-632-8519",
+      "address": "44 Jersey Avenue, Metuchen, NJ 08840",
+      "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "Monday",
+        "week_pattern": "every week (holiday weeks may shift; see 2026 DPW calendar)",
+        "area_note": "Zone NW (north of Main Street, west of Pennsylvania Railroad)",
+        "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "every week (holiday weeks may shift; see 2026 DPW calendar)",
+        "area_note": "Zone NW; single-stream in blue automated cart",
+        "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Tuesday",
+        "week_pattern": "every week (holiday weeks may shift; see 2026 DPW calendar)",
+        "area_note": "Zone SW (south of Main Street, west of Pennsylvania Railroad)",
+        "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "every week (holiday weeks may shift; see 2026 DPW calendar)",
+        "area_note": "Zone SW; single-stream in blue automated cart",
+        "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Wednesday",
+        "week_pattern": "every week (holiday weeks may shift; see 2026 DPW calendar)",
+        "area_note": "Zone SE (south of Main Street, east of Pennsylvania Railroad)",
+        "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "every week (holiday weeks may shift; see 2026 DPW calendar)",
+        "area_note": "Zone SE; non-automated areas and business district single-stream recycling also scheduled Wednesdays on calendar",
+        "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Thursday",
+        "week_pattern": "every week (holiday weeks may shift; see 2026 DPW calendar)",
+        "area_note": "Zone NE (north of Main Street, east of Pennsylvania Railroad)",
+        "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "week_pattern": "every week (holiday weeks may shift; see 2026 DPW calendar)",
+        "area_note": "Zone NE; single-stream in blue automated cart",
+        "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+        "source_date": "2026"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": "call DPW to schedule bulk pickup (732-632-8519)",
+        "area_note": null,
+        "source_url": "https://metuchennj.org/resident/trash",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": "Wednesday",
+        "week_pattern": "metal pickup by appointment; call by 2:30 p.m. Tuesday for Wednesday collection",
+        "area_note": null,
+        "source_url": "https://metuchennj.org/resident/trash",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Metuchen DPW yard — cardboard-only event",
+        "address": "44 Jersey Avenue, Metuchen, NJ 08840",
+        "hours": "Sat Dec 26, 2026 and Sat Jan 2, 2027, 8:00 a.m.–12:00 p.m. (cardboard only)",
+        "residents_only": true,
+        "source_url": "https://metuchennj.org/departments/dpw/public-works-calendars/1753-october-december-2026-calendar/file"
+      }
+    ],
+    "status": "complete",
+    "notes": "Jersey Avenue drop-off recycling center is closed; curbside single-stream only for eligible properties. Businesses/condos/apartments using a private garbage hauler must contract private recycling; DPW continues recycling where it provides garbage service. DPW does not collect TVs/electronics curbside. Zone boundaries: Main Street and Pennsylvania Railroad (metuchennj.org/resident/trash). Borough Hall (500 Main Street) is separate from DPW operations phone 732-632-8540."
+  }
+}

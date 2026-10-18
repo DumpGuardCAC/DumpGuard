@@ -1,0 +1,275 @@
+{
+  "keansburg": {
+    "name": "Keansburg",
+    "county": "monmouth",
+    "official_site": "https://www.keansburgnj.gov/",
+    "zips": [
+      {
+        "zip": "07734",
+        "shared_with": [],
+        "source_url": "https://www.keansburgnj.gov/contact"
+      }
+    ],
+    "dpw": {
+      "phone": "732-787-0215 Ext. 451",
+      "address": "40 Frazee Place, Keansburg, NJ 07734",
+      "source_url": "https://www.keansburgnj.gov/departments/public-works/",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday, thursday",
+        "week_pattern": "weekly",
+        "area_note": "All households south of Church Street; entire Church Street; all households east of Main Street",
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "tuesday, friday",
+        "week_pattern": "weekly",
+        "area_note": "All households north of Church Street and west of Main Street; entire Main Street up to Church Street",
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "weekly",
+        "area_note": "Townwide curbside co-mingled recycling",
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": "one bulk item per household garbage pickup day",
+        "area_note": "Furniture allowed; construction materials excluded; larger items may need to be cut or broken down",
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "during months listed on Leaf and Branch Pick Up schedule (schedule not published on municipal Public Works page)",
+        "area_note": "Leaves and branches at curb; do not bag leaves",
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Borough Yard",
+        "address": "40 Frazee Place, Keansburg, NJ 07734",
+        "hours": "Winter: Monday–Saturday 7:30 a.m.–3:00 p.m.; Summer: Monday–Saturday 7:30 a.m.–2:30 p.m.; closed Sunday and holidays",
+        "residents_only": null,
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/"
+      },
+      {
+        "name": "Recycling Center",
+        "address": "40 Frazee Place, Keansburg, NJ 07734",
+        "hours": "Monday–Friday 7:30 a.m.–2:30 p.m.; Saturday 8:00 a.m.–2:00 p.m.; closed Sunday and holidays",
+        "residents_only": null,
+        "source_url": "https://www.keansburgnj.gov/departments/public-works/"
+      }
+    ],
+    "status": "partial",
+    "notes": "Two 30-gallon cans (50 lb max each) per pickup; summary line also references two 33-gallon cans and one bulk item. No curbside collection Thanksgiving, Christmas, or New Year's Day. Garbage contractor name not published. Bulk items not accepted at Recycling Center; metals, appliances, and electronics accepted at Borough Yard (some curbside fees apply). Leaf/branch calendar referenced but not posted on fetched Public Works page."
+  },
+  "keyport": {
+    "name": "Keyport",
+    "county": "monmouth",
+    "official_site": "https://keyportonline.com/",
+    "zips": [
+      {
+        "zip": "07735",
+        "shared_with": [],
+        "source_url": "https://keyportonline.com/about/"
+      },
+      {
+        "zip": "07732",
+        "shared_with": [],
+        "source_url": "https://keyportonline.com/departments/public-works/"
+      }
+    ],
+    "dpw": {
+      "phone": "732-739-5428",
+      "address": "120 Francis Street, Keyport, NJ 07732",
+      "source_url": "https://keyportonline.com/departments/public-works/",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 1 non-recyclable solid waste",
+        "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 2 non-recyclable solid waste",
+        "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "thursday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 3 non-recyclable solid waste",
+        "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 4 non-recyclable solid waste",
+        "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "every other wednesday",
+        "area_note": "Zones 1 and 2. 2026 dates: Jan 7, 21; Feb 4, 18; Mar 4, 18; Apr 1, 15, 29; May 13, 27; Jun 10, 24; Jul 8, 22; Aug 5, 19; Sep 2, 16, 30; Oct 14, 28; Nov 11, 25; Dec 9, 23",
+        "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "every other wednesday",
+        "area_note": "Zones 3 and 4. 2026 dates: Jan 14, 28; Feb 11, 25; Mar 11, 25; Apr 8, 22; May 6, 20; Jun 3, 17; Jul 1, 15, 29; Aug 12, 26; Sep 9, 23; Oct 7, 21; Nov 4, 18; Dec 2, 16, 30",
+        "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "2026 date schedule by section",
+        "area_note": "Sections 1 and 2: Apr 15, May 6, Jun 10, Sep 16, Oct 14, Nov 12 (Veterans Day moved from Nov 11), Dec 9. Sections 3 and 4: Apr 22, May 13, Jun 17, Sep 23, Oct 21, Nov 18, Dec 16. Leaf and branches may also be dropped off at Recycling Center Saturdays 9:00 a.m.–12:00 p.m.",
+        "source_url": "https://keyportonline.com/departments/public-works/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "call 732-739-5136 to schedule curbside pickup before placing at curb",
+        "area_note": "Electronic and metal recycling (computers, monitors, televisions, phones, washers, dryers, stoves, bicycles, fencing, bed frames, etc.); permit required for air conditioning or refrigeration units from Municipal Clerk",
+        "source_url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Keyport Recycling Center",
+        "address": "Florence Avenue, Keyport, NJ",
+        "hours": "Saturdays 9:00 a.m.–12:00 noon (except holidays); drop-off of recyclables and pick-up of leaf bags",
+        "residents_only": true,
+        "source_url": "https://keyportonline.com/government/recycling/"
+      }
+    ],
+    "status": "partial",
+    "notes": "Containers max 50 gallons and 50 lb when loaded; place curbside night before (ordinance: not before 4:00 p.m. day before). Single-family limit 3 garbage cans; multifamily 6; commercial 4. No garbage/recycling pickup New Year's Day, Christmas Day, or Thanksgiving Day (following day when weather permits). Inclement weather: collection next day. Bulk collection schedule referenced on 2026 map PDF but specific bulk days not published on fetched recycling page. Grass clippings not accepted."
+  },
+  "little-silver": {
+    "name": "Little Silver",
+    "county": "monmouth",
+    "official_site": "https://www.littlesilvernj.gov/",
+    "zips": [
+      {
+        "zip": "07739",
+        "shared_with": [],
+        "source_url": "https://www.littlesilvernj.gov/199/Public-Works"
+      }
+    ],
+    "dpw": {
+      "phone": null,
+      "address": "22 Fairview Avenue, Little Silver, NJ 07739",
+      "source_url": "https://www.littlesilvernj.gov/199/Public-Works",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday, thursday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 1",
+        "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "tuesday, friday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 2",
+        "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "every other wednesday",
+        "area_note": "Zone 1. 2026 dates: Jan 7, 21; Feb 4, 18; Mar 4, 18; Apr 1, 15, 29; May 13, 27; Jun 10, 24; Jul 8, 22; Aug 5, 19; Sep 2, 16, 30; Oct 14, 28; Nov 11, 25; Dec 9, 23",
+        "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "every other wednesday",
+        "area_note": "Zone 2. 2026 dates: Jan 14, 28; Feb 11, 25; Mar 11, 25; Apr 8, 22; May 6, 20; Jun 3, 17; Jul 1, 15, 29; Aug 12, 26; Sep 9, 23; Oct 7, 21; Nov 4, 18; Dec 2, 16, 30",
+        "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
+        "source_date": "2026"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": "second trash pickup of the week (Thursday for Zone 1, Friday for Zone 2); max 3 items",
+        "area_note": "Furniture and carpeting; no appliances, electronics, or construction material",
+        "source_url": "https://www.littlesilvernj.gov/235/Recycling-Garbage",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "brush curbside pickup continuously January through October",
+        "area_note": "Branches max 4 feet length and 12 inches diameter; no grass clippings; bamboo not collected",
+        "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/887",
+        "source_date": "2026"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "leaves curbside pickup November 2 through December 27",
+        "area_note": "Leaves only; do not mix brush and leaves",
+        "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/887",
+        "source_date": "2026"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "drop-off at Public Works Yard only (not curbside)",
+        "area_note": "Electronics accepted in designated green container: TVs, computers, printers, phones, microwaves, air conditioners, and related items",
+        "source_url": "https://www.littlesilvernj.gov/CivicAlerts.aspx?AID=131",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Borough Recycling Center / Public Works Yard",
+        "address": "22 Fairview Avenue, Little Silver, NJ 07739",
+        "hours": "Monday–Friday 8:00 a.m.–2:00 p.m.; Saturday 8:00 a.m.–12:00 noon; closed Borough holidays",
+        "residents_only": true,
+        "source_url": "https://www.littlesilvernj.gov/235/Recycling-Garbage"
+      }
+    ],
+    "status": "complete",
+    "notes": "Single-stream curbside recycling every other Wednesday by zone; place receptacles night before (max 45 gallons, 50 lb). No trash or recycling curbside collection Thanksgiving, Christmas, or New Year's Day. Recycling questions: Sharon Kavendek, 732-842-2400. Yard no longer accepts motor oil, antifreeze, or paint; electronics drop-off per Aug 2026 alert (2026 Recycling Update still lists arranging private disposal for TVs/computers—alert is newer)."
+  }
+}

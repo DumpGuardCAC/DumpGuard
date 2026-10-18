@@ -1,0 +1,649 @@
+{
+  "carteret": {
+    "trash_found": true,
+    "recycling_found": true,
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "Monday (plus Thursday during the summer)",
+        "week_pattern": "every week",
+        "area_note": "Sanitation District A / Recycling District 1",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026",
+        "summer_range": null
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "1st and 3rd Monday of the month (includes bulk paper/junk mail pickup per calendar)",
+        "area_note": "Sanitation District A / Recycling District 1",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Monday (plus Thursday during the summer)",
+        "week_pattern": "every week",
+        "area_note": "Sanitation District A / Recycling District 2",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026",
+        "summer_range": null
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "1st and 3rd Tuesday of the month (includes bulk paper/junk mail pickup per calendar)",
+        "area_note": "Sanitation District A / Recycling District 2",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Monday (plus Thursday during the summer)",
+        "week_pattern": "every week",
+        "area_note": "Sanitation District A / Recycling District 3",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026",
+        "summer_range": null
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "2nd and 4th Monday of the month (includes bulk paper/junk mail pickup per calendar)",
+        "area_note": "Sanitation District A / Recycling District 3",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Thursday (plus Monday during the summer)",
+        "week_pattern": "every week",
+        "area_note": "Sanitation District B / Recycling District 4",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026",
+        "summer_range": null
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "week_pattern": "2nd and 4th Tuesday of the month (includes bulk paper/junk mail pickup per calendar)",
+        "area_note": "Sanitation District B / Recycling District 4",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Tuesday (plus Friday during the summer)",
+        "week_pattern": "every week",
+        "area_note": "Sanitation District C / Recycling District 5",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026",
+        "summer_range": null
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "1st and 3rd Wednesday of the month (includes bulk paper/junk mail pickup per calendar)",
+        "area_note": "Sanitation District C / Recycling District 5",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Tuesday (plus Friday during the summer)",
+        "week_pattern": "every week",
+        "area_note": "Sanitation District C / Recycling District 6",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026",
+        "summer_range": null
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "1st and 3rd Thursday of the month (includes bulk paper/junk mail pickup per calendar)",
+        "area_note": "Sanitation District C / Recycling District 6",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Friday (plus Tuesday during the summer)",
+        "week_pattern": "every week",
+        "area_note": "Sanitation District D / Recycling District 7",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026",
+        "summer_range": null
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Friday",
+        "week_pattern": "2nd and 4th Wednesday of the month (includes bulk paper/junk mail pickup per calendar)",
+        "area_note": "Sanitation District D / Recycling District 7",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Friday (plus Tuesday during the summer)",
+        "week_pattern": "every week",
+        "area_note": "Sanitation District D / Recycling District 8",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026",
+        "summer_range": null
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Friday",
+        "week_pattern": "2nd and 4th Thursday of the month (includes bulk paper/junk mail pickup per calendar)",
+        "area_note": "Sanitation District D / Recycling District 8",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+        "source_date": "2026"
+      }
+    ],
+    "zone_boundaries": [
+      {
+        "zone": "Recycling Districts 1-8 (map)",
+        "boundary_text": "Borough Recycling District Map (2023 PDF) is a numbered map with street index; publicworks page instructs residents to enter street number and name in the map PDF find field or use the HTML district map search. Address spreadsheet URL returned a WordPress critical error when fetched.",
+        "source_url": "https://www.carteret.net/wp-content/uploads/2023/05/Recycling-District-Map.pdf"
+      }
+    ],
+    "unresolved": [
+      "Exact calendar start/end dates for 'during the summer' second trash pickup are not stated in 2026 Sanitation Calendar PDF text (only 'plus [weekday] during the summer' per district).",
+      "Per-district street lists not available as extractable text from Recycling-District-Map.pdf (graphic map only).",
+      "recycling-districts-by-address-spreadsheet page returned WordPress critical error."
+    ],
+    "sources_checked": [
+      "https://www.carteret.net/publicworks/",
+      "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf",
+      "https://www.carteret.net/wp-content/uploads/2023/05/Recycling-District-Map.pdf",
+      "https://www.carteret.net/recycling-districts-by-address-spreadsheet/",
+      "file://data/sources/carteret_2026_sanitation.pdf"
+    ],
+    "notes": "Municipal sanitation and recycling per 2026 calendar; eight recycling districts paired with sanitation districts A-D. Publicworks states sanitation schedules are included in recycling schedules posted on that page."
+  },
+  "old-bridge": {
+    "trash_found": false,
+    "recycling_found": true,
+    "schedules": [
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "bi-weekly (2026 MCIA curbside calendar)",
+        "area_note": "Ward 1",
+        "source_url": "https://5il.co/3symt",
+        "source_date": "2026",
+        "anchor_date": "2026-01-05"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "bi-weekly (2026 MCIA curbside calendar)",
+        "area_note": "Ward 2",
+        "source_url": "https://5il.co/3symt",
+        "source_date": "2026",
+        "anchor_date": "2026-01-06"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "bi-weekly (2026 MCIA curbside calendar)",
+        "area_note": "Wards 3 and 4",
+        "source_url": "https://5il.co/3symt",
+        "source_date": "2026",
+        "anchor_date": "2026-01-07"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "week_pattern": "bi-weekly (2026 MCIA curbside calendar)",
+        "area_note": "Ward 5",
+        "source_url": "https://5il.co/3symt",
+        "source_date": "2026",
+        "anchor_date": "2026-01-08"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Friday",
+        "week_pattern": "bi-weekly (2026 MCIA curbside calendar)",
+        "area_note": "Ward 6",
+        "source_url": "https://5il.co/3symt",
+        "source_date": "2026",
+        "anchor_date": "2026-01-09"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "bi-weekly (2026 MCIA curbside calendar)",
+        "area_note": "Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct) picked up on Mondays although mapped in Ward 3",
+        "source_url": "https://5il.co/3symt",
+        "source_date": "2026",
+        "anchor_date": "2026-01-05"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "bi-weekly (2026 MCIA curbside calendar)",
+        "area_note": "The Arbors section, Sonoma Court and Lakeridge West picked up on Tuesdays although mapped in Ward 4",
+        "source_url": "https://5il.co/3symt",
+        "source_date": "2026",
+        "anchor_date": "2026-01-06"
+      }
+    ],
+    "zone_boundaries": [
+      {
+        "zone": "Ward 1-6",
+        "boundary_text": "Ward assignment by street per township GIS ('WHAT WARD AM I IN?' at gis.oldbridge.com); 2026 PDF lists ward weekday columns only.",
+        "source_url": "https://www.oldbridge.com/page/recycling-information/"
+      },
+      {
+        "zone": "Ward 3 exception (Monday route)",
+        "boundary_text": "Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct)",
+        "source_url": "https://5il.co/3symt"
+      },
+      {
+        "zone": "Ward 4 exception (Tuesday route)",
+        "boundary_text": "The Arbors section, Sonoma Court and Lakeridge West",
+        "source_url": "https://5il.co/3symt"
+      }
+    ],
+    "unresolved": [
+      "Municipal curbside household garbage days not published (privatized garbage).",
+      "Ward geographic boundaries not quoted as prose on 2026 PDF; GIS lookup required."
+    ],
+    "sources_checked": [
+      "https://www.oldbridge.com/page/recycling-information/",
+      "https://www.oldbridge.com/page/public-works/",
+      "https://5il.co/3symt",
+      "file://data/sources/ob_2026_recycling.pdf"
+    ],
+    "notes": "Recycling-information page HTML states: 'Please note garbage is privatized in Old Bridge. Residents can hire the garbage company of their choice.' MCIA bi-weekly recycling; holiday on collection day moves to following Saturday per 2026 PDF."
+  },
+  "piscataway": {
+    "trash_found": false,
+    "recycling_found": true,
+    "schedules": [
+      {
+        "stream": "recycling",
+        "weekday": "Monday",
+        "week_pattern": "bi-weekly (2026 curbside map dates)",
+        "area_note": "Sections 4, 5, 6, 7",
+        "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+        "source_date": "2026",
+        "anchor_date": "2026-01-05"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Tuesday",
+        "week_pattern": "bi-weekly (2026 curbside map dates)",
+        "area_note": "Sections 1, 2, 3, 10",
+        "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+        "source_date": "2026",
+        "anchor_date": "2026-01-06"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "bi-weekly (2026 curbside map dates)",
+        "area_note": "Sections 8, 9",
+        "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+        "source_date": "2026",
+        "anchor_date": "2026-01-07"
+      }
+    ],
+    "zone_boundaries": [
+      {
+        "zone": "Monday sections 4, 5, 6, 7",
+        "boundary_text": "Bordered by North Randolphville Road on the north; Overbrook Avenue on the east; River Road on the south; William Street and Baekland Avenue on the west.",
+        "source_url": "file://data/piscataway_map_2026.pdf"
+      },
+      {
+        "zone": "Tuesday sections 1, 2, 3, 10",
+        "boundary_text": "Bordered by the City of Plainfield on the north; South Avenue, Center Street, Marsh Avenue and West 4th Street on the east; North Randolphville Road and the RR tracks on the south; West 7th Street and New Brunswick Avenue on the west.",
+        "source_url": "file://data/piscataway_map_2026.pdf"
+      },
+      {
+        "zone": "Wednesday sections 8, 9",
+        "boundary_text": "Bordered by Stelton Road and New Durham Road on the north; Hoes Lane and Centennial Avenue on the east; River Road on the south; Brotherhood Road and Ethel Road on the west.",
+        "source_url": "file://data/piscataway_map_2026.pdf"
+      }
+    ],
+    "unresolved": [
+      "Household trash is private hauler only; township lists hauler companies but does not publish trash weekdays."
+    ],
+    "sources_checked": [
+      "https://www.piscatawaynj.org/departments/public_works/recycling_and_solid_waste.php",
+      "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+      "file://data/piscataway_map_2026.pdf"
+    ],
+    "notes": "Recycling via MCIA single-stream in ASL carts. Memorial Day 2026 pickup moved to Saturday May 30 per map footnote. Holiday on collection day rescheduled to following Saturday."
+  },
+  "south-plainfield": {
+    "trash_found": false,
+    "recycling_found": true,
+    "schedules": [
+      {
+        "stream": "recycling",
+        "weekday": "Thursday",
+        "week_pattern": "every other week (2026 grid on Curbside page)",
+        "area_note": "Thursday recycling district",
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+        "source_date": "2026",
+        "anchor_date": "2026-01-08"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Friday",
+        "week_pattern": "every other week (2026 grid on Curbside page)",
+        "area_note": "Friday recycling district",
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+        "source_date": "2026",
+        "anchor_date": "2026-01-09"
+      }
+    ],
+    "zone_boundaries": [],
+    "unresolved": [
+      "No municipal curbside household garbage schedule on official site.",
+      "Recycling Districts (pdf) link on Curbside page returns HTML error page, not a PDF (https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Recycling%20Districts.pdf); street lists for Thursday vs Friday districts not retrieved."
+    ],
+    "sources_checked": [
+      "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+      "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Recycling%20Districts.pdf"
+    ],
+    "notes": "Curbside page 2026 table: Thursday district dates include Jan 8 and 22; Friday district Jan 9 and 23. Thanksgiving: no collection; Thursday district makeup 11/28/26; Christmas: Friday district makeup 12/26/26. MCIA single-stream; Recycle Coach linked for reminders."
+  },
+  "aberdeen": {
+    "trash_found": true,
+    "recycling_found": true,
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "Monday",
+        "week_pattern": "weekly (first of two weekly collections for Section I)",
+        "area_note": "Section I: Cliffwood Beach, Cliffwood, River Gardens, Oakshades, Freneau, Heritage Estates",
+        "source_url": "https://www.aberdeennj.org/437/Winter-Storm-Information-Center",
+        "source_date": "2026-02"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Thursday",
+        "week_pattern": "weekly (second of two weekly collections for Section I; same day as Section I bulk pickup)",
+        "area_note": "Section I",
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+        "source_date": "2018-01-01"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Tuesday",
+        "week_pattern": "weekly (first of two weekly collections for Section II)",
+        "area_note": "Section II: Strathmore, High School Area, Woodbrook Drive, Randall Way, Storyland, Santa Fe, Heather Glenn",
+        "source_url": "https://www.aberdeennj.org/437/Winter-Storm-Information-Center",
+        "source_date": "2026-02"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Friday",
+        "week_pattern": "weekly (second of two weekly collections for Section II; same day as Section II bulk pickup)",
+        "area_note": "Section II",
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+        "source_date": "2018-01-01"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "1st and 3rd Wednesday of each month (twice monthly curbside)",
+        "area_note": "Section I: Cliffwood Beach, Cliffwood, River Gardens, Oakshades, Freneau, Heritage Estates",
+        "source_url": "https://www.aberdeennj.org/Archive/ViewFile/Item/76",
+        "source_date": "2015-09"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "2nd and 4th Wednesday of each month (twice monthly curbside)",
+        "area_note": "Section II: Strathmore, High School area, Woodbrook Drive, Randall Way, Storyland, Santa Fe, Heather Glenn",
+        "source_url": "https://www.aberdeennj.org/Archive/ViewFile/Item/76",
+        "source_date": "2015-09"
+      }
+    ],
+    "zone_boundaries": [
+      {
+        "zone": "Section I",
+        "boundary_text": "Cliffwood Beach, Cliffwood, River Gardens, Oakshades, Freneau, Heritage Estates",
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling"
+      },
+      {
+        "zone": "Section II",
+        "boundary_text": "Strathmore, High School Area, Woodbrook Drive, Randall Way, Storyland, Santa Fe, Heather Glenn",
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling"
+      }
+    ],
+    "unresolved": [
+      "Current Trash-Recycling page does not state curbside recycling weekdays (links to Recycle Coach); recycling weekday pattern taken from Fall 2015 official township newsletter archive only.",
+      "Trash/Recycling page does not explicitly label Monday/Tuesday as first collection days; inferred from 2026 Winter Storm page cancellation language (no Monday pickup 2026-02-23 with makeup on Thursday; no Tuesday pickup 2026-02-24 with regular second day Thursday or Friday)."
+    ],
+    "sources_checked": [
+      "https://www.aberdeennj.org/271/Trash-Recycling",
+      "https://www.aberdeennj.org/437/Winter-Storm-Information-Center",
+      "https://www.aberdeennj.org/Archive/ViewFile/Item/76"
+    ],
+    "notes": "Condominium and apartment complexes excluded from township contracted curbside garbage (HOA). Bulk on second weekly collection day (Thursday Section I, Friday Section II) effective 2018-01-01. Holiday: if pickup falls on New Year's Day, Thanksgiving, or Christmas Day, next scheduled pickup day."
+  },
+  "fair-haven": {
+    "trash_found": true,
+    "recycling_found": true,
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "Tuesday",
+        "week_pattern": "weekly year-round (one collection per week Sep 16 through May 14; also listed as Tuesday-only warm-season base day)",
+        "area_note": "All zones; dark gray borough can",
+        "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "Friday",
+        "week_pattern": "weekly May 15 through September 15 (second weekly collection all zones)",
+        "area_note": "All zones during warm-weather schedule",
+        "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
+        "source_date": "undated",
+        "summer_range": {
+          "start": "May 15",
+          "end": "September 15"
+        }
+      },
+      {
+        "stream": "recycling",
+        "weekday": "Wednesday",
+        "week_pattern": "every other Wednesday all four collection zones (single-stream in blue can)",
+        "area_note": "All zones; place can out before 6:00 a.m. (night before preferred)",
+        "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
+        "source_date": "undated",
+        "anchor_date": "2026-01-07"
+      }
+    ],
+    "zone_boundaries": [
+      {
+        "zone": "All zones (trash and recycling)",
+        "boundary_text": "Garbage and recycling schedules apply to ALL ZONES (no street boundary text on garbage/recycling schedule page). 2026 municipal calendar references four collection zones for brush/leaf only.",
+        "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule"
+      }
+    ],
+    "unresolved": [
+      "Geographic boundary text for four collection zones not published on garbage/recycling schedule page (zones used for brush/leaf on 2026 municipal calendar only)."
+    ],
+    "sources_checked": [
+      "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
+      "https://www.fairhavennj.org/sites/g/files/vyhlif4411/f/uploads/2026_municipal_calendar_final-edit_9-14-2026.pdf"
+    ],
+    "notes": "Schedule page: May 15 through Sep 15 two collections per week Tuesday and Friday; Sep 16 through May 14 one collection Tuesday only. 2026 calendar first single-stream recycling Wednesday shown Jan 7; trash Tuesdays on calendar include Jan 6, 13, 20, 27."
+  },
+  "hazlet": {
+    "trash_found": false,
+    "recycling_found": true,
+    "schedules": [
+      {
+        "stream": "recycling",
+        "weekday": null,
+        "week_pattern": "2026 zone calendar in Green Booklet (dates vary by zone 1-8; bi-weekly-style date lists per zone)",
+        "area_note": "Zone 1 (sample dates JAN-14th, 28th; FEB-11th, 25th; ...)",
+        "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+        "source_date": "2026",
+        "anchor_date": "2026-01-14"
+      },
+      {
+        "stream": "recycling",
+        "weekday": null,
+        "week_pattern": "2026 zone calendar in Green Booklet",
+        "area_note": "Zone 2 (sample dates JAN-7th, 21st; FEB-4th, 18th; ...)",
+        "source_url": "file://data/sources/hazlet_green_booklet_2026.pdf",
+        "source_date": "2026",
+        "anchor_date": "2026-01-07"
+      },
+      {
+        "stream": "recycling",
+        "weekday": null,
+        "week_pattern": "2026 zone calendar in Green Booklet",
+        "area_note": "Zone 3 (sample dates JAN-5th, 15th, 29th; ...)",
+        "source_url": "file://data/sources/hazlet_green_booklet_2026.pdf",
+        "source_date": "2026",
+        "anchor_date": "2026-01-05"
+      },
+      {
+        "stream": "recycling",
+        "weekday": null,
+        "week_pattern": "2026 zone calendar in Green Booklet",
+        "area_note": "Zone 4 (sample dates JAN-8th, 22nd; ...)",
+        "source_url": "file://data/sources/hazlet_green_booklet_2026.pdf",
+        "source_date": "2026",
+        "anchor_date": "2026-01-08"
+      },
+      {
+        "stream": "recycling",
+        "weekday": null,
+        "week_pattern": "2026 zone calendar in Green Booklet",
+        "area_note": "Zone 5 (sample dates JAN-9th, 23rd; ...)",
+        "source_url": "file://data/sources/hazlet_green_booklet_2026.pdf",
+        "source_date": "2026",
+        "anchor_date": "2026-01-09"
+      },
+      {
+        "stream": "recycling",
+        "weekday": null,
+        "week_pattern": "2026 zone calendar in Green Booklet",
+        "area_note": "Zone 6 (sample dates JAN-2nd, 16th, 30th; ...)",
+        "source_url": "file://data/sources/hazlet_green_booklet_2026.pdf",
+        "source_date": "2026",
+        "anchor_date": "2026-01-02"
+      },
+      {
+        "stream": "recycling",
+        "weekday": null,
+        "week_pattern": "2026 zone calendar in Green Booklet",
+        "area_note": "Zone 7 (sample dates JAN-16th; MAR-13th; ...)",
+        "source_url": "file://data/sources/hazlet_green_booklet_2026.pdf",
+        "source_date": "2026",
+        "anchor_date": "2026-01-16"
+      },
+      {
+        "stream": "recycling",
+        "weekday": null,
+        "week_pattern": "2026 zone calendar in Green Booklet",
+        "area_note": "Zone 8 (see booklet zone 7/8 panel for DEC and holiday moves)",
+        "source_url": "file://data/sources/hazlet_green_booklet_2026.pdf",
+        "source_date": "2026",
+        "anchor_date": null
+      }
+    ],
+    "zone_boundaries": [
+      {
+        "zone": "Zones 1-8 (street index)",
+        "boundary_text": "Green Booklet: 'Locate your street from the list, which is in alphabetical order, and take notice of the coinciding zone number.' Example entries: 'BELFAST AVE - ZONE # 1', 'BEERS ST - ZONE # 2', 'BOYD RD.-ZONE # 3', 'BROMLEY DR - ZONE # 4', 'BROOKSIDE AVE - ZONE # 5', 'BIRCH AVE - ZONE # 6', 'BORICK AVE - ZONE # 7', 'BROWN AVE - ZONE # 8'.",
+        "source_url": "file://data/sources/hazlet_green_booklet_2026.pdf"
+      }
+    ],
+    "unresolved": [
+      "Municipal curbside garbage weekdays not published; booklet references resident garbage contractor for debris and grass clippings.",
+      "Recycling pickup is date-by-zone (not a single weekday); full 2026 date grid per zone is in PDF layout columns.",
+      "Zone 8 first 2026 recycling anchor date not isolated cleanly in text extract."
+    ],
+    "sources_checked": [
+      "https://www.hazlettwp.org/229/Recycling",
+      "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "file://data/sources/hazlet_green_booklet_2026.pdf"
+    ],
+    "notes": "Recycling page points to Recycle Coach and Green Booklet. Booklet: construction debris and similar items require arrangements with garbage contractor. Township recycling yard hours vary Memorial Day through Labor Day."
+  },
+  "loch-arbour": {
+    "trash_found": false,
+    "recycling_found": false,
+    "schedules": [
+      {
+        "stream": "bulk",
+        "weekday": "Monday",
+        "week_pattern": "2026 bulk collection dates listed on trash-recycling page",
+        "area_note": "Township-wide bulk days: Jan 26, Mar 9, May 11, Jul 13, Sep 14, Nov 16, 2026",
+        "source_url": "https://www.locharbournj.us/trash-recycling",
+        "source_date": "2026"
+      }
+    ],
+    "zone_boundaries": [],
+    "unresolved": [
+      "Official trash-recycling page lists 2026 bulk days only; no weekly curbside trash or recycling weekday stated.",
+      "Deal shared service not cited on Loch Arbour page (not used)."
+    ],
+    "sources_checked": [
+      "https://www.locharbournj.us/trash-recycling"
+    ],
+    "notes": "No municipal curbside trash or recycling schedule text on official page fetched."
+  },
+  "middletown": {
+    "trash_found": false,
+    "recycling_found": false,
+    "schedules": [
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "Garbage collection days not stated in plain text on Curbside Garbage Collection page; use Recycle Coach app by address for zone",
+        "area_note": null,
+        "source_url": "https://www.middletownnj.org/571/Curbside-Garbage-Collection",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "Recycling collection days not stated in plain text on Curbside Recycling Collection page; use Recycle Coach app",
+        "area_note": null,
+        "source_url": "https://www.middletownnj.org/583/Curbside-Recycling-Collection",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "No garbage collection New Year's Day, Thanksgiving Day, Christmas Day; next scheduled garbage day",
+        "area_note": null,
+        "source_url": "https://www.middletownnj.org/571/Curbside-Garbage-Collection",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "No recycling collection New Year's Day, Thanksgiving Day, Christmas Day; following Saturday if scheduled on those holidays",
+        "area_note": null,
+        "source_url": "https://www.middletownnj.org/583/Curbside-Recycling-Collection",
+        "source_date": "undated"
+      }
+    ],
+    "zone_boundaries": [],
+    "unresolved": [
+      "No plain-text garbage or recycling weekday by zone on official curbside pages; Recycle Coach required.",
+      "Zone map on official site not fetched with weekday legend in this recheck."
+    ],
+    "sources_checked": [
+      "https://www.middletownnj.org/571/Curbside-Garbage-Collection",
+      "https://www.middletownnj.org/583/Curbside-Recycling-Collection",
+      "https://www.middletownnj.org/collection",
+      "https://middletownnj.org/m/newsflash/Home/Detail/1657"
+    ],
+    "notes": "Garbage page: 'You may enter your address in the RECYCLE COACH app to find out which zone you are located in.' Recycling page: 'Please use the RECYCLE COACH app for more information.' Sept 2025 newsflash covers bulk scheduling tied to recycling week (IWS contractor), not weekly trash/recycling weekdays."
+  }
+}

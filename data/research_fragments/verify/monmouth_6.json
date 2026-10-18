@@ -1,0 +1,128 @@
+{
+  "monmouth-beach": {
+    "verified": true,
+    "corrections": {},
+    "issues": [],
+    "confirmed": [
+      "DPW: 732-229-5513, 18 Willow Ave., Monmouth Beach, NJ 07750 (public works page)",
+      "Trash Zone 1: east side of Riverdale — Monday and Thursday, weekly",
+      "Trash Zone 2: west side of Riverdale — Tuesday and Friday, weekly",
+      "Recycling: Wednesday, all zones, weekly",
+      "Yard vegetative waste: Monday; branch/limb chipping: Tuesday",
+      "Bulk: Wednesday by appointment; registration closes 2:30 PM Tuesday; four pickups per household per year",
+      "Leaf pickup: October through January (no fixed weekday)",
+      "No pickup Thanksgiving, Christmas, or New Year's Day; next pickup is next regular day",
+      "Refuse and recycling containers max 45 gallons"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.monmouthbeach.org/departments/public-works/",
+        "type": "official_html",
+        "reachable": true,
+        "used_for": "schedules, dpw, dropoff, zip"
+      },
+      {
+        "url": "https://www.monmouthbeach.org/",
+        "type": "official_html",
+        "reachable": true,
+        "used_for": "official_site"
+      }
+    ]
+  },
+  "neptune-city": {
+    "verified": true,
+    "corrections": {},
+    "issues": [],
+    "confirmed": [
+      "DPW: 732-775-1607, 41 Flexcraft Drive, Neptune City, NJ 07753 (garbage schedule page and 2026 calendar PDF)",
+      "Trash Zone 1: east of Union Ave. to borough eastern border — Monday and Thursday, weekly",
+      "Trash Zone 2: west of Union Ave. to borough western border — Tuesday and Friday, weekly",
+      "Recycling: every other Wednesday by zone; out by 6:30 a.m.",
+      "Zone 1 recycling 2026 dates: Jan 14, 28; Feb 11, 25; Mar 11, 25; Apr 8, 22; May 6, 20; Jun 3, 17; Jul 1, 15, 29; Aug 12, 26; Sep 9, 23; Oct 7, 21; Nov 4, 18; Dec 2, 16, 30",
+      "Zone 2 recycling 2026 dates: Jan 7, 21; Feb 4, 18; Mar 4, 18; Apr 1, 15, 29; May 13, 27; Jun 10, 24; Jul 8, 22; Aug 5, 19; Sep 2, 16, 30; Oct 14, 28; Nov 11, 25; Dec 9, 23",
+      "Bulk: up to 3 items on second trash day of week (Thursday Zone 1, Friday Zone 2)",
+      "Electronic recycling curbside: Tuesdays by 6:30 a.m. (2026 calendar PDF)",
+      "Neptune City Recycling Center hours: Tue 7 a.m.–5 p.m.; Wed–Fri 7 a.m.–2 p.m.; Sat 7 a.m.–12 noon (2026 calendar PDF)",
+      "No recycling or garbage on Thanksgiving, Christmas, New Year's, July 4"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.neptunecitynj.com/public-works/pages/garbage-collection-schedule-information",
+        "type": "official_html",
+        "reachable": true,
+        "used_for": "trash zones, bulk rules, dpw, holidays"
+      },
+      {
+        "url": "https://www.neptunecitynj.com/sites/g/files/vyhlif5316/f/uploads/2026_calendar.pdf",
+        "type": "official_pdf_2026",
+        "reachable": true,
+        "used_for": "recycling dates by zone, e-waste Tuesday, dropoff hours"
+      },
+      {
+        "url": "https://www.neptunecitynj.com/",
+        "type": "official_html",
+        "reachable": true,
+        "used_for": "official_site"
+      }
+    ]
+  },
+  "neptune-township": {
+    "verified": false,
+    "corrections": {
+      "schedules": [
+        {
+          "stream": "recycling",
+          "weekday": null,
+          "week_pattern": "2026 date schedule; sub-zone A1/A2/B1/B2/C1/C2/D1/D2 per street index",
+          "area_note": "Zones A–D recycling determined by address via 2026 Street Index (sub-zones A1/A2/B1/B2/C1/C2/D1/D2). Ocean Grove residential recycling: Wednesdays. OG Zone C: south side of Main Ave to Inskip Ave; OG Zone B: north side of Main Ave to Lake Ave. OG-B bulk and brush follow Zone B schedule; OG-C follow Zone C schedule.",
+          "source_url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+          "source_date": "2026"
+        }
+      ],
+      "status": "partial",
+      "notes": "Garbage weekdays and Ocean Grove zones verified on 2026 DPW calendar and Street Index PDF. Township A–D recycling sub-zone and bulk/brush weeks are date-driven per 2026 calendar; use Street Index for recycling sub-zone by address. E-waste not curbside; drop off at recycling center. Holiday rules per 2026 calendar PDF."
+    },
+    "issues": [
+      "Recycling schedule entry area_note includes RT 33/RT 35/West Bangs highway boundary summaries that do not appear in the 2026 DPW calendar PDF or 2026 Street Index PDF; some summaries conflict with street index (e.g. GREEN GROVE RD (RT 33-W BANGS) is garbage Zone D / recycling D1, not Zone A/A2).",
+      "Status is \"complete\" in towns_research.json but structured recycling weekday is null and requires per-address Street Index lookup — should be partial."
+    ],
+    "confirmed": [
+      "DPW: 732-775-8797, 2201 Heck Ave, Neptune, NJ 07753 (public works page and 2026 calendar PDF)",
+      "Garbage Zone A: Monday; Zone B: Tuesday; Zone C: Friday; Zone D: Thursday (2026 calendar / Street Index legend)",
+      "Ocean Grove garbage Zone B: Tuesday and Friday; OG Zone C: Monday and Thursday; manual cans max 45 gal / 50 lbs (2026 calendar PDF)",
+      "Ocean Grove recycling: Wednesdays (2026 calendar PDF)",
+      "OG Zone C boundary: south side of Main Ave to Inskip Ave; OG Zone B: north side of Main Ave to Lake Ave (2026 calendar PDF and Street Index PDF)",
+      "OG-B bulk and brush with Zone B schedule; OG-C with Zone C schedule (2026 calendar PDF)",
+      "Township recycling sub-zones A1/A2/B1/B2/C1/C2/D1/D2 assigned per street in 2026 Street Index PDF",
+      "Neptune Township Recycling Center: 2201 Heck Ave (entrance Doremus Way); Mon–Fri 8 a.m.–5 p.m., Sat–Sun 8 a.m.–3 p.m.; proof of residency required (2026 calendar PDF pg. 8)",
+      "E-waste no longer collected curbside; drop off at recycling center (public works page matches calendar)",
+      "Holiday collection: township garbage/recycling on holiday moves to Wednesday that week; OG garbage canceled on holiday; OG Wednesday recycling moves to Friday when holiday is Wednesday (2026 calendar PDF)"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://neptunetownship.org/departments/public-works",
+        "type": "official_html",
+        "reachable": true,
+        "used_for": "official_site link, 2026 calendar link, e-waste policy, dpw phone"
+      },
+      {
+        "url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+        "type": "official_pdf_2026",
+        "reachable": true,
+        "used_for": "garbage weekdays, OG zones, bulk/brush/leaf rules, dropoff, holidays"
+      },
+      {
+        "url": "https://neptunetownship.org/sites/default/files/documents/Street%20Index%20Town%20Website%207.2026.pdf",
+        "type": "official_pdf_2026",
+        "reachable": true,
+        "used_for": "street-level garbage zone and recycling sub-zone; OG boundary legend"
+      },
+      {
+        "url": "https://neptunetownship.org/",
+        "type": "official_html",
+        "reachable": true,
+        "used_for": "official_site"
+      }
+    ]
+  }
+}

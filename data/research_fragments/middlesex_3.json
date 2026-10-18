@@ -1,0 +1,275 @@
+{
+  "sayreville": {
+    "name": "Sayreville",
+    "county": "middlesex",
+    "official_site": "https://www.sayreville.com",
+    "zips": [
+      {
+        "zip": "08872",
+        "shared_with": [],
+        "source_url": "https://www.sayreville.com/cn/contactinfo/?did=1496"
+      },
+      {
+        "zip": "08859",
+        "shared_with": ["Parlin (USPS name)"],
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=9296"
+      }
+    ],
+    "dpw": {
+      "phone": "732-390-7042",
+      "address": "167 Main Street, Sayreville, NJ 08872",
+      "source_url": "https://www.sayreville.com/cn/contactinfo/?did=1496",
+      "hauler": "Borough of Sayreville Sanitation Division (municipal automated refuse collection)"
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Sanitation Zone I: Sayrewoods, Parkway Homes, Melrose, President Park, Oaktree North, Sherwood Forest, Patriot Hill, Upper Main Street (Hilltop Avenue area), Old Bridge, Munn's Village, Bordentown Avenue (Old Bridge to South Amboy), Woodside Estates",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Sanitation Zone II: Morgan, Appletree Village, Morgan Heights, Oaktree East, Spinnaker Point, Laurel Park, Parlin area (North Edward Street to end of Deerfield Road; South Edward Street to Guest House), White Oaks, Upper Pine Brook, Hillcrest Homes, Washington Road (to corner of Marchut Court, both sides), Deerfield Road (La Mer leaves only)",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "wednesday",
+        "week_pattern": "weekly",
+        "area_note": "Sanitation Zone III: Sayreville Proper, Tangletown, Winding River, Towne Lake, Sayre Park, Lower Sayreville (lower Pine Brook), Natures Walk, Horseshoe Road area, Oaktree West, Green Valley, Washington Village, Heritage Woods, Washington Road (Marchut Court to bridge, both sides)",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "tuesday",
+        "week_pattern": "every other week (2026 calendar on borough site)",
+        "area_note": "MCIA county program (not sanitation zones): Sayrebrook Townhomes, President Park, Oaktree North, Sherwood Forest, Patriot Hill, Horseshoe Road area, Melrose, Morgan, Appletree Village, Morgan Heights, Spinnaker Point, Regents Wharf, Munns Village, Bordentown Avenue east of Garden State Parkway, Upper Sayreville (Hilltop Avenue area)",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "every other week (2026 calendar on borough site)",
+        "area_note": "MCIA: Laurel Park, Ernston Estates, Ernston Hill Estates, Woodside Estates, Parkway Homes, Oaktree East, LaMer, Old Bridge section, Bordentown Avenue west of Garden State Parkway, Kenneth Avenue, Eugene Boulevard section, Sayrewoods",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "thursday",
+        "week_pattern": "every other week (2026 calendar on borough site)",
+        "area_note": "MCIA: Lower Sayreville (Van Loan through River Road), Jernee Mill Road, Sayre Park, White Oaks, Pine Brook Homes, Hillcrest Homes, Deerfield Road through Marchut Court, Oaktree West, Green Valley, Washington Village, Heritage Woods, Washington Road (Burke's Park to bridge, both sides)",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "friday",
+        "week_pattern": "every other week (2026 calendar on borough site)",
+        "area_note": "MCIA: Sayreville proper, Tangletown, Winding River, Towne Lake",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+        "source_date": "2026"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": "2026 zone dates: Zone 1 Apr 9, Jul 9, Oct 1; Zone 2 Apr 16, Jul 16, Oct 8; Zone 3 Apr 23, Jul 23, Oct 22",
+        "area_note": "Heavy/bulk trash three times per year by sanitation zone; place out Monday of scheduled week, no later than Wednesday night",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+        "source_date": "2026"
+      },
+      {
+        "stream": "yard",
+        "weekday": "monday",
+        "week_pattern": "weekly May 4 through September 30 (Zone 1)",
+        "area_note": "Grass clippings in covered 32-gallon containers with two handles, max 30 lb, labeled Grass Clippings; no bags",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": "tuesday",
+        "week_pattern": "weekly May 4 through September 30 (Zone 2)",
+        "area_note": "Grass collection by sanitation zone; same preparation rules as Zone 1",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": "wednesday",
+        "week_pattern": "weekly May 4 through September 30 (Zone 3)",
+        "area_note": "Grass collection by sanitation zone; same preparation rules as Zone 1",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "seasonal",
+        "area_note": "Leaf collection November and December; spring leaf collection March and May; Christmas trees and branches collected in winter months per Sanitation Division",
+        "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Fort Grumpy Recycling Center",
+        "address": "3750 Bordentown Avenue, Sayreville, NJ",
+        "hours": "Monday and Friday 7:30 a.m.–1:00 p.m. (gates close 12:55); 1st and 3rd Saturday 7:00 a.m.–12:00 p.m. (gates close 11:55)",
+        "residents_only": true,
+        "source_url": "https://www.sayreville.com/documents/Sayreville%20Recycling%20Sanitation%202025%20Guide.pdf"
+      }
+    ],
+    "status": "complete",
+    "notes": "Curbside recycling is Middlesex County Improvement Authority (MCIA), missed pickups 800-488-6242. Borough holidays do not affect MCIA recycling schedule per 2026 page. Sanitation main office 732-390-7043; recycling coordinator 732-390-7008. 2025 guide PDF on site; 2026 recycling dates on dedicated borough page."
+  },
+  "south-amboy": {
+    "name": "South Amboy",
+    "county": "middlesex",
+    "official_site": "https://www.southamboynj.gov",
+    "zips": [
+      {
+        "zip": "08879",
+        "shared_with": [],
+        "source_url": "https://www.southamboynj.gov/Departments/public-works"
+      }
+    ],
+    "dpw": {
+      "phone": "732-721-8100",
+      "address": "140 North Broadway, South Amboy, NJ 08879",
+      "source_url": "https://www.southamboynj.gov/Departments/public-works",
+      "hauler": "City of South Amboy Department of Public Works (municipal trash collection)"
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Streets listed on city trash collection map PDF (e.g., Bertram Avenue, Bordentown Avenue odd, Broadway 200 block, Campbell Street, and other Monday-list streets)",
+        "source_url": "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Streets listed on city trash collection map PDF (e.g., Augusta Street, Bordentown Avenue even 300–500 block, South Broadway, and other Tuesday-list streets)",
+        "source_url": "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "thursday",
+        "week_pattern": "weekly",
+        "area_note": "Streets listed on city trash collection map PDF (e.g., Alpine Street, Barkalow Street, Cedar Street, Center Street, and other Thursday-list streets)",
+        "source_url": "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Streets listed on city trash collection map PDF (e.g., Adamecs Way, Bayshore Drive, Broadway, Church Street, waterfront area streets, and other Friday-list streets)",
+        "source_url": "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "friday",
+        "week_pattern": "every other week (2026 dates: Jan 2/16/30, Feb 13/27, Mar 13/27, Apr 10/24, May 8/22, Jun 5/19, Jul 3/17/31, Aug 14/28, Sep 11/25, Oct 9/23, Nov 6/20, Dec 4/18)",
+        "area_note": "Borough-wide; MCIA single-stream curbside collection",
+        "source_url": "https://www.southamboynj.gov/_Content/pdf/2026-Recycling-Schedule.pdf",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [],
+    "status": "partial",
+    "notes": "One-time-per-week trash pickup per Public Works page (effective 2010). No Wednesday trash collection on published map. Recycling collected by MCIA; coordinator Jay Kennedy (732-439-9916 on Sanitation page; 732-727-4600 ext 5973 on 2026 PDF). MCIA hotline 800-488-6242. Trash map PDF undated; no municipal bulk/yard schedule found on official site."
+  },
+  "south-plainfield": {
+    "name": "South Plainfield",
+    "county": "middlesex",
+    "official_site": "https://www.southplainfieldnj.com",
+    "zips": [
+      {
+        "zip": "07080",
+        "shared_with": [],
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/"
+      }
+    ],
+    "dpw": {
+      "phone": "908-755-2187",
+      "address": "405 Spicer Avenue, South Plainfield, NJ 07080",
+      "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/",
+      "hauler": "Curbside recycling: Middlesex County Improvement Authority; household garbage: private carter (no borough curbside trash schedule published)"
+    },
+    "schedules": [
+      {
+        "stream": "recycling",
+        "weekday": "thursday",
+        "week_pattern": "every other week (2026 calendar on Curbside page)",
+        "area_note": "Thursday recycling district; see Recycling Districts PDF / RecycleCoach for street assignment",
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "friday",
+        "week_pattern": "every other week (2026 calendar on Curbside page)",
+        "area_note": "Friday recycling district; see Recycling Districts PDF / RecycleCoach for street assignment",
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+        "source_date": "2026"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": "by appointment (2 free curbside bulk pickups per year for homeowners; call DPW)",
+        "area_note": "No bulk pickups during 8 weeks of fall leaf bag collection; max pile 3 ft W x 3 ft H x 8 ft L",
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/Bulk%20Waste/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "mid-October through mid-December curbside leaf bag collection",
+        "area_note": "Leaves in biodegradable paper bags at curb; brush/leaves/grass also accepted at yard waste site with decal",
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": "saturday",
+        "week_pattern": "2026 compactor open dates: Apr 4, Apr 18, May 9, Jun 6, Jun 20, Aug 29, Oct 3, Nov 7 (7:00 a.m.–3:00 p.m.; bulky waste only)",
+        "area_note": "Borough trash compactor at Kenneth Avenue; 2 free visits per year with coupon; closed Jan–Mar, Jul, Sep, Dec",
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/Compactor%20Hours/",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Mary B. Mazepa South Plainfield Recycling Drop-off Center",
+        "address": "882 Kenneth Avenue, South Plainfield, NJ",
+        "hours": "Tuesday 11:00 a.m.–7:00 p.m.; Thursday, Friday, Saturday 8:00 a.m.–4:00 p.m. (gates close 10 minutes early; closed borough holidays)",
+        "residents_only": false,
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside"
+      },
+      {
+        "name": "South Plainfield Yard Waste Site",
+        "address": "882 Kenneth Avenue (past recycling center), South Plainfield, NJ",
+        "hours": "Jan 1–Mar 31: Saturday 8:00 a.m.–4:00 p.m.; Apr 1–Dec 31: Mon–Sat hours vary (see Curbside page); closed borough holidays; decal required",
+        "residents_only": true,
+        "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside"
+      }
+    ],
+    "status": "partial",
+    "notes": "Borough publishes recycling, bulk, compactor, and yard-waste programs but no municipal curbside household garbage day or hauler list on official site; ordinance references individual homeowner trash containers. Recycling hotline 908-226-7620; coordinator Kristina Nieradka 908-226-7621. Thanksgiving 2026 recycling moved to Nov 28 (Thursday district); Christmas to Dec 26 (Friday district) per Curbside page."
+  }
+}

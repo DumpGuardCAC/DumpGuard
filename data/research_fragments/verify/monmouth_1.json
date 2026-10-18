@@ -1,0 +1,159 @@
+{
+  "aberdeen": {
+    "verified": false,
+    "corrections": [],
+    "issues": [
+      "status partial is correct: curbside trash first weekday by section and curbside recycling days are not stated on the current Trash/Recycling page (Recycle Coach linked; not used as primary schedule source).",
+      "All schedule entries in towns_research.json use source_date undated; Trash/Recycling page has no publication year.",
+      "Bulk pickup policy on page states effective January 1, 2018 (pre-2026) but is still the current published rule.",
+      "ZIP 07735 is not on the homepage (07747 only); 07735 appears only via drop-off address Cliffwood Beach, NJ 07735 on Trash/Recycling.",
+      "Winter Storm Information Center (Feb 2026 storm notices) implies Section I Monday and Section II Tuesday as first trash days and Thu/Fri as second days; this is episodic storm guidance, not a standing schedule page—towns_research.json correctly avoids inventing Mon/Tue weekday fields.",
+      "research_fragments/monmouth_1.json adds 2015 newsletter archive recycling weekdays and explicit Mon/Tue trash rows; those recycling rows are pre-2026 and not in towns_research.json—reject for canonical 2026 verification.",
+      "No third-party aggregators used; Recycle Coach link on municipal page not treated as verified schedule source."
+    ],
+    "confirmed": [
+      "name: Aberdeen Township; county: monmouth; official_site: https://www.aberdeennj.org",
+      "zips: 07747 (homepage contact block); 07735 (drop-off address on Trash/Recycling)",
+      "dpw.phone: 732-583-4200 (homepage, Trash/Recycling contact, Public Works Adriana Panetta ext. 401)",
+      "dpw.address: 147 Lenox Road, Cliffwood Beach, NJ 07735 (Public Works Garage drop-off on Trash/Recycling)",
+      "dpw.hauler note: contracted hauler name not listed; condo/apartment complexes excluded—verbatim on Trash/Recycling",
+      "schedules Section I areas: Cliffwood Beach, Cliffwood, River Gardens, Oakshades, Freneau, Heritage Estates",
+      "schedules Section II areas: Strathmore, High School Area, Woodbrook Drive, Randall Way, Storyland, Santa Fe, Heather Glenn",
+      "schedules trash: twice weekly; second collection day Thursday (Section I) or Friday (Section II) per Trash/Recycling bulk section",
+      "schedules bulk: Section I every Thursday, Section II every Friday, limit two items, effective January 1, 2018 (still on current page)",
+      "schedules other: holiday delay when pickup falls on New Year's Day, Thanksgiving, or Christmas Day",
+      "dropoff: Aberdeen residents only, IDs checked; Mon–Sat 7 a.m.–3 p.m.; acceptable items list on Trash/Recycling",
+      "notes: mattresses for bulk must be plastic wrapped (Trash/Recycling)"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.aberdeennj.org/",
+        "type": "official",
+        "reachable": true,
+        "notes": "07747 contact; no trash schedule detail"
+      },
+      {
+        "url": "https://www.aberdeennj.org/271/Trash-Recycling",
+        "type": "official",
+        "reachable": true,
+        "notes": "Primary source for sections, bulk Thu/Fri, drop-off, condo exclusion, holidays; undated"
+      },
+      {
+        "url": "https://www.aberdeennj.org/266/Public-Works",
+        "type": "official",
+        "reachable": true,
+        "notes": "DPW hours; Adriana Panetta 732-583-4200 ext. 401; no curbside day list"
+      },
+      {
+        "url": "https://www.aberdeennj.org/437/Winter-Storm-Information-Center",
+        "type": "official",
+        "reachable": true,
+        "notes": "2026-02 storm trash cancellations; supplemental only; not in towns_research schedule rows"
+      }
+    ]
+  },
+  "allenhurst": {
+    "verified": true,
+    "corrections": [],
+    "issues": [
+      "Most schedule source_date values are undated municipal pages (Public Works, Refuse Guide).",
+      "Official page conflict: Public Works says loose leaves at curb during September–December; Refuse and Recycling Guide says loose leaves October 1–December 31. towns_research.json yard note follows Public Works (September–December).",
+      "Official page conflict: Public Works garbage receptacles max 50 lb; Refuse Guide household refuse 30-gallon max containers. towns_research.json trash area_note cites both limits.",
+      "Official page conflict: Public Works brush bundles max 4 ft / 50 lb; Refuse Guide allows branches up to 8 in. diameter and 7 ft long. towns_research.json yard note follows Public Works bundle rule.",
+      "Public Works page states 6 bulk pickup days announced in January; Bulk Pickup Information page lists seven 2026 dates—towns_research.json uses the dated 2026 list (preferred)."
+    ],
+    "confirmed": [
+      "name: Allenhurst Borough; county: monmouth; official_site: https://www.allenhurstnj.org",
+      "zip: 07711 (Public Works contact block)",
+      "dpw.phone: 732-531-2757; dpw.address: 125 Corlies Avenue, Allenhurst, NJ 07711",
+      "schedules trash: Tuesday and Friday rear-yard collection from 5:30 a.m. (Public Works)",
+      "schedules recycling: Wednesday weekly; set out Tuesday p.m. for Wednesday a.m.; commingled and paper/cardboard (Public Works + Refuse Guide)",
+      "schedules bulk 2026: January 26, March 2, April 13, June 8, July 20, September 14, November 23; curb by 12:00 p.m.; up to three days prior; no concrete/construction debris",
+      "schedules bulk fees: tire off rim $2, tire on rim $5, Freon items $20; pay Borough Hall before pickup",
+      "schedules yard: grass not collected; brush tied bundles (Public Works); leaves loose Sep–Dec per Public Works",
+      "schedules other: dried-out paint cans with Tue/Fri household trash rear yard (Refuse Guide)",
+      "dropoff: empty array matches—HHW directed to Monmouth County facility Shafto Road, Tinton Falls (Refuse Guide)",
+      "status complete: reasonable given undated but consistent official pages plus dated 2026 bulk list"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.allenhurstnj.org/264/Public-Works",
+        "type": "official",
+        "reachable": true,
+        "notes": "Trash Tue/Fri, recycling Wed, yard rules; undated"
+      },
+      {
+        "url": "https://www.allenhurstnj.org/268/Refuse-and-Recycling-Guide",
+        "type": "official",
+        "reachable": true,
+        "notes": "30-gal containers, paint cans, HHW county facility; undated"
+      },
+      {
+        "url": "https://www.allenhurstnj.org/348/Bulk-Pickup-Information",
+        "type": "official",
+        "reachable": true,
+        "notes": "2026 bulk dates and fees verified"
+      }
+    ]
+  },
+  "atlantic-highlands": {
+    "verified": true,
+    "corrections": [],
+    "issues": [
+      "Zone_Maps_2.pdf (primary schedule source in towns_research.json) is undated; still hosted on official site via Public Works links.",
+      "Borough Yard hours differ between Public Works page (Mon–Fri 8:30 a.m.–4:00 p.m., Sat until 11:00 a.m.) and 2026 Printed Calendar (Mon–Fri 6:00 a.m.–4:00 p.m.; Sat 6:00 a.m.–11:00 a.m.; Nov–Dec Sat–Sun 8:00 a.m.–12:00 p.m. for leaves/brush). towns_research.json dropoff.hours documents both—flag as official-source conflict, not invented merge.",
+      "Zone map PDF labels ZONE I/II/III/IV; schedule text uses Zones 1&4 and 2&3—confirmed equivalent on same PDF.",
+      "Yard pickup specific calendar dates are in 2026 Leaf and Brush Calendar.pdf (image-heavy PDF; linked from Public Works); towns_research.json references calendar without listing dates—acceptable."
+    ],
+    "confirmed": [
+      "name: Atlantic Highlands Borough; county: monmouth; official_site: https://www.ahnj.com",
+      "zip: 07716 (Contact Us / Borough Hall address)",
+      "dpw.phone: 732-291-1444; dpw.address: Borough Yard end of Lincoln Ave / West Lincoln Avenue (Public Works + 2026 calendar)",
+      "schedules trash: Zones 2&3 Monday and Thursday; Zones 1&4 Tuesday and Friday (Zone_Maps_2.pdf)",
+      "schedules recycling: Zones 2&3 1st and 3rd Wednesday; Zones 1&4 2nd and 4th Wednesday; out by 6:00 a.m. (PDF + 2026 calendar)",
+      "schedules bulk: Zones 2&3 1st Saturday; Zones 1&4 2nd Saturday; out by 6:00 a.m. (PDF + 2026 calendar)",
+      "schedules yard: brush/leaves at curb only within 5 days before scheduled pickup (Public Works)",
+      "schedules other: metal pickup every Friday; call Borough Hall 732-291-1444 x3105 by Thursday 4:00 p.m.; appliances $15 sticker from Borough Hall (2026 Printed Calendar.pdf)",
+      "dropoff: West Lincoln Avenue dead end; no trash or bulk drop at yard (2026 calendar); recycling facility line 732-291-0472 (Contact Us)",
+      "notes: Recycle Coach not used; no aggregators"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.ahnj.com/ahnj/Contact%20Us/",
+        "type": "official",
+        "reachable": true,
+        "notes": "07716; recycling facility 732-291-0472"
+      },
+      {
+        "url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/",
+        "type": "official",
+        "reachable": true,
+        "notes": "Yard 5-day rule; yard hours 8:30–4 / Sat 11; links to 2026 PDFs"
+      },
+      {
+        "url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+        "type": "official_pdf",
+        "reachable": true,
+        "notes": "Trash/recycle/bulk zone weekdays verified; undated"
+      },
+      {
+        "url": "https://www.ahnj.com/ahnj/2026%20Printed%20Calendar.pdf",
+        "type": "official_pdf",
+        "reachable": true,
+        "notes": "2026 dated; metals, bulk, borough yard hours, no trash drop-off"
+      },
+      {
+        "url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/2026%20Leaf%20and%20Brush%20Calendar.pdf",
+        "type": "official_pdf",
+        "reachable": true,
+        "notes": "2026 leaf/brush collection calendar; zone collection days present in PDF text extraction"
+      },
+      {
+        "url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/Recycling%20Information/",
+        "type": "official",
+        "reachable": true,
+        "notes": "Minimal content; not used for schedules"
+      }
+    ]
+  }
+}

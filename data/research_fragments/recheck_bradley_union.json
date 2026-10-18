@@ -1,0 +1,611 @@
+{
+  "bradley-beach": {
+    "name": "Bradley Beach",
+    "county": "monmouth",
+    "sources_checked": [
+      "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+      "https://www.bradleybeachnj.gov/trash-recycling-information/",
+      "https://www.bradleybeachnj.gov/public-works/",
+      "https://www.bradleybeachnj.gov/street-sweeper-schedule/"
+    ],
+    "calendar_note": "2026 sanitation calendar PDF is image-only (12 pages); weekday and holiday text taken from local page renders (bb_cal_p1.png through bb_cal_p4.png and rendered PDF months).",
+    "zone_boundary_text": {
+      "published_on_2026_sanitation_calendar": false,
+      "street_sweeper_page": {
+        "source_url": "https://www.bradleybeachnj.gov/street-sweeper-schedule/",
+        "note": "Sweeper zones align with trash collection zones per page text: 'The zones are in accordance with the trash collection zones'.",
+        "zones": [
+          {
+            "zone": "1",
+            "boundary_text": "From LaReine Ave. to Lake Terrace"
+          },
+          {
+            "zone": "2",
+            "boundary_text": "From Brinley Ave. to Bradley Blvd."
+          },
+          {
+            "zone": "3",
+            "boundary_text": "From LaReine Ave. to Lake Terrace"
+          }
+        ],
+        "additional_note": "Page also lists sweeper Zone 4 (From Brinley Ave. to Bradley Blvd.) and states 'Main Street, Ocean Avenue and 700 Blocks will continue with the current schedule.' No separate trash Zone 3 street list appears on the 2026 sanitation calendar or trash/recycling HTML pages reviewed."
+      }
+    },
+    "trash_zones_resolved": [
+      {
+        "zone": "1",
+        "weekdays": ["monday", "thursday"],
+        "week_pattern": "weekly"
+      },
+      {
+        "zone": "2",
+        "weekdays": ["tuesday", "friday"],
+        "week_pattern": "weekly"
+      },
+      {
+        "zone": "3",
+        "weekdays": ["monday", "friday"],
+        "week_pattern": "weekly"
+      }
+    ],
+    "calendar_combined_days": {
+      "monday": "Zone 1 and Zone 3",
+      "tuesday": "Zone 2",
+      "wednesday": "Recycling all zones",
+      "thursday": "Zone 1",
+      "friday": "Zone 2 and Zone 3"
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 1",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "thursday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 1",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 2",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 2",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 3",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 3",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "weekly",
+        "area_note": "All zones; single-stream curbside",
+        "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/",
+        "source_date": "undated"
+      }
+    ],
+    "holiday_cancellations_and_shifts_2026": [
+      {
+        "date": "2026-01-01",
+        "holiday": "New Year's Day",
+        "calendar_text": "NEW YEARS NO GARBAGE PICK-UP; BORO AND RECYCLE YARD CLOSED (Jan 1 is Thursday Zone 1 day)",
+        "source": "2026 sanitation calendar January page",
+        "trash_shift": {
+          "zone": "1",
+          "shift_to": "2026-01-05",
+          "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/"
+        }
+      },
+      {
+        "date": "2026-01-19",
+        "holiday": "Martin Luther King Jr. Day",
+        "calendar_text": "M L King Day BORO AND RECYCLE YARD CLOSED; GARBAGE PICK-UP ZONE 1 & ZONE 3 still listed",
+        "source": "2026 sanitation calendar January page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-02-16",
+        "holiday": "Washington's Birthday",
+        "calendar_text": "BORO AND RECYCLE YARD CLOSED; GARBAGE PICK-UP ZONE 1 & ZONE 3 still listed",
+        "source": "2026 sanitation calendar February page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-04-03",
+        "holiday": "Good Friday",
+        "calendar_text": "GOOD FRIDAY BORO AND RECYCLE YARD CLOSED; GARBAGE PICK-UP ZONE 2 & ZONE 3 still listed",
+        "source": "2026 sanitation calendar April page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-04-05",
+        "holiday": "Easter Sunday",
+        "calendar_text": "RECYCLE YARD CLOSED",
+        "source": "2026 sanitation calendar April page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-05-25",
+        "holiday": "Memorial Day",
+        "calendar_text": "Memorial Day BORO AND RECYCLE YARD CLOSED; GARBAGE PICK-UP ZONE 1 & ZONE 3 still listed",
+        "source": "2026 sanitation calendar May page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-06-19",
+        "holiday": "Juneteenth",
+        "calendar_text": "JUNETEENTH BORO AND RECYCLE YARD CLOSED; GARBAGE PICK-UP ZONE 2 & ZONE 3 still listed",
+        "source": "2026 sanitation calendar June page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-07-03",
+        "holiday": null,
+        "calendar_text": "BORO AND RECYCLE YARD CLOSED; GARBAGE PICK-UP ZONE 2 & ZONE 3 still listed",
+        "source": "2026 sanitation calendar July page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-07-04",
+        "holiday": "Independence Day",
+        "calendar_text": "RECYCLE YARD CLOSED",
+        "source": "2026 sanitation calendar July page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-09-07",
+        "holiday": "Labor Day",
+        "calendar_text": "Labor Day BORO AND RECYCLE YARD CLOSED; GARBAGE PICK-UP ZONE 1 & ZONE 3 still listed",
+        "source": "2026 sanitation calendar September page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-10-12",
+        "holiday": "Columbus Day",
+        "calendar_text": "Columbus Day BORO AND RECYCLE YARD CLOSED; GARBAGE PICK-UP ZONE 1 & ZONE 3 still listed",
+        "source": "2026 sanitation calendar October page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-11-11",
+        "holiday": "Veterans Day",
+        "calendar_text": "BORO AND RECYCLE YARD CLOSED; RECYCLING PICK-UP ALL ZONES still listed",
+        "source": "2026 sanitation calendar November page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-11-26",
+        "holiday": "Thanksgiving Day",
+        "calendar_text": "NO GARBAGE PICK-UP; BORO AND RECYCLE YARD CLOSED (Thursday Zone 1 day)",
+        "source": "2026 sanitation calendar November page",
+        "trash_shift": {
+          "zone": "1",
+          "shift_to": "2026-11-30",
+          "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/"
+        }
+      },
+      {
+        "date": "2026-11-27",
+        "holiday": null,
+        "calendar_text": "BORO AND RECYCLE YARD CLOSED; GARBAGE PICK-UP ZONE 2 & ZONE 3 still listed",
+        "source": "2026 sanitation calendar November page",
+        "trash_shift": null
+      },
+      {
+        "date": "2026-12-25",
+        "holiday": "Christmas Day",
+        "calendar_text": "NO GARBAGE PICK-UP; BORO AND RECYCLE YARD CLOSED (Friday Zone 2 and Zone 3 day)",
+        "source": "2026 sanitation calendar December page",
+        "trash_shift": {
+          "zone": "3",
+          "shift_to": "2026-12-28",
+          "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/"
+        },
+        "trash_shift_zone_2": {
+          "zone": "2",
+          "shift_to": "2026-12-29",
+          "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/"
+        }
+      },
+      {
+        "date": "2027-01-01",
+        "holiday": "New Year's Day",
+        "calendar_text": "NO GARBAGE PICK-UP; BORO AND RECYCLE YARD CLOSED (Friday Zone 2 and Zone 3 day)",
+        "source": "2026 sanitation calendar December page",
+        "trash_shift": {
+          "zone": "3",
+          "shift_to": "2027-01-04",
+          "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/"
+        },
+        "trash_shift_zone_2": {
+          "zone": "2",
+          "shift_to": "2027-01-05",
+          "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/"
+        }
+      }
+    ],
+    "status": "partial",
+    "notes": "Overlapping calendar day labels (Mon Zone 1&3, Fri Zone 2&3) resolved to per-zone weekdays above. 2026 sanitation calendar does not publish a trash zone street index; street sweeper page gives LaReine/Lake Terrace and Brinley/Bradley Blvd. ranges only. Bulk pickup alternates north side vs south side of Zone 3 on second Thursdays per trash-recycling page (not expanded here)."
+  },
+  "union-beach": {
+    "name": "Union Beach",
+    "county": "monmouth",
+    "sources_checked": [
+      "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf"
+    ],
+    "calendar_note": "2026 calendar PDF is image-only; street lists and dates taken from local union_beach_2026_p1.png (same content as PDF).",
+    "prior_json_error": "data/research_fragments/monmouth_8.json swapped Section A vs Section B recycling and bulk Wednesday date lists; corrected below from calendar.",
+    "sections": {
+      "A": {
+        "streets": [
+          "2nd",
+          "3rd",
+          "4th",
+          "5th",
+          "6th",
+          "7th",
+          "8th",
+          "9th",
+          "10th",
+          "Ash",
+          "Aspen",
+          "Bay",
+          "Bayview (#100-499)",
+          "Beach",
+          "Broadway",
+          "Campbell",
+          "Center",
+          "Central (#100-499)",
+          "Chingarora",
+          "Dock",
+          "Edmunds",
+          "Ellison",
+          "Florence (#100-#1400)",
+          "Floyd",
+          "Front",
+          "Gateway",
+          "Herbert",
+          "Henry",
+          "Johnson (#1-99)",
+          "Kathleen",
+          "Locust",
+          "Lorillard (#100-499)",
+          "Maple",
+          "Oak",
+          "Pine",
+          "Park (#100-499)",
+          "Poole (#100-599)",
+          "Prospect (#100-499)",
+          "Raritan",
+          "State",
+          "St. James",
+          "St. Johns",
+          "Spruce (#400-799)",
+          "Victoria",
+          "Vista Shores",
+          "West"
+        ],
+        "trash": {
+          "weekdays": ["tuesday", "friday"],
+          "week_pattern": "weekly",
+          "holiday_cancellations_2026": [
+            {
+              "date": "2026-12-25",
+              "note": "No pick-up on Friday, December 25"
+            }
+          ]
+        },
+        "recycling": {
+          "weekday": "wednesday",
+          "week_pattern": "every other wednesday",
+          "anchor_date": "2026-01-14",
+          "next_date_confirmed": "2026-01-28",
+          "interval_days": 14,
+          "dates_2026": [
+            "2026-01-14",
+            "2026-01-28",
+            "2026-02-11",
+            "2026-02-25",
+            "2026-03-11",
+            "2026-03-25",
+            "2026-04-08",
+            "2026-04-22",
+            "2026-05-06",
+            "2026-05-20",
+            "2026-06-03",
+            "2026-06-17",
+            "2026-07-01",
+            "2026-07-15",
+            "2026-07-29",
+            "2026-08-12",
+            "2026-08-26",
+            "2026-09-09",
+            "2026-09-23",
+            "2026-10-07",
+            "2026-10-21",
+            "2026-11-04",
+            "2026-11-18",
+            "2026-12-02",
+            "2026-12-16",
+            "2026-12-30"
+          ],
+          "materials_note": "Cans and bottles, bundled cardboard, bundled newspaper; NO PLASTIC BAGS"
+        },
+        "bulk": {
+          "weekday": "wednesday",
+          "dates_2026": [
+            "2026-01-07",
+            "2026-01-21",
+            "2026-02-04",
+            "2026-02-18",
+            "2026-03-04",
+            "2026-03-18",
+            "2026-04-01",
+            "2026-04-15",
+            "2026-04-29",
+            "2026-05-13",
+            "2026-05-27",
+            "2026-06-10",
+            "2026-06-24",
+            "2026-07-08",
+            "2026-07-22",
+            "2026-08-05",
+            "2026-08-19",
+            "2026-09-02",
+            "2026-09-16",
+            "2026-09-30",
+            "2026-10-14",
+            "2026-10-28",
+            "2026-11-11",
+            "2026-11-25",
+            "2026-12-09",
+            "2026-12-23"
+          ],
+          "materials_note": "Wooden furniture, mattresses, couches, other plastics; 3 items per pick-up"
+        },
+        "leaves_fall": {
+          "weekday": "wednesday",
+          "note": "Curbside in fall; paper bags only (per calendar footer)"
+        }
+      },
+      "B": {
+        "streets": [
+          "Anderson",
+          "Arlington",
+          "Asbury",
+          "Aumack",
+          "Bank",
+          "Bayview (#600-999)",
+          "Beachview",
+          "Branch",
+          "Brook",
+          "Cambridge",
+          "Central (#500-999)",
+          "Chomic",
+          "Clark",
+          "Columbia",
+          "Dibling",
+          "Donnelly",
+          "Fr. Fitzpatrick",
+          "Florence (#1500-1799)",
+          "Harris",
+          "Harrison",
+          "Haug",
+          "Heckelmann",
+          "High",
+          "Isabelle",
+          "Jersey",
+          "Johnson (#300-499)",
+          "Lorillard (#500-999)",
+          "Morningside",
+          "Newark",
+          "Ocean",
+          "Orange",
+          "Park (#500-999)",
+          "Patterson",
+          "Poole (#600-699)",
+          "Private",
+          "Prospect (#500-899)",
+          "Rose",
+          "Route 36",
+          "Seagate",
+          "Seaview",
+          "Scholer",
+          "Shore",
+          "Spruce (#900-1000)",
+          "Stone",
+          "Sullivan",
+          "Sydney",
+          "Union",
+          "Washington",
+          "Wesley",
+          "Willow",
+          "Wilson"
+        ],
+        "trash": {
+          "weekdays": ["monday", "thursday"],
+          "week_pattern": "weekly",
+          "holiday_cancellations_2026": [
+            {
+              "date": "2026-01-01",
+              "note": "No pick-up on Thursday, January 1"
+            },
+            {
+              "date": "2026-11-26",
+              "note": "No pick-up on Thursday, November 26"
+            }
+          ]
+        },
+        "recycling": {
+          "weekday": "wednesday",
+          "week_pattern": "every other wednesday",
+          "anchor_date": "2026-01-07",
+          "next_date_confirmed": "2026-01-21",
+          "interval_days": 14,
+          "dates_2026": [
+            "2026-01-07",
+            "2026-01-21",
+            "2026-02-04",
+            "2026-02-18",
+            "2026-03-04",
+            "2026-03-18",
+            "2026-04-01",
+            "2026-04-15",
+            "2026-04-29",
+            "2026-05-13",
+            "2026-05-27",
+            "2026-06-10",
+            "2026-06-24",
+            "2026-07-08",
+            "2026-07-22",
+            "2026-08-05",
+            "2026-08-19",
+            "2026-09-02",
+            "2026-09-16",
+            "2026-09-30",
+            "2026-10-14",
+            "2026-10-28",
+            "2026-11-11",
+            "2026-11-25",
+            "2026-12-09",
+            "2026-12-23"
+          ],
+          "materials_note": "Cans and bottles, bundled cardboard, bundled newspaper; NO PLASTIC BAGS"
+        },
+        "bulk": {
+          "weekday": "wednesday",
+          "dates_2026": [
+            "2026-01-14",
+            "2026-01-28",
+            "2026-02-11",
+            "2026-02-25",
+            "2026-03-11",
+            "2026-03-25",
+            "2026-04-08",
+            "2026-04-22",
+            "2026-05-06",
+            "2026-05-20",
+            "2026-06-03",
+            "2026-06-17",
+            "2026-07-01",
+            "2026-07-15",
+            "2026-07-29",
+            "2026-08-12",
+            "2026-08-26",
+            "2026-09-09",
+            "2026-09-23",
+            "2026-10-07",
+            "2026-10-21",
+            "2026-11-04",
+            "2026-11-18",
+            "2026-12-02",
+            "2026-12-16",
+            "2026-12-30"
+          ],
+          "materials_note": "Wooden furniture, mattresses, couches, other plastics; 3 items per pick-up"
+        },
+        "leaves_fall": {
+          "weekday": "tuesday",
+          "note": "Curbside in fall; paper bags only (per calendar footer)"
+        }
+      }
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Section A",
+        "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Section A",
+        "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Section B",
+        "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "thursday",
+        "week_pattern": "weekly",
+        "area_note": "Section B",
+        "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "every other wednesday",
+        "area_note": "Section A; anchor_date 2026-01-14; see sections.A.recycling.dates_2026",
+        "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "every other wednesday",
+        "area_note": "Section B; anchor_date 2026-01-07; see sections.B.recycling.dates_2026",
+        "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "wednesday",
+        "week_pattern": "custom",
+        "area_note": "Section A; see sections.A.bulk.dates_2026",
+        "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "wednesday",
+        "week_pattern": "custom",
+        "area_note": "Section B; see sections.B.bulk.dates_2026",
+        "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+        "source_date": "2026"
+      }
+    ],
+    "status": "complete",
+    "notes": "Section A and B recycling/bulk dates are on opposite Wednesday cycles (A recycling starts Jan 14 while A bulk starts Jan 7). Max 3 cans/bags, 50 lb each; place curbside night before."
+  }
+}

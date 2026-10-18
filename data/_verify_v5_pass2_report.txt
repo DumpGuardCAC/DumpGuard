@@ -1,0 +1,200 @@
+========================================================================
+towns_research_v5.json - verify pass 2
+source: C:\Users\DagaV\Desktop\CAC\data\towns_research_v5.json
+========================================================================
+
+## Biweekly / every-other / alternating weeks
+total=44 ok=44 mismatches=0
+  (none)
+
+## ISO week_pattern (YYYY-MM-DD) weekday match
+total=358 ok=358 mismatches=0
+  (none)
+
+## source_date not in {2026, standing} for trash/recycling
+bad=0
+  (none)
+
+## Multi-zone town zone x stream coverage
+Zone label = first words of area_note (split on ';' ':' or '. ').
+towns checked=17 missing_pairs=70
+  sayreville: zones=5 MISSING 5
+      - 'MCIA': ['recycling']  << missing trash
+      - 'MCIA county program (not sanitation zones)': ['recycling']  << missing trash
+      - 'Sanitation Zone I': ['trash']  << missing recycling
+      - 'Sanitation Zone II': ['trash']  << missing recycling
+      - 'Sanitation Zone III': ['trash']  << missing recycling
+  keyport: zones=6 MISSING 6
+      - 'Zone 1 non-recyclable solid waste': ['trash']  << missing recycling
+      - 'Zone 2 non-recyclable solid waste': ['trash']  << missing recycling
+      - 'Zone 3 non-recyclable solid waste': ['trash']  << missing recycling
+      - 'Zone 4 non-recyclable solid waste': ['trash']  << missing recycling
+      - 'Zones 1 and 2': ['recycling']  << missing trash
+      - 'Zones 3 and 4': ['recycling']  << missing trash
+  bradley-beach: zones=4 MISSING 4
+      - 'All zones': ['recycling']  << missing trash
+      - 'Zone 1': ['trash']  << missing recycling
+      - 'Zone 2': ['trash']  << missing recycling
+      - 'Zone 3': ['trash']  << missing recycling
+  carteret: zones=8 OK
+      - 'Sanitation District A / Recycling District 1': ['recycling', 'trash']
+      - 'Sanitation District A / Recycling District 2': ['recycling', 'trash']
+      - 'Sanitation District A / Recycling District 3': ['recycling', 'trash']
+      - 'Sanitation District B / Recycling District 4': ['recycling', 'trash']
+      - 'Sanitation District C / Recycling District 5': ['recycling', 'trash']
+      - 'Sanitation District C / Recycling District 6': ['recycling', 'trash']
+      - 'Sanitation District D / Recycling District 7': ['recycling', 'trash']
+      - 'Sanitation District D / Recycling District 8': ['recycling', 'trash']
+  union-beach: zones=2 OK
+      - 'Section A': ['recycling', 'trash']
+      - 'Section B': ['recycling', 'trash']
+  neptune-township: zones=15 MISSING 15
+      - 'Ocean Grove Zone B garbage': ['trash']  << missing recycling
+      - 'Ocean Grove Zone C garbage': ['trash']  << missing recycling
+      - 'Ocean Grove residential recycling': ['recycling']  << missing trash
+      - 'Recycling sub-zone A1': ['recycling']  << missing trash
+      - 'Recycling sub-zone A2': ['recycling']  << missing trash
+      - 'Recycling sub-zone B1': ['recycling']  << missing trash
+      - 'Recycling sub-zone B2': ['recycling']  << missing trash
+      - 'Recycling sub-zone C1': ['recycling']  << missing trash
+      - 'Recycling sub-zone C2': ['recycling']  << missing trash
+      - 'Recycling sub-zone D1': ['recycling']  << missing trash
+      - 'Recycling sub-zone D2': ['recycling']  << missing trash
+      - 'Zone A garbage': ['trash']  << missing recycling
+      - 'Zone B garbage': ['trash']  << missing recycling
+      - 'Zone C garbage': ['trash']  << missing recycling
+      - 'Zone D garbage': ['trash']  << missing recycling
+  highland-park: zones=4 MISSING 3
+      - 'Business District (twice weekly)': ['trash']  << missing recycling
+      - 'Business District, North Side and Triangle Area': ['recycling']  << missing trash
+      - 'North Side': ['trash']  << missing recycling
+      - 'South Side': ['recycling', 'trash']
+  little-silver: zones=2 OK
+      - 'Zone 1': ['recycling', 'trash']
+      - 'Zone 2': ['recycling', 'trash']
+  matawan: zones=8 MISSING 8
+      - 'Zone 1': ['recycling']  << missing trash
+      - 'Zone 1 (Route 34 South)': ['trash']  << missing recycling
+      - 'Zone 2': ['recycling']  << missing trash
+      - 'Zone 2 (Route 34 South)': ['trash']  << missing recycling
+      - 'Zone 3': ['recycling']  << missing trash
+      - 'Zone 3 (Route 34 North)': ['trash']  << missing recycling
+      - 'Zone 4': ['recycling']  << missing trash
+      - 'Zone 4 (Route 34 North)': ['trash']  << missing recycling
+  atlantic-highlands: zones=2 OK
+      - 'Zones 1 and 4': ['recycling', 'trash']
+      - 'Zones 2 and 3': ['recycling', 'trash']
+  highlands: zones=2 OK
+      - 'Zones 1 and 3': ['recycling', 'trash']
+      - 'Zones 2 and 4': ['recycling', 'trash']
+  red-bank: zones=3 MISSING 3
+      - 'Borough-wide single-stream curbside': ['recycling']  << missing trash
+      - 'East of Broad Street': ['trash']  << missing recycling
+      - 'West of Broad Street': ['trash']  << missing recycling
+  west-long-branch: zones=3 MISSING 3
+      - 'All streets': ['recycling']  << missing trash
+      - 'North Zone': ['trash']  << missing recycling
+      - 'South Zone': ['trash']  << missing recycling
+  hazlet: zones=9 MISSING 9
+      - 'Township residents arrange household garbage with private trash companies': ['trash']  << missing recycling
+      - 'Zone 1': ['recycling']  << missing trash
+      - 'Zone 2': ['recycling']  << missing trash
+      - 'Zone 3': ['recycling']  << missing trash
+      - 'Zone 4': ['recycling']  << missing trash
+      - 'Zone 5': ['recycling']  << missing trash
+      - 'Zone 6': ['recycling']  << missing trash
+      - 'Zone 7': ['recycling']  << missing trash
+      - 'Zone 8': ['recycling']  << missing trash
+  old-bridge: zones=7 MISSING 7
+      - 'Exception': ['recycling']  << missing trash
+      - 'Garbage is privatized in Old Bridge': ['trash']  << missing recycling
+      - 'Ward 1': ['recycling']  << missing trash
+      - 'Ward 2': ['recycling']  << missing trash
+      - 'Ward 5': ['recycling']  << missing trash
+      - 'Ward 6': ['recycling']  << missing trash
+      - 'Wards 3 and 4': ['recycling']  << missing trash
+  piscataway: zones=4 MISSING 4
+      - 'Household trash is picked up through private trash haulers which residents must retain': ['trash']  << missing recycling
+      - 'Sec 1, 2, 3, 10': ['recycling']  << missing trash
+      - 'Sec 4, 5, 6, 7': ['recycling']  << missing trash
+      - 'Sec 8, 9': ['recycling']  << missing trash
+  south-plainfield: zones=3 MISSING 3
+      - 'Borough official Curbside page publishes recycling collection only (every other week by Thursday or Friday recycling district)': ['trash']  << missing recycling
+      - 'Friday recycling district': ['recycling']  << missing trash
+      - 'Thursday recycling district': ['recycling']  << missing trash
+
+## Missing zone x stream pairs (flat list)
+  sayreville | MCIA | missing trash
+  sayreville | MCIA county program (not sanitation zones) | missing trash
+  sayreville | Sanitation Zone I | missing recycling
+  sayreville | Sanitation Zone II | missing recycling
+  sayreville | Sanitation Zone III | missing recycling
+  keyport | Zone 1 non-recyclable solid waste | missing recycling
+  keyport | Zone 2 non-recyclable solid waste | missing recycling
+  keyport | Zone 3 non-recyclable solid waste | missing recycling
+  keyport | Zone 4 non-recyclable solid waste | missing recycling
+  keyport | Zones 1 and 2 | missing trash
+  keyport | Zones 3 and 4 | missing trash
+  bradley-beach | All zones | missing trash
+  bradley-beach | Zone 1 | missing recycling
+  bradley-beach | Zone 2 | missing recycling
+  bradley-beach | Zone 3 | missing recycling
+  neptune-township | Ocean Grove Zone B garbage | missing recycling
+  neptune-township | Ocean Grove Zone C garbage | missing recycling
+  neptune-township | Ocean Grove residential recycling | missing trash
+  neptune-township | Recycling sub-zone A1 | missing trash
+  neptune-township | Recycling sub-zone A2 | missing trash
+  neptune-township | Recycling sub-zone B1 | missing trash
+  neptune-township | Recycling sub-zone B2 | missing trash
+  neptune-township | Recycling sub-zone C1 | missing trash
+  neptune-township | Recycling sub-zone C2 | missing trash
+  neptune-township | Recycling sub-zone D1 | missing trash
+  neptune-township | Recycling sub-zone D2 | missing trash
+  neptune-township | Zone A garbage | missing recycling
+  neptune-township | Zone B garbage | missing recycling
+  neptune-township | Zone C garbage | missing recycling
+  neptune-township | Zone D garbage | missing recycling
+  highland-park | Business District (twice weekly) | missing recycling
+  highland-park | Business District, North Side and Triangle Area | missing trash
+  highland-park | North Side | missing recycling
+  matawan | Zone 1 | missing trash
+  matawan | Zone 1 (Route 34 South) | missing recycling
+  matawan | Zone 2 | missing trash
+  matawan | Zone 2 (Route 34 South) | missing recycling
+  matawan | Zone 3 | missing trash
+  matawan | Zone 3 (Route 34 North) | missing recycling
+  matawan | Zone 4 | missing trash
+  matawan | Zone 4 (Route 34 North) | missing recycling
+  red-bank | Borough-wide single-stream curbside | missing trash
+  red-bank | East of Broad Street | missing recycling
+  red-bank | West of Broad Street | missing recycling
+  west-long-branch | All streets | missing trash
+  west-long-branch | North Zone | missing recycling
+  west-long-branch | South Zone | missing recycling
+  hazlet | Township residents arrange household garbage with private trash companies | missing recycling
+  hazlet | Zone 1 | missing trash
+  hazlet | Zone 2 | missing trash
+  hazlet | Zone 3 | missing trash
+  hazlet | Zone 4 | missing trash
+  hazlet | Zone 5 | missing trash
+  hazlet | Zone 6 | missing trash
+  hazlet | Zone 7 | missing trash
+  hazlet | Zone 8 | missing trash
+  old-bridge | Exception | missing trash
+  old-bridge | Garbage is privatized in Old Bridge | missing recycling
+  old-bridge | Ward 1 | missing trash
+  old-bridge | Ward 2 | missing trash
+  old-bridge | Ward 5 | missing trash
+  old-bridge | Ward 6 | missing trash
+  old-bridge | Wards 3 and 4 | missing trash
+  piscataway | Household trash is picked up through private trash haulers which residents must retain | missing recycling
+  piscataway | Sec 1, 2, 3, 10 | missing trash
+  piscataway | Sec 4, 5, 6, 7 | missing trash
+  piscataway | Sec 8, 9 | missing trash
+  south-plainfield | Borough official Curbside page publishes recycling collection only (every other week by Thursday or Friday recycling district) | missing recycling
+  south-plainfield | Friday recycling district | missing trash
+  south-plainfield | Thursday recycling district | missing trash
+
+## Summary
+biweekly_mismatches=0 iso_mismatches=0 bad_source_dates=0 zone_missing_pairs=70
+weekday/anchor mismatches to fix in v5: 0 (zone gaps reported only; do not invent rows)

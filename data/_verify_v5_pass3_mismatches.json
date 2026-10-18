@@ -1,0 +1,739 @@
+{
+  "status": "PASS",
+  "mismatch_count": 0,
+  "mismatches": [],
+  "checks_ok": 41,
+  "focus_towns": [
+    "bradley-beach",
+    "sayreville",
+    "perth-amboy",
+    "middletown",
+    "loch-arbour",
+    "aberdeen",
+    "old-bridge",
+    "red-bank"
+  ],
+  "dropoff_or_zips_changed": [
+    "aberdeen",
+    "allenhurst",
+    "atlantic-highlands",
+    "bradley-beach",
+    "carteret",
+    "hazlet",
+    "highland-park",
+    "highlands",
+    "keansburg",
+    "keyport",
+    "little-silver",
+    "loch-arbour",
+    "matawan",
+    "middletown",
+    "neptune-city",
+    "neptune-township",
+    "old-bridge",
+    "red-bank",
+    "rumson",
+    "sayreville",
+    "sea-bright",
+    "union-beach",
+    "west-long-branch"
+  ],
+  "structural_diff_summary": {
+    "aberdeen": {
+      "fields": [
+        "notes",
+        "zips"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 1
+    },
+    "allenhurst": {
+      "fields": [
+        "zips"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "atlantic-highlands": {
+      "fields": [
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "bradley-beach": {
+      "fields": [
+        "notes",
+        "holiday_rule",
+        "dropoff",
+        "overrides"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0,
+      "overrides_v4": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-05",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 1: New Year's Day trash moved to 2026-01-05 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-30",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 1: Thanksgiving trash moved to 2026-11-30 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-28",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 3: Christmas trash moved to 2026-12-28 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-29",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 2: Christmas trash moved to 2026-12-29 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-04",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 3: New Year's Day 2027 trash moved to 2027-01-04 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-05",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 2: New Year's Day 2027 trash moved to 2027-01-05 (trash-recycling page)",
+          "area_note": null
+        }
+      ],
+      "overrides_v5": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-05",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 1: New Year's Day trash moved to 2026-01-05 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-30",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 1: Thanksgiving trash moved to 2026-11-30 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-29",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 2: Christmas trash moved to 2026-12-29 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-28",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 3: Christmas trash moved to 2026-12-28 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-05",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 2: New Year's Day 2027 trash moved to 2027-01-05 (trash-recycling page)",
+          "area_note": null
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-04",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 3: New Year's Day 2027 trash moved to 2027-01-04 (trash-recycling page)",
+          "area_note": null
+        }
+      ]
+    },
+    "carteret": {
+      "fields": [
+        "dropoff",
+        "overrides"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0,
+      "overrides_v4": [
+        {
+          "date": "2026-02-16",
+          "to": "2026-02-17",
+          "stream": null,
+          "action": null,
+          "reason": "Sanitation District A: Presidents Day Monday sanitation moved to Tuesday on 2026 calendar",
+          "area_note": null
+        },
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-26",
+          "stream": null,
+          "action": null,
+          "reason": "Sanitation District A: Memorial Day Monday sanitation moved to Tuesday on 2026 calendar",
+          "area_note": null
+        },
+        {
+          "date": "2026-09-07",
+          "to": "2026-09-08",
+          "stream": null,
+          "action": null,
+          "reason": "Sanitation District A: Labor Day Monday sanitation moved to Tuesday on 2026 calendar",
+          "area_note": null
+        },
+        {
+          "date": "2026-10-12",
+          "to": "2026-10-13",
+          "stream": null,
+          "action": null,
+          "reason": "Sanitation District A: Columbus Day Monday sanitation moved to Tuesday on 2026 calendar",
+          "area_note": null
+        }
+      ],
+      "overrides_v5": [
+        {
+          "date": "2026-01-19",
+          "to": "2026-01-20",
+          "stream": null,
+          "action": null,
+          "reason": "Sanitation District A: MLK Day Monday sanitation moved to Tuesday on 2026 calendar",
+          "area_note": null
+        },
+        {
+          "date": "2026-02-16",
+          "to": "2026-02-17",
+          "stream": null,
+          "action": null,
+          "reason": "Sanitation District A: Presidents Day Monday sanitation moved to Tuesday on 2026 calendar",
+          "area_note": null
+        },
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-26",
+          "stream": null,
+          "action": null,
+          "reason": "Sanitation District A: Memorial Day Monday sanitation moved to Tuesday on 2026 calendar",
+          "area_note": null
+        },
+        {
+          "date": "2026-09-07",
+          "to": "2026-09-08",
+          "stream": null,
+          "action": null,
+          "reason": "Sanitation District A: Labor Day Monday sanitation moved to Tuesday on 2026 calendar",
+          "area_note": null
+        },
+        {
+          "date": "2026-10-12",
+          "to": "2026-10-13",
+          "stream": null,
+          "action": null,
+          "reason": "Sanitation District A: Columbus Day Monday sanitation moved to Tuesday on 2026 calendar",
+          "area_note": null
+        }
+      ]
+    },
+    "hazlet": {
+      "fields": [
+        "notes",
+        "zips",
+        "overrides"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0,
+      "overrides_v4": [],
+      "overrides_v5": [
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-06",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 7: recycling holiday move 2026-04-03 -> 2026-04-06 (Green Booklet: APR. 3rd zone 7 moved to APR.6th)",
+          "area_note": null
+        },
+        {
+          "date": "2026-06-19",
+          "to": "2026-06-22",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 8: recycling holiday move 2026-06-19 -> 2026-06-22 (Green Booklet: JUNE 19th zone 8 moved to JUNE 22nd)",
+          "area_note": null
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-06",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 8: recycling holiday move 2026-07-03 -> 2026-07-06 (Green Booklet: JULY 3rd zone 8 moved to JULY 6th)",
+          "area_note": null
+        },
+        {
+          "date": "2026-11-03",
+          "to": "2026-11-02",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 2: recycling holiday move 2026-11-03 -> 2026-11-02 (Green Booklet: NOV. 3rd zone 2 moved to NOV. 2nd)",
+          "area_note": null
+        },
+        {
+          "date": "2026-11-11",
+          "to": "2026-11-09",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 3: recycling holiday move 2026-11-11 -> 2026-11-09 (Green Booklet: NOV. 11th zone 3 moved to NOV. 9th)",
+          "area_note": null
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-23",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 5: recycling holiday move 2026-11-26 -> 2026-11-23 (Green Booklet: NOV. 26th zone 5 moved to NOV. 23rd)",
+          "area_note": null
+        },
+        {
+          "date": "2026-11-27",
+          "to": "2026-11-30",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 7: recycling holiday move 2026-11-27 -> 2026-11-30 (Green Booklet: NOV. 27th zone 7 moved to NOV. 30th)",
+          "area_note": null
+        },
+        {
+          "date": "2026-12-24",
+          "to": "2026-12-21",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 5: recycling holiday move 2026-12-24 -> 2026-12-21 (Green Booklet: DEC. 24th zone 5 moved to DEC. 21st.)",
+          "area_note": null
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-28",
+          "stream": null,
+          "action": null,
+          "reason": "Zone 7: recycling holiday move 2026-12-25 -> 2026-12-28 (Green Booklet: DEC. 25th zone 7 moved to DEC.28th)",
+          "area_note": null
+        }
+      ]
+    },
+    "highland-park": {
+      "fields": [
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "highlands": {
+      "fields": [
+        "zips",
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "keansburg": {
+      "fields": [
+        "zips"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "keyport": {
+      "fields": [
+        "zips"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "little-silver": {
+      "fields": [
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "loch-arbour": {
+      "fields": [
+        "notes",
+        "zips"
+      ],
+      "schedules_removed": 1,
+      "schedules_added": 2
+    },
+    "matawan": {
+      "fields": [
+        "zips",
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "middletown": {
+      "fields": [
+        "notes",
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 1
+    },
+    "neptune-city": {
+      "fields": [
+        "zips"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "neptune-township": {
+      "fields": [
+        "zips"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "old-bridge": {
+      "fields": [
+        "dropoff",
+        "overrides"
+      ],
+      "schedules_removed": 1,
+      "schedules_added": 1,
+      "overrides_v4": [
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-30",
+          "stream": null,
+          "action": null,
+          "reason": "Ward 1: Memorial Day recycling moved to Saturday May 30 (2026 ward PDF Monday column May 11, 30*)",
+          "area_note": null
+        },
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-30",
+          "stream": null,
+          "action": null,
+          "reason": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct): Memorial Day recycling moved to Saturday May 30 (Monday pickup)",
+          "area_note": null
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-28",
+          "stream": null,
+          "action": null,
+          "reason": "Ward 5: Thanksgiving recycling moved to Saturday Nov 28 (2026 ward PDF Thursday column Nov 12, 28*)",
+          "area_note": null
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-26",
+          "stream": null,
+          "action": null,
+          "reason": "Ward 6: Christmas recycling moved to Saturday Dec 26 (2026 ward PDF Friday column Dec 11, 26*)",
+          "area_note": null
+        }
+      ],
+      "overrides_v5": [
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-30",
+          "stream": null,
+          "action": null,
+          "reason": "Ward 1: Memorial Day recycling moved to Saturday May 30 (*May 25 moved to Sat. May 30; Monday column May 11, 30*)",
+          "area_note": null
+        },
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-30",
+          "stream": null,
+          "action": null,
+          "reason": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct): Memorial Day recycling moved to Saturday May 30 (Monday pickup; *May 25 moved to Sat. May 30)",
+          "area_note": null
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-28",
+          "stream": null,
+          "action": null,
+          "reason": "Ward 5: Thanksgiving recycling moved to Saturday Nov 28 (*Nov. 26 moved to Sat. Nov. 28; Thursday column Nov 12, 28*)",
+          "area_note": null
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-26",
+          "stream": null,
+          "action": null,
+          "reason": "Ward 6: Christmas recycling moved to Saturday Dec 26 (*Dec. 25 moved to Sat. Dec. 26; Friday column Dec 11, 26*)",
+          "area_note": null
+        }
+      ]
+    },
+    "perth-amboy": {
+      "fields": [
+        "notes"
+      ],
+      "schedules_removed": 4,
+      "schedules_added": 2
+    },
+    "red-bank": {
+      "fields": [
+        "notes",
+        "zips",
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "rumson": {
+      "fields": [
+        "zips",
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "sayreville": {
+      "fields": [
+        "notes",
+        "zips",
+        "overrides"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0,
+      "overrides_v4": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-03",
+          "stream": null,
+          "action": null,
+          "reason": "MCIA Thursday district: January 1 2026 Thursday recycling moved to Saturday January 3 (borough 2026 bi-weekly page)",
+          "area_note": null
+        }
+      ],
+      "overrides_v5": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-03",
+          "stream": null,
+          "action": null,
+          "reason": "MCIA Thursday: January 1 2026 Thursday recycling moved to Saturday January 3 (borough 2026 bi-weekly page)",
+          "area_note": null
+        }
+      ]
+    },
+    "sea-bright": {
+      "fields": [
+        "zips",
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "union-beach": {
+      "fields": [
+        "zips"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    },
+    "west-long-branch": {
+      "fields": [
+        "dropoff"
+      ],
+      "schedules_removed": 0,
+      "schedules_added": 0
+    }
+  },
+  "exit_criterion": {
+    "rule": "every town trash AND recycling is classify-ok OR custom-informational (weekday null, week_pattern custom)",
+    "fails": [],
+    "table": [
+      {
+        "town": "aberdeen",
+        "trash": "classify-ok",
+        "recycling": "custom-informational"
+      },
+      {
+        "town": "allenhurst",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "atlantic-highlands",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "bradley-beach",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "carteret",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "deal",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "fair-haven",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "hazlet",
+        "trash": "custom-informational",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "highland-park",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "highlands",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "interlaken",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "keansburg",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "keyport",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "little-silver",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "loch-arbour",
+        "trash": "custom-informational",
+        "recycling": "custom-informational"
+      },
+      {
+        "town": "matawan",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "metuchen",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "middletown",
+        "trash": "custom-informational",
+        "recycling": "custom-informational"
+      },
+      {
+        "town": "monmouth-beach",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "neptune-city",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "neptune-township",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "oceanport",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "old-bridge",
+        "trash": "custom-informational",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "perth-amboy",
+        "trash": "custom-informational",
+        "recycling": "custom-informational"
+      },
+      {
+        "town": "piscataway",
+        "trash": "custom-informational",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "red-bank",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "rumson",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "sayreville",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "sea-bright",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "south-amboy",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "south-plainfield",
+        "trash": "custom-informational",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "union-beach",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      },
+      {
+        "town": "west-long-branch",
+        "trash": "classify-ok",
+        "recycling": "classify-ok"
+      }
+    ]
+  }
+}

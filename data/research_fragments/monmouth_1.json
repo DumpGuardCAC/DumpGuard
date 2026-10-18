@@ -1,0 +1,292 @@
+{
+  "aberdeen": {
+    "name": "Aberdeen Township",
+    "county": "monmouth",
+    "official_site": "https://www.aberdeennj.org",
+    "zips": [
+      {
+        "zip": "07747",
+        "shared_with": [],
+        "source_url": "https://www.aberdeennj.org/"
+      },
+      {
+        "zip": "07735",
+        "shared_with": [],
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling"
+      }
+    ],
+    "dpw": {
+      "phone": "732-583-4200 ext. 401",
+      "address": null,
+      "source_url": "https://www.aberdeennj.org/266/Public-Works",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Section I (Cliffwood Beach, Cliffwood, River Gardens, Oakshades, Freneau, Heritage Estates) — first weekly collection",
+        "source_url": "https://www.aberdeennj.org/437/Winter-Storm-Information-Center",
+        "source_date": "2026-02"
+      },
+      {
+        "stream": "trash",
+        "weekday": "thursday",
+        "week_pattern": "weekly",
+        "area_note": "Section I — second weekly collection (same day as bulk pickup)",
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+        "source_date": "2018-01-01"
+      },
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Section II (Strathmore, High School Area, Woodbrook Drive, Randall Way, Storyland, Santa Fe, Heather Glenn) — first weekly collection",
+        "source_url": "https://www.aberdeennj.org/437/Winter-Storm-Information-Center",
+        "source_date": "2026-02"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Section II — second weekly collection (same day as bulk pickup)",
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+        "source_date": "2018-01-01"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "thursday",
+        "week_pattern": "weekly",
+        "area_note": "Section I; limit two bulk items per pickup; mattresses must be plastic-wrapped",
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+        "source_date": "2018-01-01"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Section II; limit two bulk items per pickup; mattresses must be plastic-wrapped",
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling",
+        "source_date": "2018-01-01"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "1st and 3rd Wednesday of each month",
+        "area_note": "Section I curbside single-stream",
+        "source_url": "https://www.aberdeennj.org/Archive/ViewFile/Item/76",
+        "source_date": "2015-09"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "2nd and 4th Wednesday of each month",
+        "area_note": "Section II curbside single-stream",
+        "source_url": "https://www.aberdeennj.org/Archive/ViewFile/Item/76",
+        "source_date": "2015-09"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Public Works Garage",
+        "address": "147 Lenox Road, Cliffwood Beach, NJ 07735",
+        "hours": "Monday–Saturday 7:00 a.m.–3:00 p.m.",
+        "residents_only": true,
+        "source_url": "https://www.aberdeennj.org/271/Trash-Recycling"
+      }
+    ],
+    "status": "partial",
+    "notes": "Curbside recycling weekday pattern is from the Fall 2015 official township newsletter archive; the current Trash/Recycling page lists sections and drop-off but not curbside recycling days (links to Recycle Coach). Contracted hauler name not listed on current DPW pages. Condominium and apartment complexes are excluded from township contracted curbside garbage pickup (contact HOA). Holiday delay: if pickup falls on New Year's Day, Thanksgiving, or Christmas Day, collection moves to the next scheduled pickup day."
+  },
+  "allenhurst": {
+    "name": "Allenhurst Borough",
+    "county": "monmouth",
+    "official_site": "https://www.allenhurstnj.org",
+    "zips": [
+      {
+        "zip": "07711",
+        "shared_with": [],
+        "source_url": "https://www.allenhurstnj.org/264/Public-Works"
+      }
+    ],
+    "dpw": {
+      "phone": "732-531-2757",
+      "address": "125 Corlies Avenue, Allenhurst, NJ 07711",
+      "source_url": "https://www.allenhurstnj.org/264/Public-Works",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Rear-yard collection; containers max 30 gal / 50 lb; collection from 5:30 a.m.",
+        "source_url": "https://www.allenhurstnj.org/264/Public-Works",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Rear-yard collection; containers max 30 gal / 50 lb; collection from 5:30 a.m.",
+        "source_url": "https://www.allenhurstnj.org/264/Public-Works",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "weekly",
+        "area_note": "Commingled and paper/cardboard; set out Tuesday p.m. for Wednesday a.m. pickup from 5:30 a.m.",
+        "source_url": "https://www.allenhurstnj.org/268/Refuse-and-Recycling-Guide",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": null,
+        "area_note": "2026 bulk trash days: January 26, March 2, April 13, June 8, July 20, September 14, November 23. Items at curb by 12:00 p.m. on pickup day; may be placed up to three days prior. No concrete or construction debris. Freon items $20, tire off rim $2, tire on rim $5 (pay at Borough Hall before pickup).",
+        "source_url": "https://www.allenhurstnj.org/348/Bulk-Pickup-Information",
+        "source_date": "2026"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": null,
+        "area_note": "Leaves may be placed loose at curb September–December; otherwise containerized at curb. Grass clippings not collected. Brush tied in bundles max 4 ft / 50 lb or containerized.",
+        "source_url": "https://www.allenhurstnj.org/264/Public-Works",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Dried-out paint cans (less than 1 in. paint remaining) with household trash in rear yard",
+        "source_url": "https://www.allenhurstnj.org/268/Refuse-and-Recycling-Guide",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Dried-out paint cans (less than 1 in. paint remaining) with household trash in rear yard",
+        "source_url": "https://www.allenhurstnj.org/268/Refuse-and-Recycling-Guide",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [],
+    "status": "complete",
+    "notes": "Household hazardous waste directed to Monmouth County HHW Facility, Shafto Road, Tinton Falls (732-683-8686); not a borough drop-off. Bulk and freon/tire collections require advance payment at Borough Hall for listed fees."
+  },
+  "atlantic-highlands": {
+    "name": "Atlantic Highlands Borough",
+    "county": "monmouth",
+    "official_site": "https://www.ahnj.com",
+    "zips": [
+      {
+        "zip": "07716",
+        "shared_with": [],
+        "source_url": "https://www.ahnj.com/ahnj/Contact%20Us/"
+      }
+    ],
+    "dpw": {
+      "phone": "732-291-1444",
+      "address": "Borough Yard, West Lincoln Avenue (end of Lincoln Ave)",
+      "source_url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Zones 2 and 3",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "thursday",
+        "week_pattern": "weekly",
+        "area_note": "Zones 2 and 3",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Zones 1 and 4",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Zones 1 and 4",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "1st and 3rd Wednesday of each month",
+        "area_note": "Zones 2 and 3; must be out by 6:00 a.m.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "2nd and 4th Wednesday of each month",
+        "area_note": "Zones 1 and 4; must be out by 6:00 a.m.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "saturday",
+        "week_pattern": "1st Saturday of each month",
+        "area_note": "Zones 2 and 3; must be out by 6:00 a.m.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "saturday",
+        "week_pattern": "2nd Saturday of each month",
+        "area_note": "Zones 1 and 4; must be out by 6:00 a.m.",
+        "source_url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": null,
+        "area_note": "Brush and leaves may be placed at curb only within 5 days before a scheduled pickup; see 2026 Leaf and Brush Calendar on Public Works page",
+        "source_url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "other",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Metal pickup — call Borough Hall 732-291-1444 x3105 by Thursday 4:00 p.m.; appliances require $15 sticker from Borough Hall",
+        "source_url": "https://www.ahnj.com/ahnj/2026%20Printed%20Calendar.pdf",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Borough Yard recycling facility",
+        "address": "West Lincoln Avenue (dead end of West Lincoln Avenue; turn left into driveway)",
+        "hours": "Monday–Friday 8:30 a.m.–4:00 p.m.; Saturday until 11:00 a.m. (recycling only). 2026 calendar also lists Mon–Fri 6:00 a.m.–4:00 p.m. and Sat 6:00 a.m.–11:00 a.m. for recycling; Nov–Dec Sat–Sun 8:00 a.m.–12:00 p.m. for leaves and brush.",
+        "residents_only": null,
+        "source_url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/"
+      }
+    ],
+    "status": "complete",
+    "notes": "No trash or bulk drop-off at Borough Yard (recycling/yard materials only per 2026 calendar). Zone-by-street lists in Zone Listing by Street and Zone Map PDFs linked from Public Works. Recycling facility direct line: 732-291-0472."
+  }
+}

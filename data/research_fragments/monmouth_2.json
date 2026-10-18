@@ -1,0 +1,255 @@
+{
+  "bradley-beach": {
+    "name": "Bradley Beach",
+    "county": "monmouth",
+    "official_site": "https://www.bradleybeachnj.gov",
+    "zips": [
+      {
+        "zip": "07720",
+        "shared_with": [],
+        "source_url": "https://www.bradleybeachnj.gov/"
+      }
+    ],
+    "dpw": {
+      "phone": "(732) 776-2999 ext. 3101",
+      "address": "705 Evergreen Avenue, Bradley Beach, NJ 07720",
+      "source_url": "https://www.bradleybeachnj.gov/public-works/",
+      "hauler": "Borough of Bradley Beach Department of Public Works (municipal collection)"
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 1 and Zone 3",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 2",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "thursday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 1",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Zone 2 and Zone 3",
+        "source_url": "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "weekly",
+        "area_note": "All zones; single-stream curbside",
+        "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "thursday",
+        "week_pattern": "second Thursday monthly alternating zones (2026: Jan 8, Mar 12, May 14, Jul 9, Sep 10, Nov 12 — Zone 1 and north side of Zone 3; Feb 12, Apr 9, Jun 11, Aug 13, Oct 8, Dec 10 — Zone 2 and south side of Zone 3); bulk stickers required; max 5 items",
+        "area_note": "Curbside bulk with stickers; separate drop-off card program at Trash/Recycling Lot",
+        "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "yard",
+        "weekday": "monday",
+        "week_pattern": "2026 designated dates: Mar 9, Apr 13, Apr 27, May 11, Jun 8, Sep 14, Oct 13 (Tuesday after Columbus Day), Nov 9, Dec 14; collection may continue several days after each date",
+        "area_note": "Brush and yard waste at curb by 5:00 a.m.; separate piles; grass clippings not collected curbside",
+        "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/",
+        "source_date": "2026"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": "seasonal leaf collection: loose or biodegradable bags Apr 1–May 31 and Sep 15–Dec 1 (possible extension per borough website)",
+        "area_note": "Leaves at curb; not within 10 feet of drain inlets",
+        "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "other",
+        "weekday": null,
+        "week_pattern": "Computer/electronic/metal curbside by appointment; minimum 4 bulk stickers per item",
+        "area_note": "Call Borough Hall 732-776-2999 ext. 1010 to schedule; also accepted at Trash/Recycling Lot with stickers",
+        "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Trash/Recycling Lot",
+        "address": "1011 Main Street, Bradley Beach, NJ",
+        "hours": "Monday, Thursday–Sunday 8:00 a.m.–12:00 p.m.; closed Tuesday and Wednesday; closed when borough closed on holidays",
+        "residents_only": true,
+        "source_url": "https://www.bradleybeachnj.gov/public-works/"
+      }
+    ],
+    "status": "partial",
+    "notes": "2026 sanitation calendar PDF confirms weekly zone days but does not publish street-level zone boundaries on the borough website; holiday trash delays for 2026 on Public Works page. Covered trash cans max 32 gallons, curbside by 5:00 a.m. Processing link on recycling page references Mazza Recycling (hauler not named on borough site)."
+  },
+  "deal": {
+    "name": "Deal",
+    "county": "monmouth",
+    "official_site": "https://dealnj.gov",
+    "zips": [
+      {
+        "zip": "07723",
+        "shared_with": [],
+        "source_url": "https://dealnj.gov/contact/"
+      }
+    ],
+    "dpw": {
+      "phone": "732-531-1454",
+      "address": "190 Norwood Avenue, Deal, NJ 07723",
+      "source_url": "https://dealnj.gov/departments/public-works/",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "monday",
+        "week_pattern": "weekly",
+        "area_note": "Borough-wide; bagged garbage in lidded cans max 40 gallons, 50 lb when filled",
+        "source_url": "https://dealnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "wednesday",
+        "week_pattern": "weekly",
+        "area_note": "Borough-wide",
+        "source_url": "https://dealnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly",
+        "area_note": "Borough-wide; put out night before (pickup may start as early as 4:00 a.m.)",
+        "source_url": "https://dealnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "tuesday",
+        "week_pattern": "weekly",
+        "area_note": "Borough-wide; recyclables loose in can (no plastic bags); #1 and #2 plastics, glass, cans, cardboard, paper",
+        "source_url": "https://dealnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "thursday",
+        "week_pattern": "weekly",
+        "area_note": "Borough-wide",
+        "source_url": "https://dealnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": null,
+        "week_pattern": "monthly pickup starting the 15th (following Monday if 15th is Saturday or Sunday); register by calling 848-288-1815 with address by 4:30 p.m. on the 14th",
+        "area_note": "Place bulk near normal garbage location by day before pickup; excludes construction debris, yard waste, tires, and other listed items",
+        "source_url": "https://dealnj.gov/departments/public-works/",
+        "source_date": "undated"
+      },
+      {
+        "stream": "yard",
+        "weekday": null,
+        "week_pattern": null,
+        "area_note": "Borough does not provide leaf or brush pickup; yard waste must not be placed in street",
+        "source_url": "https://dealnj.gov/departments/public-works/",
+        "source_date": "undated"
+      }
+    ],
+    "dropoff": [],
+    "status": "complete",
+    "notes": "Public Works/Sanitation page lists garbage and recycling days and bulk registration; no municipal trash/recycling drop-off published. Hazardous waste referred to Monmouth County facility in Tinton Falls. Bulk line 848-288-1815; general borough 732-531-1454."
+  },
+  "fair-haven": {
+    "name": "Fair Haven",
+    "county": "monmouth",
+    "official_site": "https://www.fairhavennj.org",
+    "zips": [
+      {
+        "zip": "07704",
+        "shared_with": [],
+        "source_url": "https://www.fairhavennj.org/contact"
+      }
+    ],
+    "dpw": {
+      "phone": "732-747-0241 ext. *217",
+      "address": "1 Allen Street, Fair Haven, NJ 07704",
+      "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
+      "hauler": null
+    },
+    "schedules": [
+      {
+        "stream": "trash",
+        "weekday": "tuesday",
+        "week_pattern": "weekly year-round (all zones); one collection per week Sep 16–May 14 and Jan 1–May 15 per 2026 municipal calendar",
+        "area_note": "All zones; borough-issued dark gray can; curbside by 6:00 a.m. (night before preferred)",
+        "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
+        "source_date": "undated"
+      },
+      {
+        "stream": "trash",
+        "weekday": "friday",
+        "week_pattern": "weekly May 15–September 15 (all zones; twice-weekly trash season)",
+        "area_note": "All zones during warm-weather schedule",
+        "source_url": "https://www.fairhavennj.org/sites/g/files/vyhlif4411/f/uploads/2026_municipal_calendar_final-edit_9-14-2026.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "recycling",
+        "weekday": "wednesday",
+        "week_pattern": "every other Wednesday (all four zones); 2026 date list on borough trash/recycling PDF",
+        "area_note": "Single-stream in borough blue 95-gallon can; place curbside Tuesday evening",
+        "source_url": "https://www.fairhavennj.org/recycling",
+        "source_date": "undated"
+      },
+      {
+        "stream": "bulk",
+        "weekday": "monday",
+        "week_pattern": "2026 second Monday of quarter: Mar 9, Jun 8, Sep 14, Nov 9 (2026 municipal calendar; trash/recycling PDF lists Sep 7 — confirm with borough)",
+        "area_note": "Curbside bulk once per quarter",
+        "source_url": "https://www.fairhavennj.org/sites/g/files/vyhlif4411/f/uploads/2026_municipal_calendar_final-edit_9-14-2026.pdf",
+        "source_date": "2026"
+      },
+      {
+        "stream": "yard",
+        "weekday": "tuesday",
+        "week_pattern": "May–September brush only: Zones 1 & 2 on 2nd and 4th Tuesday; Zones 3 & 4 on 1st and 3rd Tuesday (32-gallon gray/neutral can)",
+        "area_note": "Spring/fall brush-and-leaf cleanups by zone per 2026 municipal calendar",
+        "source_url": "https://www.fairhavennj.org/sites/g/files/vyhlif4411/f/uploads/2026_municipal_calendar_final-edit_9-14-2026.pdf",
+        "source_date": "2026"
+      }
+    ],
+    "dropoff": [
+      {
+        "name": "Public Works Recycling Center",
+        "address": "1 Allen Street, Fair Haven, NJ 07704",
+        "hours": "Monday–Friday 7:00 a.m.–3:30 p.m.; Saturday 9:00 a.m.–3:00 p.m.; closed Sunday",
+        "residents_only": null,
+        "source_url": "https://www.fairhavennj.org/recycling"
+      }
+    ],
+    "status": "partial",
+    "notes": "Recycling coordinator Betty Ann Berube ext. *219. 2026 bulk date differs between municipal calendar (Sep 14) and trash/recycling PDF (Sep 7). Private contractor collects curbside trash/recycling (not named on borough site). E-waste and clothing bins noted on recycling page with third-party links."
+  }
+}

@@ -1,0 +1,1062 @@
+{
+  "towns": {
+    "carteret": {
+      "verified": true,
+      "issue_count": 5,
+      "issues": [
+        "2026 PDF text extract lacks header for Sanitation District A / Recycling District 1 (first block matches Mon trash + 1st/3rd Mon recycling).",
+        "Two extra 2026 calendar blocks in PDF (Mon+Thu summer with 1st/3rd Tue recycling; Mon+Thu summer with 2nd/4th Mon recycling) have no district labels—not mapped in towns_research.",
+        "Recycling District Map / street lookup not fetched; street-level district boundaries not re-verified.",
+        "Drop-off residents_only not stated on publicworks page.",
+        "Zip 07008 inferred from DPW address; not listed as standalone ZIP field on fetched page."
+      ],
+      "confirmed_count": 10,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://www.carteret.net/",
+        "https://www.carteret.net/publicworks/",
+        "https://www.carteret.net/wp-content/uploads/2026/01/2026-Sanitation-Calendar.pdf"
+      ],
+      "fragment": "middlesex_1.json"
+    },
+    "highland-park": {
+      "verified": false,
+      "issue_count": 6,
+      "issues": [
+        "Trash area_notes claimed holiday weeks move collection to Wednesday; not stated on fetched municipal public-works pages (only generic holiday language on recycling page).",
+        "Yard/leaves area_note said Monday morning; brush page says Sunday evening for leaf bags/cans.",
+        "North/South/Triangle street boundaries not quoted as text on fetched pages.",
+        "All schedule source_date values undated on official pages.",
+        "dropoff residents_only=true not explicitly labeled; page describes residential electronics and illegal-dumping penalties.",
+        "Recycling page mentions Recycle Coach app (not used for weekday facts)."
+      ],
+      "confirmed_count": 8,
+      "had_corrections": true,
+      "sources_checked": [
+        "https://www.hpboro.com/",
+        "https://www.hpboro.com/departments/public-works",
+        "https://www.hpboro.com/departments/public-works/recycling-1183",
+        "https://www.hpboro.com/departments/public-works/bulk-waste-collection",
+        "https://www.hpboro.com/departments/public-works/brush-leaves-tree-branches"
+      ],
+      "fragment": "middlesex_1.json"
+    },
+    "metuchen": {
+      "verified": true,
+      "issue_count": 4,
+      "issues": [
+        "Schedule pages are 2026-dated but holiday-week shifts require reading calendar cells (not fixed weekday overrides on prose pages).",
+        "dropoff residents_only not explicitly stated for cardboard events.",
+        "dpw.source_url in towns_research points to calendar PDF; primary contact block also on /departments/dpw and /resident/trash.",
+        "Separate metal appointment stream (Wed, call by Tue 2:30pm) not broken out as its own schedule row (covered under bulk/notes)."
+      ],
+      "confirmed_count": 9,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://metuchennj.org/",
+        "https://metuchennj.org/departments/dpw",
+        "https://metuchennj.org/resident/trash",
+        "https://metuchennj.org/departments/dpw/public-works-calendars/1677-july-sept-2026-calendar/file",
+        "https://metuchennj.org/departments/dpw/public-works-calendars/1753-october-december-2026-calendar/file"
+      ],
+      "fragment": "middlesex_1.json"
+    },
+    "old-bridge": {
+      "verified": true,
+      "issue_count": 2,
+      "issues": [
+        "No municipal curbside trash schedule on town site (garbage privatized per recycling-information page); status partial is expected.",
+        "dpw.hauler combines MCIA recycling (2026 PDF + recycling-information) and privatized garbage (recycling-information); not stated on dpw.source_url (public-works) alone."
+      ],
+      "confirmed_count": 10,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://www.oldbridge.com/",
+        "https://www.oldbridge.com/page/public-works/",
+        "https://www.oldbridge.com/page/recycling-information/",
+        "https://5il.co/3symt"
+      ],
+      "fragment": "middlesex_2.json"
+    },
+    "perth-amboy": {
+      "verified": true,
+      "issue_count": 4,
+      "issues": [
+        "FLAG pre-2026: trash schedules source_date 2025; city-hosted PDF titled 2025 GARBAGE COLLECTION HOLIDAY SCHEDULE (path includes /2025/).",
+        "No 2026 town-hosted plain-text trash or recycling collection-day schedule found on perthamboynj.org.",
+        "Recycling & Garbage Collection / Recycling Guidelines pages embed app.my-waste.mobi iframe (aggregator); not used for schedule fields.",
+        "Linked 2021 Guidelines Recycling Sanitation PDF on recycling pages; schedule data not taken from that link in file."
+      ],
+      "confirmed_count": 7,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://www.perthamboynj.org/",
+        "https://www.perthamboynj.org/government/departments/public_works",
+        "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
+        "https://www.perthamboynj.org/services/recycling___garbage_collection",
+        "https://www.perthamboynj.org/government/departments/public_works/recycling_guidelines"
+      ],
+      "fragment": "middlesex_2.json"
+    },
+    "piscataway": {
+      "verified": true,
+      "issue_count": 3,
+      "issues": [
+        "FLAG undated: bulk pick-up schedule source_date undated (bulk_pick-up.php has no publication year).",
+        "No municipal household trash weekday; private haulers only (recycling_and_solid_waste.php).",
+        "zips.source_url is public_works/index.php; zip 08854 appears on township footer (index and recycling pages), not as a dedicated zip list on that URL."
+      ],
+      "confirmed_count": 9,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://www.piscatawaynj.org/",
+        "https://www.piscatawaynj.org/departments/public_works/index.php",
+        "https://piscatawaynj.org/departments/public_works/recycling_and_solid_waste.php",
+        "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
+        "https://www.piscatawaynj.org/departments/public_works/bulk_pick-up.php",
+        "https://www.piscatawaynj.org/departments/public_works/mini-dump.php"
+      ],
+      "fragment": "middlesex_2.json"
+    },
+    "sayreville": {
+      "verified": true,
+      "issue_count": 5,
+      "issues": [
+        "Zip 08859 source_url is President Park Fire Company (Parlin, NJ 08859), not a borough ZIP roster page.",
+        "Sayreville Recycling Sanitation 2025 Guide PDF reachable but not text-extractable via fetch; dropoff gate-close times (12:55 / 11:55) not re-checked against PDF.",
+        "Fort Grumpy open hours on Sanitation page match Mon/Fri 7:30 a.m.–1:00 p.m. and 1st/3rd Sat 7:00 a.m.–12:00 p.m.; gate-close detail only cited to PDF.",
+        "Trash, yard, and bulk sanitation rows use source_date undated on official Sanitation Division page.",
+        "2026 recycling page documents Jan 1, 2026 Thursday pickup moved to Jan 3, 2026 Saturday; not captured as a schedule exception row."
+      ],
+      "confirmed_count": 9,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://www.sayreville.com/",
+        "https://www.sayreville.com/cn/contactinfo/?did=1496",
+        "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+        "https://www.sayreville.com/cn/webpage.cfm?tpid=18888",
+        "https://www.sayreville.com/cn/webpage.cfm?tpid=9296",
+        "https://www.sayreville.com/documents/Sayreville%20Recycling%20Sanitation%202025%20Guide.pdf"
+      ],
+      "fragment": "middlesex_3.json"
+    },
+    "south-amboy": {
+      "verified": true,
+      "issue_count": 3,
+      "issues": [
+        "Trash Collection Schedule PDF has no publication year on fetched document.",
+        "No municipal bulk or yard curbside schedule on official site (empty dropoff array is correct).",
+        "Jay Kennedy recycling coordinator listed as 732-439-9916 on Sanitation page and 732-727-4600 ext 5973 on 2026 recycling PDF (both official)."
+      ],
+      "confirmed_count": 8,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://www.southamboynj.gov/",
+        "https://www.southamboynj.gov/Departments/public-works",
+        "https://www.southamboynj.gov/Departments/sanitation",
+        "https://www.southamboynj.gov/_Content/pdf/Trash-Collection-Schedule.pdf",
+        "https://www.southamboynj.gov/_Content/pdf/2026-Recycling-Schedule.pdf"
+      ],
+      "fragment": "middlesex_3.json"
+    },
+    "south-plainfield": {
+      "verified": true,
+      "issue_count": 5,
+      "issues": [
+        "https://www.southplainfieldnj.com/ returned HTTP 500 during verification; department URLs fetched successfully.",
+        "Recycling Districts PDF linked from Curbside page not fetched; street-level Thu/Fri district boundaries not re-verified line-by-line.",
+        "Curbside page references Recycle Coach for reminders; weekday facts taken from borough 2026 table on Curbside page only.",
+        "status partial correct: no municipal curbside household garbage day or hauler list on official site.",
+        "Mary B. Mazepa drop-off open to residents and businesses; residents_only false is accurate (not residents-only)."
+      ],
+      "confirmed_count": 10,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://www.southplainfieldnj.com/",
+        "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/",
+        "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+        "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/Bulk%20Waste/",
+        "https://www.southplainfieldnj.com/spnj/Departments/Departments/Public%20Works%20Department/Compactor%20Hours/"
+      ],
+      "fragment": "middlesex_3.json"
+    },
+    "aberdeen": {
+      "verified": false,
+      "issue_count": 7,
+      "issues": [
+        "status partial is correct: curbside trash first weekday by section and curbside recycling days are not stated on the current Trash/Recycling page (Recycle Coach linked; not used as primary schedule source).",
+        "All schedule entries in towns_research.json use source_date undated; Trash/Recycling page has no publication year.",
+        "Bulk pickup policy on page states effective January 1, 2018 (pre-2026) but is still the current published rule.",
+        "ZIP 07735 is not on the homepage (07747 only); 07735 appears only via drop-off address Cliffwood Beach, NJ 07735 on Trash/Recycling.",
+        "Winter Storm Information Center (Feb 2026 storm notices) implies Section I Monday and Section II Tuesday as first trash days and Thu/Fri as second days; this is episodic storm guidance, not a standing schedule page—towns_research.json correctly avoids inventing Mon/Tue weekday fields.",
+        "research_fragments/monmouth_1.json adds 2015 newsletter archive recycling weekdays and explicit Mon/Tue trash rows; those recycling rows are pre-2026 and not in towns_research.json—reject for canonical 2026 verification.",
+        "No third-party aggregators used; Recycle Coach link on municipal page not treated as verified schedule source."
+      ],
+      "confirmed_count": 12,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.aberdeennj.org/",
+          "type": "official",
+          "reachable": true,
+          "notes": "07747 contact; no trash schedule detail"
+        },
+        {
+          "url": "https://www.aberdeennj.org/271/Trash-Recycling",
+          "type": "official",
+          "reachable": true,
+          "notes": "Primary source for sections, bulk Thu/Fri, drop-off, condo exclusion, holidays; undated"
+        },
+        {
+          "url": "https://www.aberdeennj.org/266/Public-Works",
+          "type": "official",
+          "reachable": true,
+          "notes": "DPW hours; Adriana Panetta 732-583-4200 ext. 401; no curbside day list"
+        },
+        {
+          "url": "https://www.aberdeennj.org/437/Winter-Storm-Information-Center",
+          "type": "official",
+          "reachable": true,
+          "notes": "2026-02 storm trash cancellations; supplemental only; not in towns_research schedule rows"
+        }
+      ],
+      "fragment": "monmouth_1.json"
+    },
+    "allenhurst": {
+      "verified": true,
+      "issue_count": 5,
+      "issues": [
+        "Most schedule source_date values are undated municipal pages (Public Works, Refuse Guide).",
+        "Official page conflict: Public Works says loose leaves at curb during September–December; Refuse and Recycling Guide says loose leaves October 1–December 31. towns_research.json yard note follows Public Works (September–December).",
+        "Official page conflict: Public Works garbage receptacles max 50 lb; Refuse Guide household refuse 30-gallon max containers. towns_research.json trash area_note cites both limits.",
+        "Official page conflict: Public Works brush bundles max 4 ft / 50 lb; Refuse Guide allows branches up to 8 in. diameter and 7 ft long. towns_research.json yard note follows Public Works bundle rule.",
+        "Public Works page states 6 bulk pickup days announced in January; Bulk Pickup Information page lists seven 2026 dates—towns_research.json uses the dated 2026 list (preferred)."
+      ],
+      "confirmed_count": 11,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.allenhurstnj.org/264/Public-Works",
+          "type": "official",
+          "reachable": true,
+          "notes": "Trash Tue/Fri, recycling Wed, yard rules; undated"
+        },
+        {
+          "url": "https://www.allenhurstnj.org/268/Refuse-and-Recycling-Guide",
+          "type": "official",
+          "reachable": true,
+          "notes": "30-gal containers, paint cans, HHW county facility; undated"
+        },
+        {
+          "url": "https://www.allenhurstnj.org/348/Bulk-Pickup-Information",
+          "type": "official",
+          "reachable": true,
+          "notes": "2026 bulk dates and fees verified"
+        }
+      ],
+      "fragment": "monmouth_1.json"
+    },
+    "atlantic-highlands": {
+      "verified": true,
+      "issue_count": 4,
+      "issues": [
+        "Zone_Maps_2.pdf (primary schedule source in towns_research.json) is undated; still hosted on official site via Public Works links.",
+        "Borough Yard hours differ between Public Works page (Mon–Fri 8:30 a.m.–4:00 p.m., Sat until 11:00 a.m.) and 2026 Printed Calendar (Mon–Fri 6:00 a.m.–4:00 p.m.; Sat 6:00 a.m.–11:00 a.m.; Nov–Dec Sat–Sun 8:00 a.m.–12:00 p.m. for leaves/brush). towns_research.json dropoff.hours documents both—flag as official-source conflict, not invented merge.",
+        "Zone map PDF labels ZONE I/II/III/IV; schedule text uses Zones 1&4 and 2&3—confirmed equivalent on same PDF.",
+        "Yard pickup specific calendar dates are in 2026 Leaf and Brush Calendar.pdf (image-heavy PDF; linked from Public Works); towns_research.json references calendar without listing dates—acceptable."
+      ],
+      "confirmed_count": 10,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.ahnj.com/ahnj/Contact%20Us/",
+          "type": "official",
+          "reachable": true,
+          "notes": "07716; recycling facility 732-291-0472"
+        },
+        {
+          "url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/",
+          "type": "official",
+          "reachable": true,
+          "notes": "Yard 5-day rule; yard hours 8:30–4 / Sat 11; links to 2026 PDFs"
+        },
+        {
+          "url": "https://www.ahnj.com/ahnj/_zumu_user_doc_cache/Zone_Maps_2.pdf",
+          "type": "official_pdf",
+          "reachable": true,
+          "notes": "Trash/recycle/bulk zone weekdays verified; undated"
+        },
+        {
+          "url": "https://www.ahnj.com/ahnj/2026%20Printed%20Calendar.pdf",
+          "type": "official_pdf",
+          "reachable": true,
+          "notes": "2026 dated; metals, bulk, borough yard hours, no trash drop-off"
+        },
+        {
+          "url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/2026%20Leaf%20and%20Brush%20Calendar.pdf",
+          "type": "official_pdf",
+          "reachable": true,
+          "notes": "2026 leaf/brush collection calendar; zone collection days present in PDF text extraction"
+        },
+        {
+          "url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/Recycling%20Information/",
+          "type": "official",
+          "reachable": true,
+          "notes": "Minimal content; not used for schedules"
+        }
+      ],
+      "fragment": "monmouth_1.json"
+    },
+    "bradley-beach": {
+      "verified": true,
+      "issue_count": 5,
+      "issues": [
+        "2026-SANITATION-CALENDAR-2.pdf is image-only (no extractable text); zone trash weekdays confirmed by visual review of downloaded PDF calendar grids (Feb–Mar 2026).",
+        "Street-level zone boundaries still not published on borough site; status partial remains appropriate.",
+        "Most HTML schedule source_date values are undated on official pages.",
+        "Homepage fetch does not state ZIP 07720 as a standalone field (07720 appears on Public Works address/footer).",
+        "Recycling page links to mazzarecycling.com for accepted-items reference only (third-party; not used for collection days in towns_research)."
+      ],
+      "confirmed_count": 9,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://www.bradleybeachnj.gov/",
+        "https://www.bradleybeachnj.gov/public-works/",
+        "https://www.bradleybeachnj.gov/trash-recycling-information/",
+        "https://www.bradleybeachnj.gov/wp-content/uploads/2026/01/2026-SANITATION-CALENDAR-2.pdf"
+      ],
+      "fragment": "monmouth_2.json"
+    },
+    "deal": {
+      "verified": true,
+      "issue_count": 3,
+      "issues": [
+        "All schedule source_date values undated on official Public Works page.",
+        "Page footer widgets label Mon/Wed/Fri as Recycling and Tue/Thu as garbage; main Garbage/Recycling sections state the opposite (garbage Mon/Wed/Fri, recycling Tue/Thu)—body text treated as authoritative.",
+        "ZIP 07723 inferred from Borough Hall address on contact page, not a dedicated ZIP field."
+      ],
+      "confirmed_count": 8,
+      "had_corrections": false,
+      "sources_checked": [
+        "https://dealnj.gov",
+        "https://dealnj.gov/contact/",
+        "https://dealnj.gov/departments/public-works/"
+      ],
+      "fragment": "monmouth_2.json"
+    },
+    "fair-haven": {
+      "verified": true,
+      "issue_count": 6,
+      "issues": [
+        "Could not locate a separate borough trash/recycling PDF listing Sep 7 bulk; prior note appears erroneous—Sep 14 confirmed as second Monday in 2026.",
+        "2026 municipal calendar brush summary table (1st/3rd vs 2nd/4th Tuesday by zone) contradicts month grids; month grids and May/June dates match stored zone pattern (Zones 1&2: 2nd/4th Tue; Zones 3&4: 1st/3rd Tue).",
+        "Public Works page intro lists Recycling Center hours Mon–Fri 8:00 a.m.–dusk / Sat 9:00 a.m.–dusk, while Public Works contact block and recycling page state Mon–Fri 7:00 a.m.–3:30 p.m. / Sat 9:00 a.m.–3:00 p.m.",
+        "zips source_url /contact requires login; ZIP 07704 confirmed on homepage, Public Works, and 2026 municipal calendar.",
+        "dropoff residents_only not explicitly labeled; site describes resident recycling center (not for trash).",
+        "Recycling schedule entry referenced a date list on an unfetched separate PDF; every-other-Wednesday confirmed on HTML pages and 2026 calendar."
+      ],
+      "confirmed_count": 7,
+      "had_corrections": true,
+      "sources_checked": [
+        "https://www.fairhavennj.org/",
+        "https://www.fairhavennj.org/contact",
+        "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
+        "https://www.fairhavennj.org/recycling",
+        "https://www.fairhavennj.org/public-works",
+        "https://www.fairhavennj.org/sites/g/files/vyhlif4411/f/uploads/2026_municipal_calendar_final-edit_9-14-2026.pdf"
+      ],
+      "fragment": "monmouth_2.json"
+    },
+    "hazlet": {
+      "verified": true,
+      "issue_count": 0,
+      "issues": [],
+      "confirmed_count": 10,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.hazlettwp.org/229/Recycling",
+          "status": "ok",
+          "role": "official"
+        },
+        {
+          "url": "https://www.hazlettwp.org/695/Bulk-Item-Pickup-in-2026",
+          "status": "ok",
+          "role": "official"
+        },
+        {
+          "url": "https://www.hazlettwp.org/235/What-Is-Recyclable",
+          "status": "ok",
+          "role": "official"
+        },
+        {
+          "url": "https://www.hazlettwp.org/610/White-Metal-Collection",
+          "status": "ok",
+          "role": "official"
+        },
+        {
+          "url": "https://www.hazlettwp.org/154/Finance-Purchasing",
+          "status": "ok",
+          "role": "official"
+        },
+        {
+          "url": "https://www.hazlettwp.org/866/Mobile-Home-Parks",
+          "status": "ok",
+          "role": "official"
+        },
+        {
+          "url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+          "status": "ok",
+          "role": "official",
+          "note": "WebFetch timeout; verified via local PDF download"
+        }
+      ],
+      "fragment": "monmouth_3.json"
+    },
+    "highlands": {
+      "verified": true,
+      "issue_count": 0,
+      "issues": [],
+      "confirmed_count": 10,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://highlandsnj.gov/departments/department-of-public-works/",
+          "status": "ok",
+          "role": "official"
+        },
+        {
+          "url": "https://highlandsnj.gov/wp-content/uploads/2026/02/22936_BoroHighlands_Calendar_2026_PROOF_06P.pdf",
+          "status": "ok",
+          "role": "official"
+        }
+      ],
+      "fragment": "monmouth_3.json"
+    },
+    "interlaken": {
+      "verified": false,
+      "issue_count": 2,
+      "issues": [
+        "notes and bulk schedule area_note omit official homepage 2026 bulk suspension dates (last Sep 28 2026; resume Jan 25 2027) though dates are confirmed on https://www.interlakenboro.com/",
+        "recycling area_note omits homepage rule that recycling must not be placed in plastic bags (public-works page does not state this)"
+      ],
+      "confirmed_count": 10,
+      "had_corrections": true,
+      "sources_checked": [
+        {
+          "url": "https://www.interlakenboro.com/public-works.html",
+          "status": "ok",
+          "role": "official"
+        },
+        {
+          "url": "https://www.interlakenboro.com/directory.html",
+          "status": "ok",
+          "role": "official"
+        },
+        {
+          "url": "https://www.interlakenboro.com/",
+          "status": "ok",
+          "role": "official"
+        }
+      ],
+      "fragment": "monmouth_3.json"
+    },
+    "keansburg": {
+      "verified": true,
+      "issue_count": 4,
+      "issues": [
+        "Municipal Public Works page contradicts itself: summary line allows two 33-gallon cans plus one bulk item; FAQ #2 allows TWO 30-gallon cans (50 lb max each). File notes both; no single authoritative gallon size.",
+        "FAQ #11 directs callers to 732-787-0215 ext. 450; department header lists Superintendent/Recycling Coordinator at ext. 451.",
+        "Leaf and branch pickup months are referenced (FAQ #7) but the Leaf and Branch Pick Up schedule document was not present on the fetched Public Works page.",
+        "Garbage contractor name is not published on the municipal page (hauler correctly null)."
+      ],
+      "confirmed_count": 9,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.keansburgnj.gov/",
+          "status": "ok",
+          "type": "official"
+        },
+        {
+          "url": "https://www.keansburgnj.gov/contact",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://www.keansburgnj.gov/departments/public-works/",
+          "status": "ok",
+          "type": "source_url"
+        }
+      ],
+      "fragment": "monmouth_4.json"
+    },
+    "keyport": {
+      "verified": true,
+      "issue_count": 3,
+      "issues": [
+        "2026 map PDF references bulk collection on the municipal recycling calendar but does not list specific bulk pickup days in extracted text; file week_pattern for bulk is not present (correct omission).",
+        "Linked '2026 Leaf and Branch pickup (PDF)' from recycling page returned 404 at https://keyportonline.com/wp-content/uploads/2026/04/2026_Leaf_and_Branch_pickup.pdf; leaf/branch dates verified from Public Works page instead.",
+        "PDF OCR is partially garbled; 2026 recycling dates in file match readable PDF content and recycling web page for zones 1–4."
+      ],
+      "confirmed_count": 10,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://keyportonline.com/about/",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://keyportonline.com/departments/public-works/",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://keyportonline.com/government/recycling/",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Recycling_Schedule_and_Map.pdf",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://keyportonline.com/wp-content/uploads/2026/04/2026_Leaf_and_Branch_pickup.pdf",
+          "status": "404",
+          "type": "official_linked_pdf"
+        }
+      ],
+      "fragment": "monmouth_4.json"
+    },
+    "little-silver": {
+      "verified": true,
+      "issue_count": 3,
+      "issues": [
+        "January 2026 Recycling Update (DocumentCenter/View/888) still instructs residents to arrange private disposal for TVs/computers; August 28, 2026 Civic Alert (AID=131) adds yard drop-off for electronics in a designated green container. File notes correctly flag alert as newer.",
+        "dpw.phone remains null on Public Works page (only Borough Hall 732-842-2400); recycling coordinator contact appears on alert and 2026 Recycling Update, not as DPW direct line.",
+        "dropoff.residents_only true is supported by 2026 Recycling Update PDF linked from Recycling/Garbage page, not by the dropoff source_url alone (Recycling-Garbage page omits residents-only wording)."
+      ],
+      "confirmed_count": 11,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.littlesilvernj.gov/199/Public-Works",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://www.littlesilvernj.gov/235/Recycling-Garbage",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://www.littlesilvernj.gov/DocumentCenter/View/887",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://www.littlesilvernj.gov/CivicAlerts.aspx?AID=131",
+          "status": "ok",
+          "type": "source_url"
+        },
+        {
+          "url": "https://www.littlesilvernj.gov/DocumentCenter/View/888",
+          "status": "ok",
+          "type": "official_linked_pdf"
+        }
+      ],
+      "fragment": "monmouth_4.json"
+    },
+    "loch-arbour": {
+      "verified": true,
+      "issue_count": 3,
+      "issues": [
+        "Weekly curbside trash and recycling weekdays are not published on locharbournj.us; do not infer from Borough of Deal schedules.",
+        "Linked Deal 'Refuse & Recyclable Materials Disposal Information' page returned HTTP 500 during verification.",
+        "dpw.address previously used Village Hall (550 Main Street); official contacts page assigns sanitation to Borough of Deal without a street address on the Loch Arbour site."
+      ],
+      "confirmed_count": 5,
+      "had_corrections": true,
+      "sources_checked": [
+        {
+          "url": "https://www.locharbournj.us/",
+          "status": "ok",
+          "role": "official_site"
+        },
+        {
+          "url": "https://www.locharbournj.us/trash-recycling",
+          "status": "ok",
+          "role": "bulk_schedule_source"
+        },
+        {
+          "url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts",
+          "status": "ok",
+          "role": "dpw_sanitation_zip_source"
+        },
+        {
+          "url": "https://dealborough.com/departments/public-works/refuse-recyclable-materials-disposal-information/",
+          "status": "error_500",
+          "role": "deal_refuse_link_from_loch_arbour_contacts_not_used_for_weekdays"
+        }
+      ],
+      "fragment": "monmouth_5.json"
+    },
+    "matawan": {
+      "verified": true,
+      "issue_count": 2,
+      "issues": [
+        "Borough recycling landing page still states boroughwide TRASH Monday and RECYCLING Thursday with RTS contact (1-833-787-4636); superseded by 2026 contract PDF (Jersey Specialized Hauling, zoned days effective May 11, 2026).",
+        "Schedule entries apply from contract effective date May 11, 2026; pre-transition days not documented on primary PDF reviewed."
+      ],
+      "confirmed_count": 8,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.matawanborough.com/",
+          "status": "ok",
+          "role": "official_site"
+        },
+        {
+          "url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/",
+          "status": "ok",
+          "role": "outdated_summary_and_pdf_links"
+        },
+        {
+          "url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Public%20Works/",
+          "status": "ok",
+          "role": "dpw_source"
+        },
+        {
+          "url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/NEW%20TRASH%20CONTRACT%20INFORMATION%20DATES%20AND%20SCHEDULE%202026.pdf",
+          "status": "ok",
+          "role": "primary_schedule_pdf"
+        },
+        {
+          "url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/Recycling%20Center/",
+          "status": "ok",
+          "role": "dropoff_source"
+        }
+      ],
+      "fragment": "monmouth_5.json"
+    },
+    "middletown": {
+      "verified": true,
+      "issue_count": 4,
+      "issues": [
+        "Current curbside garbage and recycling pages do not publish weekday or zone collection days in plain text; they direct residents to Recycle Coach (and zone lookup via address).",
+        "Archived 2017 CivicAlerts (AID=394, AID=401) list North/South zone weekdays but are not current primary schedule pages; must not be restored into towns_research.json.",
+        "Fall 2026 curbside leaf schedule not yet posted on collection page ('coming soon').",
+        "Staff directory page reviewed lists 07748 for DPW address only; additional township ZIP codes not enumerated on pages fetched."
+      ],
+      "confirmed_count": 8,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.middletownnj.org/",
+          "status": "ok",
+          "role": "official_site"
+        },
+        {
+          "url": "https://middletownnj.org/Directory.aspx?did=31",
+          "status": "ok",
+          "role": "dpw_zip_source"
+        },
+        {
+          "url": "https://www.middletownnj.org/571/Curbside-Garbage-Collection",
+          "status": "ok",
+          "role": "garbage_rules_recycle_coach_only"
+        },
+        {
+          "url": "https://www.middletownnj.org/583/Curbside-Recycling-Collection",
+          "status": "ok",
+          "role": "recycling_rules_recycle_coach_only"
+        },
+        {
+          "url": "https://www.middletownnj.org/collection",
+          "status": "ok",
+          "role": "brush_leaf"
+        },
+        {
+          "url": "https://middletownnj.org/m/newsflash/Home/Detail/1657",
+          "status": "ok",
+          "role": "bulk_scheduling_2025"
+        },
+        {
+          "url": "https://www.middletownnj.org/bulk",
+          "status": "ok",
+          "role": "bulk_accepted_items"
+        },
+        {
+          "url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
+          "status": "ok",
+          "role": "dropoff_source"
+        },
+        {
+          "url": "https://www.middletownnj.org/CivicAlerts.aspx?AID=394&ARC=639",
+          "status": "ok_archived_2017",
+          "role": "excluded_weekday_source_not_current"
+        }
+      ],
+      "fragment": "monmouth_5.json"
+    },
+    "monmouth-beach": {
+      "verified": true,
+      "issue_count": 0,
+      "issues": [],
+      "confirmed_count": 9,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.monmouthbeach.org/departments/public-works/",
+          "type": "official_html",
+          "reachable": true,
+          "used_for": "schedules, dpw, dropoff, zip"
+        },
+        {
+          "url": "https://www.monmouthbeach.org/",
+          "type": "official_html",
+          "reachable": true,
+          "used_for": "official_site"
+        }
+      ],
+      "fragment": "monmouth_6.json"
+    },
+    "neptune-city": {
+      "verified": true,
+      "issue_count": 0,
+      "issues": [],
+      "confirmed_count": 10,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.neptunecitynj.com/public-works/pages/garbage-collection-schedule-information",
+          "type": "official_html",
+          "reachable": true,
+          "used_for": "trash zones, bulk rules, dpw, holidays"
+        },
+        {
+          "url": "https://www.neptunecitynj.com/sites/g/files/vyhlif5316/f/uploads/2026_calendar.pdf",
+          "type": "official_pdf_2026",
+          "reachable": true,
+          "used_for": "recycling dates by zone, e-waste Tuesday, dropoff hours"
+        },
+        {
+          "url": "https://www.neptunecitynj.com/",
+          "type": "official_html",
+          "reachable": true,
+          "used_for": "official_site"
+        }
+      ],
+      "fragment": "monmouth_6.json"
+    },
+    "neptune-township": {
+      "verified": false,
+      "issue_count": 2,
+      "issues": [
+        "Recycling schedule entry area_note includes RT 33/RT 35/West Bangs highway boundary summaries that do not appear in the 2026 DPW calendar PDF or 2026 Street Index PDF; some summaries conflict with street index (e.g. GREEN GROVE RD (RT 33-W BANGS) is garbage Zone D / recycling D1, not Zone A/A2).",
+        "Status is \"complete\" in towns_research.json but structured recycling weekday is null and requires per-address Street Index lookup — should be partial."
+      ],
+      "confirmed_count": 10,
+      "had_corrections": true,
+      "sources_checked": [
+        {
+          "url": "https://neptunetownship.org/departments/public-works",
+          "type": "official_html",
+          "reachable": true,
+          "used_for": "official_site link, 2026 calendar link, e-waste policy, dpw phone"
+        },
+        {
+          "url": "https://neptunetownship.org/sites/default/files/2026%20DPW%20CALENDAR%20Town%20Website%20%281%29.pdf",
+          "type": "official_pdf_2026",
+          "reachable": true,
+          "used_for": "garbage weekdays, OG zones, bulk/brush/leaf rules, dropoff, holidays"
+        },
+        {
+          "url": "https://neptunetownship.org/sites/default/files/documents/Street%20Index%20Town%20Website%207.2026.pdf",
+          "type": "official_pdf_2026",
+          "reachable": true,
+          "used_for": "street-level garbage zone and recycling sub-zone; OG boundary legend"
+        },
+        {
+          "url": "https://neptunetownship.org/",
+          "type": "official_html",
+          "reachable": true,
+          "used_for": "official_site"
+        }
+      ],
+      "fragment": "monmouth_6.json"
+    },
+    "oceanport": {
+      "verified": false,
+      "issue_count": 4,
+      "issues": [
+        "DPW and trash pages still contain outdated recycling intro text ('TWICE a month') above 'EVERY WEDNESDAY-ALL ZONES' / district Wednesday lines; operators should treat weekly Wednesday as authoritative.",
+        "Recycling drop-off site referenced ('specially marked bin at the drop off site') but no municipal address or hours found on fetched official pages.",
+        "Hauler name appears on government directory, not on DPW or trash schedule pages.",
+        "Zip 07757 not quoted as text on fetched DPW page (only implied via borough address)."
+      ],
+      "confirmed_count": 11,
+      "had_corrections": true,
+      "sources_checked": [
+        {
+          "url": "https://www.oceanportboro.com",
+          "type": "official_site",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.oceanportboro.com/departments/dpw",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.oceanportboro.com/resident/trash",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://oceanportboro.com/government/directory",
+          "type": "official_hauler",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.oceanportboro.com/government/news/915-trash-and-recycling-updates-beginning-july-1-2025",
+          "type": "official_news",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        }
+      ],
+      "fragment": "monmouth_7.json"
+    },
+    "red-bank": {
+      "verified": true,
+      "issue_count": 2,
+      "issues": [
+        "Brush/leaf zone numbers (1–5) and weekday mapping confirmed, but street-level zone boundaries are not in fetched page text (bulletin/map referenced).",
+        "Minor address wording: 'West Sunset Avenue' vs '110 Sunset Avenue' on same official page."
+      ],
+      "confirmed_count": 13,
+      "had_corrections": true,
+      "sources_checked": [
+        {
+          "url": "https://www.redbanknj.org",
+          "type": "official_site",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.redbanknj.org/208/Public-Utilities",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.redbanknj.org/Faq.aspx?QID=83",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        }
+      ],
+      "fragment": "monmouth_7.json"
+    },
+    "rumson": {
+      "verified": false,
+      "issue_count": 2,
+      "issues": [
+        "residents_only not stated on official recycling center section.",
+        "No Broad Street zone (N/A); Bingham Avenue split confirmed for curbside only."
+      ],
+      "confirmed_count": 13,
+      "had_corrections": true,
+      "sources_checked": [
+        {
+          "url": "https://www.rumsonnj.gov/",
+          "type": "official_site",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.rumsonnj.gov/rumson-dpw",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        }
+      ],
+      "fragment": "monmouth_7.json"
+    },
+    "sea-bright": {
+      "verified": true,
+      "issue_count": 2,
+      "issues": [
+        "zips[0].source_url (Contact Us) does not display ZIP 07760 in fetched page body; 07760 appears in borough footer on DPW and garbage subpages.",
+        "dpw.address remains null; no municipal DPW street address published on official Sea Bright pages reviewed."
+      ],
+      "confirmed_count": 9,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.seabrightnj.org/sbnj/",
+          "type": "official_site",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.seabrightnj.org/sbnj/Contact%20Us/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Garbage%20Pickup/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Recycling%20Pick-up/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Bulk%20Pick-up/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Leaf%20Pick-up/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Tree%20and%20Branch%20Pick-up/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.seabrightnj.org/sbnj/Departments/Public%20Works/_other/Garbage%20Pickup/Residential%20Appliance%20Pick-up/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        }
+      ],
+      "fragment": "monmouth_8.json"
+    },
+    "union-beach": {
+      "verified": true,
+      "issue_count": 3,
+      "issues": [
+        "Public Works FAQ lists garbage as Monday/Thursday or Tuesday/Friday without Section A/B labels; 2026 calendar PDF maps Section A to Tuesday/Friday and Section B to Monday/Thursday.",
+        "FAQ bulk/recycling wording is generic; 2026 PDF is authoritative for alternating Section A/B Wednesday recycling and bulk dates.",
+        "FAQ #5 emphasizes drop-off at the recycling center for metals/appliances; 2026 PDF states appliances, electronics, and metals curbside by appointment only (732-264-1133)."
+      ],
+      "confirmed_count": 11,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.unionbeachnj.gov/ubnj/",
+          "type": "official_site",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.unionbeachnj.gov/ubnj/Contact%20Us/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.unionbeachnj.gov/ubnj/Departments/Public%20Works/",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+          "type": "2026_pdf",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        }
+      ],
+      "fragment": "monmouth_8.json"
+    },
+    "west-long-branch": {
+      "verified": true,
+      "issue_count": 4,
+      "issues": [
+        "Public Works page brush window reads \"December 12th to December 3rd\" (end before start); reliable brush timing not confirmed from primary text.",
+        "Standalone 2026 borough calendar PDF not published; January 2026 page inside 2025 calendar PDF directs residents to check the website for updates.",
+        "Recycling Collection page defers to borough calendar; weekly Wednesday rule confirmed on Public Works page and January 2026 calendar grid (Wednesdays 7, 14, 21, 28 marked RECYCLE).",
+        "dropoff.residents_only left null; official pages reviewed do not state residency requirement for the yard."
+      ],
+      "confirmed_count": 11,
+      "had_corrections": false,
+      "sources_checked": [
+        {
+          "url": "https://www.westlongbranch.org/",
+          "type": "official_site",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.westlongbranch.org/1345/Garbage-Collection",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.westlongbranch.org/1214/Public-Works",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.westlongbranch.org/1347/Bulk-Item-Collection",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.westlongbranch.org/1342/Recycling-Collection",
+          "type": "source_url",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        },
+        {
+          "url": "https://www.westlongbranch.org/DocumentCenter/View/254/2025_calendar",
+          "type": "2026_partial_pdf",
+          "status": "ok",
+          "rejected_as_aggregator": false
+        }
+      ],
+      "fragment": "monmouth_8.json"
+    }
+  },
+  "summary": {
+    "towns": 33,
+    "fragments_files": 11,
+    "fully_verified_no_issues": 4,
+    "towns_with_corrections_applied": 8,
+    "total_issues_listed": 107,
+    "towns_missing_verify_fragment": 0
+  }
+}

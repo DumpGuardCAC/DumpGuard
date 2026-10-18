@@ -115,10 +115,7 @@
     <div class="row"><select id="mfilter" aria-label="Filter by type"></select>
         <select id="mtown" aria-label="Filter by town"></select><select id="mstat" aria-label="Status"><option value="">All statuses</option><option value="new">New</option><option value="noticed">Noticed</option><option value="progress">In progress</option><option value="resolved">Resolved</option></select>
         <span class="sm" id="mcount"></span><button class="btn" id="tltoggle" style="border:1px solid #cbd5e1;padding:10px 18px;margin-left:auto">Town labels: off</button><button class="btn dark" id="gtoggle" style="padding:10px 22px">Government sign-in</button></div>
-    <div id="lock" class="card lockcard" style="display:none"><h3>Government access</h3><p class="sm">Staff can see exact locations, photos and details, and update report status.</p>
-        <label for="guser">Username</label><input id="guser" autocomplete="username" autocapitalize="none" spellcheck="false">
-        <label for="gcode">Password</label><input id="gcode" type="password" autocomplete="current-password"><p class="err" id="gerr"></p><button class="btn dark full" id="gunlock">Sign in</button></div>
-    <div class="notice" id="mbanner">Street map tiles could not load. Report areas still show.</div>
+        <div class="notice" id="mbanner">Street map tiles could not load. Report areas still show.</div>
     <div class="gwrap"><div class="mapbox" id="gmap"></div><div class="card" id="gpanel"></div></div>
     <div id="glist"></div>
 </section></div>
@@ -141,16 +138,17 @@
 
 <!-- ===== LOGIN ===== -->
 <div class="view" id="v-login"><div class="auth"><aside class="aside"><img src="images/logo.png" alt="" width="200"><h2>Dispose of anything,<br>the right way.</h2><p>Look up what goes where, find your pickup days, and report illegal dumping in your town.</p></aside><div class="card">
-    <h2>Welcome back</h2><p class="sub">Accounts are stored on this device only</p>
-    <label for="le">Email or username</label><input id="le" type="text" inputmode="email" autocomplete="username" autocapitalize="none">
+    <div class="seg" role="group" aria-label="Account type"><button type="button" id="mres" aria-pressed="true">Resident</button><button type="button" id="mgov" aria-pressed="false">Government</button></div>
+    <h2 id="lh">Welcome back</h2><p class="sub" id="lsub">Accounts are stored on this device only</p>
+    <label for="le" id="lle">Email or username</label><input id="le" type="text" inputmode="email" autocomplete="username" autocapitalize="none">
     <label for="lp">Password</label><input id="lp" type="password" autocomplete="current-password">
-    <label>Verify you're human</label>
+    <div id="lhuman"><label>Verify you're human</label>
     <div class="cap"><div class="capbox" id="lcap"></div><button class="mini" type="button" data-cap="lcap" aria-label="New code">↻</button></div>
-    <input id="lci" aria-label="Verification code" placeholder="Type the code above" style="margin-top:10px">
+    <input id="lci" aria-label="Verification code" placeholder="Type the code above" style="margin-top:10px"></div>
     <p class="err" id="lerr"></p>
     <button class="btn dark full" id="lgo">Log in</button>
-    <p class="alt"><a data-go="forgot">Forgot password?</a></p>
-    <p class="alt">Not a user yet? <a data-go="signup">Create an account</a></p>
+    <div id="lalts"><p class="alt"><a data-go="forgot">Forgot password?</a></p>
+    <p class="alt">Not a user yet? <a data-go="signup">Create an account</a></p></div>
 </div></div></div>
 
 <!-- ===== FORGOT ===== -->

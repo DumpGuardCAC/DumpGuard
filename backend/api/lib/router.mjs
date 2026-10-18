@@ -6,10 +6,13 @@ import { handleSearch } from './search.mjs';
 import { handleMaterial } from './materials.mjs';
 import { handleTowns, handleFacilities, handleWoodbridgeStreets, buildStreetLookup, handleHealth } from './places.mjs';
 import { handleBulkRequest, handlePurge } from './bulk.mjs';
-import { makeRepo, makeBulkRepo, makePushRepo, makeAlertsRepo, makeImpactRepo, makeReportsRepo } from './repo.mjs';
+import { makeRepo, makeBulkRepo, makePushRepo, makeAlertsRepo, makeImpactRepo, makeReportsRepo, makeDumpingRepo } from './repo.mjs';
 import { handleAlerts, handleCreateAlert, handleDeleteAlert } from './alerts.mjs';
 import { handlePushKey, handleSubscribe, handleUnsubscribe, handleReminders } from './push.mjs';
 import { handleReport, handleListReports, handleResolveReport } from './reports.mjs';
+import {
+  handleDumpingReport, handleDumpingTrack, handleDumpingMap, handleAdminDumping, handleAdminDumpingPhoto, handleAdminDumpingStatus,
+} from './dumping.mjs';
 import { handleEvent, handleStats } from './impact.mjs';
 import { makeSender } from './webpush.mjs';
 import { json, jsonWithEtag } from './http.mjs';
@@ -26,7 +29,7 @@ function cors(res, request) {
   const h = new Headers(res.headers);
   h.set('access-control-allow-origin', origin ?? '*');
   h.set('access-control-allow-methods', origin ? 'GET, POST, DELETE, OPTIONS' : 'GET, OPTIONS');
-  h.set('access-control-allow-headers', 'content-type, if-none-match');
+  h.set('access-control-allow-headers', 'content-type, if-none-match, authorization');
   h.set('x-content-type-options', 'nosniff');
   return new Response(res.body, { status: res.status, headers: h });
 }
@@ -42,6 +45,8 @@ async function route(request) {
   if (m === 'DELETE' && path === '/admin/alerts') return handleDeleteAlert(request, makeAlertsRepo());
   if (m === 'POST' && path === '/reports') return handleReport(request, makeReportsRepo());
   if (m === 'POST' && path === '/admin/reports/resolve') return handleResolveReport(request, makeReportsRepo());
+  if (m === 'POST' && path === '/dumping') return handleDumpingReport(request, makeDumpingRepo());
+  if (m === 'POST' && path === '/admin/dumping/status') return handleAdminDumpingStatus(request, makeDumpingRepo());
   if (m === 'POST' && path === '/events') return handleEvent(request, makeImpactRepo());
   if (m === 'POST' && path === '/push/subscribe') return handleSubscribe(request, makePushRepo());
   if (m === 'POST' && path === '/push/unsubscribe') return handleUnsubscribe(request, makePushRepo());
@@ -49,6 +54,10 @@ async function route(request) {
 
   if (path === '/health') return handleHealth(makeRepo());
   if (path === '/admin/reports') return handleListReports(request, makeReportsRepo());
+  if (path === '/dumping/track') return handleDumpingTrack(request, makeDumpingRepo());
+  if (path === '/dumping/map') return handleDumpingMap(request, makeDumpingRepo());
+  if (path === '/admin/dumping') return handleAdminDumping(request, makeDumpingRepo());
+  if (path === '/admin/dumping/photo') return handleAdminDumpingPhoto(request, makeDumpingRepo());
   if (path === '/stats') return handleStats(request, makeImpactRepo());
   if (path === '/alerts') return handleAlerts(request, makeAlertsRepo());
   if (path === '/push/key') return handlePushKey();

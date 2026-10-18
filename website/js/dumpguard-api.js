@@ -104,9 +104,9 @@
     var town = $('town');
     if (!town || $('lang')) return;
     var sel = h('select', { id: 'lang', 'aria-label': 'Language' }, h('option', { value: 'en' }, 'English'), h('option', { value: 'es' }, 'Español'));
-    sel.value = state.lang;
+    sel.value = state.lang; document.documentElement.lang = state.lang;
     sel.addEventListener('change', function () {
-      state.lang = sel.value;
+      state.lang = sel.value; document.documentElement.lang = state.lang;
       try { localStorage.setItem('dg_lang', state.lang); } catch (e) { /* ignore */ }
       translateStatic();
       runSearch();

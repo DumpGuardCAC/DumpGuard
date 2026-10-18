@@ -269,3 +269,74 @@ export function makeReportsRepo(db = getPool()) {
     },
   };
 }
+
+// ---- illegal dumping reports ----
+export function makeDumpingRepo(db = getPool()) {
+  const bulk = makeBulkRepo(db);
+  return {
+    hit: bulk.hit,
+    isPublishedTown: bulk.isPublishedTown,
+    // false when the generated code is already taken, so the caller can try another
+    async insertDump({ code, regionId, type, where, description, notes, lat, lng, photo }) {
+      const client = await db.connect();
+      try {
+        await client.query('BEGIN');
+        const { rows } = await client.query(
+          `INSERT INTO dump_reports (code, region_id, dump_type, location_text, description, notes, lat, lng)
+           VALUES ($1,$2,$3,$4,$5,$6,$7,$8) ON CONFLICT (code) DO NOTHING RETURNING id`,
+          [code, regionId, type, where, description, notes, lat, lng],
+        );
+        if (!rows.length) { await client.query('ROLLBACK'); return false; }
+        if (photo) await client.query(`INSERT INTO dump_photos (report_id, bytes) VALUES ($1,$2)`, [rows[0].id, photo]);
+        await client.query('COMMIT');
+        return true;
+      } catch (err) {
+        await client.query('ROLLBACK').catch(() => {});
+        throw err;
+      } finally {
+        client.release();
+      }
+    },
+    async dumpByCode(code) {
+      const { rows } = await db.query(`SELECT status, region_id, dump_type, created_at, updated_at FROM dump_reports WHERE code = $1`, [code]);
+      return rows[0] ?? null;
+    },
+    async mapPoints() {
+      const { rows } = await db.query(
+        `SELECT floor(lng / $1)::int AS cx, floor(lat / $1)::int AS cy, status, dump_type, region_id
+           FROM dump_reports WHERE lat IS NOT NULL AND created_at > now() - interval '180 days' LIMIT 5000`,
+        [0.005],
+      );
+      return rows;
+    },
+    async townStatusCounts() {
+      const { rows } = await db.query(
+        `SELECT r.id AS region_id, r.name,
+                count(*) FILTER (WHERE d.status = 'new')::int AS new, count(*) FILTER (WHERE d.status = 'noticed')::int AS noticed,
+                count(*) FILTER (WHERE d.status = 'progress')::int AS progress, count(*) FILTER (WHERE d.status = 'resolved')::int AS resolved
+           FROM regions r LEFT JOIN dump_reports d ON d.region_id = r.id
+          WHERE r.kind = 'town' AND r.published GROUP BY r.id, r.name ORDER BY r.name`,
+      );
+      return rows;
+    },
+    async listDumps({ status, town }) {
+      const { rows } = await db.query(
+        `SELECT d.id, d.code, d.region_id, d.dump_type, d.location_text, d.description, d.notes, d.lat, d.lng, d.status,
+                d.created_at, d.updated_at, (p.report_id IS NOT NULL) AS has_photo
+           FROM dump_reports d LEFT JOIN dump_photos p ON p.report_id = d.id
+          WHERE ($1::text IS NULL OR d.status = $1::dump_status_t) AND ($2::text IS NULL OR d.region_id = $2)
+          ORDER BY d.created_at DESC LIMIT 500`,
+        [status, town],
+      );
+      return rows;
+    },
+    async dumpPhoto(id) {
+      const { rows } = await db.query(`SELECT bytes FROM dump_photos WHERE report_id = $1`, [id]);
+      return rows[0]?.bytes ?? null;
+    },
+    async setDumpStatus(id, status) {
+      const { rowCount } = await db.query(`UPDATE dump_reports SET status = $2, updated_at = now() WHERE id = $1`, [id, status]);
+      return rowCount > 0;
+    },
+  };
+}

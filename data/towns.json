@@ -6661,34 +6661,82 @@
     {
       "region": "perth-amboy",
       "stream": "trash",
-      "source_url": "https://www.perthamboynj.org/government/departments/public_works",
-      "weekday": null,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
+      "source_url": "https://www.perthamboynj.org/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2026/Holiday%20Annual%20Guidelines%20Dates%202026%20_LLdocx.pdf",
+      "weekday": 1,
+      "week_pattern": "weekly",
+      "area_key": "trash:north-side-above-the-conrail-train-tracks",
+      "area_note": "North Side (above the Conrail train tracks)",
+      "dtstart": "2026-01-05",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "custom City of Perth Amboy Department of Public Works collects residential garbage, but a 2026 garbage/holiday sanitation calendar PDF is not published on the Public Works page as of research (https://www.perthamboynj.org/government/departments/public_works). Do not use 2025 North/South Conrail weekdays as verified 2026 schedule. Public Works: 732-826-2010. If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
+      "notes_en": "North Side (above the Conrail train tracks). Public Works: 732-826-2010. No garbage collection on 2026 holidays (Jan 1, Jan 19, Feb 16, May 25, Jul 3, Sep 7, Oct 12, Nov 11, Nov 26, Dec 25, Jan 1 2027). If a holiday falls on your collection day, service resumes on the next scheduled collection day. Recycling is collected every Wednesday except when a holiday falls on a Wednesday. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
       "notes_es": "",
-      "status": "needs_verification",
-      "last_verified": null
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "perth-amboy",
+      "stream": "trash",
+      "source_url": "https://www.perthamboynj.org/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2026/Holiday%20Annual%20Guidelines%20Dates%202026%20_LLdocx.pdf",
+      "weekday": 4,
+      "week_pattern": "weekly",
+      "area_key": "trash:north-side-above-the-conrail-train-tracks",
+      "area_note": "North Side (above the Conrail train tracks)",
+      "dtstart": "2026-01-01",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
+      "overrides": [],
+      "notes_en": "North Side (above the Conrail train tracks). Public Works: 732-826-2010. No garbage collection on 2026 holidays (Jan 1, Jan 19, Feb 16, May 25, Jul 3, Sep 7, Oct 12, Nov 11, Nov 26, Dec 25, Jan 1 2027). If a holiday falls on your collection day, service resumes on the next scheduled collection day. Recycling is collected every Wednesday except when a holiday falls on a Wednesday. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "perth-amboy",
+      "stream": "trash",
+      "source_url": "https://www.perthamboynj.org/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2026/Holiday%20Annual%20Guidelines%20Dates%202026%20_LLdocx.pdf",
+      "weekday": 2,
+      "week_pattern": "weekly",
+      "area_key": "trash:south-side-below-the-conrail-train-tracks",
+      "area_note": "South Side (below the Conrail train tracks)",
+      "dtstart": "2026-01-06",
+      "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270131",
+      "overrides": [],
+      "notes_en": "South Side (below the Conrail train tracks). Public Works: 732-826-2010. No garbage collection on 2026 holidays (Jan 1, Jan 19, Feb 16, May 25, Jul 3, Sep 7, Oct 12, Nov 11, Nov 26, Dec 25, Jan 1 2027). If a holiday falls on your collection day, service resumes on the next scheduled collection day. Recycling is collected every Wednesday except when a holiday falls on a Wednesday. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "perth-amboy",
+      "stream": "trash",
+      "source_url": "https://www.perthamboynj.org/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2026/Holiday%20Annual%20Guidelines%20Dates%202026%20_LLdocx.pdf",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "trash:south-side-below-the-conrail-train-tracks",
+      "area_note": "South Side (below the Conrail train tracks)",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
+      "overrides": [],
+      "notes_en": "South Side (below the Conrail train tracks). Public Works: 732-826-2010. No garbage collection on 2026 holidays (Jan 1, Jan 19, Feb 16, May 25, Jul 3, Sep 7, Oct 12, Nov 11, Nov 26, Dec 25, Jan 1 2027). If a holiday falls on your collection day, service resumes on the next scheduled collection day. Recycling is collected every Wednesday except when a holiday falls on a Wednesday. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
     },
     {
       "region": "perth-amboy",
       "stream": "recycling",
-      "source_url": "https://www.perthamboynj.org/government/departments/public_works/recycling_guidelines",
-      "weekday": null,
-      "week_pattern": "custom",
+      "source_url": "https://www.perthamboynj.org/government/departments/public_works",
+      "weekday": 3,
+      "week_pattern": "weekly",
       "area_key": null,
       "area_note": "",
-      "dtstart": null,
-      "rrule": null,
+      "dtstart": "2026-01-07",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "custom Curbside recycling weekdays are not published as standing plain text on https://www.perthamboynj.org/government/departments/public_works/recycling_guidelines (page links a PDF; no Monday-Friday collection days stated in page body). Do not invent weekdays. Public Works: 732-826-2010. If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
+      "notes_en": "Citywide. Public Works: 732-826-2010. No garbage collection on 2026 holidays (Jan 1, Jan 19, Feb 16, May 25, Jul 3, Sep 7, Oct 12, Nov 11, Nov 26, Dec 25, Jan 1 2027). If a holiday falls on your collection day, service resumes on the next scheduled collection day. Recycling is collected every Wednesday except when a holiday falls on a Wednesday. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
       "notes_es": "",
-      "status": "needs_verification",
-      "last_verified": null
+      "status": "verified",
+      "last_verified": "2026-10-18"
     },
     {
       "region": "piscataway",
@@ -6864,9 +6912,15 @@
       "week_pattern": "biweekly",
       "area_key": "recycling:mcia",
       "area_note": "MCIA: Lower Sayreville (Van Loan through River Road), Jernee Mill Road, Sayre Park, White Oaks, Pine Brook Homes, Hillcrest Homes, Deerfield Road through Marchut Court, Oaktree West, Green Valley, Washington Village, Heritage Woods, Washington Road (Burke's Park to bridge, both sides) Note: Jan 1 2026 Thursday moved to Saturday Jan 3 per borough page; anchor_date is first regular Thursday 2026-01-15 (+14 from prior cycle)",
-      "dtstart": "2026-01-15",
+      "dtstart": "2025-12-18",
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=TH;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-03",
+          "reason": "MCIA Thursday: January 1 2026 Thursday recycling moved to Saturday January 3 (borough 2026 bi-weekly page)"
+        }
+      ],
       "notes_en": "MCIA: Lower Sayreville (Van Loan through River Road), Jernee Mill Road, Sayre Park, White Oaks, Pine Brook Homes, Hillcrest Homes, Deerfield Road through Marchut Court, Oaktree West, Green Valley, Washington Village, Heritage Woods, Washington Road (Burke's Park to bridge, both sides) Note: Jan 1 2026 Thursday moved to Saturday Jan 3 per borough page; anchor_date is first regular Thursday 2026-01-15 (+14 from prior cycle). Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
       "notes_es": "",
       "status": "verified",
@@ -6903,96 +6957,6 @@
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
-    },
-    {
-      "region": "sayreville",
-      "stream": "bulk",
-      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
-      "weekday": 4,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
-      "overrides": [],
-      "dates": [
-        {
-          "date": "2026-04-09",
-          "label": "Zone 1 heavy/bulk trash"
-        },
-        {
-          "date": "2026-07-09",
-          "label": "Zone 1 heavy/bulk trash"
-        },
-        {
-          "date": "2026-10-01",
-          "label": "Zone 1 heavy/bulk trash"
-        }
-      ],
-      "notes_en": "Zone 1 heavy/bulk trash; place out Monday of scheduled week. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
-      "notes_es": "",
-      "status": "verified",
-      "last_verified": "2026-10-18"
-    },
-    {
-      "region": "sayreville",
-      "stream": "bulk",
-      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
-      "weekday": 4,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
-      "overrides": [],
-      "dates": [
-        {
-          "date": "2026-04-16",
-          "label": "Zone 2 heavy/bulk trash"
-        },
-        {
-          "date": "2026-07-16",
-          "label": "Zone 2 heavy/bulk trash"
-        },
-        {
-          "date": "2026-10-08",
-          "label": "Zone 2 heavy/bulk trash"
-        }
-      ],
-      "notes_en": "Zone 2 heavy/bulk trash; place out Monday of scheduled week. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
-      "notes_es": "",
-      "status": "verified",
-      "last_verified": "2026-10-18"
-    },
-    {
-      "region": "sayreville",
-      "stream": "bulk",
-      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
-      "weekday": 4,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
-      "overrides": [],
-      "dates": [
-        {
-          "date": "2026-04-23",
-          "label": "Zone 3 heavy/bulk trash"
-        },
-        {
-          "date": "2026-07-23",
-          "label": "Zone 3 heavy/bulk trash"
-        },
-        {
-          "date": "2026-10-22",
-          "label": "Zone 3 heavy/bulk trash"
-        }
-      ],
-      "notes_en": "Zone 3 heavy/bulk trash; place out Monday of scheduled week. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
-      "notes_es": "",
-      "status": "verified",
-      "last_verified": "2026-10-18"
     },
     {
       "region": "sayreville",
@@ -7308,6 +7272,96 @@
         }
       ],
       "notes_en": "Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "sayreville",
+      "stream": "bulk",
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+      "weekday": 4,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-04-09",
+          "label": "Zone 1 heavy/bulk trash"
+        },
+        {
+          "date": "2026-07-09",
+          "label": "Zone 1 heavy/bulk trash"
+        },
+        {
+          "date": "2026-10-01",
+          "label": "Zone 1 heavy/bulk trash"
+        }
+      ],
+      "notes_en": "Zone 1 heavy/bulk trash; place out Monday of scheduled week. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "sayreville",
+      "stream": "bulk",
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+      "weekday": 4,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-04-16",
+          "label": "Zone 2 heavy/bulk trash"
+        },
+        {
+          "date": "2026-07-16",
+          "label": "Zone 2 heavy/bulk trash"
+        },
+        {
+          "date": "2026-10-08",
+          "label": "Zone 2 heavy/bulk trash"
+        }
+      ],
+      "notes_en": "Zone 2 heavy/bulk trash; place out Monday of scheduled week. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "sayreville",
+      "stream": "bulk",
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+      "weekday": 4,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-04-23",
+          "label": "Zone 3 heavy/bulk trash"
+        },
+        {
+          "date": "2026-07-23",
+          "label": "Zone 3 heavy/bulk trash"
+        },
+        {
+          "date": "2026-10-22",
+          "label": "Zone 3 heavy/bulk trash"
+        }
+      ],
+      "notes_en": "Zone 3 heavy/bulk trash; place out Monday of scheduled week. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8090,7 +8144,18 @@
       "area_note": "Zone 1",
       "dtstart": "2026-01-01",
       "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-05",
+          "reason": "Zone 1: New Year's Day trash moved to 2026-01-05 (trash-recycling page)"
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-30",
+          "reason": "Zone 1: Thanksgiving trash moved to 2026-11-30 (trash-recycling page)"
+        }
+      ],
       "notes_en": "Zone 1. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
@@ -8122,7 +8187,18 @@
       "area_note": "Zone 2",
       "dtstart": "2026-01-02",
       "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-29",
+          "reason": "Zone 2: Christmas trash moved to 2026-12-29 (trash-recycling page)"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-05",
+          "reason": "Zone 2: New Year's Day 2027 trash moved to 2027-01-05 (trash-recycling page)"
+        }
+      ],
       "notes_en": "Zone 2. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
@@ -8154,7 +8230,18 @@
       "area_note": "Zone 3",
       "dtstart": "2026-01-02",
       "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-28",
+          "reason": "Zone 3: Christmas trash moved to 2026-12-28 (trash-recycling page)"
+        },
+        {
+          "date": "2027-01-01",
+          "to": "2027-01-04",
+          "reason": "Zone 3: New Year's Day 2027 trash moved to 2027-01-04 (trash-recycling page)"
+        }
+      ],
       "notes_en": "Zone 3. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
@@ -8207,6 +8294,60 @@
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
+    },
+    {
+      "region": "bradley-beach",
+      "stream": "yard",
+      "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/",
+      "weekday": 1,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-03-09",
+          "label": "Brush and yard waste"
+        },
+        {
+          "date": "2026-04-13",
+          "label": "Brush and yard waste"
+        },
+        {
+          "date": "2026-04-27",
+          "label": "Brush and yard waste"
+        },
+        {
+          "date": "2026-05-11",
+          "label": "Brush and yard waste"
+        },
+        {
+          "date": "2026-06-08",
+          "label": "Brush and yard waste"
+        },
+        {
+          "date": "2026-09-14",
+          "label": "Brush and yard waste"
+        },
+        {
+          "date": "2026-10-13",
+          "label": "Brush and yard waste"
+        },
+        {
+          "date": "2026-11-09",
+          "label": "Brush and yard waste"
+        },
+        {
+          "date": "2026-12-14",
+          "label": "Brush and yard waste"
+        }
+      ],
+      "notes_en": "Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
     },
     {
       "region": "bradley-beach",
@@ -8288,60 +8429,6 @@
         }
       ],
       "notes_en": "Zone 2 and south side of Zone 3; bulk stickers required; max 5 items. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
-      "notes_es": "",
-      "status": "verified",
-      "last_verified": "2026-10-18"
-    },
-    {
-      "region": "bradley-beach",
-      "stream": "yard",
-      "source_url": "https://www.bradleybeachnj.gov/trash-recycling-information/",
-      "weekday": 1,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
-      "overrides": [],
-      "dates": [
-        {
-          "date": "2026-03-09",
-          "label": "Brush and yard waste"
-        },
-        {
-          "date": "2026-04-13",
-          "label": "Brush and yard waste"
-        },
-        {
-          "date": "2026-04-27",
-          "label": "Brush and yard waste"
-        },
-        {
-          "date": "2026-05-11",
-          "label": "Brush and yard waste"
-        },
-        {
-          "date": "2026-06-08",
-          "label": "Brush and yard waste"
-        },
-        {
-          "date": "2026-09-14",
-          "label": "Brush and yard waste"
-        },
-        {
-          "date": "2026-10-13",
-          "label": "Brush and yard waste"
-        },
-        {
-          "date": "2026-11-09",
-          "label": "Brush and yard waste"
-        },
-        {
-          "date": "2026-12-14",
-          "label": "Brush and yard waste"
-        }
-      ],
-      "notes_en": "Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8492,40 +8579,6 @@
     },
     {
       "region": "fair-haven",
-      "stream": "bulk",
-      "source_url": "https://www.fairhavennj.org/sites/g/files/vyhlif4411/f/uploads/2026_municipal_calendar_final-edit_9-14-2026.pdf",
-      "weekday": 1,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
-      "overrides": [],
-      "dates": [
-        {
-          "date": "2026-03-09",
-          "label": "Bulk pickup"
-        },
-        {
-          "date": "2026-06-08",
-          "label": "Bulk pickup"
-        },
-        {
-          "date": "2026-09-14",
-          "label": "Bulk pickup"
-        },
-        {
-          "date": "2026-11-09",
-          "label": "Bulk pickup"
-        }
-      ],
-      "notes_en": "Bulk pickup; all zones; Suburban Disposal (2026 second Mondays). Public Works: 732-747-0241 ext. *217. Borough office/DPW holiday closures listed on 2026 municipal calendar; check website for collection shifts. Other holiday and weather changes are not listed here; check https://www.fairhavennj.org.",
-      "notes_es": "",
-      "status": "verified",
-      "last_verified": "2026-10-18"
-    },
-    {
-      "region": "fair-haven",
       "stream": "yard",
       "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
       "weekday": 2,
@@ -8636,6 +8689,40 @@
         }
       ],
       "notes_en": "Zones 3 and 4; May through September brush (32-gallon gray/neutral can). Public Works: 732-747-0241 ext. *217. Borough office/DPW holiday closures listed on 2026 municipal calendar; check website for collection shifts. Other holiday and weather changes are not listed here; check https://www.fairhavennj.org.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "fair-haven",
+      "stream": "bulk",
+      "source_url": "https://www.fairhavennj.org/sites/g/files/vyhlif4411/f/uploads/2026_municipal_calendar_final-edit_9-14-2026.pdf",
+      "weekday": 1,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-03-09",
+          "label": "Bulk pickup"
+        },
+        {
+          "date": "2026-06-08",
+          "label": "Bulk pickup"
+        },
+        {
+          "date": "2026-09-14",
+          "label": "Bulk pickup"
+        },
+        {
+          "date": "2026-11-09",
+          "label": "Bulk pickup"
+        }
+      ],
+      "notes_en": "Bulk pickup; all zones; Suburban Disposal (2026 second Mondays). Public Works: 732-747-0241 ext. *217. Borough office/DPW holiday closures listed on 2026 municipal calendar; check website for collection shifts. Other holiday and weather changes are not listed here; check https://www.fairhavennj.org.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -10249,23 +10336,39 @@
     {
       "region": "loch-arbour",
       "stream": "trash",
-      "source_url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts",
-      "weekday": null,
-      "week_pattern": "custom",
+      "source_url": "https://www.locharbournj.us/trash-recycling/files/refuse-and-recyclable-information",
+      "weekday": 2,
+      "week_pattern": "weekly",
       "area_key": null,
       "area_note": "",
-      "dtstart": null,
-      "rrule": null,
+      "dtstart": "2026-01-06",
+      "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "custom Village Sanitation contact is Borough of Deal (732-531-1454) per Departments and Services Contacts; Loch Arbour trash-recycling page lists 2026 bulk Mondays only and does not state weekly trash weekdays. Do not infer Deal borough days. Public Works: 732-531-1454. Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page). Other holiday and weather changes are not listed here; check https://www.locharbournj.us/.",
+      "notes_en": "Household refuse, rear yard pickup; limit 3 containers of 30 gallons. Public Works: 732-531-1454. Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page). Other holiday and weather changes are not listed here; check https://www.locharbournj.us/.",
       "notes_es": "",
-      "status": "needs_verification",
-      "last_verified": null
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "loch-arbour",
+      "stream": "trash",
+      "source_url": "https://www.locharbournj.us/trash-recycling/files/refuse-and-recyclable-information",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
+      "overrides": [],
+      "notes_en": "Household refuse, rear yard pickup; limit 3 containers of 30 gallons. Public Works: 732-531-1454. Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page). Other holiday and weather changes are not listed here; check https://www.locharbournj.us/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
     },
     {
       "region": "loch-arbour",
       "stream": "recycling",
-      "source_url": "https://www.locharbournj.us/trash-recycling",
+      "source_url": "https://www.locharbournj.us/trash-recycling/files/refuse-and-recyclable-information",
       "weekday": null,
       "week_pattern": "custom",
       "area_key": null,
@@ -10273,7 +10376,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "custom Loch Arbour trash-recycling page does not publish weekly recycling weekdays; sanitation contact is Borough of Deal (732-531-1454). Do not infer Deal days. Public Works: 732-531-1454. Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page). Other holiday and weather changes are not listed here; check https://www.locharbournj.us/.",
+      "notes_en": "custom Commingled bottles, cans and plastic containers: 1st, 3rd and 5th Wednesday of the month, curbside by 7:00 a.m. (village newsletter dated January 2025; confirm with the Village). Public Works: 732-531-1454. Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page). Other holiday and weather changes are not listed here; check https://www.locharbournj.us/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null

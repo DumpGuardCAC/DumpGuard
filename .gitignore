@@ -1,7 +1,7 @@
 spec.md
-training/MODEL_CARD.md
-training/.venv/
-training/data/
+model/training/MODEL_CARD.md
+model/training/.venv/
+model/training/data/
 __pycache__/
 *.pyc
 *.log

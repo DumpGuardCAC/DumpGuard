@@ -7,8 +7,8 @@ import path from 'node:path';
 import pg from 'pg';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const dbPath = process.env.ITEMS_DB ?? path.join(here, '..', '..', 'data', 'items_db.json');
-const townsPath = process.env.TOWNS_DB ?? path.join(here, '..', '..', 'data', 'towns.json');
+const dbPath = process.env.ITEMS_DB ?? path.join(here, '..', '..', '..', 'data', 'items_db.json');
+const townsPath = process.env.TOWNS_DB ?? path.join(here, '..', '..', '..', 'data', 'towns.json');
 const url = process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL;
 if (!url) {
   console.error('Set DATABASE_URL_UNPOOLED (preferred) or DATABASE_URL.');

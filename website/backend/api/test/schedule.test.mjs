@@ -5,7 +5,7 @@ import { occurrences } from '../lib/occurrences.mjs';
 import { buildIcs } from '../lib/ics.mjs';
 import { handleSchedule } from '../lib/schedule.mjs';
 
-const towns = JSON.parse(readFileSync(new URL('../../../data/towns.json', import.meta.url), 'utf8'));
+const towns = JSON.parse(readFileSync(new URL('../../../../data/towns.json', import.meta.url), 'utf8'));
 const rows = towns.schedules.map((r, i) => ({ id: i + 1, dtstart: null, overrides: [], area_key: '', rrule: null, last_verified: '2026-10-06', ...r }));
 const row = (region, stream, key, weekday) =>
   rows.find((r) => r.region === region && r.stream === stream && r.area_key === key && (weekday === undefined || r.weekday === weekday));

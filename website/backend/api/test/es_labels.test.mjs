@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { toEs } from '../lib/es_labels.mjs';
 
-const towns = JSON.parse(readFileSync(new URL('../../../data/towns.json', import.meta.url), 'utf8').replace(/^/, ''));
+const towns = JSON.parse(readFileSync(new URL('../../../../data/towns.json', import.meta.url), 'utf8').replace(/^/, ''));
 const PLACE_NAMES = new Set(['Avenel', 'Colonia', 'Fords', 'Hopelawn', 'Iselin', 'Keasbey', 'Menlo Park Terrace', 'Port Reading', 'Sewaren', 'Woodbridge', 'Juneteenth']);
 
 test('every section label, description, holiday reason and date label has Spanish', () => {

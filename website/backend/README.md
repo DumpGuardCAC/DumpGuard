@@ -42,7 +42,7 @@ Only verified rows of published towns are ever returned (the `public_*` views). 
 ## Run it
 
 ```
-cd backend/db && npm install
+cd website/backend/db && npm install
 export DATABASE_URL_UNPOOLED=postgres://...   # direct Neon URL
 node migrate.mjs && node seed.mjs
 node publish.mjs                     # see status
@@ -53,7 +53,7 @@ cp .env.example .env.local           # fill in
 vercel deploy --prod                 # after env vars are set (see below)
 npm run sync-data                    # after rebuilding data/woodbridge_street_index.json
 npm test                             # no DB needed
-DATABASE_URL=... node scripts/dev-server.mjs   # API plus the web app in ../../src on http://localhost:3001
+DATABASE_URL=... node scripts/dev-server.mjs   # API plus the web app in website/ on http://localhost:3001
 ```
 
 Open questions for the owner are in `QUESTIONS.md`.

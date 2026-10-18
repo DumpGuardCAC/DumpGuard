@@ -1,6 +1,6 @@
 /* DumpGuard backend client and the Identify / pickup-day screens.
  *
- * API base: window.DUMPGUARD_API, else /api/v1 (same origin; scripts/dev-server.mjs in backend/api serves both).
+ * API base: window.DUMPGUARD_API, else /api/v1 (same origin; scripts/dev-server.mjs in website/backend/api serves both).
  * Everything the API returns is put on the page with textContent, never innerHTML.
  * Exposes window.DumpGuard (api, request, setTown, showMaterial, DOM helpers) for the report form, map and photo model scripts.
  */

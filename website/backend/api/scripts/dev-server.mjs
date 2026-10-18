@@ -1,4 +1,4 @@
-// Local dev server: the API under /api/v1 plus the static web app from ../../src on one origin, so the page needs no CORS.
+// Local dev server: the API under /api/v1 plus the static web app from website/ on one origin, so the page needs no CORS.
 //   DATABASE_URL=postgres://... node scripts/dev-server.mjs [port]
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
@@ -6,7 +6,7 @@ import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { handle } from '../lib/router.mjs';
 
-const root = fileURLToPath(new URL('../../../src/', import.meta.url));
+const root = fileURLToPath(new URL('../../../', import.meta.url));
 const port = Number(process.argv[2] ?? 3001);
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json' };
 

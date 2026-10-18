@@ -1,6 +1,6 @@
 /* Photo recognition for the Identify page.
  *
- * The model (src/model, MobileNetV3-Large, about 6 MB) runs in the browser with TensorFlow.js. The photo is read from the
+ * The model (website/model, MobileNetV3-Large, about 6 MB) runs in the browser with TensorFlow.js. The photo is read from the
  * chosen file, drawn to a canvas and classified on this device. It is never uploaded and never sent to the API; only the
  * predicted material class is used, to look up the town's rules. TensorFlow.js is loaded the first time a photo is picked.
  *

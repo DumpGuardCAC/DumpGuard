@@ -5,7 +5,7 @@ Postgres schema for Neon, plain SQL migrations, and a seed script that loads `da
 ## Run it
 
 ```
-cd backend/db
+cd website/backend/db
 npm install
 set DATABASE_URL_UNPOOLED=postgres://...   (the DIRECT Neon URL, no -pooler in the host)
 node migrate.mjs

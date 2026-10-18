@@ -1,9 +1,14 @@
-"""Merge data/towns_research_v2.json (primary-source pass, falling back to v1) into data/towns.json.
+"""Merge data/towns_research_v3.json (preferred) or v2/v1 into data/towns.json.
 Rows that parse cleanly become 'verified'; everything else is kept as 'needs_verification' so it stays hidden.
 Clean = a named weekday plus: every week | every other week with an anchor date | 1st/3rd style monthly | a June-August summer
 extra day | a list of exact dates, and a 2026 or 'standing' source. Idempotent: re-running replaces the merged towns."""
 import json, os, re, datetime as dt
-SRC = 'data/towns_research_v2.json' if os.path.exists('data/towns_research_v2.json') else 'data/towns_research.json'
+if os.path.exists('data/towns_research_v3.json'):
+    SRC = 'data/towns_research_v3.json'
+elif os.path.exists('data/towns_research_v2.json'):
+    SRC = 'data/towns_research_v2.json'
+else:
+    SRC = 'data/towns_research.json'
 R = json.load(open(SRC, encoding='utf8'))
 T = json.load(open('data/towns.json', encoding='utf8'))
 TODAY = '2026-10-18'
@@ -11,7 +16,7 @@ DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'satur
 BY = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 UNTIL = '20270131'
-HOLD = {('bradley-beach', 'trash')}  # Zone 3 boundary text duplicates Zone 1; needs a human
+HOLD = set()  # bradley-beach trash now uses Zone 1/2/3 labels only (v3); street map still unpublished
 slug = lambda s: re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
 
 
@@ -41,6 +46,14 @@ def split_head(text):
     if not m:
         return text.strip(' .'), ''
     return text[:m.start()].strip(' .'), text[m.end():].strip(' ;:.')
+
+
+def split_zone(text):
+    """(label, description) for an area_note; a generic head like 'Exception' is replaced by the text after it."""
+    head, rest = split_head(text)
+    if head.lower().rstrip('s') in ('exception', 'note') and rest:
+        return head + ': ' + rest[:70].rstrip(' ,;'), rest
+    return head, rest
 
 
 def summer(text):
@@ -101,7 +114,7 @@ for town, v in R.items():
         plan.append((s, wds, c))
     zoned = {}
     for st in ('trash', 'recycling', 'bulk'):
-        heads = {split_head(s['area_note'] or '')[0].lower() for s, w, c in plan if s['stream'] == st and c and c['kind'] != 'D'}
+        heads = {split_zone(s['area_note'] or '')[0].lower() for s, w, c in plan if s['stream'] == st and c and c['kind'] != 'D'}
         zoned[st] = len(heads) > 1
     rows_v = []
     n_ok = n_hold = 0
@@ -123,7 +136,7 @@ for town, v in R.items():
             continue
         key, note = None, ''
         if zoned.get(st):
-            head, rest = split_head(text)
+            head, rest = split_zone(text)
             key = f"{st}:{slug(head)[:90]}"
             note = (head + (': ' + rest if rest else ''))[:500]
         for wd in wds:
@@ -146,11 +159,25 @@ for town, v in R.items():
             rows_v.append(row)
             T['schedules'].append(row)
         n_ok += 1
-    for (st, text), g in iso_groups.items():
-        T['schedules'].append({'region': town, 'stream': st, 'source_url': g['source_url'], 'weekday': g['wd'], 'week_pattern': 'custom', 'area_key': None,
-                               'area_note': '', 'dtstart': None, 'rrule': None, 'overrides': [], 'dates': g['dates'],
-                               'notes_en': text.rstrip('.') + '.' + tail, 'notes_es': '', 'status': 'verified', 'last_verified': TODAY})
-        n_ok += 1
+    ZONE = re.compile(r'(zones?|areas?|sections?|districts?|wards?|sides?|east|west|north|south)', re.I)
+    WIDE = re.compile(r'^(all|borough|village|town|township)', re.I)
+    for st in {k[0] for k in iso_groups}:
+        gs = [(t, g) for (s2, t), g in iso_groups.items() if s2 == st]
+        zone_heads = {t for t, g in gs if ZONE.search(split_head(t)[0]) and not WIDE.match(split_head(t)[0])}
+        for t, g in gs:
+            is_zone = t in zone_heads
+            hold = is_zone and len(zone_heads) < 2  # a lone zone's dates would show to every address
+            head, rest = split_head(t)
+            key = f"{st}:{slug(head)[:90]}" if is_zone and not hold else None
+            note = (head + (': ' + rest if rest else ''))[:500] if key else ''
+            dates = ', '.join(x['date'] for x in g['dates'])
+            T['schedules'].append({'region': town, 'stream': st, 'source_url': g['source_url'], 'weekday': g['wd'], 'week_pattern': 'custom',
+                                   'area_key': key, 'area_note': note, 'dtstart': None, 'rrule': None, 'overrides': [],
+                                   'dates': g['dates'] if not hold else [],
+                                   'notes_en': t.rstrip('.') + '.' + (f' Dates: {dates}.' if hold else '') + tail, 'notes_es': '',
+                                   'status': 'needs_verification' if hold else 'verified', 'last_verified': None if hold else TODAY})
+            if hold: n_hold += 1
+            else: n_ok += 1
     # holiday overrides: attach each to the verified rows it can actually move
     for o in v.get('overrides') or []:
         r = o['reason'].lower()

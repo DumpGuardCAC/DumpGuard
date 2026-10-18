@@ -127,3 +127,5 @@ footer b{font-family:Belleza,serif;font-size:1.4rem;color:var(--slate);display:b
 }
 
 .seg{display:inline-flex;border:1px solid #cbd5e1;border-radius:999px;padding:3px;margin-bottom:18px;gap:2px}.seg button{border:0;background:transparent;padding:8px 20px;border-radius:999px;font:inherit;cursor:pointer;color:var(--muted)}.seg button[aria-pressed=true]{background:var(--blue);color:#fff}
+.navlang{font:inherit;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:inherit;background:transparent;border:1px solid currentColor;border-radius:999px;padding:4px 10px;cursor:pointer;width:auto}.navlang option{color:#111;text-transform:none}
+@media(max-width:560px){.navlang{font-size:.62rem;padding:3px 8px}}

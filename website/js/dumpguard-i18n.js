@@ -187,31 +187,35 @@
   }
   function queue() { if (!queued) { queued = true; setTimeout(apply, 40); } }
 
-  // ---- language button in the nav (drives the same select the Identify page uses) ----
+  // ---- language dropdown in the nav (drives the same select the Identify page uses) ----
   var toggle = null;
-  function syncToggle() { if (toggle) toggle.textContent = DG.lang() === 'es' ? 'English' : 'Español'; }
+  function syncToggle() { if (toggle) toggle.value = DG.lang(); }
   function addToggle() {
     var ul = document.querySelector('#nav ul');
     if (!ul) return;
     var li = document.createElement('li');
-    toggle = document.createElement('a');
-    toggle.setAttribute('role', 'button'); toggle.setAttribute('tabindex', '0'); toggle.setAttribute('lang', DG.lang() === 'es' ? 'en' : 'es');
-    var flip = function () {
+    toggle = document.createElement('select');
+    toggle.id = 'navlang'; toggle.className = 'navlang'; toggle.setAttribute('aria-label', 'Language / Idioma');
+    [['en', 'English'], ['es', 'Español']].forEach(function (o) {
+      var op = document.createElement('option'); op.value = o[0]; op.textContent = o[1]; op.lang = o[0]; toggle.appendChild(op);
+    });
+    toggle.addEventListener('change', function () {
       var sel = document.getElementById('lang');
       if (!sel) return;
-      sel.value = DG.lang() === 'es' ? 'en' : 'es';
+      sel.value = toggle.value;
       sel.dispatchEvent(new Event('change', { bubbles: true }));
-    };
-    toggle.addEventListener('click', function (e) { e.preventDefault(); flip(); });
-    toggle.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+    });
     li.appendChild(toggle);
     ul.insertBefore(li, ul.lastElementChild);
+    // the nav dropdown replaces the one on the Identify page
+    var old = document.getElementById('lang');
+    if (old) { old.style.display = 'none'; var lab = document.querySelector('label[for="lang"]'); if (lab) lab.style.display = 'none'; }
     syncToggle();
   }
 
   function init() {
     addToggle();
-    document.addEventListener('change', function (e) { if (e.target && e.target.id === 'lang') queue(); });
+    document.addEventListener('change', function (e) { if (e.target && (e.target.id === 'lang' || e.target.id === 'navlang')) queue(); });
     observer = new MutationObserver(queue);
     apply();
   }

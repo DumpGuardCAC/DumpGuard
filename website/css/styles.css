@@ -118,7 +118,7 @@ footer b{font-family:Belleza,serif;font-size:1.4rem;color:var(--slate);display:b
 @media(max-width:560px){
   nav{flex-wrap:wrap;justify-content:center;row-gap:6px;padding-top:calc(10px + env(safe-area-inset-top,0px));padding-bottom:10px}
   nav .wordmark img{height:34px!important}
-  nav ul{width:100%;justify-content:space-between;gap:0;margin:0;padding:0}
+  nav ul{width:100%;justify-content:center;flex-wrap:wrap;gap:4px 14px;margin:0;padding:0}
   nav li{list-style:none}
   nav a{font-size:.62rem;letter-spacing:.06em;padding-bottom:3px}
   .pill{padding:5px 12px!important}

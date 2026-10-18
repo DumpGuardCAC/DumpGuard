@@ -6,11 +6,12 @@
     <title>DumpGuard</title>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Belleza&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:,">
 </head>
 <body>
 
 <nav id="nav">
-    <img class="logo" data-go="home" src="images/logo.png" alt="DumpGuard home">
+    <a class="wordmark" data-go="home" href="#">DumpGuard</a>
     <ul>
         <li><a data-go="home">Home</a></li>
         <li><a data-go="identify">Identify</a></li>
@@ -74,7 +75,7 @@
             <label for="q">Search an item</label>
             <input id="q" placeholder="couch, TV, battery, 3D printed parts…">
             <label>Or use a photo</label>
-            <label class="drop" for="photo"><span id="droptxt">📷 Take or upload a photo</span><input id="photo" type="file" accept="image/*" capture="environment" hidden></label>
+            <label class="drop" for="photo"><span id="droptxt">Take or upload a photo</span><input id="photo" type="file" accept="image/*" capture="environment" hidden></label>
             <div id="pick" style="display:none"><label for="cat">Not sure. Pick a category</label><select id="cat"></select></div>
         </div>
         <div class="card" id="result"><p class="empty">Your disposal guide will appear here.</p></div>
@@ -95,7 +96,7 @@
         </div>
         <div>
             <label>Photo (optional)</label>
-            <label class="drop" for="rphoto" style="margin-top:0"><span id="rtxt">📷 Take or upload a picture</span><input id="rphoto" type="file" accept="image/*" capture="environment" hidden></label>
+            <label class="drop" for="rphoto" style="margin-top:0"><span id="rtxt">Take or upload a picture</span><input id="rphoto" type="file" accept="image/*" capture="environment" hidden></label>
             <p class="ok" id="priv" style="display:none">Privacy check: location data removed from photo.</p>
             <p class="sm">Please don't include people, license plates, or names in your photo or notes.</p><br>
             <button class="btn dark" id="send">Submit report</button>
@@ -113,10 +114,10 @@
     <p class="lead">See where illegal dumping has been reported and whether officials have addressed it. Public locations are approximate, and photos and details are only visible to local staff.</p>
     <div class="row"><select id="mfilter" aria-label="Filter by type"></select>
         <select id="mtown" aria-label="Filter by town"></select><select id="mstat" aria-label="Status"><option value="">All statuses</option><option value="new">New</option><option value="noticed">Noticed</option><option value="progress">In progress</option><option value="resolved">Resolved</option></select>
-        <span class="sm" id="mcount"></span><button class="btn" id="tltoggle" style="border:1px solid #cbd5e1;padding:10px 18px;margin-left:auto">Town labels: off</button><button class="btn dark" id="gtoggle" style="padding:10px 22px">🔒 Government sign-in</button></div>
+        <span class="sm" id="mcount"></span><button class="btn" id="tltoggle" style="border:1px solid #cbd5e1;padding:10px 18px;margin-left:auto">Town labels: off</button><button class="btn dark" id="gtoggle" style="padding:10px 22px">Government sign-in</button></div>
     <div id="lock" class="card lockcard" style="display:none"><h3>Government access</h3><p class="sm">Staff can see exact locations, photos and details, and update report status.</p>
-        <label for="gcode">Access code</label><input id="gcode" type="password" placeholder="Demo code: GOV2026"><p class="err" id="gerr"></p><button class="btn dark full" id="gunlock">Unlock</button></div>
-    <div class="notice" id="mbanner">Street map tiles are blocked in this preview. Open the file locally to see the full street map.</div>
+        <label for="gcode">Access code</label><input id="gcode" type="password" placeholder="Staff access code" autocomplete="off"><p class="err" id="gerr"></p><button class="btn dark full" id="gunlock">Unlock</button></div>
+    <div class="notice" id="mbanner">Street map tiles could not load. Report areas still show.</div>
     <div class="gwrap"><div class="mapbox" id="gmap"></div><div class="card" id="gpanel"></div></div>
     <div id="glist"></div>
 </section></div>
@@ -186,6 +187,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 <script src="js/dumpguard-api.js"></script>
+<script src="js/dumpguard-model.js"></script>
+<script src="js/dumpguard-report.js"></script>
+<script src="js/dumpguard-map.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

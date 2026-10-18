@@ -32,7 +32,7 @@
     try { history.replaceState(null, '', '#' + v); } catch (e) { /* ignore */ }
     window.scrollTo(0, 0);
     navStyle();
-    if (v === 'login') cap('lcap');
+    if (v === 'login') { cap('lcap'); setMode(false); }
     if (v === 'dash') dash();
     if (v === 'map') setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 60);
   }
@@ -69,7 +69,32 @@
     S.set('dg_s', email);
     go('dash');
   }
+  // Government tab: same screen, username + password, opens the Map in staff view.
+  var gov = false;
+  function setMode(g) {
+    gov = g; $('lerr').textContent = ''; $('le').value = ''; $('lp').value = '';
+    $('mres').setAttribute('aria-pressed', String(!g)); $('mgov').setAttribute('aria-pressed', String(g));
+    $('lh').textContent = g ? 'Government sign-in' : 'Welcome back';
+    $('lsub').textContent = g ? 'Staff can see exact locations, photos and details, and update report status.' : 'Accounts are stored on this device only';
+    $('lle').textContent = g ? 'Username' : 'Email or username';
+    $('le').setAttribute('autocomplete', 'username'); $('le').setAttribute('inputmode', g ? 'text' : 'email');
+    $('lhuman').style.display = g ? 'none' : ''; $('lalts').style.display = g ? 'none' : '';
+    $('lgo').textContent = g ? 'Sign in' : 'Log in';
+  }
+  $('mres').onclick = function () { setMode(false); };
+  $('mgov').onclick = function () { setMode(true); };
+  window.addEventListener('dg-gov-login', function () { go('login'); setMode(true); });
+  async function govLogin() {
+    var e = $('lerr'), u = $('le').value.trim(), pw = $('lp').value;
+    if (!u || !pw) return void (e.textContent = 'Enter the username and password.');
+    $('lgo').disabled = true;
+    var r = await DG.staffLogin(u, pw);
+    $('lgo').disabled = false;
+    if (!r.ok) return void (e.textContent = r.message);
+    e.textContent = ''; $('le').value = ''; $('lp').value = ''; go('map');
+  }
   $('lgo').onclick = async function () {
+    if (gov) return govLogin();
     var e = $('lerr'), em = $('le').value.trim().toLowerCase();
     if (em === DEMO_USER) em = DEMO_EMAIL;
     if (!emailOk(em)) return void (e.textContent = 'Enter a valid email.');

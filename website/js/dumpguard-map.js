@@ -193,31 +193,27 @@
   }
 
   // ---- sign in ----
-  function setLock(open) { $('lock').style.display = open ? 'block' : 'none'; }
   function signOut() {
     token = null; staff = null; selected = null;
     $('gtoggle').textContent = 'Government sign-in';
-    $('gcode').value = ''; $('guser').value = '';
     clear($('glist'));
     redraw();
   }
-  function unlock() {
-    var user = $('guser').value.trim(), pw = $('gcode').value, err = $('gerr');
-    err.textContent = '';
-    if (!user || !pw) { err.textContent = 'Enter the username and password.'; return; }
+  // Called from the Log in screen's Government tab. Resolves to { ok, message }.
+  function staffLogin(user, pw) {
     token = user + ':' + pw;
-    refreshStaff().then(function (status) {
+    return refreshStaff().then(function (status) {
       if (status === 200) {
-        setLock(false); $('gcode').value = ''; $('guser').value = '';
         $('gtoggle').textContent = 'Sign out';
         $('mbanner').style.display = 'none';
         redraw();
-        return;
+        return { ok: true };
       }
       token = null;
-      err.textContent = status === 429 ? 'Too many attempts. Try again later.' : 'That username or password was not accepted.';
-    }).catch(function () { token = null; err.textContent = 'Could not reach the server.'; });
+      return { ok: false, message: status === 429 ? 'Too many attempts. Try again later.' : 'That username or password was not accepted.' };
+    }).catch(function () { token = null; return { ok: false, message: 'Could not reach the server.' }; });
   }
+  DG.staffLogin = staffLogin;
 
   function init() {
     if (!$('gmap')) return;
@@ -234,9 +230,7 @@
     $('tltoggle').addEventListener('click', function () {
       labelsOn = !labelsOn; $('tltoggle').textContent = 'Town labels: ' + (labelsOn ? 'on' : 'off'); renderLabels();
     });
-    $('gtoggle').addEventListener('click', function () { if (token) signOut(); else setLock($('lock').style.display === 'none'); });
-    $('gunlock').addEventListener('click', unlock);
-    $('gcode').addEventListener('keydown', function (e) { if (e.key === 'Enter') unlock(); });
+    $('gtoggle').addEventListener('click', function () { if (token) signOut(); else window.dispatchEvent(new Event('dg-gov-login')); });
 
     refreshPublic().then(function () {
       fillFilters(); redraw();

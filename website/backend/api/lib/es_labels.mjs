@@ -42,8 +42,12 @@ const PLACES = [
   [/^Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St$/, 'Cookman Ave y Lake Ave entre Grand Ave y Heck St; todas las calles este y oeste entre Ocean Ave y Kingsley St, incluidas estas'],
   [/^All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave$/, 'Toda Main Street; el distrito comercial central delimitado por Main St, Summerfield Ave, Lake Ave y Grand Ave'],
 ];
+const MES = { Jan: 'ene', Feb: 'feb', Mar: 'mar', Apr: 'abr', May: 'may', Jun: 'jun', Jul: 'jul', Aug: 'ago', Sep: 'sep', Oct: 'oct', Nov: 'nov', Dec: 'dic' };
 function street(s) {
   for (const [re, es] of PLACES) if (re.test(s)) return es;
+  if (s === 'locate street in Green Booklet 2026 alphabetical list') return 'busque su calle en la lista alfabética del Folleto Verde 2026';
+  const d = /^2026 dates: (.*)$/.exec(s);
+  if (d) return 'fechas de 2026: ' + d[1].replace(/b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)b/g, (m) => MES[m]);
   return s;
 }
 

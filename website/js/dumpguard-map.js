@@ -2,7 +2,7 @@
  *
  * Public view: coarse areas (about 500 m) that have 3 or more reports, plus a count per town. Exact points, photos and
  * descriptions never reach the public endpoint.
- * Government view: sign in with the staff access token (sent as a Bearer header, kept in memory only, never stored) to
+ * Government view: sign in with the staff username and password (sent as a Bearer header, kept in memory only, never stored) to
  * see exact points, details and photos, and to update a report's status.
  */
 (function () {
@@ -197,31 +197,30 @@
   function signOut() {
     token = null; staff = null; selected = null;
     $('gtoggle').textContent = 'Government sign-in';
-    $('gcode').value = '';
+    $('gcode').value = ''; $('guser').value = '';
     clear($('glist'));
     redraw();
   }
   function unlock() {
-    var code = $('gcode').value.trim(), err = $('gerr');
+    var user = $('guser').value.trim(), pw = $('gcode').value, err = $('gerr');
     err.textContent = '';
-    if (!code) { err.textContent = 'Enter the access code.'; return; }
-    token = code;
+    if (!user || !pw) { err.textContent = 'Enter the username and password.'; return; }
+    token = user + ':' + pw;
     refreshStaff().then(function (status) {
       if (status === 200) {
-        setLock(false); $('gcode').value = '';
+        setLock(false); $('gcode').value = ''; $('guser').value = '';
         $('gtoggle').textContent = 'Sign out';
         $('mbanner').style.display = 'none';
         redraw();
         return;
       }
       token = null;
-      err.textContent = status === 429 ? 'Too many attempts. Try again later.' : 'That code was not accepted.';
+      err.textContent = status === 429 ? 'Too many attempts. Try again later.' : 'That username or password was not accepted.';
     }).catch(function () { token = null; err.textContent = 'Could not reach the server.'; });
   }
 
   function init() {
     if (!$('gmap')) return;
-    $('gcode').placeholder = 'Staff access code';
     $('mbanner').style.display = 'none';
     map = L.map('gmap', { scrollWheelZoom: false }).setView([40.45, -74.25], 10);
     var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);

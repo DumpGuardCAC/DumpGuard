@@ -116,7 +116,8 @@
         <select id="mtown" aria-label="Filter by town"></select><select id="mstat" aria-label="Status"><option value="">All statuses</option><option value="new">New</option><option value="noticed">Noticed</option><option value="progress">In progress</option><option value="resolved">Resolved</option></select>
         <span class="sm" id="mcount"></span><button class="btn" id="tltoggle" style="border:1px solid #cbd5e1;padding:10px 18px;margin-left:auto">Town labels: off</button><button class="btn dark" id="gtoggle" style="padding:10px 22px">Government sign-in</button></div>
     <div id="lock" class="card lockcard" style="display:none"><h3>Government access</h3><p class="sm">Staff can see exact locations, photos and details, and update report status.</p>
-        <label for="gcode">Access code</label><input id="gcode" type="password" placeholder="Staff access code" autocomplete="off"><p class="err" id="gerr"></p><button class="btn dark full" id="gunlock">Unlock</button></div>
+        <label for="guser">Username</label><input id="guser" autocomplete="username" autocapitalize="none" spellcheck="false">
+        <label for="gcode">Password</label><input id="gcode" type="password" autocomplete="current-password"><p class="err" id="gerr"></p><button class="btn dark full" id="gunlock">Sign in</button></div>
     <div class="notice" id="mbanner">Street map tiles could not load. Report areas still show.</div>
     <div class="gwrap"><div class="mapbox" id="gmap"></div><div class="card" id="gpanel"></div></div>
     <div id="glist"></div>

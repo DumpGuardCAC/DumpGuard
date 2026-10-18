@@ -3,7 +3,9 @@ Rows that parse cleanly become 'verified'; everything else is kept as 'needs_ver
 Clean = a named weekday plus: every week | every other week with an anchor date | 1st/3rd style monthly | a June-August summer
 extra day | a list of exact dates, and a 2026 or 'standing' source. Idempotent: re-running replaces the merged towns."""
 import json, os, re, datetime as dt
-if os.path.exists('data/towns_research_v4.json'):
+if os.path.exists("data/towns_research_v5.json"):
+    SRC = "data/towns_research_v5.json"
+elif os.path.exists("data/towns_research_v4.json"):
     SRC = 'data/towns_research_v4.json'
 elif os.path.exists('data/towns_research_v3.json'):
     SRC = 'data/towns_research_v3.json'

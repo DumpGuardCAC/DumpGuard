@@ -327,10 +327,10 @@
       "address": "339 Roosevelt Avenue, Carteret, NJ 07008",
       "zip": "07008",
       "phone": "732-541-3881",
-      "hours": "7am-3pm Mon-Fri; 7am-11am Sat",
+      "hours": "Monday–Friday 7:00 a.m.–3:00 p.m.; Saturday 7:00 a.m.–11:00 a.m.",
       "residents_only": false,
       "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "notes_en": "Accepts (as printed by the town): Recycling drop-off at DPW/Recycling Center (see borough Recycling Information).",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.carteret.net/publicworks/",
@@ -345,8 +345,11 @@
       "phone": "732-514-1277",
       "hours": "Cardboard Mon-Fri 7:00am-2:30pm; DPW Mon-Fri 6:30am-3:00pm",
       "residents_only": true,
-      "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "accepts": [
+        "cardboard_paper",
+        "ewaste_hazard"
+      ],
+      "notes_en": "Accepts (as printed by the town): DPW garage drop-off: corrugated cardboard (flattened; Mon-Fri 7:00 a.m.-2:30 p.m.); electronics (computers, fax, laptops, monitors, printer/scanners, TVs - residential only); fluorescent lamps; rechargeable/button-cell batteries. No after-hours dumping.",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.hpboro.com/departments/public-works/recycling-1183",
@@ -372,16 +375,15 @@
       "key": "old-bridge-recycling-drop-off-center-township-munic",
       "region": "old-bridge",
       "name": "Recycling Drop-Off Center (Township Municipal Complex, behind Animal Shelter)",
-      "address": "1 Old Bridge Plaza, Old Bridge, NJ",
-      "zip": null,
+      "address": "1 Old Bridge Plaza, Old Bridge, NJ 08857 (behind Animal Shelter)",
+      "zip": "08857",
       "phone": "732-721-5600 ext. 6140",
-      "hours": "Tuesday and Thursday 7:00 a.m.–3:00 p.m.; Saturday 8:00 a.m.–12:00 p.m.",
+      "hours": "Tuesdays & Thursdays 7:00 a.m.–3:00 p.m.; Saturdays 8:00 a.m.–12:00 p.m.",
       "residents_only": false,
       "accepts": [
-        "cardboard_paper",
-        "metal"
+        "cardboard_paper"
       ],
-      "notes_en": "Accepts (as printed by the town): Extra cardboard can be brought to the Recycling Center (2026 curbside recycling PDF).",
+      "notes_en": "Accepts (as printed by the town): Township Recycling Drop-Off Center; extra cardboard accepted (2026 curbside recycling PDF / recycling-information page).",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.oldbridge.com/page/recycling-information/",
@@ -495,7 +497,7 @@
       "hours": "Monday–Friday 8:30 a.m.–4:00 p.m.; Saturday until 11:00 a.m. (recycling only). 2026 calendar also lists Mon–Fri 6:00 a.m.–4:00 p.m. and Sat 6:00 a.m.–11:00 a.m. for recycling; Nov–Dec Sat–Sun 8:00 a.m.–12:00 p.m. for leaves and brush.",
       "residents_only": false,
       "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "notes_en": "Accepts (as printed by the town): Borough Yard open for recycling (Mon-Fri 8:30-4:00; Saturday until 11:00 a.m.).",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.ahnj.com/ahnj/Departments/Public%20Works/",
@@ -505,13 +507,16 @@
       "key": "bradley-beach-trash-recycling-lot",
       "region": "bradley-beach",
       "name": "Trash/Recycling Lot",
-      "address": "1011 Main Street, Bradley Beach, NJ",
-      "zip": null,
+      "address": "1011 Main Street, Bradley Beach, NJ 07720",
+      "zip": "07720",
       "phone": "(732) 776-2999 ext. 3101",
       "hours": "Monday, Thursday–Sunday 8:00 a.m.–12:00 p.m.; closed Tuesday and Wednesday; closed when borough closed on holidays",
       "residents_only": true,
-      "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "accepts": [
+        "rigid_plastic",
+        "ewaste_hazard"
+      ],
+      "notes_en": "Accepts (as printed by the town): Trash, recycling, plastic film, brush, yard waste, leaves, electronics (stickers required), and bulk items; proof of residency required.",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.bradleybeachnj.gov/public-works/",
@@ -560,10 +565,10 @@
       "address": "151 Navesink Ave., Highlands, NJ 07732",
       "zip": "07732",
       "phone": "732-872-1224 x250",
-      "hours": "Mon–Fri 7:00 a.m.–3:00 p.m., Sat 7:00 a.m.–12:00 p.m., Sun closed",
+      "hours": "Monday–Friday 7:00 a.m.–3:00 p.m.; Saturday 7:00 a.m.–12:00 p.m.",
       "residents_only": true,
       "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "notes_en": "Accepts (as printed by the town): Convenient Recycling Yard for residents to dispose of recyclables (DPW page).",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://highlandsnj.gov/departments/department-of-public-works/",
@@ -626,8 +631,10 @@
       "phone": null,
       "hours": "Monday–Friday 8:00 a.m.–2:00 p.m.; Saturday 8:00 a.m.–12:00 noon; closed Borough holidays",
       "residents_only": true,
-      "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "accepts": [
+        "ewaste_hazard"
+      ],
+      "notes_en": "Accepts (as printed by the town): Marked recycling containers at Public Works Yard; does not accept electronics (computers/monitors/TVs), motor oils/antifreeze, or paint.",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.littlesilvernj.gov/235/Recycling-Garbage",
@@ -637,13 +644,19 @@
       "key": "matawan-matawan-recycling-center",
       "region": "matawan",
       "name": "Matawan Recycling Center",
-      "address": "62 Main Street, Matawan, NJ",
-      "zip": null,
+      "address": "62 Main Street, Matawan, NJ 07747",
+      "zip": "07747",
       "phone": "732-566-3898",
       "hours": "Monday through Friday 7:00 a.m.–7:00 p.m.; Saturday and Sunday 9:00 a.m.–3:00 p.m.",
       "residents_only": true,
-      "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "accepts": [
+        "cardboard_paper",
+        "glass",
+        "metal",
+        "rigid_plastic",
+        "ewaste_hazard"
+      ],
+      "notes_en": "Accepts (as printed by the town): Commingled bottles (glass & plastic) and cans (no paint cans); flattened corrugated cardboard; newspaper/mixed paper; brush (branches ≤3 in diameter); yard debris (no grass, mulch, wood chips, soil, stones); metals (aluminum/steel, no paint cans); listed electronics. Access card required; no trash/construction debris; no propane tanks; no plastic bags.",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.matawanborough.com/matawan/Borough%20SERVICES/Recycling/Recycling%20Center/",
@@ -653,13 +666,19 @@
       "key": "middletown-middletown-recycling-center",
       "region": "middletown",
       "name": "Middletown Recycling Center",
-      "address": "52 Kanes Lane, Middletown, NJ 07748",
-      "zip": "07748",
+      "address": "52 Kanes Lane, Middletown, NJ",
+      "zip": null,
       "phone": "732-615-2090",
       "hours": "Thursday through Monday 8:30 a.m.–4:30 p.m.; closed Tuesday, Wednesday, and major holidays (New Year's Day, Easter Sunday, Memorial Day, Independence Day, Labor Day, Thanksgiving, Christmas Day)",
       "residents_only": true,
-      "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "accepts": [
+        "cardboard_paper",
+        "glass",
+        "metal",
+        "rigid_plastic",
+        "ewaste_hazard"
+      ],
+      "notes_en": "Accepts (as printed by the town): Motor oil, antifreeze, vegetable cooking oil; lead-acid/rechargeable batteries (not household alkaline); scrap metal; appliances (freon fee); electronics; bulky/rigid plastics; tires (fees); plastic toys; clean plastic bags; EPS/Styrofoam; cans; glass bottles/jars; mixed paper; plastic bottles/containers #1/#2/#5; cardboard; brush; leaves Nov 1–May 31. Residents only; no commercial vehicles.",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
@@ -674,8 +693,13 @@
       "phone": "732-615-2090",
       "hours": "24/7",
       "residents_only": true,
-      "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "accepts": [
+        "cardboard_paper",
+        "glass",
+        "metal",
+        "rigid_plastic"
+      ],
+      "notes_en": "Accepts (as printed by the town): 24/7 satellite: cardboard; mixed paper; plastic bottles/containers #1/#2/#5; aluminum/tin/steel cans; glass bottles/jars; EPS/Styrofoam (specified bins).",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.middletownnj.org/587/Middletown-Recycling-Centers",
@@ -742,8 +766,14 @@
       "phone": "732-530-2770",
       "hours": "Tuesday–Friday 7:05 AM–2:55 PM; Saturday 8:00 AM–2:00 PM; closed Sunday and Monday",
       "residents_only": true,
-      "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "accepts": [
+        "cardboard_paper",
+        "glass",
+        "metal",
+        "rigid_plastic",
+        "ewaste_hazard"
+      ],
+      "notes_en": "Accepts (as printed by the town): Single-stream recyclables (glass bottles/jars, metal cans, mixed paper, cardboard, #1 and #2 plastics); dedicated e-waste container (computers, TVs, monitors, phones, speakers, etc.). Red Bank residents only.",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.redbanknj.org/208/Public-Utilities",
@@ -756,10 +786,13 @@
       "address": "Behind Borough Hall at the foot of Avenue of Two Rivers, next to the municipal boat ramp",
       "zip": null,
       "phone": "732-842-8941",
-      "hours": "Monday–Friday 7:00 AM–5:00 PM; Saturday 8:00 AM–12:00 PM; Sunday 8:00 AM–12:00 PM; closed borough holidays",
-      "residents_only": false,
-      "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "hours": "Monday–Friday 7:00 a.m.–5:00 p.m.; Saturday & Sunday 8:00 a.m.–12:00 p.m.; closed borough holidays",
+      "residents_only": true,
+      "accepts": [
+        "cardboard_paper",
+        "ewaste_hazard"
+      ],
+      "notes_en": "Accepts (as printed by the town): Recycling only (newspapers/mixed paper, cardboard, commingled recyclables); no trash, bulk, brush, or household hazardous waste.",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.rumsonnj.gov/rumson-dpw",
@@ -768,7 +801,7 @@
     {
       "key": "sea-bright-long-branch-recycling-center-sea-bright-",
       "region": "sea-bright",
-      "name": "Long Branch Recycling Center (Sea Bright shared services — electronics only)",
+      "name": "Long Branch Recycling Center (Sea Bright shared services - electronics only)",
       "address": "378 Atlantic Avenue, Long Branch, NJ (opposite Pleasure Bay ball field/playground)",
       "zip": null,
       "phone": "732-842-0099 ext. 136",
@@ -807,7 +840,7 @@
       "hours": "Monday–Friday 7:00 a.m.–3:30 p.m.; Saturday 8:00 a.m.–1:00 p.m.; Sunday 8:00 a.m.–12:00 p.m.",
       "residents_only": false,
       "accepts": [],
-      "notes_en": "Accepted materials are not listed here; call Public Works before you go.",
+      "notes_en": "Accepts (as printed by the town): Borough Recycling Center (see Recycling Collection page / borough calendar).",
       "notes_es": "",
       "status": "verified",
       "source_url": "https://www.westlongbranch.org/1342/Recycling-Collection",
@@ -5714,6 +5747,11 @@
       "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
       "overrides": [
         {
+          "date": "2026-01-19",
+          "to": "2026-01-20",
+          "reason": "Sanitation District A: MLK Day Monday sanitation moved to Tuesday on 2026 calendar"
+        },
+        {
           "date": "2026-02-16",
           "to": "2026-02-17",
           "reason": "Sanitation District A: Presidents Day Monday sanitation moved to Tuesday on 2026 calendar"
@@ -5783,6 +5821,11 @@
       "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
       "overrides": [
         {
+          "date": "2026-01-19",
+          "to": "2026-01-20",
+          "reason": "Sanitation District A: MLK Day Monday sanitation moved to Tuesday on 2026 calendar"
+        },
+        {
           "date": "2026-02-16",
           "to": "2026-02-17",
           "reason": "Sanitation District A: Presidents Day Monday sanitation moved to Tuesday on 2026 calendar"
@@ -5851,6 +5894,11 @@
       "dtstart": "2026-01-05",
       "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
       "overrides": [
+        {
+          "date": "2026-01-19",
+          "to": "2026-01-20",
+          "reason": "Sanitation District A: MLK Day Monday sanitation moved to Tuesday on 2026 calendar"
+        },
         {
           "date": "2026-02-16",
           "to": "2026-02-17",
@@ -6464,7 +6512,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "custom Garbage is privatized in Old Bridge. Residents can hire the garbage company of their choice. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
+      "notes_en": "custom Please note garbage is privatized in Old Bridge. Residents can hire the garbage company of their choice. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -6483,12 +6531,12 @@
         {
           "date": "2026-05-25",
           "to": "2026-05-30",
-          "reason": "Ward 1: Memorial Day recycling moved to Saturday May 30 (2026 ward PDF Monday column May 11, 30*)"
+          "reason": "Ward 1: Memorial Day recycling moved to Saturday May 30 (*May 25 moved to Sat. May 30; Monday column May 11, 30*)"
         },
         {
           "date": "2026-05-25",
           "to": "2026-05-30",
-          "reason": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct): Memorial Day recycling moved to Saturday May 30 (Monday pickup)"
+          "reason": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct): Memorial Day recycling moved to Saturday May 30 (Monday pickup; *May 25 moved to Sat. May 30)"
         }
       ],
       "notes_en": "Ward 1; confirm ward at gis.oldbridge.com (WHAT WARD AM I IN?). Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
@@ -6542,7 +6590,7 @@
         {
           "date": "2026-11-26",
           "to": "2026-11-28",
-          "reason": "Ward 5: Thanksgiving recycling moved to Saturday Nov 28 (2026 ward PDF Thursday column Nov 12, 28*)"
+          "reason": "Ward 5: Thanksgiving recycling moved to Saturday Nov 28 (*Nov. 26 moved to Sat. Nov. 28; Thursday column Nov 12, 28*)"
         }
       ],
       "notes_en": "Ward 5; confirm ward at gis.oldbridge.com. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
@@ -6564,7 +6612,7 @@
         {
           "date": "2026-12-25",
           "to": "2026-12-26",
-          "reason": "Ward 6: Christmas recycling moved to Saturday Dec 26 (2026 ward PDF Friday column Dec 11, 26*)"
+          "reason": "Ward 6: Christmas recycling moved to Saturday Dec 26 (*Dec. 25 moved to Sat. Dec. 26; Friday column Dec 11, 26*)"
         }
       ],
       "notes_en": "Ward 6; confirm ward at gis.oldbridge.com. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
@@ -6586,7 +6634,7 @@
         {
           "date": "2026-05-25",
           "to": "2026-05-30",
-          "reason": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct): Memorial Day recycling moved to Saturday May 30 (Monday pickup)"
+          "reason": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct): Memorial Day recycling moved to Saturday May 30 (Monday pickup; *May 25 moved to Sat. May 30)"
         }
       ],
       "notes_en": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct) collected Mondays though mapped in Ward 3. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
@@ -6613,63 +6661,31 @@
     {
       "region": "perth-amboy",
       "stream": "trash",
-      "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
-      "weekday": 1,
+      "source_url": "https://www.perthamboynj.org/government/departments/public_works",
+      "weekday": null,
       "week_pattern": "custom",
       "area_key": null,
       "area_note": "",
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "every week NORTH SIDE (Areas above the Conrail train tracks). The Conrail train tracks serve as the official boundary separating the North and South sections of the city for trash collection scheduling. If a holiday falls on your regularly scheduled garbage collection day, service will resume on the next scheduled collection day. Public Works: 732-826-2010. If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
+      "notes_en": "custom City of Perth Amboy Department of Public Works collects residential garbage, but a 2026 garbage/holiday sanitation calendar PDF is not published on the Public Works page as of research (https://www.perthamboynj.org/government/departments/public_works). Do not use 2025 North/South Conrail weekdays as verified 2026 schedule. Public Works: 732-826-2010. If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
     },
     {
       "region": "perth-amboy",
-      "stream": "trash",
-      "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
-      "weekday": 4,
+      "stream": "recycling",
+      "source_url": "https://www.perthamboynj.org/government/departments/public_works/recycling_guidelines",
+      "weekday": null,
       "week_pattern": "custom",
       "area_key": null,
       "area_note": "",
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "every week NORTH SIDE (Areas above the Conrail train tracks). The Conrail train tracks serve as the official boundary separating the North and South sections of the city for trash collection scheduling. If a holiday falls on your regularly scheduled garbage collection day, service will resume on the next scheduled collection day. Public Works: 732-826-2010. If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
-      "notes_es": "",
-      "status": "needs_verification",
-      "last_verified": null
-    },
-    {
-      "region": "perth-amboy",
-      "stream": "trash",
-      "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
-      "weekday": 2,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
-      "overrides": [],
-      "notes_en": "every week SOUTH SIDE (Areas below the Conrail train tracks). Same Conrail boundary. Holiday: resume next scheduled collection day. Public Works: 732-826-2010. If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
-      "notes_es": "",
-      "status": "needs_verification",
-      "last_verified": null
-    },
-    {
-      "region": "perth-amboy",
-      "stream": "trash",
-      "source_url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_11204924/File/Departments/Public%20Works/2025/Holiday%20Annual%20Guidelines%20Dates%202025_LLdocx.pdf",
-      "weekday": 5,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
-      "overrides": [],
-      "notes_en": "every week SOUTH SIDE (Areas below the Conrail train tracks). Same Conrail boundary. Holiday: resume next scheduled collection day. Public Works: 732-826-2010. If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
+      "notes_en": "custom Curbside recycling weekdays are not published as standing plain text on https://www.perthamboynj.org/government/departments/public_works/recycling_guidelines (page links a PDF; no Monday-Friday collection days stated in page body). Do not invent weekdays. Public Works: 732-826-2010. If holiday falls on regularly scheduled garbage day, service resumes next scheduled collection day. Other holiday and weather changes are not listed here; check https://www.perthamboynj.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -6704,7 +6720,7 @@
         {
           "date": "2026-05-25",
           "to": "2026-05-30",
-          "reason": "Memorial Day Monday recycling -> Saturday May 30 (2026 map PDF)"
+          "reason": "Monday sections (Sec 4, 5, 6, 7): Memorial Day recycling moved to Saturday May 30 (2026 map: \"Memorial Day: Pick-up on May 30\"; May 11 25*)"
         }
       ],
       "notes_en": "Sec 4, 5, 6, 7. MONDAYS bordered by North Randolphville Road on the north; Overbrook Avenue on the east; River Road on the south; William Street and Baekland Avenue on the west. Public Works: 732-562-2390. If collection day falls on a holiday, collection rescheduled for the following Saturday. Other holiday and weather changes are not listed here; check https://www.piscatawaynj.org/.",
@@ -7406,7 +7422,7 @@
         {
           "date": "2026-11-26",
           "to": "2026-11-28",
-          "reason": "Thursday recycling district: Thanksgiving makeup 2026-11-28 (Curbside 2026 table)"
+          "reason": "Thursday recycling district: Thanksgiving makeup 2026-11-28 (Curbside NOTES: \"No Collection on Thanksgiving Day\" / \"will be on 11/28/26\")"
         }
       ],
       "notes_en": "Thursday recycling district; street assignment via Recycling Districts PDF linked from Curbside page. Public Works: 908-755-2187. No collection Thanksgiving or Christmas; makeup dates on calendar table. Other holiday and weather changes are not listed here; check https://www.southplainfieldnj.com.",
@@ -7428,7 +7444,7 @@
         {
           "date": "2026-12-25",
           "to": "2026-12-26",
-          "reason": "Friday recycling district: Christmas makeup 2026-12-26 (Curbside 2026 table)"
+          "reason": "Friday recycling district: Christmas makeup 2026-12-26 (Curbside NOTES: \"No Collection on Christmas Day\" / \"will beon 12/26/26\")"
         }
       ],
       "notes_en": "Friday recycling district; street assignment via Recycling Districts PDF linked from Curbside page. Public Works: 908-755-2187. No collection Thanksgiving or Christmas; makeup dates on calendar table. Other holiday and weather changes are not listed here; check https://www.southplainfieldnj.com.",
@@ -7610,6 +7626,38 @@
       "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
       "overrides": [],
       "notes_en": "Section II; limit two items per pick-up; effective January 1, 2018 (still on current Trash/Recycling page). Public Works: 732-583-4200. If recycling or garbage day falls on New Year's Day, Thanksgiving, or Christmas Day, pick-up on the next scheduled pick-up day. Other holiday and weather changes are not listed here; check https://www.aberdeennj.org.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "aberdeen",
+      "stream": "recycling",
+      "source_url": "https://www.aberdeennj.org/DocumentCenter/View/3686",
+      "weekday": 3,
+      "week_pattern": "biweekly",
+      "area_key": "recycling:section-i-cliffwood-beach-cliffwood-river-gardens-oakshades-freneau-heritage-estates",
+      "area_note": "Section I (Cliffwood Beach, Cliffwood, River Gardens, Oakshades, Freneau, Heritage Estates): biweekly Wednesday per 2026 Community Calendar",
+      "dtstart": "2026-01-07",
+      "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=WE;UNTIL=20270131",
+      "overrides": [],
+      "notes_en": "Section I (Cliffwood Beach, Cliffwood, River Gardens, Oakshades, Freneau, Heritage Estates); biweekly Wednesday per 2026 Community Calendar. Public Works: 732-583-4200. If recycling or garbage day falls on New Year's Day, Thanksgiving, or Christmas Day, pick-up on the next scheduled pick-up day. Other holiday and weather changes are not listed here; check https://www.aberdeennj.org.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "aberdeen",
+      "stream": "recycling",
+      "source_url": "https://www.aberdeennj.org/DocumentCenter/View/3686",
+      "weekday": 3,
+      "week_pattern": "biweekly",
+      "area_key": "recycling:section-ii-strathmore-high-school-area-woodbrook-drive-randall-way-storyland-santa-fe-heat",
+      "area_note": "Section II (Strathmore, High School Area, Woodbrook Drive, Randall Way, Storyland, Santa Fe, Heather Glenn): biweekly Wednesday per 2026 Community Calendar",
+      "dtstart": "2026-01-14",
+      "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=WE;UNTIL=20270131",
+      "overrides": [],
+      "notes_en": "Section II (Strathmore, High School Area, Woodbrook Drive, Randall Way, Storyland, Santa Fe, Heather Glenn); biweekly Wednesday per 2026 Community Calendar. Public Works: 732-583-4200. If recycling or garbage day falls on New Year's Day, Thanksgiving, or Christmas Day, pick-up on the next scheduled pick-up day. Other holiday and weather changes are not listed here; check https://www.aberdeennj.org.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8027,7 +8075,7 @@
       "dtstart": "2026-01-05",
       "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "Zone 1. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "Zone 1. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8043,7 +8091,7 @@
       "dtstart": "2026-01-01",
       "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "Zone 1. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "Zone 1. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8059,7 +8107,7 @@
       "dtstart": "2026-01-06",
       "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "Zone 2. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "Zone 2. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8075,7 +8123,7 @@
       "dtstart": "2026-01-02",
       "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "Zone 2. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "Zone 2. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8091,7 +8139,7 @@
       "dtstart": "2026-01-05",
       "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "Zone 3. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "Zone 3. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8107,7 +8155,7 @@
       "dtstart": "2026-01-02",
       "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "Zone 3. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "Zone 3. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8123,7 +8171,7 @@
       "dtstart": "2026-01-07",
       "rrule": "FREQ=WEEKLY;BYDAY=WE;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "All zones. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "All zones. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8139,7 +8187,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "seasonal Leaf collection loose or biodegradable bags April 1 through May 31 and September 15 through December 1 (possible extension per borough website); not within 10 feet of drain inlets. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "seasonal Leaf collection loose or biodegradable bags April 1 through May 31 and September 15 through December 1 (possible extension per borough website); not within 10 feet of drain inlets. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -8155,7 +8203,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment Computer/electronic/metal curbside by appointment; minimum 4 bulk stickers per item; call Borough Hall 732-776-2999 ext. 1010. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "by appointment Computer/electronic/metal curbside by appointment; minimum 4 bulk stickers per item; call Borough Hall 732-776-2999 ext. 1010. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -8197,7 +8245,7 @@
           "label": "Zone 1 and north side of Zone 3"
         }
       ],
-      "notes_en": "Zone 1 and north side of Zone 3; bulk stickers required; max 5 items. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "Zone 1 and north side of Zone 3; bulk stickers required; max 5 items. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8239,7 +8287,7 @@
           "label": "Zone 2 and south side of Zone 3"
         }
       ],
-      "notes_en": "Zone 2 and south side of Zone 3; bulk stickers required; max 5 items. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "Zone 2 and south side of Zone 3; bulk stickers required; max 5 items. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8293,7 +8341,7 @@
           "label": "Brush and yard waste"
         }
       ],
-      "notes_en": "Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "Brush and yard waste; borough-wide start date (collection may continue several days); curb by 5:00 a.m.; grass not collected. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8438,96 +8486,6 @@
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=WE;UNTIL=20270131",
       "overrides": [],
       "notes_en": "All four collection zones; single-stream in borough blue 95-gallon can; place curbside Tuesday evening. Public Works: 732-747-0241 ext. *217. Borough office/DPW holiday closures listed on 2026 municipal calendar; check website for collection shifts. Other holiday and weather changes are not listed here; check https://www.fairhavennj.org.",
-      "notes_es": "",
-      "status": "verified",
-      "last_verified": "2026-10-18"
-    },
-    {
-      "region": "fair-haven",
-      "stream": "trash",
-      "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
-      "weekday": 5,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
-      "overrides": [],
-      "dates": [
-        {
-          "date": "2026-05-15",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-05-22",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-05-29",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-06-05",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-06-12",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-06-19",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-06-26",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-07-03",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-07-10",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-07-17",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-07-24",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-07-31",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-08-07",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-08-14",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-08-21",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-08-28",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-09-04",
-          "label": "All zones"
-        },
-        {
-          "date": "2026-09-11",
-          "label": "All zones"
-        }
-      ],
-      "notes_en": "All zones; warm-weather Friday trash (May 15 through September 15 season). Public Works: 732-747-0241 ext. *217. Borough office/DPW holiday closures listed on 2026 municipal calendar; check website for collection shifts. Other holiday and weather changes are not listed here; check https://www.fairhavennj.org.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8683,6 +8641,96 @@
       "last_verified": "2026-10-18"
     },
     {
+      "region": "fair-haven",
+      "stream": "trash",
+      "source_url": "https://www.fairhavennj.org/public-works/pages/garbage-and-recycling-schedule",
+      "weekday": 5,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-05-15",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-05-22",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-05-29",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-06-05",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-06-12",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-06-19",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-06-26",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-07-03",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-07-10",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-07-17",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-07-24",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-07-31",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-08-07",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-08-14",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-08-21",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-08-28",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-09-04",
+          "label": "All zones"
+        },
+        {
+          "date": "2026-09-11",
+          "label": "All zones"
+        }
+      ],
+      "notes_en": "All zones; warm-weather Friday trash (May 15 through September 15 season). Public Works: 732-747-0241 ext. *217. Borough office/DPW holiday closures listed on 2026 municipal calendar; check website for collection shifts. Other holiday and weather changes are not listed here; check https://www.fairhavennj.org.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
       "region": "hazlet",
       "stream": "trash",
       "source_url": "https://www.hazlettwp.org/665/Bulk-Item-Collection",
@@ -8724,7 +8772,13 @@
       "area_note": "Zone 2: locate street in Green Booklet 2026 alphabetical list",
       "dtstart": "2026-01-13",
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=TU;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-11-03",
+          "to": "2026-11-02",
+          "reason": "Zone 2: recycling holiday move 2026-11-03 -> 2026-11-02 (Green Booklet: NOV. 3rd zone 2 moved to NOV. 2nd)"
+        }
+      ],
       "notes_en": "Zone 2; locate street in Green Booklet 2026 alphabetical list. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
       "notes_es": "",
       "status": "verified",
@@ -8740,7 +8794,13 @@
       "area_note": "Zone 3: locate street in Green Booklet 2026 alphabetical list",
       "dtstart": "2026-01-07",
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=WE;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-11-11",
+          "to": "2026-11-09",
+          "reason": "Zone 3: recycling holiday move 2026-11-11 -> 2026-11-09 (Green Booklet: NOV. 11th zone 3 moved to NOV. 9th)"
+        }
+      ],
       "notes_en": "Zone 3; locate street in Green Booklet 2026 alphabetical list. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
       "notes_es": "",
       "status": "verified",
@@ -8772,7 +8832,18 @@
       "area_note": "Zone 5: locate street in Green Booklet 2026 alphabetical list",
       "dtstart": "2026-01-08",
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=TH;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-23",
+          "reason": "Zone 5: recycling holiday move 2026-11-26 -> 2026-11-23 (Green Booklet: NOV. 26th zone 5 moved to NOV. 23rd)"
+        },
+        {
+          "date": "2026-12-24",
+          "to": "2026-12-21",
+          "reason": "Zone 5: recycling holiday move 2026-12-24 -> 2026-12-21 (Green Booklet: DEC. 24th zone 5 moved to DEC. 21st.)"
+        }
+      ],
       "notes_en": "Zone 5; locate street in Green Booklet 2026 alphabetical list. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
       "notes_es": "",
       "status": "verified",
@@ -8804,7 +8875,23 @@
       "area_note": "Zone 7: locate street in Green Booklet 2026 alphabetical list",
       "dtstart": "2026-01-09",
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=FR;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-04-03",
+          "to": "2026-04-06",
+          "reason": "Zone 7: recycling holiday move 2026-04-03 -> 2026-04-06 (Green Booklet: APR. 3rd zone 7 moved to APR.6th)"
+        },
+        {
+          "date": "2026-11-27",
+          "to": "2026-11-30",
+          "reason": "Zone 7: recycling holiday move 2026-11-27 -> 2026-11-30 (Green Booklet: NOV. 27th zone 7 moved to NOV. 30th)"
+        },
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-28",
+          "reason": "Zone 7: recycling holiday move 2026-12-25 -> 2026-12-28 (Green Booklet: DEC. 25th zone 7 moved to DEC.28th)"
+        }
+      ],
       "notes_en": "Zone 7; locate street in Green Booklet 2026 alphabetical list. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
       "notes_es": "",
       "status": "verified",
@@ -8820,7 +8907,18 @@
       "area_note": "Zone 8: locate street in Green Booklet 2026 alphabetical list",
       "dtstart": "2026-01-02",
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=FR;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-06-19",
+          "to": "2026-06-22",
+          "reason": "Zone 8: recycling holiday move 2026-06-19 -> 2026-06-22 (Green Booklet: JUNE 19th zone 8 moved to JUNE 22nd)"
+        },
+        {
+          "date": "2026-07-03",
+          "to": "2026-07-06",
+          "reason": "Zone 8: recycling holiday move 2026-07-03 -> 2026-07-06 (Green Booklet: JULY 3rd zone 8 moved to JULY 6th)"
+        }
+      ],
       "notes_en": "Zone 8; locate street in Green Booklet 2026 alphabetical list. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
       "notes_es": "",
       "status": "verified",
@@ -10159,7 +10257,23 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "custom Village Sanitation contact is Borough of Deal (732-531-1454) per Departments and Services Contacts; Loch Arbour trash-recycling page lists 2026 bulk Mondays only and does not state weekly trash or recycling weekdays. Do not infer Deal borough days. Public Works: 732-531-1454. Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page). Other holiday and weather changes are not listed here; check https://www.locharbournj.us/.",
+      "notes_en": "custom Village Sanitation contact is Borough of Deal (732-531-1454) per Departments and Services Contacts; Loch Arbour trash-recycling page lists 2026 bulk Mondays only and does not state weekly trash weekdays. Do not infer Deal borough days. Public Works: 732-531-1454. Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page). Other holiday and weather changes are not listed here; check https://www.locharbournj.us/.",
+      "notes_es": "",
+      "status": "needs_verification",
+      "last_verified": null
+    },
+    {
+      "region": "loch-arbour",
+      "stream": "recycling",
+      "source_url": "https://www.locharbournj.us/trash-recycling",
+      "weekday": null,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "notes_en": "custom Loch Arbour trash-recycling page does not publish weekly recycling weekdays; sanitation contact is Borough of Deal (732-531-1454). Do not infer Deal days. Public Works: 732-531-1454. Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page). Other holiday and weather changes are not listed here; check https://www.locharbournj.us/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10466,6 +10580,22 @@
       "rrule": null,
       "overrides": [],
       "notes_en": "custom Township provides curbside garbage in township black carts but publishes no static weekday or zone list; residents must enter their address in the Recycle Coach app to find their zone. No garbage collection on New Years Day, Thanksgiving Day, or Christmas Day; collected on the next scheduled collection day. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "",
+      "status": "needs_verification",
+      "last_verified": null
+    },
+    {
+      "region": "middletown",
+      "stream": "recycling",
+      "source_url": "https://www.middletownnj.org/collection",
+      "weekday": null,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "notes_en": "custom Curbside recycling weekdays are Recycle Coach address-lookup only; township collection pages publish no static recycling weekday or zone list PDF. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null

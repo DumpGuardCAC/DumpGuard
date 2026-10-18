@@ -1,6 +1,8 @@
 // Show or change which towns are public.
 //   node publish.mjs                     list towns with how much verified data each has
 //   node publish.mjs edison woodbridge   publish those towns (refuses if a town has no verified schedule)
+//   node publish.mjs --info carteret     publish a town with no verified schedule: Identify, facilities and Report work,
+//                                        pickup-day lookup says it is not covered yet
 //   node publish.mjs --off edison        hide a town again
 // Seeding never publishes a town; this is the only switch. Publish a town only after its data has been checked.
 import pg from 'pg';
@@ -12,6 +14,7 @@ if (!url) {
 }
 const args = process.argv.slice(2);
 const off = args[0] === '--off';
+const info = args.includes('--info');
 const ids = args.filter((a) => !a.startsWith('--'));
 
 const client = new pg.Client({ connectionString: url });
@@ -30,7 +33,7 @@ try {
     for (const id of ids) {
       const { rows } = await client.query(`SELECT id FROM regions WHERE id = $1 AND kind = 'town'`, [id]);
       if (!rows.length) { console.error(`no such town: ${id}`); process.exitCode = 1; continue; }
-      if (!off) {
+      if (!off && !info) {
         const v = await client.query(`SELECT count(*)::int AS n FROM collection_schedules WHERE region_id = $1 AND status = 'verified'`, [id]);
         if (v.rows[0].n === 0) { console.error(`refusing to publish ${id}: no verified schedules`); process.exitCode = 1; continue; }
       }

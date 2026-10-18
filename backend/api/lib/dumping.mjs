@@ -138,10 +138,10 @@ export function buildMap(pointRows, townRows) {
   const cells = new Map();
   for (const r of pointRows) {
     const k = `${r.cx}:${r.cy}`;
-    const c = cells.get(k) ?? { cx: r.cx, cy: r.cy, n: 0, by_status: {}, by_type: {}, town: r.region_id };
+    const c = cells.get(k) ?? { cx: r.cx, cy: r.cy, n: 0, joint: new Map(), town: r.region_id };
     c.n++;
-    c.by_status[r.status] = (c.by_status[r.status] ?? 0) + 1;
-    c.by_type[r.dump_type] = (c.by_type[r.dump_type] ?? 0) + 1;
+    const jk = `${r.status}|${r.dump_type}`;
+    c.joint.set(jk, (c.joint.get(jk) ?? 0) + 1);
     cells.set(k, c);
   }
   const round = (v) => Math.round(v * 1e6) / 1e6;
@@ -149,7 +149,9 @@ export function buildMap(pointRows, townRows) {
     min_group: MIN_GROUP,
     cells: [...cells.values()].filter((c) => c.n >= MIN_GROUP).map((c) => ({
       lat: round((c.cy + 0.5) * CELL_DEG), lng: round((c.cx + 0.5) * CELL_DEG), radius_m: 350,
-      n: c.n, town: c.town, by_status: c.by_status, by_type: c.by_type,
+      n: c.n, town: c.town,
+      // status x type counts, so the page can filter; a cell is only listed once it has MIN_GROUP reports
+      groups: [...c.joint].map(([k, n]) => ({ status: k.split('|')[0], type: k.split('|')[1], n })),
     })),
     towns: townRows.map((t) => ({ town: t.region_id, name: t.name, counts: Object.fromEntries(STATUSES.map((s) => [s, t[s] ?? 0])) })),
   };

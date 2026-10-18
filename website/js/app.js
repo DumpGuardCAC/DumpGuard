@@ -57,12 +57,21 @@
   }
 
   // ---- accounts ----
+  // A built-in demo account (user "demo", password "demo") so the dashboard can be shown without signing up.
+  var DEMO_USER = 'demo', DEMO_EMAIL = 'demo@dumpguard.app';
+  (async function seedDemo() {
+    var us = S.get('dg_u', []);
+    if (us.some(function (u) { return u.email === DEMO_EMAIL; })) return;
+    us.push({ email: DEMO_EMAIL, pw: await hash(DEMO_EMAIL, 'demo'), country: 'United States', state: 'New Jersey', county: 'Middlesex', city: 'Edison' });
+    S.set('dg_u', us);
+  })();
   function signedIn(email) {
     S.set('dg_s', email);
     go('dash');
   }
   $('lgo').onclick = async function () {
     var e = $('lerr'), em = $('le').value.trim().toLowerCase();
+    if (em === DEMO_USER) em = DEMO_EMAIL;
     if (!emailOk(em)) return void (e.textContent = 'Enter a valid email.');
     if (!$('lp').value) return void (e.textContent = 'Enter your password.');
     if ($('lci').value.trim().toUpperCase() !== caps.lcap) { cap('lcap'); $('lci').value = ''; return void (e.textContent = "Captcha didn't match. Try the new code."); }

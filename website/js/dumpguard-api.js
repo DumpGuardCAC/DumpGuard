@@ -21,7 +21,7 @@
       cat: 'Category', catPick: 'Pick a category', fail: 'Could not reach the server. Try again.',
       zipHelp: 'Enter your ZIP code to see pickup days.', pickTown: 'Which town?', pickArea: 'Which one is yours?', choose: 'Choose...',
       next: 'Next pickups', moved: 'moved', calendar: 'Add to my calendar', calNote: 'The calendar updates itself when holidays shift pickups.',
-      noZip: 'We do not have verified pickup data for that ZIP yet.', badZip: 'Enter a 5 digit ZIP code.', lookup: 'Look up',
+      noZip: 'We are still finding verified pickup data for this area. Check back soon.', badZip: 'Enter a 5 digit ZIP code.', lookup: 'Look up',
       trashS: 'Trash', areaS: 'Area', recyclingS: 'Recycling', bulk: 'Bulk pickup', yard: 'Yard waste', alerts: 'Notices', counted: 'items sorted with DumpGuard, about', lb: 'lb diverted (estimate)',
       materials: { rigid_plastic: 'Hard plastic', soft_plastic_foam: 'Soft plastic or foam', cardboard_paper: 'Cardboard or paper', metal: 'Metal', glass: 'Glass', ewaste_hazard: 'Electronics or hazardous', other: 'Other' },
       consensus: 'In your town most of these are:', basedOn: 'based on', items: 'verified items',
@@ -35,7 +35,7 @@
       cat: 'Categoría', catPick: 'Elija una categoría', fail: 'No se pudo conectar con el servidor. Intente de nuevo.',
       zipHelp: 'Escriba su código postal para ver los días de recogida.', pickTown: '¿Qué municipio?', pickArea: '¿Cuál es el suyo?', choose: 'Elija...',
       next: 'Próximas recogidas', moved: 'cambiada', calendar: 'Agregar a mi calendario', calNote: 'El calendario se actualiza solo cuando los feriados cambian las recogidas.',
-      noZip: 'Todavía no tenemos datos verificados para ese código postal.', badZip: 'Escriba un código postal de 5 dígitos.', lookup: 'Buscar',
+      noZip: 'Todavía estamos buscando datos de recogida verificados para esta zona. Vuelva a consultar pronto.', badZip: 'Escriba un código postal de 5 dígitos.', lookup: 'Buscar',
       trashS: 'Basura', areaS: 'Zona', recyclingS: 'Reciclaje', bulk: 'Objetos grandes', yard: 'Desechos de jardín', alerts: 'Avisos', counted: 'artículos clasificados con DumpGuard, unas', lb: 'libras desviadas (estimado)',
       materials: { rigid_plastic: 'Plástico duro', soft_plastic_foam: 'Plástico blando o espuma', cardboard_paper: 'Cartón o papel', metal: 'Metal', glass: 'Vidrio', ewaste_hazard: 'Electrónicos o peligrosos', other: 'Otro' },
       consensus: 'En su municipio la mayoría de estos son:', basedOn: 'según', items: 'artículos verificados',
@@ -92,11 +92,21 @@
       sel.addEventListener('change', function () { setTown(sel.value); });
     });
   }
+  // A town with no verified pickup schedule yet says so as soon as it is picked, instead of waiting for a ZIP lookup.
+  function pendingNotice(id) {
+    var box = $('zresult'), tw = state.towns.filter(function (x) { return x.id === id; })[0];
+    if (!box || !tw || !tw.zips || !tw.zips.length) return;
+    api.get('/schedule/' + tw.zips[0] + '?town=' + encodeURIComponent(id)).then(function (r) {
+      if (state.town !== id) return;
+      if (r.status === 404) { clear(box).appendChild(h('p', { class: 'err' }, tw.name + ': ' + t('noZip'))); }
+    }).catch(function () { /* the ZIP lookup will report problems */ });
+  }
   function setTown(id) {
     state.town = id;
     try { localStorage.setItem('dg_town', id); } catch (e) { /* ignore */ }
     if ($('town')) $('town').value = id;
     runSearch();
+    pendingNotice(id);
     var cat = $('cat');
     if (cat && cat.value) showMaterial(cat.value);
   }

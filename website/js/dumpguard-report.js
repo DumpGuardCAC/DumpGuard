@@ -152,7 +152,7 @@
       if (r.status === 404) { out.appendChild(h('p', { class: 'err' }, 'No report with that code.')); return; }
       if (r.status === 429) { out.appendChild(h('p', { class: 'err' }, 'Too many checks. Try again later.')); return; }
       if (r.status !== 200) { out.appendChild(h('p', { class: 'err' }, 'Could not check the report. Try again.')); return; }
-      var b = r.body, d = function (iso) { return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); };
+      var b = r.body, d = function (iso) { return new Date(iso).toLocaleDateString(DG.lang() === 'es' ? 'es-US' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' }); };
       out.appendChild(h('div', { class: 'item' }, h('b', {}, b.code + ': ' + (STATUS[b.status] || b.status)),
         h('small', {}, 'Filed ' + d(b.created_at) + (b.updated_at !== b.created_at ? ', last update ' + d(b.updated_at) : ''))));
     }).catch(function () { clear(out).appendChild(h('p', { class: 'err' }, 'Could not reach the server. Try again.')); });

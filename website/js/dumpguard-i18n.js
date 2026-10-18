@@ -67,7 +67,7 @@
     'Filter by type': 'Filtrar por tipo', 'Filter by town': 'Filtrar por municipio', 'Status': 'Estado', 'All statuses': 'Todos los estados', 'All types': 'Todos los tipos', 'All towns': 'Todos los municipios',
     'Government sign-in': 'Acceso para el gobierno', 'Sign out': 'Cerrar sesión', 'Government access': 'Acceso del gobierno',
     'Staff can see exact locations, photos and details, and update report status.': 'El personal puede ver ubicaciones exactas, fotos y detalles, y actualizar el estado de los reportes.',
-    'Access code': 'Código de acceso', 'Staff access code': 'Código de acceso del personal', 'Unlock': 'Desbloquear',
+    'Username': 'Usuario', 'Sign in': 'Iniciar sesión', 'Enter the username and password.': 'Escriba el usuario y la contraseña.', 'That username or password was not accepted.': 'No se aceptó ese usuario o contraseña.',
     'Enter the access code.': 'Escriba el código de acceso.', 'Too many attempts. Try again later.': 'Demasiados intentos. Intente más tarde.', 'That code was not accepted.': 'No se aceptó ese código.',
     'Could not reach the server.': 'No se pudo conectar con el servidor.',
     'Street map tiles could not load. Report areas still show.': 'No se pudo cargar el mapa de calles. Las áreas de reportes se siguen mostrando.', 'The map could not load. Try again later.': 'No se pudo cargar el mapa. Intente más tarde.',

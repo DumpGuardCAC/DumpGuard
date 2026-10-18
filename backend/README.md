@@ -27,6 +27,12 @@
 | `POST /reports` | `{kind: item_rule\|schedule\|facility\|scan\|other, message, item?, town?, facility?}`: "report a wrong answer". No contact info stored. 10/hour per client |
 | `GET /admin/reports` | Bearer `ADMIN_TOKEN`. `?status=open\|resolved\|dismissed`: the review queue |
 | `POST /admin/reports/resolve` | Bearer `ADMIN_TOKEN`. `{id, status: resolved\|dismissed}`. A report never edits a rule; check the primary source, fix the data build, then resolve |
+| `POST /dumping` | `{town, type, where, description, notes?, lat?, lng?, photo?}`: illegal dumping report. `photo` is a base64 JPEG (max 2 MB); EXIF/GPS and all other metadata segments are stripped before it is stored. Without `lat`/`lng` the address is geocoded server side (US Census) and a failure just leaves the report without a map point. Returns a tracking code `DG-XXXXX`. 5/hour per client |
+| `GET /dumping/track` | `?code=DG-XXXXX`: status, town, type and dates only, never the location. 60/hour per client |
+| `GET /dumping/map` | Public map data: coarse cells (about 500 m) that have 3 or more reports, plus per-town status counts. Never exact points |
+| `GET /admin/dumping` | Bearer `ADMIN_TOKEN`. `?status=new\|noticed\|progress\|resolved&town=`: exact points, details, `has_photo`. Failed attempts are rate limited |
+| `GET /admin/dumping/photo` | Bearer `ADMIN_TOKEN`. `?id=`: the stored JPEG, `no-store` |
+| `POST /admin/dumping/status` | Bearer `ADMIN_TOKEN`. `{id, status: new\|noticed\|progress\|resolved}` |
 | `POST /push/unsubscribe` | `{endpoint}` |
 | `GET /cron/reminders` | Bearer `CRON_SECRET`; Vercel cron daily 22:00 UTC |
 | `GET /cron/purge` | Bearer `CRON_SECRET`; Vercel cron daily 05:00 UTC |

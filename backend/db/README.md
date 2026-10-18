@@ -27,6 +27,7 @@ The app itself should use the pooled URL (`DATABASE_URL`) at runtime.
 | collection_schedules | pickup schedules per town, stream and area (`area_key` like `rs-6`, `zone-1a`), with `rrule`, `dtstart` and holiday `overrides`. Edison recycling and Asbury Park trash/recycling/bulk are entered; regenerate with `data/build_edison_recycling.py` and `data/build_asburypark_schedule.py` |
 | facilities | drop-off directory, 7 entries from `data/towns.json`, each with a stable `key` that item rules point at |
 | bulk_requests | DEMO requests. `is_demo` is forced true, email format checked, expires after 90 days |
+| dump_reports, dump_photos | illegal dumping reports and optional photos (JPEG, metadata stripped). Staff-only details; the public map gets coarse cells with 3+ reports. Resolved reports purge after 180 days, all after a year |
 | rate_limits | fixed-window counters keyed by a hash, never a raw IP |
 
 The public API should read the `public_*` views, which return verified rows only.

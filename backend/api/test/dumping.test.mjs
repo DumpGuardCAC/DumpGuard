@@ -118,7 +118,7 @@ test('the public map only shows cells with enough reports, as coarse centres', a
   const m = buildMap([pt(10, 20), pt(10, 20, 'resolved'), pt(10, 20), pt(11, 20), pt(12, 20)], [{ region_id: 'edison', name: 'Edison', new: 4, resolved: 1 }]);
   assert.equal(m.min_group, MIN_GROUP);
   assert.equal(m.cells.length, 1);
-  assert.deepEqual(m.cells[0].by_status, { new: 2, resolved: 1 });
+  assert.deepEqual(m.cells[0].groups, [{ status: 'new', type: 'tires', n: 2 }, { status: 'resolved', type: 'tires', n: 1 }]);
   assert.equal(m.cells[0].lat, 0.1025);
   assert.deepEqual(m.towns[0].counts, { new: 4, noticed: 0, progress: 0, resolved: 1 });
   const r = await handleDumpingMap(new Request('http://x/m'), mk());

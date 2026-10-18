@@ -2,7 +2,7 @@
  *
  * API base: window.DUMPGUARD_API, else /api/v1 (same origin; scripts/dev-server.mjs in backend/api serves both).
  * Everything the API returns is put on the page with textContent, never innerHTML.
- * Exposes window.DumpGuard = { api, setTown, showMaterial } so the photo model can hand over its predicted class.
+ * Exposes window.DumpGuard (api, request, setTown, showMaterial, DOM helpers) for the report form, map and photo model scripts.
  */
 (function () {
   'use strict';
@@ -24,7 +24,7 @@
       noZip: 'We do not have verified pickup data for that ZIP yet.', badZip: 'Enter a 5 digit ZIP code.', lookup: 'Look up',
       trashS: 'Trash', recyclingS: 'Recycling', bulk: 'Bulk pickup', yard: 'Yard waste', alerts: 'Notices', counted: 'items sorted with DumpGuard, about', lb: 'lb diverted (estimate)',
       materials: { rigid_plastic: 'Hard plastic', soft_plastic_foam: 'Soft plastic or foam', cardboard_paper: 'Cardboard or paper', metal: 'Metal', glass: 'Glass', ewaste_hazard: 'Electronics or hazardous', other: 'Other' },
-      photoNote: 'Photo recognition is not connected on this page yet. Pick a category.', consensus: 'In your town most of these are:', basedOn: 'based on', items: 'verified items',
+      consensus: 'In your town most of these are:', basedOn: 'based on', items: 'verified items',
     },
     es: {
       empty: 'Su guía de desecho aparecerá aquí.', searching: 'Buscando...', none: 'Sin resultados. Elija una categoría o pruebe otra palabra.',
@@ -38,7 +38,7 @@
       noZip: 'Todavía no tenemos datos verificados para ese código postal.', badZip: 'Escriba un código postal de 5 dígitos.', lookup: 'Buscar',
       trashS: 'Basura', recyclingS: 'Reciclaje', bulk: 'Objetos grandes', yard: 'Desechos de jardín', alerts: 'Avisos', counted: 'artículos clasificados con DumpGuard, unas', lb: 'libras desviadas (estimado)',
       materials: { rigid_plastic: 'Plástico duro', soft_plastic_foam: 'Plástico blando o espuma', cardboard_paper: 'Cartón o papel', metal: 'Metal', glass: 'Vidrio', ewaste_hazard: 'Electrónicos o peligrosos', other: 'Otro' },
-      photoNote: 'El reconocimiento de fotos aún no está conectado en esta página. Elija una categoría.', consensus: 'En su municipio la mayoría de estos son:', basedOn: 'según', items: 'artículos verificados',
+      consensus: 'En su municipio la mayoría de estos son:', basedOn: 'según', items: 'artículos verificados',
     },
   };
   var COLORS = { recycling: '#15803d', trash: '#4b5563', special_dropoff: '#dc2626' };
@@ -395,17 +395,15 @@
     addScheduleSection();
     fillCategories();
     translateStatic();
-    emptyState();
     loadTowns().then(function () { runSearch(); }).catch(function () { /* the page still renders; searches will report the error */ });
     if ($('q')) $('q').addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(runSearch, 250); });
     if ($('cat')) $('cat').addEventListener('change', function () { if ($('cat').value) showMaterial($('cat').value); });
-    if ($('photo')) $('photo').addEventListener('change', function () {
-      showCategoryPicker(true);
-      var txt = $('droptxt'); if (txt) txt.textContent = t('photoNote');
-    });
   }
 
-  window.DumpGuard = { api: api, setTown: setTown, showMaterial: showMaterial };
+  window.DumpGuard = {
+    api: api, request: request, setTown: setTown, showMaterial: showMaterial, showCategoryPicker: showCategoryPicker,
+    h: h, clear: clear, lang: function () { return state.lang; }, townId: function () { return state.town; },
+  };
   document.addEventListener('DOMContentLoaded', init);
   window.addEventListener('load', fallbackRouter);
 })();

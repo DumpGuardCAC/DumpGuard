@@ -46,7 +46,8 @@ cd ../api && npm install
 cp .env.example .env.local           # fill in
 vercel deploy --prod                 # after env vars are set (see below)
 npm run sync-data                    # after rebuilding data/woodbridge_street_index.json
-npm test                             # 40 tests, no DB needed
+npm test                             # no DB needed
+DATABASE_URL=... node scripts/dev-server.mjs   # API plus the web app in ../../src on http://localhost:3001
 ```
 
 Open questions for the owner are in `QUESTIONS.md`.

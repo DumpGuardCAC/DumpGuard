@@ -6256,7 +6256,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment; Wednesdays in April, May, June, September and October; max two collections per household per year. Public Works: 732-514-1277. Collection date subject to change in the event of a holiday. Other holiday and weather changes are not listed here; check https://www.hpboro.com/.",
+      "notes_en": "by appointment By appointment; Wednesdays in April, May, June, September and October; max two collections per household per year; Public Works 732-514-1277. Public Works: 732-514-1277. Collection date subject to change in the event of a holiday. Other holiday and weather changes are not listed here; check https://www.hpboro.com/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -6432,7 +6432,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment; call 732-632-8519; 3-item limit. Public Works: 732-632-8519. Holiday-week shifts on 2026 DPW calendar PDFs. Other holiday and weather changes are not listed here; check https://metuchennj.org/.",
+      "notes_en": "by appointment By appointment; call 732-632-8519; 3-item limit. Public Works: 732-632-8519. Holiday-week shifts on 2026 DPW calendar PDFs. Other holiday and weather changes are not listed here; check https://metuchennj.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -6455,6 +6455,22 @@
     },
     {
       "region": "old-bridge",
+      "stream": "trash",
+      "source_url": "https://www.oldbridge.com/page/recycling-information/",
+      "weekday": null,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "notes_en": "custom Garbage is privatized in Old Bridge. Residents can hire the garbage company of their choice. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
+      "notes_es": "",
+      "status": "needs_verification",
+      "last_verified": null
+    },
+    {
+      "region": "old-bridge",
       "stream": "recycling",
       "source_url": "https://5il.co/3symt",
       "weekday": 1,
@@ -6467,7 +6483,12 @@
         {
           "date": "2026-05-25",
           "to": "2026-05-30",
-          "reason": "Ward 1: Memorial Day recycling moved to Saturday (2026 ward PDF)"
+          "reason": "Ward 1: Memorial Day recycling moved to Saturday May 30 (2026 ward PDF Monday column May 11, 30*)"
+        },
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-30",
+          "reason": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct): Memorial Day recycling moved to Saturday May 30 (Monday pickup)"
         }
       ],
       "notes_en": "Ward 1; confirm ward at gis.oldbridge.com (WHAT WARD AM I IN?). Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
@@ -6521,7 +6542,7 @@
         {
           "date": "2026-11-26",
           "to": "2026-11-28",
-          "reason": "Ward 5: Thanksgiving recycling moved to Saturday (2026 ward PDF)"
+          "reason": "Ward 5: Thanksgiving recycling moved to Saturday Nov 28 (2026 ward PDF Thursday column Nov 12, 28*)"
         }
       ],
       "notes_en": "Ward 5; confirm ward at gis.oldbridge.com. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
@@ -6543,7 +6564,7 @@
         {
           "date": "2026-12-25",
           "to": "2026-12-26",
-          "reason": "Ward 6: Christmas recycling moved to Saturday (2026 ward PDF)"
+          "reason": "Ward 6: Christmas recycling moved to Saturday Dec 26 (2026 ward PDF Friday column Dec 11, 26*)"
         }
       ],
       "notes_en": "Ward 6; confirm ward at gis.oldbridge.com. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
@@ -6561,7 +6582,13 @@
       "area_note": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct) c: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct) collected Mondays though mapped in Ward 3",
       "dtstart": "2026-01-05",
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=MO;UNTIL=20270131",
-      "overrides": [],
+      "overrides": [
+        {
+          "date": "2026-05-25",
+          "to": "2026-05-30",
+          "reason": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct): Memorial Day recycling moved to Saturday May 30 (Monday pickup)"
+        }
+      ],
       "notes_en": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct) collected Mondays though mapped in Ward 3. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
       "notes_es": "",
       "status": "verified",
@@ -6649,6 +6676,22 @@
     },
     {
       "region": "piscataway",
+      "stream": "trash",
+      "source_url": "https://www.piscatawaynj.org/departments/public_works/recycling_and_solid_waste.php",
+      "weekday": null,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "notes_en": "custom Household trash is picked up through private trash haulers which residents must retain. Companies that service Piscataway: Grand Sanitation (908) 222-1566; Republic Residential Services (908) 561-8380; Republic Commercial and Industrial Services (732) 545-8988; RGB Disposal (732) 968-1131; Total Trash Removal (908) 756-3867; Waste Management (908) 879-5616. Township does not regulate or endorse these companies. Public Works: 732-562-2390. If collection day falls on a holiday, collection rescheduled for the following Saturday. Other holiday and weather changes are not listed here; check https://www.piscatawaynj.org/.",
+      "notes_es": "",
+      "status": "needs_verification",
+      "last_verified": null
+    },
+    {
+      "region": "piscataway",
       "stream": "recycling",
       "source_url": "https://cms9files.revize.com/piscatawaytownshipnj/Document_Center/Department/Public%20Works/Division%20of%20Recycling%20%26%20Solid%20Waste/Recycling%20curbside%20pick-up%20map%202026.pdf",
       "weekday": 1,
@@ -6712,7 +6755,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment January through first week of October; 2 bulk and 1 branch pickup per household per year. Homeowners with Piscataway Service Card only; not for businesses or multi-family dwellings. Call DPW 732-562-2390 to schedule. Public Works: 732-562-2390. If collection day falls on a holiday, collection rescheduled for the following Saturday. Other holiday and weather changes are not listed here; check https://www.piscatawaynj.org/.",
+      "notes_en": "by appointment By appointment; January through first week of October; 2 bulk and 1 branch pickup per household per year for homeowners with Piscataway Service Card; call DPW 732-562-2390 to schedule; not for businesses or multi-family dwellings. Public Works: 732-562-2390. If collection day falls on a holiday, collection rescheduled for the following Saturday. Other holiday and weather changes are not listed here; check https://www.piscatawaynj.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -6840,7 +6883,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "seasonal Leaf collection November and December; spring leaf collection March and May; Christmas trees and branches collected in winter months per Sanitation Division. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
+      "notes_en": "seasonal Leaf collection November and December; spring leaf collection March and May; Christmas trees and branches collected in winter months per Sanitation Division; no single weekday published for leaf routes. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -7034,185 +7077,221 @@
         {
           "date": "2026-09-28",
           "label": "Zone 1 grass clippings"
-        },
+        }
+      ],
+      "notes_en": "Zone 1 grass clippings; Mondays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "sayreville",
+      "stream": "yard",
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+      "weekday": 2,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
         {
           "date": "2026-05-05",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-05-12",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-05-19",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-05-26",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-06-02",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-06-09",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-06-16",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-06-23",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-06-30",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-07-07",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-07-14",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-07-21",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-07-28",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-08-04",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-08-11",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-08-18",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-08-25",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-09-01",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-09-08",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-09-15",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-09-22",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 2 grass clippings"
         },
         {
           "date": "2026-09-29",
-          "label": "Zone 1 grass clippings"
-        },
+          "label": "Zone 2 grass clippings"
+        }
+      ],
+      "notes_en": "Zone 2 grass clippings; Tuesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "sayreville",
+      "stream": "yard",
+      "source_url": "https://www.sayreville.com/cn/webpage.cfm?tpid=8945",
+      "weekday": 3,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
         {
           "date": "2026-05-06",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-05-13",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-05-20",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-05-27",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-06-03",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-06-10",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-06-17",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-06-24",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-07-01",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-07-08",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-07-15",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-07-22",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-07-29",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-08-05",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-08-12",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-08-19",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-08-26",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-09-02",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-09-09",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-09-16",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-09-23",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         },
         {
           "date": "2026-09-30",
-          "label": "Zone 1 grass clippings"
+          "label": "Zone 3 grass clippings"
         }
       ],
-      "notes_en": "Zone 1 grass clippings; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
+      "notes_en": "Zone 3 grass clippings; Wednesdays May 4 through September 30; covered 32-gallon containers max 30 lb labeled Grass Clippings; no bags. Public Works: 732-390-7042. Municipal Public Works holidays do NOT affect MCIA recycling collection. Other holiday and weather changes are not listed here; check https://www.sayreville.com.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -7240,11 +7319,11 @@
       "weekday": 2,
       "week_pattern": "weekly",
       "area_key": "trash:streets-listed-on-city-trash-collection-map-pdf-e-g-augusta-street-bordentown-avenue-even-",
-      "area_note": "Streets listed on city trash collection map PDF (e.g., Augusta Street, Bordentown Avenue even 300–500 block, South Broadway, and other Tuesday-list streets)",
+      "area_note": "Streets listed on city trash collection map PDF (e.g., Augusta Street, Bordentown Avenue even 300-500 block, South Broadway, and other Tuesday-list streets)",
       "dtstart": "2026-01-06",
       "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "Streets listed on city trash collection map PDF (e.g., Augusta Street, Bordentown Avenue even 300–500 block, South Broadway, and other Tuesday-list streets). Public Works: 732-721-8100. 2026 dates listed on borough PDF; MCIA hotline for weather changes. Other holiday and weather changes are not listed here; check https://www.southamboynj.gov.",
+      "notes_en": "Streets listed on city trash collection map PDF (e.g., Augusta Street, Bordentown Avenue even 300-500 block, South Broadway, and other Tuesday-list streets). Public Works: 732-721-8100. 2026 dates listed on borough PDF; MCIA hotline for weather changes. Other holiday and weather changes are not listed here; check https://www.southamboynj.gov.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -7296,6 +7375,22 @@
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
+    },
+    {
+      "region": "south-plainfield",
+      "stream": "trash",
+      "source_url": "https://www.southplainfieldnj.com/spnj/Departments/Departments/Recycling/Curbside",
+      "weekday": null,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "notes_en": "custom Borough official Curbside page publishes recycling collection only (every other week by Thursday or Friday recycling district); no municipal household garbage weekday schedule is published. Recycling Coordinator 908-755-2187. For bulk, call DPW 908-755-2187. Public Works: 908-755-2187. No collection Thanksgiving or Christmas; makeup dates on calendar table. Other holiday and weather changes are not listed here; check https://www.southplainfieldnj.com.",
+      "notes_es": "",
+      "status": "needs_verification",
+      "last_verified": null
     },
     {
       "region": "south-plainfield",
@@ -7352,7 +7447,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment; 2 free curbside bulk pickups per year for homeowners; call DPW 908-755-2187. No bulk pickups during 8 weeks of fall leaf bag collection; max pile 3 ft W x 3 ft H x 8 ft L. Public Works: 908-755-2187. No collection Thanksgiving or Christmas; makeup dates on calendar table. Other holiday and weather changes are not listed here; check https://www.southplainfieldnj.com.",
+      "notes_en": "by appointment By appointment; 2 free curbside bulk pickups per year for homeowners; call DPW 908-755-2187; no bulk during 8 weeks of fall leaf bag collection; max pile 3 ft W x 3 ft H x 8 ft L; apartments and condo/townhouse complexes not included. Public Works: 908-755-2187. No collection Thanksgiving or Christmas; makeup dates on calendar table. Other holiday and weather changes are not listed here; check https://www.southplainfieldnj.com.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -7368,7 +7463,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "seasonal Mid-October through mid-December curbside leaf bag collection; biodegradable paper bags; brush/leaves/grass also at yard waste site with decal. Call DPW 908-755-2187. Public Works: 908-755-2187. No collection Thanksgiving or Christmas; makeup dates on calendar table. Other holiday and weather changes are not listed here; check https://www.southplainfieldnj.com.",
+      "notes_en": "seasonal Mid-October through mid-December curbside leaf bag collection; leaves in biodegradable paper bags; brush/leaves/grass also accepted at yard waste site with decal; call DPW 908-755-2187. Public Works: 908-755-2187. No collection Thanksgiving or Christmas; makeup dates on calendar table. Other holiday and weather changes are not listed here; check https://www.southplainfieldnj.com.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -7784,7 +7879,7 @@
       "dtstart": "2026-01-02",
       "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "Metal pickup — call Borough Hall 732-291-1444 x3105 by Thursday 4:00 p.m.; appliances require $15 sticker from Borough Hall. Public Works: 732-291-1444. See borough 2026 sanitation calendar PDF on Public Works page for holiday trash delays. Other holiday and weather changes are not listed here; check https://www.ahnj.com.",
+      "notes_en": "Metal pickup - call Borough Hall 732-291-1444 x3105 by Thursday 4:00 p.m.; appliances require $15 sticker from Borough Hall. Public Works: 732-291-1444. See borough 2026 sanitation calendar PDF on Public Works page for holiday trash delays. Other holiday and weather changes are not listed here; check https://www.ahnj.com.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -8060,7 +8155,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment. Computer/electronic/metal curbside by appointment; minimum 4 bulk stickers per item. Call Borough Hall 732-776-2999 ext. 1010. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
+      "notes_en": "by appointment Computer/electronic/metal curbside by appointment; minimum 4 bulk stickers per item; call Borough Hall 732-776-2999 ext. 1010. Public Works: (732) 776-2999 ext. 3101. 2026 sanitation calendar marks NO GARBAGE on New Year, Thanksgiving (Zone 1 Thu), Christmas and New Year 2027 (Zone 2/3 Fri). Borough trash-recycling page states makeup shifts: Zone 1 New Year 2026-01-01->2026-01-05 and Thanksgiving 2026-11-26->2026-11-30; Zones 2/3 Christmas 2026-12-25->2026-12-28/29 and New Year 2027-01-01->2027-01-04/05. Many other holidays: boro/recycle yard closed but garbage still listed on calendar. Other holiday and weather changes are not listed here; check https://www.bradleybeachnj.gov.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -8294,7 +8389,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment Monthly bulk starting the 15th (following Monday if 15th is Saturday or Sunday); register by calling 848-288-1815 with address by 4:30 p.m. on the 14th. Place near normal garbage location by day before pickup. Public Works: 732-531-1454. See Deal refuse/recycling pages (undated). Other holiday and weather changes are not listed here; check https://dealnj.gov.",
+      "notes_en": "by appointment Monthly bulk starting the 15th (following Monday if 15th is Saturday or Sunday); register by calling 848-288-1815 with address by 4:30 p.m. on the 14th; place near normal garbage location by day before pickup. Public Works: 732-531-1454. See Deal refuse/recycling pages (undated). Other holiday and weather changes are not listed here; check https://dealnj.gov.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -8589,6 +8684,22 @@
     },
     {
       "region": "hazlet",
+      "stream": "trash",
+      "source_url": "https://www.hazlettwp.org/665/Bulk-Item-Collection",
+      "weekday": null,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "notes_en": "custom Township residents arrange household garbage with private trash companies; the township does not publish municipal curbside garbage weekdays. A 2021 municipal waste survey and 2022 bulk announcement describe privately contracted trash service (Bulk Item Collection page). Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "needs_verification",
+      "last_verified": null
+    },
+    {
+      "region": "hazlet",
       "stream": "recycling",
       "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
       "weekday": 2,
@@ -8726,7 +8837,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment; Zones 1-4; two free curbside bulk pickups per year; program pauses mid-November through early spring; first 2026 day Tue Mar 3. Condominium/Townhouses and Trailer Parks not included per Bulk Item Pickup 2026 page. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_en": "by appointment By appointment; Zones 1-4; two free curbside bulk pickups per year; appointments from Feb 23 2026; pickups begin Mar 3 2026 (Tuesdays); program pauses Thanksgiving week through March 1; condo/townhouse/trailer parks not included; call DPW 732-217-8654. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -8742,7 +8853,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment; Zones 5-8; two free curbside bulk pickups per year; first 2026 day Thu Mar 5. Condominium/Townhouses and Trailer Parks not included. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_en": "by appointment By appointment; Zones 5-8; two free curbside bulk pickups per year; first 2026 pickup day Thursday Mar 5; program pauses Thanksgiving week through March 1; condo/townhouse/trailer parks not included; call DPW 732-217-8654. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -8750,34 +8861,506 @@
     {
       "region": "hazlet",
       "stream": "yard",
-      "source_url": "https://www.hazlettwp.org/235/What-Is-Recyclable",
-      "weekday": null,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 2,
       "week_pattern": "custom",
       "area_key": null,
       "area_note": "",
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "seasonal Place out no earlier than seven days before scheduled date; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "dates": [
+        {
+          "date": "2026-01-13",
+          "label": "Zone 1 brush and leaf"
+        },
+        {
+          "date": "2026-03-10",
+          "label": "Zone 1 brush and leaf"
+        },
+        {
+          "date": "2026-05-05",
+          "label": "Zone 1 brush and leaf"
+        },
+        {
+          "date": "2026-07-14",
+          "label": "Zone 1 brush and leaf"
+        },
+        {
+          "date": "2026-09-01",
+          "label": "Zone 1 brush and leaf"
+        },
+        {
+          "date": "2026-10-20",
+          "label": "Zone 1 brush and leaf"
+        },
+        {
+          "date": "2026-12-01",
+          "label": "Zone 1 brush and leaf"
+        }
+      ],
+      "notes_en": "Zone 1 brush and leaf; place out no earlier than 7 days before; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
       "notes_es": "",
-      "status": "needs_verification",
-      "last_verified": null
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "yard",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 2,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-20",
+          "label": "Zone 2 brush and leaf"
+        },
+        {
+          "date": "2026-03-17",
+          "label": "Zone 2 brush and leaf"
+        },
+        {
+          "date": "2026-05-12",
+          "label": "Zone 2 brush and leaf"
+        },
+        {
+          "date": "2026-07-07",
+          "label": "Zone 2 brush and leaf"
+        },
+        {
+          "date": "2026-09-08",
+          "label": "Zone 2 brush and leaf"
+        },
+        {
+          "date": "2026-10-27",
+          "label": "Zone 2 brush and leaf"
+        },
+        {
+          "date": "2026-12-08",
+          "label": "Zone 2 brush and leaf"
+        }
+      ],
+      "notes_en": "Zone 2 brush and leaf; place out no earlier than 7 days before; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "yard",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 3,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-14",
+          "label": "Zone 3 brush and leaf"
+        },
+        {
+          "date": "2026-03-11",
+          "label": "Zone 3 brush and leaf"
+        },
+        {
+          "date": "2026-05-06",
+          "label": "Zone 3 brush and leaf"
+        },
+        {
+          "date": "2026-07-15",
+          "label": "Zone 3 brush and leaf"
+        },
+        {
+          "date": "2026-09-02",
+          "label": "Zone 3 brush and leaf"
+        },
+        {
+          "date": "2026-10-21",
+          "label": "Zone 3 brush and leaf"
+        },
+        {
+          "date": "2026-12-02",
+          "label": "Zone 3 brush and leaf"
+        }
+      ],
+      "notes_en": "Zone 3 brush and leaf; place out no earlier than 7 days before; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "yard",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 3,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-21",
+          "label": "Zone 4 brush and leaf"
+        },
+        {
+          "date": "2026-03-18",
+          "label": "Zone 4 brush and leaf"
+        },
+        {
+          "date": "2026-05-13",
+          "label": "Zone 4 brush and leaf"
+        },
+        {
+          "date": "2026-07-08",
+          "label": "Zone 4 brush and leaf"
+        },
+        {
+          "date": "2026-09-09",
+          "label": "Zone 4 brush and leaf"
+        },
+        {
+          "date": "2026-10-28",
+          "label": "Zone 4 brush and leaf"
+        },
+        {
+          "date": "2026-12-09",
+          "label": "Zone 4 brush and leaf"
+        }
+      ],
+      "notes_en": "Zone 4 brush and leaf; place out no earlier than 7 days before; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "yard",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 4,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-15",
+          "label": "Zone 5 brush and leaf"
+        },
+        {
+          "date": "2026-03-12",
+          "label": "Zone 5 brush and leaf"
+        },
+        {
+          "date": "2026-05-07",
+          "label": "Zone 5 brush and leaf"
+        },
+        {
+          "date": "2026-07-16",
+          "label": "Zone 5 brush and leaf"
+        },
+        {
+          "date": "2026-09-03",
+          "label": "Zone 5 brush and leaf"
+        },
+        {
+          "date": "2026-10-22",
+          "label": "Zone 5 brush and leaf"
+        },
+        {
+          "date": "2026-12-03",
+          "label": "Zone 5 brush and leaf"
+        }
+      ],
+      "notes_en": "Zone 5 brush and leaf; place out no earlier than 7 days before; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "yard",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 4,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-22",
+          "label": "Zone 6 brush and leaf"
+        },
+        {
+          "date": "2026-03-19",
+          "label": "Zone 6 brush and leaf"
+        },
+        {
+          "date": "2026-05-14",
+          "label": "Zone 6 brush and leaf"
+        },
+        {
+          "date": "2026-07-09",
+          "label": "Zone 6 brush and leaf"
+        },
+        {
+          "date": "2026-09-10",
+          "label": "Zone 6 brush and leaf"
+        },
+        {
+          "date": "2026-10-29",
+          "label": "Zone 6 brush and leaf"
+        },
+        {
+          "date": "2026-12-10",
+          "label": "Zone 6 brush and leaf"
+        }
+      ],
+      "notes_en": "Zone 6 brush and leaf; place out no earlier than 7 days before; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "yard",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 5,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-16",
+          "label": "Zone 7 brush and leaf"
+        },
+        {
+          "date": "2026-03-13",
+          "label": "Zone 7 brush and leaf"
+        },
+        {
+          "date": "2026-05-08",
+          "label": "Zone 7 brush and leaf"
+        },
+        {
+          "date": "2026-07-17",
+          "label": "Zone 7 brush and leaf"
+        },
+        {
+          "date": "2026-09-04",
+          "label": "Zone 7 brush and leaf"
+        },
+        {
+          "date": "2026-10-23",
+          "label": "Zone 7 brush and leaf"
+        },
+        {
+          "date": "2026-12-04",
+          "label": "Zone 7 brush and leaf"
+        }
+      ],
+      "notes_en": "Zone 7 brush and leaf; place out no earlier than 7 days before; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "yard",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 5,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-23",
+          "label": "Zone 8 brush and leaf"
+        },
+        {
+          "date": "2026-03-20",
+          "label": "Zone 8 brush and leaf"
+        },
+        {
+          "date": "2026-05-15",
+          "label": "Zone 8 brush and leaf"
+        },
+        {
+          "date": "2026-07-10",
+          "label": "Zone 8 brush and leaf"
+        },
+        {
+          "date": "2026-09-11",
+          "label": "Zone 8 brush and leaf"
+        },
+        {
+          "date": "2026-10-30",
+          "label": "Zone 8 brush and leaf"
+        },
+        {
+          "date": "2026-12-11",
+          "label": "Zone 8 brush and leaf"
+        }
+      ],
+      "notes_en": "Zone 8 brush and leaf; place out no earlier than 7 days before; brush max 4 ft length and 4 in diameter; leaves in brown paper biodegradable bags. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
     },
     {
       "region": "hazlet",
       "stream": "other",
-      "source_url": "https://www.hazlettwp.org/610/White-Metal-Collection",
-      "weekday": null,
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 1,
       "week_pattern": "custom",
       "area_key": null,
       "area_note": "",
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "custom Curbside by 7:00 a.m. on scheduled day Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "dates": [
+        {
+          "date": "2026-01-05",
+          "label": "Zones 1 and 2 white metal"
+        },
+        {
+          "date": "2026-04-06",
+          "label": "Zones 1 and 2 white metal"
+        },
+        {
+          "date": "2026-08-17",
+          "label": "Zones 1 and 2 white metal"
+        },
+        {
+          "date": "2026-12-14",
+          "label": "Zones 1 and 2 white metal"
+        }
+      ],
+      "notes_en": "Zones 1 and 2 white metal; curbside by 7:00 a.m. on scheduled day; or drop off at recycling yard. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
       "notes_es": "",
-      "status": "needs_verification",
-      "last_verified": null
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "other",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 2,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-06",
+          "label": "Zones 3 and 4 white metal"
+        },
+        {
+          "date": "2026-04-07",
+          "label": "Zones 3 and 4 white metal"
+        },
+        {
+          "date": "2026-08-18",
+          "label": "Zones 3 and 4 white metal"
+        },
+        {
+          "date": "2026-12-15",
+          "label": "Zones 3 and 4 white metal"
+        }
+      ],
+      "notes_en": "Zones 3 and 4 white metal; curbside by 7:00 a.m. on scheduled day; or drop off at recycling yard. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "other",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 3,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-07",
+          "label": "Zones 5 and 6 white metal"
+        },
+        {
+          "date": "2026-04-08",
+          "label": "Zones 5 and 6 white metal"
+        },
+        {
+          "date": "2026-08-19",
+          "label": "Zones 5 and 6 white metal"
+        },
+        {
+          "date": "2026-12-16",
+          "label": "Zones 5 and 6 white metal"
+        }
+      ],
+      "notes_en": "Zones 5 and 6 white metal; curbside by 7:00 a.m. on scheduled day; or drop off at recycling yard. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "hazlet",
+      "stream": "other",
+      "source_url": "https://www.hazlettwp.org/DocumentCenter/View/10520/Green-Booklet-2026-PDF",
+      "weekday": 4,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-01-08",
+          "label": "Zones 7 and 8 white metal"
+        },
+        {
+          "date": "2026-04-09",
+          "label": "Zones 7 and 8 white metal"
+        },
+        {
+          "date": "2026-08-20",
+          "label": "Zones 7 and 8 white metal"
+        },
+        {
+          "date": "2026-12-17",
+          "label": "Zones 7 and 8 white metal"
+        }
+      ],
+      "notes_en": "Zones 7 and 8 white metal; curbside by 7:00 a.m. on scheduled day; or drop off at recycling yard. Public Works: 732-217-8654. Recycling yard closed on listed holidays; zone recycling dates shifted per Green Booklet (e.g. Nov 3 zone 2 to Nov 2). Other holiday and weather changes are not listed here; check https://www.hazlettwp.org/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
     },
     {
       "region": "highlands",
@@ -9180,7 +9763,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "one bulk item per household garbage pickup day Furniture allowed; construction materials excluded; larger items may need to be cut or broken down Public Works: 732-787-0215 Ext. 451. No curbside collection Thanksgiving, Christmas, or New Year's Day. Other holiday and weather changes are not listed here; check https://www.keansburgnj.gov/.",
+      "notes_en": "custom One bulk item per household garbage pickup day; furniture allowed; construction materials excluded; larger items may need to be cut or broken down; Public Works 732-787-0215 Ext. 451. Public Works: 732-787-0215 Ext. 451. No curbside collection Thanksgiving, Christmas, or New Year's Day. Other holiday and weather changes are not listed here; check https://www.keansburgnj.gov/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -9196,7 +9779,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "during months listed on Leaf and Branch Pick Up schedule (schedule not published on municipal Public Works page) Leaves and branches at curb; do not bag leaves Public Works: 732-787-0215 Ext. 451. No curbside collection Thanksgiving, Christmas, or New Year's Day. Other holiday and weather changes are not listed here; check https://www.keansburgnj.gov/.",
+      "notes_en": "seasonal Leaves and branches at curb during months listed on Leaf and Branch Pick Up schedule; schedule not published on municipal Public Works page as of research; do not bag leaves. Public Works: 732-787-0215 Ext. 451. No curbside collection Thanksgiving, Christmas, or New Year's Day. Other holiday and weather changes are not listed here; check https://www.keansburgnj.gov/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -9360,6 +9943,52 @@
       "last_verified": "2026-10-18"
     },
     {
+      "region": "keyport",
+      "stream": "yard",
+      "source_url": "https://keyportonline.com/departments/public-works/",
+      "weekday": 3,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-04-22",
+          "label": "Sections 3 and 4 leaf and branch curbside"
+        },
+        {
+          "date": "2026-05-13",
+          "label": "Sections 3 and 4 leaf and branch curbside"
+        },
+        {
+          "date": "2026-06-17",
+          "label": "Sections 3 and 4 leaf and branch curbside"
+        },
+        {
+          "date": "2026-09-23",
+          "label": "Sections 3 and 4 leaf and branch curbside"
+        },
+        {
+          "date": "2026-10-21",
+          "label": "Sections 3 and 4 leaf and branch curbside"
+        },
+        {
+          "date": "2026-11-18",
+          "label": "Sections 3 and 4 leaf and branch curbside"
+        },
+        {
+          "date": "2026-12-16",
+          "label": "Sections 3 and 4 leaf and branch curbside"
+        }
+      ],
+      "notes_en": "Sections 3 and 4 leaf and branch curbside. Public Works: 732-739-5428. No garbage/recycling pickup New Year's Day, Christmas Day, or Thanksgiving Day; following day when weather permits. Other holiday and weather changes are not listed here; check https://keyportonline.com/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
       "region": "little-silver",
       "stream": "trash",
       "source_url": "https://www.littlesilvernj.gov/DocumentCenter/View/886",
@@ -9466,7 +10095,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "second trash pickup of the week (Thursday for Zone 1, Friday for Zone 2); max 3 items Furniture and carpeting; no appliances, electronics, or construction material No trash or recycling curbside collection on Thanksgiving Day, Christmas Day, or New Year's Day. Other holiday and weather changes are not listed here; check https://www.littlesilvernj.gov/.",
+      "notes_en": "custom Bulk on second trash pickup of the week (Thursday for Zone 1, Friday for Zone 2); max 3 items; furniture and carpeting; no appliances, electronics, or construction material. No trash or recycling curbside collection on Thanksgiving Day, Christmas Day, or New Year's Day. Other holiday and weather changes are not listed here; check https://www.littlesilvernj.gov/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -9514,7 +10143,23 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "drop-off at Public Works Yard only (not curbside) Electronics accepted in designated green container: TVs, computers, printers, phones, microwaves, air conditioners, and related items No trash or recycling curbside collection on Thanksgiving Day, Christmas Day, or New Year's Day. Other holiday and weather changes are not listed here; check https://www.littlesilvernj.gov/.",
+      "notes_en": "custom Electronics drop-off at Public Works Yard only (not curbside); TVs, computers, printers, phones, microwaves, air conditioners, and related items in designated green container. No trash or recycling curbside collection on Thanksgiving Day, Christmas Day, or New Year's Day. Other holiday and weather changes are not listed here; check https://www.littlesilvernj.gov/.",
+      "notes_es": "",
+      "status": "needs_verification",
+      "last_verified": null
+    },
+    {
+      "region": "loch-arbour",
+      "stream": "trash",
+      "source_url": "https://www.locharbournj.us/departments-services/pages/departments-services-contacts",
+      "weekday": null,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "notes_en": "custom Village Sanitation contact is Borough of Deal (732-531-1454) per Departments and Services Contacts; Loch Arbour trash-recycling page lists 2026 bulk Mondays only and does not state weekly trash or recycling weekdays. Do not infer Deal borough days. Public Works: 732-531-1454. Bulk schedule only on village site; trash/recycling weekdays via Deal (not restated on Loch Arbour page). Other holiday and weather changes are not listed here; check https://www.locharbournj.us/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -9811,6 +10456,22 @@
     },
     {
       "region": "middletown",
+      "stream": "trash",
+      "source_url": "https://www.middletownnj.org/571/Curbside-Garbage-Collection",
+      "weekday": null,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "notes_en": "custom Township provides curbside garbage in township black carts but publishes no static weekday or zone list; residents must enter their address in the Recycle Coach app to find their zone. No garbage collection on New Years Day, Thanksgiving Day, or Christmas Day; collected on the next scheduled collection day. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "",
+      "status": "needs_verification",
+      "last_verified": null
+    },
+    {
+      "region": "middletown",
       "stream": "bulk",
       "source_url": "https://middletownnj.org/m/newsflash/Home/Detail/1657",
       "weekday": null,
@@ -9820,7 +10481,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment Register by 3:00 p.m. Sunday-Thursday during your scheduled recycling week for pickup within 48 hours; one bulk request per household per recycling week; up to 4 items, 75 lb max each, under 6 ft; contractor IWS. Source: middletownnj.org newsflash Detail/1657. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_en": "by appointment Register by 3:00 p.m. Sunday-Thursday during your scheduled recycling week for pickup within 48 hours; one bulk request per household per recycling week; up to 4 items, 75 lb max each, under 6 ft; contractor IWS. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -9836,7 +10497,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "seasonal Curbside brush in spring and leaves in fall; Fall 2026 leaf schedule not yet posted on collection page. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_en": "seasonal Curbside brush in spring and leaves in fall; Fall 2026 leaf schedule not yet posted on collection page as of research. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -9948,7 +10609,7 @@
       "dtstart": "2026-01-06",
       "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270131",
       "overrides": [],
-      "notes_en": "Branch or tree limbs for chipping: up to 6 inches diameter, 4–8 feet length, butt ends same direction at curb. Public Works: 732-229-5513. No pickup Thanksgiving, Christmas, or New Year's Day; next regularly scheduled day. Other holiday and weather changes are not listed here; check https://www.monmouthbeach.org/.",
+      "notes_en": "Branch or tree limbs for chipping: up to 6 inches diameter, 4-8 feet length, butt ends same direction at curb. Public Works: 732-229-5513. No pickup Thanksgiving, Christmas, or New Year's Day; next regularly scheduled day. Other holiday and weather changes are not listed here; check https://www.monmouthbeach.org/.",
       "notes_es": "",
       "status": "verified",
       "last_verified": "2026-10-18"
@@ -9964,7 +10625,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment; registration closes 2:30 PM Tuesday; four pickups per household per year. Place at curb day prior to collection. Public Works: 732-229-5513. No pickup Thanksgiving, Christmas, or New Year's Day; next regularly scheduled day. Other holiday and weather changes are not listed here; check https://www.monmouthbeach.org/.",
+      "notes_en": "by appointment By appointment; registration closes 2:30 PM Tuesday; four pickups per household per year; place at curb day prior to collection; Public Works 732-229-5513. Public Works: 732-229-5513. No pickup Thanksgiving, Christmas, or New Year's Day; next regularly scheduled day. Other holiday and weather changes are not listed here; check https://www.monmouthbeach.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10092,7 +10753,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "up to 3 bulk items on second trash pickup of the week (Thursday for Zone 1, Friday for Zone 2) Mattresses and box springs must be in plastic; rugs cut, rolled, tied, max 30 lbs. each Public Works: 732-775-1607. No recycling or garbage collection Thanksgiving, Christmas, New Year's, or July 4. Other holiday and weather changes are not listed here; check https://www.neptunecitynj.com/.",
+      "notes_en": "custom Up to 3 bulk items on second trash pickup of the week (Thursday for Zone 1, Friday for Zone 2); mattresses and box springs must be in plastic; rugs cut, rolled, tied, max 30 lbs each. Public Works: 732-775-1607. No recycling or garbage collection Thanksgiving, Christmas, New Year's, or July 4. Other holiday and weather changes are not listed here; check https://www.neptunecitynj.com/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10252,7 +10913,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "seasonal Separate pile from brush; pickup any day Monday–Friday of scheduled week Public Works: 732-775-8797. Neptune Township: garbage/recycling on holiday moved to Wednesday same week. Ocean Grove: garbage canceled that day; if holiday is Wednesday OG recycling moves to Friday. Other holiday and weather changes are not listed here; check https://neptunetownship.org/.",
+      "notes_en": "seasonal Separate pile from brush; pickup any day Monday-Friday of scheduled week Public Works: 732-775-8797. Neptune Township: garbage/recycling on holiday moved to Wednesday same week. Ocean Grove: garbage canceled that day; if holiday is Wednesday OG recycling moves to Friday. Other holiday and weather changes are not listed here; check https://neptunetownship.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10524,7 +11185,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment; via Citizen Request form; DPW assigns pickup date. Public Works: 732-222-8221. See borough site; 2026 holiday garbage/recycling schedule referenced on Public Works page. Other holiday and weather changes are not listed here; check https://www.oceanportboro.com.",
+      "notes_en": "by appointment By appointment via Citizen Request form; DPW assigns pickup date; Public Works 732-222-8221. Public Works: 732-222-8221. See borough site; 2026 holiday garbage/recycling schedule referenced on Public Works page. Other holiday and weather changes are not listed here; check https://www.oceanportboro.com.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10572,7 +11233,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment every week. Electronics pickup by appointment; max 3 items. Public Works: 732-222-8221. See borough site; 2026 holiday garbage/recycling schedule referenced on Public Works page. Other holiday and weather changes are not listed here; check https://www.oceanportboro.com.",
+      "notes_en": "by appointment Electronics pickup by appointment; max 3 items; Public Works 732-222-8221. Public Works: 732-222-8221. See borough site; 2026 holiday garbage/recycling schedule referenced on Public Works page. Other holiday and weather changes are not listed here; check https://www.oceanportboro.com.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10668,7 +11329,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "custom Zone 1 brush/leaves; 2nd full week of month (brush Apr–Oct, leaves Nov–Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
+      "notes_en": "custom Zone 1 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10684,7 +11345,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "custom Zone 2 brush/leaves; 2nd full week of month (brush Apr–Oct, leaves Nov–Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
+      "notes_en": "custom Zone 2 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10700,7 +11361,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "custom Zone 3 brush/leaves; 2nd full week of month (brush Apr–Oct, leaves Nov–Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
+      "notes_en": "custom Zone 3 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10716,7 +11377,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "custom Zone 4 brush/leaves; 2nd full week of month (brush Apr–Oct, leaves Nov–Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
+      "notes_en": "custom Zone 4 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -10732,7 +11393,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "custom Zone 5 brush/leaves; 2nd full week of month (brush Apr–Oct, leaves Nov–Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
+      "notes_en": "custom Zone 5 brush/leaves; 2nd full week of month (brush Apr-Oct, leaves Nov-Dec) Public Works: 732-530-2770. Public Utilities page (undated); no 2026 override table on fetched page. Other holiday and weather changes are not listed here; check https://www.redbanknj.org.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -11040,7 +11701,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment By appointment; 1st and 3rd Wednesday January through October; max 2 pickups per year (5 cu yd each). Call Public Works 732-842-8941. Public Works: 732-842-8941. See Rumson Public Works / 2026 calendar references on borough site. Other holiday and weather changes are not listed here; check https://www.rumsonnj.gov.",
+      "notes_en": "by appointment By appointment; 1st and 3rd Wednesday January through October; max 2 pickups per year (5 cu yd each); call Public Works 732-842-8941. Public Works: 732-842-8941. See Rumson Public Works / 2026 calendar references on borough site. Other holiday and weather changes are not listed here; check https://www.rumsonnj.gov.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
@@ -11430,22 +12091,6 @@
     },
     {
       "region": "union-beach",
-      "stream": "yard",
-      "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
-      "weekday": null,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
-      "overrides": [],
-      "notes_en": "seasonal Section A on Wednesdays; Section B on Tuesdays per 2026 calendar. Branches/brush with regular garbage when properly bundled (FAQ). Public Works: 732-264-1133. 2026 calendar lists no-trash overrides only. Other holiday and weather changes are not listed here; check https://www.unionbeachnj.gov/ubnj/.",
-      "notes_es": "",
-      "status": "needs_verification",
-      "last_verified": null
-    },
-    {
-      "region": "union-beach",
       "stream": "other",
       "source_url": "https://www.unionbeachnj.gov/ubnj/Departments/Public%20Works/",
       "weekday": null,
@@ -11455,10 +12100,150 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment by appointment; Appliances, electronics, and metals curbside by appointment (732-264-1133); refrigerator doors must be removed. Public Works: 732-264-1133. 2026 calendar lists no-trash overrides only. Other holiday and weather changes are not listed here; check https://www.unionbeachnj.gov/ubnj/.",
+      "notes_en": "by appointment By appointment; appliances, electronics, and metals curbside; call 732-264-1133; refrigerator doors must be removed. Public Works: 732-264-1133. 2026 calendar lists no-trash overrides only. Other holiday and weather changes are not listed here; check https://www.unionbeachnj.gov/ubnj/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null
+    },
+    {
+      "region": "union-beach",
+      "stream": "yard",
+      "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+      "weekday": 3,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-10-07",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-10-14",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-10-21",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-10-28",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-11-04",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-11-11",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-11-18",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-11-25",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-02",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-09",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-16",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-23",
+          "label": "Section A fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-30",
+          "label": "Section A fall leaf collection (paper bags)"
+        }
+      ],
+      "notes_en": "Section A fall leaf collection (paper bags). Public Works: 732-264-1133. 2026 calendar lists no-trash overrides only. Other holiday and weather changes are not listed here; check https://www.unionbeachnj.gov/ubnj/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
+    },
+    {
+      "region": "union-beach",
+      "stream": "yard",
+      "source_url": "https://www.unionbeachnj.gov/ubnj/News%20%26%20Announcements/2026%20Trash%20and%20Recycling%20Collection%20Calendar.pdf",
+      "weekday": 2,
+      "week_pattern": "custom",
+      "area_key": null,
+      "area_note": "",
+      "dtstart": null,
+      "rrule": null,
+      "overrides": [],
+      "dates": [
+        {
+          "date": "2026-10-06",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-10-13",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-10-20",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-10-27",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-11-03",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-11-10",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-11-17",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-11-24",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-01",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-08",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-15",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-22",
+          "label": "Section B fall leaf collection (paper bags)"
+        },
+        {
+          "date": "2026-12-29",
+          "label": "Section B fall leaf collection (paper bags)"
+        }
+      ],
+      "notes_en": "Section B fall leaf collection (paper bags). Public Works: 732-264-1133. 2026 calendar lists no-trash overrides only. Other holiday and weather changes are not listed here; check https://www.unionbeachnj.gov/ubnj/.",
+      "notes_es": "",
+      "status": "verified",
+      "last_verified": "2026-10-18"
     },
     {
       "region": "west-long-branch",
@@ -11544,38 +12329,6 @@
       "region": "west-long-branch",
       "stream": "bulk",
       "source_url": "https://www.westlongbranch.org/1214/Public-Works",
-      "weekday": 4,
-      "week_pattern": "weekly",
-      "area_key": "bulk:north-zone-furniture-bulk-sit-sleep-eat-on",
-      "area_note": "North Zone furniture bulk (sit/sleep/eat on): limit 3 items; also listed as every Thursday on Public Works page",
-      "dtstart": "2026-01-01",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270131",
-      "overrides": [],
-      "notes_en": "North Zone furniture bulk (sit/sleep/eat on); limit 3 items; also listed as every Thursday on Public Works page. Public Works: 732-571-5967. No collection New Year's Day, Independence Day, Election Day, Thanksgiving, Christmas. Recycling: no pickup Thanksgiving, Christmas, or New Year's Day (next regular day). Other holiday and weather changes are not listed here; check https://www.westlongbranch.org/.",
-      "notes_es": "",
-      "status": "verified",
-      "last_verified": "2026-10-18"
-    },
-    {
-      "region": "west-long-branch",
-      "stream": "bulk",
-      "source_url": "https://www.westlongbranch.org/1347/Bulk-Item-Collection",
-      "weekday": 5,
-      "week_pattern": "weekly",
-      "area_key": "bulk:south-zone-furniture-bulk",
-      "area_note": "South Zone furniture bulk: limit 3 items; second weekly garbage day per Bulk Item Collection page",
-      "dtstart": "2026-01-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20270131",
-      "overrides": [],
-      "notes_en": "South Zone furniture bulk; limit 3 items; second weekly garbage day per Bulk Item Collection page. Public Works: 732-571-5967. No collection New Year's Day, Independence Day, Election Day, Thanksgiving, Christmas. Recycling: no pickup Thanksgiving, Christmas, or New Year's Day (next regular day). Other holiday and weather changes are not listed here; check https://www.westlongbranch.org/.",
-      "notes_es": "",
-      "status": "verified",
-      "last_verified": "2026-10-18"
-    },
-    {
-      "region": "west-long-branch",
-      "stream": "bulk",
-      "source_url": "https://www.westlongbranch.org/1347/Bulk-Item-Collection",
       "weekday": null,
       "week_pattern": "custom",
       "area_key": null,
@@ -11583,7 +12336,7 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "4th week of each month Bulky metal (washers, dryers, miscellaneous metal) borough-wide Public Works: 732-571-5967. No collection New Year's Day, Independence Day, Election Day, Thanksgiving, Christmas. Recycling: no pickup Thanksgiving, Christmas, or New Year's Day (next regular day). Other holiday and weather changes are not listed here; check https://www.westlongbranch.org/.",
+      "notes_en": "custom Bulky metal (washers, dryers, miscellaneous metal) borough-wide during the 4th week of each month; Public Works 732-571-5967. Public Works: 732-571-5967. No collection New Year's Day, Independence Day, Election Day, Thanksgiving, Christmas. Recycling: no pickup Thanksgiving, Christmas, or New Year's Day (next regular day). Other holiday and weather changes are not listed here; check https://www.westlongbranch.org/.",
       "notes_es": "",
       "status": "needs_verification",
       "last_verified": null

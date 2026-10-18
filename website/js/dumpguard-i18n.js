@@ -27,6 +27,8 @@
     'Ready?': '¿Listo?', 'Find out how to dispose': 'Descubra cómo desechar', 'of anything in seconds.': 'cualquier cosa en segundos.',
     'Free for residents. Built for local government.': 'Gratis para residentes. Hecho para el gobierno local.', 'Create an account': 'Crear una cuenta',
     'Cleaner towns, one item at a time.': 'Municipios más limpios, un artículo a la vez.',
+    'Enter your ZIP code to see pickup days.': 'Escriba su código postal para ver los días de recogida.', 'Pickup days': 'Días de recogida',
+    'We are still finding verified pickup data for this area. Check back soon.': 'Todavía estamos buscando datos de recogida verificados para esta zona. Vuelva a consultar pronto.',
     // identify (labels only; results are translated by dumpguard-api.js)
     'What are you': '¿Qué quiere', 'getting rid of?': 'desechar?', 'Your town': 'Su municipio', 'Search an item': 'Busque un artículo', 'Or use a photo': 'O use una foto',
     'Not sure. Pick a category': 'No está seguro. Elija una categoría',
@@ -122,6 +124,7 @@
     [/^Filed (.+?)(?:, last update (.+?))?(\. No map point\.)?$/, function (m) { return 'Presentado ' + m[1] + (m[2] ? ', última actualización ' + m[2] : '') + (m[3] ? '. Sin punto en el mapa.' : ''); }],
     [/^(DG-[A-Z0-9]{5}): (Received|Noticed by officials|In progress|Resolved)$/, function (m) { return m[1] + ': ' + lit(m[2]); }],
     [/^(DG-[A-Z0-9]{5}) - (.+?) - (.*)$/, function (m) { return m[1] + ' - ' + lit(m[2]) + ' - ' + m[3]; }],
+    [/^(.+): We are still finding verified pickup data for this area\. Check back soon\.$/, function (m) { return m[1] + ': ' + ES['We are still finding verified pickup data for this area. Check back soon.']; }],
     [/^in ([A-Z].*)$/, function (m) { return 'en ' + m[1]; }],
     [/^(.*) · filed (.+)$/, function (m) { return m[1] + ' · presentado ' + m[2]; }],
     [/^No email is sent\. Your code is (\d+)\.$/, function (m) { return 'No se envía ningún correo. Su código es ' + m[1] + '.'; }],

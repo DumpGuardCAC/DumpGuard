@@ -215,37 +215,17 @@
   }
   DG.staffLogin = staffLogin;
 
-  function init() {
-    if (!$('gmap')) return;
-    $('mbanner').style.display = 'none';
-    map = L.map('gmap', { scrollWheelZoom: false }).setView([40.45, -74.25], 10);
-    var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
-    var failed = 0;
-    tiles.on('tileerror', function () {
-      if (++failed > 3) { $('mbanner').textContent = 'Street map tiles could not load. Report areas still show.'; $('mbanner').style.display = 'block'; }
-    });
-    layer = L.layerGroup().addTo(map);
-
-    ['mfilter', 'mtown', 'mstat'].forEach(function (id) { $(id).addEventListener('change', redraw); });
-    $('gtoggle').textContent = 'Government sign-in';
-    clear($('glist'));
+  // The town filter follows the shared town (nav dropdown); "All towns" is still one click away.
+  function followTown() {
+    var sel = $('mtown'), id = DG.townId(), has = false;
+    Array.prototype.forEach.call(sel.options, function (o) { if (o.value && (o.value === id || o.getAttribute('data-n') === DG.townName())) { sel.value = o.value; has = true; } });
+    if (!has) sel.value = '';
     redraw();
+    if (!pub) return;
+    var f = filters().town, cells = pub.cells.filter(function (c) { return !f || c.town === f; });
+    if (!cells.length) cells = pub.cells;
+    if (cells.length) map.fitBounds(cells.map(function (c) { return [c.lat, c.lng]; }), { maxZoom: 13, padding: [40, 40] });
   }
-  // Called from the Log in screen's Government tab. Resolves to { ok, message }.
-  function staffLogin(user, pw) {
-    token = user + ':' + pw;
-    return refreshStaff().then(function (status) {
-      if (status === 200) {
-        $('gtoggle').textContent = 'Sign out';
-        $('mbanner').style.display = 'none';
-        redraw();
-        return { ok: true };
-      }
-      token = null;
-      return { ok: false, message: status === 429 ? 'Too many attempts. Try again later.' : 'That username or password was not accepted.' };
-    }).catch(function () { token = null; return { ok: false, message: 'Could not reach the server.' }; });
-  }
-  DG.staffLogin = staffLogin;
 
   function init() {
     if (!$('gmap')) return;
@@ -262,11 +242,11 @@
     $('gtoggle').addEventListener('click', function () { if (token) signOut(); else window.dispatchEvent(new Event('dg-gov-login')); });
 
     refreshPublic().then(function () {
-      fillFilters(); redraw();
-      if (pub && pub.cells.length) map.fitBounds(pub.cells.map(function (c) { return [c.lat, c.lng]; }), { maxZoom: 13, padding: [40, 40] });
+      fillFilters(); followTown();
     }).catch(function () {
       $('mbanner').textContent = 'The map could not load. Try again later.'; $('mbanner').style.display = 'block';
     });
+    window.addEventListener('dg-town', function () { if (pub) followTown(); });
     // The map is created while its view is hidden, so resize it when the view becomes visible.
     if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe($('gmap'));
   }

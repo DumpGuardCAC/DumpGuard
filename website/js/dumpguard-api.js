@@ -89,41 +89,35 @@
       state.towns.forEach(function (tw) { sel.appendChild(h('option', { value: tw.id }, tw.name)); });
       if (!state.towns.some(function (tw) { return tw.id === state.town; })) state.town = state.towns.some(function (tw) { return tw.id === 'edison'; }) ? 'edison' : state.towns[0].id;
       sel.value = state.town;
-      sel.addEventListener('change', function () { setTown(sel.value); });
+      if (!sel.dataset.bound) { sel.dataset.bound = '1'; sel.addEventListener('change', function () { setTown(sel.value); }); }
     });
   }
-  // A town with no verified pickup schedule yet says so as soon as it is picked, instead of waiting for a ZIP lookup.
-  function pendingNotice(id) {
-    var box = $('zresult'), tw = state.towns.filter(function (x) { return x.id === id; })[0];
-    if (!box || !tw || !tw.zips || !tw.zips.length) return;
-    api.get('/schedule/' + tw.zips[0] + '?town=' + encodeURIComponent(id)).then(function (r) {
-      if (state.town !== id) return;
-      if (r.status === 404) { clear(box).appendChild(h('p', { class: 'err' }, tw.name + ': ' + t('noZip'))); }
-    }).catch(function () { /* the ZIP lookup will report problems */ });
+  // The Pickup days page follows the shared town: it loads that town's first ZIP, and says so when there is no data yet.
+  function townName(id) { var tw = state.towns.filter(function (x) { return x.id === id; })[0]; return tw ? tw.name : ''; }
+  function loadPickup() {
+    var tw = state.towns.filter(function (x) { return x.id === state.town; })[0];
+    if (!$('zresult') || !tw || !tw.zips || !tw.zips.length) return;
+    $('zip').value = '';
+    lookupZip(tw.zips[0], tw.id, []);
   }
   function setTown(id) {
     state.town = id;
     try { localStorage.setItem('dg_town', id); } catch (e) { /* ignore */ }
     if ($('town')) $('town').value = id;
     runSearch();
-    pendingNotice(id);
+    loadPickup();
+    window.dispatchEvent(new Event('dg-town'));
     var cat = $('cat');
     if (cat && cat.value) showMaterial(cat.value);
   }
-  function addLangSwitch() {
-    var town = $('town');
-    if (!town || $('lang')) return;
-    var sel = h('select', { id: 'lang', 'aria-label': 'Language' }, h('option', { value: 'en' }, 'English'), h('option', { value: 'es' }, 'Español'));
-    sel.value = state.lang; document.documentElement.lang = state.lang;
-    sel.addEventListener('change', function () {
-      state.lang = sel.value; document.documentElement.lang = state.lang;
-      try { localStorage.setItem('dg_lang', state.lang); } catch (e) { /* ignore */ }
-      translateStatic();
-      runSearch();
-      if (lastZip) lookupZip(lastZip.zip, lastZip.town, lastZip.areas);
-    });
-    town.parentNode.insertBefore(h('label', { for: 'lang' }, 'Language / Idioma'), town);
-    town.parentNode.insertBefore(sel, town);
+  function setLang(lang) {
+    state.lang = lang === 'es' ? 'es' : 'en';
+    document.documentElement.lang = state.lang;
+    try { localStorage.setItem('dg_lang', state.lang); } catch (e) { /* ignore */ }
+    translateStatic();
+    runSearch();
+    if (lastZip && $('zresult')) lookupZip(lastZip.zip, lastZip.town, lastZip.areas);
+    window.dispatchEvent(new Event('dg-lang'));
   }
   function translateStatic() {
     var q = $('q'); if (q) q.placeholder = state.lang === 'es' ? 'sofá, TV, batería, partes impresas en 3D...' : 'couch, TV, battery, 3D printed parts…';
@@ -311,6 +305,7 @@
         return;
       }
       if (b.needs === 'area') { renderAreas(box, b, zip, areas || []); return; }
+      if (b.town && b.town.id && b.town.id !== state.town) { state.town = b.town.id; try { localStorage.setItem('dg_town', state.town); } catch (e) { /* ignore */ } if ($('town')) $('town').value = state.town; runSearch(); window.dispatchEvent(new Event('dg-town')); }
       renderSchedule(box, b, zip, town, areas || []);
     }).catch(function () { clear(box).appendChild(h('p', { class: 'err' }, t('fail'))); });
   }
@@ -366,17 +361,9 @@
       box.insertBefore(note, box.children[1] || null);
     }).catch(function () { /* notices are a bonus */ });
   }
-  // ---- add the pickup-days section to the Identify page ----
-  function addScheduleSection() {
-    var page = document.querySelector('#v-identify .page');
-    if (!page || $('zip')) return;
-    var form = h('div', {},
-      h('label', { for: 'zip' }, 'ZIP'),
-      h('div', { class: 'row2' }, h('input', { id: 'zip', inputmode: 'numeric', maxlength: '5', autocomplete: 'postal-code', placeholder: '08817' }), h('button', { class: 'btn dark', id: 'zgo', type: 'button' }, t('lookup'))));
-    var wrap = h('div', { class: 'tool', id: 'sched' },
-      h('div', {}, h('div', { class: 'eyebrow', style: 'margin-top:20px' }, state.lang === 'es' ? 'Días de recogida' : 'Pickup days'), h('p', { class: 'lead' }, t('zipHelp')), form),
-      h('div', { class: 'card', id: 'zresult', 'aria-live': 'polite' }));
-    page.appendChild(wrap);
+  // ---- pickup-days page: the markup is in index.html, this wires it up ----
+  function wireSchedule() {
+    if (!$('zgo')) return;
     $('zgo').addEventListener('click', function () { lookupZip($('zip').value.trim()); });
     $('zip').addEventListener('keydown', function (e) { if (e.key === 'Enter') lookupZip($('zip').value.trim()); });
   }
@@ -402,18 +389,17 @@
   }
 
   function init() {
-    addLangSwitch();
-    addScheduleSection();
+    wireSchedule();
     fillCategories();
     translateStatic();
-    loadTowns().then(function () { runSearch(); }).catch(function () { /* the page still renders; searches will report the error */ });
+    loadTowns().then(function () { runSearch(); loadPickup(); }).catch(function () { /* the page still renders; searches will report the error */ });
     if ($('q')) $('q').addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(runSearch, 250); });
     if ($('cat')) $('cat').addEventListener('change', function () { if ($('cat').value) showMaterial($('cat').value); });
   }
 
   window.DumpGuard = {
     api: api, request: request, setTown: setTown, showMaterial: showMaterial, showCategoryPicker: showCategoryPicker,
-    h: h, clear: clear, lang: function () { return state.lang; }, townId: function () { return state.town; },
+    h: h, clear: clear, lang: function () { return state.lang; }, setLang: setLang, townId: function () { return state.town; }, townName: function () { return townName(state.town); },
   };
   document.addEventListener('DOMContentLoaded', init);
   window.addEventListener('load', fallbackRouter);

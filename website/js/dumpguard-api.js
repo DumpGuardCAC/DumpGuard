@@ -28,7 +28,7 @@
     },
     es: {
       empty: 'Su guía de desecho aparecerá aquí.', searching: 'Buscando...', none: 'Sin resultados. Elija una categoría o pruebe otra palabra.',
-      didyou: 'Otras coincidencias', recycling: 'Reciclar', trash: 'Basura', special_dropoff: 'Entrega especial', hazard: 'Peligroso: no lo ponga en el contenedor',
+      didyou: 'Otras coincidencias', recycling: 'Reciclar', trash: 'Basura', special_dropoff: 'Punto de entrega especial', hazard: 'Peligroso: no lo ponga en el contenedor',
       source: 'Fuente', verified: 'verificado', gotit: 'Listo, contar de forma anónima', thanks: 'Gracias, contado de forma anónima.',
       wrong: 'Informar de una respuesta incorrecta', send: 'Enviar', cancel: 'Cancelar', whatwrong: '¿Qué está mal o falta?', sent: 'Gracias. Una persona lo revisará con la fuente oficial.',
       where: 'Dónde llevarlo', openNow: 'abierto ahora', closed: 'cerrado ahora', km: 'km', residents: 'Solo residentes',

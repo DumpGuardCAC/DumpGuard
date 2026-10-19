@@ -38,7 +38,7 @@
     'ZIP code (optional)': 'Código postal (opcional)', 'Look up': 'Buscar', 'Your town': 'Su municipio',
     'DumpGuard is a student-built project that makes waste disposal simple for residents and gives towns a clearer picture of where dumping happens.': 'DumpGuard es un proyecto hecho por estudiantes que simplifica el desecho de residuos para los residentes y le da a los municipios una imagen más clara de dónde ocurren los vertidos.',
     // identify (labels only; results are translated by dumpguard-api.js)
-    'What are you': '¿Qué quiere', 'getting rid of?': 'desechar?', 'Your town': 'Su municipio', 'Search an item': 'Busque un artículo', 'Or use a photo': 'O use una foto',
+    'What are you': '¿Qué quiere', 'When is': '¿Cuándo es', 'my pickup?': 'mi recogida?', 'getting rid of?': 'desechar?', 'Your town': 'Su municipio', 'Search an item': 'Busque un artículo', 'Or use a photo': 'O use una foto',
     'Not sure. Pick a category': 'No está seguro. Elija una categoría',
     // report
     'Report illegal dumping': 'Reportar vertido ilegal', 'Saw something dumped': '¿Vio algo tirado', "where it shouldn't be?": 'donde no debería estar?',

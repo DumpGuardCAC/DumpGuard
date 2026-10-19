@@ -29,6 +29,14 @@
     'Cleaner towns, one item at a time.': 'Municipios más limpios, un artículo a la vez.',
     'Enter your ZIP code to see pickup days.': 'Escriba su código postal para ver los días de recogida.', 'Pickup days': 'Días de recogida',
     'We are still finding verified pickup data for this area. Check back soon.': 'Todavía estamos buscando datos de recogida verificados para esta zona. Vuelva a consultar pronto.',
+    'Pickup days': 'Días de recogida', 'Start here': 'Empiece aquí', 'What do you need?': '¿Qué necesita?', 'Where does it go?': '¿Adónde va?',
+    'Type an item or snap a photo. Get the exact steps for your town.': 'Escriba un artículo o tome una foto. Obtenga los pasos exactos para su municipio.',
+    'When is pickup?': '¿Cuándo es la recogida?', 'Trash, recycling, bulk and yard waste days, with a calendar you can add to your phone.': 'Días de basura, reciclaje, objetos grandes y desechos de jardín, con un calendario que puede agregar a su teléfono.',
+    'Towns covered': 'Municipios cubiertos', 'Pickup schedules': 'Horarios de recogida', 'Languages': 'Idiomas',
+    "Local disposal websites are outdated and hard to follow. DumpGuard replaces the confusion with one clear answer, sourced from each town's own website.": 'Los sitios web locales sobre desechos están desactualizados y son difíciles de seguir. DumpGuard reemplaza la confusión con una respuesta clara, tomada del sitio web de cada municipio.',
+    'Showing your town. Change it from the menu. If your town has more than one pickup area, choose yours below.': 'Se muestra su municipio. Cámbielo desde el menú. Si su municipio tiene más de una zona de recogida, elija la suya abajo.',
+    'ZIP code (optional)': 'Código postal (opcional)', 'Look up': 'Buscar', 'Your town': 'Su municipio',
+    'DumpGuard is a student-built project that makes waste disposal simple for residents and gives towns a clearer picture of where dumping happens.': 'DumpGuard es un proyecto hecho por estudiantes que simplifica el desecho de residuos para los residentes y le da a los municipios una imagen más clara de dónde ocurren los vertidos.',
     // identify (labels only; results are translated by dumpguard-api.js)
     'What are you': '¿Qué quiere', 'getting rid of?': 'desechar?', 'Your town': 'Su municipio', 'Search an item': 'Busque un artículo', 'Or use a photo': 'O use una foto',
     'Not sure. Pick a category': 'No está seguro. Elija una categoría',
@@ -125,6 +133,7 @@
     [/^(DG-[A-Z0-9]{5}): (Received|Noticed by officials|In progress|Resolved)$/, function (m) { return m[1] + ': ' + lit(m[2]); }],
     [/^(DG-[A-Z0-9]{5}) - (.+?) - (.*)$/, function (m) { return m[1] + ' - ' + lit(m[2]) + ' - ' + m[3]; }],
     [/^(.+): We are still finding verified pickup data for this area\. Check back soon\.$/, function (m) { return m[1] + ': ' + ES['We are still finding verified pickup data for this area. Check back soon.']; }],
+    [/^Reporting in: (.+?)\. Change the town from the menu\.$/, function (m) { return 'Reportando en: ' + m[1] + '. Cambie el municipio desde el menú.'; }],
     [/^in ([A-Z].*)$/, function (m) { return 'en ' + m[1]; }],
     [/^(.*) · filed (.+)$/, function (m) { return m[1] + ' · presentado ' + m[2]; }],
     [/^No email is sent\. Your code is (\d+)\.$/, function (m) { return 'No se envía ningún correo. Su código es ' + m[1] + '.'; }],
@@ -199,23 +208,15 @@
     [['en', 'English'], ['es', 'Español']].forEach(function (o) {
       var op = document.createElement('option'); op.value = o[0]; op.textContent = o[1]; op.lang = o[0]; toggle.appendChild(op);
     });
-    toggle.addEventListener('change', function () {
-      var sel = document.getElementById('lang');
-      if (!sel) return;
-      sel.value = toggle.value;
-      sel.dispatchEvent(new Event('change', { bubbles: true }));
-    });
+    toggle.addEventListener('change', function () { DG.setLang(toggle.value); });
     li.appendChild(toggle);
     ul.insertBefore(li, ul.lastElementChild);
-    // the nav dropdown replaces the one on the Identify page
-    var old = document.getElementById('lang');
-    if (old) { old.style.display = 'none'; var lab = document.querySelector('label[for="lang"]'); if (lab) lab.style.display = 'none'; }
     syncToggle();
   }
 
   function init() {
     addToggle();
-    document.addEventListener('change', function (e) { if (e.target && (e.target.id === 'lang' || e.target.id === 'navlang')) queue(); });
+    window.addEventListener('dg-lang', queue);
     observer = new MutationObserver(queue);
     apply();
   }

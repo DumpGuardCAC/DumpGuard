@@ -25,15 +25,9 @@
     try { localStorage.setItem(KEY, JSON.stringify([{ code: code, town: town, at: new Date().toISOString().slice(0, 10) }].concat(saved()).slice(0, 20))); } catch (e) { /* storage can be blocked */ }
   }
 
-  function fillTowns() {
-    var sel = $('rtown');
-    return DG.api.get('/towns').then(function (r) {
-      var towns = r.body.towns || [];
-      clear(sel).appendChild(h('option', { value: '' }, 'Choose your town'));
-      towns.forEach(function (tw) { sel.appendChild(h('option', { value: tw.id }, tw.name)); });
-      var pre = DG.townId();
-      if (pre && towns.some(function (tw) { return tw.id === pre; })) sel.value = pre;
-    }).catch(function () { clear(sel).appendChild(h('option', { value: '' }, 'Could not load towns')); });
+  function showTown() {
+    var note = $('rtownnote'), name = DG.townName();
+    if (note) note.textContent = name ? 'Reporting in: ' + name + '. Change the town from the menu.' : '';
   }
   function fillTypes() {
     var sel = $('rcat');
@@ -114,7 +108,7 @@
   function submit() {
     var err = $('rerr'), ok = $('sent'), btn = $('send');
     err.textContent = ''; ok.style.display = 'none';
-    var body = { town: $('rtown').value, type: $('rcat').value, where: $('rwhere').value.trim(), description: $('rdesc').value.trim() };
+    var body = { town: DG.townId() || '', type: $('rcat').value, where: $('rwhere').value.trim(), description: $('rdesc').value.trim() };
     var note = $('rnote').value.trim();
     if (note) body.notes = note;
     if (point) { body.lat = point.lat; body.lng = point.lng; }
@@ -169,7 +163,7 @@
 
   function init() {
     if (!$('send')) return;
-    fillTowns(); fillTypes(); addLocationButton(); renderMine();
+    showTown(); window.addEventListener('dg-town', showTown); window.addEventListener('dg-lang', showTown); fillTypes(); addLocationButton(); renderMine();
     $('rphoto').addEventListener('change', onPhoto);
     $('send').addEventListener('click', submit);
     $('tgo').addEventListener('click', function () { lookup($('tcode').value); });

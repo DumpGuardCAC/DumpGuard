@@ -129,3 +129,9 @@ footer b{font-family:Belleza,serif;font-size:1.4rem;color:var(--slate);display:b
 .seg{display:inline-flex;border:1px solid #cbd5e1;border-radius:999px;padding:3px;margin-bottom:18px;gap:2px}.seg button{border:0;background:transparent;padding:8px 20px;border-radius:999px;font:inherit;cursor:pointer;color:var(--muted)}.seg button[aria-pressed=true]{background:var(--blue);color:#fff}
 .navlang{font:inherit;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:inherit;background:transparent;border:1px solid currentColor;border-radius:999px;padding:4px 10px;cursor:pointer;width:auto}.navlang option{color:#111;text-transform:none}
 @media(max-width:560px){.navlang{font-size:.62rem;padding:3px 8px}}
+
+.doors .step{display:block;color:inherit;text-decoration:none;cursor:pointer;transition:transform .15s}.doors .step:hover,.doors .step:focus-visible{transform:translateY(-3px)}
+.stats.cover{margin:50px 0 20px}
+footer .about{max-width:560px;margin:14px auto 0;letter-spacing:0;font-size:.85rem}
+.navtown{font:inherit;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:inherit;background:transparent;border:1px solid currentColor;border-radius:999px;padding:4px 10px;cursor:pointer;width:auto;max-width:150px}.navtown option{color:#111;text-transform:none}
+@media(max-width:560px){.navtown{font-size:.62rem;padding:3px 8px;max-width:120px}}

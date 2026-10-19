@@ -24,7 +24,7 @@
     'long-branch': [40.3043, -73.9924], 'asbury-park': [40.2204, -74.0121],
   };
 
-  var map, layer, labels, labelsOn = false, pub = null, staff = null, token = null, selected = null, towns = [];
+  var map, layer, labels, labelsOn = true, pub = null, staff = null, token = null, selected = null, towns = [];
 
   function filters() { return { type: $('mfilter').value, town: $('mtown').value, status: $('mstat').value }; }
 
@@ -227,9 +227,38 @@
     layer = L.layerGroup().addTo(map);
 
     ['mfilter', 'mtown', 'mstat'].forEach(function (id) { $(id).addEventListener('change', redraw); });
-    $('tltoggle').addEventListener('click', function () {
-      labelsOn = !labelsOn; $('tltoggle').textContent = 'Town labels: ' + (labelsOn ? 'on' : 'off'); renderLabels();
+    $('gtoggle').textContent = 'Government sign-in';
+    clear($('glist'));
+    redraw();
+  }
+  // Called from the Log in screen's Government tab. Resolves to { ok, message }.
+  function staffLogin(user, pw) {
+    token = user + ':' + pw;
+    return refreshStaff().then(function (status) {
+      if (status === 200) {
+        $('gtoggle').textContent = 'Sign out';
+        $('mbanner').style.display = 'none';
+        redraw();
+        return { ok: true };
+      }
+      token = null;
+      return { ok: false, message: status === 429 ? 'Too many attempts. Try again later.' : 'That username or password was not accepted.' };
+    }).catch(function () { token = null; return { ok: false, message: 'Could not reach the server.' }; });
+  }
+  DG.staffLogin = staffLogin;
+
+  function init() {
+    if (!$('gmap')) return;
+    $('mbanner').style.display = 'none';
+    map = L.map('gmap', { scrollWheelZoom: false }).setView([40.45, -74.25], 10);
+    var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+    var failed = 0;
+    tiles.on('tileerror', function () {
+      if (++failed > 3) { $('mbanner').textContent = 'Street map tiles could not load. Report areas still show.'; $('mbanner').style.display = 'block'; }
     });
+    layer = L.layerGroup().addTo(map);
+
+    ['mfilter', 'mtown', 'mstat'].forEach(function (id) { $(id).addEventListener('change', redraw); });
     $('gtoggle').addEventListener('click', function () { if (token) signOut(); else window.dispatchEvent(new Event('dg-gov-login')); });
 
     refreshPublic().then(function () {

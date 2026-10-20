@@ -60,11 +60,16 @@ export function scoreItem(item, query) {
   let fuzzy = 0;
   for (const t of toks) {
     const max = t.length >= 7 ? 2 : 1;
-    if (words.has(t)) hit++;
+    const stem = t.length > 3 && t.endsWith('s') ? t.slice(0, -1) : t;
+    if (words.has(t) || words.has(stem)) hit++;
+    else if (t.length >= 6 && [...words].some((w) => w.length >= 4 && (t.endsWith(w) || t.endsWith(w + 's')))) hit += 0.7;
     else if (t.length >= 3 && [...words].some((w) => w.startsWith(t))) hit += 0.7;
-    else if (t.length >= 4 && [...words].some((w) => lev(t, w, max) <= max)) fuzzy++;
+    else if (t.length >= 4 && [...words].some((w) => w[0] === t[0] && lev(t, w, max) <= max)) fuzzy++;
   }
   if (hit + fuzzy === 0) return 0;
+  // A long query where most words match nothing ("3D printed parts") is not a match for the one word that does.
+  const asked = fold(query).split(' ').filter(Boolean).length;
+  if (asked >= 3 && (hit + fuzzy) / toks.length < 0.5) return 0;
   return Math.round(((hit + fuzzy * 0.5) / toks.length) * 60);
 }
 

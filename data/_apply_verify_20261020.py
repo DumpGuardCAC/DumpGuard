@@ -1,7 +1,7 @@
-# Applies _verify_patch_20261020.py to towns.json (run once from the data folder).
-import json, re, runpy
+# Applies a verify patch to towns.json (run once from the data folder). Default: _verify_patch_20261020.py; pass another patch file as the first argument.
+import json, re, runpy, sys
 
-ns = runpy.run_path('_verify_patch_20261020.py')
+ns = runpy.run_path(sys.argv[1] if len(sys.argv) > 1 else '_verify_patch_20261020.py')
 PATCH, NEW = ns['PATCH'], ns['NEW']
 DAY = '2026-10-20'
 

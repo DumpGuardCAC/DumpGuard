@@ -10674,39 +10674,120 @@
     {
       "region": "middletown",
       "stream": "trash",
-      "source_url": "https://www.middletownnj.org/571/Curbside-Garbage-Collection",
-      "weekday": null,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
+      "source_url": "https://www.middletownnj.org/611/RECYCLE-COACH",
+      "weekday": 1,
+      "week_pattern": "weekly",
+      "area_key": "north-zone",
+      "area_note": "North Zone (Mo and Th)",
+      "dtstart": "2026-01-05",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO;UNTIL=20261231",
       "overrides": [],
-      "notes_en": "custom Township provides curbside garbage in township black carts but publishes no static weekday or zone list; residents must enter their address in the Recycle Coach app to find their zone. No garbage collection on New Years Day, Thanksgiving Day, or Christmas Day; collected on the next scheduled collection day. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
-      "notes_es": "El municipio ofrece recogida de basura en la acera en carritos negros del municipio, pero no publica un día fijo ni una lista de zonas; los residentes deben ingresar su dirección en la aplicación Recycle Coach para encontrar su zona. No hay recogida de basura en Año Nuevo, Acción de Gracias ni Navidad; se recoge el siguiente día programado. Obras Públicas: 732-615-2090. Basura: no hay recogida en Año Nuevo, Acción de Gracias ni Navidad; se recoge el siguiente día programado de basura. Reciclaje: no hay recogida en esos tres feriados; si le tocaba en esas fechas, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
-      "status": "needs_verification",
-      "last_verified": null
+      "notes_en": "North Zone garbage on Mondays. Township-provided black cart only; garbage outside the cart is not collected; place the cart curbside the night before. Find your zone by entering your address in Recycle Coach on the township site (https://www.middletownnj.org/611/RECYCLE-COACH) or see the Garbage and Recycling Zone Map (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Public Works: 732-615-2090. No garbage collection on New Year's Day, Thanksgiving Day or Christmas Day; garbage is collected on the next scheduled collection day. Recycling is not collected on those three holidays; if your recycling day falls on one of them, it is collected the following Saturday. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "Basura de la Zona Norte los lunes. Solo en el carrito negro del municipio; la basura fuera del carrito no se recoge; saque el carrito a la acera la noche anterior. Encuentre su zona ingresando su dirección en Recycle Coach en el sitio del municipio (https://www.middletownnj.org/611/RECYCLE-COACH) o vea el mapa de zonas de basura y reciclaje (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Obras Públicas: 732-615-2090. No hay recogida de basura en Año Nuevo, Acción de Gracias ni Navidad; la basura se recoge el siguiente día programado. El reciclaje no se recoge en esos tres feriados; si su día de reciclaje cae en uno de ellos, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
+      "status": "verified",
+      "last_verified": "2026-10-19"
+    },
+    {
+      "region": "middletown",
+      "stream": "trash",
+      "source_url": "https://www.middletownnj.org/611/RECYCLE-COACH",
+      "weekday": 4,
+      "week_pattern": "weekly",
+      "area_key": "north-zone",
+      "area_note": "North Zone (Mo and Th)",
+      "dtstart": "2026-01-01",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH;UNTIL=20261231",
+      "overrides": [
+        {
+          "date": "2026-01-01",
+          "to": "2026-01-05",
+          "reason": "New Year's Day"
+        },
+        {
+          "date": "2026-11-26",
+          "to": "2026-11-30",
+          "reason": "Thanksgiving Day"
+        }
+      ],
+      "notes_en": "North Zone garbage on Thursdays. Township-provided black cart only; garbage outside the cart is not collected; place the cart curbside the night before. Find your zone by entering your address in Recycle Coach on the township site (https://www.middletownnj.org/611/RECYCLE-COACH) or see the Garbage and Recycling Zone Map (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Public Works: 732-615-2090. No garbage collection on New Year's Day, Thanksgiving Day or Christmas Day; garbage is collected on the next scheduled collection day. Recycling is not collected on those three holidays; if your recycling day falls on one of them, it is collected the following Saturday. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "Basura de la Zona Norte los jueves. Solo en el carrito negro del municipio; la basura fuera del carrito no se recoge; saque el carrito a la acera la noche anterior. Encuentre su zona ingresando su dirección en Recycle Coach en el sitio del municipio (https://www.middletownnj.org/611/RECYCLE-COACH) o vea el mapa de zonas de basura y reciclaje (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Obras Públicas: 732-615-2090. No hay recogida de basura en Año Nuevo, Acción de Gracias ni Navidad; la basura se recoge el siguiente día programado. El reciclaje no se recoge en esos tres feriados; si su día de reciclaje cae en uno de ellos, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
+      "status": "verified",
+      "last_verified": "2026-10-19"
+    },
+    {
+      "region": "middletown",
+      "stream": "trash",
+      "source_url": "https://www.middletownnj.org/611/RECYCLE-COACH",
+      "weekday": 2,
+      "week_pattern": "weekly",
+      "area_key": "south-zone",
+      "area_note": "South Zone (Tu and Fr)",
+      "dtstart": "2026-01-06",
+      "rrule": "FREQ=WEEKLY;BYDAY=TU;UNTIL=20261231",
+      "overrides": [],
+      "notes_en": "South Zone garbage on Tuesdays. Township-provided black cart only; garbage outside the cart is not collected; place the cart curbside the night before. Find your zone by entering your address in Recycle Coach on the township site (https://www.middletownnj.org/611/RECYCLE-COACH) or see the Garbage and Recycling Zone Map (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Public Works: 732-615-2090. No garbage collection on New Year's Day, Thanksgiving Day or Christmas Day; garbage is collected on the next scheduled collection day. Recycling is not collected on those three holidays; if your recycling day falls on one of them, it is collected the following Saturday. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "Basura de la Zona Sur los martes. Solo en el carrito negro del municipio; la basura fuera del carrito no se recoge; saque el carrito a la acera la noche anterior. Encuentre su zona ingresando su dirección en Recycle Coach en el sitio del municipio (https://www.middletownnj.org/611/RECYCLE-COACH) o vea el mapa de zonas de basura y reciclaje (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Obras Públicas: 732-615-2090. No hay recogida de basura en Año Nuevo, Acción de Gracias ni Navidad; la basura se recoge el siguiente día programado. El reciclaje no se recoge en esos tres feriados; si su día de reciclaje cae en uno de ellos, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
+      "status": "verified",
+      "last_verified": "2026-10-19"
+    },
+    {
+      "region": "middletown",
+      "stream": "trash",
+      "source_url": "https://www.middletownnj.org/611/RECYCLE-COACH",
+      "weekday": 5,
+      "week_pattern": "weekly",
+      "area_key": "south-zone",
+      "area_note": "South Zone (Tu and Fr)",
+      "dtstart": "2026-01-02",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR;UNTIL=20261231",
+      "overrides": [
+        {
+          "date": "2026-12-25",
+          "to": "2026-12-29",
+          "reason": "Christmas Day"
+        }
+      ],
+      "notes_en": "South Zone garbage on Fridays. Township-provided black cart only; garbage outside the cart is not collected; place the cart curbside the night before. Find your zone by entering your address in Recycle Coach on the township site (https://www.middletownnj.org/611/RECYCLE-COACH) or see the Garbage and Recycling Zone Map (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Public Works: 732-615-2090. No garbage collection on New Year's Day, Thanksgiving Day or Christmas Day; garbage is collected on the next scheduled collection day. Recycling is not collected on those three holidays; if your recycling day falls on one of them, it is collected the following Saturday. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "Basura de la Zona Sur los viernes. Solo en el carrito negro del municipio; la basura fuera del carrito no se recoge; saque el carrito a la acera la noche anterior. Encuentre su zona ingresando su dirección en Recycle Coach en el sitio del municipio (https://www.middletownnj.org/611/RECYCLE-COACH) o vea el mapa de zonas de basura y reciclaje (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Obras Públicas: 732-615-2090. No hay recogida de basura en Año Nuevo, Acción de Gracias ni Navidad; la basura se recoge el siguiente día programado. El reciclaje no se recoge en esos tres feriados; si su día de reciclaje cae en uno de ellos, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
+      "status": "verified",
+      "last_verified": "2026-10-19"
     },
     {
       "region": "middletown",
       "stream": "recycling",
-      "source_url": "https://www.middletownnj.org/collection",
-      "weekday": null,
-      "week_pattern": "custom",
-      "area_key": null,
-      "area_note": "",
-      "dtstart": null,
-      "rrule": null,
+      "source_url": "https://www.middletownnj.org/611/RECYCLE-COACH",
+      "weekday": 3,
+      "week_pattern": "biweekly",
+      "area_key": "north-zone",
+      "area_note": "North Zone (Mo and Th)",
+      "dtstart": "2026-01-07",
+      "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=WE;UNTIL=20261231",
       "overrides": [],
-      "notes_en": "custom Curbside recycling weekdays are Recycle Coach address-lookup only; township collection pages publish no static recycling weekday or zone list PDF. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
-      "notes_es": "Los días de reciclaje en la acera solo se consultan con la dirección en Recycle Coach; las páginas de recogida del municipio no publican un día fijo de reciclaje ni un PDF de zonas. Obras Públicas: 732-615-2090. Basura: no hay recogida en Año Nuevo, Acción de Gracias ni Navidad; se recoge el siguiente día programado de basura. Reciclaje: no hay recogida en esos tres feriados; si le tocaba en esas fechas, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
-      "status": "needs_verification",
-      "last_verified": null
+      "notes_en": "North Zone recycling every other Wednesday, starting Wednesday, January 7, 2026. Single-stream in the Township-provided blue cart, loose and not bagged; recycling outside the cart is not collected. Find your zone by entering your address in Recycle Coach on the township site (https://www.middletownnj.org/611/RECYCLE-COACH) or see the Garbage and Recycling Zone Map (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Public Works: 732-615-2090. No garbage collection on New Year's Day, Thanksgiving Day or Christmas Day; garbage is collected on the next scheduled collection day. Recycling is not collected on those three holidays; if your recycling day falls on one of them, it is collected the following Saturday. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "Reciclaje de la Zona Norte cada dos miércoles, a partir del miércoles 7 de enero de 2026. Reciclaje de flujo único en el carrito azul del municipio, suelto y sin bolsas; el reciclaje fuera del carrito no se recoge. Encuentre su zona ingresando su dirección en Recycle Coach en el sitio del municipio (https://www.middletownnj.org/611/RECYCLE-COACH) o vea el mapa de zonas de basura y reciclaje (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Obras Públicas: 732-615-2090. No hay recogida de basura en Año Nuevo, Acción de Gracias ni Navidad; la basura se recoge el siguiente día programado. El reciclaje no se recoge en esos tres feriados; si su día de reciclaje cae en uno de ellos, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
+      "status": "verified",
+      "last_verified": "2026-10-19"
+    },
+    {
+      "region": "middletown",
+      "stream": "recycling",
+      "source_url": "https://www.middletownnj.org/611/RECYCLE-COACH",
+      "weekday": 3,
+      "week_pattern": "biweekly",
+      "area_key": "south-zone",
+      "area_note": "South Zone (Tu and Fr)",
+      "dtstart": "2026-01-14",
+      "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=WE;UNTIL=20261231",
+      "overrides": [],
+      "notes_en": "South Zone recycling every other Wednesday, starting Wednesday, January 14, 2026, alternating weeks with the North Zone. Single-stream in the Township-provided blue cart, loose and not bagged; recycling outside the cart is not collected. Find your zone by entering your address in Recycle Coach on the township site (https://www.middletownnj.org/611/RECYCLE-COACH) or see the Garbage and Recycling Zone Map (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Public Works: 732-615-2090. No garbage collection on New Year's Day, Thanksgiving Day or Christmas Day; garbage is collected on the next scheduled collection day. Recycling is not collected on those three holidays; if your recycling day falls on one of them, it is collected the following Saturday. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "Reciclaje de la Zona Sur cada dos miércoles, a partir del miércoles 14 de enero de 2026, en semanas alternas con la Zona Norte. Reciclaje de flujo único en el carrito azul del municipio, suelto y sin bolsas; el reciclaje fuera del carrito no se recoge. Encuentre su zona ingresando su dirección en Recycle Coach en el sitio del municipio (https://www.middletownnj.org/611/RECYCLE-COACH) o vea el mapa de zonas de basura y reciclaje (https://www.middletownnj.org/585/Garbage-Recycling-Zone-Map). Obras Públicas: 732-615-2090. No hay recogida de basura en Año Nuevo, Acción de Gracias ni Navidad; la basura se recoge el siguiente día programado. El reciclaje no se recoge en esos tres feriados; si su día de reciclaje cae en uno de ellos, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
+      "status": "verified",
+      "last_verified": "2026-10-19"
     },
     {
       "region": "middletown",
       "stream": "bulk",
-      "source_url": "https://middletownnj.org/m/newsflash/Home/Detail/1657",
+      "source_url": "https://www.middletownnj.org/576/Bulk",
       "weekday": null,
       "week_pattern": "custom",
       "area_key": null,
@@ -10714,10 +10795,10 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "by appointment Register by 3:00 p.m. Sunday-Thursday during your scheduled recycling week for pickup within 48 hours; one bulk request per household per recycling week; up to 4 items, 75 lb max each, under 6 ft; contractor IWS. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
-      "notes_es": "Regístrese antes de las 3:00 p.m. de domingo a jueves durante su semana de reciclaje para una recogida en 48 horas; una solicitud de voluminosos por hogar por semana de reciclaje; hasta 4 artículos, máximo 75 lb cada uno y menos de 6 pies; contratista IWS. Obras Públicas: 732-615-2090. Basura: no hay recogida en Año Nuevo, Acción de Gracias ni Navidad; se recoge el siguiente día programado de basura. Reciclaje: no hay recogida en esos tres feriados; si le tocaba en esas fechas, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
-      "status": "needs_verification",
-      "last_verified": null
+      "notes_en": "by appointment Bulk pickup by advance registration only, during your scheduled recycling week: register by 3:00 p.m. Sunday through Thursday of that week for pickup within 48 hours; one request per household per recycling week; up to 4 items, 75 lb maximum each, under 6 feet; contractor IWS. Schedule in Recycle Coach, at https://www.middletownnj.org/bulk, by email to bulk@middletownnj.org, or call 732-615-3278. Public Works: 732-615-2090. No garbage collection on New Year's Day, Thanksgiving Day or Christmas Day; garbage is collected on the next scheduled collection day. Recycling is not collected on those three holidays; if your recycling day falls on one of them, it is collected the following Saturday. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "con cita Recogida de artículos voluminosos solo con registro previo, durante su semana programada de reciclaje: regístrese antes de las 3:00 p.m. de domingo a jueves de esa semana para una recogida dentro de 48 horas; una solicitud por hogar por semana de reciclaje; hasta 4 artículos, máximo 75 lb cada uno y menos de 6 pies; contratista IWS. Prográmela en Recycle Coach, en https://www.middletownnj.org/bulk, por correo a bulk@middletownnj.org, o llame al 732-615-3278. Obras Públicas: 732-615-2090. No hay recogida de basura en Año Nuevo, Acción de Gracias ni Navidad; la basura se recoge el siguiente día programado. El reciclaje no se recoge en esos tres feriados; si su día de reciclaje cae en uno de ellos, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
+      "status": "verified",
+      "last_verified": "2026-10-19"
     },
     {
       "region": "middletown",
@@ -10730,8 +10811,8 @@
       "dtstart": null,
       "rrule": null,
       "overrides": [],
-      "notes_en": "seasonal Curbside brush in spring and leaves in fall; Fall 2026 leaf schedule not yet posted on collection page as of research. Public Works: 732-615-2090. Garbage: no collection New Year's Day, Thanksgiving Day, Christmas Day; collected on next scheduled garbage day. Recycling: no collection on those three holidays; collected the following Saturday if scheduled on those dates. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
-      "notes_es": "Ramas en la acera en primavera y hojas en otoño; el calendario de hojas del otoño de 2026 aún no estaba publicado en la página de recogida al momento de la investigación. Obras Públicas: 732-615-2090. Basura: no hay recogida en Año Nuevo, Acción de Gracias ni Navidad; se recoge el siguiente día programado de basura. Reciclaje: no hay recogida en esos tres feriados; si le tocaba en esas fechas, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
+      "notes_en": "seasonal Curbside brush is collected in spring and leaves in fall, by township leaf and brush zones; the Fall 2026 leaf schedule was not yet posted on the township collection page as of October 19, 2026, and no dated 2026 brush schedule was posted. Check https://www.middletownnj.org/collection for the current schedule before putting brush or leaves out. Public Works: 732-615-2090. No garbage collection on New Year's Day, Thanksgiving Day or Christmas Day; garbage is collected on the next scheduled collection day. Recycling is not collected on those three holidays; if your recycling day falls on one of them, it is collected the following Saturday. Other holiday and weather changes are not listed here; check https://www.middletownnj.org/.",
+      "notes_es": "de temporada Las ramas se recogen en la acera en primavera y las hojas en otoño, por zonas municipales de ramas y hojas; el calendario de hojas del otoño de 2026 aún no estaba publicado en la página de recogida del municipio al 19 de octubre de 2026, y no se publicó un calendario de ramas con fechas para 2026. Consulte https://www.middletownnj.org/collection para ver el calendario actual antes de sacar ramas u hojas. Obras Públicas: 732-615-2090. No hay recogida de basura en Año Nuevo, Acción de Gracias ni Navidad; la basura se recoge el siguiente día programado. El reciclaje no se recoge en esos tres feriados; si su día de reciclaje cae en uno de ellos, se recoge el sábado siguiente. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.middletownnj.org/.",
       "status": "needs_verification",
       "last_verified": null
     },
@@ -12817,6 +12898,56 @@
       "zip": "07748",
       "region": "middletown",
       "source_url": "https://middletownnj.org/Directory.aspx?did=31"
+    },
+    {
+      "zip": "07701",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
+    },
+    {
+      "zip": "07716",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
+    },
+    {
+      "zip": "07718",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
+    },
+    {
+      "zip": "07732",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
+    },
+    {
+      "zip": "07733",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
+    },
+    {
+      "zip": "07737",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
+    },
+    {
+      "zip": "07738",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
+    },
+    {
+      "zip": "07752",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
+    },
+    {
+      "zip": "07758",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
+    },
+    {
+      "zip": "07760",
+      "region": "middletown",
+      "source_url": "https://www.middletownnj.org/252/Zip-Codes"
     },
     {
       "zip": "07750",

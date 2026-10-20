@@ -390,7 +390,7 @@
     wireSchedule();
     fillCategories();
     translateStatic();
-    loadTowns().then(function () { runSearch(); loadPickup(); }).catch(function () { /* the page still renders; searches will report the error */ });
+    loadTowns().then(function () { runSearch(); loadPickup(); window.dispatchEvent(new Event('dg-town')); }).catch(function () { /* the page still renders; searches will report the error */ });
     if ($('q')) $('q').addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(runSearch, 250); });
     if ($('cat')) $('cat').addEventListener('change', function () { if ($('cat').value) showMaterial($('cat').value); });
   }

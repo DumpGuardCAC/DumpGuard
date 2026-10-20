@@ -299,13 +299,13 @@
       clear(box);
       if (r.status === 404) { box.appendChild(h('p', { class: 'err' }, t('noZip'))); return; }
       if (r.status !== 200) { box.appendChild(h('p', { class: 'err' }, t('fail'))); return; }
+      if (b.town && b.town.id && b.town.id !== state.town) { state.town = b.town.id; try { localStorage.setItem('dg_town', state.town); } catch (e) { /* ignore */ } if ($('town')) $('town').value = state.town; runSearch(); window.dispatchEvent(new Event('dg-town')); }
       if (b.needs === 'town') {
         box.appendChild(h('p', {}, t('pickTown')));
         b.towns.forEach(function (tw) { box.appendChild(h('button', { class: 'btn dark', type: 'button', style: 'margin:0 8px 8px 0;padding:10px 22px', onclick: function () { lookupZip(zip, tw.id, []); } }, tw.name)); });
         return;
       }
       if (b.needs === 'area') { renderAreas(box, b, zip, areas || []); return; }
-      if (b.town && b.town.id && b.town.id !== state.town) { state.town = b.town.id; try { localStorage.setItem('dg_town', state.town); } catch (e) { /* ignore */ } if ($('town')) $('town').value = state.town; runSearch(); window.dispatchEvent(new Event('dg-town')); }
       renderSchedule(box, b, zip, town, areas || []);
     }).catch(function () { clear(box).appendChild(h('p', { class: 'err' }, t('fail'))); });
   }

@@ -21,7 +21,7 @@
       where: 'Where to take it', openNow: 'open now', closed: 'closed now', km: 'km', residents: 'Residents only',
       cat: 'Category', catPick: 'Pick a category', fail: 'Could not reach the server. Try again.',
       zipHelp: 'Enter your ZIP code to see pickup days.', pickTown: 'Which town?', pickArea: 'Which one is yours?', choose: 'Choose...',
-      next: 'Next pickups', moved: 'moved', calendar: 'Add to my calendar', calNote: 'The calendar updates itself when holidays shift pickups.',
+      next: 'Next pickups', moved: 'moved', calendar: 'Add to my calendar', calNote: 'The calendar updates itself when holidays shift pickups.', notListed: 'not listed here yet. Check your town website or call public works.',
       noZip: 'We are still finding verified pickup data for this area. Check back soon.', badZip: 'Enter a 5 digit ZIP code.', lookup: 'Look up',
       trashS: 'Trash', areaS: 'Area', recyclingS: 'Recycling', bulk: 'Bulk pickup', yard: 'Yard waste', alerts: 'Notices', counted: 'items sorted with DumpGuard, about', lb: 'lb diverted (estimate)',
       materials: { rigid_plastic: 'Hard plastic', soft_plastic_foam: 'Soft plastic or foam', cardboard_paper: 'Cardboard or paper', metal: 'Metal', glass: 'Glass', ewaste_hazard: 'Electronics or hazardous', other: 'Other' },
@@ -36,7 +36,7 @@
       where: 'Dónde llevarlo', openNow: 'abierto ahora', closed: 'cerrado ahora', km: 'km', residents: 'Solo residentes',
       cat: 'Categoría', catPick: 'Elija una categoría', fail: 'No se pudo conectar con el servidor. Intente de nuevo.',
       zipHelp: 'Escriba su código postal para ver los días de recogida.', pickTown: '¿Qué municipio?', pickArea: '¿Cuál es el suyo?', choose: 'Elija...',
-      next: 'Próximas recogidas', moved: 'cambiada', calendar: 'Agregar a mi calendario', calNote: 'El calendario se actualiza solo cuando los feriados cambian las recogidas.',
+      next: 'Próximas recogidas', moved: 'cambiada', calendar: 'Agregar a mi calendario', calNote: 'El calendario se actualiza solo cuando los feriados cambian las recogidas.', notListed: 'todavía no aparece aquí. Consulte el sitio web de su municipio o llame a obras públicas.',
       noZip: 'Todavía estamos buscando datos de recogida verificados para esta zona. Vuelva a consultar pronto.', badZip: 'Escriba un código postal de 5 dígitos.', lookup: 'Buscar',
       trashS: 'Basura', areaS: 'Zona', recyclingS: 'Reciclaje', bulk: 'Objetos grandes', yard: 'Desechos de jardín', alerts: 'Avisos', counted: 'artículos clasificados con DumpGuard, unas', lb: 'libras desviadas (estimado)',
       materials: { rigid_plastic: 'Plástico duro', soft_plastic_foam: 'Plástico blando o espuma', cardboard_paper: 'Cartón o papel', metal: 'Metal', glass: 'Vidrio', ewaste_hazard: 'Electrónicos o peligrosos', other: 'Otro' },
@@ -358,6 +358,10 @@
       var note = state.lang === 'es' ? s.note_es : s.note_en;
       if (note) line.appendChild(h('small', {}, note));
       box.appendChild(line);
+    });
+    ['trash', 'recycling'].forEach(function (st) {
+      if (b.schedules.some(function (s) { return s.stream === st; })) return;
+      box.appendChild(h('div', { class: 'item' }, h('b', {}, STREAM(st)), h('small', {}, t('notListed'))));
     });
     if (b.calendar) {
       box.appendChild(h('p', {}, h('a', { class: 'btn dark', href: b.calendar.webcal, style: 'padding:10px 22px' }, t('calendar'))));

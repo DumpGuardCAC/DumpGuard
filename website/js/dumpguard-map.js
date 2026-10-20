@@ -205,6 +205,7 @@
     return refreshStaff().then(function (status) {
       if (status === 200) {
         $('gtoggle').textContent = 'Sign out';
+        $('mtown').value = '';
         $('mbanner').style.display = 'none';
         redraw();
         return { ok: true };

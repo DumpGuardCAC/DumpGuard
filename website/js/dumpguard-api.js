@@ -185,7 +185,7 @@
     var el = h('div', {},
       h('span', { class: 'tag', style: 'background:' + COLORS[rule] }, t(rule)),
       h('h3', {}, pick(it.name)));
-    if (it.hazard) el.appendChild(h('p', { class: 'err' }, t('hazard')));
+    if (it.hazard && rule === 'special_dropoff') el.appendChild(h('p', { class: 'err' }, t('hazard')));
     var note = pick(r.note);
     if (note) el.appendChild(h('p', {}, note));
     if (r.check_local) el.appendChild(h('p', { class: 'notice', style: 'display:block' }, pick(r.message)));

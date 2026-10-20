@@ -6513,7 +6513,7 @@
       "rrule": null,
       "overrides": [],
       "notes_en": "custom Please note garbage is privatized in Old Bridge. Residents can hire the garbage company of their choice. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
-      "notes_es": "Tenga en cuenta que la basura es privada en Old Bridge. Los residentes pueden contratar la empresa de basura que prefieran. Obras Públicas: 732-721-5600. ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
+      "notes_es": "Tenga en cuenta que la basura es privada en Old Bridge. Los residentes pueden contratar la empresa de basura que prefieran. Obras Públicas: 732-721-5600, ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
       "status": "needs_verification",
       "last_verified": null
     },
@@ -6540,7 +6540,7 @@
         }
       ],
       "notes_en": "Ward 1; confirm ward at gis.oldbridge.com (WHAT WARD AM I IN?). Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
-      "notes_es": "Distrito 1; confirme su distrito en gis.oldbridge.com (WHAT WARD AM I IN?). Obras Públicas: 732-721-5600. ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
+      "notes_es": "Distrito 1; confirme su distrito en gis.oldbridge.com (busque el enlace \"WHAT WARD AM I IN?\", que significa \"¿En qué distrito estoy?\"). Obras Públicas: 732-721-5600, ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
       "status": "verified",
       "last_verified": "2026-10-18"
     },
@@ -6556,7 +6556,7 @@
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=TU;UNTIL=20270131",
       "overrides": [],
       "notes_en": "Ward 2; confirm ward at gis.oldbridge.com. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
-      "notes_es": "Distrito 2; confirme su distrito en gis.oldbridge.com. Obras Públicas: 732-721-5600. ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
+      "notes_es": "Distrito 2; confirme su distrito en gis.oldbridge.com. Obras Públicas: 732-721-5600, ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
       "status": "verified",
       "last_verified": "2026-10-18"
     },
@@ -6572,7 +6572,7 @@
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=WE;UNTIL=20270131",
       "overrides": [],
       "notes_en": "Wards 3 and 4; confirm ward at gis.oldbridge.com. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
-      "notes_es": "Distritos 3 y 4; confirme su distrito en gis.oldbridge.com. Obras Públicas: 732-721-5600. ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
+      "notes_es": "Distritos 3 y 4; confirme su distrito en gis.oldbridge.com. Obras Públicas: 732-721-5600, ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
       "status": "verified",
       "last_verified": "2026-10-18"
     },
@@ -6594,7 +6594,7 @@
         }
       ],
       "notes_en": "Ward 5; confirm ward at gis.oldbridge.com. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
-      "notes_es": "Distrito 5; confirme su distrito en gis.oldbridge.com. Obras Públicas: 732-721-5600. ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
+      "notes_es": "Distrito 5; confirme su distrito en gis.oldbridge.com. Obras Públicas: 732-721-5600, ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
       "status": "verified",
       "last_verified": "2026-10-18"
     },
@@ -6616,7 +6616,7 @@
         }
       ],
       "notes_en": "Ward 6; confirm ward at gis.oldbridge.com. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
-      "notes_es": "Distrito 6; confirme su distrito en gis.oldbridge.com. Obras Públicas: 732-721-5600. ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
+      "notes_es": "Distrito 6; confirme su distrito en gis.oldbridge.com. Obras Públicas: 732-721-5600, ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
       "status": "verified",
       "last_verified": "2026-10-18"
     },
@@ -6638,7 +6638,7 @@
         }
       ],
       "notes_en": "Exception: Central Park and surrounding streets (Stone Ct, Aimy Ct, Rachele Ct) collected Mondays though mapped in Ward 3. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
-      "notes_es": "Excepción: Central Park y calles aledañas (Stone Ct, Aimy Ct, Rachele Ct) se recogen los lunes aunque estén en el Distrito 3. Obras Públicas: 732-721-5600. ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
+      "notes_es": "Excepción: Central Park y calles aledañas (Stone Ct, Aimy Ct, Rachele Ct) se recogen los lunes aunque estén en el Distrito 3. Obras Públicas: 732-721-5600, ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
       "status": "verified",
       "last_verified": "2026-10-18"
     },
@@ -6654,7 +6654,7 @@
       "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=TU;UNTIL=20270131",
       "overrides": [],
       "notes_en": "Exception: The Arbors section, Sonoma Court, and Lakeridge West collected Tuesdays though mapped in Ward 4. Public Works: 732-721-5600 ext. 6140. If a Holiday falls on your recycling day, pickup that Saturday. Other holiday and weather changes are not listed here; check https://www.oldbridge.com/.",
-      "notes_es": "Excepción: la sección The Arbors, Sonoma Court y Lakeridge West se recogen los martes aunque estén en el Distrito 4. Obras Públicas: 732-721-5600. ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
+      "notes_es": "Excepción: la sección The Arbors, Sonoma Court y Lakeridge West se recogen los martes aunque estén en el Distrito 4. Obras Públicas: 732-721-5600, ext. 6140. Si un feriado cae en su día de reciclaje, la recogida es ese sábado. Otros cambios por feriados o mal tiempo no se indican aquí; consulte https://www.oldbridge.com/.",
       "status": "verified",
       "last_verified": "2026-10-18"
     },
@@ -12993,6 +12993,26 @@
       "zip": "07764",
       "region": "west-long-branch",
       "source_url": "https://www.westlongbranch.org/1345/Garbage-Collection"
+    },
+    {
+      "zip": "07756",
+      "region": "neptune-township",
+      "source_url": null
+    },
+    {
+      "zip": "08855",
+      "region": "piscataway",
+      "source_url": null
+    },
+    {
+      "zip": "08903",
+      "region": "new-brunswick",
+      "source_url": null
+    },
+    {
+      "zip": "08818",
+      "region": "edison",
+      "source_url": null
     }
   ]
 }

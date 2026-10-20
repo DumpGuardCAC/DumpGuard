@@ -126,7 +126,7 @@
     [/^(\d+) areas? with (\d+) or more reports$/, function (m) { return plural(m[1], 'área', 'áreas') + ' con ' + m[2] + ' o más reportes'; }],
     [/^(\d+) reports?(?:, (\d+) without a map point)?$/, function (m) { return plural(m[1], 'reporte', 'reportes') + (m[2] ? ', ' + m[2] + ' sin punto en el mapa' : ''); }],
     [/^(.+): (\d+) open$/, function (m) { return m[1] + ': ' + m[2] + ' abiertos'; }],
-    [/^(\d+) new, (\d+) noticed, (\d+) in progress, (\d+) resolved$/, function (m) { return m[1] + ' nuevos, ' + m[2] + ' vistos, ' + m[3] + ' en proceso, ' + m[4] + ' resueltos'; }],
+    [/^(\d+) new, (\d+) noticed, (\d+) in progress, (\d+) resolved$/, function (m) { return m[1] + ' nuevos, ' + m[2] + ' detectados, ' + m[3] + ' en proceso, ' + m[4] + ' resueltos'; }],
     [/^Areas appear on the map once (\d+) or more reports are close together\.$/, function (m) { return 'Las áreas aparecen en el mapa cuando ' + m[1] + ' o más reportes están cerca unos de otros.'; }],
     [/^Town labels: (on|off)$/, function (m) { return 'Etiquetas de municipios: ' + (m[1] === 'on' ? 'sí' : 'no'); }],
     [/^Filed (.+?)(?:, last update (.+?))?(\. No map point\.)?$/, function (m) { return 'Presentado ' + m[1] + (m[2] ? ', última actualización ' + m[2] : '') + (m[3] ? '. Sin punto en el mapa.' : ''); }],
@@ -134,7 +134,6 @@
     [/^(DG-[A-Z0-9]{5}) - (.+?) - (.*)$/, function (m) { return m[1] + ' - ' + lit(m[2]) + ' - ' + m[3]; }],
     [/^(.+): We are still finding verified pickup data for this area\. Check back soon\.$/, function (m) { return m[1] + ': ' + ES['We are still finding verified pickup data for this area. Check back soon.']; }],
     [/^Reporting in: (.+?)\. Change the town from the menu\.$/, function (m) { return 'Reportando en: ' + m[1] + '. Cambie el municipio desde el menú.'; }],
-    [/^in ([A-Z].*)$/, function (m) { return 'en ' + m[1]; }],
     [/^(.*) · filed (.+)$/, function (m) { return m[1] + ' · presentado ' + m[2]; }],
     [/^No email is sent\. Your code is (\d+)\.$/, function (m) { return 'No se envía ningún correo. Su código es ' + m[1] + '.'; }],
   ];

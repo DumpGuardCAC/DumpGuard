@@ -3,6 +3,7 @@
 // Stores the contact email and description for 90 days (purge_expired), nothing else: no IP, no user agent.
 import { createHash } from 'node:crypto';
 import { addDays } from './occurrences.mjs';
+import { bearerMatches } from './alerts.mjs';
 import { BULK_DEMO_NOTICE } from './strings.mjs';
 
 export const LIMIT_PER_HOUR = 5;
@@ -84,7 +85,7 @@ export async function handleBulkRequest(request, repo, { now = new Date(), salt 
 
 // Vercel cron: GET /api/v1/cron/purge with `Authorization: Bearer $CRON_SECRET`.
 export async function handlePurge(request, repo, { secret = process.env.CRON_SECRET } = {}) {
-  if (!secret || request.headers.get('authorization') !== `Bearer ${secret}`) return json({ error: 'unauthorized' }, 401);
+  if (!bearerMatches(request.headers.get('authorization') ?? '', secret)) return json({ error: 'unauthorized' }, 401);
   await repo.purge();
   return json({ ok: true }, 200);
 }

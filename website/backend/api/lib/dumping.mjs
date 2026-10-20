@@ -10,13 +10,13 @@
 // report without a map point, it is never rejected for it.
 import { createHash, randomInt } from 'node:crypto';
 import { json, badRequest, validId } from './http.mjs';
-import { authorized } from './alerts.mjs';
+import { staffOnly, AUTH_FAILS_PER_HOUR } from './alerts.mjs';
+export { AUTH_FAILS_PER_HOUR };
 
 export const TYPES = ['household', 'furniture', 'appliances', 'electronics', 'tires', 'construction', 'yard', 'hazardous', 'other'];
 export const STATUSES = ['new', 'noticed', 'progress', 'resolved'];
 export const SUBMIT_PER_HOUR = 5;
 export const TRACK_PER_HOUR = 60;
-export const AUTH_FAILS_PER_HOUR = 10;
 export const MIN_GROUP = 3;
 export const CELL_DEG = 0.005; // about 500 m
 const MAX_BODY = 3 * 1024 * 1024;
@@ -78,6 +78,7 @@ const text = (v, min, max) => (typeof v === 'string' && v.trim().length >= min &
 export async function handleDumpingReport(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '', geocode = censusGeocode } = {}) {
   if (!(request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json')) return json({ error: 'unsupported_media_type' }, 415, noStore);
   if ((await repo.hit(keyFor(request, salt, 'dump-submit'), hourStart(now))) > SUBMIT_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
+  if (Number(request.headers.get('content-length') ?? 0) > MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
   const raw = await request.text();
   if (raw.length > MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
   let b;
@@ -138,8 +139,9 @@ export function buildMap(pointRows, townRows) {
   const cells = new Map();
   for (const r of pointRows) {
     const k = `${r.cx}:${r.cy}`;
-    const c = cells.get(k) ?? { cx: r.cx, cy: r.cy, n: 0, joint: new Map(), town: r.region_id };
+    const c = cells.get(k) ?? { cx: r.cx, cy: r.cy, n: 0, joint: new Map(), towns: new Set() };
     c.n++;
+    c.towns.add(r.region_id);
     const jk = `${r.status}|${r.dump_type}`;
     c.joint.set(jk, (c.joint.get(jk) ?? 0) + 1);
     cells.set(k, c);
@@ -147,12 +149,14 @@ export function buildMap(pointRows, townRows) {
   const round = (v) => Math.round(v * 1e6) / 1e6;
   return {
     min_group: MIN_GROUP,
-    cells: [...cells.values()].filter((c) => c.n >= MIN_GROUP).map((c) => ({
+    cells: [...cells.values()].filter((c) => c.n >= MIN_GROUP).map((c) => {
+      const towns = [...c.towns];
+      return {
       lat: round((c.cy + 0.5) * CELL_DEG), lng: round((c.cx + 0.5) * CELL_DEG), radius_m: 350,
-      n: c.n, town: c.town,
+      n: c.n, town: towns.length === 1 ? towns[0] : null, towns,
       // status x type counts, so the page can filter; a cell is only listed once it has MIN_GROUP reports
       groups: [...c.joint].map(([k, n]) => ({ status: k.split('|')[0], type: k.split('|')[1], n })),
-    })),
+    }; }),
     towns: townRows.map((t) => ({ town: t.region_id, name: t.name, counts: Object.fromEntries(STATUSES.map((s) => [s, t[s] ?? 0])) })),
   };
 }
@@ -160,12 +164,6 @@ export function buildMap(pointRows, townRows) {
 export async function handleDumpingMap(request, repo) {
   const body = buildMap(await repo.mapPoints(), await repo.townStatusCounts());
   return json(body, 200, { 'cache-control': 'public, max-age=60, s-maxage=300' });
-}
-
-async function staffOnly(request, repo, token, now, salt) {
-  if (authorized(request, token)) return null;
-  const n = await repo.hit(keyFor(request, salt, 'dump-auth'), hourStart(now));
-  return json({ error: n > AUTH_FAILS_PER_HOUR ? 'rate_limited' : 'unauthorized' }, n > AUTH_FAILS_PER_HOUR ? 429 : 401, noStore);
 }
 
 export async function handleAdminDumping(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {

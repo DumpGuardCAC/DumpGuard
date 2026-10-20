@@ -65,7 +65,7 @@
             <label class="drop" for="photo"><span id="droptxt">Take or upload a photo</span><input id="photo" type="file" accept="image/*" capture="environment" hidden></label>
             <div id="pick" style="display:none"><label for="cat">Not sure. Pick a category</label><select id="cat"></select></div>
         </div>
-        <div class="card" id="result"><p class="empty">Your disposal guide will appear here.</p></div>
+        <div class="card" id="result" aria-live="polite"><p class="empty">Your disposal guide will appear here.</p></div>
     </div>
 </section></div>
 
@@ -100,7 +100,7 @@
             <p class="ok" id="priv" style="display:none">Privacy check: location data removed from photo.</p>
             <p class="sm">Please don't include people, license plates, or names in your photo or notes.</p><br>
             <button class="btn dark" id="send">Submit report</button>
-            <p class="err" id="rerr"></p><p class="ok" id="sent" style="display:none"></p>
+            <p class="err" id="rerr" aria-live="polite"></p><p class="ok" id="sent" style="display:none" aria-live="polite"></p>
         </div>
     </div>
     <div class="card" style="margin-top:50px"><h3>Track a report</h3><p class="sm">You get a tracking code when you submit, even without an account. Enter it to see whether officials have noticed or resolved the report.</p>
@@ -125,13 +125,13 @@
     <h2>Government sign-in</h2><p class="sub">Staff can see exact locations, photos and details, and update report status.</p>
     <label for="le">Username</label><input id="le" type="text" autocomplete="username" autocapitalize="none" spellcheck="false">
     <label for="lp">Password</label><input id="lp" type="password" autocomplete="current-password">
-    <p class="err" id="lerr"></p>
+    <p class="err" id="lerr" aria-live="polite"></p>
     <button class="btn dark full" id="lgo">Sign in</button>
 </div></div></div>
 
 <footer><b>DumpGuard</b>Cleaner towns, one item at a time.<p class="about">DumpGuard is a student-built project that makes waste disposal simple for residents and gives towns a clearer picture of where dumping happens.</p></footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 <script src="js/dumpguard-api.js"></script>
 <script src="js/dumpguard-model.js"></script>
 <script src="js/dumpguard-report.js"></script>

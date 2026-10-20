@@ -36,7 +36,7 @@ node publish.mjs
 ```
 
 - `migrate.mjs` should print `applied 0001...` through `applied 0010_dumping.sql`, then `schema up to date`.
-- `seed.mjs` should print about `seeded 8 regions, 240 items, ...`. It is safe to run again.
+- `seed.mjs` should print `seeded 41 regions, ...` (the state, two counties and 38 towns). It is safe to run again.
 - `publish.mjs` with no arguments lists towns and how much verified data each has. Nothing is public yet.
 - Publish only towns you have checked: `node publish.mjs edison woodbridge new-brunswick`. A town with no verified schedule is refused.
   Hide one again with `node publish.mjs --off <town>`.
@@ -87,7 +87,7 @@ curl "https://<url>/api/v1/search?q=battery&town=edison"
 - `health` should say the database is reachable. `towns` should list the towns you published in step 2.
 - Open `https://<url>/` in a browser. Try Identify (search, then a photo), the pickup-day ZIP lookup (08817), Report (submit one),
   and Map.
-- Staff view: on the Map page click **Government sign-in** and paste the `ADMIN_TOKEN` value. It is in
+- Staff view: on the Map page click **Government sign-in**. `ADMIN_TOKEN` must be `username:password`, both parts non-empty and 16 or more characters together. Type the username and the password into the two fields on that form. The token is in
   `website/backend/api/.env.local` (never committed) and in Vercel's environment variables. You should see your report, be able to
   open its photo and change its status.
 - The map only draws an area once 3 or more reports are close together, so a single test report shows in the staff view and the

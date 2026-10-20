@@ -16,6 +16,7 @@ const WORDS = [
   [/^Leaves \(citywide\)$/, () => 'Hojas (toda la ciudad)'],
   [/^Grass clippings \(citywide\)$/, () => 'Césped cortado (toda la ciudad)'],
   [/^Leaf collection Apr 1-May 15 and Oct 15-Dec 31; quarterly yard waste the weeks of Mar 31, Jun 30, Sep 30, Dec 31 \(dates as printed on the city page\)\.$/, () => 'Recogida de hojas del 1 de abril al 15 de mayo y del 15 de octubre al 31 de diciembre; desechos de jardín trimestrales las semanas del 31 de marzo, 30 de junio, 30 de septiembre y 31 de diciembre (fechas según la página de la ciudad).'],
+  [/^(North|South) Zone \((Mo|Tu) and (Th|Fr)\)$/, (m) => `Zona ${m[1] === 'North' ? 'Norte' : 'Sur'} (${DAY2[m[2]]} y ${DAY2[m[3]]})`],
   [/^(North|South) Zone ([AB]): (.+) \((\w+)s\)$/, (m) => `Zona ${m[1] === 'North' ? 'Norte' : 'Sur'} ${m[2]}: ${street(m[3])} (${DAYS_PL[m[4]]})`],
   [/^Recycling Section (\d+)(?: \((grass|leaf)\))?$/, (m) => `Sección de reciclaje ${m[1]}${m[2] ? ` (${m[2] === 'grass' ? 'césped' : 'hojas'})` : ''}`],
   [/^RD (\d) Zone (\d+): streets in (.+)$/, (m) => `RD ${m[1]} Zona ${m[2]}: calles en ${m[3]}`],

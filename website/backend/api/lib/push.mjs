@@ -7,6 +7,7 @@
 // section that does not exist. Push endpoints are restricted to the browsers' push services (no arbitrary URLs).
 import { createHash } from 'node:crypto';
 import { json } from './http.mjs';
+import { bearerMatches } from './alerts.mjs';
 import { occurrences, addDays } from './occurrences.mjs';
 import { localParts } from './hours.mjs';
 
@@ -103,9 +104,12 @@ export async function handleSubscribe(request, repo, { now = new Date(), salt = 
 }
 
 export async function handleUnsubscribe(request, repo) {
+  if (Number(request.headers.get('content-length') ?? 0) > MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
+  const raw = await request.text();
+  if (new TextEncoder().encode(raw).length > MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
   let b;
   try {
-    b = JSON.parse(await request.text());
+    b = JSON.parse(raw);
   } catch {
     return json({ error: 'invalid_json' }, 400, noStore);
   }
@@ -145,7 +149,7 @@ export const streamsOn = (rows, sub, date) => pickupsOn(rows, sub, date).map((p)
 
 // send(sub, payload) -> resolves, or rejects with { statusCode }. Called once per due subscription.
 export async function handleReminders(request, repo, send, { secret = process.env.CRON_SECRET, now = new Date() } = {}) {
-  if (!secret || request.headers.get('authorization') !== `Bearer ${secret}`) return json({ error: 'unauthorized' }, 401, noStore);
+  if (!bearerMatches(request.headers.get('authorization') ?? '', secret)) return json({ error: 'unauthorized' }, 401, noStore);
   const today = localParts(now).date;
   const tomorrow = addDays(today, 1);
   const subs = await repo.dueSubscriptions(today);

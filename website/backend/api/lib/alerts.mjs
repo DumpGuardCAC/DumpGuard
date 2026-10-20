@@ -12,13 +12,32 @@ import { localParts } from './hours.mjs';
 
 const noStore = { 'cache-control': 'no-store' };
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+const hourStart = (now) => new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
+export const AUTH_FAILS_PER_HOUR = 10;
+
+function clientKey(request, salt) {
+  const fwd = request.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown';
+  return createHash('sha256').update(`${salt}|staff-auth|${fwd}`).digest('hex');
+}
+
+// Hash both sides so the compare time does not depend on how much of the secret matched.
+export function bearerMatches(header, secret) {
+  if (!secret) return false;
+  const a = createHash('sha256').update(header ?? '').digest();
+  const b = createHash('sha256').update(`Bearer ${secret}`).digest();
+  return timingSafeEqual(a, b);
+}
 
 export function authorized(request, token = process.env.ADMIN_TOKEN) {
   if (!token || token.length < 16) return false; // an unset or weak token disables the admin API
-  const given = request.headers.get('authorization') ?? '';
-  const a = createHash('sha256').update(given).digest();
-  const b = createHash('sha256').update(`Bearer ${token}`).digest();
-  return timingSafeEqual(a, b);
+  return bearerMatches(request.headers.get('authorization') ?? '', token);
+}
+
+// One counter for every staff route (alerts, reports, dumping). A bad token is counted before any other work.
+export async function staffOnly(request, repo, token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '') {
+  if (authorized(request, token)) return null;
+  const n = await repo.hit(clientKey(request, salt), hourStart(now));
+  return json({ error: n > AUTH_FAILS_PER_HOUR ? 'rate_limited' : 'unauthorized' }, n > AUTH_FAILS_PER_HOUR ? 429 : 401, noStore);
 }
 
 // Moved pickups in [today, today + days] for this town and chosen sections.
@@ -54,8 +73,9 @@ export async function handleAlerts(request, repo, { now = new Date() } = {}) {
   return jsonWithEtag(request, body, { maxAge: 60, sMaxAge: 120 });
 }
 
-export async function handleCreateAlert(request, repo, { now = new Date(), token } = {}) {
-  if (!authorized(request, token)) return json({ error: 'unauthorized' }, 401, noStore);
+export async function handleCreateAlert(request, repo, { now = new Date(), token, salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
+  const denied = await staffOnly(request, repo, token, now, salt);
+  if (denied) return denied;
   let b;
   try {
     b = JSON.parse(await request.text());
@@ -80,8 +100,9 @@ export async function handleCreateAlert(request, repo, { now = new Date(), token
   return json({ id }, 201, noStore);
 }
 
-export async function handleDeleteAlert(request, repo, { token } = {}) {
-  if (!authorized(request, token)) return json({ error: 'unauthorized' }, 401, noStore);
+export async function handleDeleteAlert(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
+  const denied = await staffOnly(request, repo, token, now, salt);
+  if (denied) return denied;
   const id = new URL(request.url).searchParams.get('id') ?? '';
   if (!/^[0-9a-f-]{36}$/.test(id)) return badRequest('invalid_id');
   await repo.deleteAnnouncement(id);

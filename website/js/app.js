@@ -17,6 +17,9 @@
     Array.prototype.forEach.call(document.querySelectorAll('nav a'), function (a) { a.classList.toggle('act', a.getAttribute('data-go') === v); });
     try { history.replaceState(null, '', '#' + v); } catch (e) { /* ignore */ }
     window.scrollTo(0, 0);
+    var view = $('v-' + v);
+    var heading = view ? view.querySelector('h1, h2') : null;
+    if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
     navStyle();
     if (v === 'map') setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 60);
   }

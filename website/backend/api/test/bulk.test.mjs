@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { handleBulkRequest, handlePurge, LIMIT_PER_HOUR } from '../lib/bulk.mjs';
+import { bearerMatches } from '../lib/alerts.mjs';
 
 const NOW = new Date('2026-10-06T15:30:00Z');
 function fakeRepo() {
@@ -80,4 +81,15 @@ test('purge requires the cron secret', async () => {
   assert.equal((await handlePurge(mk({}), fakeRepo(), { secret: 'k' })).status, 401);
   assert.equal((await handlePurge(mk({ authorization: 'Bearer k' }), fakeRepo(), { secret: undefined })).status, 401);
   assert.equal((await handlePurge(mk({ authorization: 'Bearer k' }), fakeRepo(), { secret: 'k' })).status, 200);
+});
+
+test('cron secret compare rejects a long shared prefix', async () => {
+  const prefix = 'cron-secret-prefix-0123456789abcdef';
+  const real = prefix + '-real';
+  const near = prefix + '-near';
+  assert.equal(bearerMatches('Bearer ' + near, real), false);
+  assert.equal(bearerMatches('Bearer ' + real, real), true);
+  const req = (secret) => new Request('http://x', { headers: { authorization: 'Bearer ' + secret } });
+  assert.equal((await handlePurge(req(near), fakeRepo(), { secret: real })).status, 401);
+  assert.equal((await handlePurge(req(real), fakeRepo(), { secret: real })).status, 200);
 });

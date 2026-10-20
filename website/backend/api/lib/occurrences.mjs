@@ -70,7 +70,16 @@ export function occurrences(row, from, to) {
     found.delete(o.date);
   }
   for (const o of row.overrides ?? []) {
-    if (o.to && o.to >= from && o.to <= to) found.set(o.to, { date: o.to, moved: true, from: o.date, reason: o.reason });
+    if (!o.to || o.to < from || o.to > to) continue;
+    const prev = found.get(o.to);
+    if (prev && prev.moved) {
+      const reasons = [];
+      if (prev.reason) reasons.push(prev.reason);
+      if (o.reason && o.reason !== prev.reason) reasons.push(o.reason);
+      found.set(o.to, { date: o.to, moved: true, from: prev.from || o.date, reason: reasons.join('; ') || undefined });
+    } else {
+      found.set(o.to, { date: o.to, moved: true, from: o.date, reason: o.reason });
+    }
   }
   return [...found.values()].sort((a, b) => (a.date < b.date ? -1 : 1));
 }

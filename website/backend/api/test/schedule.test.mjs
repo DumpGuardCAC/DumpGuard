@@ -70,6 +70,30 @@ test('handler: validation and not-covered', async () => {
   assert.equal((await call('?format=pdf', '08817')).status, 400);
 });
 
+test('schedule 400 and 404 are not cached, a 200 is', async () => {
+  assert.equal((await call('', 'abc')).headers.get('cache-control'), 'no-store');
+  assert.equal((await call('', '00000')).headers.get('cache-control'), 'no-store');
+  const ok = await call('?area=rs-6&area=garbage:mon', '08817');
+  assert.equal(ok.status, 200);
+  assert.match(ok.headers.get('cache-control'), /public, s-maxage=3600/);
+});
+
+test('two overrides onto the same day keep both reasons', () => {
+  const row = {
+    rrule: 'FREQ=WEEKLY;BYDAY=MO',
+    dtstart: '2026-05-04',
+    overrides: [
+      { date: '2026-05-25', to: '2026-05-30', reason: 'Ward 1 moved' },
+      { date: '2026-05-25', to: '2026-05-30', reason: 'Central Park exception' },
+    ],
+  };
+  const hits = occurrences(row, '2026-05-01', '2026-06-01').filter((o) => o.date === '2026-05-30');
+  assert.equal(hits.length, 1);
+  assert.equal(hits[0].moved, true);
+  assert.match(hits[0].reason, /Ward 1 moved/);
+  assert.match(hits[0].reason, /Central Park exception/);
+});
+
 test('handler: asks for the area first, then returns schedules', async () => {
   const first = await (await call('', '08817')).json();
   assert.equal(first.needs, 'area');

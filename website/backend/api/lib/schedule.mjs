@@ -14,7 +14,11 @@ import { toEs } from './es_labels.mjs';
 const json = (body, status = 200, extra = {}) =>
   new Response(JSON.stringify(body), {
     status,
-    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, s-maxage=3600', ...extra },
+    headers: {
+      'content-type': 'application/json; charset=utf-8',
+      'cache-control': status === 400 || status === 404 ? 'no-store' : 'public, s-maxage=3600',
+      ...extra,
+    },
   });
 
 // New Jersey calendar date, not UTC: after 8 pm Eastern UTC is already tomorrow.

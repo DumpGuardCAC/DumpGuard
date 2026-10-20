@@ -35,7 +35,8 @@
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
       var el = document.createElement('script');
-      el.src = src; el.async = true;
+      el.src = src; el.async = true; el.crossOrigin = 'anonymous';
+      el.integrity = 'sha384-vE8hbVJ4lezako5rlvE7bY0BVzWlFhZncPlckrqNwcUQpVtgbENTgZ8TBbnPjZre';
       el.onload = resolve;
       el.onerror = function () { reject(new Error('script')); };
       document.head.appendChild(el);
@@ -95,6 +96,7 @@
       var img = new Image();
       img.onerror = function () { URL.revokeObjectURL(url); note.textContent = s().fail; DG.showCategoryPicker(true); };
       img.onload = function () {
+        if (run !== mine) return;
         DG.clear(label).appendChild(h('img', { src: url, alt: '' }));
         note.textContent = s().looking;
         classify(img).then(function (r) {

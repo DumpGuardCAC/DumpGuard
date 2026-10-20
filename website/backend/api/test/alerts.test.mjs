@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { authorized, scheduleChanges, handleAlerts, handleCreateAlert, handleDeleteAlert } from '../lib/alerts.mjs';
+import { authorized, scheduleChanges, handleAlerts, handleCreateAlert, handleDeleteAlert, AUTH_FAILS_PER_HOUR } from '../lib/alerts.mjs';
+import { handleListReports } from '../lib/reports.mjs';
 import { handleReminders, reminderText } from '../lib/push.mjs';
 
 const TOKEN = 'a-long-admin-token-123';
@@ -33,6 +34,7 @@ const fake = (extra = {}) => ({
   activeAnnouncements: async () => [{ id: 'i', region_id: 'edison', message_en: 'No pickup Friday, snow.', message_es: '', source_url: null, starts_on: '2026-10-15', ends_on: '2026-10-16' }],
   createAnnouncement: async (x) => { fake.last = x; return 'new-id'; },
   deleteAnnouncement: async () => {},
+  hit: async () => 1,
   ...extra,
 });
 
@@ -82,4 +84,27 @@ test('reminder mentions a holiday shift and an announcement', async () => {
   assert.equal((await res.json()).sent, 1);
   assert.match(sent[0].body, /moved because of a holiday/);
   assert.equal(sent[0].date, '2026-10-20');
+});
+
+test('a colon-free token does not match the staff sign-in contract', () => {
+  const staffToken = (user, pw) => user + ':' + pw;
+  const colonFree = 'a-long-admin-token-123';
+  assert.equal(colonFree.includes(':'), false);
+  const req = new Request('http://x', { headers: { authorization: 'Bearer ' + staffToken('staffuser', 'secretpass') } });
+  assert.equal(authorized(req, colonFree), false);
+  assert.equal(authorized(req, staffToken('staffuser', 'secretpass')), true);
+});
+
+test('failed staff logins on alerts and reports share one limit', async () => {
+  let n = 0;
+  const repo = { hit: async () => ++n };
+  const opt = { token: TOKEN, now: new Date('2026-05-01T12:00:00Z'), salt: 's' };
+  const badAlert = new Request('http://x/admin/alerts', { method: 'POST', headers: { authorization: 'Bearer nope' } });
+  for (let i = 0; i < AUTH_FAILS_PER_HOUR; i++) {
+    assert.equal((await handleCreateAlert(badAlert, repo, opt)).status, 401);
+  }
+  const badReports = new Request('http://x/admin/reports', { headers: { authorization: 'Bearer also-nope' } });
+  const limited = await handleListReports(badReports, repo, opt);
+  assert.equal(limited.status, 429);
+  assert.equal((await limited.json()).error, 'rate_limited');
 });

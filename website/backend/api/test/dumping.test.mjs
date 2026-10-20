@@ -125,6 +125,16 @@ test('the public map only shows cells with enough reports, as coarse centres', a
   assert.equal(r.status, 200);
   assert.match(r.headers.get('cache-control'), /s-maxage/);
   assert.deepEqual((await r.json()).cells, []);
+  assert.equal(m.cells[0].town, 'edison');
+});
+
+test('a cell with reports from two towns is not pinned to the first town', () => {
+  const pt = (region_id, dump_type = 'tires') => ({ cx: 1, cy: 2, status: 'new', dump_type, region_id });
+  const m = buildMap([pt('edison'), pt('edison'), pt('metuchen', 'yard')], []);
+  assert.equal(m.cells.length, 1);
+  assert.equal(m.cells[0].n, 3);
+  assert.equal(m.cells[0].town, null);
+  assert.deepEqual([...m.cells[0].towns].sort(), ['edison', 'metuchen']);
 });
 
 test('staff endpoints need the token and count failures', async () => {

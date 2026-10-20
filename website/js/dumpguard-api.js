@@ -17,6 +17,7 @@
       didyou: 'Other matches', recycling: 'Recycle', trash: 'Trash', special_dropoff: 'Special drop-off', hazard: 'Hazardous: do not put in the bin',
       source: 'Source', verified: 'verified', gotit: 'Got it, counted anonymously', thanks: 'Thanks, counted anonymously.',
       wrong: 'Report a wrong answer', send: 'Send', cancel: 'Cancel', whatwrong: 'What is wrong or missing?', sent: 'Thanks. A person will check it against the official source.',
+      tooLong: 'Use 3 to 500 characters.',
       where: 'Where to take it', openNow: 'open now', closed: 'closed now', km: 'km', residents: 'Residents only',
       cat: 'Category', catPick: 'Pick a category', fail: 'Could not reach the server. Try again.',
       zipHelp: 'Enter your ZIP code to see pickup days.', pickTown: 'Which town?', pickArea: 'Which one is yours?', choose: 'Choose...',
@@ -31,6 +32,7 @@
       didyou: 'Otras coincidencias', recycling: 'Reciclar', trash: 'Basura', special_dropoff: 'Punto de entrega especial', hazard: 'Peligroso: no lo ponga en el contenedor',
       source: 'Fuente', verified: 'verificado', gotit: 'Listo, contar de forma anónima', thanks: 'Gracias, contado de forma anónima.',
       wrong: 'Informar de una respuesta incorrecta', send: 'Enviar', cancel: 'Cancelar', whatwrong: '¿Qué está mal o falta?', sent: 'Gracias. Una persona lo revisará con la fuente oficial.',
+      tooLong: 'Use de 3 a 500 caracteres.',
       where: 'Dónde llevarlo', openNow: 'abierto ahora', closed: 'cerrado ahora', km: 'km', residents: 'Solo residentes',
       cat: 'Categoría', catPick: 'Elija una categoría', fail: 'No se pudo conectar con el servidor. Intente de nuevo.',
       zipHelp: 'Escriba su código postal para ver los días de recogida.', pickTown: '¿Qué municipio?', pickArea: '¿Cuál es el suyo?', choose: 'Elija...',
@@ -57,6 +59,14 @@
       else if (k.slice(0, 2) === 'on') el.addEventListener(k.slice(2), attrs[k]);
       else el.setAttribute(k, attrs[k]);
     });
+    if (attrs && attrs.role === 'button' && typeof attrs.onclick === 'function' && !attrs.onkeydown) {
+      var click = attrs.onclick;
+      el.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        if (e.key === ' ') e.preventDefault();
+        click.call(el, e);
+      });
+    }
     for (var i = 2; i < arguments.length; i++) {
       var c = arguments[i];
       if (c === null || c === undefined || c === false) continue;
@@ -223,7 +233,8 @@
         if (r.status === 201) { clear(slot).appendChild(h('p', { class: 'ok' }, t('sent'))); return; }
         send.disabled = false;
         msg.className = 'err';
-        msg.textContent = r.status === 429 ? t('fail') : (r.body && r.body.message) || t('fail');
+        var raw = (r.body && r.body.message) || '';
+        msg.textContent = r.status === 429 ? t('fail') : (raw === 'Use 3 to 500 characters.' ? t('tooLong') : (raw || t('fail')));
       }).catch(function () { send.disabled = false; msg.className = 'err'; msg.textContent = t('fail'); });
     });
     slot.appendChild(ta); slot.appendChild(msg); slot.appendChild(h('div', { class: 'row' }, send, cancel));
@@ -279,22 +290,24 @@
           h('span', { class: 'dot', style: 'background:' + COLORS[it.resolved.rule] }), h('span', {}, pick(it.name)),
           h('span', { class: 'badge', style: 'background:' + COLORS[it.resolved.rule] }, t(it.resolved.rule))));
       });
-    }).catch(function () { clear($('result')).appendChild(h('p', { class: 'err' }, t('fail'))); });
+    }).catch(function () { if (mine !== seq) return; clear($('result')).appendChild(h('p', { class: 'err' }, t('fail'))); });
   }
 
   // ---- pickup days by ZIP ----
-  var lastZip = null;
+  var lastZip = null, zipSeq = 0;
   var STREAM = function (s) { return ({ trash: t('trashS'), garbage: t('trashS'), area: t('areaS'), recycling: t('recyclingS'), bulk: t('bulk'), yard: t('yard') })[s] || s; };
   var fmt = function (iso) { return new Date(iso + 'T12:00:00').toLocaleDateString(state.lang === 'es' ? 'es-US' : 'en-US', { weekday: 'short', month: 'short', day: 'numeric' }); };
 
   function lookupZip(zip, town, areas) {
     var box = clear($('zresult'));
     if (!/^\d{5}$/.test(zip)) { box.appendChild(h('p', { class: 'err' }, t('badZip'))); return; }
+    var mine = ++zipSeq;
     lastZip = { zip: zip, town: town, areas: areas || [] };
     var qs = [];
     if (town) qs.push('town=' + encodeURIComponent(town));
     (areas || []).forEach(function (a) { qs.push('area=' + encodeURIComponent(a)); });
     api.get('/schedule/' + zip + (qs.length ? '?' + qs.join('&') : '')).then(function (r) {
+      if (mine !== zipSeq) return;
       var b = r.body;
       clear(box);
       if (r.status === 404) { box.appendChild(h('p', { class: 'err' }, t('noZip'))); return; }
@@ -306,8 +319,8 @@
         return;
       }
       if (b.needs === 'area') { renderAreas(box, b, zip, areas || []); return; }
-      renderSchedule(box, b, zip, town, areas || []);
-    }).catch(function () { clear(box).appendChild(h('p', { class: 'err' }, t('fail'))); });
+      renderSchedule(box, b, zip, town, areas || [], mine);
+    }).catch(function () { if (mine !== zipSeq) return; clear(box).appendChild(h('p', { class: 'err' }, t('fail'))); });
   }
 
   function renderAreas(box, b, zip, chosen) {
@@ -332,7 +345,7 @@
     });
   }
 
-  function renderSchedule(box, b, zip, town, areas) {
+  function renderSchedule(box, b, zip, town, areas, mine) {
     box.appendChild(h('h3', {}, b.town.name));
     b.schedules.forEach(function (s) {
       var line = h('div', { class: 'item' }, h('b', {}, STREAM(s.stream)));
@@ -354,6 +367,7 @@
     if (src && src.source_url) box.appendChild(h('p', { class: 'sm' }, t('source') + ': ', h('a', { class: 'link', href: src.source_url, target: '_blank', rel: 'noopener noreferrer' }, hostOf(src.source_url))));
     var qs = ['town=' + encodeURIComponent(b.town.id)].concat(areas.map(function (a) { return 'area=' + encodeURIComponent(a); }));
     api.get('/alerts?' + qs.join('&')).then(function (r) {
+      if (mine !== zipSeq) return;
       var list = (r.body && r.body.announcements) || [];
       if (!list.length) return;
       var note = h('div', { class: 'notice', style: 'display:block' }, h('b', {}, t('alerts') + ': '));
@@ -366,26 +380,6 @@
     if (!$('zgo')) return;
     $('zgo').addEventListener('click', function () { lookupZip($('zip').value.trim()); });
     $('zip').addEventListener('keydown', function (e) { if (e.key === 'Enter') lookupZip($('zip').value.trim()); });
-  }
-
-  // ---- fallback navigation: only if no other script has shown a view ----
-  function fallbackRouter() {
-    if (document.querySelector('.view.on')) return;
-    var go = function (name) {
-      var v = $('v-' + name) || $('v-home');
-      Array.prototype.forEach.call(document.querySelectorAll('.view'), function (x) { x.classList.remove('on'); });
-      v.classList.add('on');
-      window.scrollTo(0, 0);
-    };
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest ? e.target.closest('[data-go]') : null;
-      if (!a) return;
-      e.preventDefault();
-      go(a.getAttribute('data-go'));
-    });
-    var nav = $('nav');
-    window.addEventListener('scroll', function () { if (nav) nav.classList.toggle('solid', window.scrollY > 40); });
-    go('home');
   }
 
   function init() {
@@ -402,5 +396,4 @@
     h: h, clear: clear, lang: function () { return state.lang; }, setLang: setLang, townId: function () { return state.town; }, townName: function () { return townName(state.town); },
   };
   document.addEventListener('DOMContentLoaded', init);
-  window.addEventListener('load', fallbackRouter);
 })();

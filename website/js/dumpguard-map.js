@@ -36,6 +36,10 @@
   }
 
   // ---- drawing ----
+  function cellTowns(c) {
+    if (c.towns && c.towns.length) return c.towns;
+    return c.town ? [c.town] : [];
+  }
   function dominant(counts) {
     var best = null;
     ['new', 'noticed', 'progress', 'resolved'].forEach(function (s) { if (counts[s] && (!best || counts[s] > counts[best])) best = s; });
@@ -44,7 +48,7 @@
   function drawPublic() {
     var f = filters(), shown = 0;
     pub.cells.forEach(function (c) {
-      if (f.town && c.town !== f.town) return;
+      if (f.town && cellTowns(c).indexOf(f.town) === -1) return;
       var by = {}, n = 0;
       c.groups.forEach(function (g) {
         if ((f.type && g.type !== f.type) || (f.status && g.status !== f.status)) return;
@@ -93,8 +97,10 @@
     pub.towns.forEach(function (tw) {
       var at = TOWN_AT[tw.town]; if (!at) return;
       var open = tw.counts.new + tw.counts.noticed + tw.counts.progress;
+      var tip = document.createElement('span');
+      tip.textContent = tw.name + (open ? ': ' + open + ' open' : '');
       L.marker(at, { interactive: false, opacity: 0, icon: L.divIcon({ className: '', iconSize: [0, 0]}) })
-        .bindTooltip(tw.name + (open ? ': ' + open + ' open' : ''), { permanent: true, direction: 'center' }).addTo(labels);
+        .bindTooltip(tip, { permanent: true, direction: 'center' }).addTo(labels);
     });
   }
 
@@ -130,7 +136,7 @@
   function detail(r) {
     var box = h('div', {}, h('h3', {}, r.code), h('span', { class: 'badge', style: 'background:' + COLOR[r.status] }, STATUS[r.status]));
     var town = (towns.filter(function (t) { return t.town === r.region_id; })[0] || {}).name || r.region_id;
-    box.appendChild(h('p', {}, h('b', {}, TYPES[r.dump_type] || r.dump_type), ' in ' + town));
+    box.appendChild(h('p', {}, h('b', {}, TYPES[r.dump_type] || r.dump_type), (DG.lang() === 'es' ? ' en ' : ' in ') + town));
     box.appendChild(h('p', {}, r.location_text));
     box.appendChild(h('p', {}, r.description));
     if (r.notes) box.appendChild(h('p', { class: 'sm' }, r.notes));
@@ -223,7 +229,7 @@
     if (!has) sel.value = '';
     redraw();
     if (!pub) return;
-    var f = filters().town, cells = pub.cells.filter(function (c) { return !f || c.town === f; });
+    var f = filters().town, cells = pub.cells.filter(function (c) { return !f || cellTowns(c).indexOf(f) !== -1; });
     if (!cells.length) cells = pub.cells;
     if (cells.length) map.fitBounds(cells.map(function (c) { return [c.lat, c.lng]; }), { maxZoom: 13, padding: [40, 40] });
   }
@@ -248,6 +254,7 @@
       $('mbanner').textContent = 'The map could not load. Try again later.'; $('mbanner').style.display = 'block';
     });
     window.addEventListener('dg-town', function () { if (pub) followTown(); });
+    window.addEventListener('dg-lang', function () { if (layer) redraw(); });
     // The map is created while its view is hidden, so resize it when the view becomes visible.
     if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe($('gmap'));
   }

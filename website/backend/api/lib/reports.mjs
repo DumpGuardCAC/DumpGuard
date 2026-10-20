@@ -5,7 +5,7 @@
 // A report only lands in a queue for a person to check against the primary source. It never edits a rule.
 import { createHash } from 'node:crypto';
 import { json, badRequest, validId } from './http.mjs';
-import { authorized } from './alerts.mjs';
+import { staffOnly } from './alerts.mjs';
 
 export const LIMIT_PER_HOUR = 10;
 const MAX_BODY = 4 * 1024;
@@ -39,15 +39,17 @@ export async function handleReport(request, repo, { now = new Date(), salt = pro
   return json({ ok: true }, 201, noStore);
 }
 
-export async function handleListReports(request, repo, { token } = {}) {
-  if (!authorized(request, token)) return json({ error: 'unauthorized' }, 401, noStore);
+export async function handleListReports(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
+  const denied = await staffOnly(request, repo, token, now, salt);
+  if (denied) return denied;
   const status = new URL(request.url).searchParams.get('status') ?? 'open';
   if (!['open', 'resolved', 'dismissed'].includes(status)) return badRequest('invalid_status');
   return json({ status, reports: await repo.listReports(status) }, 200, noStore);
 }
 
-export async function handleResolveReport(request, repo, { token } = {}) {
-  if (!authorized(request, token)) return json({ error: 'unauthorized' }, 401, noStore);
+export async function handleResolveReport(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
+  const denied = await staffOnly(request, repo, token, now, salt);
+  if (denied) return denied;
   let b;
   try { b = JSON.parse(await request.text()); } catch { return json({ error: 'invalid_json' }, 400, noStore); }
   if (typeof b?.id !== 'string' || !UUID.test(b.id)) return badRequest('invalid_id');

@@ -82,22 +82,31 @@
       fr.readAsDataURL(blob);
     });
   }
+  var photoSeq = 0;
   function onPhoto() {
     var input = $('rphoto'), file = input.files && input.files[0];
     photo = null; $('priv').style.display = 'none';
     if (!file) return;
+    var mine = ++photoSeq;
     $('rerr').textContent = '';
     $('send').disabled = true; // wait for the photo to be cleaned before it can be sent
     reencode(file).then(function (r) {
+      if (mine !== photoSeq) return;
       if (r.blob.size > 1900000) throw new Error('big');
       return toBase64(r.blob).then(function (b64) {
+        if (mine !== photoSeq) return;
         photo = b64;
         var holder = $('rtxt'); clear(holder);
         holder.appendChild(h('img', { src: r.canvas.toDataURL('image/jpeg', 0.5), alt: 'Selected photo' }));
         $('priv').style.display = 'block';
       });
-    }).catch(function () { $('rerr').textContent = 'That photo could not be used. Try a different one.'; })
-      .then(function () { $('send').disabled = false; });
+    }).catch(function () {
+      if (mine !== photoSeq) return;
+      $('rerr').textContent = 'That photo could not be used. Try a different one.';
+    }).then(function () {
+      if (mine !== photoSeq) return;
+      $('send').disabled = false;
+    });
   }
 
   // ---- submit ----

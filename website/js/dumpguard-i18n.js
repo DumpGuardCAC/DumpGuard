@@ -128,6 +128,23 @@
     "Passwords don't match.": 'Las contraseñas no coinciden.', 'Enter your city or town.': 'Escriba su ciudad o municipio.',
   };
 
+  Object.assign(ES, {
+    'Where items go, when pickup is, and how to report dumping in 38 NJ towns.': 'Adónde van los artículos, cuándo es la recogida y cómo reportar tiros de basura en 38 municipios de NJ.',
+    'Look up an item': 'Busque un artículo', 'Type an item or upload a photo to get disposal steps for your town.': 'Escriba un artículo o suba una foto para ver los pasos de desecho en su municipio.',
+    'Find pickup days': 'Encuentre los días de recogida', 'Trash, recycling, bulk and yard waste days, with a calendar export.': 'Días de basura, reciclaje, objetos grandes y desechos de jardín, con calendario exportable.',
+    'Report a dump anonymously and track it with a code.': 'Reporte un tiro de basura de forma anónima y sígalo con un código.',
+    "Local disposal websites are hard to follow. DumpGuard gives one answer per item, taken from each town's own website, for 38 towns in Middlesex and Monmouth counties.": 'Los sitios web locales sobre desechos son difíciles de seguir. DumpGuard da una respuesta por artículo, tomada del sitio web de cada municipio, para 38 municipios de los condados de Middlesex y Monmouth.',
+    'Your privacy': 'Su privacidad', 'Photos are stripped of location data. The public map shows an area only after three or more people report it.': 'A las fotos se les quitan los datos de ubicación. El mapa público muestra una zona solo después de que tres o más personas la reportan.',
+    'Showing your town. If it has more than one pickup area, choose yours below.': 'Se muestra su municipio. Si tiene más de una zona de recogida, elija la suya abajo.',
+    'Use this form only for illegal dumping: piles left on roadsides, lots or private property. For everyday disposal questions, use': 'Use este formulario solo para tiros ilegales de basura: montones dejados en calles, terrenos o propiedad privada. Para dudas cotidianas sobre desechos, use',
+    'Address or nearby landmark': 'Dirección o lugar de referencia cercano', 'How long it has been there, any hazards': 'Cuánto tiempo lleva ahí, posibles peligros',
+    'Enter the tracking code you got when you submitted.': 'Escriba el código de seguimiento que recibió al enviar.',
+    'Reported dumping': 'Tiros de basura reportados', 'Public locations are approximate. Photos and details are visible to staff only.': 'Las ubicaciones públicas son aproximadas. Las fotos y los detalles solo los ve el personal.',
+    'Staff access': 'Acceso del personal', 'Sign in to review reports in your towns.': 'Inicie sesión para revisar los reportes de sus municipios.', 'Staff dashboard': 'Panel del personal',
+    "Built by students for the Congressional App Challenge, NJ-06. Pickup data comes from each town's own website.": 'Hecho por estudiantes para el Congressional App Challenge, NJ-06. Los datos de recogida vienen del sitio web de cada municipio.',
+    'couch, TV, battery': 'sofá, TV, batería'
+  });
+
   var TYPE_ES = {
     household: 'Basura doméstica', furniture: 'Muebles', appliances: 'Electrodomésticos', electronics: 'Electrónicos', tires: 'Llantas',
     construction: 'Escombros de construcción', yard: 'Desechos de jardín', hazardous: 'Desechos peligrosos', other: 'Otro',

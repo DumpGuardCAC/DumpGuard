@@ -130,7 +130,7 @@
     window.dispatchEvent(new Event('dg-lang'));
   }
   function translateStatic() {
-    var q = $('q'); if (q) q.placeholder = state.lang === 'es' ? 'sofá, TV, batería, partes impresas en 3D...' : 'couch, TV, battery, 3D printed parts…';
+    var q = $('q'); if (q) q.placeholder = state.lang === 'es' ? 'sofá, TV, batería' : 'couch, TV, battery';
     var z = $('zip'); if (z) z.placeholder = '08817';
     var btn = $('zgo'); if (btn) btn.textContent = t('lookup');
     var res = $('result'); if (res && res.querySelector('.empty')) emptyState();

@@ -23,7 +23,7 @@ jobs:
           node-version: '22'
       - run: npm ci
       - run: npx cap sync android
-      - run: chmod +x android/gradlew && ./gradlew assembleDebug
+      - run: chmod +x gradlew && ./gradlew assembleDebug
         working-directory: android-app/android
       - name: publish release
         env:

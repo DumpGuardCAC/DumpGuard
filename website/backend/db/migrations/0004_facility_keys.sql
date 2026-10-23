@@ -1,4 +1,3 @@
--- Stable keys for facilities (from data/towns.json) so an item rule can point at the place it sends people to.
 BEGIN;
 
 ALTER TABLE facilities ADD COLUMN key text;

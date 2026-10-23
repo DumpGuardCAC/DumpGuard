@@ -1,6 +1,3 @@
-// Expand the RRULE subset used in collection_schedules into concrete dates.
-// Supported: FREQ=WEEKLY (INTERVAL, BYDAY) or FREQ=MONTHLY (BYDAY with ordinals like 1WE,3WE), BYMONTH, UNTIL (YYYYMMDD). Anything else throws, so a bad row fails loudly.
-// Dates are 'YYYY-MM-DD' strings; all math is UTC so the server timezone never matters.
 
 const DAY_CODES = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 const DAY_MS = 86_400_000;
@@ -39,11 +36,8 @@ export function parseRRule(rule) {
 
 const mondayOf = (ms) => ms - ((new Date(ms).getUTCDay() + 6) % 7) * DAY_MS;
 
-/** Dates in [from, to] (inclusive) for one schedule row, with holiday overrides applied.
- *  Returns [{ date, moved: boolean, reason?: string, from?: string }] sorted by date. */
 export function occurrences(row, from, to) {
   if (!row.rrule) {
-    // One-off dates (brush, leaf and tree days by street zone).
     return (row.dates ?? [])
       .filter((d) => d.date >= from && d.date <= to)
       .map((d) => ({ date: d.date, moved: false, ...(d.label ? { label: d.label } : {}) }))

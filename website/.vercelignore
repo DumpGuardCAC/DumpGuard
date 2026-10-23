@@ -5,6 +5,4 @@ backend/api/node_modules
 backend/api/.env*
 backend/api/.vercel
 backend/api/test
-backend/api/scripts
 backend/*.md
-react-starter

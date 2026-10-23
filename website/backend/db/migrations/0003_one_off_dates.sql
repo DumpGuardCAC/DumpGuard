@@ -1,5 +1,3 @@
--- One-off pickup dates for programs that are not a repeating rule (brush, leaf and Christmas tree days by street zone).
---   dates  [{"date": "2026-04-01", "label": "Brush"}], used when rrule is null
 BEGIN;
 
 ALTER TABLE collection_schedules

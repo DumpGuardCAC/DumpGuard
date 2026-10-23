@@ -6,7 +6,6 @@ const KEYS = { p256dh: 'B'.repeat(40), auth: 'a'.repeat(16) };
 const sub = (over = {}) => ({ endpoint: 'https://fcm.googleapis.com/fcm/send/abc', keys: KEYS, ...over });
 const post = (body) => new Request('http://x/push/subscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
 
-// trash weekly on Monday (area mon) or Tuesday (area tue); recycling every Thursday for everyone
 const rows = [
   { id: 1, stream: 'trash', area_key: 'garbage:mon', rrule: 'FREQ=WEEKLY;BYDAY=MO', dtstart: '2026-01-05', overrides: [], dates: [] },
   { id: 2, stream: 'trash', area_key: 'garbage:tue', rrule: 'FREQ=WEEKLY;BYDAY=TU', dtstart: '2026-01-06', overrides: [], dates: [] },
@@ -74,9 +73,9 @@ test('unsubscribe is idempotent', async () => {
 
 test('streamsOn respects area and stream choice', () => {
   const s = { area_keys: ['garbage:mon'], streams: ['trash', 'recycling', 'bulk', 'yard'] };
-  assert.deepEqual(streamsOn(rows, s, '2026-10-19'), ['trash']); // Monday
-  assert.deepEqual(streamsOn(rows, s, '2026-10-20'), []); // Tuesday is the other area's trash
-  assert.deepEqual(streamsOn(rows, s, '2026-10-22'), ['recycling']); // Thursday
+  assert.deepEqual(streamsOn(rows, s, '2026-10-19'), ['trash']);
+  assert.deepEqual(streamsOn(rows, s, '2026-10-20'), []);
+  assert.deepEqual(streamsOn(rows, s, '2026-10-22'), ['recycling']);
   assert.deepEqual(streamsOn(rows, { ...s, streams: ['trash'] }, '2026-10-22'), []);
 });
 
@@ -89,8 +88,8 @@ test('reminder text in both languages', () => {
 test('reminders: auth, send, skip, drop dead endpoints', async () => {
   const subs = [
     { id: 'a', endpoint: 'e1', region_id: 'edison', area_keys: ['garbage:mon'], streams: ['trash', 'recycling'], lang: 'en' },
-    { id: 'b', endpoint: 'e2', region_id: 'edison', area_keys: ['garbage:tue'], streams: ['trash'], lang: 'en' }, // nothing Monday
-    { id: 'c', endpoint: 'e3', region_id: 'edison', area_keys: ['garbage:mon'], streams: ['trash'], lang: 'es' }, // dead
+    { id: 'b', endpoint: 'e2', region_id: 'edison', area_keys: ['garbage:tue'], streams: ['trash'], lang: 'en' },
+    { id: 'c', endpoint: 'e3', region_id: 'edison', area_keys: ['garbage:mon'], streams: ['trash'], lang: 'es' },
   ];
   const log = [];
   const repo = fakeRepo({
@@ -104,7 +103,6 @@ test('reminders: auth, send, skip, drop dead endpoints', async () => {
     if (s.id === 'c') throw { statusCode: 410 };
     sent.push([s.id, JSON.parse(payload)]);
   };
-  // Sunday 6 pm NJ time -> tomorrow is Monday 2026-10-19
   const now = new Date('2026-10-18T22:00:00Z');
   const req = (tok) => new Request('http://x/cron', { headers: { authorization: `Bearer ${tok}` } });
   assert.equal((await handleReminders(req('wrong'), repo, send, { secret: 's', now })).status, 401);

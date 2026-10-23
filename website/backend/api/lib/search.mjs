@@ -1,13 +1,9 @@
-// GET /api/v1/search?q=<text>[&town=<id>][&limit=10]
-// Matches English and Spanish names plus aliases, ignoring case and accents, and forgives small typos.
-// With ?town=, each hit also carries the server-resolved rule for that town.
 import { jsonWithEtag, badRequest, notFound, validId } from './http.mjs';
 import { resolveRule, chainFor } from './items.mjs';
 
 export const fold = (s) =>
   String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
 
-// Common Spanish words people type, mapped to the English words used in names and aliases.
 export const ES_TERMS = {
   botella: 'bottle', botellas: 'bottle', lata: 'can', latas: 'can', vidrio: 'glass', frasco: 'jar', caja: 'box', carton: 'cardboard',
   papel: 'paper', periodico: 'newspaper', revista: 'magazine', bolsa: 'bag', bolsas: 'bag', plastico: 'plastic', pila: 'battery',
@@ -42,7 +38,6 @@ function tokensOf(q) {
   return [...new Set(out)];
 }
 
-// Higher is better; 0 means no match.
 export function scoreItem(item, query) {
   const q = fold(query);
   if (!q) return 0;
@@ -67,7 +62,6 @@ export function scoreItem(item, query) {
     else if (t.length >= 4 && [...words].some((w) => w[0] === t[0] && lev(t, w, max) <= max)) fuzzy++;
   }
   if (hit + fuzzy === 0) return 0;
-  // A long query where most words match nothing ("3D printed parts") is not a match for the one word that does.
   const asked = fold(query).split(' ').filter(Boolean).length;
   if (asked >= 3 && (hit + fuzzy) / toks.length < 0.5) return 0;
   return Math.round(((hit + fuzzy * 0.5) / toks.length) * 60);

@@ -1,16 +1,21 @@
 (function () {
   var root = document.documentElement;
-  var standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  var native = !!window.Capacitor || location.protocol === 'capacitor:' || (location.hostname === 'localhost' && location.protocol === 'https:');
+  var standalone = native || window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
   var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   if (standalone) root.classList.add('installed');
   if (standalone && ios) root.classList.add('ios');
+
+  if (native) {
+    window.DUMPGUARD_API = 'https://dumpguard.vercel.app/api/v1';
+    return;
+  }
 
   if ('serviceWorker' in navigator && window.isSecureContext) {
     window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
   }
 
-  // iPhone and iPad: the site only opens from the Home Screen.
-  if (!ios || standalone || window.Capacitor) return;
+  if (!ios || standalone) return;
   root.classList.add('gated');
 
   var T = {
@@ -32,7 +37,7 @@
     },
   };
   var lang = 'en';
-  try { lang = (localStorage.getItem('dg_lang') || (navigator.language || 'en').slice(0, 2)) === 'es' ? 'es' : 'en'; } catch (e) { /* storage can be blocked */ }
+  try { lang = (localStorage.getItem('dg_lang') || (navigator.language || 'en').slice(0, 2)) === 'es' ? 'es' : 'en'; } catch (e) { }
   var t = T[lang];
   var inApp = /FBAN|FBAV|Instagram|Snapchat|TikTok|Line\/|MicroMessenger|GSA\/|Twitter/.test(navigator.userAgent);
 

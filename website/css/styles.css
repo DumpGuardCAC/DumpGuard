@@ -1,12 +1,10 @@
 :root{color-scheme:light;--blue:#357a4e;--teal:#4e8b6a;--green:#2f7a28;--slate:#1f3a2a;--bg:#F7FCE8;--red:#dc2626;--muted:#5b6f60;
-    --hero-img:none; /* SWAP: url('../images/hero.jpg') */
-    box-sizing:border-box}
+    --hero-img:none;    box-sizing:border-box}
 html{scroll-behavior:smooth}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--slate);font-family:Inter,'Helvetica Neue',sans-serif;font-weight:400;line-height:1.7}
 h1,h2,h3{font-family:Belleza,Georgia,serif;font-weight:400;margin:0}
 .view{display:none}.view.on{display:block}
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1100;display:flex;justify-content:space-between;align-items:center;padding:calc(18px + env(safe-area-inset-top,0px)) 5vw 18px;transition:.3s;color:var(--slate);background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.07)}
 nav.solid{background:#fff;color:var(--slate);box-shadow:0 1px 0 rgba(0,0,0,.07)}
 .wordmark{font-family:Belleza,serif;font-size:1.7rem;letter-spacing:.04em!important;text-transform:none!important;border:0!important;padding:0!important}
@@ -15,7 +13,6 @@ nav a{color:inherit;text-decoration:none;font-size:.8rem;letter-spacing:.12em;te
 nav a.act{border-color:var(--green)}
 .pill{border:1px solid currentColor;padding:7px 18px!important;border-radius:30px}
 @media(max-width:820px){nav{padding-left:4vw;padding-right:4vw}nav ul{gap:10px}nav a{font-size:.6rem;letter-spacing:.04em}.wordmark{font-size:1.3rem}}
-/* HERO */
 .hero{position:relative;height:100vh;min-height:560px;display:grid;place-items:center;text-align:center;color:var(--slate);overflow:hidden;
     background:var(--hero-img) center/cover,linear-gradient(180deg,#f7fce8 0%,#eaf6cf 60%,#d7edb0 100%)}
 .hero svg{position:absolute;inset:auto 0 0 0;width:100%;height:26%}
@@ -25,14 +22,12 @@ nav a.act{border-color:var(--green)}
 .btn{display:inline-block;background:#fff;color:var(--slate);padding:14px 36px;border-radius:40px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;border:0;cursor:pointer;font-family:inherit;transition:.25s;text-decoration:none}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
 .btn.dark{background:var(--blue);color:#fff}.btn.green{background:var(--green);color:#fff}.btn.full{width:100%}
-/* SECTIONS */
 .s{padding:84px 5vw;max-width:none;margin:0 auto}
 .page{padding-top:130px;min-height:100vh}
 h2{font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;margin-bottom:22px}
 .lead{font-size:1.12rem;color:var(--muted);max-width:760px;font-weight:300}
 .cats{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 
-/* FORMS */
 .tool{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:40px}
 @media(max-width:800px){.tool{grid-template-columns:1fr}.s{padding:80px 6vw}}
 input,select,textarea{width:100%;padding:14px 16px;border:1px solid #d5dce3;border-radius:12px;font:inherit;background:#fff;color:var(--slate)}
@@ -45,7 +40,6 @@ label{display:block;font-size:.72rem;letter-spacing:.15em;text-transform:upperca
 .card h3{font-size:1.6rem;margin-bottom:8px}.card p{margin:10px 0}.card small{color:var(--muted)}
 .tag{display:inline-block;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:#fff;padding:4px 12px;border-radius:20px;margin-bottom:12px}
 .ok{color:var(--green);font-size:.9rem}.err{color:var(--red);font-size:.9rem;min-height:1.4em}.empty{color:var(--muted);font-weight:300}
-/* AUTH */
 .auth{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:100vh;padding:0}
 .auth .aside{position:sticky;top:0;height:100vh;align-self:start;background:linear-gradient(160deg,#5aa845,#3f7d58);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px;padding:120px 5vw 60px}
 .auth .aside img{background:#fff;border-radius:20px;padding:14px;height:auto}
@@ -81,7 +75,6 @@ label{display:block;font-size:.72rem;letter-spacing:.15em;text-transform:upperca
 #gpanel{max-height:max(560px,calc(100vh - 330px));overflow:auto;min-height:0}@media(max-width:900px){.gwrap{grid-template-columns:1fr}#gpanel{max-height:none}}
 .li{display:flex;gap:12px;align-items:center;background:#fff;border-radius:12px;padding:12px 16px;margin-top:10px;cursor:pointer;box-shadow:0 10px 30px -24px rgba(15,23,42,.4)}
 .li:hover{outline:2px solid #b7dca0}.dot{width:12px;height:12px;border-radius:50%;flex:none}.li small{color:var(--muted)}.li .badge{margin-left:auto}
-/* PHONES: nav wraps to two rows so Log in / Dashboard is never clipped */
 @media(max-width:560px){
   nav{flex-wrap:wrap;justify-content:center;row-gap:6px;padding-top:calc(10px + env(safe-area-inset-top,0px));padding-bottom:10px}
   nav .wordmark img{height:34px!important}
@@ -103,7 +96,6 @@ label{display:block;font-size:.72rem;letter-spacing:.15em;text-transform:upperca
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
-/* government dashboard and messages */
 .btn.ghost{border:1px solid #cbd5e1;margin-top:10px}
 #gdash{display:none}
 .dbar{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
@@ -130,15 +122,12 @@ textarea{resize:vertical}
 .maplegend{background:rgba(255,255,255,.94);border-radius:10px;padding:8px 12px;font-size:.78rem;line-height:1.5;color:var(--slate);box-shadow:0 1px 5px rgba(0,0,0,.25)}.maplegend div{display:flex;align-items:center;gap:8px}.maplegend .dot{width:10px;height:10px}
 .gwrap.solo{grid-template-columns:1fr}
 
-/* INSTALLED APP (home-screen PWA) */
 html.installed{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent}
 html.installed body{-webkit-touch-callout:none}
-/* iOS: translucent glass nav and map legend */
 html.ios nav,html.ios nav.solid{background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(26px) saturate(190%);backdrop-filter:blur(26px) saturate(190%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.5),0 8px 26px -16px rgba(15,40,25,.5)}
 html.ios .navtown,html.ios .pill{background:rgba(255,255,255,.45);border-color:rgba(31,58,42,.28);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,.85)}
 html.ios .maplegend{background:rgba(255,255,255,.5);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 6px 20px -10px rgba(15,40,25,.5)}
 
-/* iOS gate: the site opens only from the Home Screen */
 html.gated,html.gated body{overflow:hidden}
 html.gated nav,html.gated .view{display:none!important}
 .gate{position:fixed;inset:0;z-index:3000;background:var(--bg);overflow:auto;padding:calc(48px + env(safe-area-inset-top,0px)) 28px calc(36px + env(safe-area-inset-bottom,0px));max-width:520px;margin:0 auto}

@@ -1,9 +1,3 @@
-/* Community map of illegal dumping reports.
- *
- * Public view: coarse areas (about 500 m) that have 3 or more reports, plus a count per town. Exact points, photos and
- * descriptions never reach the public endpoint.
- * The government area (dumpguard-gov.js) is where staff see exact points, details and photos.
- */
 (function () {
   'use strict';
 
@@ -18,12 +12,11 @@
   };
   var STATUS = { new: 'New', noticed: 'Noticed', progress: 'In progress', resolved: 'Resolved' };
   var COLOR = { new: '#c0392b', noticed: '#a86b0a', progress: '#1f5fa8', resolved: '#2f7a28' };
-  var TOWN_AT = { // label anchors only
+  var TOWN_AT = {
     edison: [40.5187, -74.4121], 'new-brunswick': [40.4862, -74.4518], woodbridge: [40.5576, -74.2846],
     'long-branch': [40.3043, -73.9924], 'asbury-park': [40.2204, -74.0121],
   };
 
-  // Approximate town centres, used only to zoom the map when a town is picked.
   var CENTER = {
     aberdeen: [40.4101, -74.2224], allenhurst: [40.2362, -74.0112], 'asbury-park': [40.2204, -74.0121], 'atlantic-highlands': [40.4084, -74.0335],
     'bradley-beach': [40.2007, -74.0123], carteret: [40.5773, -74.2285], deal: [40.2543, -74.0001], edison: [40.5187, -74.4121],
@@ -49,7 +42,6 @@
     towns.forEach(function (tw) { t.appendChild(h('option', { value: tw.town, 'data-n': tw.name }, tw.name)); });
   }
 
-  // ---- drawing ----
   function cellTowns(c) {
     if (c.towns && c.towns.length) return c.towns;
     return c.town ? [c.town] : [];
@@ -103,7 +95,6 @@
     });
   }
 
-  // ---- side panel ----
   function addLegend() {
     var ctl = L.control({ position: 'bottomleft' });
     ctl.onAdd = function () {
@@ -132,12 +123,10 @@
     });
   }
 
-  // ---- data ----
   function refreshPublic() {
     return DG.api.get('/dumping/map').then(function (r) { if (r.status === 200) { pub = r.body; towns = pub.towns; } return pub; });
   }
 
-  // The town filter follows the shared town (nav dropdown); "All towns" is still one click away.
   function followTown() {
     var sel = $('mtown'), id = DG.townId(), has = false;
     Array.prototype.forEach.call(sel.options, function (o) { if (o.value && (o.value === id || o.getAttribute('data-n') === DG.townName())) { sel.value = o.value; has = true; } });
@@ -173,7 +162,6 @@
     });
     window.addEventListener('dg-town', function () { if (pub) followTown(); });
     window.addEventListener('dg-lang', function () { if (layer) redraw(); });
-    // The map is created while its view is hidden, so resize it when the view becomes visible.
     if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe($('gmap'));
   }
   window.addEventListener('load', init);

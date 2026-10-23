@@ -1,6 +1,3 @@
-// POST /api/v1/bulk-request  -- DEMO ONLY. Nothing is sent to any municipality (the table forces is_demo = true).
-// Body (JSON): { town, email, description, preferred_date? }
-// Stores the contact email and description for 90 days (purge_expired), nothing else: no IP, no user agent.
 import { createHash } from 'node:crypto';
 import { addDays } from './occurrences.mjs';
 import { bearerMatches } from './alerts.mjs';
@@ -8,7 +5,7 @@ import { BULK_DEMO_NOTICE } from './strings.mjs';
 
 export const LIMIT_PER_HOUR = 5;
 const MAX_BODY_BYTES = 8 * 1024;
-const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/; // same shape the DB CHECK enforces
+const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const CONTROL_RE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/;
 
 const json = (body, status, extra = {}) =>
@@ -21,7 +18,7 @@ const bad = (field, message) => json({ error: 'invalid_request', field, message 
 
 function clientKey(request, salt) {
   const fwd = request.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown';
-  return createHash('sha256').update(`${salt}|bulk-request|${fwd}`).digest('hex'); // never store the raw IP
+  return createHash('sha256').update(`${salt}|bulk-request|${fwd}`).digest('hex');
 }
 
 function validDate(s) {
@@ -36,7 +33,6 @@ export async function handleBulkRequest(request, repo, { now = new Date(), salt 
   }
   if (Number(request.headers.get('content-length') ?? 0) > MAX_BODY_BYTES) return json({ error: 'too_large' }, 413);
 
-  // Rate limit before doing any other work, including parsing.
   const windowStart = new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
   const hits = await repo.hit(clientKey(request, salt), windowStart);
   if (hits > LIMIT_PER_HOUR) {
@@ -70,7 +66,6 @@ export async function handleBulkRequest(request, repo, { now = new Date(), salt 
     preferredDate = preferred;
   }
 
-  // Unpublished or unknown towns look the same, so the endpoint does not reveal which towns exist.
   if (!(await repo.isPublishedTown(town))) return bad('town', 'That town is not available yet.');
 
   const { id, expiresAt } = await repo.insert({ regionId: town, email: email.trim(), description: desc, preferredDate });
@@ -83,7 +78,6 @@ export async function handleBulkRequest(request, repo, { now = new Date(), salt 
   }, 201);
 }
 
-// Vercel cron: GET /api/v1/cron/purge with `Authorization: Bearer $CRON_SECRET`.
 export async function handlePurge(request, repo, { secret = process.env.CRON_SECRET } = {}) {
   if (!bearerMatches(request.headers.get('authorization') ?? '', secret)) return json({ error: 'unauthorized' }, 401);
   await repo.purge();

@@ -13,7 +13,7 @@ test('consensus needs enough verified items that agree', () => {
   assert.equal(summarize(six, chain, {}).consensus.rule, 'recycling');
   const split = [...six.slice(0, 3), ...Array.from({ length: 3 }, (_, i) => item(`t${i}`, 'glass', 'trash', { middlesex: 'trash' }))];
   assert.equal(summarize(split, chain, {}).consensus, null);
-  assert.equal(summarize(six.slice(0, 3), chain, {}).consensus, null); // too few
+  assert.equal(summarize(six.slice(0, 3), chain, {}).consensus, null);
 });
 
 test('defaults do not count toward consensus and sort last', () => {

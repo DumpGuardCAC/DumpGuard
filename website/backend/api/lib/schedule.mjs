@@ -1,11 +1,3 @@
-// GET /api/v1/schedule/:zip  handler. Pure: takes a repo and returns a Response.
-//   ?town=<id>      required when the ZIP spans several towns
-//   ?area=<key>     required when the town has per-section / per-zone schedules (e.g. rs-6, zone-1a).
-//                   A town can ask for more than one pick: keys of the form "group:key" (e.g. garbage:mon) form their own
-//                   group, plain keys form the group "area". Pass one key per group, repeated or comma separated.
-//   ?format=ics     download a calendar instead of JSON
-// A ZIP is not a pickup day: the endpoint answers with what it still needs (needs: 'town' | 'area') until the
-// user has chosen, and never guesses.
 import { occurrences, addDays } from './occurrences.mjs';
 import { buildIcs } from './ics.mjs';
 import { localParts } from './hours.mjs';
@@ -21,7 +13,6 @@ const json = (body, status = 200, extra = {}) =>
     },
   });
 
-// New Jersey calendar date, not UTC: after 8 pm Eastern UTC is already tomorrow.
 const todayIso = () => localParts(new Date()).date;
 
 export async function handleSchedule(request, zip, repo, { today = todayIso(), now = new Date() } = {}) {
@@ -57,7 +48,6 @@ const splitNote = (n) => ({
     label: n.split(':')[0].replace(/\s*\(.*\)$/, ''),
     description: n.includes(':') ? n.split(':').slice(1).join(':').trim() : '',
   });
-  // Translate the whole note, then split it the same way, so rules can see the full line.
   const areas = [...new Map(all.filter((r) => r.area_key).map((r) => [r.area_key, r])).values()].map((r) => {
     const en = splitNote(r.area_note);
     const es = splitNote(toEs(r.area_note));
@@ -76,7 +66,6 @@ const splitNote = (n) => ({
     if (missing.length) {
       return json({ needs: 'area', zip, town, areas, groups, missing }, wantIcs ? 409 : 200);
     }
-    // Town-wide rows (no area_key) apply to everyone; keyed rows only to the chosen section/zone/day.
     const keys = new Set(selected.map((a) => a.key));
     rows = all.filter((r) => !r.area_key || keys.has(r.area_key));
   }
@@ -88,7 +77,6 @@ const splitNote = (n) => ({
       status: 200,
       headers: {
         'content-type': 'text/calendar; charset=utf-8',
-        // A subscribed feed is fetched by the calendar app, not saved, so no attachment header; it refreshes every 12 h.
         ...(subscribe ? {} : { 'content-disposition': `attachment; filename="dumpguard-${town.id}${selected.length ? `-${selected.map((a) => a.key.replace(':', '-')).join('-')}` : ''}.ics"` }),
         'cache-control': subscribe ? 'public, max-age=3600, s-maxage=3600' : 'public, s-maxage=3600',
       },
@@ -115,7 +103,6 @@ const splitNote = (n) => ({
       ...(o.label ? { label_es: toEs(o.label) } : {}),
     })),
   }));
-  // Same query with the section choice, as a link a calendar app can subscribe to (webcal:// opens the app directly).
   const q = new URLSearchParams({ town: town.id, format: 'ics', subscribe: '1' });
   for (const a of selected) q.append('area', a.key);
   const feed = `${url.host}${url.pathname}?${q}`;

@@ -1,4 +1,3 @@
-// The only file that touches the web-push library, so tests never need it.
 import webpush from 'web-push';
 
 export function makeSender(env = process.env) {

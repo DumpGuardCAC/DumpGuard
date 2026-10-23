@@ -6,8 +6,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test",
-    "sync-data": "node scripts/sync-data.mjs"
+    "test": "node --test"
   },
   "dependencies": {
     "pg": "^8.23.1",

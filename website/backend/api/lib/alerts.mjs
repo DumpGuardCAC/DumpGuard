@@ -1,10 +1,3 @@
-// Alerts: things that change what a person should do in the next few weeks.
-//   GET    /api/v1/alerts?town=<id>[&area=<key>...][&days=21]
-//          -> { announcements: [...], schedule_changes: [...] }
-//          schedule_changes are holiday shifts already in the verified schedule (moved pickups), for that town and sections.
-//   POST   /api/v1/admin/alerts     Bearer ADMIN_TOKEN. { town?, message_en, message_es?, ends_on, starts_on?, source_url? }
-//   DELETE /api/v1/admin/alerts?id= Bearer ADMIN_TOKEN
-// Announcements are written by a person (weather cancellations, plant closures). Nothing here is scraped or guessed.
 import { createHash, timingSafeEqual } from 'node:crypto';
 import { json, jsonWithEtag, badRequest, notFound, validId } from './http.mjs';
 import { occurrences, addDays } from './occurrences.mjs';
@@ -20,7 +13,6 @@ function clientKey(request, salt) {
   return createHash('sha256').update(`${salt}|staff-auth|${fwd}`).digest('hex');
 }
 
-// Hash both sides so the compare time does not depend on how much of the secret matched.
 export function bearerMatches(header, secret) {
   if (!secret) return false;
   const a = createHash('sha256').update(header ?? '').digest();
@@ -29,18 +21,16 @@ export function bearerMatches(header, secret) {
 }
 
 export function authorized(request, token = process.env.ADMIN_TOKEN) {
-  if (!token || token.length < 16) return false; // an unset or weak token disables the admin API
+  if (!token || token.length < 16) return false;
   return bearerMatches(request.headers.get('authorization') ?? '', token);
 }
 
-// One counter for every staff route (alerts, reports, dumping). A bad token is counted before any other work.
 export async function staffOnly(request, repo, token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '') {
   if (authorized(request, token)) return null;
   const n = await repo.hit(clientKey(request, salt), hourStart(now));
   return json({ error: n > AUTH_FAILS_PER_HOUR ? 'rate_limited' : 'unauthorized' }, n > AUTH_FAILS_PER_HOUR ? 429 : 401, noStore);
 }
 
-// Moved pickups in [today, today + days] for this town and chosen sections.
 export function scheduleChanges(rows, areaKeys, today, days = 21) {
   const keys = new Set(areaKeys);
   const out = [];

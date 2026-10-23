@@ -1,10 +1,3 @@
-// Show or change which towns are public.
-//   node publish.mjs                     list towns with how much verified data each has
-//   node publish.mjs edison woodbridge   publish those towns (refuses if a town has no verified schedule)
-//   node publish.mjs --info carteret     publish a town with no verified schedule: Identify, facilities and Report work,
-//                                        pickup-day lookup says it is not covered yet
-//   node publish.mjs --off edison        hide a town again
-// Seeding never publishes a town; this is the only switch. Publish a town only after its data has been checked.
 import pg from 'pg';
 
 const url = process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL;

@@ -1,7 +1,3 @@
-// GET /api/v1/materials/:material[?town=<id>]
-// The camera model predicts a material class, not an exact item. This turns that class into something the app can
-// show: the items of that material (ranked so ones with a verified local rule come first), how the town's rules
-// split, and a `consensus` only when the verified rules agree. Otherwise the app asks "which of these is it?".
 import { jsonWithEtag, badRequest, notFound, validId } from './http.mjs';
 import { resolveRule, chainFor } from './items.mjs';
 
@@ -19,7 +15,6 @@ export function summarize(items, chain, byKey) {
     const [rule, n] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
     if (n / verified.length >= CONSENSUS_SHARE) consensus = { rule, share: Math.round((n / verified.length) * 100) / 100, based_on: verified.length };
   }
-  // Verified local rules first, then hazards, then name.
   rows.sort((a, b) => Number(a.r.check_local) - Number(b.r.check_local) || Number(b.it.hazard) - Number(a.it.hazard) || a.it.name.en.localeCompare(b.it.name.en));
   return { rows, counts, consensus, verified: verified.length };
 }

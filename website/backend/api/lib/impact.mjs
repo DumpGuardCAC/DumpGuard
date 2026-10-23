@@ -1,9 +1,3 @@
-// Anonymous impact stats.
-//   POST /api/v1/events   { outcome: 'recycling'|'trash'|'special_dropoff', material?, town? }   one item sorted
-//   GET  /api/v1/stats    { items_sorted, by_outcome, estimated_pounds_diverted, ... }  optional ?town=
-// Only a daily counter is stored (no user, device or IP), so there is nothing personal to leak. The rate limit uses
-// a salted hash of the IP that expires after a day, the same as the other write endpoints.
-// Pounds are an ESTIMATE from rough average item weights; the response says so and the app should too.
 import { createHash } from 'node:crypto';
 import { json, jsonWithEtag, badRequest, validId } from './http.mjs';
 import { MATERIALS } from './materials.mjs';
@@ -14,7 +8,6 @@ const MAX_BODY = 1024;
 const OUTCOMES = ['recycling', 'trash', 'special_dropoff'];
 const noStore = { 'cache-control': 'no-store' };
 
-// Rough average weight of one item in pounds. Only recycling and special drop-off count as diverted.
 export const AVG_POUNDS = {
   rigid_plastic: 0.1, soft_plastic_foam: 0.05, cardboard_paper: 0.5, metal: 0.1, glass: 0.6, ewaste_hazard: 2, other: 0.3,
 };

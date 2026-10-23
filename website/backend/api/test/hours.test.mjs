@@ -4,12 +4,11 @@ import { openStatus } from '../lib/hours.mjs';
 import { distanceKm, handleFacilities } from '../lib/places.mjs';
 
 const weekly = [{ days: [1, 2, 3, 4, 5, 6], open: '08:00', close: '14:00' }];
-// 2026-10-14 is a Wednesday. 15:00 UTC = 11:00 EDT.
 const at = (iso) => new Date(iso);
 
 test('open during hours, closed after', () => {
   assert.deepEqual(openStatus(weekly, at('2026-10-14T15:00:00Z')), { open_now: true, next_open: null, closes_at: '14:00' });
-  const closed = openStatus(weekly, at('2026-10-14T19:30:00Z')); // 3:30 pm
+  const closed = openStatus(weekly, at('2026-10-14T19:30:00Z'));
   assert.equal(closed.open_now, false);
   assert.equal(closed.next_open, '2026-10-15 08:00');
 });
@@ -20,8 +19,8 @@ test('Sunday rolls to Monday', () => {
 
 test('second Saturday rule', () => {
   const nb = [{ nth: 2, day: 6, open: '08:00', close: '12:00' }];
-  assert.equal(openStatus(nb, at('2026-10-10T14:00:00Z')).open_now, true); // Oct 10 is the 2nd Saturday
-  assert.equal(openStatus(nb, at('2026-10-17T14:00:00Z')).open_now, false); // 3rd Saturday
+  assert.equal(openStatus(nb, at('2026-10-10T14:00:00Z')).open_now, true);
+  assert.equal(openStatus(nb, at('2026-10-17T14:00:00Z')).open_now, false);
   assert.equal(openStatus(nb, at('2026-10-17T14:00:00Z')).next_open, '2026-11-14 08:00');
 });
 
@@ -32,7 +31,6 @@ test('event days and missing hours', () => {
 });
 
 test('timezone: late evening UTC is still the same NJ day', () => {
-  // 2026-10-14T02:30Z = Tue Oct 13, 10:30 pm EDT -> closed, next open Wed 08:00
   assert.equal(openStatus(weekly, at('2026-10-14T02:30:00Z')).next_open, '2026-10-14 08:00');
 });
 

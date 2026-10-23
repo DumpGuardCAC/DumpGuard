@@ -1,17 +1,3 @@
-// Illegal dumping reports and the community map.
-//   POST /api/v1/dumping                  public, rate limited. JSON { town, type, where, description, notes?, lat?, lng?, photo? }
-//                                         photo = base64 JPEG; the API removes every metadata segment (EXIF/GPS) before storing it.
-//   GET  /api/v1/dumping/track?code=DG-XXXXX   status of one report, no location
-//   GET  /api/v1/dumping/map              coarse cells with 3+ reports and per-town status counts, never exact points
-//   GET  /api/v1/admin/dumping            ?status=&town=       staff: exact points and details   Bearer ADMIN_TOKEN
-//   GET  /api/v1/admin/dumping/photo?id=  staff: the stored photo
-//   POST /api/v1/admin/dumping/status     { id, status }       staff
-//   GET  /api/v1/admin/dumping/messages?id=   staff: the thread with the person who filed the report
-//   POST /api/v1/admin/dumping/message    { id, body }         staff: write to the reporter
-//   GET  /api/v1/dumping/messages?code=   the thread for a tracking code
-//   POST /api/v1/dumping/reply            { code, body }       the reporter answers staff, rate limited
-// If no coordinates are sent the address is looked up server side (US Census geocoder); a failure just leaves the
-// report without a map point, it is never rejected for it.
 import { createHash, randomInt } from 'node:crypto';
 import { json, badRequest, validId } from './http.mjs';
 import { staffOnly, AUTH_FAILS_PER_HOUR } from './alerts.mjs';
@@ -24,13 +10,13 @@ export const TRACK_PER_HOUR = 60;
 export const REPLY_PER_HOUR = 10;
 export const MAX_MESSAGES = 50;
 export const MIN_GROUP = 3;
-export const CELL_DEG = 0.005; // about 500 m
+export const CELL_DEG = 0.005;
 const MAX_BODY = 3 * 1024 * 1024;
 const MAX_PHOTO = 2 * 1024 * 1024;
 const noStore = { 'cache-control': 'no-store' };
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const CODE_RE = /^DG-[A-Z0-9]{5}$/;
-const CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no 0/O/1/I
+const CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 
 const inNj = (lat, lng) => lat >= 38.9 && lat <= 41.4 && lng >= -75.6 && lng <= -73.8;
 const newCode = () => 'DG-' + Array.from({ length: 5 }, () => CODE_CHARS[randomInt(CODE_CHARS.length)]).join('');
@@ -38,15 +24,13 @@ const ipOf = (request) => request.headers.get('x-forwarded-for')?.split(',')[0].
 const keyFor = (request, salt, scope) => createHash('sha256').update(`${salt}|${scope}|${ipOf(request)}`).digest('hex');
 const hourStart = (now) => new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
 
-// Keep only the image data: drop every APPn (EXIF, GPS, XMP, ICC), COM and unknown segment before the scan.
-// Returns null when the bytes are not a well-formed JPEG.
 export function stripJpeg(buf) {
   if (buf.length < 4 || buf[0] !== 0xff || buf[1] !== 0xd8) return null;
   const out = [buf.subarray(0, 2)];
   let i = 2;
   while (i < buf.length) {
     if (buf[i] !== 0xff) return null;
-    while (buf[i] === 0xff && i < buf.length) i++; // fill bytes
+    while (buf[i] === 0xff && i < buf.length) i++;
     const marker = buf[i++];
     if (marker === undefined) return null;
     if (marker === 0xd9) { out.push(Buffer.from([0xff, 0xd9])); return Buffer.concat(out); }
@@ -57,7 +41,7 @@ export function stripJpeg(buf) {
     const keep = !(marker >= 0xe0 && marker <= 0xef) && marker !== 0xfe;
     if (keep) out.push(Buffer.from([0xff, marker]), buf.subarray(i, i + len));
     i += len;
-    if (marker === 0xda) { // start of scan: the entropy-coded data runs to the end of file
+    if (marker === 0xda) {
       out.push(buf.subarray(i));
       const all = Buffer.concat(out);
       return all.length > 4 && all[all.length - 2] === 0xff && all[all.length - 1] === 0xd9 ? all : null;
@@ -140,7 +124,6 @@ export async function handleDumpingTrack(request, repo, { now = new Date(), salt
   return json({ code, status: row.status, town: row.region_id, type: row.dump_type, created_at: row.created_at, updated_at: row.updated_at }, 200, noStore);
 }
 
-// Pure: rows are { cx, cy, status, dump_type, region_id } for every report that has a point.
 export function buildMap(pointRows, townRows) {
   const cells = new Map();
   for (const r of pointRows) {
@@ -160,7 +143,6 @@ export function buildMap(pointRows, townRows) {
       return {
       lat: round((c.cy + 0.5) * CELL_DEG), lng: round((c.cx + 0.5) * CELL_DEG), radius_m: 350,
       n: c.n, town: towns.length === 1 ? towns[0] : null, towns,
-      // status x type counts, so the page can filter; a cell is only listed once it has MIN_GROUP reports
       groups: [...c.joint].map(([k, n]) => ({ status: k.split('|')[0], type: k.split('|')[1], n })),
     }; }),
     towns: townRows.map((t) => ({ town: t.region_id, name: t.name, counts: Object.fromEntries(STATUSES.map((s) => [s, t[s] ?? 0])) })),
@@ -253,7 +235,6 @@ export async function handleDumpingReply(request, repo, { now = new Date(), salt
   const id = await repo.dumpIdByCode(code);
   if (!id) return json({ error: 'not_found' }, 404, noStore);
   const rows = await repo.listMessages(id);
-  // residents answer staff; they cannot start a thread, so the form never becomes a public inbox
   if (!rows.some((m) => m.from_staff)) return json({ error: 'no_thread' }, 409, noStore);
   if (rows.length >= MAX_MESSAGES) return json({ error: 'thread_full' }, 409, noStore);
   await repo.addMessage(id, false, body);

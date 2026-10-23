@@ -1,4 +1,3 @@
-# Step 1: download every source dataset (TrashNet, TACO, GIZ e-waste, Garbage12, Open Images labels), then fetch the Open Images hazard and background photos.
 import os, subprocess, sys, zipfile
 from huggingface_hub import snapshot_download, hf_hub_download
 D = "data"
@@ -14,7 +13,6 @@ for f in ["oidv7-class-descriptions.csv", "oidv7-test-annotations-human-imagelab
     subprocess.check_call(["curl", "-sS", "-L", "-o", f"{D}/openimages/{f}", f"https://storage.googleapis.com/openimages/v7/{f}"])
 print("oi csv done", flush=True)
 
-# Open Images hazard and background photos
 import pandas as pd, random, os, requests
 from concurrent.futures import ThreadPoolExecutor
 random.seed(0)

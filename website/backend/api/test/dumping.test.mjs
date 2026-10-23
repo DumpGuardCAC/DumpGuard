@@ -9,7 +9,6 @@ import {
 const TOKEN = 'a-long-admin-token-123';
 const auth = { authorization: `Bearer ${TOKEN}` };
 const seg = (marker, payload) => Buffer.concat([Buffer.from([0xff, marker, (payload.length + 2) >> 8, (payload.length + 2) & 255]), payload]);
-// SOI, APP0, APP1 with fake GPS, COM, DQT, SOS + scan, EOI
 const jpegWithExif = Buffer.concat([
   Buffer.from([0xff, 0xd8]), seg(0xe0, Buffer.from('JFIF')), seg(0xe1, Buffer.from('Exif GPSLatitude 40.5')), seg(0xfe, Buffer.from('secret comment')),
   seg(0xdb, Buffer.from([1, 2, 3, 4])), seg(0xda, Buffer.from([1, 2])), Buffer.from([9, 8, 7, 0xff, 0x00, 6]), Buffer.from([0xff, 0xd9]),

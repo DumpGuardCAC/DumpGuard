@@ -1,5 +1,3 @@
--- Web push pickup reminders. Stores only what is needed to send: the push endpoint and keys, the town and the
--- section the person picked, and a language. No name, email, IP or user agent.
 BEGIN;
 
 CREATE TABLE push_subscriptions (

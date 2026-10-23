@@ -1,14 +1,6 @@
-// Item endpoints.
-//   GET /api/v1/items                  whole bundle (ETag). ?town=<id> adds a resolved rule per item for that town.
-//   GET /api/v1/items/:id              one item with every public rule. ?town=<id> adds the resolved rule + facility.
-// Rule precedence for a town: town rule > county rule > state rule > the item's default_rule.
-// Only verified rules of published regions reach this code (the repo reads public_* views). An item with no
-// verified rule for the town resolves to its default_rule with check_local = true: the app must tell the user to
-// say "Double check with your town" (resolved.message) instead of presenting the default as fact.
 import { jsonWithEtag, notFound, badRequest, validId } from './http.mjs';
 import { CHECK_WITH_TOWN } from './strings.mjs';
 
-// chain is ordered most specific first, e.g. ['edison', 'middlesex', 'nj'].
 export function resolveRule(item, chain, facilitiesByKey) {
   for (let i = 0; i < chain.length; i++) {
     const region = chain[i];
@@ -39,7 +31,6 @@ export function resolveRule(item, chain, facilitiesByKey) {
   };
 }
 
-// chain shapes: [town, county, 'nj'], [county, 'nj'], ['nj']
 function levelOf(chain, region) {
   if (region === 'nj') return 'state';
   if (chain.length === 3) return region === chain[0] ? 'town' : 'county';

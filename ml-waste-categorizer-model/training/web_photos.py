@@ -1,4 +1,3 @@
-# Step 2: scrape real-scene web photos, then filter them with the zero-shot models into data/web.
 import os, time, csv, hashlib, requests
 from concurrent.futures import ThreadPoolExecutor
 Q = {
@@ -61,11 +60,10 @@ for cls, qs in Q.items():
             print(cls, q, pg, sum(oks), "calls", calls, flush=True)
             time.sleep(3.2)
 
-# Filter and crop the scraped photos
 import csv, os, sys, hashlib
 import numpy as np, pandas as pd
 from PIL import Image, ImageOps
-import zs
+import clean_labels as zs
 
 S = int(os.environ.get("DG_S", 256))
 O = "data/web"

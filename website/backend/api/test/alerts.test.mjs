@@ -53,7 +53,7 @@ test('creating an alert needs the token and valid input', async () => {
   const t = (body, h) => handleCreateAlert(mk(body, h), fake(), { now, token: TOKEN });
   assert.equal((await t({ message_en: 'x', ends_on: '2026-10-16' }, {})).status, 401);
   assert.equal((await t({ message_en: '', ends_on: '2026-10-16' })).status, 400);
-  assert.equal((await t({ message_en: 'x', ends_on: '2026-12-31' })).status, 400); // over 60 days
+  assert.equal((await t({ message_en: 'x', ends_on: '2026-12-31' })).status, 400);
   assert.equal((await t({ message_en: 'x', ends_on: '2026-10-10' })).status, 400);
   assert.equal((await t({ message_en: 'x', ends_on: '2026-10-16', town: 'nowhere' })).status, 400);
   assert.equal((await t({ message_en: 'x', ends_on: '2026-10-16', source_url: 'javascript:alert(1)' })).status, 400);
@@ -79,7 +79,6 @@ test('reminder mentions a holiday shift and an announcement', async () => {
     dueSubscriptions: async () => [{ id: 'a', endpoint: 'e', region_id: 'edison', area_keys: ['g:mon'], streams: ['trash'], lang: 'en' }],
     townName: async () => 'Edison', markSent: async () => {}, fail: async () => {},
   });
-  // Monday Oct 19 is moved to Tuesday Oct 20; the reminder goes out Monday evening.
   const res = await handleReminders(new Request('http://x', { headers: auth('s') }), repo, async (s, p) => sent.push(JSON.parse(p)), { secret: 's', now: new Date('2026-10-19T22:00:00Z') });
   assert.equal((await res.json()).sent, 1);
   assert.match(sent[0].body, /moved because of a holiday/);

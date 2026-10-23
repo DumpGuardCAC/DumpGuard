@@ -1,4 +1,3 @@
-// One router for every endpoint, so the app runs as a single Vercel function (or any fetch-style host).
 import { readFileSync } from 'node:fs';
 import { handleSchedule } from './schedule.mjs';
 import { handleItems, handleItem } from './items.mjs';
@@ -25,7 +24,6 @@ const streets = () =>
     JSON.parse(readFileSync(new URL('../data/woodbridge_street_index.json', import.meta.url), 'utf8')),
   ));
 
-// The Capacitor Android app calls this API from this origin.
 const NATIVE_ORIGINS = new Set(['https://localhost']);
 
 function cors(res, request) {

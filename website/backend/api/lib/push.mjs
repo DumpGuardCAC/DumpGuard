@@ -1,10 +1,3 @@
-// Pickup reminders over web push.
-//   GET  /api/v1/push/key           the public VAPID key the browser needs to subscribe
-//   POST /api/v1/push/subscribe     { subscription: { endpoint, keys: { p256dh, auth } }, town, areas?, streams?, lang? }
-//   POST /api/v1/push/unsubscribe   { endpoint }
-//   GET  /api/v1/cron/reminders     Bearer CRON_SECRET. Sends tonight's "tomorrow's pickup" notices.
-// The schedule choice is validated against the town's real schedule rows, so a subscription can never ask for a
-// section that does not exist. Push endpoints are restricted to the browsers' push services (no arbitrary URLs).
 import { createHash } from 'node:crypto';
 import { json } from './http.mjs';
 import { bearerMatches } from './alerts.mjs';
@@ -37,7 +30,6 @@ function clientKey(request, salt) {
 
 const groupOf = (key) => (key.includes(':') ? key.split(':')[0] : 'area');
 
-// Same selection rules as the schedule endpoint: one key per group, all groups chosen when the town has any.
 export function validateAreas(rows, areaKeys) {
   const keys = [...new Set(rows.filter((r) => r.area_key).map((r) => r.area_key))];
   if (keys.length === 0) return areaKeys.length === 0 ? { ok: true } : { ok: false, message: 'This town has no sections.' };
@@ -115,7 +107,7 @@ export async function handleUnsubscribe(request, repo) {
   }
   if (typeof b?.endpoint !== 'string' || b.endpoint.length > 1000) return bad('endpoint', 'Missing endpoint.');
   await repo.remove(b.endpoint);
-  return json({ ok: true }, 200, noStore); // same answer whether or not it existed
+  return json({ ok: true }, 200, noStore);
 }
 
 const STREAM_NAME = {
@@ -133,7 +125,6 @@ export function reminderText(lang, townName, streams, { moved = false, announcem
     : { title: `Tomorrow: ${list}`, body: `Set out your ${list} tonight. ${townName}.${shifted}${extra} Double check with your town for changes.` };
 }
 
-// What is picked up on `date` for this subscription: [{ stream, moved, from }]
 export function pickupsOn(rows, sub, date) {
   const keys = new Set(sub.area_keys);
   const found = new Map();
@@ -147,7 +138,6 @@ export function pickupsOn(rows, sub, date) {
 }
 export const streamsOn = (rows, sub, date) => pickupsOn(rows, sub, date).map((p) => p.stream);
 
-// send(sub, payload) -> resolves, or rejects with { statusCode }. Called once per due subscription.
 export async function handleReminders(request, repo, send, { secret = process.env.CRON_SECRET, now = new Date() } = {}) {
   if (!bearerMatches(request.headers.get('authorization') ?? '', secret)) return json({ error: 'unauthorized' }, 401, noStore);
   const today = localParts(now).date;

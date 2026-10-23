@@ -1,5 +1,3 @@
--- Short-notice announcements (weather cancellations, plant closures). Written by an admin through the API;
--- region_id NULL means every town.
 BEGIN;
 
 CREATE TABLE announcements (

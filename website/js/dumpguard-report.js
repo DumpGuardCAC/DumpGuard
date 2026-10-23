@@ -1,9 +1,3 @@
-/* Illegal dumping report form and report tracking.
- *
- * Photos are re-encoded in the browser (canvas -> JPEG), which drops EXIF and GPS data before upload; the API strips
- * metadata again on its side. The exact location is only used if the person taps "Use my location" or types an address.
- * The tracking code is kept in this browser (localStorage) so people can check back without an account.
- */
 (function () {
   'use strict';
 
@@ -22,7 +16,7 @@
 
   function saved() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } }
   function remember(code, town) {
-    try { localStorage.setItem(KEY, JSON.stringify([{ code: code, town: town, at: new Date().toISOString().slice(0, 10) }].concat(saved()).slice(0, 20))); } catch (e) { /* storage can be blocked */ }
+    try { localStorage.setItem(KEY, JSON.stringify([{ code: code, town: town, at: new Date().toISOString().slice(0, 10) }].concat(saved()).slice(0, 20))); } catch (e) { }
   }
 
   function showTown() {
@@ -35,7 +29,6 @@
     TYPES.forEach(function (t) { sel.appendChild(h('option', { value: t[0] }, t[1])); });
   }
 
-  // ---- location ----
   function addLocationButton() {
     var where = $('rwhere');
     var msg = h('p', { class: 'sm', id: 'rpoint', 'aria-live': 'polite' });
@@ -54,7 +47,6 @@
     where.parentNode.insertBefore(msg, btn.nextSibling);
   }
 
-  // ---- photo: downscale and re-encode, which removes EXIF/GPS ----
   function reencode(file) {
     var load = window.createImageBitmap
       ? createImageBitmap(file, { imageOrientation: 'from-image' })
@@ -89,7 +81,7 @@
     if (!file) return;
     var mine = ++photoSeq;
     $('rerr').textContent = '';
-    $('send').disabled = true; // wait for the photo to be cleaned before it can be sent
+    $('send').disabled = true;
     reencode(file).then(function (r) {
       if (mine !== photoSeq) return;
       if (r.blob.size > 1900000) throw new Error('big');
@@ -109,7 +101,6 @@
     });
   }
 
-  // ---- submit ----
   var MSG = {
     invalid_town: 'Choose your town.', invalid_type: 'Choose the type of dumping.', invalid_location: 'Describe where it is (at least 3 characters).',
     invalid_description: 'Describe what was dumped (at least 3 characters).', invalid_notes: 'Notes can be up to 500 characters.', rate_limited: 'Too many reports from this connection. Try again in an hour.',
@@ -144,7 +135,6 @@
     }).catch(function () { btn.disabled = false; err.textContent = 'Could not reach the server. Try again.'; });
   }
 
-  // ---- tracking ----
   function lookup(code) {
     var out = clear($('tres'));
     code = code.trim().toUpperCase();
@@ -161,7 +151,6 @@
       showThread(code, out);
     }).catch(function () { clear(out).appendChild(h('p', { class: 'err' }, 'Could not reach the server. Try again.')); });
   }
-  // ---- messages from officials ----
   function when(iso) { return new Date(iso).toLocaleString(DG.lang() === 'es' ? 'es-US' : 'en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }); }
   function showThread(code, out) {
     DG.api.get('/dumping/messages?code=' + encodeURIComponent(code)).then(function (r) {
@@ -187,9 +176,8 @@
         }).catch(function () { send.disabled = false; err.textContent = 'Could not reach the server.'; });
       });
       out.appendChild(text); out.appendChild(h('div', { class: 'row tight' }, send)); out.appendChild(err);
-    }).catch(function () { /* the status above is still shown */ });
+    }).catch(function () { });
   }
-  // Flag saved reports where officials wrote last, so people know to open them.
   function markReplies(box, list) {
     list.slice(0, 5).forEach(function (x, i) {
       DG.api.get('/dumping/messages?code=' + encodeURIComponent(x.code)).then(function (r) {

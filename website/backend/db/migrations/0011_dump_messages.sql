@@ -1,5 +1,3 @@
--- Messages between government staff and the (anonymous) person who filed a dumping report.
--- A thread belongs to a report and is reached with the report's tracking code; no contact details are stored.
 BEGIN;
 
 CREATE TABLE dump_messages (

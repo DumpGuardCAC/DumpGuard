@@ -1,5 +1,3 @@
-// DumpGuard service worker: caches the app and the photo model so it opens offline.
-// API calls are never cached.
 var CACHE = 'dumpguard-v2';
 var SHELL = [
   '/', '/index.html', '/css/styles.css', '/manifest.json', '/images/logo.png',

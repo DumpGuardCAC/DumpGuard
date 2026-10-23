@@ -1,8 +1,3 @@
-// Opening hours as data. A facility's hours_struct is a list of entries:
-//   { days: [0-6], open: 'HH:MM', close: 'HH:MM' }       weekly (0 = Sunday)
-//   { nth: 2, day: 6, open, close }                      nth weekday of the month
-//   { date: 'YYYY-MM-DD', open, close }                  a single event day
-// All times are New Jersey local time. Holidays are not modelled; the API says so with `hours_note`.
 const TZ = 'America/New_York';
 
 export function localParts(now) {
@@ -28,8 +23,6 @@ const addDaysUtc = (ymd, n) => {
   return d.toISOString().slice(0, 10);
 };
 
-// -> { open_now: boolean|null, next_open: 'YYYY-MM-DD HH:MM' | null, closes_at: 'HH:MM' | null }
-// open_now is null when there are no structured hours.
 export function openStatus(hoursStruct, now = new Date(), lookaheadDays = 120) {
   if (!Array.isArray(hoursStruct) || hoursStruct.length === 0) return { open_now: null, next_open: null, closes_at: null };
   const here = localParts(now);

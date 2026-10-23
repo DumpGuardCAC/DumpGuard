@@ -1,12 +1,3 @@
-/* Photo recognition for the Identify page.
- *
- * The model (website/model, MobileNetV3-Large, about 6 MB) runs in the browser with TensorFlow.js. The photo is read from the
- * chosen file, drawn to a canvas and classified on this device. It is never uploaded and never sent to the API; only the
- * predicted material class is used, to look up the town's rules. TensorFlow.js is loaded the first time a photo is picked.
- *
- * Output is calibrated: p = softmax(log(p) / T) with T = 1.9, and a class is only used at 65 percent or more. Anything
- * below that, or "no_object", falls back to the category picker.
- */
 (function () {
   'use strict';
 
@@ -51,7 +42,6 @@
     return modelPromise;
   }
 
-  // Temperature scaling on the model's softmax output.
   function calibrate(probs, T) {
     var logits = probs.map(function (p) { return Math.log(Math.max(p, 1e-9)) / T; });
     var max = Math.max.apply(null, logits);
@@ -70,7 +60,7 @@
     return loadModel().then(function (model) {
       var tf = window.tf;
       var out = tf.tidy(function () {
-        var x = tf.image.resizeBilinear(tf.browser.fromPixels(img), [SIZE, SIZE]).toFloat().expandDims(0); // raw 0-255, the model rescales itself
+        var x = tf.image.resizeBilinear(tf.browser.fromPixels(img), [SIZE, SIZE]).toFloat().expandDims(0);
         return model.predict(x);
       });
       return out.data().then(function (d) { out.dispose(); return decide(Array.prototype.slice.call(d)); });
@@ -108,10 +98,10 @@
         }).catch(function () {
           if (run !== mine) return;
           note.className = 'err'; note.textContent = s().fail; DG.showCategoryPicker(true);
-        }).then(function () { /* object URL stays for the preview; released when the page unloads */ });
+        }).then(function () { });
       };
       img.src = url;
-      input.value = ''; // the same file can be chosen again
+      input.value = '';
     });
   }
 

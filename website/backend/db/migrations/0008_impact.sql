@@ -1,5 +1,3 @@
--- Anonymous impact counters: one row per day / town / material / outcome with a count. No user, device or IP
--- is stored, so there is nothing to purge and nothing that can identify a person.
 BEGIN;
 
 CREATE TABLE impact_counts (

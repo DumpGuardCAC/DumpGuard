@@ -1,4 +1,3 @@
-// Build an RFC 5545 calendar from schedule rows. All-day events with a reminder at 6 p.m. the evening before.
 import { addDays, occurrences } from './occurrences.mjs';
 
 const STREAM_LABEL = { trash: 'Trash', recycling: 'Recycling', bulk: 'Bulk pickup', yard: 'Yard waste', other: 'Collection' };
@@ -7,7 +6,6 @@ const esc = (s) =>
   String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
 const compact = (iso) => iso.replaceAll('-', '');
 
-// Lines must be <= 75 octets; continuation lines start with one space.
 function fold(line) {
   const enc = new TextEncoder();
   if (enc.encode(line).length <= 75) return line;
@@ -36,7 +34,6 @@ export function eventTitle(row) {
   return `${label}${area}`;
 }
 
-/** rows: public_schedules rows with `id`. today: 'YYYY-MM-DD' (injected for tests). */
 export function buildIcs({ townName, rows, today, now = new Date(), subscribe = false }) {
   const stamp = now.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
   const horizon = addDays(today, 400);
@@ -77,7 +74,6 @@ Source: ${row.source_url} (verified ${row.last_verified})`)}`,
     const desc = `${row.notes_en}\nSource: ${row.source_url} (verified ${row.last_verified})`;
 
     if (regular.length) {
-      // Series: DTSTART is the first real occurrence; moved days become EXDATEs plus their own events.
       const exdates = (row.overrides ?? []).map((o) => o.date).filter((d) => d >= regular[0].date);
       lines.push(
         'BEGIN:VEVENT',

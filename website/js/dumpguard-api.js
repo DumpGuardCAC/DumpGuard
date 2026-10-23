@@ -1,16 +1,9 @@
-/* DumpGuard backend client and the Identify / pickup-day screens.
- *
- * API base: window.DUMPGUARD_API, else /api/v1 (same origin; scripts/dev-server.mjs in website/backend/api serves both).
- * Everything the API returns is put on the page with textContent, never innerHTML.
- * Exposes window.DumpGuard (api, request, setTown, showMaterial, DOM helpers) for the report form, map and photo model scripts.
- */
 (function () {
   'use strict';
 
   var BASE = (window.DUMPGUARD_API || '/api/v1').replace(/\/$/, '');
   var $ = function (id) { return document.getElementById(id); };
 
-  // ---- strings (Spanish is machine-drafted, as on the server) ----
   var T = {
     en: {
       empty: 'Your disposal guide will appear here.', searching: 'Searching...', none: 'No match. Pick a category instead, or try another word.',
@@ -46,11 +39,10 @@
   var COLORS = { recycling: '#15803d', trash: '#4b5563', special_dropoff: '#dc2626' };
 
   var state = { lang: 'en', town: null, towns: [], counted: {} };
-  try { state.lang = (localStorage.getItem('dg_lang') || (navigator.language || 'en').slice(0, 2)) === 'es' ? 'es' : 'en'; state.town = localStorage.getItem('dg_town'); } catch (e) { /* storage can be blocked */ }
+  try { state.lang = (localStorage.getItem('dg_lang') || (navigator.language || 'en').slice(0, 2)) === 'es' ? 'es' : 'en'; state.town = localStorage.getItem('dg_town'); } catch (e) { }
   var t = function (k) { return T[state.lang][k]; };
   var pick = function (o) { return o ? (o[state.lang] || o.en || '') : ''; };
 
-  // ---- tiny DOM helper ----
   function h(tag, attrs) {
     var el = document.createElement(tag);
     Object.keys(attrs || {}).forEach(function (k) {
@@ -76,7 +68,6 @@
   }
   var clear = function (el) { while (el.firstChild) el.removeChild(el.firstChild); return el; };
 
-  // ---- API ----
   function request(path, opts) {
     return fetch(BASE + path, opts).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (body) { return { status: r.status, body: body }; });
@@ -89,7 +80,6 @@
     },
   };
 
-  // ---- town + language pickers ----
   function loadTowns() {
     return api.get('/towns').then(function (r) {
       state.towns = r.body.towns || [];
@@ -102,7 +92,6 @@
       if (!sel.dataset.bound) { sel.dataset.bound = '1'; sel.addEventListener('change', function () { setTown(sel.value); }); }
     });
   }
-  // The Pickup days page follows the shared town: it loads that town's first ZIP, and says so when there is no data yet.
   function townName(id) { var tw = state.towns.filter(function (x) { return x.id === id; })[0]; return tw ? tw.name : ''; }
   function loadPickup() {
     var tw = state.towns.filter(function (x) { return x.id === state.town; })[0];
@@ -112,7 +101,7 @@
   }
   function setTown(id) {
     state.town = id;
-    try { localStorage.setItem('dg_town', id); } catch (e) { /* ignore */ }
+    try { localStorage.setItem('dg_town', id); } catch (e) { }
     if ($('town')) $('town').value = id;
     runSearch();
     loadPickup();
@@ -123,7 +112,7 @@
   function setLang(lang) {
     state.lang = lang === 'es' ? 'es' : 'en';
     document.documentElement.lang = state.lang;
-    try { localStorage.setItem('dg_lang', state.lang); } catch (e) { /* ignore */ }
+    try { localStorage.setItem('dg_lang', state.lang); } catch (e) { }
     translateStatic();
     runSearch();
     if (lastZip && $('zresult')) lookupZip(lastZip.zip, lastZip.town, lastZip.areas);
@@ -137,7 +126,6 @@
     fillCategories();
   }
 
-  // ---- Identify ----
   var seq = 0, timer = null;
   function emptyState() {
     var box = clear($('result'));
@@ -250,10 +238,9 @@
         if (f.residents_only) line.appendChild(h('small', {}, t('residents')));
         holder.appendChild(line);
       });
-    }).catch(function () { /* facilities are a bonus */ });
+    }).catch(function () { });
   }
 
-  // ---- category picker (stands in for photo recognition) ----
   var MATERIAL_ORDER = ['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard'];
   function fillCategories() {
     var cat = $('cat');
@@ -288,7 +275,6 @@
     }).catch(function () { if (mine !== seq) return; clear($('result')).appendChild(h('p', { class: 'err' }, t('fail'))); });
   }
 
-  // ---- pickup days by ZIP ----
   var lastZip = null, zipSeq = 0;
   var STREAM = function (s) { return ({ trash: t('trashS'), garbage: t('trashS'), area: t('areaS'), recycling: t('recyclingS'), bulk: t('bulk'), yard: t('yard') })[s] || s; };
   var fmt = function (iso) { return new Date(iso + 'T12:00:00').toLocaleDateString(state.lang === 'es' ? 'es-US' : 'en-US', { weekday: 'short', month: 'short', day: 'numeric' }); };
@@ -307,7 +293,7 @@
       clear(box);
       if (r.status === 404) { box.appendChild(h('p', { class: 'err' }, t('noZip'))); return; }
       if (r.status !== 200) { box.appendChild(h('p', { class: 'err' }, t('fail'))); return; }
-      if (b.town && b.town.id && b.town.id !== state.town) { state.town = b.town.id; try { localStorage.setItem('dg_town', state.town); } catch (e) { /* ignore */ } if ($('town')) $('town').value = state.town; runSearch(); window.dispatchEvent(new Event('dg-town')); }
+      if (b.town && b.town.id && b.town.id !== state.town) { state.town = b.town.id; try { localStorage.setItem('dg_town', state.town); } catch (e) { } if ($('town')) $('town').value = state.town; runSearch(); window.dispatchEvent(new Event('dg-town')); }
       if (b.needs === 'town') {
         box.appendChild(h('p', {}, t('pickTown')));
         b.towns.forEach(function (tw) { box.appendChild(h('button', { class: 'btn dark', type: 'button', style: 'margin:0 8px 8px 0;padding:10px 22px', onclick: function () { lookupZip(zip, tw.id, []); } }, tw.name)); });
@@ -371,9 +357,8 @@
       var note = h('div', { class: 'notice', style: 'display:block' }, h('b', {}, t('alerts') + ': '));
       note.appendChild(document.createTextNode(list.map(function (a) { return pick(a.message); }).join(' ')));
       box.insertBefore(note, box.children[1] || null);
-    }).catch(function () { /* notices are a bonus */ });
+    }).catch(function () { });
   }
-  // ---- pickup-days page: the markup is in index.html, this wires it up ----
   function wireSchedule() {
     if (!$('zgo')) return;
     $('zgo').addEventListener('click', function () { lookupZip($('zip').value.trim()); });
@@ -384,7 +369,7 @@
     wireSchedule();
     fillCategories();
     translateStatic();
-    loadTowns().then(function () { runSearch(); loadPickup(); window.dispatchEvent(new Event('dg-town')); }).catch(function () { /* the page still renders; searches will report the error */ });
+    loadTowns().then(function () { runSearch(); loadPickup(); window.dispatchEvent(new Event('dg-town')); }).catch(function () { });
     if ($('q')) $('q').addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(runSearch, 250); });
     if ($('cat')) $('cat').addEventListener('change', function () { if ($('cat').value) showMaterial($('cat').value); });
   }

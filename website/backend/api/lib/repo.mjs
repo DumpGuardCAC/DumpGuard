@@ -1,9 +1,7 @@
-// All SQL for the schedule endpoint. Reads only published towns and verified rows (public_* views).
 import pg from 'pg';
 
 let pool;
 export function getPool() {
-  // Use the POOLED Neon URL at runtime (DATABASE_URL). Reused across invocations in the same instance.
   pool ??= new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 5 });
   return pool;
 }
@@ -53,7 +51,6 @@ export function makeRepo(db = getPool()) {
       );
       return rows;
     },
-    // Every public facility with coordinates, for "near me" without choosing a town first.
     async allFacilities(material = null) {
       const { rows } = await db.query(
         `SELECT f.key, f.region_id AS region, f.name, f.address, f.zip, f.phone, f.hours, f.residents_only,
@@ -66,7 +63,6 @@ export function makeRepo(db = getPool()) {
       );
       return rows;
     },
-    // Items with their verified rules (state, counties, published towns). Optional single item.
     async itemsBundle({ id = null } = {}) {
       const [items, aliases, rules, facilities] = await Promise.all([
         db.query(
@@ -117,14 +113,12 @@ export function makeRepo(db = getPool()) {
   };
 }
 
-// ---- bulk requests / rate limiting / retention ----
 export function makeBulkRepo(db = getPool()) {
   return {
     async isPublishedTown(id) {
       const { rows } = await db.query(`SELECT 1 FROM regions WHERE id = $1 AND kind = 'town' AND published`, [id]);
       return rows.length > 0;
     },
-    // Atomic fixed-window counter; returns the hit count INCLUDING this request.
     async hit(key, windowStartIso) {
       const { rows } = await db.query(
         `INSERT INTO rate_limits (key, window_start, hits) VALUES ($1, $2, 1)
@@ -149,7 +143,6 @@ export function makeBulkRepo(db = getPool()) {
   };
 }
 
-// ---- push reminders ----
 export function makePushRepo(db = getPool()) {
   return {
     ...makeRepo(db),
@@ -220,7 +213,6 @@ export function makeAlertsRepo(db = getPool()) {
   return { ...makeRepo(db), ...makeBulkRepo(db), ...announcementMethods(db) };
 }
 
-// ---- impact counters ----
 export function makeImpactRepo(db = getPool()) {
   const bulk = makeBulkRepo(db);
   return {
@@ -243,7 +235,6 @@ export function makeImpactRepo(db = getPool()) {
   };
 }
 
-// ---- wrong-answer reports ----
 export function makeReportsRepo(db = getPool()) {
   const bulk = makeBulkRepo(db);
   return {
@@ -270,13 +261,11 @@ export function makeReportsRepo(db = getPool()) {
   };
 }
 
-// ---- illegal dumping reports ----
 export function makeDumpingRepo(db = getPool()) {
   const bulk = makeBulkRepo(db);
   return {
     hit: bulk.hit,
     isPublishedTown: bulk.isPublishedTown,
-    // false when the generated code is already taken, so the caller can try another
     async insertDump({ code, regionId, type, where, description, notes, lat, lng, photo }) {
       const client = await db.connect();
       try {
@@ -330,7 +319,7 @@ export function makeDumpingRepo(db = getPool()) {
       try {
         return (await db.query(`SELECT ${cols}${msgs} ${tail}`, [status, town])).rows;
       } catch (err) {
-        if (err?.code !== '42P01') throw err; // messages table not migrated yet: still list the reports
+        if (err?.code !== '42P01') throw err;
         return (await db.query(`SELECT ${cols} ${tail}`, [status, town])).rows;
       }
     },

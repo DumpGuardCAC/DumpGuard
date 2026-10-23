@@ -1,6 +1,3 @@
--- Illegal dumping reports from residents, with an optional photo (EXIF removed by the API before it is stored).
--- Exact coordinates, photos and descriptions are staff-only. The public map only gets coarse cells with 3 or more reports.
--- A resident tracks a report with the code they were given at submission; there are no accounts and no contact details.
 BEGIN;
 
 CREATE TYPE dump_status_t AS ENUM ('new', 'noticed', 'progress', 'resolved');

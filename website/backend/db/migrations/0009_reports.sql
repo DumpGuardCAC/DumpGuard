@@ -1,5 +1,3 @@
--- "Report a wrong answer" queue. Reviewed by a human through the admin API; nothing here changes a rule by itself.
--- No contact details are collected. Resolved/dismissed reports are purged after 90 days, open ones after a year.
 BEGIN;
 
 CREATE TYPE report_kind_t AS ENUM ('item_rule', 'schedule', 'facility', 'scan', 'other');

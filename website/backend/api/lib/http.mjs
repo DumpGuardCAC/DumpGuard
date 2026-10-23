@@ -1,4 +1,3 @@
-// Shared response helpers for the read-only endpoints.
 import { createHash } from 'node:crypto';
 
 export const json = (body, status = 200, extra = {}) =>
@@ -7,7 +6,6 @@ export const json = (body, status = 200, extra = {}) =>
     headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, s-maxage=3600', ...extra },
   });
 
-// JSON with a strong ETag; answers 304 when the client already has this version.
 export function jsonWithEtag(request, body, { maxAge = 300, sMaxAge = 3600 } = {}) {
   const text = JSON.stringify(body);
   const etag = `"${createHash('sha1').update(text).digest('hex').slice(0, 20)}"`;

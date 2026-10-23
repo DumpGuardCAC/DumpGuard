@@ -1,10 +1,3 @@
-/* Government area: sign in, see every report on a map, update status, and message the person who filed a report.
- *
- * The staff username and password are sent as a Bearer header and kept in memory only (never stored). Exact points,
- * photos and details come from the /admin/dumping endpoints; the public map (dumpguard-map.js) never gets them.
- * Reporters are anonymous, so a message goes into a thread tied to the report's tracking code; the reporter reads
- * and answers it on the Report page.
- */
 (function () {
   'use strict';
 
@@ -47,7 +40,6 @@
     towns.forEach(function (tw) { w.appendChild(h('option', { value: tw.town }, tw.name)); });
   }
 
-  // ---- map: every report with a point ----
   function ensureMap() {
     if (map) return;
     map = L.map('gvmap', { scrollWheelZoom: false }).setView([40.45, -74.25], 10);
@@ -72,7 +64,6 @@
     if (refit && pts.length) map.fitBounds(pts, { maxZoom: 15, padding: [40, 40] });
   }
 
-  // ---- list ----
   function renderList() {
     var box = clear($('gvlist')), rows = visible();
     if (!rows.length) { box.appendChild(h('p', { class: 'sm' }, 'No reports match these filters.')); return; }
@@ -94,7 +85,6 @@
     renderPanel();
   }
 
-  // ---- detail panel ----
   function renderPanel() {
     var box = clear($('gvpanel'));
     if (!selected) {
@@ -182,7 +172,6 @@
     if (pan) $('gvpanel').scrollIntoView({ block: 'nearest' });
   }
 
-  // ---- sign in / out ----
   function show(on) {
     $('gsign').style.display = on ? 'none' : '';
     $('gdash').style.display = on ? 'block' : 'none';

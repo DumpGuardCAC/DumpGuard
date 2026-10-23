@@ -1,8 +1,3 @@
-// Towns, facilities, Woodbridge street lookup, health.
-//   GET /api/v1/towns                            published towns with their ZIPs
-//   GET /api/v1/facilities?town=|zip=|lat=&lng=  drop-off sites (open_now, distance_km); optional material, radius_km
-//   GET /api/v1/woodbridge/streets?q=...         street -> recycling-calendar zone(s)
-//   GET /api/v1/health
 import { openStatus, HOURS_NOTE } from './hours.mjs';
 import { json, jsonWithEtag, badRequest, notFound, validId } from './http.mjs';
 
@@ -18,8 +13,6 @@ export function distanceKm(a, b) {
   return 2 * 6371 * Math.asin(Math.sqrt(h));
 }
 
-// GET /facilities?town=<id> | ?zip=<zip> | ?lat=&lng=   [&material=] [&radius_km=]
-// Every facility carries open_now / next_open (from hours_struct). With lat+lng, results get distance_km and sort nearest first.
 export async function handleFacilities(request, repo, { now = new Date() } = {}) {
   const url = new URL(request.url);
   const townParam = url.searchParams.get('town');
@@ -67,13 +60,9 @@ export async function handleFacilities(request, repo, { now = new Date() } = {})
     if (radius !== null && Number.isFinite(radius)) out = out.filter((f) => f.distance_km !== undefined && f.distance_km <= radius);
     out.sort((a, b) => (a.distance_km ?? Infinity) - (b.distance_km ?? Infinity));
   }
-  // open_now depends on the clock, so keep CDN and browser caches short for this endpoint.
   return jsonWithEtag(request, { towns, count: out.length, facilities: out }, { maxAge: 60, sMaxAge: 300 });
 }
 
-// ---- Woodbridge street index ----
-// A street name alone can be ambiguous (one street can cross zones), so every matching zone comes back with the
-// house-number range from the printed index when there is one.
 const ABBREV = [
   [/\b(avenue|ave)\b/g, 'ave'], [/\b(street|st)\b/g, 'st'], [/\b(road|rd)\b/g, 'rd'], [/\b(place|pl)\b/g, 'pl'],
   [/\b(drive|dr)\b/g, 'dr'], [/\b(court|ct)\b/g, 'ct'], [/\b(lane|ln)\b/g, 'ln'], [/\b(terrace|ter)\b/g, 'ter'],
@@ -104,7 +93,7 @@ export function buildStreetLookup(index) {
 export function handleWoodbridgeStreets(request, lookup) {
   const q = new URL(request.url).searchParams.get('q') ?? '';
   if (q.trim().length < 3 || q.length > 80) return badRequest('query_length', { message: 'q must be 3 to 80 characters.' });
-  const n = normStreet(q.replace(/^\d+\s+/, '')); // tolerate a leading house number
+  const n = normStreet(q.replace(/^\d+\s+/, ''));
   if (!n) return badRequest('query_length');
   const exact = lookup.entries.filter((e) => e.norm === n);
   const use = exact.length ? exact : lookup.entries.filter((e) => e.norm.startsWith(n)).slice(0, 25);

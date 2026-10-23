@@ -1,6 +1,3 @@
-// Seed regions, items, aliases and item rules from data/items_db.json.
-// Usage: DATABASE_URL_UNPOOLED=... node seed.mjs   (falls back to DATABASE_URL)
-// Idempotent: safe to re-run after rebuilding items_db.json.
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -15,7 +12,6 @@ if (!url) {
   process.exit(1);
 }
 
-// Towns stay unpublished until their schedule and facility data are verified (spec: unverified towns are not shown).
 const REGIONS = [
   { id: 'nj', kind: 'state', name: 'New Jersey' },
   { id: 'middlesex', kind: 'county', name: 'Middlesex County' },
@@ -25,7 +21,6 @@ const REGIONS = [
   { id: 'woodbridge', kind: 'town', name: 'Woodbridge', county: 'middlesex' },
   { id: 'long-branch', kind: 'town', name: 'Long Branch', county: 'monmouth' },
   { id: 'asbury-park', kind: 'town', name: 'Asbury Park', county: 'monmouth' },
-  // Info-only towns: no verified pickup schedule yet. Published with `node publish.mjs --info <ids>`.
   { id: 'carteret', kind: 'town', name: 'Carteret', county: 'middlesex' },
   { id: 'highland-park', kind: 'town', name: 'Highland Park', county: 'middlesex' },
   { id: 'metuchen', kind: 'town', name: 'Metuchen', county: 'middlesex' },
@@ -79,14 +74,12 @@ try {
 
   for (const r of REGIONS) {
     await client.query(
-      // State and counties are always published; towns stay hidden until someone flips published after verifying their data.
       `INSERT INTO regions (id, kind, name, county_id, published) VALUES ($1, $2, $3, $4, $5)
        ON CONFLICT (id) DO UPDATE SET kind = EXCLUDED.kind, name = EXCLUDED.name, county_id = EXCLUDED.county_id`,
       [r.id, r.kind, r.name, r.county ?? null, r.kind !== 'town'],
     );
   }
 
-  // Counties and the state first, towns reference counties; REGIONS is already ordered that way.
   let rules = 0;
   for (const it of db.items) {
     await client.query(
@@ -102,7 +95,6 @@ try {
         it.varies_by_town, it.prep.en, it.prep.es, it.status, it.es_reviewed],
     );
 
-    // Replace aliases and rules wholesale so removed entries do not linger.
     await client.query('DELETE FROM item_aliases WHERE item_id = $1', [it.id]);
     for (const alias of new Set(it.aliases)) {
       await client.query('INSERT INTO item_aliases (item_id, alias) VALUES ($1, $2)', [it.id, alias]);
@@ -119,7 +111,6 @@ try {
     }
   }
 
-  // Town data: facilities, schedules, ZIPs. These tables are fully owned by towns.json, so replace them wholesale.
   const towns = JSON.parse(readFileSync(townsPath, 'utf8'));
   const retrieved = towns._meta.retrieved;
   for (const row of [...towns.facilities, ...towns.schedules, ...towns.zip_codes]) {
@@ -151,7 +142,6 @@ try {
     await client.query('INSERT INTO zip_codes (zip, region_id, status) VALUES ($1,$2,$3)', [z.zip, z.region, 'needs_verification']);
   }
 
-  // Drop items removed from the JSON.
   await client.query('DELETE FROM items WHERE id <> ALL($1::text[])', [db.items.map((i) => i.id)]);
 
   await client.query('COMMIT');

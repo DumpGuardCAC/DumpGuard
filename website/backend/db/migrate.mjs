@@ -1,5 +1,3 @@
-// Apply SQL files in migrations/ in name order. Tracks applied files in schema_migrations.
-// Usage: DATABASE_URL_UNPOOLED=... node migrate.mjs   (use the DIRECT Neon URL, not the -pooler one)
 import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -23,7 +21,6 @@ try {
   const done = new Set((await client.query('SELECT name FROM schema_migrations')).rows.map((r) => r.name));
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.sql')).sort()) {
     if (done.has(file)) continue;
-    // Each file carries its own BEGIN/COMMIT.
     await client.query(readFileSync(path.join(dir, file), 'utf8'));
     await client.query('INSERT INTO schema_migrations (name) VALUES ($1)', [file]);
     console.log('applied', file);

@@ -1,8 +1,3 @@
-// "Report a wrong answer".
-//   POST   /api/v1/reports             { kind, message, item?, town?, facility? }  public, rate limited, no contact info
-//   GET    /api/v1/admin/reports       ?status=open|resolved|dismissed (default open)   Bearer ADMIN_TOKEN
-//   POST   /api/v1/admin/reports/resolve   { id, status: 'resolved'|'dismissed' }       Bearer ADMIN_TOKEN
-// A report only lands in a queue for a person to check against the primary source. It never edits a rule.
 import { createHash } from 'node:crypto';
 import { json, badRequest, validId } from './http.mjs';
 import { staffOnly } from './alerts.mjs';

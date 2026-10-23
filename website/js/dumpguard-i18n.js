@@ -1,9 +1,3 @@
-/* Spanish for every page except Identify (which dumpguard-api.js translates itself).
- *
- * Instead of threading a language switch through every script, this walks the page, swaps any text it has a Spanish
- * line for, and remembers the English original so switching back restores it. A MutationObserver re-runs it when the
- * other scripts draw new text (errors, map panels, dashboard rows). Text with no entry is left as it is.
- */
 (function () {
   'use strict';
 
@@ -11,7 +5,6 @@
   if (!DG) return;
 
   var ES = {
-    // navigation + home
     'Home': 'Inicio', 'Identify': 'Identificar', 'Report': 'Reportar', 'Map': 'Mapa', 'About': 'Acerca de', 'Log in': 'Iniciar sesión', 'Dashboard': 'Panel',
     'Get started': 'Comenzar', 'Scroll ↓': 'Desplácese ↓', 'Dispose of anything, the right way': 'Deseche cualquier cosa, de la manera correcta',
     'How it works': 'Cómo funciona', 'Clear answers from': 'Respuestas claras de', 'your own district.': 'su propio distrito.',
@@ -37,7 +30,6 @@
     'Showing your town. Change it from the menu. If your town has more than one pickup area, choose yours below.': 'Se muestra su municipio. Cámbielo desde el menú. Si su municipio tiene más de una zona de recogida, elija la suya abajo.',
     'ZIP code (optional)': 'Código postal (opcional)', 'Look up': 'Buscar', 'Your town': 'Su municipio',
     'DumpGuard is a student-built project that makes waste disposal simple for residents and gives towns a clearer picture of where dumping happens.': 'DumpGuard es un proyecto hecho por estudiantes que simplifica el desecho de residuos para los residentes y le da a los municipios una imagen más clara de dónde se tira basura ilegalmente.',
-    // government area + messages
     'Search an item, find your pickup days, or report illegal dumping in your town.': 'Busque un artículo, consulte sus días de recogida o reporte tiros ilegales de basura en su municipio.',
     'Staff can see exact locations, photos and details, update report status, and message the people who reported.': 'El personal puede ver ubicaciones exactas, fotos y detalles, actualizar el estado de los reportes y enviar mensajes a quienes reportaron.',
     'Staff dashboard': 'Panel del personal', 'Refresh': 'Actualizar', 'All reports': 'Todos los reportes', 'Select a report': 'Seleccione un reporte',
@@ -53,10 +45,8 @@
     'Too many replies. Try again later.': 'Demasiadas respuestas. Inténtelo más tarde.', 'Could not send the reply. Try again.': 'No se pudo enviar la respuesta. Inténtelo de nuevo.',
     'Your replies are anonymous and only officials can read them.': 'Sus respuestas son anónimas y solo los funcionarios pueden leerlas.',
     'Write a reply. Please do not include your name or phone number.': 'Escriba una respuesta. No incluya su nombre ni su número de teléfono.', 'Your reply': 'Su respuesta',
-    // identify (labels only; results are translated by dumpguard-api.js)
     'What are you': '¿Qué quiere', 'When is': '¿Cuándo es', 'my pickup?': 'mi recogida?', 'getting rid of?': 'desechar?', 'Your town': 'Su municipio', 'Search an item': 'Busque un artículo', 'Or use a photo': 'O use una foto',
     'Not sure. Pick a category': 'No está seguro. Elija una categoría',
-    // report
     'Report illegal dumping': 'Reportar tiro ilegal de basura', 'Saw something dumped': '¿Vio algo tirado', "where it shouldn't be?": 'donde no debería estar?',
     'This form is only for illegal dumping: piles left on roadsides, lots, or private property. For everyday disposal questions, use': 'Este formulario es solo para tiros ilegales de basura: montones dejados en carreteras, terrenos o propiedad privada. Para preguntas cotidianas sobre desechos, use',
     'Town': 'Municipio', 'Street address or location': 'Dirección o ubicación', 'Type of dumping': 'Tipo de basura', 'Description': 'Descripción',
@@ -85,7 +75,6 @@
     'Too many checks. Try again later.': 'Demasiadas consultas. Intente más tarde.', 'Could not check the report. Try again.': 'No se pudo consultar el reporte. Intente de nuevo.',
     'Reports from this browser': 'Reportes de este navegador',
     'Received': 'Recibido', 'Noticed by officials': 'Detectado por las autoridades', 'In progress': 'En proceso', 'Resolved': 'Resuelto', 'New': 'Nuevo', 'Noticed': 'Detectado',
-    // map
     'Community map': 'Mapa comunitario', 'Illegal dumping spots.': 'Lugares de tiro ilegal de basura.',
     'See where illegal dumping has been reported and whether officials have addressed it. Public locations are approximate, and photos and details are only visible to local staff.': 'Vea dónde se han reportado tiros ilegales de basura y si las autoridades los han atendido. Las ubicaciones públicas son aproximadas, y las fotos y los detalles solo los ve el personal local.',
     'Filter by type': 'Filtrar por tipo', 'Filter by town': 'Filtrar por municipio', 'Status': 'Estado', 'All statuses': 'Todos los estados', 'All types': 'Todos los tipos', 'All towns': 'Todos los municipios',
@@ -101,15 +90,12 @@
     'Approximate area, not an address.': 'Área aproximada, no una dirección.', 'Reports': 'Reportes', 'No reports match these filters.': 'Ningún reporte coincide con estos filtros.',
     'Loading photo...': 'Cargando foto...', 'Photo could not be loaded.': 'No se pudo cargar la foto.', 'Update status': 'Actualizar estado', 'Could not update. Sign in again.': 'No se pudo actualizar. Inicie sesión de nuevo.',
     'Report photo': 'Foto del reporte',
-    // about
     'Built for our community.': 'Hecho para nuestra comunidad.',
     'DumpGuard is a student-built project that makes waste disposal simple for residents and gives towns a clearer picture of where dumping happens.': 'DumpGuard es un proyecto hecho por estudiantes que simplifica el desecho de residuos para los residentes y le da a los municipios una imagen más clara de dónde se tira basura ilegalmente.',
-    // dashboard
     'Your dashboard': 'Su panel', 'Hi,': 'Hola,', 'Items looked up': 'Artículos consultados', 'Reports filed': 'Reportes presentados', 'Look up an item': 'Buscar un artículo', 'Log out': 'Cerrar sesión',
     'My reports': 'Mis reportes', 'Disposal history': 'Historial de desechos', 'Nothing saved yet. Look up an item and choose Save to my history.': 'Aún no hay nada guardado. Busque un artículo y elija Guardar en mi historial.',
     'No reports from this device yet.': 'Aún no hay reportes desde este dispositivo.', 'Loading...': 'Cargando...', 'Could not load this report right now.': 'No se pudo cargar este reporte ahora.',
     'Save to my history': 'Guardar en mi historial', 'Saved': 'Guardado',
-    // login / forgot / signup
     'Look up what goes where, find your pickup days, and report illegal dumping in your town.': 'Vea qué va dónde, encuentre sus días de recogida y reporte tiros ilegales de basura en su municipio.',
     'Dispose of anything,': 'Deseche cualquier cosa,', 'the right way.': 'de la manera correcta.', 'Welcome back': 'Bienvenido de nuevo', 'Accounts are stored on this device only': 'Las cuentas se guardan solo en este dispositivo',
     'Email or username': 'Correo o usuario', 'Password': 'Contraseña', "Verify you're human": 'Verifique que es una persona', 'Type the code above': 'Escriba el código de arriba', 'New code': 'Código nuevo',
@@ -157,7 +143,6 @@
   var plural = function (n, one, many) { return n + ' ' + (Number(n) === 1 ? one : many); };
   var lit = function (s) { return ES[s] || s; };
 
-  // Patterns for text with numbers, names or codes in it. Each returns the Spanish text.
   var RX = [
     [/^(\d+) reports? in this area$/, function (m) { return plural(m[1], 'reporte', 'reportes') + ' en esta área'; }],
     [/^(New|Noticed|In progress|Resolved): (\d+)$/, function (m) { return lit(m[1]) + ': ' + m[2]; }],
@@ -191,8 +176,8 @@
   }
 
   var ATTRS = ['placeholder', 'aria-label', 'alt', 'title'];
-  var textRec = new WeakMap(); // text node -> { en, out }
-  var attrRec = new WeakMap(); // element -> { attr: { en, out } }
+  var textRec = new WeakMap();
+  var attrRec = new WeakMap();
   var observer = null, queued = false;
 
   function swap(cur, rec, spanish) {
@@ -234,7 +219,6 @@
   }
   function queue() { if (!queued) { queued = true; setTimeout(apply, 40); } }
 
-  // ---- language dropdown in the nav (drives the same select the Identify page uses) ----
   var toggle = null;
   function syncToggle() { if (toggle) toggle.value = DG.lang(); }
   function addToggle() {

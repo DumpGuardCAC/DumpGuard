@@ -1,4 +1,3 @@
-// User-facing strings the app must show verbatim. Spanish is machine-drafted (not human reviewed).
 export const CHECK_WITH_TOWN = {
   en: 'Double check with your town',
   es: 'Confirme con su municipio',

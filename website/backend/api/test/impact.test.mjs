@@ -7,7 +7,7 @@ const mk = (hits = 1) => {
   const counted = [];
   return { counted, hit: async () => hits, isPublishedTown: async (t) => t === 'edison', count: async (x) => counted.push(x), totals: async () => [] };
 };
-const now = new Date('2026-10-15T01:00:00Z'); // 9 pm Oct 14 in New Jersey
+const now = new Date('2026-10-15T01:00:00Z');
 
 test('event is counted under the New Jersey date', async () => {
   const repo = mk();

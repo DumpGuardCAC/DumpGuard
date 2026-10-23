@@ -5,9 +5,9 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@capacitor/cli": "^8.5.3",
-    "@capacitor/core": "^8.5.3",
-    "@capacitor/android": "^8.5.3"
+    "@capacitor/cli": "8.5.3",
+    "@capacitor/core": "8.5.3",
+    "@capacitor/android": "8.5.3"
   },
   "scripts": {
     "sync": "node -e \"const f=require('fs');f.rmSync('www',{recursive:true,force:true});for(const p of ['index.html','css','js','images','model'])f.cpSync('../website/'+p,'www/'+p,{recursive:true})\" && cap sync android"

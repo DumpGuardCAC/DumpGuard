@@ -11,6 +11,9 @@ android/build/
 android/app/build/
 android/.gradle/
 android/local.properties
+android/capacitor.settings.gradle
+android/app/capacitor.build.gradle
 android/app/src/
 android/capacitor-cordova-android-plugins/
 *.apk
+android/package-lock.json

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="ic_launcher_background">#FFFFFF</color>
 
-    <!-- Base application theme. -->
+    <string name="app_name">DumpGuard</string>
+    <string name="title_activity_main">DumpGuard</string>
+    <string name="package_name">com.dumpguard.app</string>
+    <string name="custom_url_scheme">com.dumpguard.app</string>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -14,7 +18,6 @@
         <item name="windowNoTitle">true</item>
         <item name="android:background">@null</item>
     </style>
-
 
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
         <item name="android:background">@drawable/splash</item>

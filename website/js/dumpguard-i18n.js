@@ -129,7 +129,7 @@
   };
 
   Object.assign(ES, {
-    'Where items go, when pickup is, and how to report dumping in 38 NJ towns.': 'Adónde van los artículos, cuándo es la recogida y cómo reportar tiros de basura en 38 municipios de NJ.',
+    'An all-in-one solution for waste management in NJ-06 towns': 'Una solución integral para el manejo de desechos en los municipios de NJ-06',
     'Look up an item': 'Busque un artículo', 'Type an item or upload a photo to get disposal steps for your town.': 'Escriba un artículo o suba una foto para ver los pasos de desecho en su municipio.',
     'Find pickup days': 'Encuentre los días de recogida', 'Trash, recycling, bulk and yard waste days, with a calendar export.': 'Días de basura, reciclaje, objetos grandes y desechos de jardín, con calendario exportable.',
     'Report a dump anonymously and track it with a code.': 'Reporte un tiro de basura de forma anónima y sígalo con un código.',

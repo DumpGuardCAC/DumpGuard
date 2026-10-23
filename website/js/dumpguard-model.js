@@ -10,7 +10,7 @@
 (function () {
   'use strict';
 
-  var TFJS = 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js';
+  var TFJS = 'js/vendor/tf.min.js';
   var MODEL_URL = 'model/model.json';
   var CLASSES = ['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard', 'no_object'];
   var SIZE = 224, TEMPERATURE = 1.9, THRESHOLD = 0.65;
@@ -36,7 +36,7 @@
     return new Promise(function (resolve, reject) {
       var el = document.createElement('script');
       el.src = src; el.async = true; el.crossOrigin = 'anonymous';
-      el.integrity = 'sha384-vE8hbVJ4lezako5rlvE7bY0BVzWlFhZncPlckrqNwcUQpVtgbENTgZ8TBbnPjZre';
+      el.integrity = 'sha384-L8voclkoniuFcRcupWcIj6Z2X9BjaujQTgwjRJl5LjC7tJ/By8Kkl+nf64+2IVjS';
       el.onload = resolve;
       el.onerror = function () { reject(new Error('script')); };
       document.head.appendChild(el);

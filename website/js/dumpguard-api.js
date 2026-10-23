@@ -142,11 +142,6 @@
   function emptyState() {
     var box = clear($('result'));
     box.appendChild(h('p', { class: 'empty' }, t('empty')));
-    api.get('/stats').then(function (r) {
-      if (r.body && r.body.items_sorted > 0 && box.querySelector('.empty')) {
-        box.appendChild(h('p', { class: 'sm' }, r.body.items_sorted + ' ' + t('counted') + ' ' + r.body.estimated_pounds_diverted + ' ' + t('lb')));
-      }
-    }).catch(function () { /* stats are optional */ });
   }
   function runSearch() {
     var q = $('q') ? $('q').value.trim() : '';
@@ -365,7 +360,6 @@
     });
     if (b.calendar) {
       box.appendChild(h('p', {}, h('a', { class: 'btn dark', href: b.calendar.webcal, style: 'padding:10px 22px' }, t('calendar'))));
-      box.appendChild(h('p', { class: 'sm' }, t('calNote')));
     }
     var src = b.schedules[0];
     if (src && src.source_url) box.appendChild(h('p', { class: 'sm' }, t('source') + ': ', h('a', { class: 'link', href: src.source_url, target: '_blank', rel: 'noopener noreferrer' }, hostOf(src.source_url))));

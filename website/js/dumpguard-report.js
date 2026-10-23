@@ -27,7 +27,7 @@
 
   function showTown() {
     var note = $('rtownnote'), name = DG.townName();
-    if (note) note.textContent = name ? 'Reporting in: ' + name + '. Change the town from the menu.' : '';
+    if (note) note.textContent = name ? 'Reporting in ' + name : '';
   }
   function fillTypes() {
     var sel = $('rcat');
@@ -187,7 +187,6 @@
         }).catch(function () { send.disabled = false; err.textContent = 'Could not reach the server.'; });
       });
       out.appendChild(text); out.appendChild(h('div', { class: 'row tight' }, send)); out.appendChild(err);
-      out.appendChild(h('p', { class: 'sm' }, 'Your replies are anonymous and only officials can read them.'));
     }).catch(function () { /* the status above is still shown */ });
   }
   // Flag saved reports where officials wrote last, so people know to open them.

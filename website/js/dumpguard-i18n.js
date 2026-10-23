@@ -140,7 +140,7 @@
     'Address or nearby landmark': 'Dirección o lugar de referencia cercano', 'How long it has been there, any hazards': 'Cuánto tiempo lleva ahí, posibles peligros',
     'Enter the tracking code you got when you submitted.': 'Escriba el código de seguimiento que recibió al enviar.',
     'Reported dumping': 'Tiros de basura reportados', 'Public locations are approximate. Photos and details are visible to staff only.': 'Las ubicaciones públicas son aproximadas. Las fotos y los detalles solo los ve el personal.',
-    'Staff access': 'Acceso del personal', 'Sign in to review reports in your towns.': 'Inicie sesión para revisar los reportes de sus municipios.', 'Staff dashboard': 'Panel del personal',
+    'Government dashboard': 'Panel del gobierno', 'Location data removed from photo.': 'Se quitaron los datos de ubicación de la foto.',
     "Built by students for the Congressional App Challenge, NJ-06. Pickup data comes from each town's own website.": 'Hecho por estudiantes para el Congressional App Challenge, NJ-06. Los datos de recogida vienen del sitio web de cada municipio.',
     'couch, TV, battery': 'sofá, TV, batería'
   });
@@ -174,7 +174,7 @@
     [/^(DG-[A-Z0-9]{5}): (Received|Noticed by officials|In progress|Resolved)$/, function (m) { return m[1] + ': ' + lit(m[2]); }],
     [/^(DG-[A-Z0-9]{5}) - (.+?) - (.*)$/, function (m) { return m[1] + ' - ' + lit(m[2]) + ' - ' + m[3]; }],
     [/^(.+): We are still finding verified pickup data for this area\. Check back soon\.$/, function (m) { return m[1] + ': ' + ES['We are still finding verified pickup data for this area. Check back soon.']; }],
-    [/^Reporting in: (.+?)\. Change the town from the menu\.$/, function (m) { return 'Reportando en: ' + m[1] + '. Cambie el municipio desde el menú.'; }],
+    [/^Reporting in (.+)$/, function (m) { return 'Reportando en ' + m[1]; }],
     [/^(.*) · filed (.+)$/, function (m) { return m[1] + ' · presentado ' + m[2]; }],
     [/^(Staff|Reporter|Officials|You) - (.+)$/, function (m) { return ({ Staff: 'Personal', Reporter: 'Quien reportó', Officials: 'Funcionarios', You: 'Usted' })[m[1]] + ' - ' + m[2]; }],
     [/^No email is sent\. Your code is (\d+)\.$/, function (m) { return 'No se envía ningún correo. Su código es ' + m[1] + '.'; }],

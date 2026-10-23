@@ -23,6 +23,21 @@
     'long-branch': [40.3043, -73.9924], 'asbury-park': [40.2204, -74.0121],
   };
 
+  // Approximate town centres, used only to zoom the map when a town is picked.
+  var CENTER = {
+    aberdeen: [40.4101, -74.2224], allenhurst: [40.2362, -74.0112], 'asbury-park': [40.2204, -74.0121], 'atlantic-highlands': [40.4084, -74.0335],
+    'bradley-beach': [40.2007, -74.0123], carteret: [40.5773, -74.2285], deal: [40.2543, -74.0001], edison: [40.5187, -74.4121],
+    'fair-haven': [40.3626, -74.0385], hazlet: [40.4263, -74.1760], 'highland-park': [40.4995, -74.4260], highlands: [40.4040, -73.9918],
+    interlaken: [40.2290, -74.0090], keansburg: [40.4412, -74.1301], keyport: [40.4376, -74.2002], 'little-silver': [40.3395, -74.0412],
+    'loch-arbour': [40.2326, -74.0049], 'long-branch': [40.3043, -73.9924], matawan: [40.4143, -74.2285], metuchen: [40.5432, -74.3638],
+    middletown: [40.3943, -74.1170], 'monmouth-beach': [40.3326, -73.9818], 'neptune-city': [40.2132, -74.0292], 'neptune-township': [40.2078, -74.0537],
+    'new-brunswick': [40.4862, -74.4518], oceanport: [40.3140, -74.0100], 'old-bridge': [40.4140, -74.3350], 'perth-amboy': [40.5068, -74.2654],
+    piscataway: [40.5500, -74.4600], 'red-bank': [40.3471, -74.0643], rumson: [40.3715, -74.0043], sayreville: [40.4590, -74.3600],
+    'sea-bright': [40.3626, -73.9724], 'south-amboy': [40.4837, -74.2802], 'south-plainfield': [40.5793, -74.4118], 'union-beach': [40.4476, -74.1685],
+    'west-long-branch': [40.2893, -74.0210], woodbridge: [40.5576, -74.2846],
+  };
+  var REGION = [40.45, -74.25];
+
   var map, layer, labels, labelsOn = true, pub = null, towns = [];
 
   function filters() { return { type: $('mfilter').value, town: $('mtown').value, status: $('mstat').value }; }
@@ -89,25 +104,32 @@
   }
 
   // ---- side panel ----
-  function legend() {
-    var box = h('div', {}, h('h3', {}, 'Status colors'));
-    Object.keys(STATUS).forEach(function (s) {
-      box.appendChild(h('div', { class: 'li', style: 'cursor:default' }, h('span', { class: 'dot', style: 'background:' + COLOR[s] }), h('span', {}, STATUS[s])));
-    });
-    return box;
+  function addLegend() {
+    var ctl = L.control({ position: 'bottomleft' });
+    ctl.onAdd = function () {
+      var box = h('div', { class: 'maplegend' });
+      Object.keys(STATUS).forEach(function (s) {
+        box.appendChild(h('div', {}, h('span', { class: 'dot', style: 'background:' + COLOR[s] }), h('span', {}, STATUS[s])));
+      });
+      L.DomEvent.disableClickPropagation(box);
+      return box;
+    };
+    ctl.addTo(map);
   }
   function renderPanel() {
-    var box = clear($('gpanel'));
-    box.appendChild(legend());
-    if (pub && pub.towns.length) {
-      box.appendChild(h('h3', { style: 'margin-top:22px' }, 'By town'));
-      pub.towns.forEach(function (tw) {
-        var c = tw.counts;
-        box.appendChild(h('div', { class: 'item' }, h('b', {}, tw.name),
-          h('small', {}, c.new + ' new, ' + c.noticed + ' noticed, ' + c.progress + ' in progress, ' + c.resolved + ' resolved')));
-      });
-    }
-    box.appendChild(h('p', { class: 'sm' }, 'Areas appear on the map once ' + (pub ? pub.min_group : 3) + ' or more reports are close together.'));
+    var panel = $('gpanel'), box = clear(panel);
+    var rows = pub && !filters().town ? pub.towns.filter(function (tw) {
+      var c = tw.counts; return c.new + c.noticed + c.progress + c.resolved > 0;
+    }) : [];
+    panel.style.display = rows.length ? '' : 'none';
+    panel.parentNode.classList.toggle('solo', !rows.length);
+    if (!rows.length) return;
+    box.appendChild(h('h3', {}, 'By town'));
+    rows.forEach(function (tw) {
+      var c = tw.counts;
+      box.appendChild(h('div', { class: 'item' }, h('b', {}, tw.name),
+        h('small', {}, c.new + ' new, ' + c.noticed + ' noticed, ' + c.progress + ' in progress, ' + c.resolved + ' resolved')));
+    });
   }
 
   // ---- data ----
@@ -121,16 +143,19 @@
     Array.prototype.forEach.call(sel.options, function (o) { if (o.value && (o.value === id || o.getAttribute('data-n') === DG.townName())) { sel.value = o.value; has = true; } });
     if (!has) sel.value = '';
     redraw();
-    if (!pub) return;
-    var f = filters().town, cells = pub.cells.filter(function (c) { return !f || cellTowns(c).indexOf(f) !== -1; });
-    if (!cells.length) cells = pub.cells;
-    if (cells.length) map.fitBounds(cells.map(function (c) { return [c.lat, c.lng]; }), { maxZoom: 13, padding: [40, 40] });
+    zoomToTown();
+  }
+  function zoomToTown() {
+    var t = filters().town;
+    if (t && CENTER[t]) map.setView(CENTER[t], 14);
+    else map.setView(REGION, 10);
   }
 
   function init() {
     if (!$('gmap')) return;
     $('mbanner').style.display = 'none';
-    map = L.map('gmap', { scrollWheelZoom: false }).setView([40.45, -74.25], 10);
+    map = L.map('gmap', { scrollWheelZoom: false }).setView(REGION, 10);
+    addLegend();
     var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
     var failed = 0;
     tiles.on('tileerror', function () {
@@ -138,7 +163,8 @@
     });
     layer = L.layerGroup().addTo(map);
 
-    ['mfilter', 'mtown', 'mstat'].forEach(function (id) { $(id).addEventListener('change', redraw); });
+    ['mfilter', 'mstat'].forEach(function (id) { $(id).addEventListener('change', redraw); });
+    $('mtown').addEventListener('change', function () { redraw(); zoomToTown(); });
 
     refreshPublic().then(function () {
       fillFilters(); followTown();

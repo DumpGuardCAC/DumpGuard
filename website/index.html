@@ -55,14 +55,13 @@
             <label class="drop" for="photo"><span id="droptxt">Take or upload a photo</span><input id="photo" type="file" accept="image/*" capture="environment" hidden></label>
             <div id="pick" style="display:none"><label for="cat">Not sure. Pick a category</label><select id="cat"></select></div>
         </div>
-        <div class="card" id="result" aria-live="polite"><p class="empty">Your disposal guide will appear here.</p></div>
+        <div class="card" id="result" aria-live="polite"></div>
     </div>
 </section></div>
 
 <!-- ===== PICKUP DAYS ===== -->
 <div class="view" id="v-pickup"><section class="s page">
     <h2>Pickup days</h2>
-    <p class="lead">Showing your town. If it has more than one pickup area, choose yours below.</p>
     <div class="tool">
         <div>
             <label for="zip">ZIP code (optional)</label>
@@ -75,7 +74,6 @@
 <!-- ===== REPORT ===== -->
 <div class="view" id="v-report"><section class="s page">
     <h2>Report illegal dumping</h2>
-    <p class="lead">Use this form only for illegal dumping: piles left on roadsides, lots or private property. For everyday disposal questions, use <a class="link" data-go="identify" href="#identify">Identify</a>.</p>
     <div class="tool">
         <div>
             <p class="sm" id="rtownnote"></p>
@@ -87,13 +85,13 @@
         <div>
             <label>Photo (optional)</label>
             <label class="drop" for="rphoto" style="margin-top:0"><span id="rtxt">Take or upload a picture</span><input id="rphoto" type="file" accept="image/*" capture="environment" hidden></label>
-            <p class="ok" id="priv" style="display:none">Privacy check: location data removed from photo.</p>
+            <p class="ok" id="priv" style="display:none">Location data removed from photo.</p>
             <p class="sm">Please don't include people, license plates, or names in your photo or notes.</p><br>
             <button class="btn dark" id="send">Submit report</button>
             <p class="err" id="rerr" aria-live="polite"></p><p class="ok" id="sent" style="display:none" aria-live="polite"></p>
         </div>
     </div>
-    <div class="card" style="margin-top:50px"><h3>Track a report</h3><p class="sm">Enter the tracking code you got when you submitted.</p>
+    <div class="card" style="margin-top:50px"><h3>Track a report</h3>
         <div class="row2"><input id="tcode" aria-label="Tracking code" placeholder="DG-XXXXX"><button class="btn dark" id="tgo" type="button">Check</button></div>
         <div id="tres" style="margin-top:14px"></div><div id="tmine"></div></div>
 </section></div>
@@ -101,7 +99,6 @@
 <!-- ===== MAP ===== -->
 <div class="view" id="v-map"><section class="s page">
     <h2>Reported dumping</h2>
-    <p class="lead">Public locations are approximate. Photos and details are visible to staff only.</p>
     <div class="row"><select id="mfilter" aria-label="Filter by type"></select>
         <select id="mtown" aria-label="Filter by town"></select><select id="mstat" aria-label="Status"><option value="">All statuses</option><option value="new">New</option><option value="noticed">Noticed</option><option value="progress">In progress</option><option value="resolved">Resolved</option></select>
         <span class="sm" id="mcount"></span></div>
@@ -111,15 +108,15 @@
 </section></div>
 
 <!-- ===== GOVERNMENT ===== -->
-<div class="view" id="v-gov"><div class="auth" id="gsign"><aside class="aside"><img src="images/logo.png" alt="" width="200"><h2>Staff access</h2><p>Sign in to review reports in your towns.</p></aside><div class="card">
-    <h2>Government sign-in</h2><p class="sub">Staff can see exact locations, photos and details, update report status, and message the people who reported.</p>
+<div class="view" id="v-gov"><div class="auth" id="gsign"><aside class="aside"><img src="images/logo.png" alt="" width="200"><h2>Government access</h2></aside><div class="card">
+    <h2>Government sign-in</h2>
     <label for="le">Username</label><input id="le" type="text" autocomplete="username" autocapitalize="none" spellcheck="false">
     <label for="lp">Password</label><input id="lp" type="password" autocomplete="current-password">
     <p class="err" id="lerr" aria-live="polite"></p>
     <button class="btn dark full" id="lgo">Sign in</button>
 </div></div></div>
 <section class="s page" id="gdash">
-        <div class="dbar"><div><h2>Staff dashboard</h2></div>
+        <div class="dbar"><div><h2>Government dashboard</h2></div>
             <div class="row tight"><button class="btn" id="gvrefresh" type="button">Refresh</button><button class="btn" id="gvout" type="button">Sign out</button></div></div>
         <div class="row"><select id="gftype" aria-label="Filter by type"></select><select id="gftown" aria-label="Filter by town"></select>
             <select id="gfstat" aria-label="Status"><option value="">All statuses</option><option value="new">New</option><option value="noticed">Noticed</option><option value="progress">In progress</option><option value="resolved">Resolved</option></select>

@@ -99,7 +99,6 @@
     var box = clear($('gvpanel'));
     if (!selected) {
       box.appendChild(h('h3', {}, 'Select a report'));
-      box.appendChild(h('p', { class: 'sm' }, 'Choose a point on the map or a row in the list to see the photo, update its status, or message the person who reported it.'));
       var key = h('div', { class: 'key' });
       Object.keys(STATUS).forEach(function (s) { key.appendChild(h('span', {}, h('i', { class: 'dot', style: 'background:' + COLOR[s] }), STATUS[s])); });
       box.appendChild(key);
@@ -158,7 +157,6 @@
       }).catch(function () { send.disabled = false; err.textContent = 'Could not reach the server.'; });
     });
     box.appendChild(text); box.appendChild(h('div', { class: 'row tight' }, send)); box.appendChild(err);
-    box.appendChild(h('p', { class: 'sm' }, 'The reporter is anonymous. They see this message when they enter their tracking code on the Report page, and can answer there.'));
     return box;
   }
 

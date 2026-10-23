@@ -20,12 +20,18 @@
     var view = $('v-' + v);
     var heading = view ? view.querySelector('h1, h2') : null;
     if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
+    navStyle();
     if (v === 'map') setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 60);
+  }
+  function navStyle() {
+    var home = $('v-home');
+    $('nav').classList.toggle('solid', !(home && home.classList.contains('on')) || window.scrollY > window.innerHeight - 120);
   }
   document.addEventListener('click', function (e) {
     var t = e.target.closest ? e.target.closest('[data-go]') : null;
     if (t) { e.preventDefault(); go(t.getAttribute('data-go')); }
   });
+  window.addEventListener('scroll', navStyle);
 
   // ---- government sign-in ----
   async function govLogin() {

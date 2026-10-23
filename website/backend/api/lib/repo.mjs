@@ -320,39 +320,15 @@ export function makeDumpingRepo(db = getPool()) {
       return rows;
     },
     async listDumps({ status, town }) {
-      const cols = `d.id, d.code, d.region_id, d.dump_type, d.location_text, d.description, d.notes, d.lat, d.lng, d.status,
-                d.created_at, d.updated_at, (p.report_id IS NOT NULL) AS has_photo`;
-      const msgs = `, (SELECT count(*)::int FROM dump_messages m WHERE m.report_id = d.id) AS msg_count,
-                (SELECT m.from_staff FROM dump_messages m WHERE m.report_id = d.id ORDER BY m.created_at DESC LIMIT 1) AS last_from_staff`;
-      const tail = `FROM dump_reports d LEFT JOIN dump_photos p ON p.report_id = d.id
-          WHERE ($1::text IS NULL OR d.status = $1::dump_status_t) AND ($2::text IS NULL OR d.region_id = $2)
-          ORDER BY d.created_at DESC LIMIT 500`;
-      try {
-        return (await db.query(`SELECT ${cols}${msgs} ${tail}`, [status, town])).rows;
-      } catch (err) {
-        if (err?.code !== '42P01') throw err; // messages table not migrated yet: still list the reports
-        return (await db.query(`SELECT ${cols} ${tail}`, [status, town])).rows;
-      }
-    },
-    async dumpIdByCode(code) {
-      const { rows } = await db.query(`SELECT id FROM dump_reports WHERE code = $1`, [code]);
-      return rows[0]?.id ?? null;
-    },
-    async dumpExists(id) {
-      const { rows } = await db.query(`SELECT 1 FROM dump_reports WHERE id = $1`, [id]);
-      return rows.length > 0;
-    },
-    async listMessages(reportId) {
       const { rows } = await db.query(
-        `SELECT id, from_staff, body, created_at FROM dump_messages WHERE report_id = $1 ORDER BY created_at LIMIT 100`, [reportId]);
+        `SELECT d.id, d.code, d.region_id, d.dump_type, d.location_text, d.description, d.notes, d.lat, d.lng, d.status,
+                d.created_at, d.updated_at, (p.report_id IS NOT NULL) AS has_photo
+           FROM dump_reports d LEFT JOIN dump_photos p ON p.report_id = d.id
+          WHERE ($1::text IS NULL OR d.status = $1::dump_status_t) AND ($2::text IS NULL OR d.region_id = $2)
+          ORDER BY d.created_at DESC LIMIT 500`,
+        [status, town],
+      );
       return rows;
-    },
-    async countMessages(reportId) {
-      const { rows } = await db.query(`SELECT count(*)::int AS n FROM dump_messages WHERE report_id = $1`, [reportId]);
-      return rows[0].n;
-    },
-    async addMessage(reportId, fromStaff, body) {
-      await db.query(`INSERT INTO dump_messages (report_id, from_staff, body) VALUES ($1,$2,$3)`, [reportId, fromStaff, body]);
     },
     async dumpPhoto(id) {
       const { rows } = await db.query(`SELECT bytes FROM dump_photos WHERE report_id = $1`, [id]);

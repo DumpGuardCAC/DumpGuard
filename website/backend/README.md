@@ -33,10 +33,6 @@
 | `GET /admin/dumping` | Bearer `ADMIN_TOKEN`. `?status=new\|noticed\|progress\|resolved&town=`: exact points, details, `has_photo`. Failed attempts are rate limited |
 | `GET /admin/dumping/photo` | Bearer `ADMIN_TOKEN`. `?id=`: the stored JPEG, `no-store` |
 | `POST /admin/dumping/status` | Bearer `ADMIN_TOKEN`. `{id, status: new\|noticed\|progress\|resolved}` |
-| `GET /admin/dumping/messages` | Bearer `ADMIN_TOKEN`. `?id=`: the thread between staff and the person who filed the report |
-| `POST /admin/dumping/message` | Bearer `ADMIN_TOKEN`. `{id, body}` (1-500 characters): staff write to the reporter. Max 50 messages per thread |
-| `GET /dumping/messages` | `?code=DG-XXXXX`: the thread for a tracking code. 60/hour per client |
-| `POST /dumping/reply` | `{code, body}`: the reporter answers once staff have written. 10/hour per client |
 | `POST /push/unsubscribe` | `{endpoint}` |
 | `GET /cron/reminders` | Bearer `CRON_SECRET`; Vercel cron daily 22:00 UTC |
 | `GET /cron/purge` | Bearer `CRON_SECRET`; Vercel cron daily 05:00 UTC |

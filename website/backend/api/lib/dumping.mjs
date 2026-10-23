@@ -6,10 +6,6 @@
 //   GET  /api/v1/admin/dumping            ?status=&town=       staff: exact points and details   Bearer ADMIN_TOKEN
 //   GET  /api/v1/admin/dumping/photo?id=  staff: the stored photo
 //   POST /api/v1/admin/dumping/status     { id, status }       staff
-//   GET  /api/v1/admin/dumping/messages?id=   staff: the thread with the person who filed the report
-//   POST /api/v1/admin/dumping/message    { id, body }         staff: write to the reporter
-//   GET  /api/v1/dumping/messages?code=   the thread for a tracking code
-//   POST /api/v1/dumping/reply            { code, body }       the reporter answers staff, rate limited
 // If no coordinates are sent the address is looked up server side (US Census geocoder); a failure just leaves the
 // report without a map point, it is never rejected for it.
 import { createHash, randomInt } from 'node:crypto';
@@ -21,8 +17,6 @@ export const TYPES = ['household', 'furniture', 'appliances', 'electronics', 'ti
 export const STATUSES = ['new', 'noticed', 'progress', 'resolved'];
 export const SUBMIT_PER_HOUR = 5;
 export const TRACK_PER_HOUR = 60;
-export const REPLY_PER_HOUR = 10;
-export const MAX_MESSAGES = 50;
 export const MIN_GROUP = 3;
 export const CELL_DEG = 0.005; // about 500 m
 const MAX_BODY = 3 * 1024 * 1024;
@@ -200,62 +194,4 @@ export async function handleAdminDumpingStatus(request, repo, { token, now = new
   if (typeof b?.id !== 'string' || !UUID.test(b.id)) return badRequest('invalid_id');
   if (!STATUSES.includes(b.status)) return badRequest('invalid_status', { allowed: STATUSES });
   return (await repo.setDumpStatus(b.id, b.status)) ? json({ ok: true }, 200, noStore) : json({ error: 'not_found' }, 404, noStore);
-}
-
-const readBody = async (request) => {
-  try { return JSON.parse(await request.text()); } catch { return null; }
-};
-const cleanBody = (v) => (typeof v === 'string' && v.trim().length >= 1 && v.trim().length <= 500 ? v.trim() : null);
-
-export async function handleAdminDumpingMessages(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  const denied = await staffOnly(request, repo, token, now, salt);
-  if (denied) return denied;
-  const id = new URL(request.url).searchParams.get('id') ?? '';
-  if (!UUID.test(id)) return badRequest('invalid_id');
-  if (!(await repo.dumpExists(id))) return json({ error: 'not_found' }, 404, noStore);
-  const rows = await repo.listMessages(id);
-  return json({ messages: rows.map((m) => ({ from: m.from_staff ? 'staff' : 'reporter', body: m.body, at: m.created_at })) }, 200, noStore);
-}
-
-export async function handleAdminDumpingMessage(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  const denied = await staffOnly(request, repo, token, now, salt);
-  if (denied) return denied;
-  const b = await readBody(request);
-  if (!b) return json({ error: 'invalid_json' }, 400, noStore);
-  if (typeof b.id !== 'string' || !UUID.test(b.id)) return badRequest('invalid_id');
-  const body = cleanBody(b.body);
-  if (!body) return badRequest('invalid_message');
-  if (!(await repo.dumpExists(b.id))) return json({ error: 'not_found' }, 404, noStore);
-  if ((await repo.countMessages(b.id)) >= MAX_MESSAGES) return json({ error: 'thread_full' }, 409, noStore);
-  await repo.addMessage(b.id, true, body);
-  return json({ ok: true }, 201, noStore);
-}
-
-export async function handleDumpingMessages(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if ((await repo.hit(keyFor(request, salt, 'dump-track'), hourStart(now))) > TRACK_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
-  const code = (new URL(request.url).searchParams.get('code') ?? '').trim().toUpperCase();
-  if (!CODE_RE.test(code)) return badRequest('invalid_code');
-  const id = await repo.dumpIdByCode(code);
-  if (!id) return json({ error: 'not_found' }, 404, noStore);
-  const rows = await repo.listMessages(id);
-  return json({ messages: rows.map((m) => ({ from: m.from_staff ? 'staff' : 'you', body: m.body, at: m.created_at })) }, 200, noStore);
-}
-
-export async function handleDumpingReply(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!(request.headers.get('content-type') ?? '').includes('application/json')) return json({ error: 'unsupported_media_type' }, 415, noStore);
-  if ((await repo.hit(keyFor(request, salt, 'dump-reply'), hourStart(now))) > REPLY_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
-  const b = await readBody(request);
-  if (!b) return json({ error: 'invalid_json' }, 400, noStore);
-  const code = typeof b.code === 'string' ? b.code.trim().toUpperCase() : '';
-  if (!CODE_RE.test(code)) return badRequest('invalid_code');
-  const body = cleanBody(b.body);
-  if (!body) return badRequest('invalid_message');
-  const id = await repo.dumpIdByCode(code);
-  if (!id) return json({ error: 'not_found' }, 404, noStore);
-  const rows = await repo.listMessages(id);
-  // residents answer staff; they cannot start a thread, so the form never becomes a public inbox
-  if (!rows.some((m) => m.from_staff)) return json({ error: 'no_thread' }, 409, noStore);
-  if (rows.length >= MAX_MESSAGES) return json({ error: 'thread_full' }, 409, noStore);
-  await repo.addMessage(id, false, body);
-  return json({ ok: true }, 201, noStore);
 }

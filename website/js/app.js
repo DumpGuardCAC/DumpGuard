@@ -20,14 +20,21 @@
     var view = $('v-' + v);
     var heading = view ? view.querySelector('h1, h2') : null;
     if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
+    navStyle();
     if (v === 'map') setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 60);
+  }
+  function navStyle() {
+    var home = $('v-home');
+    $('nav').classList.toggle('solid', !(home && home.classList.contains('on')) || window.scrollY > window.innerHeight - 120);
   }
   document.addEventListener('click', function (e) {
     var t = e.target.closest ? e.target.closest('[data-go]') : null;
     if (t) { e.preventDefault(); go(t.getAttribute('data-go')); }
   });
+  window.addEventListener('scroll', navStyle);
 
   // ---- government sign-in ----
+  window.addEventListener('dg-gov-login', function () { go('gov'); });
   async function govLogin() {
     var e = $('lerr'), u = $('le').value.trim(), pw = $('lp').value;
     if (!u || !pw) return void (e.textContent = 'Enter the username and password.');
@@ -35,7 +42,7 @@
     var r = await DG.staffLogin(u, pw);
     $('lgo').disabled = false;
     if (!r.ok) return void (e.textContent = r.message);
-    e.textContent = ''; $('le').value = ''; $('lp').value = '';
+    e.textContent = ''; $('le').value = ''; $('lp').value = ''; go('map');
   }
   $('lgo').onclick = govLogin;
   $('lp').addEventListener('keydown', function (e) { if (e.key === 'Enter') govLogin(); });

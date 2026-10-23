@@ -12,7 +12,6 @@ import { handlePushKey, handleSubscribe, handleUnsubscribe, handleReminders } fr
 import { handleReport, handleListReports, handleResolveReport } from './reports.mjs';
 import {
   handleDumpingReport, handleDumpingTrack, handleDumpingMap, handleAdminDumping, handleAdminDumpingPhoto, handleAdminDumpingStatus,
-  handleAdminDumpingMessages, handleAdminDumpingMessage, handleDumpingMessages, handleDumpingReply,
 } from './dumping.mjs';
 import { handleEvent, handleStats } from './impact.mjs';
 import { makeSender } from './webpush.mjs';
@@ -47,8 +46,6 @@ async function route(request) {
   if (m === 'POST' && path === '/reports') return handleReport(request, makeReportsRepo());
   if (m === 'POST' && path === '/admin/reports/resolve') return handleResolveReport(request, makeReportsRepo());
   if (m === 'POST' && path === '/dumping') return handleDumpingReport(request, makeDumpingRepo());
-  if (m === 'POST' && path === '/dumping/reply') return handleDumpingReply(request, makeDumpingRepo());
-  if (m === 'POST' && path === '/admin/dumping/message') return handleAdminDumpingMessage(request, makeDumpingRepo());
   if (m === 'POST' && path === '/admin/dumping/status') return handleAdminDumpingStatus(request, makeDumpingRepo());
   if (m === 'POST' && path === '/events') return handleEvent(request, makeImpactRepo());
   if (m === 'POST' && path === '/push/subscribe') return handleSubscribe(request, makePushRepo());
@@ -58,8 +55,6 @@ async function route(request) {
   if (path === '/health') return handleHealth(makeRepo());
   if (path === '/admin/reports') return handleListReports(request, makeReportsRepo());
   if (path === '/dumping/track') return handleDumpingTrack(request, makeDumpingRepo());
-  if (path === '/dumping/messages') return handleDumpingMessages(request, makeDumpingRepo());
-  if (path === '/admin/dumping/messages') return handleAdminDumpingMessages(request, makeDumpingRepo());
   if (path === '/dumping/map') return handleDumpingMap(request, makeDumpingRepo());
   if (path === '/admin/dumping') return handleAdminDumping(request, makeDumpingRepo());
   if (path === '/admin/dumping/photo') return handleAdminDumpingPhoto(request, makeDumpingRepo());

@@ -186,7 +186,7 @@
 
   // ---- sign in / out ----
   function show(on) {
-    $('gsign').style.display = on ? 'none' : 'block';
+    $('gsign').style.display = on ? 'none' : '';
     $('gdash').style.display = on ? 'block' : 'none';
   }
   function load() {

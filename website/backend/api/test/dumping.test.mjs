@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   stripJpeg, buildMap, handleDumpingReport, handleDumpingTrack, handleDumpingMap, handleAdminDumping,
-  handleAdminDumpingPhoto, handleAdminDumpingStatus, SUBMIT_PER_HOUR, AUTH_FAILS_PER_HOUR, MIN_GROUP,
+  handleAdminDumpingPhoto, handleAdminDumpingStatus, handleAdminDumpingMessages, handleAdminDumpingMessage,
+  handleDumpingMessages, handleDumpingReply, REPLY_PER_HOUR, MAX_MESSAGES, SUBMIT_PER_HOUR, AUTH_FAILS_PER_HOUR, MIN_GROUP,
 } from '../lib/dumping.mjs';
 
 const TOKEN = 'a-long-admin-token-123';
@@ -16,7 +17,7 @@ const jpegWithExif = Buffer.concat([
 
 const post = (body, headers = {}) => new Request('http://x/d', { method: 'POST', headers: { 'content-type': 'application/json', 'x-forwarded-for': '1.2.3.4', ...headers }, body: typeof body === 'string' ? body : JSON.stringify(body) });
 const mk = ({ hits = 1, taken = 0 } = {}) => {
-  const state = { inserted: [], status: [] };
+  const state = { inserted: [], status: [], msgs: [] };
   return {
     state,
     hit: async () => hits,
@@ -27,6 +28,11 @@ const mk = ({ hits = 1, taken = 0 } = {}) => {
     townStatusCounts: async () => [{ region_id: 'edison', name: 'Edison', new: 2, noticed: 1 }],
     listDumps: async (f) => [{ id: 'x', ...f }],
     dumpPhoto: async (id) => (id.startsWith('123e') ? Buffer.from([1, 2, 3]) : null),
+    dumpIdByCode: async (c) => (c === 'DG-ABCDE' ? '123e4567-e89b-12d3-a456-426614174000' : null),
+    dumpExists: async (id) => id.startsWith('123e'),
+    listMessages: async () => state.msgs.slice(),
+    countMessages: async () => state.msgs.length,
+    addMessage: async (id, fromStaff, body) => { state.msgs.push({ from_staff: fromStaff, body, created_at: 'now' }); },
     setDumpStatus: async (id, s) => { state.status.push([id, s]); return id.startsWith('123e'); },
   };
 };
@@ -163,4 +169,44 @@ test('staff endpoints need the token and count failures', async () => {
   assert.equal((await st({ id: 'x', status: 'resolved' }, auth)).status, 400);
   assert.equal((await st({ id, status: 'progress' }, auth)).status, 200);
   assert.equal((await st({ id: '999e4567-e89b-12d3-a456-426614174000', status: 'new' }, auth)).status, 404);
+});
+
+test('staff write to a reporter, the reporter answers, nobody else can start a thread', async () => {
+  const id = '123e4567-e89b-12d3-a456-426614174000';
+  const opt = { token: TOKEN };
+  const repo = mk();
+  const send = (b, h = auth, r = repo) => handleAdminDumpingMessage(post(b, h), r, opt);
+  const reply = (b, r = repo, h) => handleDumpingReply(post(b, h), r);
+  const thread = (code, r = repo) => handleDumpingMessages(new Request(`http://x/m?code=${code}`), r);
+
+  assert.equal((await send({ id, body: 'hi' }, {})).status, 401);
+  assert.equal((await send({ id: 'x', body: 'hi' })).status, 400);
+  assert.equal((await send({ id, body: '   ' })).status, 400);
+  assert.equal((await send({ id, body: 'x'.repeat(501) })).status, 400);
+  assert.equal((await send({ id: '999e4567-e89b-12d3-a456-426614174000', body: 'hi' })).status, 404);
+
+  assert.equal((await reply({ code: 'DG-ABCDE', body: 'first!' })).status, 409, 'no thread yet');
+  assert.equal((await send({ id, body: ' Can you tell us which side of the lot? ' })).status, 201);
+  assert.equal((await reply({ code: 'dg-abcde', body: 'North side' })).status, 201);
+  assert.equal((await reply({ code: 'DG-ZZZZZ', body: 'x' })).status, 404);
+  assert.equal((await reply({ code: 'bad', body: 'x' })).status, 400);
+  assert.equal((await reply({ code: 'DG-ABCDE', body: '' })).status, 400);
+  assert.equal((await handleDumpingReply(post({ code: 'DG-ABCDE', body: 'x' }, { 'content-type': 'text/plain' }), repo)).status, 415);
+  assert.equal((await reply({ code: 'DG-ABCDE', body: 'x' }, mk({ hits: REPLY_PER_HOUR + 1 }))).status, 429);
+
+  const t = await (await thread('DG-ABCDE')).json();
+  assert.deepEqual(t.messages.map((m) => [m.from, m.body]), [['staff', 'Can you tell us which side of the lot?'], ['you', 'North side']]);
+  assert.equal((await thread('bad')).status, 400);
+  assert.equal((await thread('DG-ZZZZZ')).status, 404);
+  assert.equal((await handleDumpingMessages(new Request('http://x/m?code=DG-ABCDE'), mk({ hits: 999 }))).status, 429);
+
+  const staffView = await handleAdminDumpingMessages(new Request(`http://x/a?id=${id}`, { headers: auth }), repo, opt);
+  assert.deepEqual((await staffView.json()).messages.map((m) => m.from), ['staff', 'reporter']);
+  assert.equal((await handleAdminDumpingMessages(new Request(`http://x/a?id=${id}`), repo, opt)).status, 401);
+  assert.equal((await handleAdminDumpingMessages(new Request('http://x/a?id=nope', { headers: auth }), repo, opt)).status, 400);
+
+  repo.state.msgs.length = 0;
+  for (let i = 0; i < MAX_MESSAGES; i++) repo.state.msgs.push({ from_staff: true, body: 'n', created_at: 'now' });
+  assert.equal((await send({ id, body: 'one more' })).status, 409);
+  assert.equal((await reply({ code: 'DG-ABCDE', body: 'one more' })).status, 409);
 });

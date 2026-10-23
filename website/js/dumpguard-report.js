@@ -39,7 +39,7 @@
   function addLocationButton() {
     var where = $('rwhere');
     var msg = h('p', { class: 'sm', id: 'rpoint', 'aria-live': 'polite' });
-    var btn = h('button', { class: 'btn', type: 'button', style: 'border:1px solid #cbd5e1;padding:10px 22px;margin-top:10px' }, 'Use my location');
+    var btn = h('button', { class: 'btn ghost', type: 'button', style: 'margin-top:10px' }, 'Use my location');
     if (!navigator.geolocation) return;
     btn.addEventListener('click', function () {
       msg.className = 'sm'; msg.textContent = 'Finding your location...';
@@ -158,7 +158,49 @@
       var b = r.body, d = function (iso) { return new Date(iso).toLocaleDateString(DG.lang() === 'es' ? 'es-US' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' }); };
       out.appendChild(h('div', { class: 'item' }, h('b', {}, b.code + ': ' + (STATUS[b.status] || b.status)),
         h('small', {}, 'Filed ' + d(b.created_at) + (b.updated_at !== b.created_at ? ', last update ' + d(b.updated_at) : ''))));
+      showThread(code, out);
     }).catch(function () { clear(out).appendChild(h('p', { class: 'err' }, 'Could not reach the server. Try again.')); });
+  }
+  // ---- messages from officials ----
+  function when(iso) { return new Date(iso).toLocaleString(DG.lang() === 'es' ? 'es-US' : 'en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }); }
+  function showThread(code, out) {
+    DG.api.get('/dumping/messages?code=' + encodeURIComponent(code)).then(function (r) {
+      if (r.status !== 200 || !r.body.messages.length) return;
+      var list = r.body.messages, box = h('div', { class: 'thread', 'aria-live': 'polite' });
+      out.appendChild(h('h4', {}, 'Messages from officials'));
+      list.forEach(function (m) {
+        box.appendChild(h('div', { class: 'msg ' + (m.from === 'staff' ? 'in' : 'out') },
+          h('small', {}, (m.from === 'staff' ? 'Officials' : 'You') + ' - ' + when(m.at)), h('p', {}, m.body)));
+      });
+      out.appendChild(box);
+      var text = h('textarea', { rows: '3', maxlength: '500', 'aria-label': 'Your reply', placeholder: 'Write a reply. Please do not include your name or phone number.' });
+      var err = h('p', { class: 'err', 'aria-live': 'polite' });
+      var send = h('button', { class: 'btn dark', type: 'button' }, 'Send reply');
+      send.addEventListener('click', function () {
+        var body = text.value.trim();
+        if (!body) { err.textContent = 'Write a reply first.'; return; }
+        err.textContent = ''; send.disabled = true;
+        DG.api.post('/dumping/reply', { code: code, body: body }).then(function (res) {
+          send.disabled = false;
+          if (res.status === 201) { lookup(code); return; }
+          err.textContent = res.status === 429 ? 'Too many replies. Try again later.' : res.status === 409 ? 'This conversation is full.' : 'Could not send the reply. Try again.';
+        }).catch(function () { send.disabled = false; err.textContent = 'Could not reach the server.'; });
+      });
+      out.appendChild(text); out.appendChild(h('div', { class: 'row tight' }, send)); out.appendChild(err);
+      out.appendChild(h('p', { class: 'sm' }, 'Your replies are anonymous and only officials can read them.'));
+    }).catch(function () { /* the status above is still shown */ });
+  }
+  // Flag saved reports where officials wrote last, so people know to open them.
+  function markReplies(box, list) {
+    list.slice(0, 5).forEach(function (x, i) {
+      DG.api.get('/dumping/messages?code=' + encodeURIComponent(x.code)).then(function (r) {
+        if (r.status !== 200 || !r.body.messages.length) return;
+        var last = r.body.messages[r.body.messages.length - 1];
+        if (last.from !== 'staff') return;
+        var row = box.querySelectorAll('.li')[i];
+        if (row) row.appendChild(h('span', { class: 'msgmark new' }, 'New message'));
+      }).catch(function () {});
+    });
   }
   function renderMine() {
     var box = clear($('tmine')), list = saved();
@@ -168,6 +210,7 @@
       box.appendChild(h('div', { class: 'li', role: 'button', tabindex: '0', onclick: function () { $('tcode').value = x.code; lookup(x.code); } },
         h('span', {}, x.code), h('small', {}, x.at)));
     });
+    markReplies(box, list);
   }
 
   function init() {

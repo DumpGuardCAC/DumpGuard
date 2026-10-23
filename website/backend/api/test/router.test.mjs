@@ -23,3 +23,14 @@ test('unknown path 404, bad method 405, preflight 204', async () => {
   assert.equal((await get('/api/v1/towns', { method: 'DELETE' })).status, 405);
   assert.equal((await get('/api/v1/towns', { method: 'OPTIONS' })).status, 204);
 });
+
+test('native app origins may POST, other origins stay read-only', async () => {
+  for (const origin of ['capacitor://localhost', 'https://localhost']) {
+    const r = await get('/api/v1/meta', { method: 'OPTIONS', headers: { origin } });
+    assert.equal(r.headers.get('access-control-allow-origin'), origin);
+    assert.match(r.headers.get('access-control-allow-methods'), /POST/);
+  }
+  const other = await get('/api/v1/meta', { method: 'OPTIONS', headers: { origin: 'https://evil.test' } });
+  assert.equal(other.headers.get('access-control-allow-origin'), '*');
+  assert.doesNotMatch(other.headers.get('access-control-allow-methods'), /POST/);
+});

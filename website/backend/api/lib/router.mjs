@@ -25,11 +25,18 @@ const streets = () =>
     JSON.parse(readFileSync(new URL('../data/woodbridge_street_index.json', import.meta.url), 'utf8')),
   ));
 
+// The Capacitor iOS and Android shells call this API from these origins.
+const NATIVE_ORIGINS = new Set(['capacitor://localhost', 'https://localhost']);
+
 function cors(res, request) {
-  const origin = process.env.ALLOWED_ORIGIN;
+  const configured = process.env.ALLOWED_ORIGIN;
+  const asked = request?.headers.get('origin');
+  const native = !configured && NATIVE_ORIGINS.has(asked) ? asked : null;
+  const origin = configured ?? native;
   const h = new Headers(res.headers);
   h.set('access-control-allow-origin', origin ?? '*');
   h.set('access-control-allow-methods', origin ? 'GET, POST, DELETE, OPTIONS' : 'GET, OPTIONS');
+  if (native) h.set('vary', 'Origin');
   h.set('access-control-allow-headers', 'content-type, if-none-match, authorization');
   h.set('x-content-type-options', 'nosniff');
   return new Response(res.body, { status: res.status, headers: h });

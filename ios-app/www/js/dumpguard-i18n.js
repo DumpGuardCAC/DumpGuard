@@ -37,6 +37,22 @@
     'Showing your town. Change it from the menu. If your town has more than one pickup area, choose yours below.': 'Se muestra su municipio. Cámbielo desde el menú. Si su municipio tiene más de una zona de recogida, elija la suya abajo.',
     'ZIP code (optional)': 'Código postal (opcional)', 'Look up': 'Buscar', 'Your town': 'Su municipio',
     'DumpGuard is a student-built project that makes waste disposal simple for residents and gives towns a clearer picture of where dumping happens.': 'DumpGuard es un proyecto hecho por estudiantes que simplifica el desecho de residuos para los residentes y le da a los municipios una imagen más clara de dónde se tira basura ilegalmente.',
+    // government area + messages
+    'Search an item, find your pickup days, or report illegal dumping in your town.': 'Busque un artículo, consulte sus días de recogida o reporte tiros ilegales de basura en su municipio.',
+    'Staff can see exact locations, photos and details, update report status, and message the people who reported.': 'El personal puede ver ubicaciones exactas, fotos y detalles, actualizar el estado de los reportes y enviar mensajes a quienes reportaron.',
+    'Staff dashboard': 'Panel del personal', 'Refresh': 'Actualizar', 'All reports': 'Todos los reportes', 'Select a report': 'Seleccione un reporte',
+    'Choose a point on the map or a row in the list to see the photo, update its status, or message the person who reported it.': 'Elija un punto en el mapa o una fila de la lista para ver la foto, actualizar su estado o enviar un mensaje a quien lo reportó.',
+    'Street map tiles could not load. Report points still show.': 'No se pudieron cargar los mosaicos del mapa. Los puntos de reporte siguen visibles.',
+    'Messages with the reporter': 'Mensajes con quien reportó', 'Loading messages...': 'Cargando mensajes...', 'Messages are not available right now.': 'Los mensajes no están disponibles en este momento.',
+    'No messages yet.': 'Aún no hay mensajes.', 'Send message': 'Enviar mensaje', 'Write a message first.': 'Escriba un mensaje primero.',
+    'This conversation is full.': 'Esta conversación está llena.', 'Sign in again.': 'Inicie sesión de nuevo.', 'Could not send the message. Try again.': 'No se pudo enviar el mensaje. Inténtelo de nuevo.',
+    'Ask a question or give an update. Keep it short.': 'Haga una pregunta o dé una novedad. Sea breve.', 'Message to the reporter': 'Mensaje para quien reportó',
+    'The reporter is anonymous. They see this message when they enter their tracking code on the Report page, and can answer there.': 'Quien reportó es anónimo. Verá este mensaje al escribir su código de seguimiento en la página Reportar, y podrá responder allí.',
+    'Reporter replied': 'Quien reportó respondió', 'Messaged': 'Con mensaje', 'New message': 'Mensaje nuevo',
+    'Messages from officials': 'Mensajes de los funcionarios', 'Send reply': 'Enviar respuesta', 'Write a reply first.': 'Escriba una respuesta primero.',
+    'Too many replies. Try again later.': 'Demasiadas respuestas. Inténtelo más tarde.', 'Could not send the reply. Try again.': 'No se pudo enviar la respuesta. Inténtelo de nuevo.',
+    'Your replies are anonymous and only officials can read them.': 'Sus respuestas son anónimas y solo los funcionarios pueden leerlas.',
+    'Write a reply. Please do not include your name or phone number.': 'Escriba una respuesta. No incluya su nombre ni su número de teléfono.', 'Your reply': 'Su respuesta',
     // identify (labels only; results are translated by dumpguard-api.js)
     'What are you': '¿Qué quiere', 'When is': '¿Cuándo es', 'my pickup?': 'mi recogida?', 'getting rid of?': 'desechar?', 'Your town': 'Su municipio', 'Search an item': 'Busque un artículo', 'Or use a photo': 'O use una foto',
     'Not sure. Pick a category': 'No está seguro. Elija una categoría',
@@ -112,6 +128,28 @@
     "Passwords don't match.": 'Las contraseñas no coinciden.', 'Enter your city or town.': 'Escriba su ciudad o municipio.',
   };
 
+  Object.assign(ES, {
+    'An all-in-one solution for waste management in NJ-06 towns': 'Una solución integral para el manejo de desechos en los municipios de NJ-06',
+    'Look up an item': 'Busque un artículo', 'Type an item or upload a photo to get disposal steps for your town.': 'Escriba un artículo o suba una foto para ver los pasos de desecho en su municipio.',
+    'Find pickup days': 'Encuentre los días de recogida', 'Trash, recycling, bulk and yard waste days, with a calendar export.': 'Días de basura, reciclaje, objetos grandes y desechos de jardín, con calendario exportable.',
+    'Report a dump anonymously and track it with a code.': 'Reporte un tiro de basura de forma anónima y sígalo con un código.',
+    "Local disposal websites are hard to follow. DumpGuard gives one answer per item, taken from each town's own website, for 38 towns in Middlesex and Monmouth counties.": 'Los sitios web locales sobre desechos son difíciles de seguir. DumpGuard da una respuesta por artículo, tomada del sitio web de cada municipio, para 38 municipios de los condados de Middlesex y Monmouth.',
+    'Your privacy': 'Su privacidad', 'Photos are stripped of location data. The public map shows an area only after three or more people report it.': 'A las fotos se les quitan los datos de ubicación. El mapa público muestra una zona solo después de que tres o más personas la reportan.',
+    'Showing your town. If it has more than one pickup area, choose yours below.': 'Se muestra su municipio. Si tiene más de una zona de recogida, elija la suya abajo.',
+    'Use this form only for illegal dumping: piles left on roadsides, lots or private property. For everyday disposal questions, use': 'Use este formulario solo para tiros ilegales de basura: montones dejados en calles, terrenos o propiedad privada. Para dudas cotidianas sobre desechos, use',
+    'Address or nearby landmark': 'Dirección o lugar de referencia cercano', 'How long it has been there, any hazards': 'Cuánto tiempo lleva ahí, posibles peligros',
+    'Enter the tracking code you got when you submitted.': 'Escriba el código de seguimiento que recibió al enviar.',
+    'Reported dumping': 'Tiros de basura reportados', 'Public locations are approximate. Photos and details are visible to staff only.': 'Las ubicaciones públicas son aproximadas. Las fotos y los detalles solo los ve el personal.',
+    'Government dashboard': 'Panel del gobierno', 'Location data removed from photo.': 'Se quitaron los datos de ubicación de la foto.',
+    "Built by students for the Congressional App Challenge, NJ-06. Pickup data comes from each town's own website.": 'Hecho por estudiantes para el Congressional App Challenge, NJ-06. Los datos de recogida vienen del sitio web de cada municipio.',
+    'couch, TV, battery': 'sofá, TV, batería'
+  });
+
+  Object.assign(ES, {
+    'What does DumpGuard do?': '¿Qué hace DumpGuard?',
+    'Find where an item goes': 'Encuentre adónde va un artículo', 'See your pickup days': 'Vea sus días de recogida', 'Report illegal dumping': 'Reportar tiro ilegal de basura'
+  });
+
   var TYPE_ES = {
     household: 'Basura doméstica', furniture: 'Muebles', appliances: 'Electrodomésticos', electronics: 'Electrónicos', tires: 'Llantas',
     construction: 'Escombros de construcción', yard: 'Desechos de jardín', hazardous: 'Desechos peligrosos', other: 'Otro',
@@ -133,8 +171,9 @@
     [/^(DG-[A-Z0-9]{5}): (Received|Noticed by officials|In progress|Resolved)$/, function (m) { return m[1] + ': ' + lit(m[2]); }],
     [/^(DG-[A-Z0-9]{5}) - (.+?) - (.*)$/, function (m) { return m[1] + ' - ' + lit(m[2]) + ' - ' + m[3]; }],
     [/^(.+): We are still finding verified pickup data for this area\. Check back soon\.$/, function (m) { return m[1] + ': ' + ES['We are still finding verified pickup data for this area. Check back soon.']; }],
-    [/^Reporting in: (.+?)\. Change the town from the menu\.$/, function (m) { return 'Reportando en: ' + m[1] + '. Cambie el municipio desde el menú.'; }],
+    [/^Reporting in (.+)$/, function (m) { return 'Reportando en ' + m[1]; }],
     [/^(.*) · filed (.+)$/, function (m) { return m[1] + ' · presentado ' + m[2]; }],
+    [/^(Staff|Reporter|Officials|You) - (.+)$/, function (m) { return ({ Staff: 'Personal', Reporter: 'Quien reportó', Officials: 'Funcionarios', You: 'Usted' })[m[1]] + ' - ' + m[2]; }],
     [/^No email is sent\. Your code is (\d+)\.$/, function (m) { return 'No se envía ningún correo. Su código es ' + m[1] + '.'; }],
   ];
 

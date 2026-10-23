@@ -66,5 +66,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>DumpGuard uses the camera to identify an item or photograph illegal dumping.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>DumpGuard uses a photo you choose to identify an item or report illegal dumping.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>DumpGuard uses your location to mark where illegal dumping happened.</string>
 </dict>
 </plist>

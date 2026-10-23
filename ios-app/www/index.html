@@ -3,14 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#f7fce8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="DumpGuard">
     <title>DumpGuard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Belleza&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="data:,">
+    <script src="js/native.js"></script>
 </head>
 <body>
 
@@ -35,48 +31,36 @@
             <path d="M0 290 C260 220 480 330 760 270 C1040 210 1240 320 1440 250 V400 H0Z" fill="#7cbd5a" opacity=".85"/>
             <path d="M0 350 C300 310 560 380 840 340 C1100 305 1280 370 1440 335 V400 H0Z" fill="#4e8b5e"/>
         </svg>
-        <div class="in"><h1 class="brand">DumpGuard</h1><p>Dispose of anything, the right way</p><a class="btn green" data-go="identify" href="#identify">Get started</a></div>
-        <div class="scroll">Scroll ↓</div>
+        <div class="in"><h1 class="brand">DumpGuard</h1><p>An all-in-one solution for waste management in NJ-06 towns</p><a class="btn green" data-go="identify" href="#identify">Get started</a></div>
     </header>
     <section class="s">
-        <div class="eyebrow">Start here</div>
-        <h2>What do you need?</h2>
-        <div class="steps doors">
-            <a class="step" data-go="identify" href="#identify"><div class="n">01</div><h3>Where does it go?</h3><p>Type an item or snap a photo. Get the exact steps for your town.</p></a>
-            <a class="step" data-go="pickup" href="#pickup"><div class="n">02</div><h3>When is pickup?</h3><p>Trash, recycling, bulk and yard waste days, with a calendar you can add to your phone.</p></a>
-            <a class="step" data-go="report" href="#report"><div class="n">03</div><h3>Report dumping</h3><p>Spot an illegal dump? Report it anonymously and help your community respond.</p></a>
-        </div>
-        <div class="stats cover">
-            <div class="stat"><b>38</b>Towns covered</div><div class="stat"><b>400+</b>Pickup schedules</div><div class="stat"><b>2</b>Languages</div>
-        </div>
-        <p class="lead">Local disposal websites are outdated and hard to follow. DumpGuard replaces the confusion with one clear answer, sourced from each town's own website.</p>
+        <h2>What does DumpGuard do?</h2>
+        <ul class="does">
+            <li><a data-go="identify" href="#identify">Find where an item goes</a></li>
+            <li><a data-go="pickup" href="#pickup">See your pickup days</a></li>
+            <li><a data-go="report" href="#report">Report illegal dumping</a></li>
+        </ul>
     </section>
-    <div class="tint-g"><section class="s">
-        <div class="eyebrow">For your community</div>
-        <h2>Cleaner towns, with<br>privacy built in.</h2>
-        <p class="lead">Photos have location data removed, and public hotspot maps only show coarse zones once several people report the same area.</p>
-    </section></div>
 </div>
 
 <!-- ===== IDENTIFY ===== -->
 <div class="view" id="v-identify"><section class="s page">
-    <div class="eyebrow">Identify</div><h2>What are you<br>getting rid of?</h2>
+    <h2>Look up an item</h2>
     <div class="tool">
         <div>
             <label for="q">Search an item</label>
-            <input id="q" placeholder="couch, TV, battery, 3D printed parts…">
+            <input id="q" placeholder="couch, TV, battery">
             <label>Or use a photo</label>
             <label class="drop" for="photo"><span id="droptxt">Take or upload a photo</span><input id="photo" type="file" accept="image/*" capture="environment" hidden></label>
             <div id="pick" style="display:none"><label for="cat">Not sure. Pick a category</label><select id="cat"></select></div>
         </div>
-        <div class="card" id="result" aria-live="polite"><p class="empty">Your disposal guide will appear here.</p></div>
+        <div class="card" id="result" aria-live="polite"></div>
     </div>
 </section></div>
 
 <!-- ===== PICKUP DAYS ===== -->
 <div class="view" id="v-pickup"><section class="s page">
-    <div class="eyebrow">Pickup days</div><h2>When is<br>my pickup?</h2>
-    <p class="lead">Showing your town. Change it from the menu. If your town has more than one pickup area, choose yours below.</p>
+    <h2>Pickup days</h2>
     <div class="tool">
         <div>
             <label for="zip">ZIP code (optional)</label>
@@ -88,52 +72,61 @@
 
 <!-- ===== REPORT ===== -->
 <div class="view" id="v-report"><section class="s page">
-    <div class="eyebrow">Report illegal dumping</div><h2>Saw something dumped<br>where it shouldn't be?</h2>
-    <p class="lead">This form is only for illegal dumping: piles left on roadsides, lots, or private property. For everyday disposal questions, use <a class="link" data-go="identify" href="#identify">Identify</a>.</p>
+    <h2>Report illegal dumping</h2>
     <div class="tool">
         <div>
             <p class="sm" id="rtownnote"></p>
-            <label for="rwhere">Street address or location</label><input id="rwhere" placeholder="e.g. 120 Oak Tree Rd, or behind the strip mall on Route 1">
+            <label for="rwhere">Street address or location</label><input id="rwhere" placeholder="Address or nearby landmark">
             <label for="rcat">Type of dumping</label><select id="rcat"></select>
             <label for="rdesc">Description</label><textarea id="rdesc" rows="3" placeholder="What was dumped and roughly how much?"></textarea>
-            <label for="rnote">Additional notes (optional)</label><textarea id="rnote" rows="2" placeholder="How long it's been there, how to access it, any hazards"></textarea>
+            <label for="rnote">Additional notes (optional)</label><textarea id="rnote" rows="2" placeholder="How long it has been there, any hazards"></textarea>
         </div>
         <div>
             <label>Photo (optional)</label>
             <label class="drop" for="rphoto" style="margin-top:0"><span id="rtxt">Take or upload a picture</span><input id="rphoto" type="file" accept="image/*" capture="environment" hidden></label>
-            <p class="ok" id="priv" style="display:none">Privacy check: location data removed from photo.</p>
+            <p class="ok" id="priv" style="display:none">Location data removed from photo.</p>
             <p class="sm">Please don't include people, license plates, or names in your photo or notes.</p><br>
             <button class="btn dark" id="send">Submit report</button>
             <p class="err" id="rerr" aria-live="polite"></p><p class="ok" id="sent" style="display:none" aria-live="polite"></p>
         </div>
     </div>
-    <div class="card" style="margin-top:50px"><h3>Track a report</h3><p class="sm">You get a tracking code when you submit, even without an account. Enter it to see whether officials have noticed or resolved the report.</p>
-        <div class="row2"><input id="tcode" aria-label="Tracking code" placeholder="e.g. DG-4F7K2"><button class="btn dark" id="tgo" type="button">Check</button></div>
+    <div class="card" style="margin-top:50px"><h3>Track a report</h3>
+        <div class="row2"><input id="tcode" aria-label="Tracking code" placeholder="DG-XXXXX"><button class="btn dark" id="tgo" type="button">Check</button></div>
         <div id="tres" style="margin-top:14px"></div><div id="tmine"></div></div>
 </section></div>
 
 <!-- ===== MAP ===== -->
 <div class="view" id="v-map"><section class="s page">
-    <div class="eyebrow">Community map</div><h2>Illegal dumping spots.</h2>
-    <p class="lead">See where illegal dumping has been reported and whether officials have addressed it. Public locations are approximate, and photos and details are only visible to local staff.</p>
+    <h2>Reported dumping</h2>
     <div class="row"><select id="mfilter" aria-label="Filter by type"></select>
         <select id="mtown" aria-label="Filter by town"></select><select id="mstat" aria-label="Status"><option value="">All statuses</option><option value="new">New</option><option value="noticed">Noticed</option><option value="progress">In progress</option><option value="resolved">Resolved</option></select>
-        <span class="sm" id="mcount"></span><button class="btn dark" id="gtoggle" style="padding:10px 22px">Government sign-in</button></div>
+        <span class="sm" id="mcount"></span></div>
         <div class="notice" id="mbanner">Street map tiles could not load. Report areas still show.</div>
     <div class="gwrap"><div class="mapbox" id="gmap"></div><div class="card" id="gpanel"></div></div>
     <div id="glist"></div>
 </section></div>
 
 <!-- ===== GOVERNMENT ===== -->
-<div class="view" id="v-gov"><div class="auth"><aside class="aside"><img src="images/logo.png" alt="" width="200"><h2>Dispose of anything,<br>the right way.</h2><p>Look up what goes where, find your pickup days, and report illegal dumping in your town.</p></aside><div class="card">
-    <h2>Government sign-in</h2><p class="sub">Staff can see exact locations, photos and details, and update report status.</p>
+<div class="view" id="v-gov"><div class="auth" id="gsign"><aside class="aside"><img src="images/logo.png" alt="" width="200"><h2>Government access</h2></aside><div class="card">
+    <h2>Government sign-in</h2>
     <label for="le">Username</label><input id="le" type="text" autocomplete="username" autocapitalize="none" spellcheck="false">
     <label for="lp">Password</label><input id="lp" type="password" autocomplete="current-password">
     <p class="err" id="lerr" aria-live="polite"></p>
     <button class="btn dark full" id="lgo">Sign in</button>
 </div></div></div>
+<section class="s page" id="gdash">
+        <div class="dbar"><div><h2>Government dashboard</h2></div>
+            <div class="row tight"><button class="btn" id="gvrefresh" type="button">Refresh</button><button class="btn" id="gvout" type="button">Sign out</button></div></div>
+        <div class="row"><select id="gftype" aria-label="Filter by type"></select><select id="gftown" aria-label="Filter by town"></select>
+            <select id="gfstat" aria-label="Status"><option value="">All statuses</option><option value="new">New</option><option value="noticed">Noticed</option><option value="progress">In progress</option><option value="resolved">Resolved</option></select>
+            <span class="sm" id="gvcount"></span></div>
+        <div class="notice" id="gvbanner">Street map tiles could not load. Report points still show.</div>
+        <div class="gwrap"><div class="mapbox" id="gvmap"></div><div class="panel" id="gvpanel"></div></div>
+        <h3 class="sect">All reports</h3>
+        <div id="gvlist"></div>
+</section>
+</div>
 
-<footer><b>DumpGuard</b>Cleaner towns, one item at a time.<p class="about">DumpGuard is a student-built project that makes waste disposal simple for residents and gives towns a clearer picture of where dumping happens.</p></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 <script>window.DUMPGUARD_API = "https://dumpguard.vercel.app/api/v1";</script>
@@ -141,14 +134,8 @@
 <script src="js/dumpguard-model.js"></script>
 <script src="js/dumpguard-report.js"></script>
 <script src="js/dumpguard-map.js"></script>
+<script src="js/dumpguard-gov.js"></script>
 <script src="js/dumpguard-i18n.js"></script>
 <script src="js/app.js"></script>
-
-<nav class="ios-tabs" aria-label="Primary navigation">
-    <a data-go="identify" href="#identify"><span aria-hidden="true">⌕</span><span>Identify</span></a>
-    <a data-go="pickup" href="#pickup"><span aria-hidden="true">▣</span><span>Pickup</span></a>
-    <a data-go="report" href="#report"><span aria-hidden="true">＋</span><span>Report</span></a>
-    <a data-go="map" href="#map"><span aria-hidden="true">⌖</span><span>Map</span></a>
-</nav>
 </body>
 </html>

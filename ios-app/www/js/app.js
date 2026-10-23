@@ -34,7 +34,6 @@
   window.addEventListener('scroll', navStyle);
 
   // ---- government sign-in ----
-  window.addEventListener('dg-gov-login', function () { go('gov'); });
   async function govLogin() {
     var e = $('lerr'), u = $('le').value.trim(), pw = $('lp').value;
     if (!u || !pw) return void (e.textContent = 'Enter the username and password.');
@@ -42,7 +41,7 @@
     var r = await DG.staffLogin(u, pw);
     $('lgo').disabled = false;
     if (!r.ok) return void (e.textContent = r.message);
-    e.textContent = ''; $('le').value = ''; $('lp').value = ''; go('map');
+    e.textContent = ''; $('le').value = ''; $('lp').value = '';
   }
   $('lgo').onclick = govLogin;
   $('lp').addEventListener('keydown', function (e) { if (e.key === 'Enter') govLogin(); });

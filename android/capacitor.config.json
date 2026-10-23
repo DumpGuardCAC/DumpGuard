@@ -1,5 +1,8 @@
 {
   "appId": "com.dumpguard.app",
   "appName": "DumpGuard",
-  "webDir": "www"
+  "webDir": "www",
+  "android": {
+    "path": "."
+  }
 }

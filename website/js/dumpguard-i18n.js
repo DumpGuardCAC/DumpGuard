@@ -146,8 +146,7 @@
   });
 
   Object.assign(ES, {
-    'What DumpGuard does': 'Qué hace DumpGuard',
-    'Disposal rules, pickup days and dumping reports for 38 Middlesex and Monmouth towns, in one place.': 'Reglas de desecho, días de recogida y reportes de tiros de basura para 38 municipios de Middlesex y Monmouth, en un solo lugar.',
+    'What does DumpGuard do?': '¿Qué hace DumpGuard?',
     'Find where an item goes': 'Encuentre adónde va un artículo', 'See your pickup days': 'Vea sus días de recogida', 'Report illegal dumping': 'Reportar tiro ilegal de basura'
   });
 

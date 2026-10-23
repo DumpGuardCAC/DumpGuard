@@ -20,7 +20,7 @@ jobs:
           java-version: '21'
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
       - run: npm ci
       - run: npx cap sync android
       - run: chmod +x android/gradlew && ./gradlew assembleDebug

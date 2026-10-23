@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DumpGuard</string>
+    <string name="title_activity_main">DumpGuard</string>
+    <string name="package_name">com.dumpguard.app</string>
+    <string name="custom_url_scheme">com.dumpguard.app</string>
+</resources>

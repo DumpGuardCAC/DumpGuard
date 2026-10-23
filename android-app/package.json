@@ -1,0 +1,13 @@
+{
+  "name": "dumpguard-android",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/android": "^8.5.3"
+  }
+}

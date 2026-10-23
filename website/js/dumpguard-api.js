@@ -8,7 +8,7 @@
     en: {
       empty: 'Your disposal guide will appear here.', searching: 'Searching...', none: 'No match. Pick a category instead, or try another word.',
       didyou: 'Other matches', recycling: 'Recycle', trash: 'Trash', special_dropoff: 'Special drop-off', hazard: 'Hazardous: do not put in the bin',
-      source: 'Source', verified: 'verified', gotit: 'Got it, counted anonymously', thanks: 'Thanks, counted anonymously.',
+      gotit: 'Got it, counted anonymously', thanks: 'Thanks, counted anonymously.',
       wrong: 'Report a wrong answer', send: 'Send', cancel: 'Cancel', whatwrong: 'What is wrong or missing?', sent: 'Thanks. A person will check it against the official source.',
       tooLong: 'Use 3 to 500 characters.',
       where: 'Where to take it', openNow: 'open now', closed: 'closed now', km: 'km', residents: 'Residents only',
@@ -23,7 +23,7 @@
     es: {
       empty: 'Su guía de desecho aparecerá aquí.', searching: 'Buscando...', none: 'Sin resultados. Elija una categoría o pruebe otra palabra.',
       didyou: 'Otras coincidencias', recycling: 'Reciclar', trash: 'Basura', special_dropoff: 'Punto de entrega especial', hazard: 'Peligroso: no lo ponga en el contenedor',
-      source: 'Fuente', verified: 'verificado', gotit: 'Listo, contar de forma anónima', thanks: 'Gracias, contado de forma anónima.',
+      gotit: 'Listo, contar de forma anónima', thanks: 'Gracias, contado de forma anónima.',
       wrong: 'Informar de una respuesta incorrecta', send: 'Enviar', cancel: 'Cancelar', whatwrong: '¿Qué está mal o falta?', sent: 'Gracias. Una persona lo revisará con la fuente oficial.',
       tooLong: 'Use de 3 a 500 caracteres.',
       where: 'Dónde llevarlo', openNow: 'abierto ahora', closed: 'cerrado ahora', km: 'km', residents: 'Solo residentes',
@@ -172,16 +172,12 @@
     var note = pick(r.note);
     if (note) el.appendChild(h('p', {}, note));
     if (r.check_local) el.appendChild(h('p', { class: 'notice', style: 'display:block' }, pick(r.message)));
-    if (r.source_url) {
-      el.appendChild(h('p', { class: 'sm' }, t('source') + ': ', h('a', { class: 'link', href: r.source_url, target: '_blank', rel: 'noopener noreferrer' }, hostOf(r.source_url)), ' (' + t('verified') + ' ' + r.last_verified + ')'));
-    }
     var holder = h('div', {});
     el.appendChild(holder);
     if (rule === 'special_dropoff' && state.town) loadFacilities(holder, it.material);
     el.appendChild(actions(it, rule));
     return el;
   }
-  function hostOf(u) { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return u; } }
 
   function actions(it, rule) {
     var row = h('div', { class: 'row' });
@@ -347,8 +343,6 @@
     if (b.calendar) {
       box.appendChild(h('p', {}, h('a', { class: 'btn dark', href: b.calendar.webcal, style: 'padding:10px 22px' }, t('calendar'))));
     }
-    var src = b.schedules[0];
-    if (src && src.source_url) box.appendChild(h('p', { class: 'sm' }, t('source') + ': ', h('a', { class: 'link', href: src.source_url, target: '_blank', rel: 'noopener noreferrer' }, hostOf(src.source_url))));
     var qs = ['town=' + encodeURIComponent(b.town.id)].concat(areas.map(function (a) { return 'area=' + encodeURIComponent(a); }));
     api.get('/alerts?' + qs.join('&')).then(function (r) {
       if (mine !== zipSeq) return;

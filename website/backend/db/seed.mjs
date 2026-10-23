@@ -83,16 +83,16 @@ try {
   let rules = 0;
   for (const it of db.items) {
     await client.query(
-      `INSERT INTO items (id, name_en, name_es, material, default_rule, likely_resin, hazard, varies_by_town,
-                          prep_en, prep_es, status, es_reviewed, updated_at)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12, now())
+      `INSERT INTO items (id, name_en, name_es, material, default_rule, hazard, varies_by_town,
+                          prep_en, prep_es, status, updated_at)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,'verified', now())
        ON CONFLICT (id) DO UPDATE SET
          name_en = EXCLUDED.name_en, name_es = EXCLUDED.name_es, material = EXCLUDED.material,
-         default_rule = EXCLUDED.default_rule, likely_resin = EXCLUDED.likely_resin, hazard = EXCLUDED.hazard,
+         default_rule = EXCLUDED.default_rule, hazard = EXCLUDED.hazard,
          varies_by_town = EXCLUDED.varies_by_town, prep_en = EXCLUDED.prep_en, prep_es = EXCLUDED.prep_es,
-         status = EXCLUDED.status, es_reviewed = EXCLUDED.es_reviewed, updated_at = now()`,
-      [it.id, it.name.en, it.name.es, it.material, it.default_rule, it.likely_resin ?? null, it.hazard,
-        it.varies_by_town, it.prep.en, it.prep.es, it.status, it.es_reviewed],
+         updated_at = now()`,
+      [it.id, it.name.en, it.name.es, it.material, it.default_rule, it.hazard,
+        it.varies_by_town, it.prep.en, it.prep.es],
     );
 
     await client.query('DELETE FROM item_aliases WHERE item_id = $1', [it.id]);
@@ -102,27 +102,25 @@ try {
     await client.query('DELETE FROM item_rules WHERE item_id = $1', [it.id]);
     for (const [region, r] of Object.entries(it.county_rules)) {
       await client.query(
-        `INSERT INTO item_rules (item_id, region_id, rule, note_en, note_es, status, source_url, last_verified, evidence, facility_key)
-         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`,
-        [it.id, region, r.rule, r.note?.en ?? '', r.note?.es ?? '', r.status, r.source ?? null,
-          r.last_verified ?? null, r.evidence ?? null, r.facility ?? null],
+        `INSERT INTO item_rules (item_id, region_id, rule, note_en, note_es, status, facility_key)
+         VALUES ($1,$2,$3,$4,$5,'verified',$6)`,
+        [it.id, region, r.rule, r.note?.en ?? '', r.note?.es ?? '', r.facility ?? null],
       );
       rules += 1;
     }
   }
 
   const towns = JSON.parse(readFileSync(townsPath, 'utf8'));
-  const retrieved = towns._meta.retrieved;
   for (const row of [...towns.facilities, ...towns.schedules, ...towns.zip_codes]) {
     if (!known.has(row.region)) throw new Error(`towns.json uses unknown region "${row.region}"`);
   }
   await client.query('DELETE FROM facilities');
   for (const f of towns.facilities) {
     await client.query(
-      `INSERT INTO facilities (key, region_id, name, address, zip, phone, hours, residents_only, accepts, notes_en, notes_es, status, source_url, last_verified, lat, lng, hours_struct)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9::material_t[],$10,$11,$12,$13,$14,$15,$16,$17)`,
+      `INSERT INTO facilities (key, region_id, name, address, zip, phone, hours, residents_only, accepts, notes_en, notes_es, status, lat, lng, hours_struct)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9::material_t[],$10,$11,'verified',$12,$13,$14)`,
       [f.key, f.region, f.name, f.address, f.zip, f.phone, f.hours, f.residents_only, f.accepts, f.notes_en, f.notes_es,
-        f.status, f.source_url, f.status === 'verified' ? f.last_verified ?? retrieved : null, f.lat ?? null, f.lng ?? null,
+        f.lat ?? null, f.lng ?? null,
         JSON.stringify(f.hours_struct ?? [])],
     );
   }
@@ -130,11 +128,10 @@ try {
   for (const s of towns.schedules) {
     await client.query(
       `INSERT INTO collection_schedules (region_id, stream, weekday, week_pattern, area_key, area_note, rrule, dtstart, overrides, dates,
-                                         notes_en, notes_es, status, source_url, last_verified)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9::jsonb,$10::jsonb,$11,$12,$13,$14,$15)`,
+                                         notes_en, notes_es, status)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9::jsonb,$10::jsonb,$11,$12,'verified')`,
       [s.region, s.stream, s.weekday, s.week_pattern, s.area_key ?? '', s.area_note, s.rrule ?? null, s.dtstart ?? null,
-        JSON.stringify(s.overrides ?? []), JSON.stringify(s.dates ?? []), s.notes_en, s.notes_es ?? '', s.status, s.source_url,
-        s.status === 'verified' ? s.last_verified ?? retrieved : null],
+        JSON.stringify(s.overrides ?? []), JSON.stringify(s.dates ?? []), s.notes_en, s.notes_es ?? ''],
     );
   }
   await client.query('DELETE FROM zip_codes');

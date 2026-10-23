@@ -59,8 +59,7 @@ export function buildIcs({ townName, rows, today, now = new Date(), subscribe = 
           `DTSTAMP:${stamp}`,
           `DTSTART;VALUE=DATE:${compact(d.date)}`,
           `SUMMARY:${esc(d.label ? `${eventTitle(row)}: ${d.label}` : eventTitle(row))}`,
-          `DESCRIPTION:${esc(`${row.notes_en}
-Source: ${row.source_url} (verified ${row.last_verified})`)}`,
+          `DESCRIPTION:${esc(row.notes_en)}`,
           'TRANSP:TRANSPARENT',
           ...alarm,
           'END:VEVENT',
@@ -71,7 +70,7 @@ Source: ${row.source_url} (verified ${row.last_verified})`)}`,
     const dates = occurrences(row, row.dtstart && row.dtstart > today ? row.dtstart : today, horizon);
     const regular = dates.filter((d) => !d.moved);
     const title = eventTitle(row);
-    const desc = `${row.notes_en}\nSource: ${row.source_url} (verified ${row.last_verified})`;
+    const desc = row.notes_en;
 
     if (regular.length) {
       const exdates = (row.overrides ?? []).map((o) => o.date).filter((d) => d >= regular[0].date);

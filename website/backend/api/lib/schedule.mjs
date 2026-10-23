@@ -91,8 +91,6 @@ const splitNote = (n) => ({
     area: r.area_key || null,
     note_en: r.notes_en,
     note_es: r.notes_es,
-    source_url: r.source_url,
-    last_verified: r.last_verified,
     rrule: r.rrule,
     dtstart: r.dtstart,
     overrides: r.overrides,

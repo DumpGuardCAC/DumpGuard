@@ -11,8 +11,6 @@ export function resolveRule(item, chain, facilitiesByKey) {
       level: levelOf(chain, region),
       region,
       note: r.note,
-      source_url: r.source_url,
-      last_verified: r.last_verified,
       check_local: false,
       message: null,
       facility: r.facility_key ? facilitiesByKey[r.facility_key] ?? null : null,
@@ -23,8 +21,6 @@ export function resolveRule(item, chain, facilitiesByKey) {
     level: 'default',
     region: null,
     note: { en: '', es: '' },
-    source_url: null,
-    last_verified: null,
     check_local: true,
     message: CHECK_WITH_TOWN,
     facility: null,
@@ -53,11 +49,9 @@ const publicItem = (it) => ({
   aliases: it.aliases,
   material: it.material,
   default_rule: it.default_rule,
-  likely_resin: it.likely_resin,
   hazard: it.hazard,
   varies_by_town: it.varies_by_town,
   prep: it.prep,
-  es_reviewed: it.es_reviewed,
 });
 
 const DISCLAIMER =

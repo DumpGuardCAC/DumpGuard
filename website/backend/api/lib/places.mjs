@@ -87,7 +87,7 @@ export function buildStreetLookup(index) {
       });
     }
   }
-  return { entries, year: index.year, source: index.source, last_verified: index.last_verified };
+  return { entries, year: index.year };
 }
 
 export function handleWoodbridgeStreets(request, lookup) {
@@ -107,9 +107,7 @@ export function handleWoodbridgeStreets(request, lookup) {
       towns: e.towns,
     })),
     note_en: 'Pass area_key as ?area= to the Woodbridge schedule. If a street appears in several zones, use the house-number range.',
-    source_url: lookup.source,
     year: lookup.year,
-    last_verified: lookup.last_verified,
   });
 }
 

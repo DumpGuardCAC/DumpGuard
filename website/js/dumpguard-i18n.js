@@ -145,6 +145,14 @@
     'couch, TV, battery': 'sofá, TV, batería'
   });
 
+  Object.assign(ES, {
+    'What DumpGuard does': 'Qué hace DumpGuard',
+    "Every town handles trash a little differently, and the town websites don't make it easy to find out how. DumpGuard puts the answers in one place for 38 towns in Middlesex and Monmouth counties.": 'Cada municipio maneja la basura de forma un poco distinta, y los sitios web locales no facilitan averiguarlo. DumpGuard reúne las respuestas en un solo lugar para 38 municipios de los condados de Middlesex y Monmouth.',
+    'Tells you where an item goes.': 'Le dice adónde va un artículo.', ' Type it in or snap a photo, and you get the steps for your town.': ' Escríbalo o tome una foto y obtendrá los pasos para su municipio.',
+    'Shows your pickup days': 'Le muestra sus días de recogida', ' for trash, recycling, bulk and yard waste, and lets you add them to your calendar.': ' de basura, reciclaje, objetos grandes y desechos de jardín, y le deja agregarlos a su calendario.',
+    'Lets you report illegal dumping': 'Le deja reportar tiros ilegales de basura', ' without an account. You get a code so you can check on it later.': ' sin cuenta. Recibe un código para consultarlo después.'
+  });
+
   var TYPE_ES = {
     household: 'Basura doméstica', furniture: 'Muebles', appliances: 'Electrodomésticos', electronics: 'Electrónicos', tires: 'Llantas',
     construction: 'Escombros de construcción', yard: 'Desechos de jardín', hazardous: 'Desechos peligrosos', other: 'Otro',

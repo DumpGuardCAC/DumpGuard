@@ -34,18 +34,14 @@
         <div class="in"><h1 class="brand">DumpGuard</h1><p>Where items go, when pickup is, and how to report dumping in 38 NJ towns.</p><a class="btn green" data-go="identify" href="#identify">Get started</a></div>
     </header>
     <section class="s">
-        <h2>What do you need?</h2>
-        <div class="steps doors">
-            <a class="step" data-go="identify" href="#identify"><h3>Look up an item</h3><p>Type an item or upload a photo to get disposal steps for your town.</p></a>
-            <a class="step" data-go="pickup" href="#pickup"><h3>Find pickup days</h3><p>Trash, recycling, bulk and yard waste days, with a calendar export.</p></a>
-            <a class="step" data-go="report" href="#report"><h3>Report dumping</h3><p>Report a dump anonymously and track it with a code.</p></a>
-        </div>
-        <p class="lead">Local disposal websites are hard to follow. DumpGuard gives one answer per item, taken from each town's own website, for 38 towns in Middlesex and Monmouth counties.</p>
+        <h2>What DumpGuard does</h2>
+        <p class="lead">Every town handles trash a little differently, and the town websites don't make it easy to find out how. DumpGuard puts the answers in one place for 38 towns in Middlesex and Monmouth counties.</p>
+        <ul class="does">
+            <li><a data-go="identify" href="#identify">Tells you where an item goes.</a> Type it in or snap a photo, and you get the steps for your town.</li>
+            <li><a data-go="pickup" href="#pickup">Shows your pickup days</a> for trash, recycling, bulk and yard waste, and lets you add them to your calendar.</li>
+            <li><a data-go="report" href="#report">Lets you report illegal dumping</a> without an account. You get a code so you can check on it later.</li>
+        </ul>
     </section>
-    <div class="tint-g"><section class="s">
-        <h2>Your privacy</h2>
-        <p class="lead">Photos are stripped of location data. The public map shows an area only after three or more people report it.</p>
-    </section></div>
 </div>
 
 <!-- ===== IDENTIFY ===== -->
@@ -135,7 +131,6 @@
 </section>
 </div>
 
-<footer><b>DumpGuard</b><p class="about">Built by students for the Congressional App Challenge, NJ-06. Pickup data comes from each town's own website.</p></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 <script src="js/dumpguard-api.js"></script>

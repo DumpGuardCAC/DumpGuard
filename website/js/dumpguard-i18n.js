@@ -147,10 +147,8 @@
 
   Object.assign(ES, {
     'What DumpGuard does': 'Qué hace DumpGuard',
-    "Every town handles trash a little differently, and the town websites don't make it easy to find out how. DumpGuard puts the answers in one place for 38 towns in Middlesex and Monmouth counties.": 'Cada municipio maneja la basura de forma un poco distinta, y los sitios web locales no facilitan averiguarlo. DumpGuard reúne las respuestas en un solo lugar para 38 municipios de los condados de Middlesex y Monmouth.',
-    'Tells you where an item goes.': 'Le dice adónde va un artículo.', ' Type it in or snap a photo, and you get the steps for your town.': ' Escríbalo o tome una foto y obtendrá los pasos para su municipio.',
-    'Shows your pickup days': 'Le muestra sus días de recogida', ' for trash, recycling, bulk and yard waste, and lets you add them to your calendar.': ' de basura, reciclaje, objetos grandes y desechos de jardín, y le deja agregarlos a su calendario.',
-    'Lets you report illegal dumping': 'Le deja reportar tiros ilegales de basura', ' without an account. You get a code so you can check on it later.': ' sin cuenta. Recibe un código para consultarlo después.'
+    'Disposal rules, pickup days and dumping reports for 38 Middlesex and Monmouth towns, in one place.': 'Reglas de desecho, días de recogida y reportes de tiros de basura para 38 municipios de Middlesex y Monmouth, en un solo lugar.',
+    'Find where an item goes': 'Encuentre adónde va un artículo', 'See your pickup days': 'Vea sus días de recogida', 'Report illegal dumping': 'Reportar tiro ilegal de basura'
   });
 
   var TYPE_ES = {

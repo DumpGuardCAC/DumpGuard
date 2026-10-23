@@ -1,7 +1,5 @@
-spec.md
-model/training/MODEL_CARD.md
-model/training/.venv/
-model/training/data/
+ml-waste-categorizer-model/training/.venv/
+ml-waste-categorizer-model/training/data/
 __pycache__/
 *.pyc
 *.log
@@ -33,3 +31,5 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.idea/

@@ -4,8 +4,8 @@ node_modules/
 !.env.example
 *.log
 __pycache__/
-ml-waste-categorizer-model/training/.venv/
-ml-waste-categorizer-model/training/data/
+ml-waste-categorizer-model/.venv/
+ml-waste-categorizer-model/data/
 android/www/
 android/build/
 android/app/build/

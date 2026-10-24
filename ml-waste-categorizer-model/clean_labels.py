@@ -179,5 +179,5 @@ def clean(a):
 
 if __name__ == "__main__":
     manifest = sys.argv[1] if len(sys.argv) > 1 else "data/manifest_all.csv"
-    weights = sys.argv[2] if len(sys.argv) > 2 else "../weights/best.weights.h5"
+    weights = sys.argv[2] if len(sys.argv) > 2 else "weights/best.weights.h5"
     clean(audit(manifest, weights))

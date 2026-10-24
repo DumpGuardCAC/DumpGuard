@@ -217,7 +217,7 @@
     }
     box.appendChild(card(results[0]));
     if (results.length > 1) {
-      box.appendChild(h('p', { class: 'sm', style: 'margin-top:18px' }, t('didyou')));
+      box.appendChild(h('p', { class: 'sm gap' }, t('didyou')));
       results.slice(1).forEach(function (it) {
         box.appendChild(h('div', { class: 'li', role: 'button', tabindex: '0', onclick: function () { renderResults([it].concat(results.filter(function (x) { return x !== it; }))); } },
           h('span', { class: 'dot', style: 'background:' + COLORS[it.resolved.rule] }), h('span', {}, pick(it.name)),
@@ -234,7 +234,7 @@
     if (it.hazard && rule === 'special_dropoff') el.appendChild(h('p', { class: 'err' }, t('hazard')));
     var note = pick(r.note);
     if (note) el.appendChild(h('p', {}, note));
-    if (r.check_local) el.appendChild(h('p', { class: 'notice', style: 'display:block' }, pick(r.message)));
+    if (r.check_local) el.appendChild(h('p', { class: 'notice show' }, pick(r.message)));
     var holder = h('div', {});
     el.appendChild(holder);
     if (rule === 'special_dropoff' && state.town) loadFacilities(holder, it.material);
@@ -245,7 +245,7 @@
   function actions(it, rule) {
     var row = h('div', { class: 'row' });
     var done = state.counted[it.id];
-    var count = h('button', { class: 'btn dark', type: 'button', style: 'padding:10px 22px' }, done ? t('thanks') : t('gotit'));
+    var count = h('button', { class: 'btn dark small', type: 'button' }, done ? t('thanks') : t('gotit'));
     count.disabled = !!done;
     count.addEventListener('click', function () {
       count.disabled = true;
@@ -253,7 +253,7 @@
       api.post('/events', { outcome: rule, material: it.material, town: state.town || undefined }).then(function () { count.textContent = t('thanks'); });
     });
     var slot = h('div', { style: 'flex-basis:100%' });
-    var wrong = h('button', { class: 'btn', type: 'button', style: 'border:1px solid #cbd5e1;padding:10px 22px' }, t('wrong'));
+    var wrong = h('button', { class: 'btn small outline', type: 'button' }, t('wrong'));
     wrong.addEventListener('click', function () { reportForm(slot, 'item_rule', { item: it.id }); });
     row.appendChild(count); row.appendChild(wrong); row.appendChild(slot);
     return row;
@@ -263,8 +263,8 @@
     clear(slot);
     var ta = h('textarea', { rows: '2', maxlength: '500', 'aria-label': t('whatwrong'), placeholder: t('whatwrong') });
     var msg = h('p', { class: 'sm' });
-    var send = h('button', { class: 'btn dark', type: 'button', style: 'padding:10px 22px' }, t('send'));
-    var cancel = h('button', { class: 'btn', type: 'button', style: 'padding:10px 22px' }, t('cancel'));
+    var send = h('button', { class: 'btn dark small', type: 'button' }, t('send'));
+    var cancel = h('button', { class: 'btn small', type: 'button' }, t('cancel'));
     cancel.addEventListener('click', function () { clear(slot); });
     send.addEventListener('click', function () {
       var body = { kind: kind, message: ta.value.trim() };
@@ -355,7 +355,7 @@
       if (b.town && b.town.id && b.town.id !== state.town) { state.town = b.town.id; try { localStorage.setItem('dg_town', state.town); } catch {} if ($('town')) $('town').value = state.town; runSearch(); window.dispatchEvent(new Event('dg-town')); }
       if (b.needs === 'town') {
         box.appendChild(h('p', {}, t('pickTown')));
-        b.towns.forEach(function (tw) { box.appendChild(h('button', { class: 'btn dark', type: 'button', style: 'margin:0 8px 8px 0;padding:10px 22px', onclick: function () { lookupZip(zip, tw.id, []); } }, tw.name)); });
+        b.towns.forEach(function (tw) { box.appendChild(h('button', { class: 'btn dark small town', type: 'button', onclick: function () { lookupZip(zip, tw.id, []); } }, tw.name)); });
         return;
       }
       if (b.needs === 'area') { renderAreas(box, b, zip, areas || []); return; }
@@ -404,14 +404,14 @@
       box.appendChild(h('div', { class: 'item' }, h('b', {}, STREAM(st)), h('small', {}, t('notListed'))));
     });
     if (b.calendar) {
-      box.appendChild(h('p', {}, h('a', { class: 'btn dark', href: b.calendar.webcal, style: 'padding:10px 22px' }, t('calendar'))));
+      box.appendChild(h('p', {}, h('a', { class: 'btn dark small', href: b.calendar.webcal }, t('calendar'))));
     }
     var qs = ['town=' + encodeURIComponent(b.town.id)].concat(areas.map(function (a) { return 'area=' + encodeURIComponent(a); }));
     api.get('/alerts?' + qs.join('&')).then(function (r) {
       if (mine !== zipSeq) return;
       var list = (r.body && r.body.announcements) || [];
       if (!list.length) return;
-      var note = h('div', { class: 'notice', style: 'display:block' }, h('b', {}, t('alerts') + ': '));
+      var note = h('div', { class: 'notice show' }, h('b', {}, t('alerts') + ': '));
       note.appendChild(document.createTextNode(list.map(function (a) { return pick(a.message); }).join(' ')));
       box.insertBefore(note, box.children[1] || null);
     }).catch(function () { });
@@ -758,7 +758,7 @@
   function renderMine() {
     var box = clear($('tmine')), list = saved();
     if (!list.length) return;
-    box.appendChild(h('p', { class: 'sm', style: 'margin-top:18px' }, 'Reports from this browser'));
+    box.appendChild(h('p', { class: 'sm gap' }, 'Reports from this browser'));
     list.forEach(function (x) {
       box.appendChild(h('div', { class: 'li', role: 'button', tabindex: '0', onclick: function () { $('tcode').value = x.code; lookup(x.code); } },
         h('span', {}, x.code), h('small', {}, x.at)));

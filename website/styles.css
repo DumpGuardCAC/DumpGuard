@@ -82,6 +82,7 @@ label{display:block;font-size:.72rem;letter-spacing:.15em;text-transform:upperca
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
+.btn.small{padding:10px 22px}.btn.outline{border:1px solid #cbd5e1}.btn.town{margin:0 8px 8px 0}p.sm.gap{margin-top:18px}.notice.show{display:block}
 .btn.ghost{border:1px solid #cbd5e1;margin-top:10px}
 #gdash{display:none}
 .dbar{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}

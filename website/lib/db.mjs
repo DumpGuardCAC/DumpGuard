@@ -91,7 +91,7 @@ async function seed() {
   for (const item of db.items) {
     for (const region of Object.keys(item.county_rules)) {
       if (!known.has(region)) {
-        console.error(`items_db.json uses region "${region}" (item ${item.id}) that seed.mjs does not define.`);
+        console.error(`items_db.json uses region "${region}" (item ${item.id}) that REGIONS in lib/db.mjs does not define.`);
         process.exit(1);
       }
     }

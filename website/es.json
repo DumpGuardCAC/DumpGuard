@@ -219,7 +219,9 @@
     "See your pickup days": "Vea sus días de recogida"
   },
   "misc": {
-    "in": " en "
+    "in": " en ",
+    "language": "Language / Idioma",
+    "spanish": "Español"
   },
   "tables": {
     "onOff": {

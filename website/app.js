@@ -1385,6 +1385,7 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
   let TABLES = {};
   let PLURALS = {};
   let RX = [];
+  let MISC = {};
 
   const lit = s => ES[s] || s;
 
@@ -1484,8 +1485,8 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
   const addToggle = () => {
     const ul = document.querySelector('#nav ul');
     if (!ul) return;
-    toggle = DG.h('select', { id: 'navlang', class: 'navlang', 'aria-label': 'Language / Idioma', onchange: () => DG.setLang(toggle.value) },
-      DG.h('option', { value: 'en', lang: 'en' }, 'English'), DG.h('option', { value: 'es', lang: 'es' }, 'Español'));
+    toggle = DG.h('select', { id: 'navlang', class: 'navlang', 'aria-label': MISC.language ?? 'Language', onchange: () => DG.setLang(toggle.value) },
+      DG.h('option', { value: 'en', lang: 'en' }, 'English'), DG.h('option', { value: 'es', lang: 'es' }, MISC.spanish ?? 'Spanish'));
     ul.insertBefore(DG.h('li', {}, toggle), ul.lastElementChild);
     syncToggle();
   };
@@ -1500,6 +1501,7 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
     ES = es.labels ?? {};
     TABLES = es.tables ?? {};
     PLURALS = es.plurals ?? {};
+    MISC = es.misc ?? {};
     RX = (es.patterns ?? []).map(p => [new RegExp(p.re), p.es]);
     init();
   });

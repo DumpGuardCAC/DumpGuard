@@ -12,7 +12,7 @@
     "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
   }],
   "rewrites": [{ "source": "/api/v1/:path*", "destination": "/api" }],
-  "functions": { "api/index.mjs": { "includeFiles": "data/streets.json", "maxDuration": 10 } },
+  "functions": { "api/index.mjs": { "includeFiles": "data/*.json", "maxDuration": 10 } },
   "crons": [
     { "path": "/api/v1/cron/purge", "schedule": "0 5 * * *" },
     { "path": "/api/v1/cron/reminders", "schedule": "0 22 * * *" }

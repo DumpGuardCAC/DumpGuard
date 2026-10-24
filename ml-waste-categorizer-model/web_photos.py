@@ -60,8 +60,8 @@ for cls, qs in Q.items():
             print(cls, q, pg, sum(oks), "calls", calls, flush=True)
             time.sleep(3.2)
 
-import csv, os, sys, hashlib
-import numpy as np, pandas as pd
+import csv, os, hashlib
+import pandas as pd
 from PIL import Image, ImageOps
 import clean_labels as zs
 

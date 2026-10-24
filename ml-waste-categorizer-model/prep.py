@@ -1,4 +1,4 @@
-import os, sys, json, glob, random, hashlib
+import os, json, glob, random, hashlib
 import pandas as pd
 from PIL import Image, ImageOps
 from concurrent.futures import ThreadPoolExecutor

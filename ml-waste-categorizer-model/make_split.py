@@ -1,10 +1,10 @@
-import numpy as np, pandas as pd, imagehash, random
+import os, random
+import numpy as np, pandas as pd, imagehash
 from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
 
 random.seed(0)
 np.random.seed(0)
-import os
 SUF = "" if int(os.environ.get("DG_S", 256)) == 256 else "_" + os.environ["DG_S"]
 df = pd.read_csv(f"data/manifest_all{SUF}.csv")
 

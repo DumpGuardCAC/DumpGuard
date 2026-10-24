@@ -1,4 +1,4 @@
-import os, subprocess, sys, zipfile
+import os, subprocess, zipfile
 from huggingface_hub import snapshot_download, hf_hub_download
 D = "data"
 os.makedirs(D, exist_ok=True)

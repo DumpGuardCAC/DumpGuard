@@ -1,6 +1,6 @@
 import os, sys, json
 os.environ["KERAS_BACKEND"] = "torch"
-import numpy as np, pandas as pd, torch, keras
+import numpy as np, torch, keras
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt

@@ -166,7 +166,7 @@ async function seed() {
     }
     await client.query('DELETE FROM zip_codes');
     for (const z of towns.zip_codes) {
-      await client.query('INSERT INTO zip_codes (zip, region_id, status) VALUES ($1,$2,$3)', [z.zip, z.region, 'needs_verification']);
+      await client.query('INSERT INTO zip_codes (zip, region_id, status) VALUES ($1,$2,$3)', [z.zip, z.region, 'verified']);
     }
 
     await client.query('DELETE FROM items WHERE id <> ALL($1::text[])', [db.items.map((i) => i.id)]);

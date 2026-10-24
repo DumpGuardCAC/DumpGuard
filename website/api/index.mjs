@@ -37,6 +37,7 @@ const ID_RE = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const validId = (s) => typeof s === 'string' && ID_RE.test(s);
 
 const noStore = { 'cache-control': 'no-store' };
+const isJson = (request) => (request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json');
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const hourStart = (now) => new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
 const clientKey = (request, salt, scope) =>
@@ -222,7 +223,7 @@ const EXTRA = [
   [/^Zone (\d) non-recyclable solid waste$/, (m) => `Zona ${m[1]}, desechos sólidos no reciclables`],
   [/^Zone (\d) brush and leaf$/, (m) => `Zona ${m[1]}, ramas y hojas`],
   [/^Streets listed on city trash collection map PDF \(e\.g\., (.*?),? and other (\w+)-list streets\)$/, (m) => `Calles del mapa de recogida de basura de la ciudad en PDF (p. ej., ${m[1]} y otras calles de la lista del ${DAYL[m[2]]})`],
-  [/^(Thursday|Friday) recycling district: street assignment via Recycling Districts PDF linked from Curbside page$/, (m) => `Distrito de reciclaje de los ${DAYL[m[1]]}${m[1] === 'Friday' ? '' : ''}: la asignación de calles está en el PDF de distritos de reciclaje de la página de recogida en la acera`],
+  [/^(Thursday|Friday) recycling district: street assignment via Recycling Districts PDF linked from Curbside page$/, (m) => `Distrito de reciclaje de los ${DAYL[m[1]]}: la asignación de calles está en el PDF de distritos de reciclaje de la página de recogida en la acera`],
   [/^Thursday recycling district: Thanksgiving makeup 2026-11-28 .*$/, () => 'Distrito de reciclaje de los jueves: reposición de Acción de Gracias el 2026-11-28 (nota de la página de recogida en la acera: "No Collection on Thanksgiving Day" / "will be on 11/28/26")'],
   [/^Friday recycling district: Christmas makeup 2026-12-26 .*$/, () => 'Distrito de reciclaje de los viernes: reposición de Navidad el 2026-12-26 (nota de la página de recogida en la acera: "No Collection on Christmas Day" / "will beon 12/26/26")'],
   [/^Compactor open \(Kenneth Avenue\)$/, () => 'Compactador abierto (Kenneth Avenue)'],
@@ -249,7 +250,7 @@ const EXTRA = [
   [/^Area (\d)$/, (m) => `Área ${m[1]}`],
   [/^Zone 1 - East of Union Ave: to Borough's Eastern Border$/, () => 'Zona 1 - al este de Union Ave hasta el límite oriental del municipio'],
   [/^Zone 2 - West of Union Ave: to Borough's Western Border$/, () => 'Zona 2 - al oeste de Union Ave hasta el límite occidental del municipio'],
-  [/^Zone ([ABCD]) garbage: curbside by 6:00 a\.m\.; use township-issued blue automated container$/, (m) => `Basura de la Zona ${m[1]}: ${ZB.replace('municipio', 'municipio')}`],
+  [/^Zone ([ABCD]) garbage: curbside by 6:00 a\.m\.; use township-issued blue automated container$/, (m) => `Basura de la Zona ${m[1]}: ${ZB}`],
   [/^Ocean Grove Zone ([BC]) garbage: manual collection; cans max 45 gallons, 50 lbs\. with contents$/, (m) => `Basura de Ocean Grove, Zona ${m[1]}: recogida manual; botes de máximo 45 galones y 50 lb con el contenido`],
   [/^Recycling sub-zone (\w\d): assign by 2026 Street Index PDF$/, (m) => `Subzona de reciclaje ${m[1]}: asigne según el PDF del índice de calles de 2026`],
   [/^Ocean Grove residential recycling: OG Zone C: south side of Main Ave to Inskip Ave; OG Zone B: north side of Main Ave to Lake Ave$/, () => 'Reciclaje residencial de Ocean Grove: Zona C de OG: lado sur de Main Ave hasta Inskip Ave; Zona B de OG: lado norte de Main Ave hasta Lake Ave'],
@@ -284,7 +285,7 @@ const WORDS = [
   [/^Grass clippings \(citywide\)$/, () => 'Césped cortado (toda la ciudad)'],
   [/^Leaf collection Apr 1-May 15 and Oct 15-Dec 31; quarterly yard waste the weeks of Mar 31, Jun 30, Sep 30, Dec 31 \(dates as printed on the city page\)\.$/, () => 'Recogida de hojas del 1 de abril al 15 de mayo y del 15 de octubre al 31 de diciembre; desechos de jardín trimestrales las semanas del 31 de marzo, 30 de junio, 30 de septiembre y 31 de diciembre (fechas según la página de la ciudad).'],
   [/^(North|South) Zone \((Mo|Tu) and (Th|Fr)\)$/, (m) => `Zona ${m[1] === 'North' ? 'Norte' : 'Sur'} (${DAY2[m[2]]} y ${DAY2[m[3]]})`],
-  [/^(North|South) Zone ([AB]): (.+) \((\w+)s\)$/, (m) => `Zona ${m[1] === 'North' ? 'Norte' : 'Sur'} ${m[2]}: ${street(m[3])} (${DAYS_PL[m[4]]})`],
+  [/^(North|South) Zone ([AB]): (.+) \((\w+)s\)$/, (m) => `Zona ${m[1] === 'North' ? 'Norte' : 'Sur'} ${m[2]}: ${street(m[3])} (${DAYS[m[4]]})`],
   [/^Recycling Section (\d+)(?: \((grass|leaf)\))?$/, (m) => `Sección de reciclaje ${m[1]}${m[2] ? ` (${m[2] === 'grass' ? 'césped' : 'hojas'})` : ''}`],
   [/^RD (\d) Zone (\d+): streets in (.+)$/, (m) => `RD ${m[1]} Zona ${m[2]}: calles en ${m[3]}`],
   [/^Zone (\d+A?) \(every other (Mo|Tu)\)$/, (m) => `Zona ${m[1]} (cada dos ${m[2] === 'Mo' ? 'lunes' : 'martes'})`],
@@ -296,7 +297,6 @@ const WORDS = [
   [/^Leaves$/, () => 'Hojas'],
 ];
 const DAYS = { Monday: 'lunes', Tuesday: 'martes', Wednesday: 'miércoles', Thursday: 'jueves', Friday: 'viernes' };
-const DAYS_PL = { Monday: 'lunes', Tuesday: 'martes', Wednesday: 'miércoles', Thursday: 'jueves', Friday: 'viernes' };
 const DAY2 = { Mo: 'lunes', Tu: 'martes', Th: 'jueves', Fr: 'viernes' };
 
 const PLACES = [
@@ -310,12 +310,11 @@ const PLACES = [
   [/^Cookman Ave and Lake Ave between Grand Ave and Heck St; all east and west streets between and including Ocean Ave and Kingsley St$/, 'Cookman Ave y Lake Ave entre Grand Ave y Heck St; todas las calles este y oeste entre Ocean Ave y Kingsley St, incluidas estas'],
   [/^All of Main Street; Central Business District bounded by Main St, Summerfield Ave, Lake Ave and Grand Ave$/, 'Toda Main Street; el distrito comercial central delimitado por Main St, Summerfield Ave, Lake Ave y Grand Ave'],
 ];
-const MES = { Jan: 'ene', Feb: 'feb', Mar: 'mar', Apr: 'abr', May: 'may', Jun: 'jun', Jul: 'jul', Aug: 'ago', Sep: 'sep', Oct: 'oct', Nov: 'nov', Dec: 'dic' };
 function street(s) {
   for (const [re, es] of PLACES) if (re.test(s)) return es;
   if (s === 'locate street in Green Booklet 2026 alphabetical list') return 'busque su calle en la lista alfabética del Folleto Verde 2026';
   const d = /^2026 dates: (.*)$/.exec(s);
-  if (d) return 'fechas de 2026: ' + d[1].replace(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/g, (m) => MES[m]);
+  if (d) return 'fechas de 2026: ' + d[1].replace(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/g, (m) => MONTHS[m]);
   return s;
 }
 
@@ -341,8 +340,7 @@ function toEs(text) {
 }
 
 function resolveRule(item, chain, facilitiesByKey) {
-  for (let i = 0; i < chain.length; i++) {
-    const region = chain[i];
+  for (const region of chain) {
     const r = item.rules[region];
     if (!r) continue;
     return {
@@ -641,7 +639,6 @@ async function handleCreateAlert(request, repo, { now = new Date(), token, salt 
   }
   const today = localParts(now).date;
   const startsOn = b?.starts_on ?? today;
-  const bad = (field, message) => json({ error: 'invalid_request', field, message }, 400, noStore);
   if (typeof b?.message_en !== 'string' || b.message_en.trim().length < 1 || b.message_en.length > 300) return bad('message_en', '1 to 300 characters.');
   if (b.message_es !== undefined && (typeof b.message_es !== 'string' || b.message_es.length > 300)) return bad('message_es', 'Up to 300 characters.');
   if (typeof b.ends_on !== 'string' || !DATE_RE.test(b.ends_on)) return bad('ends_on', 'Use YYYY-MM-DD.');
@@ -776,7 +773,7 @@ const jsonSched = (body, status = 200, extra = {}) =>
   new Response(JSON.stringify(body), {
     status,
     headers: {
-      'content-type': 'application/jsonSched; charset=utf-8',
+      'content-type': 'application/json; charset=utf-8',
       'cache-control': status === 400 || status === 404 ? 'no-store' : 'public, s-maxage=3600',
       ...extra,
     },
@@ -791,7 +788,7 @@ async function handleSchedule(request, zip, repo, { today = todayIso(), now = ne
   const areaParams = url.searchParams.getAll('area').flatMap((v) => v.split(',')).filter(Boolean);
   const wantIcs = url.searchParams.get('format') === 'ics';
   const subscribe = wantIcs && url.searchParams.get('subscribe') === '1';
-  if (url.searchParams.get('format') && !wantIcs && url.searchParams.get('format') !== 'jsonSched') {
+  if (url.searchParams.get('format') && !wantIcs && url.searchParams.get('format') !== 'json') {
     return jsonSched({ error: 'invalid_format' }, 400);
   }
 
@@ -812,8 +809,7 @@ async function handleSchedule(request, zip, repo, { today = todayIso(), now = ne
     return jsonSched({ error: 'no_schedule', town, message: 'No verified pickup schedule for this town yet.' }, 404);
   }
 
-  const groupOf = (key) => (key.includes(':') ? key.split(':')[0] : 'area');
-const splitNote = (n) => ({
+  const splitNote = (n) => ({
     label: n.split(':')[0].replace(/\s*\(.*\)$/, ''),
     description: n.includes(':') ? n.split(':').slice(1).join(':').trim() : '',
   });
@@ -877,8 +873,6 @@ const splitNote = (n) => ({
   return jsonSched({ zip, town, area, selected, schedules, calendar });
 }
 
-const MATERIAL_SET = new Set(['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard', 'other']);
-
 async function handleTowns(request, repo) {
   return jsonWithEtag(request, { towns: await repo.publishedTowns() });
 }
@@ -896,7 +890,7 @@ async function handleFacilities(request, repo, { now = new Date() } = {}) {
   const material = url.searchParams.get('material');
   const latP = url.searchParams.get('lat');
   const lngP = url.searchParams.get('lng');
-  if (material !== null && !MATERIAL_SET.has(material)) return badRequest('invalid_material', { allowed: [...MATERIAL_SET] });
+  if (material !== null && !MATERIALS.includes(material)) return badRequest('invalid_material', { allowed: MATERIALS });
 
   let here = null;
   if (latP !== null || lngP !== null) {
@@ -1014,12 +1008,12 @@ function validDate(s) {
 }
 
 async function handleBulkRequest(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!(request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json')) {
+  if (!isJson(request)) {
     return jsonNS({ error: 'unsupported_media_type', message: 'Send application/json.' }, 415);
   }
   if (Number(request.headers.get('content-length') ?? 0) > MAX_BODY_BYTES) return jsonNS({ error: 'too_large' }, 413);
 
-  const windowStart = new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
+  const windowStart = hourStart(now);
   const hits = await repo.hit(clientKey(request, salt, 'bulk-request'), windowStart);
   if (hits > BULK_LIMIT) {
     const retry = Math.ceil((Date.parse(windowStart) + 3_600_000 - now.getTime()) / 1000);
@@ -1108,10 +1102,8 @@ function handlePushKey(env = process.env) {
 }
 
 async function handleSubscribe(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!(request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json')) {
-    return json({ error: 'unsupported_media_type' }, 415, noStore);
-  }
-  const windowStart = new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
+  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
+  const windowStart = hourStart(now);
   if ((await repo.hit(clientKey(request, salt, 'push'), windowStart)) > PUSH_LIMIT) return json({ error: 'rate_limited' }, 429, noStore);
 
   const raw = await request.text();
@@ -1226,8 +1218,8 @@ const REPORT_MAX_BODY = 4 * 1024;
 const KINDS = ['item_rule', 'schedule', 'facility', 'scan', 'other'];
 
 async function handleReport(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!(request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json')) return json({ error: 'unsupported_media_type' }, 415, noStore);
-  const windowStart = new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
+  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
+  const windowStart = hourStart(now);
   if ((await repo.hit(clientKey(request, salt, 'reports'), windowStart)) > REPORT_LIMIT) return json({ error: 'rate_limited' }, 429, noStore);
 
   const raw = await request.text();
@@ -1278,8 +1270,8 @@ const estimatePounds = (rows) =>
   Math.round(rows.filter((r) => r.outcome !== 'trash').reduce((sum, r) => sum + r.n * (AVG_POUNDS[r.material] ?? AVG_POUNDS.other), 0));
 
 async function handleEvent(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!(request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json')) return json({ error: 'unsupported_media_type' }, 415, noStore);
-  const windowStart = new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
+  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
+  const windowStart = hourStart(now);
   if ((await repo.hit(clientKey(request, salt, 'events'), windowStart)) > EVENT_LIMIT) return json({ error: 'rate_limited' }, 429, noStore);
 
   const raw = await request.text();
@@ -1329,8 +1321,6 @@ const CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 
 const inNj = (lat, lng) => lat >= 38.9 && lat <= 41.4 && lng >= -75.6 && lng <= -73.8;
 const newCode = () => 'DG-' + Array.from({ length: 5 }, () => CODE_CHARS[randomInt(CODE_CHARS.length)]).join('');
-const ipOf = (request) => request.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown';
-const keyFor = (request, salt, scope) => createHash('sha256').update(`${salt}|${scope}|${ipOf(request)}`).digest('hex');
 
 function stripJpeg(buf) {
   if (buf.length < 4 || buf[0] !== 0xff || buf[1] !== 0xd8) return null;
@@ -1374,8 +1364,8 @@ async function censusGeocode(address, fetchFn = fetch) {
 const text = (v, min, max) => (typeof v === 'string' && v.trim().length >= min && v.trim().length <= max ? v.trim() : null);
 
 async function handleDumpingReport(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '', geocode = censusGeocode } = {}) {
-  if (!(request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json')) return json({ error: 'unsupported_media_type' }, 415, noStore);
-  if ((await repo.hit(keyFor(request, salt, 'dump-submit'), hourStart(now))) > SUBMIT_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
+  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
+  if ((await repo.hit(clientKey(request, salt, 'dump-submit'), hourStart(now))) > SUBMIT_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
   if (Number(request.headers.get('content-length') ?? 0) > DUMP_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
   const raw = await request.text();
   if (raw.length > DUMP_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
@@ -1424,7 +1414,7 @@ async function handleDumpingReport(request, repo, { now = new Date(), salt = pro
 }
 
 async function handleDumpingTrack(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if ((await repo.hit(keyFor(request, salt, 'dump-track'), hourStart(now))) > TRACK_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
+  if ((await repo.hit(clientKey(request, salt, 'dump-track'), hourStart(now))) > TRACK_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
   const code = (new URL(request.url).searchParams.get('code') ?? '').trim().toUpperCase();
   if (!CODE_RE.test(code)) return badRequest('invalid_code');
   const row = await repo.dumpByCode(code);
@@ -1449,10 +1439,11 @@ function buildMap(pointRows, townRows) {
     cells: [...cells.values()].filter((c) => c.n >= MIN_GROUP).map((c) => {
       const towns = [...c.towns];
       return {
-      lat: round((c.cy + 0.5) * CELL_DEG), lng: round((c.cx + 0.5) * CELL_DEG), radius_m: 350,
-      n: c.n, town: towns.length === 1 ? towns[0] : null, towns,
-      groups: [...c.joint].map(([k, n]) => ({ status: k.split('|')[0], type: k.split('|')[1], n })),
-    }; }),
+        lat: round((c.cy + 0.5) * CELL_DEG), lng: round((c.cx + 0.5) * CELL_DEG), radius_m: 350,
+        n: c.n, town: towns.length === 1 ? towns[0] : null, towns,
+        groups: [...c.joint].map(([k, n]) => ({ status: k.split('|')[0], type: k.split('|')[1], n })),
+      };
+    }),
     towns: townRows.map((t) => ({ town: t.region_id, name: t.name, counts: Object.fromEntries(STATUSES.map((s) => [s, t[s] ?? 0])) })),
   };
 }
@@ -1495,7 +1486,6 @@ async function handleAdminDumpingStatus(request, repo, { token, now = new Date()
 const readBody = async (request) => {
   try { return JSON.parse(await request.text()); } catch { return null; }
 };
-const cleanBody = (v) => (typeof v === 'string' && v.trim().length >= 1 && v.trim().length <= 500 ? v.trim() : null);
 
 async function handleAdminDumpingMessages(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   const denied = await staffOnly(request, repo, token, now, salt);
@@ -1513,7 +1503,7 @@ async function handleAdminDumpingMessage(request, repo, { token, now = new Date(
   const b = await readBody(request);
   if (!b) return json({ error: 'invalid_json' }, 400, noStore);
   if (typeof b.id !== 'string' || !UUID.test(b.id)) return badRequest('invalid_id');
-  const body = cleanBody(b.body);
+  const body = text(b.body, 1, 500);
   if (!body) return badRequest('invalid_message');
   if (!(await repo.dumpExists(b.id))) return json({ error: 'not_found' }, 404, noStore);
   if ((await repo.countMessages(b.id)) >= MAX_MESSAGES) return json({ error: 'thread_full' }, 409, noStore);
@@ -1522,7 +1512,7 @@ async function handleAdminDumpingMessage(request, repo, { token, now = new Date(
 }
 
 async function handleDumpingMessages(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if ((await repo.hit(keyFor(request, salt, 'dump-track'), hourStart(now))) > TRACK_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
+  if ((await repo.hit(clientKey(request, salt, 'dump-track'), hourStart(now))) > TRACK_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
   const code = (new URL(request.url).searchParams.get('code') ?? '').trim().toUpperCase();
   if (!CODE_RE.test(code)) return badRequest('invalid_code');
   const id = await repo.dumpIdByCode(code);
@@ -1533,12 +1523,12 @@ async function handleDumpingMessages(request, repo, { now = new Date(), salt = p
 
 async function handleDumpingReply(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   if (!(request.headers.get('content-type') ?? '').includes('application/json')) return json({ error: 'unsupported_media_type' }, 415, noStore);
-  if ((await repo.hit(keyFor(request, salt, 'dump-reply'), hourStart(now))) > REPLY_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
+  if ((await repo.hit(clientKey(request, salt, 'dump-reply'), hourStart(now))) > REPLY_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
   const b = await readBody(request);
   if (!b) return json({ error: 'invalid_json' }, 400, noStore);
   const code = typeof b.code === 'string' ? b.code.trim().toUpperCase() : '';
   if (!CODE_RE.test(code)) return badRequest('invalid_code');
-  const body = cleanBody(b.body);
+  const body = text(b.body, 1, 500);
   if (!body) return badRequest('invalid_message');
   const id = await repo.dumpIdByCode(code);
   if (!id) return json({ error: 'not_found' }, 404, noStore);

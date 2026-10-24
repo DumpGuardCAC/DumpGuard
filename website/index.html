@@ -18,7 +18,7 @@
 <body>
 
 <nav id="nav">
-    <a class="wordmark" data-go="home" href="#home" aria-label="DumpGuard home"><img src="icon.png" alt="DumpGuard" height="44" style="height:44px;width:auto;display:block"></a>
+    <a class="wordmark" data-go="home" href="#home" aria-label="DumpGuard home"><img src="icon.png" alt="DumpGuard" height="44"></a>
     <ul>
         <li class="lnk"><a data-go="home" href="#home">Home</a></li>
         <li class="lnk"><a data-go="identify" href="#identify">Identify</a></li>
@@ -65,7 +65,7 @@
             <input id="q" placeholder="couch, TV, battery">
             <label>Or use a photo</label>
             <label class="drop" for="photo"><span id="droptxt">Take or upload a photo</span><input id="photo" type="file" accept="image/*" capture="environment" hidden></label>
-            <div id="pick" style="display:none"><label for="cat">Not sure. Pick a category</label><select id="cat"></select></div>
+            <div id="pick"><label for="cat">Not sure. Pick a category</label><select id="cat"></select></div>
         </div>
         <div class="card" id="result" aria-live="polite"></div>
     </div>
@@ -94,16 +94,16 @@
         </div>
         <div>
             <label>Photo (optional)</label>
-            <label class="drop" for="rphoto" style="margin-top:0"><span id="rtxt">Take or upload a picture</span><input id="rphoto" type="file" accept="image/*" capture="environment" hidden></label>
-            <p class="ok" id="priv" style="display:none">Location data removed from photo.</p>
+            <label class="drop flush" for="rphoto"><span id="rtxt">Take or upload a picture</span><input id="rphoto" type="file" accept="image/*" capture="environment" hidden></label>
+            <p class="ok" id="priv">Location data removed from photo.</p>
             <p class="sm">Please don't include people, license plates, or names in your photo or notes.</p><br>
             <button class="btn dark" id="send">Submit report</button>
-            <p class="err" id="rerr" aria-live="polite"></p><p class="ok" id="sent" style="display:none" aria-live="polite"></p>
+            <p class="err" id="rerr" aria-live="polite"></p><p class="ok" id="sent" aria-live="polite"></p>
         </div>
     </div>
-    <div class="card" style="margin-top:50px"><h3>Track a report</h3>
+    <div class="card track"><h3>Track a report</h3>
         <div class="row2"><input id="tcode" aria-label="Tracking code" placeholder="DG-XXXXX"><button class="btn dark" id="tgo" type="button">Check</button></div>
-        <div id="tres" style="margin-top:14px"></div><div id="tmine"></div></div>
+        <div id="tres"></div><div id="tmine"></div></div>
 </section></div>
 
 <div class="view" id="v-map"><section class="s page">

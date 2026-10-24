@@ -8,6 +8,11 @@ h1,h2,h3{font-family:Belleza,Georgia,serif;font-weight:400;margin:0}
 nav{position:fixed;top:0;left:0;right:0;z-index:1100;display:flex;justify-content:space-between;align-items:center;padding:calc(18px + env(safe-area-inset-top,0px)) 5vw 18px;transition:.3s;color:var(--slate);background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.07)}
 nav.solid{background:#fff;color:var(--slate);box-shadow:0 1px 0 rgba(0,0,0,.07)}
 .wordmark{font-family:Belleza,serif;font-size:1.7rem;letter-spacing:.04em!important;text-transform:none!important;border:0!important;padding:0!important}
+.wordmark img{height:44px;width:auto;display:block}
+#pick,#priv,#sent{display:none}
+.drop.flush{margin-top:0}
+.card.track{margin-top:50px}
+#tres{margin-top:14px}
 nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center}
 nav a{color:inherit;text-decoration:none;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding-bottom:4px;border-bottom:2px solid transparent}
 nav a.act{border-color:var(--green)}

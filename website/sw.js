@@ -1,6 +1,6 @@
-var CACHE = 'dumpguard-v3';
+var CACHE = 'dumpguard-v4';
 var SHELL = [
-  '/', '/index.html', '/styles.css', '/app.js', '/manifest.json', '/logo.png', '/tf.min.js',
+  '/', '/index.html', '/styles.css', '/app.js', '/manifest.json', '/icon.png', '/tf.min.js',
   '/model.json', '/group1-shard1of2.bin', '/group1-shard2of2.bin'
 ];
 

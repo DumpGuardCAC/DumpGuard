@@ -51,7 +51,7 @@
   }
   function build() {
     var g = el('div', 'gate'); g.id = 'installgate'; g.setAttribute('role', 'dialog'); g.setAttribute('aria-modal', 'true'); g.setAttribute('aria-labelledby', 'gate-h');
-    var logo = el('img', 'gate-logo'); logo.src = 'logo.png'; logo.alt = 'DumpGuard'; logo.height = 72;
+    var logo = el('img', 'gate-logo'); logo.src = 'icon.png'; logo.alt = 'DumpGuard'; logo.height = 72;
     var h = el('h1', '', t.h); h.id = 'gate-h';
     g.appendChild(logo); g.appendChild(h); g.appendChild(el('p', 'gate-lead', t.lead));
     if (inApp) g.appendChild(el('p', 'gate-warn', t.safari));

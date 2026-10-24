@@ -431,7 +431,25 @@
     if ($('cat')) $('cat').addEventListener('change', function () { if ($('cat').value) showMaterial($('cat').value); });
   }
 
+  var dumpTypes = {
+    household: 'Household trash', furniture: 'Furniture', appliances: 'Appliances', electronics: 'Electronics', tires: 'Tires',
+    construction: 'Construction debris', yard: 'Yard waste', hazardous: 'Hazardous waste', other: 'Other',
+  };
+  var statusColor = { new: '#c0392b', noticed: '#a86b0a', progress: '#1f5fa8', resolved: '#2f7a28' };
+  function when(iso) {
+    return new Date(iso).toLocaleString(state.lang === 'es' ? 'es-US' : 'en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  }
+  function tileMap(id, onTilesFail) {
+    var map = L.map(id, { scrollWheelZoom: false }).setView([40.45, -74.25], 10);
+    var failed = 0;
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map)
+      .on('tileerror', function () { if (++failed > 3) onTilesFail(); });
+    if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe($(id));
+    return map;
+  }
+
   window.DumpGuard = {
+    dumpTypes: dumpTypes, statusColor: statusColor, when: when, tileMap: tileMap,
     api: api, request: request, setTown: setTown, showMaterial: showMaterial, showCategoryPicker: showCategoryPicker,
     h: h, clear: clear, lang: function () { return state.lang; }, setLang: setLang, townId: function () { return state.town; }, townName: function () { return townName(state.town); },
   };
@@ -701,7 +719,7 @@
       showThread(code, out);
     }).catch(function () { clear(out).appendChild(h('p', { class: 'err' }, 'Could not reach the server. Try again.')); });
   }
-  function when(iso) { return new Date(iso).toLocaleString(DG.lang() === 'es' ? 'es-US' : 'en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }); }
+  var when = DG.when;
   function showThread(code, out) {
     DG.api.get('/dumping/messages?code=' + encodeURIComponent(code)).then(function (r) {
       if (r.status !== 200 || !r.body.messages.length) return;
@@ -769,12 +787,9 @@
   var h = DG.h, clear = DG.clear;
   var $ = function (id) { return document.getElementById(id); };
 
-  var TYPES = {
-    household: 'Household trash', furniture: 'Furniture', appliances: 'Appliances', electronics: 'Electronics', tires: 'Tires',
-    construction: 'Construction debris', yard: 'Yard waste', hazardous: 'Hazardous waste', other: 'Other',
-  };
+  var TYPES = DG.dumpTypes;
   var STATUS = { new: 'New', noticed: 'Noticed', progress: 'In progress', resolved: 'Resolved' };
-  var COLOR = { new: '#c0392b', noticed: '#a86b0a', progress: '#1f5fa8', resolved: '#2f7a28' };
+  var COLOR = DG.statusColor;
   var TOWN_AT = {
     edison: [40.5187, -74.4121], 'new-brunswick': [40.4862, -74.4518], woodbridge: [40.5576, -74.2846],
     'long-branch': [40.3043, -73.9924], 'asbury-park': [40.2204, -74.0121],
@@ -906,13 +921,8 @@
   function init() {
     if (!$('gmap')) return;
     $('mbanner').style.display = 'none';
-    map = L.map('gmap', { scrollWheelZoom: false }).setView(REGION, 10);
+    map = DG.tileMap('gmap', function () { $('mbanner').style.display = 'block'; });
     addLegend();
-    var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
-    var failed = 0;
-    tiles.on('tileerror', function () {
-      if (++failed > 3) { $('mbanner').textContent = 'Street map tiles could not load. Report areas still show.'; $('mbanner').style.display = 'block'; }
-    });
     layer = L.layerGroup().addTo(map);
 
     ['mfilter', 'mstat'].forEach(function (id) { $(id).addEventListener('change', redraw); });
@@ -925,7 +935,6 @@
     });
     window.addEventListener('dg-town', function () { if (pub) followTown(); });
     window.addEventListener('dg-lang', function () { if (layer) redraw(); });
-    if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe($('gmap'));
   }
   window.addEventListener('load', init);
 })();
@@ -938,12 +947,9 @@
   var h = DG.h, clear = DG.clear;
   var $ = function (id) { return document.getElementById(id); };
 
-  var TYPES = {
-    household: 'Household trash', furniture: 'Furniture', appliances: 'Appliances', electronics: 'Electronics', tires: 'Tires',
-    construction: 'Construction debris', yard: 'Yard waste', hazardous: 'Hazardous waste', other: 'Other',
-  };
+  var TYPES = DG.dumpTypes;
   var STATUS = { new: 'New', noticed: 'Noticed', progress: 'In progress', resolved: 'Resolved' };
-  var COLOR = { new: '#c0392b', noticed: '#a86b0a', progress: '#1f5fa8', resolved: '#2f7a28' };
+  var COLOR = DG.statusColor;
 
   var token = null, reports = [], towns = [], selected = null, map = null, layer = null;
 
@@ -956,7 +962,7 @@
   function jsonPost(path, data) {
     return authFetch(path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) });
   }
-  function when(iso) { return new Date(iso).toLocaleString(DG.lang() === 'es' ? 'es-US' : 'en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }); }
+  var when = DG.when;
   function townName(id) { var t = towns.filter(function (x) { return x.town === id; })[0]; return t ? t.name : id; }
 
   function filters() { return { type: $('gftype').value, town: $('gftown').value, status: $('gfstat').value }; }
@@ -974,12 +980,8 @@
 
   function ensureMap() {
     if (map) return;
-    map = L.map('gvmap', { scrollWheelZoom: false }).setView([40.45, -74.25], 10);
-    var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
-    var failed = 0;
-    tiles.on('tileerror', function () { if (++failed > 3) $('gvbanner').style.display = 'block'; });
+    map = DG.tileMap('gvmap', function () { $('gvbanner').style.display = 'block'; });
     layer = L.layerGroup().addTo(map);
-    if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe($('gvmap'));
   }
   function drawMap(refit) {
     layer.clearLayers();

@@ -2,29 +2,13 @@ import os, json, glob, random, hashlib
 import pandas as pd
 from PIL import Image, ImageOps
 from concurrent.futures import ThreadPoolExecutor
+from common import square_crop
 
 random.seed(0)
 D = "data"
 S = int(os.environ.get("DG_S", 256))
 OUT = "data/crops" if S == 256 else f"data/crops{S}"
 SUF = "" if S == 256 else f"_{S}"
-CLASSES = ["rigid_plastic", "soft_plastic_foam", "cardboard_paper", "metal", "glass", "ewaste_hazard", "no_object"]
-rows = []
-
-
-def square_crop(im, box=None, pad=1.2, min_side=96):
-    W, H = im.size
-    if box is None:
-        s = min(W, H)
-        cx, cy = W / 2, H / 2
-    else:
-        x, y, w, h = box
-        s = max(max(w, h) * pad, min_side)
-        s = min(s, min(W, H))
-        cx, cy = x + w / 2, y + h / 2
-    x0 = min(max(cx - s / 2, 0), W - s)
-    y0 = min(max(cy - s / 2, 0), H - s)
-    return im.crop((int(x0), int(y0), int(x0 + s), int(y0 + s))).resize((S, S), Image.BICUBIC)
 
 
 def save(job):
@@ -39,10 +23,10 @@ def save(job):
             im = im.convert("RGB")
             if min(im.size) < 48:
                 return None
-            c = square_crop(im, box)
+            c = square_crop(im, box, S)
             os.makedirs(os.path.dirname(outp), exist_ok=True)
             c.save(outp, quality=92)
-        except Exception as e:
+        except Exception:
             return None
     return dict(path=outp, cls=cls, source=src, group=f"{src}:{group}")
 

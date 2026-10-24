@@ -1,6 +1,6 @@
 import os, sys, subprocess, shutil
 os.environ["KERAS_BACKEND"] = "tensorflow"
-import keras, tensorflow as tf
+import keras
 
 W, OUTDIR = sys.argv[1], sys.argv[2]
 IMG = int(os.environ.get("DG_IMG", 224))

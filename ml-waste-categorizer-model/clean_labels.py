@@ -1,11 +1,12 @@
 import os, sys, hashlib
+from collections import Counter
 os.environ["KERAS_BACKEND"] = "torch"
 import torch, numpy as np, pandas as pd
 from PIL import Image, ImageOps
 import keras
 from transformers import CLIPModel, CLIPProcessor, OwlViTProcessor, OwlViTForObjectDetection
+from common import CLASSES, square_crop
 
-CLASSES = ["rigid_plastic", "soft_plastic_foam", "cardboard_paper", "metal", "glass", "ewaste_hazard", "no_object"]
 PROMPTS = {
     "rigid_plastic": ["a photo of a rigid plastic bottle", "a photo of a hard plastic container or cup", "a photo of a plastic jug or tub"],
     "soft_plastic_foam": ["a photo of a plastic bag or plastic wrapper", "a photo of crumpled plastic film", "a photo of styrofoam or foam packaging"],
@@ -115,15 +116,6 @@ def audit(manifest, weights):
     return df
 
 
-def crop(im, b, pad=1.2, min_side=96):
-    W, H = im.size
-    x, y, w, h = b
-    s = min(max(max(w, h) * pad, min_side), min(W, H))
-    cx, cy = x + w / 2, y + h / 2
-    x0 = min(max(cx - s / 2, 0), W - s); y0 = min(max(cy - s / 2, 0), H - s)
-    return im.crop((int(x0), int(y0), int(x0 + s), int(y0 + s))).resize((S, S), Image.BICUBIC)
-
-
 def orig(r):
     base = r.group.split(":", 1)[1]
     if r.source == "oi":
@@ -136,7 +128,7 @@ def any_object(im):
 
 
 def clean(a):
-    out, stats = [], {}
+    out, stats = [], Counter()
     n = 0
     for r in a.itertuples():
         n += 1
@@ -146,34 +138,39 @@ def clean(a):
             out.append(dict(path=r.path, cls=r.cls, source=r.source, group=r.group)); continue
         if r.source in ("taco", "trashnet", "garbage12"):
             if r.action == "drop":
-                stats["drop_" + r.source] = stats.get("drop_" + r.source, 0) + 1; continue
+                stats["drop_" + r.source] += 1
+                continue
             c = r.new_cls
             if c != r.cls:
-                stats["relabel_" + r.source] = stats.get("relabel_" + r.source, 0) + 1
+                stats["relabel_" + r.source] += 1
             out.append(dict(path=r.path, cls=c, source=r.source, group=r.group)); continue
         try:
             im = ImageOps.exif_transpose(Image.open(orig(r))).convert("RGB")
         except Exception:
-            stats["unreadable"] = stats.get("unreadable", 0) + 1; continue
+            stats["unreadable"] += 1
+            continue
         if r.cls == "ewaste_hazard":
             b = best_box(im, "ewaste_hazard", thr=0.2)
             if b is None:
-                stats["haz_nobox_" + r.source] = stats.get("haz_nobox_" + r.source, 0) + 1; continue
-            c = crop(im, b[:4])
+                stats["haz_nobox_" + r.source] += 1
+                continue
+            c = square_crop(im, b[:4], S)
             p = clip_probs([c])[0]
             if p.argmax() != 5 and p[5] < 0.3:
-                stats["haz_clipreject_" + r.source] = stats.get("haz_clipreject_" + r.source, 0) + 1; continue
+                stats["haz_clipreject_" + r.source] += 1
+                continue
             name = hashlib.md5(orig(r).encode()).hexdigest()[:16] + ".jpg"
             op = f"data/crops/{r.source}_rc/ewaste_hazard/{name}"
             os.makedirs(os.path.dirname(op), exist_ok=True); c.save(op, quality=92)
             out.append(dict(path=op, cls="ewaste_hazard", source=r.source, group=r.group))
         else:
             if any_object(im):
-                stats["bg_has_object"] = stats.get("bg_has_object", 0) + 1; continue
+                stats["bg_has_object"] += 1
+                continue
             out.append(dict(path=r.path, cls="no_object", source=r.source, group=r.group))
     df = pd.DataFrame(out)
     df.to_csv("data/manifest_all_clean.csv", index=False)
-    print(stats)
+    print(dict(stats))
     print(df.groupby(["source", "cls"]).size().unstack(fill_value=0).to_string())
 
 

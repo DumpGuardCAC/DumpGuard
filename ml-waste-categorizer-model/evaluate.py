@@ -1,6 +1,6 @@
 import os, sys, json
 os.environ["KERAS_BACKEND"] = "torch"
-import numpy as np, torch, keras
+import numpy as np, keras
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -37,7 +37,7 @@ def nll_T(P, y, t):
 def main():
     model = build()
     model.load_weights(f"{RUN}/best.weights.h5")
-    res, out = {}, {}
+    res = {}
     Pv, yv = predict(model, "val")
     temps = np.arange(0.5, 3.01, 0.05)
     Tbest = float(temps[np.argmin([nll_T(Pv, yv, t)[0] for t in temps])])

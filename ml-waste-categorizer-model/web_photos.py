@@ -1,5 +1,8 @@
-import os, time, csv, hashlib, requests
+import os, time, csv, hashlib
 from concurrent.futures import ThreadPoolExecutor
+
+import requests
+
 Q = {
  "rigid_plastic": ["plastic water bottle","empty plastic bottle on table","plastic bottle in trash","takeout plastic container","yogurt cup plastic","crushed plastic bottle","plastic milk jug","detergent bottle","shampoo bottle","plastic bottles recycling bin","plastic food container lid","plastic cup litter"],
  "soft_plastic_foam": ["crumpled plastic bag","plastic grocery bag","empty chip bag","plastic wrap film","styrofoam cup","styrofoam takeout container","bubble wrap","foam packaging","plastic bag in trash can","candy wrapper litter","snack wrapper on ground","packing peanuts"],
@@ -24,7 +27,8 @@ def fetch(url, p):
     try:
         r = requests.get(url, timeout=25, headers={"User-Agent": "DumpGuard-student-project/1.0"})
         if r.status_code == 200 and len(r.content) > 8000:
-            open(p, "wb").write(r.content); return True
+            open(p, "wb").write(r.content)
+            return True
     except Exception:
         pass
     return False
@@ -60,10 +64,10 @@ for cls, qs in Q.items():
             print(cls, q, pg, sum(oks), "calls", calls, flush=True)
             time.sleep(3.2)
 
-import csv, os, hashlib
 import pandas as pd
 from PIL import Image, ImageOps
 import clean_labels as zs
+from common import square_crop
 
 S = int(os.environ.get("DG_S", 256))
 O = "data/web"
@@ -71,16 +75,8 @@ rows = list(csv.DictReader(open(f"{O}/meta.csv", encoding="utf-8")))
 seen, uniq = set(), []
 for r in rows:
     if r["file"] not in seen:
-        seen.add(r["file"]); uniq.append(r)
-
-
-def crop(im, box, pad=1.2, min_side=96):
-    W, H = im.size
-    x, y, w, h = box
-    s = min(max(max(w, h) * pad, min_side), min(W, H))
-    cx, cy = x + w / 2, y + h / 2
-    x0 = min(max(cx - s / 2, 0), W - s); y0 = min(max(cy - s / 2, 0), H - s)
-    return im.crop((int(x0), int(y0), int(x0 + s), int(y0 + s))).resize((S, S), Image.BICUBIC)
+        seen.add(r["file"])
+        uniq.append(r)
 
 
 keep, rej = [], []
@@ -89,27 +85,33 @@ for i, r in enumerate(uniq):
     try:
         im = ImageOps.exif_transpose(Image.open(r["file"])).convert("RGB")
     except Exception:
-        rej.append((r["file"], cls, "unreadable")); continue
+        rej.append((r["file"], cls, "unreadable"))
+        continue
     if min(im.size) < 160:
-        rej.append((r["file"], cls, "small")); continue
+        rej.append((r["file"], cls, "small"))
+        continue
     name = hashlib.md5(r["file"].encode()).hexdigest()[:16] + ".jpg"
     outp = f"{O}/crops/{cls}/{name}"
     if cls == "no_object":
-        s = min(im.size); W, H = im.size
+        W, H = im.size
+        s = min(W, H)
         c = im.crop(((W - s) // 2, (H - s) // 2, (W + s) // 2, (H + s) // 2)).resize((S, S), Image.BICUBIC)
         p = zs.clip_probs([c])[0]
         if p[6] < 0.4 or any(zs.best_box(im, k, 0.2) for k in zs.OWL_Q):
-            rej.append((r["file"], cls, f"bg clip={p[6]:.2f}")); continue
+            rej.append((r["file"], cls, f"bg clip={p[6]:.2f}"))
+            continue
         score = float(p[6])
     else:
         b = zs.best_box(im, cls)
         if b is None:
-            rej.append((r["file"], cls, "no box")); continue
-        c = crop(im, b[:4])
+            rej.append((r["file"], cls, "no box"))
+            continue
+        c = square_crop(im, b[:4], S)
         p = zs.clip_probs([c])[0]
         k = zs.CLASSES.index(cls)
         if p.argmax() != k and p[k] < 0.3:
-            rej.append((r["file"], cls, f"clip says {zs.CLASSES[p.argmax()]} {p.max():.2f}")); continue
+            rej.append((r["file"], cls, f"clip says {zs.CLASSES[p.argmax()]} {p.max():.2f}"))
+            continue
         score = float(p[k])
     os.makedirs(os.path.dirname(outp), exist_ok=True)
     c.save(outp, quality=92)

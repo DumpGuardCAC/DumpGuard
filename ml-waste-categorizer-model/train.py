@@ -4,10 +4,9 @@ import numpy as np, pandas as pd, torch, keras
 from PIL import Image
 from torch.utils.data import Dataset, DataLoader
 from torchvision.transforms import v2 as T
+from common import CLASSES, C2I
 
 SMOKE = "--smoke" in sys.argv
-CLASSES = ["rigid_plastic", "soft_plastic_foam", "cardboard_paper", "metal", "glass", "ewaste_hazard", "no_object"]
-C2I = {c: i for i, c in enumerate(CLASSES)}
 IMG = int(os.environ.get("DG_IMG", 224))
 MAN = os.environ.get("DG_MANIFEST", "data/manifest.csv")
 BS = 64
@@ -59,7 +58,6 @@ class Prog(keras.callbacks.Callback):
 
 def _winit(_):
     torch.set_num_threads(1)
-    import cv2
 
 
 def loader(split, aug, shuffle, cw=None):
@@ -76,14 +74,12 @@ def main():
     tr, va = loader("train", True, True, cw), loader("val", False, False)
     print("train", len(tr.dataset), "val", len(va.dataset), "class weights", {CLASSES[k]: round(v, 2) for k, v in cw.items()})
 
-
     def build():
         base = keras.applications.MobileNetV3Large(input_shape=(IMG, IMG, 3), include_top=False, weights="imagenet",
                                                    include_preprocessing=True, pooling="avg", minimalistic=False)
         x = keras.layers.Dropout(0.3)(base.output)
         out = keras.layers.Dense(len(CLASSES), activation="softmax", dtype="float32", name="probs")(x)
         return keras.Model(base.input, out), base
-
 
     model, base = build()
     loss = keras.losses.SparseCategoricalCrossentropy()

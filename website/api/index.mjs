@@ -4,10 +4,6 @@ import { createHash, randomInt, timingSafeEqual } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
 const ES = JSON.parse(readFileSync(new URL('../data/es-api.json', import.meta.url), 'utf8'));
-const {
-  months: MONTHS, fullMonths: FULL, abbrMonths: ABBR, holidayIn: HOLI, holidayNamed: HOLN, dayUpper: DAYU, dayLower: DAYL, days: DAYS, dayCodes: DAY2,
-  where: WHERE, side: SIDE, streetBoundaries: SBOUND, summerExtra: SUMMER, holidayChange: HOLCHG, mustBeOut: OUT, zoneBlueCart: ZB,
-} = ES;
 
 const CHECK_WITH_TOWN = {
   en: 'Double check with your town',
@@ -188,104 +184,63 @@ function occurrences(row, from, to) {
   return [...found.values()].sort((a, b) => (a.date < b.date ? -1 : 1));
 }
 
-const dates = (s) => s.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g, (m) => MONTHS[m]);
-const fullDate = (s) => s.replace(/^(\w+) (\d+)$/, (_, m, d) => `${d} de ${FULL[m] ?? ABBR[m] ?? m}`);
-const ZONES = (s) => s.replace(/^Zones? /, (m) => (m === 'Zone ' ? 'Zona ' : 'Zonas ')).replace(/ and /g, ' y ');
-const BORDERS = (s) => s
-  .replace('bordered by ', 'delimitada por ').replace(/ on the (north|east|south|west)/g, (_, d) => ({ north: ' al norte', east: ' al este', south: ' al sur', west: ' al oeste' })[d])
-  .replace('the City of Plainfield', 'la ciudad de Plainfield').replace('the RR tracks', 'las vías del tren').replace(/ and /g, ' y ');
+const monthWord = new RegExp(`\\b(${Object.keys(ES.months).join('|')})\\b`, 'g');
+const monthAny = new RegExp(`(${Object.keys(ES.months).join('|')})`, 'g');
+const borderDirection = new RegExp(` on the (${Object.keys(ES.borders.direction).join('|')})`, 'g');
 
-const EXTRA = [
-  [/^Sanitation District (\w) \/ Recycling District (\d): Street boundaries: use .*$/, (m) => `Distrito de Saneamiento ${m[1]} / Distrito de Reciclaje ${m[2]}: ${SBOUND}`],
-  [/^Sanitation District (\w) \/ Recycling District (\d): Street boundaries: Recycling District Map PDF$/, (m) => `Distrito de Saneamiento ${m[1]} / Distrito de Reciclaje ${m[2]}: límites de las calles: PDF del mapa de distritos de reciclaje`],
-  [/^Sanitation District (\w) \/ Recycling District (\d): summer extra day only\..*$/, (m) => `Distrito de Saneamiento ${m[1]} / Distrito de Reciclaje ${m[2]}: ${SUMMER}`],
-  [/^Sanitation District (\w) \/ Recycling District (\d)$/, (m) => `Distrito de Saneamiento ${m[1]} / Distrito de Reciclaje ${m[2]}`],
-  [/^Sanitation District (\w): (MLK Day|Presidents Day|Memorial Day|Labor Day|Columbus Day) Monday sanitation moved to Tuesday on 2026 calendar$/, (m) => `Distrito de Saneamiento ${m[1]}: por ${HOLN[m[2]]}, el saneamiento del lunes pasa al martes en el calendario de 2026`],
-  [/^Business District, North Side and Triangle Area: Collection date subject to change in the event of a holiday$/, () => `Distrito comercial, Lado Norte y Área del Triángulo: ${HOLCHG}`],
-  [/^South Side: Collection date subject to change in the event of a holiday$/, () => `Lado Sur: ${HOLCHG}`],
-  [/^Zone (NW|SW|SE|NE): (north|south) of Main Street, (west|east) of Pennsylvania Railroad$/, (m) => `Zona ${m[1].replace('W', 'O')}: ${WHERE[m[2]]} de Main Street, ${SIDE[m[3]]} del ferrocarril de Pennsylvania`],
-  [/^Zone (NW|SW|SE|NE): single-stream in blue automated cart$/, (m) => `Zona ${m[1].replace('W', 'O')}: flujo único en carrito azul automatizado`],
-  [/^Wards? ([\d and]+): confirm ward at gis\.oldbridge\.com(?: \(WHAT WARD AM I IN\?\))?$/, (m) => `Distrito${m[1].includes('and') ? 's' : ''} ${m[1].replace(' and ', ' y ')}: confirme su distrito en gis.oldbridge.com`],
-  [/^Ward (\d): (Memorial Day|Thanksgiving|Christmas) recycling moved to Saturday (\w+ \d+) \(.*\)$/, (m) => `Distrito ${m[1]}: el reciclaje ${HOLI[m[2]]} pasó al sábado ${fullDate(m[3])}`],
-  [/^Exception: Central Park and surrounding streets \(Stone Ct, Aimy Ct, Rachele Ct\): Memorial Day recycling moved to Saturday May 30 .*$/, () => 'Excepción: Central Park y calles aledañas (Stone Ct, Aimy Ct, Rachele Ct): el reciclaje del Día de los Caídos (Memorial Day) pasó al sábado 30 de mayo'],
-  [/^Exception: Central Park and surrounding streets \(Stone Ct, Aimy Ct, Rachele Ct\) c: .*$/, () => 'Excepción: Central Park y calles aledañas (Stone Ct, Aimy Ct, Rachele Ct): se recogen los lunes aunque estén en el Distrito 3'],
-  [/^Exception: The Arbors section, Sonoma Court, and Lakeridge West collected Tuesday: .*$/, () => 'Excepción: la sección The Arbors, Sonoma Court y Lakeridge West se recogen los martes aunque estén en el Distrito 4'],
-  [/^Sec ([\d, ]+): (MONDAYS|TUESDAYS|WEDNESDAY) (.*)$/, (m) => `Secc. ${m[1]}: ${DAYU[m[2]]}, ${BORDERS(m[3])}`],
-  [/^Monday sections \(Sec 4, 5, 6, 7\): Memorial Day recycling moved to Saturday May 30 .*$/, () => 'Secciones de lunes (Secc. 4, 5, 6, 7): el reciclaje del Día de los Caídos (Memorial Day) pasó al sábado 30 de mayo'],
-  [/^Sanitation Zone (I+): (.*)$/, (m) => `Zona de Saneamiento ${m[1]}: ${m[2]}`],
-  [/^MCIA county program \(not sanitation zones\): (.*)$/, (m) => `Programa del condado MCIA (no son zonas de saneamiento): ${m[1]}`],
-  [/^MCIA: (.*)$/, (m) => `Programa MCIA: ${m[1]}`],
-  [/^Zone (\d) grass clippings$/, (m) => `Zona ${m[1]}, césped cortado`],
-  [/^Zone (\d) heavy\/bulk trash$/, (m) => `Zona ${m[1]}, basura voluminosa/pesada`],
-  [/^Zone (\d) non-recyclable solid waste$/, (m) => `Zona ${m[1]}, desechos sólidos no reciclables`],
-  [/^Zone (\d) brush and leaf$/, (m) => `Zona ${m[1]}, ramas y hojas`],
-  [/^Streets listed on city trash collection map PDF \(e\.g\., (.*?),? and other (\w+)-list streets\)$/, (m) => `Calles del mapa de recogida de basura de la ciudad en PDF (p. ej., ${m[1]} y otras calles de la lista del ${DAYL[m[2]]})`],
-  [/^(Thursday|Friday) recycling district: street assignment via Recycling Districts PDF linked from Curbside page$/, (m) => `Distrito de reciclaje de los ${DAYL[m[1]]}: la asignación de calles está en el PDF de distritos de reciclaje de la página de recogida en la acera`],
-  [/^Thursday recycling district: Thanksgiving makeup 2026-11-28 .*$/, () => 'Distrito de reciclaje de los jueves: reposición de Acción de Gracias el 2026-11-28 (nota de la página de recogida en la acera: "No Collection on Thanksgiving Day" / "will be on 11/28/26")'],
-  [/^Friday recycling district: Christmas makeup 2026-12-26 .*$/, () => 'Distrito de reciclaje de los viernes: reposición de Navidad el 2026-12-26 (nota de la página de recogida en la acera: "No Collection on Christmas Day" / "will beon 12/26/26")'],
-  [/^Section (I+) first collection day \((.*?)\): First weekday .*$/, (m) => `Sección ${m[1]}, primer día de recogida (${m[2]}): primer día deducido de los avisos oficiales de 2026 del Centro de Información de Tormentas de Invierno`],
-  [/^Section (I+) second collection day \/ bulk day \(Trash\/Recycling page\)$/, (m) => `Sección ${m[1]}, segundo día de recogida / día de artículos voluminosos (página de Basura/Reciclaje)`],
-  [/^Section (I+): limit two items per pick-up; effective January 1, 2018 \(still on current Trash\/Recycling page\)$/, (m) => `Sección ${m[1]}: límite de dos artículos por recogida; vigente desde el 1 de enero de 2018 (sigue en la página actual de Basura/Reciclaje)`],
-  [/^Section (I+) \((.*)\): biweekly Wednesday per 2026 Community Calendar$/, (m) => `Sección ${m[1]} (${m[2]}): cada dos miércoles según el Calendario Comunitario de 2026`],
-  [/^(Zones? [\d and]+|Zone 1 and north side of Zone 3|Zone 2 and south side of Zone 3)$/, (m) => ZONES(m[1]).replace('north side of Zone 3', 'el lado norte de la Zona 3').replace('south side of Zone 3', 'el lado sur de la Zona 3')],
-  [/^(Zones? [\d and]+): must be out by 6:00 a\.m\.?$/, (m) => `${ZONES(m[1])}: ${OUT}`],
-  [/^(Zones [\d and]+) white metal$/, (m) => `Línea blanca (metal) de ${ZONES(m[1]).toLowerCase().replace('zonas', 'las Zonas')}`],
-  [/^(Zones [\d and]+): 1st and 3rd Wednesday of each month; no residential recycling on the fifth Wednesday of a month$/, (m) => `${ZONES(m[1])}: 1.º y 3.er miércoles de cada mes; no hay reciclaje residencial el quinto miércoles del mes`],
-  [/^(Zones [\d and]+): 2nd and 4th Wednesday of each month; no residential recycling on the fifth Wednesday of a month$/, (m) => `${ZONES(m[1])}: 2.º y 4.º miércoles de cada mes; no hay reciclaje residencial el quinto miércoles del mes`],
-  [/^(Zones [\d and]+): 2026 dates: (.*)$/, (m) => `${ZONES(m[1])}: fechas de 2026: ${dates(m[2])}`],
-  [/^Sections (\d) and (\d) leaf and branch curbside$/, (m) => `Recogida en la acera de hojas y ramas de las Secciones ${m[1]} y ${m[2]}`],
-  [/^Zone (\d) \(Route 34 (South|North)\): Streets \((Area \d)(?: index from borough 2026 contract map)?\): (.*?)(?:\.? Effective May (\d+)(?:, 2026)?\.?)?$/, (m) => `Zona ${m[1]} (Ruta 34 ${m[2] === 'South' ? 'Sur' : 'Norte'}): Calles (${m[3].replace('Area', 'Área')}): ${m[4]}${m[5] ? `. Vigente desde el ${m[5]} de mayo de 2026` : ''}`],
-  [/^Area (\d)$/, (m) => `Área ${m[1]}`],
-  [/^Zone ([ABCD]) garbage: curbside by 6:00 a\.m\.; use township-issued blue automated container$/, (m) => `Basura de la Zona ${m[1]}: ${ZB}`],
-  [/^Ocean Grove Zone ([BC]) garbage: manual collection; cans max 45 gallons, 50 lbs\. with contents$/, (m) => `Basura de Ocean Grove, Zona ${m[1]}: recogida manual; botes de máximo 45 galones y 50 lb con el contenido`],
-  [/^Recycling sub-zone (\w\d): assign by 2026 Street Index PDF$/, (m) => `Subzona de reciclaje ${m[1]}: asigne según el PDF del índice de calles de 2026`],
-  [/^Garbage District (\d)$/, (m) => `Distrito de basura ${m[1]}`],
-  [/^(East|West) of Broad Street$/, (m) => `Al ${m[1] === 'East' ? 'este' : 'oeste'} de Broad Street`],
-  [/^Curbside: east of Bingham Avenue(?:; (1st and 3rd) Wednesday of month)?$/, (m) => `En la acera: al este de Bingham Avenue${m[1] ? '; 1.º y 3.er miércoles del mes' : ''}`],
-  [/^Curbside: Bingham Avenue and west(?:; (2nd and 4th) Wednesday of month)?$/, (m) => `En la acera: Bingham Avenue y al oeste${m[1] ? '; 2.º y 4.º miércoles del mes' : ''}`],
-  [/^Drive-in collection: borough-wide(?:; (2nd and 4th) Wednesday of month)?$/, (m) => `Recogida con entrada al predio: en todo el municipio${m[1] ? '; 2.º y 4.º miércoles del mes' : ''}`],
-  [/^Section ([AB]): (.*?), (?:[^,]*?)$/, null],
-  [/^Section ([AB]): no trash (Friday December 25|Thursday January 1|Thursday November 26) 2026 \(2026 calendar\)$/, (m) => `Sección ${m[1]}: no hay recogida de basura el ${({ 'Friday December 25': 'viernes 25 de diciembre', 'Thursday January 1': 'jueves 1 de enero', 'Thursday November 26': 'jueves 26 de noviembre' })[m[2]]} de 2026 (calendario de 2026)`],
-  [/^Section ([AB]): cans\/bottles, bundled cardboard and newspaper; no plastic bags$/, (m) => `Sección ${m[1]}: latas/botellas, cartón atado y periódico; sin bolsas de plástico`],
-  [/^Section ([AB]): bulk \(furniture, mattresses, couches, other plastics\); limit 3 items\. 2026 dates start Jan (\d+)$/, (m) => `Sección ${m[1]}: artículos voluminosos (muebles, colchones, sofás, otros plásticos); límite de 3 artículos. Las fechas de 2026 empiezan el ${m[2]} de enero`],
-  [/^Section ([AB]) fall leaf collection \(paper bags\)$/, (m) => `Recogida de hojas de otoño de la Sección ${m[1]} (bolsas de papel)`],
-  [/^Section ([AB]): (.+)$/, (m) => `Sección ${m[1]}: ${m[2]}`],
-  [/^(North|South) Zone: collection from 6:00 a\.m\.; see official street listing$/, (m) => `Zona ${m[1] === 'North' ? 'Norte' : 'Sur'}: recogida desde las 6:00 a.m.; vea la lista oficial de calles`],
-  [/^(North|South) Zone: collection from 6:00 a\.m\.; no collection New Year's Day, Independence Day, Election Day, Thanksgiving, Christmas$/, (m) => `Zona ${m[1] === 'North' ? 'Norte' : 'Sur'}: recogida desde las 6:00 a.m.; no hay recogida en Año Nuevo, Día de la Independencia, Día de las Elecciones, Acción de Gracias ni Navidad`],
-].filter(([, f]) => f);
+const TRANSFORMS = {
+  and: (s) => s.replace(' and ', ES.and),
+  dates: (s) => s.replace(monthWord, (m) => ES.months[m]),
+  fullDate: (s) => s.replace(/^(\w+) (\d+)$/, (_, m, d) => `${d}${ES.dateJoin}${ES.fullMonths[m] ?? ES.abbrMonths[m] ?? m}`),
+  zones: (s) => {
+    const t = s.replace(/^Zones? /, (m) => (m === 'Zone ' ? ES.zones.one : ES.zones.many)).replace(/ and /g, ES.and);
+    return ES.zones.sides.reduce((acc, [en, es]) => acc.replace(en, es), t);
+  },
+  borders: (s) => {
+    const t = ES.borders.replace.reduce((acc, [en, es]) => acc.replace(en, es), s);
+    return t.replace(borderDirection, (_, d) => ES.borders.direction[d]).replace(/ and /g, ES.and);
+  },
+  street: (s) => {
+    if (Object.hasOwn(ES.places, s)) return ES.places[s];
+    const d = /^2026 dates: (.*)$/.exec(s);
+    return d ? ES.datesPrefix + d[1].replace(monthAny, (m) => ES.months[m]) : s;
+  },
+  toEs: (s) => toEs(s),
+};
 
-const WORDS = [
-  [/^Garbage (Monday|Tuesday|Wednesday|Thursday|Friday): municipal garbage district collected on (\w+)$/, (d) => `Basura ${DAYS[d[1]]}: distrito municipal con recogida los ${DAYS[d[1]]}`],
-  [/^(North|South) Zone \((Mo|Tu) and (Th|Fr)\)$/, (m) => `Zona ${m[1] === 'North' ? 'Norte' : 'Sur'} (${DAY2[m[2]]} y ${DAY2[m[3]]})`],
-  [/^(North|South) Zone ([AB]): (.+) \((\w+)s\)$/, (m) => `Zona ${m[1] === 'North' ? 'Norte' : 'Sur'} ${m[2]}: ${street(m[3])} (${DAYS[m[4]]})`],
-  [/^Recycling Section (\d+)(?: \((grass|leaf)\))?$/, (m) => `Sección de reciclaje ${m[1]}${m[2] ? ` (${m[2] === 'grass' ? 'césped' : 'hojas'})` : ''}`],
-  [/^RD (\d) Zone (\d+): streets in (.+)$/, (m) => `RD ${m[1]} Zona ${m[2]}: calles en ${m[3]}`],
-  [/^Zone (\d+A?) \(every other (Mo|Tu)\)$/, (m) => `Zona ${m[1]} (cada dos ${m[2] === 'Mo' ? 'lunes' : 'martes'})`],
-  [/^Zone (\d+A?) \((Mo|Tu) and (Th|Fr)\)$/, (m) => `Zona ${m[1]} (${DAY2[m[2]]} y ${DAY2[m[3]]})`],
-  [/^Zone (\d+A?)(?: \((May 1 to Sep 30|Oct 1 to Apr 30)\))?(?:: (.+))?$/, (m) => `Zona ${m[1]}${m[2] ? ` (${m[2] === 'May 1 to Sep 30' ? 'del 1 de mayo al 30 de septiembre' : 'del 1 de octubre al 30 de abril'})` : ''}${m[3] ? `: ${street(m[3])}` : ''}`],
-  [/^(Christmas tree pickup)$/, () => 'Recogida de árboles de Navidad'],
-];
-
-function street(s) {
-  if (Object.hasOwn(ES.places, s)) return ES.places[s];
-  const d = /^2026 dates: (.*)$/.exec(s);
-  if (d) return 'fechas de 2026: ' + d[1].replace(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/g, (m) => MONTHS[m]);
-  return s;
+function expand(template, m) {
+  let out = '';
+  for (let i = 0; i < template.length; i++) {
+    if (template[i] !== '{') {
+      out += template[i];
+      continue;
+    }
+    let depth = 1;
+    let j = i + 1;
+    while (depth) {
+      if (template[j] === '{') depth++;
+      else if (template[j] === '}') depth--;
+      j++;
+    }
+    const [, n, op, arg] = /^(\d)(?:([?:])(.*))?$/s.exec(template.slice(i + 1, j - 1));
+    const v = m[n] ?? '';
+    if (!op) out += v;
+    else if (op === '?') out += v ? expand(arg, m) : '';
+    else if (arg[0] === '@') out += TRANSFORMS[arg.slice(1)](v);
+    else out += ES.tables[arg][v] ?? v;
+    i = j - 1;
+  }
+  return out;
 }
 
-const REASONS = [
-  [/^Good Friday( week)?$/, (m) => `Viernes Santo${m[1] ? ' (semana)' : ''}`],
-  [/^Independence Day \(observed\)( week)?$/, (m) => `Día de la Independencia (observado)${m[1] ? ' (semana)' : ''}`],
-  [/^(Columbus Day|Labor Day|Martin Luther King Jr\. Day|Memorial Day|Presidents' Day) \(Monday's pickup moved a day\)$/, (m) => `${toEs(m[1])} (la recogida del lunes se movió un día)`],
-  [/^Labor Day\. The city calendar prints Sept 12 here .*$/, 'Día del Trabajo. El calendario de la ciudad imprime el 12 de septiembre aquí (error de imprenta, es sábado); llame al 732-745-5059 para confirmar el día de reposición'],
-];
+const RULES = ES.rules.map(({ re, es }) => ({ re: new RegExp(re), es }));
 
 function toEs(text) {
   if (!text) return text;
   if (Object.hasOwn(ES.phrases, text)) return ES.phrases[text];
-  for (const [re, f] of [...WORDS, ...REASONS, ...EXTRA]) {
+  for (const { re, es } of RULES) {
     const m = re.exec(text);
-    if (m) return typeof f === 'function' ? f(m) : f;
+    if (m) return expand(es, m);
   }
   return text;
 }
@@ -1086,12 +1041,15 @@ const STREAM_NAME = {
 
 function reminderText(lang, townName, streams, { moved = false, announcement = '' } = {}) {
   const names = streams.map((s) => STREAM_NAME[lang][s]);
-  const list = names.length > 1 ? `${names.slice(0, -1).join(', ')} ${lang === 'es' ? 'y' : 'and'} ${names.at(-1)}` : names[0];
-  const shifted = moved ? (lang === 'es' ? ' Esta fecha cambió por un feriado.' : ' This date moved because of a holiday.') : '';
+  const list = names.length > 1 ? `${names.slice(0, -1).join(', ')}${lang === 'es' ? ES.reminder.and : ' and '}${names.at(-1)}` : names[0];
+  const shifted = moved ? (lang === 'es' ? ES.reminder.moved : ' This date moved because of a holiday.') : '';
   const extra = announcement ? ` ${announcement}` : '';
-  return lang === 'es'
-    ? { title: `Mañana: ${list}`, body: `Saque lo de ${list} esta noche. ${townName}.${shifted}${extra} Confirme con su municipio si hay cambios.` }
-    : { title: `Tomorrow: ${list}`, body: `Set out your ${list} tonight. ${townName}.${shifted}${extra} Double check with your town for changes.` };
+  if (lang !== 'es') {
+    return { title: `Tomorrow: ${list}`, body: `Set out your ${list} tonight. ${townName}.${shifted}${extra} Double check with your town for changes.` };
+  }
+  const parts = { list, town: townName, shifted, extra };
+  const fill = (t) => t.replace(/\{(\w+)\}/g, (_, k) => parts[k]);
+  return { title: fill(ES.reminder.title), body: fill(ES.reminder.body) };
 }
 
 function pickupsOn(rows, sub, date) {

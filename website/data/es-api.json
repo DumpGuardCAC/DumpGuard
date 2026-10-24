@@ -1,4 +1,23 @@
 {
+  "checkWithTown": "Confirme con su municipio",
+  "bulkDemoNotice": "Actualmente, la recogida de objetos grandes es solo una demostración hasta obtener el permiso de los municipios",
+  "hoursNote": "El horario puede cambiar en días feriados y con mal tiempo. Llame antes.",
+  "noObject": "No se encontró ningún objeto. Apunte la cámara a un solo objeto.",
+  "streamNames": {
+    "trash": "basura",
+    "recycling": "reciclaje",
+    "bulk": "objetos grandes",
+    "yard": "desechos de jardín"
+  },
+  "reminder": {
+    "and": " y ",
+    "moved": " Esta fecha cambió por un feriado.",
+    "title": "Mañana: {list}",
+    "body": "Saque lo de {list} esta noche. {town}.{shifted}{extra} Confirme con su municipio si hay cambios."
+  },
+  "and": " y ",
+  "dateJoin": " de ",
+  "datesPrefix": "fechas de 2026: ",
   "months": {
     "Jan": "ene",
     "Feb": "feb",
@@ -41,66 +60,124 @@
     "Nov": "noviembre",
     "Dec": "diciembre"
   },
-  "holidayIn": {
-    "Memorial Day": "del Día de los Caídos (Memorial Day)",
-    "Thanksgiving": "de Acción de Gracias",
-    "Christmas": "de Navidad"
+  "zones": {
+    "one": "Zona ",
+    "many": "Zonas ",
+    "sides": [
+      [
+        "north side of Zone 3",
+        "el lado norte de la Zona 3"
+      ],
+      [
+        "south side of Zone 3",
+        "el lado sur de la Zona 3"
+      ]
+    ]
   },
-  "holidayNamed": {
-    "MLK Day": "el Día de Martin Luther King Jr.",
-    "Presidents Day": "el Día de los Presidentes",
-    "Memorial Day": "el Día de los Caídos (Memorial Day)",
-    "Labor Day": "el Día del Trabajo",
-    "Columbus Day": "el Día de la Raza (Columbus Day)"
+  "borders": {
+    "replace": [
+      [
+        "bordered by ",
+        "delimitada por "
+      ],
+      [
+        "the City of Plainfield",
+        "la ciudad de Plainfield"
+      ],
+      [
+        "the RR tracks",
+        "las vías del tren"
+      ]
+    ],
+    "direction": {
+      "north": " al norte",
+      "east": " al este",
+      "south": " al sur",
+      "west": " al oeste"
+    }
   },
-  "dayUpper": {
-    "MONDAYS": "LUNES",
-    "TUESDAYS": "MARTES",
-    "WEDNESDAY": "MIÉRCOLES"
+  "tables": {
+    "days": {
+      "Monday": "lunes",
+      "Tuesday": "martes",
+      "Wednesday": "miércoles",
+      "Thursday": "jueves",
+      "Friday": "viernes"
+    },
+    "dayCodes": {
+      "Mo": "lunes",
+      "Tu": "martes",
+      "Th": "jueves",
+      "Fr": "viernes"
+    },
+    "dayLower": {
+      "Monday": "lunes",
+      "Tuesday": "martes",
+      "Wednesday": "miércoles",
+      "Thursday": "jueves",
+      "Friday": "viernes"
+    },
+    "dayUpper": {
+      "MONDAYS": "LUNES",
+      "TUESDAYS": "MARTES",
+      "WEDNESDAY": "MIÉRCOLES"
+    },
+    "holidayIn": {
+      "Memorial Day": "del Día de los Caídos (Memorial Day)",
+      "Thanksgiving": "de Acción de Gracias",
+      "Christmas": "de Navidad"
+    },
+    "holidayNamed": {
+      "MLK Day": "el Día de Martin Luther King Jr.",
+      "Presidents Day": "el Día de los Presidentes",
+      "Memorial Day": "el Día de los Caídos (Memorial Day)",
+      "Labor Day": "el Día del Trabajo",
+      "Columbus Day": "el Día de la Raza (Columbus Day)"
+    },
+    "where": {
+      "north": "al norte",
+      "south": "al sur"
+    },
+    "side": {
+      "west": "al oeste",
+      "east": "al este"
+    },
+    "northSouth": {
+      "North": "Norte",
+      "South": "Sur"
+    },
+    "southNorth": {
+      "South": "Sur",
+      "North": "Norte"
+    },
+    "eastWest": {
+      "East": "este",
+      "West": "oeste"
+    },
+    "corner": {
+      "NW": "NO",
+      "SW": "SO",
+      "SE": "SE",
+      "NE": "NE"
+    },
+    "grassLeaf": {
+      "grass": "césped",
+      "leaf": "hojas"
+    },
+    "everyOther": {
+      "Mo": "lunes",
+      "Tu": "martes"
+    },
+    "seasons": {
+      "May 1 to Sep 30": "del 1 de mayo al 30 de septiembre",
+      "Oct 1 to Apr 30": "del 1 de octubre al 30 de abril"
+    },
+    "noTrashDates": {
+      "Friday December 25": "viernes 25 de diciembre",
+      "Thursday January 1": "jueves 1 de enero",
+      "Thursday November 26": "jueves 26 de noviembre"
+    }
   },
-  "dayLower": {
-    "Monday": "lunes",
-    "Tuesday": "martes",
-    "Wednesday": "miércoles",
-    "Thursday": "jueves",
-    "Friday": "viernes"
-  },
-  "days": {
-    "Monday": "lunes",
-    "Tuesday": "martes",
-    "Wednesday": "miércoles",
-    "Thursday": "jueves",
-    "Friday": "viernes"
-  },
-  "dayCodes": {
-    "Mo": "lunes",
-    "Tu": "martes",
-    "Th": "jueves",
-    "Fr": "viernes"
-  },
-  "where": {
-    "north": "al norte",
-    "south": "al sur"
-  },
-  "side": {
-    "west": "al oeste",
-    "east": "al este"
-  },
-  "streetBoundaries": "Límites de las calles: use el PDF del mapa de distritos de reciclaje y la búsqueda de direcciones en la página de Obras Públicas del municipio (el mapa es gráfico; el índice de calles está en el mapa)",
-  "summerExtra": "solo el día extra de verano. Del 1 de junio a agosto. Los calendarios de 2026 muestran una recogida extra de verano cada semana, desde la primera semana de junio hasta la última de agosto",
-  "holidayChange": "la fecha de recogida puede cambiar si hay un día feriado",
-  "mustBeOut": "deben estar afuera a las 6:00 a.m.",
-  "zoneBlueCart": "en la acera a las 6:00 a.m.; use el contenedor azul automatizado que entrega el municipio",
-  "checkWithTown": "Confirme con su municipio",
-  "bulkDemoNotice": "Actualmente, la recogida de objetos grandes es solo una demostración hasta obtener el permiso de los municipios",
-  "hoursNote": "El horario puede cambiar en días feriados y con mal tiempo. Llame antes.",
-  "streamNames": {
-    "trash": "basura",
-    "recycling": "reciclaje",
-    "bulk": "objetos grandes",
-    "yard": "desechos de jardín"
-  },
-  "noObject": "No se encontró ningún objeto. Apunte la cámara a un solo objeto.",
   "places": {
     "Joline Ave to Monmouth Beach border": "de Joline Ave a la frontera con Monmouth Beach",
     "Joline Ave to Broadway": "de Joline Ave a Broadway",
@@ -163,5 +240,283 @@
     "Thanksgiving Day": "Acción de Gracias",
     "Veterans Day": "Día de los Veteranos",
     "Thanksgiving week has only one garbage pick-up; confirm with Public Works 732-248-7288": "La semana de Acción de Gracias tiene una sola recogida de basura; confirme con Obras Públicas 732-248-7288"
-  }
+  },
+  "rules": [
+    {
+      "re": "^Garbage (Monday|Tuesday|Wednesday|Thursday|Friday): municipal garbage district collected on (\\w+)$",
+      "es": "Basura {1:days}: distrito municipal con recogida los {1:days}"
+    },
+    {
+      "re": "^(North|South) Zone \\((Mo|Tu) and (Th|Fr)\\)$",
+      "es": "Zona {1:northSouth} ({2:dayCodes} y {3:dayCodes})"
+    },
+    {
+      "re": "^(North|South) Zone ([AB]): (.+) \\((\\w+)s\\)$",
+      "es": "Zona {1:northSouth} {2}: {3:@street} ({4:days})"
+    },
+    {
+      "re": "^Recycling Section (\\d+)(?: \\((grass|leaf)\\))?$",
+      "es": "Sección de reciclaje {1}{2? ({2:grassLeaf})}"
+    },
+    {
+      "re": "^RD (\\d) Zone (\\d+): streets in (.+)$",
+      "es": "RD {1} Zona {2}: calles en {3}"
+    },
+    {
+      "re": "^Zone (\\d+A?) \\(every other (Mo|Tu)\\)$",
+      "es": "Zona {1} (cada dos {2:everyOther})"
+    },
+    {
+      "re": "^Zone (\\d+A?) \\((Mo|Tu) and (Th|Fr)\\)$",
+      "es": "Zona {1} ({2:dayCodes} y {3:dayCodes})"
+    },
+    {
+      "re": "^Zone (\\d+A?)(?: \\((May 1 to Sep 30|Oct 1 to Apr 30)\\))?(?:: (.+))?$",
+      "es": "Zona {1}{2? ({2:seasons})}{3?: {3:@street}}"
+    },
+    {
+      "re": "^(Christmas tree pickup)$",
+      "es": "Recogida de árboles de Navidad"
+    },
+    {
+      "re": "^Good Friday( week)?$",
+      "es": "Viernes Santo{1? (semana)}"
+    },
+    {
+      "re": "^Independence Day \\(observed\\)( week)?$",
+      "es": "Día de la Independencia (observado){1? (semana)}"
+    },
+    {
+      "re": "^(Columbus Day|Labor Day|Martin Luther King Jr\\. Day|Memorial Day|Presidents' Day) \\(Monday's pickup moved a day\\)$",
+      "es": "{1:@toEs} (la recogida del lunes se movió un día)"
+    },
+    {
+      "re": "^Labor Day\\. The city calendar prints Sept 12 here .*$",
+      "es": "Día del Trabajo. El calendario de la ciudad imprime el 12 de septiembre aquí (error de imprenta, es sábado); llame al 732-745-5059 para confirmar el día de reposición"
+    },
+    {
+      "re": "^Sanitation District (\\w) \\/ Recycling District (\\d): Street boundaries: use .*$",
+      "es": "Distrito de Saneamiento {1} / Distrito de Reciclaje {2}: Límites de las calles: use el PDF del mapa de distritos de reciclaje y la búsqueda de direcciones en la página de Obras Públicas del municipio (el mapa es gráfico; el índice de calles está en el mapa)"
+    },
+    {
+      "re": "^Sanitation District (\\w) \\/ Recycling District (\\d): Street boundaries: Recycling District Map PDF$",
+      "es": "Distrito de Saneamiento {1} / Distrito de Reciclaje {2}: límites de las calles: PDF del mapa de distritos de reciclaje"
+    },
+    {
+      "re": "^Sanitation District (\\w) \\/ Recycling District (\\d): summer extra day only\\..*$",
+      "es": "Distrito de Saneamiento {1} / Distrito de Reciclaje {2}: solo el día extra de verano. Del 1 de junio a agosto. Los calendarios de 2026 muestran una recogida extra de verano cada semana, desde la primera semana de junio hasta la última de agosto"
+    },
+    {
+      "re": "^Sanitation District (\\w) \\/ Recycling District (\\d)$",
+      "es": "Distrito de Saneamiento {1} / Distrito de Reciclaje {2}"
+    },
+    {
+      "re": "^Sanitation District (\\w): (MLK Day|Presidents Day|Memorial Day|Labor Day|Columbus Day) Monday sanitation moved to Tuesday on 2026 calendar$",
+      "es": "Distrito de Saneamiento {1}: por {2:holidayNamed}, el saneamiento del lunes pasa al martes en el calendario de 2026"
+    },
+    {
+      "re": "^Business District, North Side and Triangle Area: Collection date subject to change in the event of a holiday$",
+      "es": "Distrito comercial, Lado Norte y Área del Triángulo: la fecha de recogida puede cambiar si hay un día feriado"
+    },
+    {
+      "re": "^South Side: Collection date subject to change in the event of a holiday$",
+      "es": "Lado Sur: la fecha de recogida puede cambiar si hay un día feriado"
+    },
+    {
+      "re": "^Zone (NW|SW|SE|NE): (north|south) of Main Street, (west|east) of Pennsylvania Railroad$",
+      "es": "Zona {1:corner}: {2:where} de Main Street, {3:side} del ferrocarril de Pennsylvania"
+    },
+    {
+      "re": "^Zone (NW|SW|SE|NE): single-stream in blue automated cart$",
+      "es": "Zona {1:corner}: flujo único en carrito azul automatizado"
+    },
+    {
+      "re": "^Wards? ((?=[\\d and]*and)[\\d and]+): confirm ward at gis\\.oldbridge\\.com(?: \\(WHAT WARD AM I IN\\?\\))?$",
+      "es": "Distritos {1:@and}: confirme su distrito en gis.oldbridge.com"
+    },
+    {
+      "re": "^Wards? ([\\d and]+): confirm ward at gis\\.oldbridge\\.com(?: \\(WHAT WARD AM I IN\\?\\))?$",
+      "es": "Distrito {1}: confirme su distrito en gis.oldbridge.com"
+    },
+    {
+      "re": "^Ward (\\d): (Memorial Day|Thanksgiving|Christmas) recycling moved to Saturday (\\w+ \\d+) \\(.*\\)$",
+      "es": "Distrito {1}: el reciclaje {2:holidayIn} pasó al sábado {3:@fullDate}"
+    },
+    {
+      "re": "^Exception: Central Park and surrounding streets \\(Stone Ct, Aimy Ct, Rachele Ct\\): Memorial Day recycling moved to Saturday May 30 .*$",
+      "es": "Excepción: Central Park y calles aledañas (Stone Ct, Aimy Ct, Rachele Ct): el reciclaje del Día de los Caídos (Memorial Day) pasó al sábado 30 de mayo"
+    },
+    {
+      "re": "^Exception: Central Park and surrounding streets \\(Stone Ct, Aimy Ct, Rachele Ct\\) c: .*$",
+      "es": "Excepción: Central Park y calles aledañas (Stone Ct, Aimy Ct, Rachele Ct): se recogen los lunes aunque estén en el Distrito 3"
+    },
+    {
+      "re": "^Exception: The Arbors section, Sonoma Court, and Lakeridge West collected Tuesday: .*$",
+      "es": "Excepción: la sección The Arbors, Sonoma Court y Lakeridge West se recogen los martes aunque estén en el Distrito 4"
+    },
+    {
+      "re": "^Sec ([\\d, ]+): (MONDAYS|TUESDAYS|WEDNESDAY) (.*)$",
+      "es": "Secc. {1}: {2:dayUpper}, {3:@borders}"
+    },
+    {
+      "re": "^Monday sections \\(Sec 4, 5, 6, 7\\): Memorial Day recycling moved to Saturday May 30 .*$",
+      "es": "Secciones de lunes (Secc. 4, 5, 6, 7): el reciclaje del Día de los Caídos (Memorial Day) pasó al sábado 30 de mayo"
+    },
+    {
+      "re": "^Sanitation Zone (I+): (.*)$",
+      "es": "Zona de Saneamiento {1}: {2}"
+    },
+    {
+      "re": "^MCIA county program \\(not sanitation zones\\): (.*)$",
+      "es": "Programa del condado MCIA (no son zonas de saneamiento): {1}"
+    },
+    {
+      "re": "^MCIA: (.*)$",
+      "es": "Programa MCIA: {1}"
+    },
+    {
+      "re": "^Zone (\\d) grass clippings$",
+      "es": "Zona {1}, césped cortado"
+    },
+    {
+      "re": "^Zone (\\d) heavy\\/bulk trash$",
+      "es": "Zona {1}, basura voluminosa/pesada"
+    },
+    {
+      "re": "^Zone (\\d) non-recyclable solid waste$",
+      "es": "Zona {1}, desechos sólidos no reciclables"
+    },
+    {
+      "re": "^Zone (\\d) brush and leaf$",
+      "es": "Zona {1}, ramas y hojas"
+    },
+    {
+      "re": "^Streets listed on city trash collection map PDF \\(e\\.g\\., (.*?),? and other (\\w+)-list streets\\)$",
+      "es": "Calles del mapa de recogida de basura de la ciudad en PDF (p. ej., {1} y otras calles de la lista del {2:dayLower})"
+    },
+    {
+      "re": "^(Thursday|Friday) recycling district: street assignment via Recycling Districts PDF linked from Curbside page$",
+      "es": "Distrito de reciclaje de los {1:dayLower}: la asignación de calles está en el PDF de distritos de reciclaje de la página de recogida en la acera"
+    },
+    {
+      "re": "^Thursday recycling district: Thanksgiving makeup 2026-11-28 .*$",
+      "es": "Distrito de reciclaje de los jueves: reposición de Acción de Gracias el 2026-11-28 (nota de la página de recogida en la acera: \"No Collection on Thanksgiving Day\" / \"will be on 11/28/26\")"
+    },
+    {
+      "re": "^Friday recycling district: Christmas makeup 2026-12-26 .*$",
+      "es": "Distrito de reciclaje de los viernes: reposición de Navidad el 2026-12-26 (nota de la página de recogida en la acera: \"No Collection on Christmas Day\" / \"will beon 12/26/26\")"
+    },
+    {
+      "re": "^Section (I+) first collection day \\((.*?)\\): First weekday .*$",
+      "es": "Sección {1}, primer día de recogida ({2}): primer día deducido de los avisos oficiales de 2026 del Centro de Información de Tormentas de Invierno"
+    },
+    {
+      "re": "^Section (I+) second collection day \\/ bulk day \\(Trash\\/Recycling page\\)$",
+      "es": "Sección {1}, segundo día de recogida / día de artículos voluminosos (página de Basura/Reciclaje)"
+    },
+    {
+      "re": "^Section (I+): limit two items per pick-up; effective January 1, 2018 \\(still on current Trash\\/Recycling page\\)$",
+      "es": "Sección {1}: límite de dos artículos por recogida; vigente desde el 1 de enero de 2018 (sigue en la página actual de Basura/Reciclaje)"
+    },
+    {
+      "re": "^Section (I+) \\((.*)\\): biweekly Wednesday per 2026 Community Calendar$",
+      "es": "Sección {1} ({2}): cada dos miércoles según el Calendario Comunitario de 2026"
+    },
+    {
+      "re": "^(Zones? [\\d and]+|Zone 1 and north side of Zone 3|Zone 2 and south side of Zone 3)$",
+      "es": "{1:@zones}"
+    },
+    {
+      "re": "^(Zones? [\\d and]+): must be out by 6:00 a\\.m\\.?$",
+      "es": "{1:@zones}: deben estar afuera a las 6:00 a.m."
+    },
+    {
+      "re": "^(Zones [\\d and]+) white metal$",
+      "es": "Línea blanca (metal) de las {1:@zones}"
+    },
+    {
+      "re": "^(Zones [\\d and]+): 1st and 3rd Wednesday of each month; no residential recycling on the fifth Wednesday of a month$",
+      "es": "{1:@zones}: 1.º y 3.er miércoles de cada mes; no hay reciclaje residencial el quinto miércoles del mes"
+    },
+    {
+      "re": "^(Zones [\\d and]+): 2nd and 4th Wednesday of each month; no residential recycling on the fifth Wednesday of a month$",
+      "es": "{1:@zones}: 2.º y 4.º miércoles de cada mes; no hay reciclaje residencial el quinto miércoles del mes"
+    },
+    {
+      "re": "^(Zones [\\d and]+): 2026 dates: (.*)$",
+      "es": "{1:@zones}: fechas de 2026: {2:@dates}"
+    },
+    {
+      "re": "^Sections (\\d) and (\\d) leaf and branch curbside$",
+      "es": "Recogida en la acera de hojas y ramas de las Secciones {1} y {2}"
+    },
+    {
+      "re": "^Zone (\\d) \\(Route 34 (South|North)\\): Streets \\(Area (\\d)(?: index from borough 2026 contract map)?\\): (.*?)(?:\\.? Effective May (\\d+)(?:, 2026)?\\.?)?$",
+      "es": "Zona {1} (Ruta 34 {2:southNorth}): Calles (Área {3}): {4}{5?. Vigente desde el {5} de mayo de 2026}"
+    },
+    {
+      "re": "^Area (\\d)$",
+      "es": "Área {1}"
+    },
+    {
+      "re": "^Zone ([ABCD]) garbage: curbside by 6:00 a\\.m\\.; use township-issued blue automated container$",
+      "es": "Basura de la Zona {1}: en la acera a las 6:00 a.m.; use el contenedor azul automatizado que entrega el municipio"
+    },
+    {
+      "re": "^Ocean Grove Zone ([BC]) garbage: manual collection; cans max 45 gallons, 50 lbs\\. with contents$",
+      "es": "Basura de Ocean Grove, Zona {1}: recogida manual; botes de máximo 45 galones y 50 lb con el contenido"
+    },
+    {
+      "re": "^Recycling sub-zone (\\w\\d): assign by 2026 Street Index PDF$",
+      "es": "Subzona de reciclaje {1}: asigne según el PDF del índice de calles de 2026"
+    },
+    {
+      "re": "^Garbage District (\\d)$",
+      "es": "Distrito de basura {1}"
+    },
+    {
+      "re": "^(East|West) of Broad Street$",
+      "es": "Al {1:eastWest} de Broad Street"
+    },
+    {
+      "re": "^Curbside: east of Bingham Avenue(?:; (1st and 3rd) Wednesday of month)?$",
+      "es": "En la acera: al este de Bingham Avenue{1?; 1.º y 3.er miércoles del mes}"
+    },
+    {
+      "re": "^Curbside: Bingham Avenue and west(?:; (2nd and 4th) Wednesday of month)?$",
+      "es": "En la acera: Bingham Avenue y al oeste{1?; 2.º y 4.º miércoles del mes}"
+    },
+    {
+      "re": "^Drive-in collection: borough-wide(?:; (2nd and 4th) Wednesday of month)?$",
+      "es": "Recogida con entrada al predio: en todo el municipio{1?; 2.º y 4.º miércoles del mes}"
+    },
+    {
+      "re": "^Section ([AB]): no trash (Friday December 25|Thursday January 1|Thursday November 26) 2026 \\(2026 calendar\\)$",
+      "es": "Sección {1}: no hay recogida de basura el {2:noTrashDates} de 2026 (calendario de 2026)"
+    },
+    {
+      "re": "^Section ([AB]): cans\\/bottles, bundled cardboard and newspaper; no plastic bags$",
+      "es": "Sección {1}: latas/botellas, cartón atado y periódico; sin bolsas de plástico"
+    },
+    {
+      "re": "^Section ([AB]): bulk \\(furniture, mattresses, couches, other plastics\\); limit 3 items\\. 2026 dates start Jan (\\d+)$",
+      "es": "Sección {1}: artículos voluminosos (muebles, colchones, sofás, otros plásticos); límite de 3 artículos. Las fechas de 2026 empiezan el {2} de enero"
+    },
+    {
+      "re": "^Section ([AB]) fall leaf collection \\(paper bags\\)$",
+      "es": "Recogida de hojas de otoño de la Sección {1} (bolsas de papel)"
+    },
+    {
+      "re": "^Section ([AB]): (.+)$",
+      "es": "Sección {1}: {2}"
+    },
+    {
+      "re": "^(North|South) Zone: collection from 6:00 a\\.m\\.; see official street listing$",
+      "es": "Zona {1:northSouth}: recogida desde las 6:00 a.m.; vea la lista oficial de calles"
+    },
+    {
+      "re": "^(North|South) Zone: collection from 6:00 a\\.m\\.; no collection New Year's Day, Independence Day, Election Day, Thanksgiving, Christmas$",
+      "es": "Zona {1:northSouth}: recogida desde las 6:00 a.m.; no hay recogida en Año Nuevo, Día de la Independencia, Día de las Elecciones, Acción de Gracias ni Navidad"
+    }
+  ]
 }

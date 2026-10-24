@@ -143,7 +143,7 @@ html.gated nav,html.gated .view{display:none!important}
   #tabs svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   #tabs a.act{color:var(--green);background:#e9f4dd}
   .s{padding:20px 16px}
-  .page{padding-top:calc(64px + env(safe-area-inset-top,0px));min-height:0}
+  .page{padding-top:calc(76px + env(safe-area-inset-top,0px));min-height:0}
   h2{font-size:1.7rem;margin-bottom:6px}
   .tool{gap:4px;margin-top:8px}
   label{font-size:.82rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--slate);margin:14px 0 6px}
@@ -175,7 +175,7 @@ html.gated nav,html.gated .view{display:none!important}
   .gwrap{gap:12px}
   .auth{min-height:0;display:block}
   .auth .aside{display:none}
-  .auth .card{margin:calc(64px + env(safe-area-inset-top,0px)) 0 24px;padding:16px;background:transparent}
+  .auth .card{margin:calc(76px + env(safe-area-inset-top,0px)) 0 24px;padding:16px;background:transparent}
   .auth h2,.auth .card h2{font-size:1.7rem}
   .dbar{align-items:center}
 }

@@ -84,9 +84,7 @@ async function migrate() {
 }
 
 async function seed() {
-  const dbPath = process.env.ITEMS_DB ?? path.join(here, '..', '..', 'data', 'items_db.json');
-  const townsPath = process.env.TOWNS_DB ?? path.join(here, '..', '..', 'data', 'towns.json');
-  const db = JSON.parse(readFileSync(dbPath, 'utf8'));
+  const db = JSON.parse(readFileSync(path.join(here, '..', 'data', 'items_db.json'), 'utf8'));
   const known = new Set(REGIONS.map((r) => r.id));
   for (const item of db.items) {
     for (const region of Object.keys(item.county_rules)) {
@@ -140,7 +138,7 @@ async function seed() {
       }
     }
 
-    const towns = JSON.parse(readFileSync(townsPath, 'utf8'));
+    const towns = JSON.parse(readFileSync(path.join(here, '..', 'data', 'towns.json'), 'utf8'));
     for (const row of [...towns.facilities, ...towns.schedules, ...towns.zip_codes]) {
       if (!known.has(row.region)) throw new Error(`towns.json uses unknown region "${row.region}"`);
     }

@@ -30,27 +30,31 @@ function jsonWithEtag(request, body, { maxAge = 300, sMaxAge = 3600 } = {}) {
   return new Response(text, { status: 200, headers: { 'content-type': 'application/json; charset=utf-8', ...headers } });
 }
 
+const noStoreJson = (body, status = 200, extra = {}) => json(body, status, { 'cache-control': 'no-store', ...extra });
+
 const notFound = (error, extra = {}) => json({ error, ...extra }, 404, { 'cache-control': 'public, s-maxage=60' });
-const badRequest = (error, extra = {}) => json({ error, ...extra }, 400, { 'cache-control': 'no-store' });
+const badRequest = (error, extra = {}) => noStoreJson({ error, ...extra }, 400);
 
 const ID_RE = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const validId = (s) => typeof s === 'string' && ID_RE.test(s);
 
-const noStore = { 'cache-control': 'no-store' };
 async function readJson(request, maxBytes) {
   const raw = await request.text();
-  if (new TextEncoder().encode(raw).length > maxBytes) return { error: json({ error: 'too_large' }, 413, noStore) };
+  if (new TextEncoder().encode(raw).length > maxBytes) return { error: noStoreJson({ error: 'too_large' }, 413) };
   let body = null;
   try { body = JSON.parse(raw); } catch {}
-  if (body === null || typeof body !== 'object' || Array.isArray(body)) return { error: json({ error: 'invalid_json' }, 400, noStore) };
+  if (body === null || typeof body !== 'object' || Array.isArray(body)) return { error: noStoreJson({ error: 'invalid_json' }, 400) };
   return { body };
 }
+const readBody = async (request) => {
+  try { return JSON.parse(await request.text()); } catch { return undefined; }
+};
 const isJson = (request) => (request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json');
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const hourStart = (now) => new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
 const clientKey = (request, salt, scope) =>
   createHash('sha256').update(`${salt}|${scope}|${request.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown'}`).digest('hex');
-const bad = (field, message) => json({ error: 'invalid_request', field, message }, 400, noStore);
+const bad = (field, message) => noStoreJson({ error: 'invalid_request', field, message }, 400);
 
 const TZ = 'America/New_York';
 
@@ -600,8 +604,8 @@ function authorized(request, token = process.env.ADMIN_TOKEN) {
 
 async function staffOnly(request, repo, token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '') {
   if (authorized(request, token)) return null;
-  const n = await repo.hit(clientKey(request, salt, 'staff-auth'), hourStart(now));
-  return json({ error: n > AUTH_FAILS_PER_HOUR ? 'rate_limited' : 'unauthorized' }, n > AUTH_FAILS_PER_HOUR ? 429 : 401, noStore);
+  const limited = (await repo.hit(clientKey(request, salt, 'staff-auth'), hourStart(now))) > AUTH_FAILS_PER_HOUR;
+  return noStoreJson({ error: limited ? 'rate_limited' : 'unauthorized' }, limited ? 429 : 401);
 }
 
 function scheduleChanges(rows, areaKeys, today, days = 21) {
@@ -639,12 +643,8 @@ async function handleAlerts(request, repo, { now = new Date() } = {}) {
 async function handleCreateAlert(request, repo, { now = new Date(), token, salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   const denied = await staffOnly(request, repo, token, now, salt);
   if (denied) return denied;
-  let b;
-  try {
-    b = JSON.parse(await request.text());
-  } catch {
-    return json({ error: 'invalid_json' }, 400, noStore);
-  }
+  const b = await readBody(request);
+  if (b === undefined) return noStoreJson({ error: 'invalid_json' }, 400);
   const today = localParts(now).date;
   const startsOn = b?.starts_on ?? today;
   if (typeof b?.message_en !== 'string' || b.message_en.trim().length < 1 || b.message_en.length > 300) return bad('message_en', '1 to 300 characters.');
@@ -659,7 +659,7 @@ async function handleCreateAlert(request, repo, { now = new Date(), token, salt 
   const id = await repo.createAnnouncement({
     regionId: b.town ?? null, messageEn: b.message_en.trim(), messageEs: (b.message_es ?? '').trim(), sourceUrl: b.source_url ?? null, startsOn, endsOn: b.ends_on,
   });
-  return json({ id }, 201, noStore);
+  return noStoreJson({ id }, 201);
 }
 
 async function handleDeleteAlert(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
@@ -668,7 +668,7 @@ async function handleDeleteAlert(request, repo, { token, now = new Date(), salt 
   const id = new URL(request.url).searchParams.get('id') ?? '';
   if (!/^[0-9a-f-]{36}$/.test(id)) return badRequest('invalid_id');
   await repo.deleteAnnouncement(id);
-  return json({ ok: true }, 200, noStore);
+  return noStoreJson({ ok: true }, 200);
 }
 
 const STREAM_LABEL = { trash: 'Trash', recycling: 'Recycling', bulk: 'Bulk pickup', yard: 'Yard waste', other: 'Collection' };
@@ -777,15 +777,7 @@ function buildIcs({ townName, rows, today, now = new Date(), subscribe = false }
   return lines.map(foldLine).join('\r\n') + '\r\n';
 }
 
-const jsonSched = (body, status = 200, extra = {}) =>
-  new Response(JSON.stringify(body), {
-    status,
-    headers: {
-      'content-type': 'application/json; charset=utf-8',
-      'cache-control': status === 400 || status === 404 ? 'no-store' : 'public, s-maxage=3600',
-      ...extra,
-    },
-  });
+const jsonSched = (body, status = 200) => (status === 400 || status === 404 ? noStoreJson(body, status) : json(body, status));
 
 const todayIso = () => localParts(new Date()).date;
 
@@ -1003,12 +995,6 @@ const MAX_BODY_BYTES = 8 * 1024;
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const CONTROL_RE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/;
 
-const jsonNS = (body, status, extra = {}) =>
-  new Response(JSON.stringify(body), {
-    status,
-    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...extra },
-  });
-
 function validDate(s) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
   const d = new Date(`${s}T00:00:00Z`);
@@ -1017,26 +1003,19 @@ function validDate(s) {
 
 async function handleBulkRequest(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   if (!isJson(request)) {
-    return jsonNS({ error: 'unsupported_media_type', message: 'Send application/json.' }, 415);
+    return noStoreJson({ error: 'unsupported_media_type', message: 'Send application/json.' }, 415);
   }
-  if (Number(request.headers.get('content-length') ?? 0) > MAX_BODY_BYTES) return jsonNS({ error: 'too_large' }, 413);
+  if (Number(request.headers.get('content-length') ?? 0) > MAX_BODY_BYTES) return noStoreJson({ error: 'too_large' }, 413);
 
   const windowStart = hourStart(now);
   const hits = await repo.hit(clientKey(request, salt, 'bulk-request'), windowStart);
   if (hits > BULK_LIMIT) {
     const retry = Math.ceil((Date.parse(windowStart) + 3_600_000 - now.getTime()) / 1000);
-    return jsonNS({ error: 'rate_limited', message: 'Too many requests. Try again later.' }, 429, { 'retry-after': String(retry) });
+    return noStoreJson({ error: 'rate_limited', message: 'Too many requests. Try again later.' }, 429, { 'retry-after': String(retry) });
   }
 
-  const raw = await request.text();
-  if (new TextEncoder().encode(raw).length > MAX_BODY_BYTES) return jsonNS({ error: 'too_large' }, 413);
-  let body;
-  try {
-    body = JSON.parse(raw);
-  } catch {
-    return jsonNS({ error: 'invalid_json' }, 400);
-  }
-  if (body === null || typeof body !== 'object' || Array.isArray(body)) return jsonNS({ error: 'invalid_json' }, 400);
+  const { body, error } = await readJson(request, MAX_BODY_BYTES);
+  if (error) return error;
 
   const { town, email, description, preferred_date: preferred } = body;
   if (typeof town !== 'string' || !/^[a-z0-9-]{1,40}$/.test(town)) return bad('town', 'Choose a town.');
@@ -1057,7 +1036,7 @@ async function handleBulkRequest(request, repo, { now = new Date(), salt = proce
   if (!(await repo.isPublishedTown(town))) return bad('town', 'That town is not available yet.');
 
   const { id, expiresAt } = await repo.insert({ regionId: town, email: email.trim(), description: desc, preferredDate });
-  return jsonNS({
+  return noStoreJson({
     id,
     demo: true,
     expires_at: expiresAt,
@@ -1067,9 +1046,9 @@ async function handleBulkRequest(request, repo, { now = new Date(), salt = proce
 }
 
 async function handlePurge(request, repo, { secret = process.env.CRON_SECRET } = {}) {
-  if (!bearerMatches(request.headers.get('authorization') ?? '', secret)) return jsonNS({ error: 'unauthorized' }, 401);
+  if (!bearerMatches(request.headers.get('authorization') ?? '', secret)) return noStoreJson({ error: 'unauthorized' }, 401);
   await repo.purge();
-  return jsonNS({ ok: true }, 200);
+  return noStoreJson({ ok: true }, 200);
 }
 
 const PUSH_MAX_BODY = 4 * 1024;
@@ -1105,14 +1084,14 @@ function validateAreas(rows, areaKeys) {
 
 function handlePushKey(env = process.env) {
   const key = env.VAPID_PUBLIC_KEY;
-  if (!key) return json({ error: 'push_not_configured' }, 503, noStore);
+  if (!key) return noStoreJson({ error: 'push_not_configured' }, 503);
   return json({ public_key: key }, 200, { 'cache-control': 'public, s-maxage=86400' });
 }
 
 async function handleSubscribe(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
+  if (!isJson(request)) return noStoreJson({ error: 'unsupported_media_type' }, 415);
   const windowStart = hourStart(now);
-  if ((await repo.hit(clientKey(request, salt, 'push'), windowStart)) > PUSH_LIMIT) return json({ error: 'rate_limited' }, 429, noStore);
+  if ((await repo.hit(clientKey(request, salt, 'push'), windowStart)) > PUSH_LIMIT) return noStoreJson({ error: 'rate_limited' }, 429);
 
   const { body: b, error } = await readJson(request, PUSH_MAX_BODY);
   if (error) return error;
@@ -1143,22 +1122,22 @@ async function handleSubscribe(request, repo, { now = new Date(), salt = process
   if (!v.ok) return bad('areas', v.message);
 
   await repo.upsert({ endpoint, p256dh, auth, regionId: town, areaKeys: areas, streams: [...new Set(streams)], lang });
-  return json({ ok: true }, 201, noStore);
+  return noStoreJson({ ok: true }, 201);
 }
 
 async function handleUnsubscribe(request, repo) {
-  if (Number(request.headers.get('content-length') ?? 0) > PUSH_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
+  if (Number(request.headers.get('content-length') ?? 0) > PUSH_MAX_BODY) return noStoreJson({ error: 'too_large' }, 413);
   const raw = await request.text();
-  if (new TextEncoder().encode(raw).length > PUSH_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
+  if (new TextEncoder().encode(raw).length > PUSH_MAX_BODY) return noStoreJson({ error: 'too_large' }, 413);
   let b;
   try {
     b = JSON.parse(raw);
   } catch {
-    return json({ error: 'invalid_json' }, 400, noStore);
+    return noStoreJson({ error: 'invalid_json' }, 400);
   }
   if (typeof b?.endpoint !== 'string' || b.endpoint.length > 1000) return bad('endpoint', 'Missing endpoint.');
   await repo.remove(b.endpoint);
-  return json({ ok: true }, 200, noStore);
+  return noStoreJson({ ok: true }, 200);
 }
 
 const STREAM_NAME = {
@@ -1189,7 +1168,7 @@ function pickupsOn(rows, sub, date) {
 }
 
 async function handleReminders(request, repo, send, { secret = process.env.CRON_SECRET, now = new Date() } = {}) {
-  if (!bearerMatches(request.headers.get('authorization') ?? '', secret)) return json({ error: 'unauthorized' }, 401, noStore);
+  if (!bearerMatches(request.headers.get('authorization') ?? '', secret)) return noStoreJson({ error: 'unauthorized' }, 401);
   const today = localParts(now).date;
   const tomorrow = addDays(today, 1);
   const subs = await repo.dueSubscriptions(today);
@@ -1211,7 +1190,7 @@ async function handleReminders(request, repo, send, { secret = process.env.CRON_
       if (err?.statusCode === 404 || err?.statusCode === 410) { await repo.remove(sub.endpoint); stats.removed++; } else { await repo.fail(sub.id); stats.failed++; }
     }
   }
-  return json({ ok: true, date: tomorrow, ...stats }, 200, noStore);
+  return noStoreJson({ ok: true, date: tomorrow, ...stats }, 200);
 }
 
 const REPORT_LIMIT = 10;
@@ -1219,9 +1198,9 @@ const REPORT_MAX_BODY = 4 * 1024;
 const KINDS = ['item_rule', 'schedule', 'facility', 'scan', 'other'];
 
 async function handleReport(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
+  if (!isJson(request)) return noStoreJson({ error: 'unsupported_media_type' }, 415);
   const windowStart = hourStart(now);
-  if ((await repo.hit(clientKey(request, salt, 'reports'), windowStart)) > REPORT_LIMIT) return json({ error: 'rate_limited' }, 429, noStore);
+  if ((await repo.hit(clientKey(request, salt, 'reports'), windowStart)) > REPORT_LIMIT) return noStoreJson({ error: 'rate_limited' }, 429);
 
   const { body: b, error } = await readJson(request, REPORT_MAX_BODY);
   if (error) return error;
@@ -1235,7 +1214,7 @@ async function handleReport(request, repo, { now = new Date(), salt = process.en
   if (b.town && !(await repo.isPublishedTown(b.town))) return badRequest('invalid_town');
 
   await repo.insertReport({ kind: b.kind, itemId: b.item ?? null, regionId: b.town ?? null, facilityKey: b.facility ?? null, message });
-  return json({ ok: true }, 201, noStore);
+  return noStoreJson({ ok: true }, 201);
 }
 
 async function handleListReports(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
@@ -1243,18 +1222,18 @@ async function handleListReports(request, repo, { token, now = new Date(), salt 
   if (denied) return denied;
   const status = new URL(request.url).searchParams.get('status') ?? 'open';
   if (!['open', 'resolved', 'dismissed'].includes(status)) return badRequest('invalid_status');
-  return json({ status, reports: await repo.listReports(status) }, 200, noStore);
+  return noStoreJson({ status, reports: await repo.listReports(status) }, 200);
 }
 
 async function handleResolveReport(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   const denied = await staffOnly(request, repo, token, now, salt);
   if (denied) return denied;
-  let b;
-  try { b = JSON.parse(await request.text()); } catch { return json({ error: 'invalid_json' }, 400, noStore); }
+  const b = await readBody(request);
+  if (b === undefined) return noStoreJson({ error: 'invalid_json' }, 400);
   if (typeof b?.id !== 'string' || !UUID.test(b.id)) return badRequest('invalid_id');
   if (!['resolved', 'dismissed'].includes(b.status)) return badRequest('invalid_status');
   const found = await repo.setReportStatus(b.id, b.status);
-  return found ? json({ ok: true }, 200, noStore) : json({ error: 'not_found' }, 404, noStore);
+  return found ? noStoreJson({ ok: true }, 200) : noStoreJson({ error: 'not_found' }, 404);
 }
 
 const EVENT_LIMIT = 120;
@@ -1268,9 +1247,9 @@ const estimatePounds = (rows) =>
   Math.round(rows.filter((r) => r.outcome !== 'trash').reduce((sum, r) => sum + r.n * (AVG_POUNDS[r.material] ?? AVG_POUNDS.other), 0));
 
 async function handleEvent(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
+  if (!isJson(request)) return noStoreJson({ error: 'unsupported_media_type' }, 415);
   const windowStart = hourStart(now);
-  if ((await repo.hit(clientKey(request, salt, 'events'), windowStart)) > EVENT_LIMIT) return json({ error: 'rate_limited' }, 429, noStore);
+  if ((await repo.hit(clientKey(request, salt, 'events'), windowStart)) > EVENT_LIMIT) return noStoreJson({ error: 'rate_limited' }, 429);
 
   const { body: b, error } = await readJson(request, EVENT_MAX_BODY);
   if (error) return error;
@@ -1282,7 +1261,7 @@ async function handleEvent(request, repo, { now = new Date(), salt = process.env
   if (town !== '' && (!validId(town) || !(await repo.isPublishedTown(town)))) return badRequest('invalid_town');
 
   await repo.count({ day: localParts(now).date, regionId: town, material, outcome: b.outcome });
-  return json({ ok: true }, 202, noStore);
+  return noStoreJson({ ok: true }, 202);
 }
 
 async function handleStats(request, repo) {
@@ -1359,9 +1338,9 @@ async function censusGeocode(address, fetchFn = fetch) {
 const text = (v, min, max) => (typeof v === 'string' && v.trim().length >= min && v.trim().length <= max ? v.trim() : null);
 
 async function handleDumpingReport(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '', geocode = censusGeocode } = {}) {
-  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
-  if ((await repo.hit(clientKey(request, salt, 'dump-submit'), hourStart(now))) > SUBMIT_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
-  if (Number(request.headers.get('content-length') ?? 0) > DUMP_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
+  if (!isJson(request)) return noStoreJson({ error: 'unsupported_media_type' }, 415);
+  if ((await repo.hit(clientKey(request, salt, 'dump-submit'), hourStart(now))) > SUBMIT_PER_HOUR) return noStoreJson({ error: 'rate_limited' }, 429);
+  if (Number(request.headers.get('content-length') ?? 0) > DUMP_MAX_BODY) return noStoreJson({ error: 'too_large' }, 413);
   const { body: b, error } = await readJson(request, DUMP_MAX_BODY);
   if (error) return error;
 
@@ -1387,7 +1366,7 @@ async function handleDumpingReport(request, repo, { now = new Date(), salt = pro
   if (b.photo !== undefined && b.photo !== null && b.photo !== '') {
     if (typeof b.photo !== 'string' || !/^[A-Za-z0-9+/]+={0,2}$/.test(b.photo)) return badRequest('invalid_photo');
     const bytes = Buffer.from(b.photo, 'base64');
-    if (bytes.length > MAX_PHOTO) return json({ error: 'photo_too_large' }, 413, noStore);
+    if (bytes.length > MAX_PHOTO) return noStoreJson({ error: 'photo_too_large' }, 413);
     photo = stripJpeg(bytes);
     if (!photo) return badRequest('invalid_photo', { message: 'Photo must be a JPEG.' });
   }
@@ -1399,19 +1378,19 @@ async function handleDumpingReport(request, repo, { now = new Date(), salt = pro
   for (let attempt = 0; attempt < 5; attempt++) {
     const code = newCode();
     if (await repo.insertDump({ code, regionId: b.town, type: b.type, where, description, notes, lat, lng, photo })) {
-      return json({ ok: true, code, located: lat !== null, photo: photo !== null }, 201, noStore);
+      return noStoreJson({ ok: true, code, located: lat !== null, photo: photo !== null }, 201);
     }
   }
-  return json({ error: 'server_error' }, 500, noStore);
+  return noStoreJson({ error: 'server_error' }, 500);
 }
 
 async function handleDumpingTrack(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if ((await repo.hit(clientKey(request, salt, 'dump-track'), hourStart(now))) > TRACK_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
+  if ((await repo.hit(clientKey(request, salt, 'dump-track'), hourStart(now))) > TRACK_PER_HOUR) return noStoreJson({ error: 'rate_limited' }, 429);
   const code = (new URL(request.url).searchParams.get('code') ?? '').trim().toUpperCase();
   if (!CODE_RE.test(code)) return badRequest('invalid_code');
   const row = await repo.dumpByCode(code);
-  if (!row) return json({ error: 'not_found' }, 404, noStore);
-  return json({ code, status: row.status, town: row.region_id, type: row.dump_type, created_at: row.created_at, updated_at: row.updated_at }, 200, noStore);
+  if (!row) return noStoreJson({ error: 'not_found' }, 404);
+  return noStoreJson({ code, status: row.status, town: row.region_id, type: row.dump_type, created_at: row.created_at, updated_at: row.updated_at }, 200);
 }
 
 function buildMap(pointRows, townRows) {
@@ -1440,7 +1419,7 @@ function buildMap(pointRows, townRows) {
   };
 }
 
-async function handleDumpingMap(request, repo) {
+async function handleDumpingMap(repo) {
   const body = buildMap(await repo.mapPoints(), await repo.townStatusCounts());
   return json(body, 200, { 'cache-control': 'public, max-age=60, s-maxage=300' });
 }
@@ -1452,7 +1431,7 @@ async function handleAdminDumping(request, repo, { token, now = new Date(), salt
   const status = q.get('status'), town = q.get('town');
   if (status && !STATUSES.includes(status)) return badRequest('invalid_status');
   if (town && !validId(town)) return badRequest('invalid_town');
-  return json({ reports: await repo.listDumps({ status: status || null, town: town || null }) }, 200, noStore);
+  return noStoreJson({ reports: await repo.listDumps({ status: status || null, town: town || null }) }, 200);
 }
 
 async function handleAdminDumpingPhoto(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
@@ -1461,74 +1440,70 @@ async function handleAdminDumpingPhoto(request, repo, { token, now = new Date(),
   const id = new URL(request.url).searchParams.get('id') ?? '';
   if (!UUID.test(id)) return badRequest('invalid_id');
   const bytes = await repo.dumpPhoto(id);
-  if (!bytes) return json({ error: 'not_found' }, 404, noStore);
+  if (!bytes) return noStoreJson({ error: 'not_found' }, 404);
   return new Response(bytes, { status: 200, headers: { 'content-type': 'image/jpeg', 'cache-control': 'private, no-store', 'x-content-type-options': 'nosniff', 'content-disposition': 'inline' } });
 }
 
 async function handleAdminDumpingStatus(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   const denied = await staffOnly(request, repo, token, now, salt);
   if (denied) return denied;
-  let b;
-  try { b = JSON.parse(await request.text()); } catch { return json({ error: 'invalid_json' }, 400, noStore); }
+  const b = await readBody(request);
+  if (b === undefined) return noStoreJson({ error: 'invalid_json' }, 400);
   if (typeof b?.id !== 'string' || !UUID.test(b.id)) return badRequest('invalid_id');
   if (!STATUSES.includes(b.status)) return badRequest('invalid_status', { allowed: STATUSES });
-  return (await repo.setDumpStatus(b.id, b.status)) ? json({ ok: true }, 200, noStore) : json({ error: 'not_found' }, 404, noStore);
+  return (await repo.setDumpStatus(b.id, b.status)) ? noStoreJson({ ok: true }, 200) : noStoreJson({ error: 'not_found' }, 404);
 }
-
-const readBody = async (request) => {
-  try { return JSON.parse(await request.text()); } catch { return null; }
-};
 
 async function handleAdminDumpingMessages(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   const denied = await staffOnly(request, repo, token, now, salt);
   if (denied) return denied;
   const id = new URL(request.url).searchParams.get('id') ?? '';
   if (!UUID.test(id)) return badRequest('invalid_id');
-  if (!(await repo.dumpExists(id))) return json({ error: 'not_found' }, 404, noStore);
+  if (!(await repo.dumpExists(id))) return noStoreJson({ error: 'not_found' }, 404);
   const rows = await repo.listMessages(id);
-  return json({ messages: rows.map((m) => ({ from: m.from_staff ? 'staff' : 'reporter', body: m.body, at: m.created_at })) }, 200, noStore);
+  return noStoreJson({ messages: rows.map((m) => ({ from: m.from_staff ? 'staff' : 'reporter', body: m.body, at: m.created_at })) }, 200);
 }
 
 async function handleAdminDumpingMessage(request, repo, { token, now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   const denied = await staffOnly(request, repo, token, now, salt);
   if (denied) return denied;
   const b = await readBody(request);
-  if (!b) return json({ error: 'invalid_json' }, 400, noStore);
+  if (!b) return noStoreJson({ error: 'invalid_json' }, 400);
   if (typeof b.id !== 'string' || !UUID.test(b.id)) return badRequest('invalid_id');
   const body = text(b.body, 1, 500);
   if (!body) return badRequest('invalid_message');
-  if (!(await repo.dumpExists(b.id))) return json({ error: 'not_found' }, 404, noStore);
-  if ((await repo.countMessages(b.id)) >= MAX_MESSAGES) return json({ error: 'thread_full' }, 409, noStore);
+  if (!(await repo.dumpExists(b.id))) return noStoreJson({ error: 'not_found' }, 404);
+  if ((await repo.countMessages(b.id)) >= MAX_MESSAGES) return noStoreJson({ error: 'thread_full' }, 409);
   await repo.addMessage(b.id, true, body);
-  return json({ ok: true }, 201, noStore);
+  return noStoreJson({ ok: true }, 201);
 }
 
 async function handleDumpingMessages(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if ((await repo.hit(clientKey(request, salt, 'dump-track'), hourStart(now))) > TRACK_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
+  if ((await repo.hit(clientKey(request, salt, 'dump-track'), hourStart(now))) > TRACK_PER_HOUR) return noStoreJson({ error: 'rate_limited' }, 429);
   const code = (new URL(request.url).searchParams.get('code') ?? '').trim().toUpperCase();
   if (!CODE_RE.test(code)) return badRequest('invalid_code');
   const id = await repo.dumpIdByCode(code);
-  if (!id) return json({ error: 'not_found' }, 404, noStore);
+  if (!id) return noStoreJson({ error: 'not_found' }, 404);
   const rows = await repo.listMessages(id);
-  return json({ messages: rows.map((m) => ({ from: m.from_staff ? 'staff' : 'you', body: m.body, at: m.created_at })) }, 200, noStore);
+  return noStoreJson({ messages: rows.map((m) => ({ from: m.from_staff ? 'staff' : 'you', body: m.body, at: m.created_at })) }, 200);
 }
 
 async function handleDumpingReply(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
-  if ((await repo.hit(clientKey(request, salt, 'dump-reply'), hourStart(now))) > REPLY_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
+  if (!isJson(request)) return noStoreJson({ error: 'unsupported_media_type' }, 415);
+  if ((await repo.hit(clientKey(request, salt, 'dump-reply'), hourStart(now))) > REPLY_PER_HOUR) return noStoreJson({ error: 'rate_limited' }, 429);
   const b = await readBody(request);
-  if (!b) return json({ error: 'invalid_json' }, 400, noStore);
+  if (!b) return noStoreJson({ error: 'invalid_json' }, 400);
   const code = typeof b.code === 'string' ? b.code.trim().toUpperCase() : '';
   if (!CODE_RE.test(code)) return badRequest('invalid_code');
   const body = text(b.body, 1, 500);
   if (!body) return badRequest('invalid_message');
   const id = await repo.dumpIdByCode(code);
-  if (!id) return json({ error: 'not_found' }, 404, noStore);
+  if (!id) return noStoreJson({ error: 'not_found' }, 404);
   const rows = await repo.listMessages(id);
-  if (!rows.some((m) => m.from_staff)) return json({ error: 'no_thread' }, 409, noStore);
-  if (rows.length >= MAX_MESSAGES) return json({ error: 'thread_full' }, 409, noStore);
+  if (!rows.some((m) => m.from_staff)) return noStoreJson({ error: 'no_thread' }, 409);
+  if (rows.length >= MAX_MESSAGES) return noStoreJson({ error: 'thread_full' }, 409);
   await repo.addMessage(id, false, body);
-  return json({ ok: true }, 201, noStore);
+  return noStoreJson({ ok: true }, 201);
 }
 
 let pool;
@@ -1936,7 +1911,7 @@ async function route(request) {
   if (path === '/dumping/track') return handleDumpingTrack(request, makeDumpingRepo());
   if (path === '/dumping/messages') return handleDumpingMessages(request, makeDumpingRepo());
   if (path === '/admin/dumping/messages') return handleAdminDumpingMessages(request, makeDumpingRepo());
-  if (path === '/dumping/map') return handleDumpingMap(request, makeDumpingRepo());
+  if (path === '/dumping/map') return handleDumpingMap(makeDumpingRepo());
   if (path === '/admin/dumping') return handleAdminDumping(request, makeDumpingRepo());
   if (path === '/admin/dumping/photo') return handleAdminDumpingPhoto(request, makeDumpingRepo());
   if (path === '/stats') return handleStats(request, makeImpactRepo());

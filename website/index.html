@@ -21,15 +21,22 @@
 <nav id="nav">
     <a class="wordmark" data-go="home" href="#home" aria-label="DumpGuard home"><img src="images/logo.png" alt="DumpGuard" height="44" style="height:44px;width:auto;display:block"></a>
     <ul>
-        <li><a data-go="home" href="#home">Home</a></li>
-        <li><a data-go="identify" href="#identify">Identify</a></li>
-        <li><a data-go="pickup" href="#pickup">Pickup days</a></li>
-        <li><a data-go="report" href="#report">Report</a></li>
-        <li><a data-go="map" href="#map">Map</a></li>
+        <li class="lnk"><a data-go="home" href="#home">Home</a></li>
+        <li class="lnk"><a data-go="identify" href="#identify">Identify</a></li>
+        <li class="lnk"><a data-go="pickup" href="#pickup">Pickup days</a></li>
+        <li class="lnk"><a data-go="report" href="#report">Report</a></li>
+        <li class="lnk"><a data-go="map" href="#map">Map</a></li>
         <li><select id="town" class="navtown" aria-label="Your town"><option>Edison</option></select></li>
-        <li><a class="pill" id="pill" data-go="gov" href="#gov">Government</a></li>
+        <li class="gov"><a class="pill" id="pill" data-go="gov" href="#gov">Government</a></li>
     </ul>
 </nav>
+<div id="tabs" role="navigation" aria-label="Main">
+    <a data-go="home" href="#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg><span>Home</span></a>
+    <a data-go="identify" href="#identify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>Identify</span></a>
+    <a data-go="pickup" href="#pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Pickup</span></a>
+    <a data-go="report" href="#report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg><span>Report</span></a>
+    <a data-go="map" href="#map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Map</span></a>
+</div>
 
 <div class="view" id="v-home">
     <header class="hero">
@@ -43,10 +50,11 @@
     <section class="s">
         <h2>What does DumpGuard do?</h2>
         <ul class="does">
-            <li><a data-go="identify" href="#identify">Find where an item goes</a></li>
-            <li><a data-go="pickup" href="#pickup">See your pickup days</a></li>
-            <li><a data-go="report" href="#report">Report illegal dumping</a></li>
+            <li class="lnk"><a data-go="identify" href="#identify">Find where an item goes</a></li>
+            <li class="lnk"><a data-go="pickup" href="#pickup">See your pickup days</a></li>
+            <li class="lnk"><a data-go="report" href="#report">Report illegal dumping</a></li>
         </ul>
+        <p class="govfoot"><a data-go="gov" href="#gov">Government sign-in</a></p>
     </section>
 </div>
 

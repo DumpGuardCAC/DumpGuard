@@ -9,7 +9,7 @@
     v = ALIAS[v] || v;
     if (!$('v-' + v)) v = 'home';
     Array.prototype.forEach.call(document.querySelectorAll('.view'), function (e) { e.classList.toggle('on', e.id === 'v-' + v); });
-    Array.prototype.forEach.call(document.querySelectorAll('nav a'), function (a) { a.classList.toggle('act', a.getAttribute('data-go') === v); });
+    Array.prototype.forEach.call(document.querySelectorAll('nav a, #tabs a'), function (a) { a.classList.toggle('act', a.getAttribute('data-go') === v); });
     try { history.replaceState(null, '', '#' + v); } catch (e) { }
     window.scrollTo(0, 0);
     var view = $('v-' + v);

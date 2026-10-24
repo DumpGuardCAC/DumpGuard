@@ -5,7 +5,7 @@
   if (!DG) return;
 
   var ES = {
-    'Home': 'Inicio', 'Identify': 'Identificar', 'Report': 'Reportar', 'Map': 'Mapa', 'About': 'Acerca de', 'Log in': 'Iniciar sesión', 'Dashboard': 'Panel',
+    'Home': 'Inicio', 'Pickup': 'Recogida', 'Government sign-in': 'Acceso del gobierno', 'Identify': 'Identificar', 'Report': 'Reportar', 'Map': 'Mapa', 'About': 'Acerca de', 'Log in': 'Iniciar sesión', 'Dashboard': 'Panel',
     'Get started': 'Comenzar', 'Scroll ↓': 'Desplácese ↓', 'Dispose of anything, the right way': 'Deseche cualquier cosa, de la manera correcta',
     'How it works': 'Cómo funciona', 'Clear answers from': 'Respuestas claras de', 'your own district.': 'su propio distrito.',
     'Local disposal websites are outdated and hard to follow. DumpGuard replaces the confusion with one clear, sourced answer.': 'Los sitios web locales sobre desechos están desactualizados y son difíciles de seguir. DumpGuard reemplaza la confusión con una respuesta clara y con fuente.',

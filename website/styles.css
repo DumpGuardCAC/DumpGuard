@@ -25,7 +25,6 @@ nav a.act{border-color:var(--green)}
 .page{padding-top:130px;min-height:100vh}
 h2{font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;margin-bottom:22px}
 .lead{font-size:1.12rem;color:var(--muted);max-width:760px;font-weight:300}
-.cats{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 
 .tool{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:40px}
 @media(max-width:800px){.tool{grid-template-columns:1fr}.s{padding:80px 6vw}}

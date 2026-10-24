@@ -3,7 +3,6 @@ import webpush from 'web-push';
 import { createHash, randomInt, timingSafeEqual } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
-// ---- strings
 const CHECK_WITH_TOWN = {
   en: 'Double check with your town',
   es: 'Confirme con su municipio',
@@ -14,7 +13,6 @@ const BULK_DEMO_NOTICE = {
   es: 'Actualmente, la recogida de objetos grandes es solo una demostración hasta obtener el permiso de los municipios',
 };
 
-// ---- http
 const json = (body, status = 200, extra = {}) =>
   new Response(JSON.stringify(body), {
     status,
@@ -38,7 +36,6 @@ const badRequest = (error, extra = {}) => json({ error, ...extra }, 400, { 'cach
 const ID_RE = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const validId = (s) => typeof s === 'string' && ID_RE.test(s);
 
-// ---- shared
 const noStore = { 'cache-control': 'no-store' };
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const hourStart = (now) => new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
@@ -46,7 +43,6 @@ const clientKey = (request, salt, scope) =>
   createHash('sha256').update(`${salt}|${scope}|${request.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown'}`).digest('hex');
 const bad = (field, message) => json({ error: 'invalid_request', field, message }, 400, noStore);
 
-// ---- hours
 const TZ = 'America/New_York';
 
 function localParts(now) {
@@ -94,7 +90,6 @@ function openStatus(hoursStruct, now = new Date(), lookaheadDays = 120) {
 
 const HOURS_NOTE = { en: 'Hours may change on holidays and in bad weather. Call first.', es: 'El horario puede cambiar en días feriados y con mal tiempo. Llame antes.' };
 
-// ---- occurrences
 const DAY_CODES = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 const DAY_MS = 86_400_000;
 
@@ -174,7 +169,6 @@ function occurrences(row, from, to) {
   return [...found.values()].sort((a, b) => (a.date < b.date ? -1 : 1));
 }
 
-// ---- es_labels
 const MONTHS = { Jan: 'ene', Feb: 'feb', Mar: 'mar', Apr: 'abr', May: 'may', Jun: 'jun', Jul: 'jul', Aug: 'ago', Sep: 'sep', Oct: 'oct', Nov: 'nov', Dec: 'dic' };
 const FULL = { January: 'enero', February: 'febrero', March: 'marzo', April: 'abril', May: 'mayo', June: 'junio', July: 'julio', August: 'agosto', September: 'septiembre', October: 'octubre', November: 'noviembre', December: 'diciembre' };
 const dates = (s) => s.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g, (m) => MONTHS[m]);
@@ -346,7 +340,6 @@ function toEs(text) {
   return text;
 }
 
-// ---- items
 function resolveRule(item, chain, facilitiesByKey) {
   for (let i = 0; i < chain.length; i++) {
     const region = chain[i];
@@ -444,7 +437,6 @@ async function handleItem(request, id, repo) {
   });
 }
 
-// ---- materials
 const MATERIALS = ['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard', 'other'];
 const MIN_ITEMS_FOR_CONSENSUS = 5;
 const CONSENSUS_SHARE = 0.85;
@@ -492,7 +484,6 @@ async function handleMaterial(request, material, repo, { limit = 40 } = {}) {
   });
 }
 
-// ---- search
 const fold = (s) =>
   String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
 
@@ -586,10 +577,8 @@ async function handleSearch(request, repo) {
   return jsonWithEtag(request, { query: q, count: results.length, results }, { maxAge: 60, sMaxAge: 600 });
 }
 
-// ---- alerts
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const AUTH_FAILS_PER_HOUR = 10;
-
 
 function bearerMatches(header, secret) {
   if (!secret) return false;
@@ -677,7 +666,6 @@ async function handleDeleteAlert(request, repo, { token, now = new Date(), salt 
   return json({ ok: true }, 200, noStore);
 }
 
-// ---- ics
 const STREAM_LABEL = { trash: 'Trash', recycling: 'Recycling', bulk: 'Bulk pickup', yard: 'Yard waste', other: 'Collection' };
 
 const esc = (s) =>
@@ -784,7 +772,6 @@ function buildIcs({ townName, rows, today, now = new Date(), subscribe = false }
   return lines.map(foldLine).join('\r\n') + '\r\n';
 }
 
-// ---- schedule
 const jsonSched = (body, status = 200, extra = {}) =>
   new Response(JSON.stringify(body), {
     status,
@@ -890,7 +877,6 @@ const splitNote = (n) => ({
   return jsonSched({ zip, town, area, selected, schedules, calendar });
 }
 
-// ---- places
 const MATERIAL_SET = new Set(['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard', 'other']);
 
 async function handleTowns(request, repo) {
@@ -1010,7 +996,6 @@ async function handleHealth(repo) {
   }
 }
 
-// ---- bulk
 const BULK_LIMIT = 5;
 const MAX_BODY_BYTES = 8 * 1024;
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -1021,8 +1006,6 @@ const jsonNS = (body, status, extra = {}) =>
     status,
     headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...extra },
   });
-
-
 
 function validDate(s) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
@@ -1087,7 +1070,6 @@ async function handlePurge(request, repo, { secret = process.env.CRON_SECRET } =
   return jsonNS({ ok: true }, 200);
 }
 
-// ---- push
 const PUSH_MAX_BODY = 4 * 1024;
 const PUSH_LIMIT = 10;
 const STREAMS = ['trash', 'recycling', 'bulk', 'yard'];
@@ -1103,8 +1085,6 @@ const allowedEndpoint = (s) => {
     return false;
   }
 };
-
-
 
 const groupOf = (key) => (key.includes(':') ? key.split(':')[0] : 'area');
 
@@ -1241,11 +1221,9 @@ async function handleReminders(request, repo, send, { secret = process.env.CRON_
   return json({ ok: true, date: tomorrow, ...stats }, 200, noStore);
 }
 
-// ---- reports
 const REPORT_LIMIT = 10;
 const REPORT_MAX_BODY = 4 * 1024;
 const KINDS = ['item_rule', 'schedule', 'facility', 'scan', 'other'];
-
 
 async function handleReport(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   if (!(request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json')) return json({ error: 'unsupported_media_type' }, 415, noStore);
@@ -1289,7 +1267,6 @@ async function handleResolveReport(request, repo, { token, now = new Date(), sal
   return found ? json({ ok: true }, 200, noStore) : json({ error: 'not_found' }, 404, noStore);
 }
 
-// ---- impact
 const EVENT_LIMIT = 120;
 const EVENT_MAX_BODY = 1024;
 const OUTCOMES = ['recycling', 'trash', 'special_dropoff'];
@@ -1299,7 +1276,6 @@ const AVG_POUNDS = {
 };
 const estimatePounds = (rows) =>
   Math.round(rows.filter((r) => r.outcome !== 'trash').reduce((sum, r) => sum + r.n * (AVG_POUNDS[r.material] ?? AVG_POUNDS.other), 0));
-
 
 async function handleEvent(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
   if (!(request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json')) return json({ error: 'unsupported_media_type' }, 415, noStore);
@@ -1338,7 +1314,6 @@ async function handleStats(request, repo) {
   }, { maxAge: 60, sMaxAge: 300 });
 }
 
-// ---- dumping
 const TYPES = ['household', 'furniture', 'appliances', 'electronics', 'tires', 'construction', 'yard', 'hazardous', 'other'];
 const STATUSES = ['new', 'noticed', 'progress', 'resolved'];
 const SUBMIT_PER_HOUR = 5;
@@ -1574,7 +1549,6 @@ async function handleDumpingReply(request, repo, { now = new Date(), salt = proc
   return json({ ok: true }, 201, noStore);
 }
 
-// ---- repo
 let pool;
 function getPool() {
   pool ??= new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 5 });
@@ -1925,7 +1899,6 @@ function makeDumpingRepo(db = getPool()) {
   };
 }
 
-// ---- webpush
 function makeSender(env = process.env) {
   const { VAPID_PUBLIC_KEY: pub, VAPID_PRIVATE_KEY: priv, VAPID_SUBJECT: subject } = env;
   if (!pub || !priv || !subject) return null;
@@ -1934,7 +1907,6 @@ function makeSender(env = process.env) {
     webpush.sendNotification({ endpoint: sub.endpoint, keys: { p256dh: sub.p256dh, auth: sub.auth } }, payload, { TTL: 6 * 3600, urgency: 'normal' });
 }
 
-// ---- router
 let streetLookup;
 const streets = () =>
   (streetLookup ??= buildStreetLookup(

@@ -1,4 +1,3 @@
-// Database tools. Usage: node lib/db.mjs migrate | seed | publish [--off|--info] [town...]
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -12,8 +11,6 @@ if (!url) {
   process.exit(1);
 }
 
-// schema.sql holds the migrations in order, each under a "-- migration: <name>" line.
-// Names match the old per-file names so databases that already ran them stay in sync.
 function migrations() {
   const parts = readFileSync(path.join(here, 'schema.sql'), 'utf8').split(/^-- migration: (\S+)\n/m);
   const out = [];

@@ -37,6 +37,14 @@ const ID_RE = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const validId = (s) => typeof s === 'string' && ID_RE.test(s);
 
 const noStore = { 'cache-control': 'no-store' };
+async function readJson(request, maxBytes) {
+  const raw = await request.text();
+  if (new TextEncoder().encode(raw).length > maxBytes) return { error: json({ error: 'too_large' }, 413, noStore) };
+  let body = null;
+  try { body = JSON.parse(raw); } catch {}
+  if (body === null || typeof body !== 'object' || Array.isArray(body)) return { error: json({ error: 'invalid_json' }, 400, noStore) };
+  return { body };
+}
 const isJson = (request) => (request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json');
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const hourStart = (now) => new Date(Math.floor(now.getTime() / 3_600_000) * 3_600_000).toISOString();
@@ -1106,15 +1114,8 @@ async function handleSubscribe(request, repo, { now = new Date(), salt = process
   const windowStart = hourStart(now);
   if ((await repo.hit(clientKey(request, salt, 'push'), windowStart)) > PUSH_LIMIT) return json({ error: 'rate_limited' }, 429, noStore);
 
-  const raw = await request.text();
-  if (new TextEncoder().encode(raw).length > PUSH_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
-  let b;
-  try {
-    b = JSON.parse(raw);
-  } catch {
-    return json({ error: 'invalid_json' }, 400, noStore);
-  }
-  if (b === null || typeof b !== 'object' || Array.isArray(b)) return json({ error: 'invalid_json' }, 400, noStore);
+  const { body: b, error } = await readJson(request, PUSH_MAX_BODY);
+  if (error) return error;
 
   const sub = b.subscription;
   const endpoint = sub?.endpoint;
@@ -1222,11 +1223,8 @@ async function handleReport(request, repo, { now = new Date(), salt = process.en
   const windowStart = hourStart(now);
   if ((await repo.hit(clientKey(request, salt, 'reports'), windowStart)) > REPORT_LIMIT) return json({ error: 'rate_limited' }, 429, noStore);
 
-  const raw = await request.text();
-  if (new TextEncoder().encode(raw).length > REPORT_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
-  let b;
-  try { b = JSON.parse(raw); } catch { return json({ error: 'invalid_json' }, 400, noStore); }
-  if (b === null || typeof b !== 'object' || Array.isArray(b)) return json({ error: 'invalid_json' }, 400, noStore);
+  const { body: b, error } = await readJson(request, REPORT_MAX_BODY);
+  if (error) return error;
 
   if (!KINDS.includes(b.kind)) return badRequest('invalid_kind', { allowed: KINDS });
   const message = typeof b.message === 'string' ? b.message.trim() : '';
@@ -1274,11 +1272,8 @@ async function handleEvent(request, repo, { now = new Date(), salt = process.env
   const windowStart = hourStart(now);
   if ((await repo.hit(clientKey(request, salt, 'events'), windowStart)) > EVENT_LIMIT) return json({ error: 'rate_limited' }, 429, noStore);
 
-  const raw = await request.text();
-  if (new TextEncoder().encode(raw).length > EVENT_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
-  let b;
-  try { b = JSON.parse(raw); } catch { return json({ error: 'invalid_json' }, 400, noStore); }
-  if (b === null || typeof b !== 'object' || Array.isArray(b)) return json({ error: 'invalid_json' }, 400, noStore);
+  const { body: b, error } = await readJson(request, EVENT_MAX_BODY);
+  if (error) return error;
 
   if (!OUTCOMES.includes(b.outcome)) return badRequest('invalid_outcome', { allowed: OUTCOMES });
   const material = b.material ?? 'other';
@@ -1367,11 +1362,8 @@ async function handleDumpingReport(request, repo, { now = new Date(), salt = pro
   if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
   if ((await repo.hit(clientKey(request, salt, 'dump-submit'), hourStart(now))) > SUBMIT_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
   if (Number(request.headers.get('content-length') ?? 0) > DUMP_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
-  const raw = await request.text();
-  if (raw.length > DUMP_MAX_BODY) return json({ error: 'too_large' }, 413, noStore);
-  let b;
-  try { b = JSON.parse(raw); } catch { return json({ error: 'invalid_json' }, 400, noStore); }
-  if (b === null || typeof b !== 'object' || Array.isArray(b)) return json({ error: 'invalid_json' }, 400, noStore);
+  const { body: b, error } = await readJson(request, DUMP_MAX_BODY);
+  if (error) return error;
 
   if (!validId(b.town) || !(await repo.isPublishedTown(b.town))) return badRequest('invalid_town');
   if (!TYPES.includes(b.type)) return badRequest('invalid_type', { allowed: TYPES });
@@ -1522,7 +1514,7 @@ async function handleDumpingMessages(request, repo, { now = new Date(), salt = p
 }
 
 async function handleDumpingReply(request, repo, { now = new Date(), salt = process.env.RATE_LIMIT_SALT ?? '' } = {}) {
-  if (!(request.headers.get('content-type') ?? '').includes('application/json')) return json({ error: 'unsupported_media_type' }, 415, noStore);
+  if (!isJson(request)) return json({ error: 'unsupported_media_type' }, 415, noStore);
   if ((await repo.hit(clientKey(request, salt, 'dump-reply'), hourStart(now))) > REPLY_PER_HOUR) return json({ error: 'rate_limited' }, 429, noStore);
   const b = await readBody(request);
   if (!b) return json({ error: 'invalid_json' }, 400, noStore);

@@ -449,7 +449,7 @@
   }
 
   window.DumpGuard = {
-    dumpTypes: dumpTypes, statusColor: statusColor, when: when, tileMap: tileMap,
+    material: function (m) { return T[state.lang].materials[m]; }, dumpTypes: dumpTypes, statusColor: statusColor, when: when, tileMap: tileMap,
     api: api, request: request, setTown: setTown, showMaterial: showMaterial, showCategoryPicker: showCategoryPicker,
     h: h, clear: clear, lang: function () { return state.lang; }, setLang: setLang, townId: function () { return state.town; }, townName: function () { return townName(state.town); },
   };
@@ -469,13 +469,11 @@
       prompt: 'Take or upload a photo', reading: 'Loading the photo model...', looking: 'Looking at the photo...',
       sure: 'Looks like', unsure: 'Not sure what this is. Pick a category below.', none: 'No item found in the photo. Try a closer picture, or pick a category below.',
       fail: 'Photo recognition could not start. Pick a category below.', local: 'The photo stays on your device.', another: 'Try another photo',
-      materials: { rigid_plastic: 'Hard plastic', soft_plastic_foam: 'Soft plastic or foam', cardboard_paper: 'Cardboard or paper', metal: 'Metal', glass: 'Glass', ewaste_hazard: 'Electronics or hazardous' },
     },
     es: {
       prompt: 'Tome o suba una foto', reading: 'Cargando el modelo de fotos...', looking: 'Mirando la foto...',
       sure: 'Parece', unsure: 'No estoy seguro de qué es. Elija una categoría abajo.', none: 'No se encontró ningún objeto en la foto. Pruebe una foto más cercana o elija una categoría abajo.',
       fail: 'No se pudo iniciar el reconocimiento de fotos. Elija una categoría abajo.', local: 'La foto se queda en su dispositivo.', another: 'Probar otra foto',
-      materials: { rigid_plastic: 'Plástico duro', soft_plastic_foam: 'Plástico blando o espuma', cardboard_paper: 'Cartón o papel', metal: 'Metal', glass: 'Vidrio', ewaste_hazard: 'Electrónicos o peligrosos' },
     },
   };
   var s = function () { return S[window.DumpGuard.lang()] || S.en; };
@@ -551,7 +549,7 @@
           if (run !== mine) return;
           if (r.cls === 'no_object') { note.textContent = s().none; DG.showCategoryPicker(true); return; }
           if (!r.sure) { note.textContent = s().unsure; DG.showCategoryPicker(true); return; }
-          note.textContent = s().sure + ': ' + s().materials[r.cls] + ' (' + Math.round(r.confidence * 100) + '%). ' + s().local;
+          note.textContent = s().sure + ': ' + DG.material(r.cls) + ' (' + Math.round(r.confidence * 100) + '%). ' + s().local;
           DG.showMaterial(r.cls);
         }).catch(function () {
           if (run !== mine) return;

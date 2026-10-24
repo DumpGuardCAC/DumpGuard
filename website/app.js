@@ -443,8 +443,8 @@
 (function () {
   'use strict';
 
-  var TFJS = 'tf.min.js';
-  var MODEL_URL = 'model.json';
+  var TFJS = 'lib/tf.min.js';
+  var MODEL_URL = 'lib/model.json';
   var CLASSES = ['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard', 'no_object'];
   var SIZE = 224, TEMPERATURE = 1.9, THRESHOLD = 0.65;
 

@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['android/**', 'website/index.html', 'website/*.js', 'website/*.css', 'website/*.png', 'website/*.json', 'website/*.bin', '.github/workflows/android-apk.yml']
+    paths: ['android/**', 'website/index.html', 'website/*.js', 'website/*.css', 'website/*.png', 'website/*.json', 'website/lib/**', '.github/workflows/android-apk.yml']
 permissions:
   contents: write
 jobs:

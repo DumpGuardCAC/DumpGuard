@@ -1,4 +1,4 @@
-// Database tools. Usage: node db.mjs migrate | seed | publish [--off|--info] [town...]
+// Database tools. Usage: node lib/db.mjs migrate | seed | publish [--off|--info] [town...]
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -87,8 +87,8 @@ async function migrate() {
 }
 
 async function seed() {
-  const dbPath = process.env.ITEMS_DB ?? path.join(here, '..', 'data', 'items_db.json');
-  const townsPath = process.env.TOWNS_DB ?? path.join(here, '..', 'data', 'towns.json');
+  const dbPath = process.env.ITEMS_DB ?? path.join(here, '..', '..', 'data', 'items_db.json');
+  const townsPath = process.env.TOWNS_DB ?? path.join(here, '..', '..', 'data', 'towns.json');
   const db = JSON.parse(readFileSync(dbPath, 'utf8'));
   const known = new Set(REGIONS.map((r) => r.id));
   for (const item of db.items) {
@@ -221,7 +221,7 @@ async function publish() {
 
 const commands = { migrate, seed, publish };
 if (!commands[cmd]) {
-  console.error('Usage: node db.mjs migrate | seed | publish [--off|--info] [town...]');
+  console.error('Usage: node lib/db.mjs migrate | seed | publish [--off|--info] [town...]');
   process.exit(1);
 }
 await commands[cmd]();

@@ -1938,7 +1938,7 @@ function makeSender(env = process.env) {
 let streetLookup;
 const streets = () =>
   (streetLookup ??= buildStreetLookup(
-    JSON.parse(readFileSync(new URL('../streets.json', import.meta.url), 'utf8')),
+    JSON.parse(readFileSync(new URL('../lib/streets.json', import.meta.url), 'utf8')),
   ));
 
 const NATIVE_ORIGINS = new Set(['https://localhost']);

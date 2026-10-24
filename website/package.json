@@ -10,8 +10,8 @@
     "web-push": "^3.6.7"
   },
   "scripts": {
-    "migrate": "node db.mjs migrate",
-    "seed": "node db.mjs seed",
-    "publish-town": "node db.mjs publish"
+    "migrate": "node lib/db.mjs migrate",
+    "seed": "node lib/db.mjs seed",
+    "publish-town": "node lib/db.mjs publish"
   }
 }

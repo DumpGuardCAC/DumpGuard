@@ -1,7 +1,7 @@
-var CACHE = 'dumpguard-v5';
+var CACHE = 'dumpguard-v6';
 var SHELL = [
-  '/', '/index.html', '/styles.css', '/app.js', '/manifest.json', '/icon.png', '/tf.min.js',
-  '/model.json', '/model.bin'
+  '/', '/index.html', '/styles.css', '/app.js', '/manifest.json', '/icon.png', '/lib/tf.min.js',
+  '/lib/model.json', '/lib/model.bin'
 ];
 
 self.addEventListener('install', function (e) {

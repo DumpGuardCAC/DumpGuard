@@ -1,29 +1,36 @@
-var CACHE = 'dumpguard-v6';
-var SHELL = [
+const CACHE = 'dumpguard-v6';
+const SHELL = [
   '/', '/index.html', '/styles.css', '/app.js', '/manifest.json', '/icon.png', '/lib/tf.min.js',
-  '/lib/model.json', '/lib/model.bin'
+  '/lib/model.json', '/lib/model.bin',
 ];
 
-self.addEventListener('install', function (e) {
-  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); }));
+self.addEventListener('install', e => {
+  e.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await cache.addAll(SHELL);
+    await self.skipWaiting();
+  })());
 });
 
-self.addEventListener('activate', function (e) {
-  e.waitUntil(caches.keys().then(function (keys) {
-    return Promise.all(keys.filter(function (k) { return k !== CACHE; }).map(function (k) { return caches.delete(k); }));
-  }).then(function () { return self.clients.claim(); }));
+self.addEventListener('activate', e => {
+  e.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)));
+    await self.clients.claim();
+  })());
 });
 
-self.addEventListener('fetch', function (e) {
-  var req = e.request, url = new URL(req.url);
-  if (req.method !== 'GET' || url.origin !== location.origin || url.pathname.indexOf('/api/') === 0) return;
-  e.respondWith(caches.open(CACHE).then(function (c) {
-    return c.match(req, { ignoreSearch: true }).then(function (hit) {
-      var net = fetch(req).then(function (res) {
-        if (res && res.ok) c.put(req, res.clone());
-        return res;
-      }).catch(function () { return hit || c.match('/index.html'); });
-      return hit || net;
-    });
-  }));
+self.addEventListener('fetch', e => {
+  const req = e.request;
+  const url = new URL(req.url);
+  if (req.method !== 'GET' || url.origin !== location.origin || url.pathname.startsWith('/api/')) return;
+  e.respondWith((async () => {
+    const cache = await caches.open(CACHE);
+    const hit = await cache.match(req, { ignoreSearch: true });
+    const net = fetch(req).then(res => {
+      if (res?.ok) cache.put(req, res.clone());
+      return res;
+    }).catch(() => hit || cache.match('/index.html'));
+    return hit || net;
+  })());
 });

@@ -1,3 +1,5 @@
+const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
+
 (() => {
   const root = document.documentElement;
   const native = !!window.Capacitor || location.protocol === 'capacitor:' || (location.hostname === 'localhost' && location.protocol === 'https:');
@@ -27,18 +29,10 @@
       s3: 'Open DumpGuard from your Home Screen.',
       safari: 'This page is not open in Safari. Open it in Safari first.',
     },
-    es: {
-      h: 'Agregue DumpGuard a su pantalla de inicio',
-      lead: 'En iPhone, DumpGuard funciona como una app. Instálela para continuar.',
-      s1: 'Toque el botón Compartir en la barra de Safari.',
-      s2: 'Desplácese y toque Agregar a pantalla de inicio.',
-      s3: 'Abra DumpGuard desde su pantalla de inicio.',
-      safari: 'Esta página no está abierta en Safari. Ábrala primero en Safari.',
-    },
   };
   let lang = 'en';
   try { lang = (localStorage.getItem('dg_lang') || (navigator.language || 'en').slice(0, 2)) === 'es' ? 'es' : 'en'; } catch {}
-  const t = T[lang];
+  let t = T.en;
   const inApp = /FBAN|FBAV|Instagram|Snapchat|TikTok|Line\/|MicroMessenger|GSA\/|Twitter/.test(navigator.userAgent);
 
   const el = (tag, cls, text) => {
@@ -79,7 +73,11 @@
     gate.append(steps);
     document.body.append(gate);
   };
-  if (document.body) build(); else document.addEventListener('DOMContentLoaded', build);
+  esReady.then(es => {
+    T.es = es.install ?? T.en;
+    t = T[lang];
+    build();
+  });
 })();
 
 (() => {
@@ -103,21 +101,6 @@
       trashS: 'Trash', areaS: 'Area', recyclingS: 'Recycling', bulk: 'Bulk pickup', yard: 'Yard waste', alerts: 'Notices', counted: 'items sorted with DumpGuard, about', lb: 'lb diverted (estimate)',
       materials: { rigid_plastic: 'Hard plastic', soft_plastic_foam: 'Soft plastic or foam', cardboard_paper: 'Cardboard or paper', metal: 'Metal', glass: 'Glass', ewaste_hazard: 'Electronics or hazardous', other: 'Other' },
       consensus: 'In your town most of these are:', basedOn: 'based on', items: 'verified items',
-    },
-    es: {
-      empty: 'Su guía de desecho aparecerá aquí.', searching: 'Buscando...', none: 'Sin resultados. Elija una categoría o pruebe otra palabra.',
-      didyou: 'Otras coincidencias', recycling: 'Reciclar', trash: 'Basura', special_dropoff: 'Punto de entrega especial', hazard: 'Peligroso: no lo ponga en el contenedor',
-      gotit: 'Listo, contar de forma anónima', thanks: 'Gracias, contado de forma anónima.',
-      wrong: 'Informar de una respuesta incorrecta', send: 'Enviar', cancel: 'Cancelar', whatwrong: '¿Qué está mal o falta?', sent: 'Gracias. Una persona lo revisará con la fuente oficial.',
-      tooLong: 'Use de 3 a 500 caracteres.',
-      where: 'Dónde llevarlo', openNow: 'abierto ahora', closed: 'cerrado ahora', km: 'km', residents: 'Solo residentes',
-      cat: 'Categoría', catPick: 'Elija una categoría', fail: 'No se pudo conectar con el servidor. Intente de nuevo.',
-      zipHelp: 'Escriba su código postal para ver los días de recogida.', pickTown: '¿Qué municipio?', pickArea: '¿Cuál es el suyo?', choose: 'Elija...',
-      next: 'Próximas recogidas', moved: 'cambiada', calendar: 'Agregar a mi calendario', calNote: 'El calendario se actualiza solo cuando los feriados cambian las recogidas.', notListed: 'todavía no aparece aquí. Consulte el sitio web de su municipio o llame a obras públicas.',
-      noZip: 'Todavía estamos buscando datos de recogida verificados para esta zona. Vuelva a consultar pronto.', badZip: 'Escriba un código postal de 5 dígitos.', lookup: 'Buscar',
-      trashS: 'Basura', areaS: 'Zona', recyclingS: 'Reciclaje', bulk: 'Objetos grandes', yard: 'Desechos de jardín', alerts: 'Avisos', counted: 'artículos clasificados con DumpGuard, unas', lb: 'libras desviadas (estimado)',
-      materials: { rigid_plastic: 'Plástico duro', soft_plastic_foam: 'Plástico blando o espuma', cardboard_paper: 'Cartón o papel', metal: 'Metal', glass: 'Vidrio', ewaste_hazard: 'Electrónicos o peligrosos', other: 'Otro' },
-      consensus: 'En su municipio la mayoría de estos son:', basedOn: 'según', items: 'artículos verificados',
     },
   };
   const COLORS = { recycling: '#15803d', trash: '#4b5563', special_dropoff: '#dc2626' };
@@ -533,7 +516,10 @@
     api, request, setTown, showMaterial, showCategoryPicker,
     h, clear, lang: () => state.lang, setLang, townId: () => state.town, townName: () => townName(state.town),
   };
-  document.addEventListener('DOMContentLoaded', init);
+  esReady.then(es => {
+    T.es = es.guide ?? T.en;
+    init();
+  });
 })();
 
 (() => {
@@ -551,11 +537,6 @@
       prompt: 'Take or upload a photo', reading: 'Loading the photo model...', looking: 'Looking at the photo...',
       sure: 'Looks like', unsure: 'Not sure what this is. Pick a category below.', none: 'No item found in the photo. Try a closer picture, or pick a category below.',
       fail: 'Photo recognition could not start. Pick a category below.', local: 'The photo stays on your device.', another: 'Try another photo',
-    },
-    es: {
-      prompt: 'Tome o suba una foto', reading: 'Cargando el modelo de fotos...', looking: 'Mirando la foto...',
-      sure: 'Parece', unsure: 'No estoy seguro de qué es. Elija una categoría abajo.', none: 'No se encontró ningún objeto en la foto. Pruebe una foto más cercana o elija una categoría abajo.',
-      fail: 'No se pudo iniciar el reconocimiento de fotos. Elija una categoría abajo.', local: 'La foto se queda en su dispositivo.', another: 'Probar otra foto',
     },
   };
   const str = key => (S[window.DumpGuard.lang()] || S.en)[key];
@@ -662,7 +643,10 @@
     });
   };
 
-  document.addEventListener('DOMContentLoaded', init);
+  esReady.then(es => {
+    S.es = es.photo ?? S.en;
+    init();
+  });
 })();
 
 (() => {
@@ -918,7 +902,7 @@
     $('tgo').addEventListener('click', () => lookup($('tcode').value));
     $('tcode').addEventListener('keydown', e => { if (e.key === 'Enter') lookup($('tcode').value); });
   };
-  document.addEventListener('DOMContentLoaded', init);
+  esReady.then(init);
 })();
 
 (() => {
@@ -1384,7 +1368,7 @@
     $('gvrefresh').addEventListener('click', refresh);
     window.addEventListener('dg-lang', () => { if (token) redraw(false); });
   };
-  document.addEventListener('DOMContentLoaded', init);
+  esReady.then(init);
 })();
 
 (() => {
@@ -1393,147 +1377,7 @@
   const DG = window.DumpGuard;
   if (!DG) return;
 
-  const ES = {
-    'Home': 'Inicio',
-    'Pickup': 'Recogida',
-    'Government sign-in': 'Inicio de sesión del gobierno',
-    'Identify': 'Identificar',
-    'Report': 'Reportar',
-    'Map': 'Mapa',
-    'Get started': 'Comenzar',
-    'Electronics': 'Electrónicos',
-    'Yard waste': 'Desechos de jardín',
-    'Furniture': 'Muebles',
-    'Appliances': 'Electrodomésticos',
-    'Tires': 'Llantas',
-    'Enter your ZIP code to see pickup days.': 'Escriba su código postal para ver los días de recogida.',
-    'Pickup days': 'Días de recogida',
-    'We are still finding verified pickup data for this area. Check back soon.': 'Todavía estamos buscando datos de recogida verificados para esta zona. Vuelva a consultar pronto.',
-    'ZIP code (optional)': 'Código postal (opcional)',
-    'Look up': 'Buscar',
-    'Your town': 'Su municipio',
-    'Refresh': 'Actualizar',
-    'All reports': 'Todos los reportes',
-    'Select a report': 'Seleccione un reporte',
-    'Street map tiles could not load. Report points still show.': 'No se pudieron cargar los mosaicos del mapa. Los puntos de reporte siguen visibles.',
-    'Messages with the reporter': 'Mensajes con quien reportó',
-    'Loading messages...': 'Cargando mensajes...',
-    'Messages are not available right now.': 'Los mensajes no están disponibles en este momento.',
-    'No messages yet.': 'Aún no hay mensajes.',
-    'Send message': 'Enviar mensaje',
-    'Write a message first.': 'Escriba un mensaje primero.',
-    'This conversation is full.': 'Esta conversación está llena.',
-    'Sign in again.': 'Inicie sesión de nuevo.',
-    'Could not send the message. Try again.': 'No se pudo enviar el mensaje. Inténtelo de nuevo.',
-    'Ask a question or give an update. Keep it short.': 'Haga una pregunta o dé una novedad. Sea breve.',
-    'Message to the reporter': 'Mensaje para quien reportó',
-    'Reporter replied': 'Quien reportó respondió',
-    'Messaged': 'Con mensaje',
-    'New message': 'Mensaje nuevo',
-    'Messages from officials': 'Mensajes de los funcionarios',
-    'Send reply': 'Enviar respuesta',
-    'Write a reply first.': 'Escriba una respuesta primero.',
-    'Too many replies. Try again later.': 'Demasiadas respuestas. Inténtelo más tarde.',
-    'Could not send the reply. Try again.': 'No se pudo enviar la respuesta. Inténtelo de nuevo.',
-    'Write a reply. Please do not include your name or phone number.': 'Escriba una respuesta. No incluya su nombre ni su número de teléfono.',
-    'Your reply': 'Su respuesta',
-    'Search an item': 'Busque un artículo',
-    'Or use a photo': 'O use una foto',
-    'Not sure. Pick a category': 'No está seguro. Elija una categoría',
-    'Report illegal dumping': 'Reportar tiro ilegal de basura',
-    'Town': 'Municipio',
-    'Street address or location': 'Dirección o ubicación',
-    'Type of dumping': 'Tipo de basura',
-    'Description': 'Descripción',
-    'Additional notes (optional)': 'Notas adicionales (opcional)',
-    'Photo (optional)': 'Foto (opcional)',
-    'Take or upload a picture': 'Tome o suba una foto',
-    'Take or upload a photo': 'Tome o suba una foto',
-    'What was dumped and roughly how much?': '¿Qué se tiró y aproximadamente cuánto?',
-    'Please don\'t include people, license plates, or names in your photo or notes.': 'Por favor, no incluya personas, placas ni nombres en su foto o notas.',
-    'Submit report': 'Enviar reporte',
-    'Track a report': 'Seguir un reporte',
-    'Check': 'Consultar',
-    'Tracking code': 'Código de seguimiento',
-    'Choose your town': 'Elija su municipio',
-    'Choose a type': 'Elija un tipo',
-    'Household trash or bags': 'Basura doméstica o bolsas',
-    'Furniture or mattresses': 'Muebles o colchones',
-    'Construction or demolition debris': 'Escombros de construcción o demolición',
-    'Chemicals or hazardous waste': 'Químicos o desechos peligrosos',
-    'Other': 'Otro',
-    'Use my location': 'Usar mi ubicación',
-    'Finding your location...': 'Buscando su ubicación...',
-    'Location added. You can still describe the spot above.': 'Ubicación agregada. Aún puede describir el lugar arriba.',
-    'Could not get your location. Type the address instead.': 'No se pudo obtener su ubicación. Escriba la dirección.',
-    'Selected photo': 'Foto seleccionada',
-    'That photo could not be used. Try a different one.': 'No se pudo usar esa foto. Pruebe con otra.',
-    'That photo is too large.': 'Esa foto es demasiado grande.',
-    'Choose your town.': 'Elija su municipio.',
-    'Choose the type of dumping.': 'Elija el tipo de basura.',
-    'Describe where it is (at least 3 characters).': 'Describa dónde está (al menos 3 caracteres).',
-    'Describe what was dumped (at least 3 characters).': 'Describa qué se tiró (al menos 3 caracteres).',
-    'Notes can be up to 500 characters.': 'Las notas pueden tener hasta 500 caracteres.',
-    'Too many reports from this connection. Try again in an hour.': 'Demasiados reportes desde esta conexión. Intente de nuevo en una hora.',
-    'Could not send the report. Try again.': 'No se pudo enviar el reporte. Intente de nuevo.',
-    'Could not reach the server. Try again.': 'No se pudo conectar con el servidor. Intente de nuevo.',
-    'Report sent. Your tracking code is': 'Reporte enviado. Su código de seguimiento es',
-    '. Save it to check on the report later. It is also saved in this browser.': '. Guárdelo para consultar el reporte después. También se guarda en este navegador.',
-    'Codes look like DG-4F7K2.': 'Los códigos tienen este formato: DG-4F7K2.',
-    'Checking...': 'Consultando...',
-    'No report with that code.': 'No hay ningún reporte con ese código.',
-    'Too many checks. Try again later.': 'Demasiadas consultas. Intente más tarde.',
-    'Could not check the report. Try again.': 'No se pudo consultar el reporte. Intente de nuevo.',
-    'Reports from this browser': 'Reportes de este navegador',
-    'Received': 'Recibido',
-    'Noticed by officials': 'Detectado por las autoridades',
-    'In progress': 'En proceso',
-    'Resolved': 'Resuelto',
-    'New': 'Nuevo',
-    'Noticed': 'Detectado',
-    'Filter by type': 'Filtrar por tipo',
-    'Filter by town': 'Filtrar por municipio',
-    'Status': 'Estado',
-    'All statuses': 'Todos los estados',
-    'All types': 'Todos los tipos',
-    'All towns': 'Todos los municipios',
-    'Sign out': 'Cerrar sesión',
-    'Government access': 'Acceso del gobierno',
-    'Username': 'Usuario',
-    'Resident': 'Residente',
-    'Government': 'Gobierno',
-    'Sign in': 'Iniciar sesión',
-    'Enter the username and password.': 'Escriba el usuario y la contraseña.',
-    'That username or password was not accepted.': 'No se aceptó ese usuario o contraseña.',
-    'Too many attempts. Try again later.': 'Demasiados intentos. Intente más tarde.',
-    'Could not reach the server.': 'No se pudo conectar con el servidor.',
-    'Street map tiles could not load. Report areas still show.': 'No se pudo cargar el mapa de calles. Las áreas de reportes se siguen mostrando.',
-    'The map could not load. Try again later.': 'No se pudo cargar el mapa. Intente más tarde.',
-    'Household trash': 'Basura doméstica',
-    'Construction debris': 'Escombros de construcción',
-    'Hazardous waste': 'Desechos peligrosos',
-    'By town': 'Por municipio',
-    'Approximate area, not an address.': 'Área aproximada, no una dirección.',
-    'Reports': 'Reportes',
-    'No reports match these filters.': 'Ningún reporte coincide con estos filtros.',
-    'Loading photo...': 'Cargando foto...',
-    'Photo could not be loaded.': 'No se pudo cargar la foto.',
-    'Update status': 'Actualizar estado',
-    'Could not update. Sign in again.': 'No se pudo actualizar. Inicie sesión de nuevo.',
-    'Report photo': 'Foto del reporte',
-    'Look up an item': 'Busque un artículo',
-    'Password': 'Contraseña',
-    'An all-in-one solution for waste management in NJ-06 towns': 'Una solución integral para el manejo de desechos en los municipios de NJ-06',
-    'Address or nearby landmark': 'Dirección o lugar de referencia cercano',
-    'How long it has been there, any hazards': 'Cuánto tiempo lleva ahí, posibles peligros',
-    'Reported dumping': 'Tiros de basura reportados',
-    'Government dashboard': 'Panel del gobierno',
-    'Location data removed from photo.': 'Se quitaron los datos de ubicación de la foto.',
-    'couch, TV, battery': 'sofá, TV, batería',
-    'What does DumpGuard do?': '¿Qué hace DumpGuard?',
-    'Find where an item goes': 'Encuentre adónde va un artículo',
-    'See your pickup days': 'Vea sus días de recogida',
-  };
+  let ES = {};
 
   const plural = (n, one, many) => `${n} ${Number(n) === 1 ? one : many}`;
   const lit = s => ES[s] || s;
@@ -1639,7 +1483,10 @@
     observer = new MutationObserver(queue);
     apply();
   };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  esReady.then(es => {
+    ES = es.labels ?? {};
+    init();
+  });
 })();
 
 (() => {

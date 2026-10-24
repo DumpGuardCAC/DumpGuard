@@ -3,7 +3,7 @@ import webpush from 'web-push';
 import { createHash, randomInt, timingSafeEqual } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
-const ES = JSON.parse(readFileSync(new URL('../data/es.json', import.meta.url), 'utf8'));
+const ES = JSON.parse(readFileSync(new URL('../data/es-api.json', import.meta.url), 'utf8'));
 const {
   months: MONTHS, fullMonths: FULL, abbrMonths: ABBR, holidayIn: HOLI, holidayNamed: HOLN, dayUpper: DAYU, dayLower: DAYL, days: DAYS, dayCodes: DAY2,
   where: WHERE, side: SIDE, streetBoundaries: SBOUND, summerExtra: SUMMER, holidayChange: HOLCHG, mustBeOut: OUT, zoneBlueCart: ZB,

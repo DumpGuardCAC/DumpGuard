@@ -10,6 +10,6 @@
     "@capacitor/android": "8.5.3"
   },
   "scripts": {
-    "sync": "node -e \"const f=require('fs');f.rmSync('www',{recursive:true,force:true});for(const p of ['index.html','app.js','styles.css','lib/tf.min.js','lib/model.json','lib/model.bin','icon.png','manifest.json'])f.cpSync('../website/'+p,'www/'+p,{recursive:true})\" && cap sync android"
+    "sync": "node -e \"const f=require('fs');f.rmSync('www',{recursive:true,force:true});for(const p of ['index.html','app.js','styles.css','lib/tf.min.js','lib/model.json','lib/model.bin','icon.png','manifest.json','es.json'])f.cpSync('../website/'+p,'www/'+p,{recursive:true})\" && cap sync android"
   }
 }

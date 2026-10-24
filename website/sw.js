@@ -1,9 +1,7 @@
-var CACHE = 'dumpguard-v2';
+var CACHE = 'dumpguard-v3';
 var SHELL = [
-  '/', '/index.html', '/css/styles.css', '/manifest.json', '/images/logo.png',
-  '/js/app.js', '/js/dumpguard-api.js', '/js/dumpguard-gov.js', '/js/dumpguard-i18n.js', '/js/dumpguard-map.js',
-  '/js/dumpguard-model.js', '/js/dumpguard-report.js', '/js/pwa.js', '/js/vendor/tf.min.js',
-  '/model/model.json', '/model/group1-shard1of2.bin', '/model/group1-shard2of2.bin'
+  '/', '/index.html', '/styles.css', '/app.js', '/manifest.json', '/logo.png', '/tf.min.js',
+  '/model.json', '/group1-shard1of2.bin', '/group1-shard2of2.bin'
 ];
 
 self.addEventListener('install', function (e) {

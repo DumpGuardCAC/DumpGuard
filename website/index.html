@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>DumpGuard</title>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="images/icon-192.png">
-    <script src="js/pwa.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon-192.png">
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="theme-color" content="#ffffff">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,7 +18,7 @@
 <body>
 
 <nav id="nav">
-    <a class="wordmark" data-go="home" href="#home" aria-label="DumpGuard home"><img src="images/logo.png" alt="DumpGuard" height="44" style="height:44px;width:auto;display:block"></a>
+    <a class="wordmark" data-go="home" href="#home" aria-label="DumpGuard home"><img src="logo.png" alt="DumpGuard" height="44" style="height:44px;width:auto;display:block"></a>
     <ul>
         <li class="lnk"><a data-go="home" href="#home">Home</a></li>
         <li class="lnk"><a data-go="identify" href="#identify">Identify</a></li>
@@ -117,7 +116,7 @@
     <div id="glist"></div>
 </section></div>
 
-<div class="view" id="v-gov"><div class="auth" id="gsign"><aside class="aside"><img src="images/logo.png" alt="" width="200"><h2>Government access</h2></aside><div class="card">
+<div class="view" id="v-gov"><div class="auth" id="gsign"><aside class="aside"><img src="logo.png" alt="" width="200"><h2>Government access</h2></aside><div class="card">
     <h2>Government sign-in</h2>
     <label for="le">Username</label><input id="le" type="text" autocomplete="username" autocapitalize="none" spellcheck="false">
     <label for="lp">Password</label><input id="lp" type="password" autocomplete="current-password">
@@ -139,12 +138,6 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
-<script src="js/dumpguard-api.js"></script>
-<script src="js/dumpguard-model.js"></script>
-<script src="js/dumpguard-report.js"></script>
-<script src="js/dumpguard-map.js"></script>
-<script src="js/dumpguard-gov.js"></script>
-<script src="js/dumpguard-i18n.js"></script>
-<script src="js/app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

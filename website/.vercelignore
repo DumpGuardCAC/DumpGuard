@@ -1,7 +1,4 @@
 node_modules
 .env*
-backend/db
-backend/api/node_modules
-backend/api/.env*
-backend/api/.vercel
-backend/*.md
+db.mjs
+schema.sql

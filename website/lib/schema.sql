@@ -9,7 +9,7 @@ CREATE TYPE region_kind_t AS ENUM ('state', 'county', 'town');
 CREATE TYPE stream_t     AS ENUM ('trash', 'recycling', 'bulk', 'yard', 'other');
 
 CREATE TABLE regions (
-  id          text PRIMARY KEY,                       -- 'nj', 'middlesex', 'edison'
+  id          text PRIMARY KEY,
   kind        region_kind_t NOT NULL,
   name        text NOT NULL,
   county_id   text REFERENCES regions(id),
@@ -72,7 +72,7 @@ CREATE TABLE collection_schedules (
   stream         stream_t NOT NULL,
   weekday        smallint CHECK (weekday BETWEEN 0 AND 6),
   week_pattern   text NOT NULL DEFAULT 'weekly',
-  area_note      text NOT NULL DEFAULT '',                     -- e.g. 'Zone A' or street range
+  area_note      text NOT NULL DEFAULT '',
   rrule          text,
   notes_en       text NOT NULL DEFAULT '',
   notes_es       text NOT NULL DEFAULT '',

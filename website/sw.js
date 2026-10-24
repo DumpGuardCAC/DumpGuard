@@ -1,7 +1,8 @@
-const CACHE = 'dumpguard-v9';
+const CACHE = 'dumpguard-v10';
 const SHELL = [
-  '/', '/index.html', '/styles.css', '/app.js', '/manifest.json', '/es.json', '/icon.png', '/lib/tf.min.js',
-  '/lib/model.json', '/lib/model.bin',
+  '/', '/index.html', '/styles.css', '/manifest.json', '/es.json', '/icon.png',
+  '/js/es.js', '/js/install.js', '/js/core.js', '/js/photo.js', '/js/report.js', '/js/map.js', '/js/gov.js', '/js/translate.js', '/js/nav.js',
+  '/lib/tf.min.js', '/lib/model.json', '/lib/model.bin',
 ];
 
 self.addEventListener('install', e => {

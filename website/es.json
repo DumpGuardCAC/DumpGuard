@@ -8,6 +8,7 @@
     "safari": "Esta página no está abierta en Safari. Ábrala primero en Safari."
   },
   "guide": {
+    "placeholder": "sofá, TV, batería",
     "empty": "Su guía de desecho aparecerá aquí.",
     "searching": "Buscando...",
     "none": "Sin resultados. Elija una categoría o pruebe otra palabra.",
@@ -216,5 +217,96 @@
     "What does DumpGuard do?": "¿Qué hace DumpGuard?",
     "Find where an item goes": "Encuentre adónde va un artículo",
     "See your pickup days": "Vea sus días de recogida"
-  }
+  },
+  "misc": {
+    "in": " en "
+  },
+  "tables": {
+    "onOff": {
+      "on": "sí",
+      "off": "no"
+    },
+    "staff": {
+      "Staff": "Personal",
+      "Reporter": "Quien reportó",
+      "Officials": "Funcionarios",
+      "You": "Usted"
+    }
+  },
+  "plurals": {
+    "report": [
+      "reporte",
+      "reportes"
+    ],
+    "area": [
+      "área",
+      "áreas"
+    ]
+  },
+  "patterns": [
+    {
+      "re": "^(\\d+) reports? in this area$",
+      "es": "{1#report} en esta área"
+    },
+    {
+      "re": "^(New|Noticed|In progress|Resolved): (\\d+)$",
+      "es": "{1:@lit}: {2}"
+    },
+    {
+      "re": "^(\\d+) areas? with (\\d+) or more reports$",
+      "es": "{1#area} con {2} o más reportes"
+    },
+    {
+      "re": "^(\\d+) reports?(?:, (\\d+) without a map point)?$",
+      "es": "{1#report}{2?, {2} sin punto en el mapa}"
+    },
+    {
+      "re": "^(.+): (\\d+) open$",
+      "es": "{1}: {2} abiertos"
+    },
+    {
+      "re": "^(\\d+) new, (\\d+) noticed, (\\d+) in progress, (\\d+) resolved$",
+      "es": "{1} nuevos, {2} detectados, {3} en proceso, {4} resueltos"
+    },
+    {
+      "re": "^Areas appear on the map once (\\d+) or more reports are close together\\.$",
+      "es": "Las áreas aparecen en el mapa cuando {1} o más reportes están cerca unos de otros."
+    },
+    {
+      "re": "^Town labels: (on|off)$",
+      "es": "Etiquetas de municipios: {1:onOff}"
+    },
+    {
+      "re": "^Filed (.+?)(?:, last update (.+?))?(\\. No map point\\.)?$",
+      "es": "Presentado {1}{2?, última actualización {2}}{3?. Sin punto en el mapa.}"
+    },
+    {
+      "re": "^(DG-[A-Z0-9]{5}): (Received|Noticed by officials|In progress|Resolved)$",
+      "es": "{1}: {2:@lit}"
+    },
+    {
+      "re": "^(DG-[A-Z0-9]{5}) - (.+?) - (.*)$",
+      "es": "{1} - {2:@lit} - {3}"
+    },
+    {
+      "re": "^(.+): We are still finding verified pickup data for this area\\. Check back soon\\.$",
+      "es": "{1}: Todavía estamos buscando datos de recogida verificados para esta zona. Vuelva a consultar pronto."
+    },
+    {
+      "re": "^Reporting in (.+)$",
+      "es": "Reportando en {1}"
+    },
+    {
+      "re": "^(.*) · filed (.+)$",
+      "es": "{1} · presentado {2}"
+    },
+    {
+      "re": "^(Staff|Reporter|Officials|You) - (.+)$",
+      "es": "{1:staff} - {2}"
+    },
+    {
+      "re": "^No email is sent\\. Your code is (\\d+)\\.$",
+      "es": "No se envía ningún correo. Su código es {1}."
+    }
+  ]
 }

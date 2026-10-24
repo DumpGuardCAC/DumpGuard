@@ -1,4 +1,4 @@
-const CACHE = 'dumpguard-v7';
+const CACHE = 'dumpguard-v8';
 const SHELL = [
   '/', '/index.html', '/styles.css', '/app.js', '/manifest.json', '/es.json', '/icon.png', '/lib/tf.min.js',
   '/lib/model.json', '/lib/model.bin',

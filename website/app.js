@@ -88,7 +88,7 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
 
   const T = {
     en: {
-      empty: 'Your disposal guide will appear here.', searching: 'Searching...', none: 'No match. Pick a category instead, or try another word.',
+      placeholder: 'couch, TV, battery', empty: 'Your disposal guide will appear here.', searching: 'Searching...', none: 'No match. Pick a category instead, or try another word.',
       didyou: 'Other matches', recycling: 'Recycle', trash: 'Trash', special_dropoff: 'Special drop-off', hazard: 'Hazardous: do not put in the bin',
       gotit: 'Got it, counted anonymously', thanks: 'Thanks, counted anonymously.',
       wrong: 'Report a wrong answer', send: 'Send', cancel: 'Cancel', whatwrong: 'What is wrong or missing?', sent: 'Thanks. A person will check it against the official source.',
@@ -196,7 +196,7 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
   };
   const translateStatic = () => {
     const q = $('q');
-    if (q) q.placeholder = spanish() ? 'sofá, TV, batería' : 'couch, TV, battery';
+    if (q) q.placeholder = t('placeholder');
     const btn = $('zgo');
     if (btn) btn.textContent = t('lookup');
     if ($('result')?.querySelector('.empty')) emptyState();
@@ -1093,6 +1093,7 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
   if (!DG || !window.L) return;
   const { h, clear, when } = DG;
   const $ = id => document.getElementById(id);
+  let MISC = {};
 
   const TYPES = DG.dumpTypes;
   const STATUS = { new: 'New', noticed: 'Noticed', progress: 'In progress', resolved: 'Resolved' };
@@ -1194,7 +1195,7 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
   const detail = r => {
     const box = h('div', {}, h('div', { class: 'dhead' }, h('h3', {}, r.code), h('span', { class: 'badge', style: `background:${COLOR[r.status]}` }, STATUS[r.status])));
     box.append(
-      h('p', {}, h('b', {}, TYPES[r.dump_type] || r.dump_type), `${DG.lang() === 'es' ? ' en ' : ' in '}${townName(r.region_id)}`),
+      h('p', {}, h('b', {}, TYPES[r.dump_type] || r.dump_type), `${DG.lang() === 'es' ? MISC.in ?? ' in ' : ' in '}${townName(r.region_id)}`),
       h('p', {}, r.location_text),
       h('p', {}, r.description));
     if (r.notes) box.appendChild(h('p', { class: 'sm' }, r.notes));
@@ -1368,7 +1369,10 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
     $('gvrefresh').addEventListener('click', refresh);
     window.addEventListener('dg-lang', () => { if (token) redraw(false); });
   };
-  esReady.then(init);
+  esReady.then(es => {
+    MISC = es.misc ?? {};
+    init();
+  });
 })();
 
 (() => {
@@ -1378,38 +1382,47 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
   if (!DG) return;
 
   let ES = {};
+  let TABLES = {};
+  let PLURALS = {};
+  let RX = [];
 
-  const plural = (n, one, many) => `${n} ${Number(n) === 1 ? one : many}`;
   const lit = s => ES[s] || s;
 
-  const RX = [
-    [/^(\d+) reports? in this area$/, m => `${plural(m[1], 'reporte', 'reportes')} en esta área`],
-    [/^(New|Noticed|In progress|Resolved): (\d+)$/, m => `${lit(m[1])}: ${m[2]}`],
-    [/^(\d+) areas? with (\d+) or more reports$/, m => `${plural(m[1], 'área', 'áreas')} con ${m[2]} o más reportes`],
-    [/^(\d+) reports?(?:, (\d+) without a map point)?$/, m => `${plural(m[1], 'reporte', 'reportes')}${m[2] ? `, ${m[2]} sin punto en el mapa` : ''}`],
-    [/^(.+): (\d+) open$/, m => `${m[1]}: ${m[2]} abiertos`],
-    [/^(\d+) new, (\d+) noticed, (\d+) in progress, (\d+) resolved$/, m => `${m[1]} nuevos, ${m[2]} detectados, ${m[3]} en proceso, ${m[4]} resueltos`],
-    [/^Areas appear on the map once (\d+) or more reports are close together\.$/, m => `Las áreas aparecen en el mapa cuando ${m[1]} o más reportes están cerca unos de otros.`],
-    [/^Town labels: (on|off)$/, m => `Etiquetas de municipios: ${m[1] === 'on' ? 'sí' : 'no'}`],
-    [/^Filed (.+?)(?:, last update (.+?))?(\. No map point\.)?$/, m => `Presentado ${m[1]}${m[2] ? `, última actualización ${m[2]}` : ''}${m[3] ? '. Sin punto en el mapa.' : ''}`],
-    [/^(DG-[A-Z0-9]{5}): (Received|Noticed by officials|In progress|Resolved)$/, m => `${m[1]}: ${lit(m[2])}`],
-    [/^(DG-[A-Z0-9]{5}) - (.+?) - (.*)$/, m => `${m[1]} - ${lit(m[2])} - ${m[3]}`],
-    [/^(.+): We are still finding verified pickup data for this area\. Check back soon\.$/, m => `${m[1]}: ${ES['We are still finding verified pickup data for this area. Check back soon.']}`],
-    [/^Reporting in (.+)$/, m => `Reportando en ${m[1]}`],
-    [/^(.*) · filed (.+)$/, m => `${m[1]} · presentado ${m[2]}`],
-    [/^(Staff|Reporter|Officials|You) - (.+)$/, m => `${({ Staff: 'Personal', Reporter: 'Quien reportó', Officials: 'Funcionarios', You: 'Usted' })[m[1]]} - ${m[2]}`],
-    [/^No email is sent\. Your code is (\d+)\.$/, m => `No se envía ningún correo. Su código es ${m[1]}.`],
-  ];
+  const expand = (template, m) => {
+    let out = '';
+    for (let i = 0; i < template.length; i++) {
+      if (template[i] !== '{') {
+        out += template[i];
+        continue;
+      }
+      let depth = 1;
+      let j = i + 1;
+      while (depth) {
+        if (template[j] === '{') depth++;
+        else if (template[j] === '}') depth--;
+        j++;
+      }
+      const [, n, op, arg] = /^(\d)(?:([?:#])(.*))?$/s.exec(template.slice(i + 1, j - 1));
+      const v = m[n] ?? '';
+      if (!op) out += v;
+      else if (op === '?') out += v ? expand(arg, m) : '';
+      else if (op === '#') out += `${v} ${PLURALS[arg][Number(v) === 1 ? 0 : 1]}`;
+      else if (arg === '@lit') out += lit(v);
+      else out += TABLES[arg][v] ?? v;
+      i = j - 1;
+    }
+    return out;
+  };
 
   const es = en => {
     const key = en.trim();
     if (!key) return en;
     let out = ES[key];
     if (!out) {
-      for (const [pattern, translate] of RX) {
+      for (const [pattern, template] of RX) {
         const m = pattern.exec(key);
         if (m) {
-          out = translate(m);
+          out = expand(template, m);
           break;
         }
       }
@@ -1485,6 +1498,9 @@ const esReady = fetch('es.json').then(r => r.json()).catch(() => ({}));
   };
   esReady.then(es => {
     ES = es.labels ?? {};
+    TABLES = es.tables ?? {};
+    PLURALS = es.plurals ?? {};
+    RX = (es.patterns ?? []).map(p => [new RegExp(p.re), p.es]);
     init();
   });
 })();

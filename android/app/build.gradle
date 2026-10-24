@@ -20,7 +20,18 @@ android {
             res.srcDirs = ['res', 'src/main/res']
         }
     }
+    signingConfigs {
+        fixed {
+            storeFile file(System.getenv('DG_KEYSTORE') ?: 'dumpguard.jks')
+            storePassword System.getenv('DG_KEY_PASSWORD')
+            keyAlias 'dumpguard'
+            keyPassword System.getenv('DG_KEY_PASSWORD')
+        }
+    }
     buildTypes {
+        debug {
+            if (System.getenv('DG_KEY_PASSWORD')) signingConfig signingConfigs.fixed
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

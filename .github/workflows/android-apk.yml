@@ -20,7 +20,14 @@ jobs:
           node-version: '22'
       - run: npm install && npm run sync
         working-directory: android
-      - run: chmod +x gradlew && ./gradlew assembleDebug
+      - name: build apk
+        env:
+          DG_KEYSTORE_B64: ${{ secrets.DG_KEYSTORE_B64 }}
+          DG_KEY_PASSWORD: ${{ secrets.DG_KEY_PASSWORD }}
+        run: |
+          echo "$DG_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/dumpguard.jks"
+          export DG_KEYSTORE="$RUNNER_TEMP/dumpguard.jks"
+          chmod +x gradlew && ./gradlew assembleDebug
         working-directory: android
       - name: publish release
         env:

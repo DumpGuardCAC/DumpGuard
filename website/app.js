@@ -1,8 +1,8 @@
-(function () {
-  var root = document.documentElement;
-  var native = !!window.Capacitor || location.protocol === 'capacitor:' || (location.hostname === 'localhost' && location.protocol === 'https:');
-  var standalone = native || window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
-  var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+(() => {
+  const root = document.documentElement;
+  const native = !!window.Capacitor || location.protocol === 'capacitor:' || (location.hostname === 'localhost' && location.protocol === 'https:');
+  const standalone = native || window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   if (standalone) root.classList.add('installed');
   if (standalone && ios) root.classList.add('ios');
 
@@ -12,13 +12,13 @@
   }
 
   if ('serviceWorker' in navigator && window.isSecureContext) {
-    window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+    window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
   }
 
   if (!ios || standalone) return;
   root.classList.add('gated');
 
-  var T = {
+  const T = {
     en: {
       h: 'Add DumpGuard to your Home Screen',
       lead: 'On iPhone, DumpGuard runs as an app. Install it to continue.',
@@ -36,40 +36,59 @@
       safari: 'Esta página no está abierta en Safari. Ábrala primero en Safari.',
     },
   };
-  var lang = 'en';
+  let lang = 'en';
   try { lang = (localStorage.getItem('dg_lang') || (navigator.language || 'en').slice(0, 2)) === 'es' ? 'es' : 'en'; } catch {}
-  var t = T[lang];
-  var inApp = /FBAN|FBAV|Instagram|Snapchat|TikTok|Line\/|MicroMessenger|GSA\/|Twitter/.test(navigator.userAgent);
+  const t = T[lang];
+  const inApp = /FBAN|FBAV|Instagram|Snapchat|TikTok|Line\/|MicroMessenger|GSA\/|Twitter/.test(navigator.userAgent);
 
-  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
-  function shareIcon() {
-    var ns = 'http://www.w3.org/2000/svg', s = document.createElementNS(ns, 'svg');
-    s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('class', 'gate-ico'); s.setAttribute('aria-hidden', 'true');
-    var p = document.createElementNS(ns, 'path');
-    p.setAttribute('d', 'M12 15V3M8 7l4-4 4 4M7 10H6a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1h-1');
-    s.appendChild(p); return s;
-  }
-  function build() {
-    var g = el('div', 'gate'); g.id = 'installgate'; g.setAttribute('role', 'dialog'); g.setAttribute('aria-modal', 'true'); g.setAttribute('aria-labelledby', 'gate-h');
-    var logo = el('img', 'gate-logo'); logo.src = 'icon.png'; logo.alt = 'DumpGuard'; logo.height = 72;
-    var h = el('h1', '', t.h); h.id = 'gate-h';
-    g.appendChild(logo); g.appendChild(h); g.appendChild(el('p', 'gate-lead', t.lead));
-    if (inApp) g.appendChild(el('p', 'gate-warn', t.safari));
-    var ol = el('ol', 'gate-steps');
-    var l1 = el('li'); l1.appendChild(shareIcon()); l1.appendChild(el('span', '', t.s1));
-    ol.appendChild(l1); ol.appendChild(el('li', '', t.s2)); ol.appendChild(el('li', '', t.s3));
-    g.appendChild(ol); document.body.appendChild(g);
-  }
+  const el = (tag, cls, text) => {
+    const node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text) node.textContent = text;
+    return node;
+  };
+  const shareIcon = () => {
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('class', 'gate-ico');
+    svg.setAttribute('aria-hidden', 'true');
+    const path = document.createElementNS(ns, 'path');
+    path.setAttribute('d', 'M12 15V3M8 7l4-4 4 4M7 10H6a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1h-1');
+    svg.append(path);
+    return svg;
+  };
+  const build = () => {
+    const gate = el('div', 'gate');
+    gate.id = 'installgate';
+    gate.setAttribute('role', 'dialog');
+    gate.setAttribute('aria-modal', 'true');
+    gate.setAttribute('aria-labelledby', 'gate-h');
+    const logo = el('img', 'gate-logo');
+    logo.src = 'icon.png';
+    logo.alt = 'DumpGuard';
+    logo.height = 72;
+    const title = el('h1', '', t.h);
+    title.id = 'gate-h';
+    gate.append(logo, title, el('p', 'gate-lead', t.lead));
+    if (inApp) gate.append(el('p', 'gate-warn', t.safari));
+    const first = el('li');
+    first.append(shareIcon(), el('span', '', t.s1));
+    const steps = el('ol', 'gate-steps');
+    steps.append(first, el('li', '', t.s2), el('li', '', t.s3));
+    gate.append(steps);
+    document.body.append(gate);
+  };
   if (document.body) build(); else document.addEventListener('DOMContentLoaded', build);
 })();
 
-(function () {
+(() => {
   'use strict';
 
-  var BASE = (window.DUMPGUARD_API || '/api/v1').replace(/\/$/, '');
-  var $ = function (id) { return document.getElementById(id); };
+  const BASE = (window.DUMPGUARD_API || '/api/v1').replace(/\/$/, '');
+  const $ = id => document.getElementById(id);
 
-  var T = {
+  const T = {
     en: {
       empty: 'Your disposal guide will appear here.', searching: 'Searching...', none: 'No match. Pick a category instead, or try another word.',
       didyou: 'Other matches', recycling: 'Recycle', trash: 'Trash', special_dropoff: 'Special drop-off', hazard: 'Hazardous: do not put in the bin',
@@ -101,80 +120,89 @@
       consensus: 'En su municipio la mayoría de estos son:', basedOn: 'según', items: 'artículos verificados',
     },
   };
-  var COLORS = { recycling: '#15803d', trash: '#4b5563', special_dropoff: '#dc2626' };
+  const COLORS = { recycling: '#15803d', trash: '#4b5563', special_dropoff: '#dc2626' };
 
-  var state = { lang: 'en', town: null, towns: [], counted: {} };
-  try { state.lang = (localStorage.getItem('dg_lang') || (navigator.language || 'en').slice(0, 2)) === 'es' ? 'es' : 'en'; state.town = localStorage.getItem('dg_town'); } catch {}
-  var t = function (k) { return T[state.lang][k]; };
-  var pick = function (o) { return o ? (o[state.lang] || o.en || '') : ''; };
+  const state = { lang: 'en', town: null, towns: [], counted: {} };
+  try {
+    state.lang = (localStorage.getItem('dg_lang') || (navigator.language || 'en').slice(0, 2)) === 'es' ? 'es' : 'en';
+    state.town = localStorage.getItem('dg_town');
+  } catch {}
+  const spanish = () => state.lang === 'es';
+  const locale = () => (spanish() ? 'es-US' : 'en-US');
+  const t = key => T[state.lang][key];
+  const pick = o => (o ? o[state.lang] || o.en || '' : '');
+  const paint = color => `background:${color}`;
 
-  function h(tag, attrs) {
-    var el = document.createElement(tag);
-    Object.keys(attrs || {}).forEach(function (k) {
-      if (k === 'class') el.className = attrs[k];
-      else if (k === 'style') el.style.cssText = attrs[k];
-      else if (k.slice(0, 2) === 'on') el.addEventListener(k.slice(2), attrs[k]);
-      else el.setAttribute(k, attrs[k]);
-    });
-    if (attrs && attrs.role === 'button' && typeof attrs.onclick === 'function' && !attrs.onkeydown) {
-      var click = attrs.onclick;
-      el.addEventListener('keydown', function (e) {
+  const h = (tag, attrs = {}, ...children) => {
+    const el = document.createElement(tag);
+    for (const [key, value] of Object.entries(attrs)) {
+      if (key === 'class') el.className = value;
+      else if (key === 'style') el.style.cssText = value;
+      else if (key.startsWith('on')) el.addEventListener(key.slice(2), value);
+      else el.setAttribute(key, value);
+    }
+    if (attrs.role === 'button' && typeof attrs.onclick === 'function' && !attrs.onkeydown) {
+      el.addEventListener('keydown', e => {
         if (e.key !== 'Enter' && e.key !== ' ') return;
         if (e.key === ' ') e.preventDefault();
-        click.call(el, e);
+        attrs.onclick.call(el, e);
       });
     }
-    for (var i = 2; i < arguments.length; i++) {
-      var c = arguments[i];
-      if (c === null || c === undefined || c === false) continue;
-      el.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
-    }
+    el.append(...children.filter(c => c !== null && c !== undefined && c !== false));
     return el;
-  }
-  var clear = function (el) { while (el.firstChild) el.removeChild(el.firstChild); return el; };
+  };
+  const clear = el => {
+    el.replaceChildren();
+    return el;
+  };
+  const showText = (box, cls, text) => clear(box).appendChild(h('p', { class: cls }, text));
+  const showFail = box => showText(box, 'err', t('fail'));
 
-  function request(path, opts) {
-    return fetch(BASE + path, opts).then(function (r) {
-      return r.json().catch(function () { return {}; }).then(function (body) { return { status: r.status, body: body }; });
-    });
-  }
-  var api = {
-    get: function (path) { return request(path); },
-    post: function (path, data) {
-      return request(path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) });
-    },
+  const request = async (path, opts) => {
+    const r = await fetch(BASE + path, opts);
+    const body = await r.json().catch(() => ({}));
+    return { status: r.status, body };
+  };
+  const api = {
+    get: path => request(path),
+    post: (path, data) => request(path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) }),
   };
 
-  function loadTowns() {
-    return api.get('/towns').then(function (r) {
-      state.towns = r.body.towns || [];
-      var sel = $('town');
-      if (!sel || !state.towns.length) return;
-      clear(sel);
-      state.towns.forEach(function (tw) { sel.appendChild(h('option', { value: tw.id }, tw.name)); });
-      if (!state.towns.some(function (tw) { return tw.id === state.town; })) state.town = state.towns.some(function (tw) { return tw.id === 'edison'; }) ? 'edison' : state.towns[0].id;
-      sel.value = state.town;
-      if (!sel.dataset.bound) { sel.dataset.bound = '1'; sel.addEventListener('change', function () { setTown(sel.value); }); }
-    });
-  }
-  function townName(id) { var tw = state.towns.filter(function (x) { return x.id === id; })[0]; return tw ? tw.name : ''; }
-  function loadPickup() {
-    var tw = state.towns.filter(function (x) { return x.id === state.town; })[0];
-    if (!$('zresult') || !tw || !tw.zips || !tw.zips.length) return;
+  const hasTown = id => state.towns.some(tw => tw.id === id);
+  const loadTowns = async () => {
+    const r = await api.get('/towns');
+    state.towns = r.body.towns || [];
+    const sel = $('town');
+    if (!sel || !state.towns.length) return;
+    clear(sel).append(...state.towns.map(tw => h('option', { value: tw.id }, tw.name)));
+    if (!hasTown(state.town)) state.town = hasTown('edison') ? 'edison' : state.towns[0].id;
+    sel.value = state.town;
+    if (!sel.dataset.bound) {
+      sel.dataset.bound = '1';
+      sel.addEventListener('change', () => setTown(sel.value));
+    }
+  };
+  const townName = id => state.towns.find(tw => tw.id === id)?.name ?? '';
+  const loadPickup = () => {
+    const tw = state.towns.find(x => x.id === state.town);
+    if (!$('zresult') || !tw?.zips?.length) return;
     $('zip').value = '';
     lookupZip(tw.zips[0], tw.id, []);
-  }
-  function setTown(id) {
+  };
+  const rememberTown = id => {
     state.town = id;
     try { localStorage.setItem('dg_town', id); } catch {}
     if ($('town')) $('town').value = id;
+  };
+  const setTown = id => {
+    rememberTown(id);
     runSearch();
     loadPickup();
     window.dispatchEvent(new Event('dg-town'));
-    var cat = $('cat');
-    if (cat && cat.value) showMaterial(cat.value);
-  }
-  function setLang(lang) {
+    const cat = $('cat');
+    if (cat?.value) showMaterial(cat.value);
+  };
+  const setLang = lang => {
     state.lang = lang === 'es' ? 'es' : 'en';
     document.documentElement.lang = state.lang;
     try { localStorage.setItem('dg_lang', state.lang); } catch {}
@@ -182,289 +210,343 @@
     runSearch();
     if (lastZip && $('zresult')) lookupZip(lastZip.zip, lastZip.town, lastZip.areas);
     window.dispatchEvent(new Event('dg-lang'));
-  }
-  function translateStatic() {
-    var q = $('q'); if (q) q.placeholder = state.lang === 'es' ? 'sofá, TV, batería' : 'couch, TV, battery';
-    var btn = $('zgo'); if (btn) btn.textContent = t('lookup');
-    var res = $('result'); if (res && res.querySelector('.empty')) emptyState();
+  };
+  const translateStatic = () => {
+    const q = $('q');
+    if (q) q.placeholder = spanish() ? 'sofá, TV, batería' : 'couch, TV, battery';
+    const btn = $('zgo');
+    if (btn) btn.textContent = t('lookup');
+    if ($('result')?.querySelector('.empty')) emptyState();
     fillCategories();
-  }
+  };
 
-  var seq = 0, timer = null;
-  function emptyState() {
-    clear($('result')).appendChild(h('p', { class: 'empty' }, t('empty')));
-  }
-  function runSearch() {
-    var q = $('q') ? $('q').value.trim() : '';
-    if (!q) { emptyState(); return; }
-    var mine = ++seq;
-    clear($('result')).appendChild(h('p', { class: 'empty' }, t('searching')));
-    api.get('/search?q=' + encodeURIComponent(q) + (state.town ? '&town=' + encodeURIComponent(state.town) : '') + '&limit=6').then(function (r) {
+  let seq = 0;
+  let timer = null;
+  const emptyState = () => showText($('result'), 'empty', t('empty'));
+  const runSearch = async () => {
+    const q = $('q') ? $('q').value.trim() : '';
+    if (!q) {
+      emptyState();
+      return;
+    }
+    const mine = ++seq;
+    showText($('result'), 'empty', t('searching'));
+    try {
+      const r = await api.get(`/search?q=${encodeURIComponent(q)}${state.town ? `&town=${encodeURIComponent(state.town)}` : ''}&limit=6`);
       if (mine !== seq) return;
-      if (r.status !== 200) { clear($('result')).appendChild(h('p', { class: 'err' }, t('fail'))); return; }
-      renderResults(r.body.results || []);
-    }).catch(function () {
-      if (mine === seq) clear($('result')).appendChild(h('p', { class: 'err' }, t('fail')));
-    });
-  }
+      if (r.status !== 200) showFail($('result'));
+      else renderResults(r.body.results || []);
+    } catch {
+      if (mine === seq) showFail($('result'));
+    }
+  };
 
-  function renderResults(results) {
-    var box = clear($('result'));
+  const resultRow = (it, onclick) => {
+    const color = paint(COLORS[it.resolved.rule]);
+    return h('div', { class: 'li', role: 'button', tabindex: '0', onclick },
+      h('span', { class: 'dot', style: color }), h('span', {}, pick(it.name)),
+      h('span', { class: 'badge', style: color }, t(it.resolved.rule)));
+  };
+
+  const renderResults = results => {
+    const box = clear($('result'));
     if (!results.length) {
       box.appendChild(h('p', { class: 'empty' }, t('none')));
       showCategoryPicker(true);
       return;
     }
     box.appendChild(card(results[0]));
-    if (results.length > 1) {
-      box.appendChild(h('p', { class: 'sm gap' }, t('didyou')));
-      results.slice(1).forEach(function (it) {
-        box.appendChild(h('div', { class: 'li', role: 'button', tabindex: '0', onclick: function () { renderResults([it].concat(results.filter(function (x) { return x !== it; }))); } },
-          h('span', { class: 'dot', style: 'background:' + COLORS[it.resolved.rule] }), h('span', {}, pick(it.name)),
-          h('span', { class: 'badge', style: 'background:' + COLORS[it.resolved.rule] }, t(it.resolved.rule))));
-      });
+    if (results.length === 1) return;
+    box.appendChild(h('p', { class: 'sm gap' }, t('didyou')));
+    for (const it of results.slice(1)) {
+      box.appendChild(resultRow(it, () => renderResults([it, ...results.filter(x => x !== it)])));
     }
-  }
+  };
 
-  function card(it) {
-    var r = it.resolved, rule = r.rule;
-    var el = h('div', {},
-      h('span', { class: 'tag', style: 'background:' + COLORS[rule] }, t(rule)),
-      h('h3', {}, pick(it.name)));
+  const card = it => {
+    const r = it.resolved;
+    const rule = r.rule;
+    const el = h('div', {}, h('span', { class: 'tag', style: paint(COLORS[rule]) }, t(rule)), h('h3', {}, pick(it.name)));
     if (it.hazard && rule === 'special_dropoff') el.appendChild(h('p', { class: 'err' }, t('hazard')));
-    var note = pick(r.note);
+    const note = pick(r.note);
     if (note) el.appendChild(h('p', {}, note));
     if (r.check_local) el.appendChild(h('p', { class: 'notice show' }, pick(r.message)));
-    var holder = h('div', {});
+    const holder = h('div', {});
     el.appendChild(holder);
     if (rule === 'special_dropoff' && state.town) loadFacilities(holder, it.material);
     el.appendChild(actions(it, rule));
     return el;
-  }
+  };
 
-  function actions(it, rule) {
-    var row = h('div', { class: 'row' });
-    var done = state.counted[it.id];
-    var count = h('button', { class: 'btn dark small', type: 'button' }, done ? t('thanks') : t('gotit'));
+  const actions = (it, rule) => {
+    const done = state.counted[it.id];
+    const count = h('button', { class: 'btn dark small', type: 'button' }, done ? t('thanks') : t('gotit'));
     count.disabled = !!done;
-    count.addEventListener('click', function () {
+    count.addEventListener('click', async () => {
       count.disabled = true;
       state.counted[it.id] = true;
-      api.post('/events', { outcome: rule, material: it.material, town: state.town || undefined }).then(function () { count.textContent = t('thanks'); });
+      await api.post('/events', { outcome: rule, material: it.material, town: state.town || undefined });
+      count.textContent = t('thanks');
     });
-    var slot = h('div', { style: 'flex-basis:100%' });
-    var wrong = h('button', { class: 'btn small outline', type: 'button' }, t('wrong'));
-    wrong.addEventListener('click', function () { reportForm(slot, 'item_rule', { item: it.id }); });
-    row.appendChild(count); row.appendChild(wrong); row.appendChild(slot);
-    return row;
-  }
+    const slot = h('div', { style: 'flex-basis:100%' });
+    const wrong = h('button', { class: 'btn small outline', type: 'button' }, t('wrong'));
+    wrong.addEventListener('click', () => reportForm(slot, 'item_rule', { item: it.id }));
+    return h('div', { class: 'row' }, count, wrong, slot);
+  };
 
-  function reportForm(slot, kind, ids) {
+  const reportForm = (slot, kind, ids) => {
     clear(slot);
-    var ta = h('textarea', { rows: '2', maxlength: '500', 'aria-label': t('whatwrong'), placeholder: t('whatwrong') });
-    var msg = h('p', { class: 'sm' });
-    var send = h('button', { class: 'btn dark small', type: 'button' }, t('send'));
-    var cancel = h('button', { class: 'btn small', type: 'button' }, t('cancel'));
-    cancel.addEventListener('click', function () { clear(slot); });
-    send.addEventListener('click', function () {
-      var body = { kind: kind, message: ta.value.trim() };
+    const ta = h('textarea', { rows: '2', maxlength: '500', 'aria-label': t('whatwrong'), placeholder: t('whatwrong') });
+    const msg = h('p', { class: 'sm' });
+    const send = h('button', { class: 'btn dark small', type: 'button' }, t('send'));
+    const cancel = h('button', { class: 'btn small', type: 'button' }, t('cancel'));
+    cancel.addEventListener('click', () => clear(slot));
+    const showError = text => {
+      send.disabled = false;
+      msg.className = 'err';
+      msg.textContent = text;
+    };
+    send.addEventListener('click', async () => {
+      const body = { kind, message: ta.value.trim() };
       if (ids.item) body.item = ids.item;
       if (state.town) body.town = state.town;
       send.disabled = true;
-      api.post('/reports', body).then(function (r) {
-        if (r.status === 201) { clear(slot).appendChild(h('p', { class: 'ok' }, t('sent'))); return; }
-        send.disabled = false;
-        msg.className = 'err';
-        var raw = (r.body && r.body.message) || '';
-        msg.textContent = r.status === 429 ? t('fail') : (raw === 'Use 3 to 500 characters.' ? t('tooLong') : (raw || t('fail')));
-      }).catch(function () { send.disabled = false; msg.className = 'err'; msg.textContent = t('fail'); });
+      try {
+        const r = await api.post('/reports', body);
+        if (r.status === 201) {
+          clear(slot).appendChild(h('p', { class: 'ok' }, t('sent')));
+          return;
+        }
+        const raw = r.body?.message || '';
+        showError(r.status === 429 ? t('fail') : raw === 'Use 3 to 500 characters.' ? t('tooLong') : raw || t('fail'));
+      } catch {
+        showError(t('fail'));
+      }
     });
-    slot.appendChild(ta); slot.appendChild(msg); slot.appendChild(h('div', { class: 'row' }, send, cancel));
+    slot.append(ta, msg, h('div', { class: 'row' }, send, cancel));
     ta.focus();
-  }
+  };
 
-  var facCache = {};
-  function loadFacilities(holder, material) {
-    var key = state.town + '|' + material;
-    var p = facCache[key] || (facCache[key] = api.get('/facilities?town=' + encodeURIComponent(state.town) + '&material=' + encodeURIComponent(material)));
-    p.then(function (r) {
-      var list = (r.body.facilities || []).slice(0, 2);
+  const facCache = {};
+  const loadFacilities = async (holder, material) => {
+    const key = `${state.town}|${material}`;
+    facCache[key] ||= api.get(`/facilities?town=${encodeURIComponent(state.town)}&material=${encodeURIComponent(material)}`);
+    try {
+      const r = await facCache[key];
+      const list = (r.body.facilities || []).slice(0, 2);
       if (!list.length) return;
       holder.appendChild(h('p', { class: 'sm', style: 'margin-top:14px' }, t('where')));
-      list.forEach(function (f) {
-        var line = h('div', { class: 'item' }, h('b', {}, f.name), h('small', {}, f.address + (f.phone ? ' - ' + f.phone : '')),
-          h('small', {}, f.hours + (f.open_now === true ? ' - ' + t('openNow') : f.open_now === false ? ' - ' + t('closed') : '')));
+      for (const f of list) {
+        const open = f.open_now === true ? t('openNow') : f.open_now === false ? t('closed') : '';
+        const line = h('div', { class: 'item' }, h('b', {}, f.name), h('small', {}, `${f.address}${f.phone ? ` - ${f.phone}` : ''}`),
+          h('small', {}, open ? `${f.hours} - ${open}` : f.hours));
         if (f.residents_only) line.appendChild(h('small', {}, t('residents')));
         holder.appendChild(line);
-      });
-    }).catch(function () { });
-  }
+      }
+    } catch {}
+  };
 
-  var MATERIAL_ORDER = ['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard'];
-  function fillCategories() {
-    var cat = $('cat');
+  const MATERIAL_ORDER = ['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard'];
+  const fillCategories = () => {
+    const cat = $('cat');
     if (!cat) return;
-    var cur = cat.value;
-    clear(cat);
-    cat.appendChild(h('option', { value: '' }, t('catPick')));
-    MATERIAL_ORDER.forEach(function (m) { cat.appendChild(h('option', { value: m }, t('materials')[m])); });
-    cat.value = cur;
-  }
-  function showCategoryPicker(show) { if ($('pick')) $('pick').style.display = show ? 'block' : 'none'; }
-  function showMaterial(cls) {
+    const current = cat.value;
+    clear(cat).append(h('option', { value: '' }, t('catPick')), ...MATERIAL_ORDER.map(m => h('option', { value: m }, t('materials')[m])));
+    cat.value = current;
+  };
+  const showCategoryPicker = show => {
+    if ($('pick')) $('pick').style.display = show ? 'block' : 'none';
+  };
+  const showMaterial = async cls => {
     if (cls === 'no_object' || !cls) return;
     showCategoryPicker(true);
     if ($('cat')) $('cat').value = cls;
-    var mine = ++seq;
-    api.get('/materials/' + encodeURIComponent(cls) + (state.town ? '?town=' + encodeURIComponent(state.town) : '')).then(function (r) {
+    const mine = ++seq;
+    try {
+      const r = await api.get(`/materials/${encodeURIComponent(cls)}${state.town ? `?town=${encodeURIComponent(state.town)}` : ''}`);
       if (mine !== seq) return;
-      var box = clear($('result'));
-      if (r.status !== 200) { box.appendChild(h('p', { class: 'err' }, t('fail'))); return; }
-      var b = r.body;
-      box.appendChild(h('h3', {}, t('materials')[cls] || cls));
-      if (b.consensus) {
-        box.appendChild(h('span', { class: 'tag', style: 'background:' + COLORS[b.consensus.rule] }, t(b.consensus.rule)));
-        box.appendChild(h('p', { class: 'sm' }, t('consensus') + ' (' + t('basedOn') + ' ' + b.consensus.based_on + ' ' + t('items') + ')'));
-      }
-      b.items.slice(0, 8).forEach(function (it) {
-        box.appendChild(h('div', { class: 'li', role: 'button', tabindex: '0', onclick: function () { renderResults([{ id: it.id, name: it.name, material: cls, hazard: it.hazard, resolved: it.resolved }]); } },
-          h('span', { class: 'dot', style: 'background:' + COLORS[it.resolved.rule] }), h('span', {}, pick(it.name)),
-          h('span', { class: 'badge', style: 'background:' + COLORS[it.resolved.rule] }, t(it.resolved.rule))));
-      });
-    }).catch(function () { if (mine !== seq) return; clear($('result')).appendChild(h('p', { class: 'err' }, t('fail'))); });
-  }
-
-  var lastZip = null, zipSeq = 0;
-  var STREAM = function (s) { return ({ trash: t('trashS'), garbage: t('trashS'), area: t('areaS'), recycling: t('recyclingS'), bulk: t('bulk'), yard: t('yard') })[s] || s; };
-  var fmt = function (iso) { return new Date(iso + 'T12:00:00').toLocaleDateString(state.lang === 'es' ? 'es-US' : 'en-US', { weekday: 'short', month: 'short', day: 'numeric' }); };
-
-  function lookupZip(zip, town, areas) {
-    var box = clear($('zresult'));
-    if (!/^\d{5}$/.test(zip)) { box.appendChild(h('p', { class: 'err' }, t('badZip'))); return; }
-    var mine = ++zipSeq;
-    lastZip = { zip: zip, town: town, areas: areas || [] };
-    var qs = [];
-    if (town) qs.push('town=' + encodeURIComponent(town));
-    (areas || []).forEach(function (a) { qs.push('area=' + encodeURIComponent(a)); });
-    api.get('/schedule/' + zip + (qs.length ? '?' + qs.join('&') : '')).then(function (r) {
-      if (mine !== zipSeq) return;
-      var b = r.body;
-      clear(box);
-      if (r.status === 404) { box.appendChild(h('p', { class: 'err' }, t('noZip'))); return; }
-      if (r.status !== 200) { box.appendChild(h('p', { class: 'err' }, t('fail'))); return; }
-      if (b.town && b.town.id && b.town.id !== state.town) { state.town = b.town.id; try { localStorage.setItem('dg_town', state.town); } catch {} if ($('town')) $('town').value = state.town; runSearch(); window.dispatchEvent(new Event('dg-town')); }
-      if (b.needs === 'town') {
-        box.appendChild(h('p', {}, t('pickTown')));
-        b.towns.forEach(function (tw) { box.appendChild(h('button', { class: 'btn dark small town', type: 'button', onclick: function () { lookupZip(zip, tw.id, []); } }, tw.name)); });
+      const box = clear($('result'));
+      if (r.status !== 200) {
+        showFail(box);
         return;
       }
-      if (b.needs === 'area') { renderAreas(box, b, zip, areas || []); return; }
-      renderSchedule(box, b, zip, town, areas || [], mine);
-    }).catch(function () { if (mine !== zipSeq) return; clear(box).appendChild(h('p', { class: 'err' }, t('fail'))); });
-  }
+      const b = r.body;
+      box.appendChild(h('h3', {}, t('materials')[cls] || cls));
+      if (b.consensus) {
+        box.appendChild(h('span', { class: 'tag', style: paint(COLORS[b.consensus.rule]) }, t(b.consensus.rule)));
+        box.appendChild(h('p', { class: 'sm' }, `${t('consensus')} (${t('basedOn')} ${b.consensus.based_on} ${t('items')})`));
+      }
+      for (const it of b.items.slice(0, 8)) {
+        box.appendChild(resultRow(it, () => renderResults([{ id: it.id, name: it.name, material: cls, hazard: it.hazard, resolved: it.resolved }])));
+      }
+    } catch {
+      if (mine === seq) showFail($('result'));
+    }
+  };
 
-  function renderAreas(box, b, zip, chosen) {
+  let lastZip = null;
+  let zipSeq = 0;
+  const streamName = s => ({ trash: t('trashS'), garbage: t('trashS'), area: t('areaS'), recycling: t('recyclingS'), bulk: t('bulk'), yard: t('yard') })[s] || s;
+  const fmt = iso => new Date(`${iso}T12:00:00`).toLocaleDateString(locale(), { weekday: 'short', month: 'short', day: 'numeric' });
+  const areaParams = areas => areas.map(a => `area=${encodeURIComponent(a)}`);
+
+  const lookupZip = async (zip, town, areas = []) => {
+    const box = clear($('zresult'));
+    if (!/^\d{5}$/.test(zip)) {
+      box.appendChild(h('p', { class: 'err' }, t('badZip')));
+      return;
+    }
+    const mine = ++zipSeq;
+    lastZip = { zip, town, areas };
+    const query = [town && `town=${encodeURIComponent(town)}`, ...areaParams(areas)].filter(Boolean);
+    try {
+      const r = await api.get(`/schedule/${zip}${query.length ? `?${query.join('&')}` : ''}`);
+      if (mine !== zipSeq) return;
+      const b = r.body;
+      clear(box);
+      if (r.status === 404) {
+        showText(box, 'err', t('noZip'));
+        return;
+      }
+      if (r.status !== 200) {
+        showFail(box);
+        return;
+      }
+      if (b.town?.id && b.town.id !== state.town) {
+        rememberTown(b.town.id);
+        runSearch();
+        window.dispatchEvent(new Event('dg-town'));
+      }
+      if (b.needs === 'town') {
+        box.appendChild(h('p', {}, t('pickTown')));
+        for (const tw of b.towns) {
+          box.appendChild(h('button', { class: 'btn dark small town', type: 'button', onclick: () => lookupZip(zip, tw.id, []) }, tw.name));
+        }
+      } else if (b.needs === 'area') {
+        renderAreas(box, b, zip, areas);
+      } else {
+        renderSchedule(box, b, areas, mine);
+      }
+    } catch {
+      if (mine === zipSeq) showFail(box);
+    }
+  };
+
+  const renderAreas = (box, b, zip, chosen) => {
     box.appendChild(h('h3', {}, b.town.name));
     box.appendChild(h('p', {}, t('pickArea')));
-    var picks = {};
-    chosen.forEach(function (k) { picks[k.indexOf(':') > -1 ? k.split(':')[0] : 'area'] = k; });
-    b.groups.forEach(function (g) {
-      var sel = h('select', { 'aria-label': STREAM(g) }, h('option', { value: '' }, t('choose')));
-      if (b.groups.length > 1) box.appendChild(h('label', { class: 'pick-label' }, STREAM(g)));
-      b.areas.filter(function (a) { return a.group === g; }).forEach(function (a) {
-        var label = (state.lang === 'es' ? a.label_es : a.label) || a.label;
-        var desc = (state.lang === 'es' ? a.description_es : a.description) || '';
-        sel.appendChild(h('option', { value: a.key }, desc ? label + ': ' + (desc.length > 60 ? desc.slice(0, 57) + '...' : desc) : label));
-      });
+    const picks = {};
+    for (const k of chosen) picks[k.includes(':') ? k.split(':')[0] : 'area'] = k;
+    for (const g of b.groups) {
+      const sel = h('select', { 'aria-label': streamName(g) }, h('option', { value: '' }, t('choose')));
+      if (b.groups.length > 1) box.appendChild(h('label', { class: 'pick-label' }, streamName(g)));
+      for (const a of b.areas.filter(x => x.group === g)) {
+        const label = (spanish() ? a.label_es : a.label) || a.label;
+        const desc = (spanish() ? a.description_es : a.description) || '';
+        sel.appendChild(h('option', { value: a.key }, desc ? `${label}: ${desc.length > 60 ? `${desc.slice(0, 57)}...` : desc}` : label));
+      }
       sel.value = picks[g] || '';
-      sel.addEventListener('change', function () {
+      sel.addEventListener('change', () => {
         if (sel.value) picks[g] = sel.value; else delete picks[g];
-        if (b.groups.every(function (x) { return picks[x]; })) lookupZip(zip, b.town.id, b.groups.map(function (x) { return picks[x]; }));
+        if (b.groups.every(x => picks[x])) lookupZip(zip, b.town.id, b.groups.map(x => picks[x]));
       });
       box.appendChild(sel);
-    });
-  }
+    }
+  };
 
-  function renderSchedule(box, b, zip, town, areas, mine) {
+  const renderSchedule = (box, b, areas, mine) => {
     box.appendChild(h('h3', {}, b.town.name));
-    b.schedules.forEach(function (s) {
-      var line = h('div', { class: 'item' }, h('b', {}, STREAM(s.stream)));
-      var next = (s.next || []).slice(0, 3);
+    for (const s of b.schedules) {
+      const line = h('div', { class: 'item' }, h('b', {}, streamName(s.stream)));
+      const next = (s.next || []).slice(0, 3);
       if (next.length) {
-        line.appendChild(h('small', {}, t('next') + ': ' + next.map(function (o) {
-          return fmt(o.date) + (o.moved ? ' (' + t('moved') + ': ' + (state.lang === 'es' ? o.reason_es : o.reason) + ')' : '');
-        }).join('; ')));
+        const dates = next.map(o => `${fmt(o.date)}${o.moved ? ` (${t('moved')}: ${spanish() ? o.reason_es : o.reason})` : ''}`);
+        line.appendChild(h('small', {}, `${t('next')}: ${dates.join('; ')}`));
       }
-      var note = state.lang === 'es' ? s.note_es : s.note_en;
+      const note = spanish() ? s.note_es : s.note_en;
       if (note) line.appendChild(h('small', {}, note));
       box.appendChild(line);
-    });
-    ['trash', 'recycling'].forEach(function (st) {
-      if (b.schedules.some(function (s) { return s.stream === st; })) return;
-      box.appendChild(h('div', { class: 'item' }, h('b', {}, STREAM(st)), h('small', {}, t('notListed'))));
-    });
-    if (b.calendar) {
-      box.appendChild(h('p', {}, h('a', { class: 'btn dark small', href: b.calendar.webcal }, t('calendar'))));
     }
-    var qs = ['town=' + encodeURIComponent(b.town.id)].concat(areas.map(function (a) { return 'area=' + encodeURIComponent(a); }));
-    api.get('/alerts?' + qs.join('&')).then(function (r) {
-      if (mine !== zipSeq) return;
-      var list = (r.body && r.body.announcements) || [];
-      if (!list.length) return;
-      var note = h('div', { class: 'notice show' }, h('b', {}, t('alerts') + ': '));
-      note.appendChild(document.createTextNode(list.map(function (a) { return pick(a.message); }).join(' ')));
-      box.insertBefore(note, box.children[1] || null);
-    }).catch(function () { });
-  }
-  function wireSchedule() {
-    if (!$('zgo')) return;
-    $('zgo').addEventListener('click', function () { lookupZip($('zip').value.trim()); });
-    $('zip').addEventListener('keydown', function (e) { if (e.key === 'Enter') lookupZip($('zip').value.trim()); });
-  }
+    for (const st of ['trash', 'recycling']) {
+      if (b.schedules.some(s => s.stream === st)) continue;
+      box.appendChild(h('div', { class: 'item' }, h('b', {}, streamName(st)), h('small', {}, t('notListed'))));
+    }
+    if (b.calendar) box.appendChild(h('p', {}, h('a', { class: 'btn dark small', href: b.calendar.webcal }, t('calendar'))));
+    showAlerts(box, b, areas, mine);
+  };
 
-  function init() {
+  const showAlerts = async (box, b, areas, mine) => {
+    try {
+      const query = [`town=${encodeURIComponent(b.town.id)}`, ...areaParams(areas)];
+      const r = await api.get(`/alerts?${query.join('&')}`);
+      if (mine !== zipSeq) return;
+      const list = r.body?.announcements || [];
+      if (!list.length) return;
+      const note = h('div', { class: 'notice show' }, h('b', {}, `${t('alerts')}: `), list.map(a => pick(a.message)).join(' '));
+      box.insertBefore(note, box.children[1] || null);
+    } catch {}
+  };
+
+  const wireSchedule = () => {
+    if (!$('zgo')) return;
+    const search = () => lookupZip($('zip').value.trim());
+    $('zgo').addEventListener('click', search);
+    $('zip').addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
+  };
+
+  const init = async () => {
     wireSchedule();
     fillCategories();
     translateStatic();
-    loadTowns().then(function () { runSearch(); loadPickup(); window.dispatchEvent(new Event('dg-town')); }).catch(function () { });
-    if ($('q')) $('q').addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(runSearch, 250); });
-    if ($('cat')) $('cat').addEventListener('change', function () { if ($('cat').value) showMaterial($('cat').value); });
-  }
+    if ($('q')) {
+      $('q').addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(runSearch, 250);
+      });
+    }
+    if ($('cat')) $('cat').addEventListener('change', () => { if ($('cat').value) showMaterial($('cat').value); });
+    try {
+      await loadTowns();
+      runSearch();
+      loadPickup();
+      window.dispatchEvent(new Event('dg-town'));
+    } catch {}
+  };
 
-  var dumpTypes = {
+  const dumpTypes = {
     household: 'Household trash', furniture: 'Furniture', appliances: 'Appliances', electronics: 'Electronics', tires: 'Tires',
     construction: 'Construction debris', yard: 'Yard waste', hazardous: 'Hazardous waste', other: 'Other',
   };
-  var statusColor = { new: '#c0392b', noticed: '#a86b0a', progress: '#1f5fa8', resolved: '#2f7a28' };
-  function when(iso) {
-    return new Date(iso).toLocaleString(state.lang === 'es' ? 'es-US' : 'en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
-  }
-  function tileMap(id, onTilesFail) {
-    var map = L.map(id, { scrollWheelZoom: false }).setView([40.45, -74.25], 10);
-    var failed = 0;
+  const statusColor = { new: '#c0392b', noticed: '#a86b0a', progress: '#1f5fa8', resolved: '#2f7a28' };
+  const when = iso => new Date(iso).toLocaleString(locale(), { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  const tileMap = (id, onTilesFail) => {
+    const map = L.map(id, { scrollWheelZoom: false }).setView([40.45, -74.25], 10);
+    let failed = 0;
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; OpenStreetMap contributors' }).addTo(map)
-      .on('tileerror', function () { if (++failed > 3) onTilesFail(); });
-    if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe($(id));
+      .on('tileerror', () => { if (++failed > 3) onTilesFail(); });
+    if (window.ResizeObserver) new ResizeObserver(() => map.invalidateSize()).observe($(id));
     return map;
-  }
+  };
 
   window.DumpGuard = {
-    material: function (m) { return T[state.lang].materials[m]; }, dumpTypes: dumpTypes, statusColor: statusColor, when: when, tileMap: tileMap,
-    api: api, request: request, setTown: setTown, showMaterial: showMaterial, showCategoryPicker: showCategoryPicker,
-    h: h, clear: clear, lang: function () { return state.lang; }, setLang: setLang, townId: function () { return state.town; }, townName: function () { return townName(state.town); },
+    material: m => T[state.lang].materials[m], dumpTypes, statusColor, when, tileMap, locale,
+    api, request, setTown, showMaterial, showCategoryPicker,
+    h, clear, lang: () => state.lang, setLang, townId: () => state.town, townName: () => townName(state.town),
   };
   document.addEventListener('DOMContentLoaded', init);
 })();
 
-(function () {
+(() => {
   'use strict';
 
-  var TFJS = 'lib/tf.min.js';
-  var MODEL_URL = 'lib/model.json';
-  var CLASSES = ['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard', 'no_object'];
-  var SIZE = 224, TEMPERATURE = 1.9, THRESHOLD = 0.65;
+  const TFJS = 'lib/tf.min.js';
+  const MODEL_URL = 'lib/model.json';
+  const CLASSES = ['rigid_plastic', 'soft_plastic_foam', 'cardboard_paper', 'metal', 'glass', 'ewaste_hazard', 'no_object'];
+  const SIZE = 224;
+  const TEMPERATURE = 1.9;
+  const THRESHOLD = 0.65;
 
-  var S = {
+  const S = {
     en: {
       prompt: 'Take or upload a photo', reading: 'Loading the photo model...', looking: 'Looking at the photo...',
       sure: 'Looks like', unsure: 'Not sure what this is. Pick a category below.', none: 'No item found in the photo. Try a closer picture, or pick a category below.',
@@ -476,324 +558,386 @@
       fail: 'No se pudo iniciar el reconocimiento de fotos. Elija una categoría abajo.', local: 'La foto se queda en su dispositivo.', another: 'Probar otra foto',
     },
   };
-  var s = function () { return S[window.DumpGuard.lang()] || S.en; };
+  const str = key => (S[window.DumpGuard.lang()] || S.en)[key];
 
-  var tfPromise = null, modelPromise = null;
-  function loadScript(src) {
-    return new Promise(function (resolve, reject) {
-      var el = document.createElement('script');
-      el.src = src; el.async = true; el.crossOrigin = 'anonymous';
-      el.integrity = 'sha384-L8voclkoniuFcRcupWcIj6Z2X9BjaujQTgwjRJl5LjC7tJ/By8Kkl+nf64+2IVjS';
-      el.onload = resolve;
-      el.onerror = function () { reject(new Error('script')); };
-      document.head.appendChild(el);
-    });
-  }
-  function loadModel() {
-    if (!modelPromise) {
-      modelPromise = (window.tf ? Promise.resolve() : (tfPromise = tfPromise || loadScript(TFJS)))
-        .then(function () { return window.tf.loadGraphModel(MODEL_URL); })
-        .catch(function (e) { modelPromise = null; tfPromise = null; throw e; });
-    }
+  let tfPromise = null;
+  let modelPromise = null;
+  const loadScript = src => new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.integrity = 'sha384-L8voclkoniuFcRcupWcIj6Z2X9BjaujQTgwjRJl5LjC7tJ/By8Kkl+nf64+2IVjS';
+    script.onload = resolve;
+    script.onerror = () => reject(new Error('script'));
+    document.head.appendChild(script);
+  });
+  const loadModel = () => {
+    modelPromise ||= (async () => {
+      try {
+        if (!window.tf) await (tfPromise ||= loadScript(TFJS));
+        return await window.tf.loadGraphModel(MODEL_URL);
+      } catch (e) {
+        modelPromise = null;
+        tfPromise = null;
+        throw e;
+      }
+    })();
     return modelPromise;
-  }
+  };
 
-  function calibrate(probs, T) {
-    var logits = probs.map(function (p) { return Math.log(Math.max(p, 1e-9)) / T; });
-    var max = Math.max.apply(null, logits);
-    var exps = logits.map(function (l) { return Math.exp(l - max); });
-    var sum = exps.reduce(function (a, b) { return a + b; }, 0);
-    return exps.map(function (e) { return e / sum; });
-  }
-  function decide(probs) {
-    var p = calibrate(probs, TEMPERATURE);
-    var best = 0;
-    for (var i = 1; i < p.length; i++) if (p[i] > p[best]) best = i;
+  const calibrate = (probs, temperature) => {
+    const logits = probs.map(p => Math.log(Math.max(p, 1e-9)) / temperature);
+    const max = Math.max(...logits);
+    const exps = logits.map(l => Math.exp(l - max));
+    const sum = exps.reduce((a, b) => a + b, 0);
+    return exps.map(e => e / sum);
+  };
+  const decide = probs => {
+    const p = calibrate(probs, TEMPERATURE);
+    const best = p.indexOf(Math.max(...p));
     return { cls: CLASSES[best], confidence: p[best], sure: p[best] >= THRESHOLD };
-  }
+  };
 
-  function classify(img) {
-    return loadModel().then(function (model) {
-      var tf = window.tf;
-      var out = tf.tidy(function () {
-        var x = tf.image.resizeBilinear(tf.browser.fromPixels(img), [SIZE, SIZE]).toFloat().expandDims(0);
-        return model.predict(x);
-      });
-      return out.data().then(function (d) { out.dispose(); return decide(Array.prototype.slice.call(d)); });
-    });
-  }
+  const classify = async img => {
+    const model = await loadModel();
+    const { tf } = window;
+    const out = tf.tidy(() => model.predict(tf.image.resizeBilinear(tf.browser.fromPixels(img), [SIZE, SIZE]).toFloat().expandDims(0)));
+    const data = await out.data();
+    out.dispose();
+    return decide(Array.from(data));
+  };
 
-  function init() {
-    var input = document.getElementById('photo'), label = document.getElementById('droptxt');
+  const init = () => {
+    const input = document.getElementById('photo');
+    const label = document.getElementById('droptxt');
     if (!input || !label || !window.DumpGuard) return;
-    var DG = window.DumpGuard, h = DG.h;
-    var mine = 0;
-    var note = h('p', { class: 'sm', 'aria-live': 'polite' });
+    const DG = window.DumpGuard;
+    const { h } = DG;
+    let mine = 0;
+    const note = h('p', { class: 'sm', 'aria-live': 'polite' });
     input.parentNode.parentNode.insertBefore(note, input.parentNode.nextSibling);
-    label.textContent = s().prompt;
+    label.textContent = str('prompt');
 
-    input.addEventListener('change', function () {
-      var file = input.files && input.files[0];
+    input.addEventListener('change', () => {
+      const file = input.files?.[0];
       if (!file) return;
-      var run = ++mine;
+      const run = ++mine;
       DG.showCategoryPicker(false);
-      note.className = 'sm'; note.textContent = s().reading;
-      var url = URL.createObjectURL(file);
-      var img = new Image();
-      img.onerror = function () { URL.revokeObjectURL(url); note.textContent = s().fail; DG.showCategoryPicker(true); };
-      img.onload = function () {
+      note.className = 'sm';
+      note.textContent = str('reading');
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onerror = () => {
+        URL.revokeObjectURL(url);
+        note.textContent = str('fail');
+        DG.showCategoryPicker(true);
+      };
+      img.onload = async () => {
         if (run !== mine) return;
         DG.clear(label).appendChild(h('img', { src: url, alt: '' }));
-        note.textContent = s().looking;
-        classify(img).then(function (r) {
+        note.textContent = str('looking');
+        try {
+          const r = await classify(img);
           if (run !== mine) return;
-          if (r.cls === 'no_object') { note.textContent = s().none; DG.showCategoryPicker(true); return; }
-          if (!r.sure) { note.textContent = s().unsure; DG.showCategoryPicker(true); return; }
-          note.textContent = s().sure + ': ' + DG.material(r.cls) + ' (' + Math.round(r.confidence * 100) + '%). ' + s().local;
-          DG.showMaterial(r.cls);
-        }).catch(function () {
+          if (r.cls === 'no_object') {
+            note.textContent = str('none');
+            DG.showCategoryPicker(true);
+          } else if (!r.sure) {
+            note.textContent = str('unsure');
+            DG.showCategoryPicker(true);
+          } else {
+            note.textContent = `${str('sure')}: ${DG.material(r.cls)} (${Math.round(r.confidence * 100)}%). ${str('local')}`;
+            DG.showMaterial(r.cls);
+          }
+        } catch {
           if (run !== mine) return;
-          note.className = 'err'; note.textContent = s().fail; DG.showCategoryPicker(true);
-        });
+          note.className = 'err';
+          note.textContent = str('fail');
+          DG.showCategoryPicker(true);
+        }
       };
       img.src = url;
       input.value = '';
     });
-  }
+  };
 
   document.addEventListener('DOMContentLoaded', init);
 })();
 
-(function () {
+(() => {
   'use strict';
 
-  var DG = window.DumpGuard;
+  const DG = window.DumpGuard;
   if (!DG) return;
-  var h = DG.h, clear = DG.clear;
-  var $ = function (id) { return document.getElementById(id); };
+  const { h, clear, when } = DG;
+  const $ = id => document.getElementById(id);
 
-  var TYPES = [
+  const TYPES = [
     ['household', 'Household trash or bags'], ['furniture', 'Furniture or mattresses'], ['appliances', 'Appliances'], ['electronics', 'Electronics'],
     ['tires', 'Tires'], ['construction', 'Construction or demolition debris'], ['yard', 'Yard waste'], ['hazardous', 'Chemicals or hazardous waste'], ['other', 'Other'],
   ];
-  var STATUS = { new: 'Received', noticed: 'Noticed by officials', progress: 'In progress', resolved: 'Resolved' };
-  var KEY = 'dg_dump_codes';
-  var photo = null, point = null;
-
-  function saved() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch { return []; } }
-  function remember(code, town) {
-    try { localStorage.setItem(KEY, JSON.stringify([{ code: code, town: town, at: new Date().toISOString().slice(0, 10) }].concat(saved()).slice(0, 20))); } catch {}
-  }
-
-  function showTown() {
-    var note = $('rtownnote'), name = DG.townName();
-    if (note) note.textContent = name ? 'Reporting in ' + name : '';
-  }
-  function fillTypes() {
-    var sel = $('rcat');
-    clear(sel).appendChild(h('option', { value: '' }, 'Choose a type'));
-    TYPES.forEach(function (t) { sel.appendChild(h('option', { value: t[0] }, t[1])); });
-  }
-
-  function addLocationButton() {
-    var where = $('rwhere');
-    var msg = h('p', { class: 'sm', id: 'rpoint', 'aria-live': 'polite' });
-    var btn = h('button', { class: 'btn ghost', type: 'button', style: 'margin-top:10px' }, 'Use my location');
-    if (!navigator.geolocation) return;
-    btn.addEventListener('click', function () {
-      msg.className = 'sm'; msg.textContent = 'Finding your location...';
-      navigator.geolocation.getCurrentPosition(function (p) {
-        point = { lat: p.coords.latitude, lng: p.coords.longitude };
-        msg.textContent = 'Location added. You can still describe the spot above.';
-      }, function () {
-        point = null; msg.className = 'err'; msg.textContent = 'Could not get your location. Type the address instead.';
-      }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
-    });
-    where.parentNode.insertBefore(btn, where.nextSibling);
-    where.parentNode.insertBefore(msg, btn.nextSibling);
-  }
-
-  function reencode(file) {
-    var load = window.createImageBitmap
-      ? createImageBitmap(file, { imageOrientation: 'from-image' })
-      : new Promise(function (resolve, reject) {
-        var url = URL.createObjectURL(file), img = new Image();
-        img.onload = function () { URL.revokeObjectURL(url); resolve(img); };
-        img.onerror = function () { reject(new Error('image')); };
-        img.src = url;
-      });
-    return load.then(function (img) {
-      var w = img.width, hgt = img.height, scale = Math.min(1, 1280 / Math.max(w, hgt));
-      var c = document.createElement('canvas');
-      c.width = Math.max(1, Math.round(w * scale)); c.height = Math.max(1, Math.round(hgt * scale));
-      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
-      return new Promise(function (resolve, reject) {
-        c.toBlob(function (b) { b ? resolve({ blob: b, canvas: c }) : reject(new Error('encode')); }, 'image/jpeg', 0.8);
-      });
-    });
-  }
-  function toBase64(blob) {
-    return new Promise(function (resolve, reject) {
-      var fr = new FileReader();
-      fr.onload = function () { resolve(String(fr.result).split(',')[1] || ''); };
-      fr.onerror = function () { reject(new Error('read')); };
-      fr.readAsDataURL(blob);
-    });
-  }
-  var photoSeq = 0;
-  function onPhoto() {
-    var input = $('rphoto'), file = input.files && input.files[0];
-    photo = null; $('priv').style.display = 'none';
-    if (!file) return;
-    var mine = ++photoSeq;
-    $('rerr').textContent = '';
-    $('send').disabled = true;
-    reencode(file).then(function (r) {
-      if (mine !== photoSeq) return;
-      if (r.blob.size > 1900000) throw new Error('big');
-      return toBase64(r.blob).then(function (b64) {
-        if (mine !== photoSeq) return;
-        photo = b64;
-        var holder = $('rtxt'); clear(holder);
-        holder.appendChild(h('img', { src: r.canvas.toDataURL('image/jpeg', 0.5), alt: 'Selected photo' }));
-        $('priv').style.display = 'block';
-      });
-    }).catch(function () {
-      if (mine !== photoSeq) return;
-      $('rerr').textContent = 'That photo could not be used. Try a different one.';
-    }).then(function () {
-      if (mine !== photoSeq) return;
-      $('send').disabled = false;
-    });
-  }
-
-  var MSG = {
+  const STATUS = { new: 'Received', noticed: 'Noticed by officials', progress: 'In progress', resolved: 'Resolved' };
+  const KEY = 'dg_dump_codes';
+  const MSG = {
     invalid_town: 'Choose your town.', invalid_type: 'Choose the type of dumping.', invalid_location: 'Describe where it is (at least 3 characters).',
     invalid_description: 'Describe what was dumped (at least 3 characters).', invalid_notes: 'Notes can be up to 500 characters.', rate_limited: 'Too many reports from this connection. Try again in an hour.',
   };
-  function submit() {
-    var err = $('rerr'), ok = $('sent'), btn = $('send');
-    err.textContent = ''; ok.style.display = 'none';
-    var body = { town: DG.townId() || '', type: $('rcat').value, where: $('rwhere').value.trim(), description: $('rdesc').value.trim() };
-    var note = $('rnote').value.trim();
+  const CHECK_ERRORS = { 404: 'No report with that code.', 429: 'Too many checks. Try again later.' };
+  const REPLY_ERRORS = { 429: 'Too many replies. Try again later.', 409: 'This conversation is full.' };
+  let photo = null;
+  let point = null;
+  let photoSeq = 0;
+
+  const showProblem = (box, text) => box.appendChild(h('p', { class: 'err' }, text));
+  const day = iso => new Date(iso).toLocaleDateString(DG.locale(), { month: 'short', day: 'numeric', year: 'numeric' });
+
+  const saved = () => {
+    try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch { return []; }
+  };
+  const remember = (code, town) => {
+    try { localStorage.setItem(KEY, JSON.stringify([{ code, town, at: new Date().toISOString().slice(0, 10) }, ...saved()].slice(0, 20))); } catch {}
+  };
+
+  const showTown = () => {
+    const note = $('rtownnote');
+    const name = DG.townName();
+    if (note) note.textContent = name ? `Reporting in ${name}` : '';
+  };
+  const fillTypes = () => {
+    clear($('rcat')).append(h('option', { value: '' }, 'Choose a type'), ...TYPES.map(([value, label]) => h('option', { value }, label)));
+  };
+
+  const addLocationButton = () => {
+    if (!navigator.geolocation) return;
+    const where = $('rwhere');
+    const msg = h('p', { class: 'sm', id: 'rpoint', 'aria-live': 'polite' });
+    const btn = h('button', { class: 'btn ghost', type: 'button', style: 'margin-top:10px' }, 'Use my location');
+    btn.addEventListener('click', () => {
+      msg.className = 'sm';
+      msg.textContent = 'Finding your location...';
+      navigator.geolocation.getCurrentPosition(p => {
+        point = { lat: p.coords.latitude, lng: p.coords.longitude };
+        msg.textContent = 'Location added. You can still describe the spot above.';
+      }, () => {
+        point = null;
+        msg.className = 'err';
+        msg.textContent = 'Could not get your location. Type the address instead.';
+      }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+    });
+    where.after(btn, msg);
+  };
+
+  const loadImage = file => new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      resolve(img);
+    };
+    img.onerror = () => reject(new Error('image'));
+    img.src = url;
+  });
+  const reencode = async file => {
+    const img = window.createImageBitmap ? await createImageBitmap(file, { imageOrientation: 'from-image' }) : await loadImage(file);
+    const scale = Math.min(1, 1280 / Math.max(img.width, img.height));
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.max(1, Math.round(img.width * scale));
+    canvas.height = Math.max(1, Math.round(img.height * scale));
+    canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.8));
+    if (!blob) throw new Error('encode');
+    return { blob, canvas };
+  };
+  const toBase64 = blob => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(',')[1] || '');
+    reader.onerror = () => reject(new Error('read'));
+    reader.readAsDataURL(blob);
+  });
+
+  const onPhoto = async () => {
+    const file = $('rphoto').files?.[0];
+    photo = null;
+    $('priv').style.display = 'none';
+    if (!file) return;
+    const mine = ++photoSeq;
+    $('rerr').textContent = '';
+    $('send').disabled = true;
+    try {
+      const r = await reencode(file);
+      if (mine !== photoSeq) return;
+      if (r.blob.size > 1900000) throw new Error('big');
+      const b64 = await toBase64(r.blob);
+      if (mine !== photoSeq) return;
+      photo = b64;
+      clear($('rtxt')).appendChild(h('img', { src: r.canvas.toDataURL('image/jpeg', 0.5), alt: 'Selected photo' }));
+      $('priv').style.display = 'block';
+    } catch {
+      if (mine === photoSeq) $('rerr').textContent = 'That photo could not be used. Try a different one.';
+    } finally {
+      if (mine === photoSeq) $('send').disabled = false;
+    }
+  };
+
+  const submit = async () => {
+    const err = $('rerr');
+    const ok = $('sent');
+    const btn = $('send');
+    err.textContent = '';
+    ok.style.display = 'none';
+    const body = { town: DG.townId() || '', type: $('rcat').value, where: $('rwhere').value.trim(), description: $('rdesc').value.trim() };
+    const note = $('rnote').value.trim();
     if (note) body.notes = note;
-    if (point) { body.lat = point.lat; body.lng = point.lng; }
+    if (point) {
+      body.lat = point.lat;
+      body.lng = point.lng;
+    }
     if (photo) body.photo = photo;
-    var first = !body.town ? 'invalid_town' : !body.type ? 'invalid_type' : body.where.length < 3 ? 'invalid_location' : body.description.length < 3 ? 'invalid_description' : '';
-    if (first) { err.textContent = MSG[first]; return; }
+    const first = !body.town ? 'invalid_town' : !body.type ? 'invalid_type' : body.where.length < 3 ? 'invalid_location' : body.description.length < 3 ? 'invalid_description' : '';
+    if (first) {
+      err.textContent = MSG[first];
+      return;
+    }
     btn.disabled = true;
-    DG.api.post('/dumping', body).then(function (r) {
+    try {
+      const r = await DG.api.post('/dumping', body);
       btn.disabled = false;
-      if (r.status === 201) {
-        remember(r.body.code, body.town);
-        clear(ok).appendChild(document.createTextNode('Report sent. Your tracking code is '));
-        ok.appendChild(h('b', {}, r.body.code));
-        ok.appendChild(document.createTextNode('. Save it to check on the report later. It is also saved in this browser.'));
-        ok.style.display = 'block';
-        ['rwhere', 'rdesc', 'rnote'].forEach(function (id) { $(id).value = ''; });
-        photo = null; point = null; $('priv').style.display = 'none';
-        clear($('rtxt')).appendChild(document.createTextNode('Take or upload a picture'));
-        if ($('rpoint')) $('rpoint').textContent = '';
-        renderMine();
+      if (r.status !== 201) {
+        err.textContent = r.status === 413 ? 'That photo is too large.' : MSG[r.body?.error] || r.body?.message || 'Could not send the report. Try again.';
         return;
       }
-      err.textContent = r.status === 413 ? 'That photo is too large.' : MSG[r.body && r.body.error] || (r.body && r.body.message) || 'Could not send the report. Try again.';
-    }).catch(function () { btn.disabled = false; err.textContent = 'Could not reach the server. Try again.'; });
-  }
+      remember(r.body.code, body.town);
+      clear(ok).append('Report sent. Your tracking code is ', h('b', {}, r.body.code), '. Save it to check on the report later. It is also saved in this browser.');
+      ok.style.display = 'block';
+      for (const id of ['rwhere', 'rdesc', 'rnote']) $(id).value = '';
+      photo = null;
+      point = null;
+      $('priv').style.display = 'none';
+      clear($('rtxt')).append('Take or upload a picture');
+      if ($('rpoint')) $('rpoint').textContent = '';
+      renderMine();
+    } catch {
+      btn.disabled = false;
+      err.textContent = 'Could not reach the server. Try again.';
+    }
+  };
 
-  function lookup(code) {
-    var out = clear($('tres'));
-    code = code.trim().toUpperCase();
-    if (!/^DG-[A-Z0-9]{5}$/.test(code)) { out.appendChild(h('p', { class: 'err' }, 'Codes look like DG-4F7K2.')); return; }
+  const lookup = async raw => {
+    const out = clear($('tres'));
+    const code = raw.trim().toUpperCase();
+    if (!/^DG-[A-Z0-9]{5}$/.test(code)) {
+      showProblem(out, 'Codes look like DG-4F7K2.');
+      return;
+    }
     out.appendChild(h('p', { class: 'sm' }, 'Checking...'));
-    DG.api.get('/dumping/track?code=' + encodeURIComponent(code)).then(function (r) {
+    try {
+      const r = await DG.api.get(`/dumping/track?code=${encodeURIComponent(code)}`);
       clear(out);
-      if (r.status === 404) { out.appendChild(h('p', { class: 'err' }, 'No report with that code.')); return; }
-      if (r.status === 429) { out.appendChild(h('p', { class: 'err' }, 'Too many checks. Try again later.')); return; }
-      if (r.status !== 200) { out.appendChild(h('p', { class: 'err' }, 'Could not check the report. Try again.')); return; }
-      var b = r.body, d = function (iso) { return new Date(iso).toLocaleDateString(DG.lang() === 'es' ? 'es-US' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' }); };
-      out.appendChild(h('div', { class: 'item' }, h('b', {}, b.code + ': ' + (STATUS[b.status] || b.status)),
-        h('small', {}, 'Filed ' + d(b.created_at) + (b.updated_at !== b.created_at ? ', last update ' + d(b.updated_at) : ''))));
+      if (r.status !== 200) {
+        showProblem(out, CHECK_ERRORS[r.status] || 'Could not check the report. Try again.');
+        return;
+      }
+      const b = r.body;
+      out.appendChild(h('div', { class: 'item' }, h('b', {}, `${b.code}: ${STATUS[b.status] || b.status}`),
+        h('small', {}, `Filed ${day(b.created_at)}${b.updated_at !== b.created_at ? `, last update ${day(b.updated_at)}` : ''}`)));
       showThread(code, out);
-    }).catch(function () { clear(out).appendChild(h('p', { class: 'err' }, 'Could not reach the server. Try again.')); });
-  }
-  var when = DG.when;
-  function showThread(code, out) {
-    DG.api.get('/dumping/messages?code=' + encodeURIComponent(code)).then(function (r) {
+    } catch {
+      showProblem(clear(out), 'Could not reach the server. Try again.');
+    }
+  };
+
+  const showThread = async (code, out) => {
+    try {
+      const r = await DG.api.get(`/dumping/messages?code=${encodeURIComponent(code)}`);
       if (r.status !== 200 || !r.body.messages.length) return;
-      var list = r.body.messages, box = h('div', { class: 'thread', 'aria-live': 'polite' });
+      const box = h('div', { class: 'thread', 'aria-live': 'polite' });
       out.appendChild(h('h4', {}, 'Messages from officials'));
-      list.forEach(function (m) {
-        box.appendChild(h('div', { class: 'msg ' + (m.from === 'staff' ? 'in' : 'out') },
-          h('small', {}, (m.from === 'staff' ? 'Officials' : 'You') + ' - ' + when(m.at)), h('p', {}, m.body)));
-      });
+      for (const m of r.body.messages) {
+        box.appendChild(h('div', { class: `msg ${m.from === 'staff' ? 'in' : 'out'}` },
+          h('small', {}, `${m.from === 'staff' ? 'Officials' : 'You'} - ${when(m.at)}`), h('p', {}, m.body)));
+      }
       out.appendChild(box);
-      var text = h('textarea', { rows: '3', maxlength: '500', 'aria-label': 'Your reply', placeholder: 'Write a reply. Please do not include your name or phone number.' });
-      var err = h('p', { class: 'err', 'aria-live': 'polite' });
-      var send = h('button', { class: 'btn dark', type: 'button' }, 'Send reply');
-      send.addEventListener('click', function () {
-        var body = text.value.trim();
-        if (!body) { err.textContent = 'Write a reply first.'; return; }
-        err.textContent = ''; send.disabled = true;
-        DG.api.post('/dumping/reply', { code: code, body: body }).then(function (res) {
+      const text = h('textarea', { rows: '3', maxlength: '500', 'aria-label': 'Your reply', placeholder: 'Write a reply. Please do not include your name or phone number.' });
+      const err = h('p', { class: 'err', 'aria-live': 'polite' });
+      const send = h('button', { class: 'btn dark', type: 'button' }, 'Send reply');
+      send.addEventListener('click', async () => {
+        const body = text.value.trim();
+        if (!body) {
+          err.textContent = 'Write a reply first.';
+          return;
+        }
+        err.textContent = '';
+        send.disabled = true;
+        try {
+          const res = await DG.api.post('/dumping/reply', { code, body });
           send.disabled = false;
-          if (res.status === 201) { lookup(code); return; }
-          err.textContent = res.status === 429 ? 'Too many replies. Try again later.' : res.status === 409 ? 'This conversation is full.' : 'Could not send the reply. Try again.';
-        }).catch(function () { send.disabled = false; err.textContent = 'Could not reach the server.'; });
+          if (res.status === 201) lookup(code);
+          else err.textContent = REPLY_ERRORS[res.status] || 'Could not send the reply. Try again.';
+        } catch {
+          send.disabled = false;
+          err.textContent = 'Could not reach the server.';
+        }
       });
-      out.appendChild(text); out.appendChild(h('div', { class: 'row tight' }, send)); out.appendChild(err);
-    }).catch(function () { });
-  }
-  function markReplies(box, list) {
-    list.slice(0, 5).forEach(function (x, i) {
-      DG.api.get('/dumping/messages?code=' + encodeURIComponent(x.code)).then(function (r) {
+      out.append(text, h('div', { class: 'row tight' }, send), err);
+    } catch {}
+  };
+
+  const markReplies = (box, list) => {
+    list.slice(0, 5).forEach(async (x, i) => {
+      try {
+        const r = await DG.api.get(`/dumping/messages?code=${encodeURIComponent(x.code)}`);
         if (r.status !== 200 || !r.body.messages.length) return;
-        var last = r.body.messages[r.body.messages.length - 1];
-        if (last.from !== 'staff') return;
-        var row = box.querySelectorAll('.li')[i];
-        if (row) row.appendChild(h('span', { class: 'msgmark new' }, 'New message'));
-      }).catch(function () {});
+        if (r.body.messages.at(-1).from !== 'staff') return;
+        box.querySelectorAll('.li')[i]?.appendChild(h('span', { class: 'msgmark new' }, 'New message'));
+      } catch {}
     });
-  }
-  function renderMine() {
-    var box = clear($('tmine')), list = saved();
+  };
+  const renderMine = () => {
+    const box = clear($('tmine'));
+    const list = saved();
     if (!list.length) return;
     box.appendChild(h('p', { class: 'sm gap' }, 'Reports from this browser'));
-    list.forEach(function (x) {
-      box.appendChild(h('div', { class: 'li', role: 'button', tabindex: '0', onclick: function () { $('tcode').value = x.code; lookup(x.code); } },
+    for (const x of list) {
+      box.appendChild(h('div', { class: 'li', role: 'button', tabindex: '0', onclick: () => { $('tcode').value = x.code; lookup(x.code); } },
         h('span', {}, x.code), h('small', {}, x.at)));
-    });
+    }
     markReplies(box, list);
-  }
+  };
 
-  function init() {
+  const init = () => {
     if (!$('send')) return;
-    showTown(); window.addEventListener('dg-town', showTown); window.addEventListener('dg-lang', showTown); fillTypes(); addLocationButton(); renderMine();
+    showTown();
+    window.addEventListener('dg-town', showTown);
+    window.addEventListener('dg-lang', showTown);
+    fillTypes();
+    addLocationButton();
+    renderMine();
     $('rphoto').addEventListener('change', onPhoto);
     $('send').addEventListener('click', submit);
-    $('tgo').addEventListener('click', function () { lookup($('tcode').value); });
-    $('tcode').addEventListener('keydown', function (e) { if (e.key === 'Enter') lookup($('tcode').value); });
-  }
+    $('tgo').addEventListener('click', () => lookup($('tcode').value));
+    $('tcode').addEventListener('keydown', e => { if (e.key === 'Enter') lookup($('tcode').value); });
+  };
   document.addEventListener('DOMContentLoaded', init);
 })();
 
-(function () {
+(() => {
   'use strict';
 
-  var DG = window.DumpGuard;
+  const DG = window.DumpGuard;
   if (!DG || !window.L) return;
-  var h = DG.h, clear = DG.clear;
-  var $ = function (id) { return document.getElementById(id); };
+  const { h, clear } = DG;
+  const $ = id => document.getElementById(id);
 
-  var TYPES = DG.dumpTypes;
-  var STATUS = { new: 'New', noticed: 'Noticed', progress: 'In progress', resolved: 'Resolved' };
-  var COLOR = DG.statusColor;
-  var TOWN_AT = {
+  const TYPES = DG.dumpTypes;
+  const STATUS = { new: 'New', noticed: 'Noticed', progress: 'In progress', resolved: 'Resolved' };
+  const COLOR = DG.statusColor;
+  const TOWN_AT = {
     edison: [40.5187, -74.4121], 'new-brunswick': [40.4862, -74.4518], woodbridge: [40.5576, -74.2846],
     'long-branch': [40.3043, -73.9924], 'asbury-park': [40.2204, -74.0121],
   };
 
-  var CENTER = {
+  const CENTER = {
     aberdeen: [40.4101, -74.2224], allenhurst: [40.2362, -74.0112], 'asbury-park': [40.2204, -74.0121], 'atlantic-highlands': [40.4084, -74.0335],
     'bradley-beach': [40.2007, -74.0123], carteret: [40.5773, -74.2285], deal: [40.2543, -74.0001], edison: [40.5187, -74.4121],
     'fair-haven': [40.3626, -74.0385], hazlet: [40.4263, -74.1760], 'highland-park': [40.4995, -74.4260], highlands: [40.4040, -73.9918],
@@ -805,366 +949,451 @@
     'sea-bright': [40.3626, -73.9724], 'south-amboy': [40.4837, -74.2802], 'south-plainfield': [40.5793, -74.4118], 'union-beach': [40.4476, -74.1685],
     'west-long-branch': [40.2893, -74.0210], woodbridge: [40.5576, -74.2846],
   };
-  var REGION = [40.45, -74.25];
+  const REGION = [40.45, -74.25];
 
-  var map, layer, labels, labelsOn = true, pub = null, towns = [];
+  let map;
+  let layer;
+  let labels;
+  let pub = null;
+  let towns = [];
 
-  function filters() { return { type: $('mfilter').value, town: $('mtown').value, status: $('mstat').value }; }
+  const filters = () => ({ type: $('mfilter').value, town: $('mtown').value, status: $('mstat').value });
 
-  function fillFilters() {
-    var f = clear($('mfilter')); f.appendChild(h('option', { value: '' }, 'All types'));
-    Object.keys(TYPES).forEach(function (k) { f.appendChild(h('option', { value: k }, TYPES[k])); });
-    var t = clear($('mtown')); t.appendChild(h('option', { value: '' }, 'All towns'));
-    towns.forEach(function (tw) { t.appendChild(h('option', { value: tw.town, 'data-n': tw.name }, tw.name)); });
-  }
+  const fillFilters = () => {
+    clear($('mfilter')).append(h('option', { value: '' }, 'All types'), ...Object.entries(TYPES).map(([value, label]) => h('option', { value }, label)));
+    clear($('mtown')).append(h('option', { value: '' }, 'All towns'), ...towns.map(tw => h('option', { value: tw.town, 'data-n': tw.name }, tw.name)));
+  };
 
-  function cellTowns(c) {
-    if (c.towns && c.towns.length) return c.towns;
-    return c.town ? [c.town] : [];
-  }
-  function dominant(counts) {
-    var best = null;
-    ['new', 'noticed', 'progress', 'resolved'].forEach(function (s) { if (counts[s] && (!best || counts[s] > counts[best])) best = s; });
-    return best;
-  }
-  function drawPublic() {
-    var f = filters(), shown = 0;
-    pub.cells.forEach(function (c) {
-      if (f.town && cellTowns(c).indexOf(f.town) === -1) return;
-      var by = {}, n = 0;
-      c.groups.forEach(function (g) {
-        if ((f.type && g.type !== f.type) || (f.status && g.status !== f.status)) return;
-        by[g.status] = (by[g.status] || 0) + g.n; n += g.n;
-      });
-      if (!n) return;
+  const cellTowns = c => (c.towns?.length ? c.towns : c.town ? [c.town] : []);
+  const dominant = counts => ['new', 'noticed', 'progress', 'resolved'].reduce((best, s) => (counts[s] && (!best || counts[s] > counts[best]) ? s : best), null);
+  const tally = (groups, keep = () => true) => {
+    const by = {};
+    let n = 0;
+    for (const g of groups.filter(keep)) {
+      by[g.status] = (by[g.status] || 0) + g.n;
+      n += g.n;
+    }
+    return { by, n };
+  };
+
+  const drawPublic = () => {
+    const f = filters();
+    let shown = 0;
+    for (const c of pub.cells) {
+      if (f.town && !cellTowns(c).includes(f.town)) continue;
+      const { by, n } = tally(c.groups, g => (!f.type || g.type === f.type) && (!f.status || g.status === f.status));
+      if (!n) continue;
       shown++;
-      var all = {}; c.groups.forEach(function (g) { all[g.status] = (all[g.status] || 0) + g.n; });
-      var col = COLOR[dominant(by)];
-      var circle = L.circle([c.lat, c.lng], { radius: c.radius_m, color: col, weight: 2, fillColor: col, fillOpacity: 0.28 }).addTo(layer);
-      var pop = h('div', {}, h('b', {}, c.n + ' reports in this area'));
-      Object.keys(STATUS).forEach(function (s) { if (all[s]) pop.appendChild(h('div', {}, STATUS[s] + ': ' + all[s])); });
+      const all = tally(c.groups).by;
+      const color = COLOR[dominant(by)];
+      const circle = L.circle([c.lat, c.lng], { radius: c.radius_m, color, weight: 2, fillColor: color, fillOpacity: 0.28 }).addTo(layer);
+      const pop = h('div', {}, h('b', {}, `${c.n} reports in this area`));
+      for (const s of Object.keys(STATUS)) if (all[s]) pop.appendChild(h('div', {}, `${STATUS[s]}: ${all[s]}`));
       pop.appendChild(h('small', {}, 'Approximate area, not an address.'));
       circle.bindPopup(pop);
-    });
-    $('mcount').textContent = shown + (shown === 1 ? ' area' : ' areas') + ' with ' + pub.min_group + ' or more reports';
-  }
+    }
+    $('mcount').textContent = `${shown} ${shown === 1 ? 'area' : 'areas'} with ${pub.min_group} or more reports`;
+  };
 
-  function redraw() {
+  const redraw = () => {
     if (!layer) return;
     layer.clearLayers();
     if (pub) drawPublic();
     renderPanel();
     renderLabels();
-  }
+  };
 
-  function renderLabels() {
-    if (labels) { map.removeLayer(labels); labels = null; }
-    if (!labelsOn || !pub) return;
+  const renderLabels = () => {
+    if (labels) {
+      map.removeLayer(labels);
+      labels = null;
+    }
+    if (!pub) return;
     labels = L.layerGroup().addTo(map);
-    pub.towns.forEach(function (tw) {
-      var at = TOWN_AT[tw.town]; if (!at) return;
-      var open = tw.counts.new + tw.counts.noticed + tw.counts.progress;
-      var tip = document.createElement('span');
-      tip.textContent = tw.name + (open ? ': ' + open + ' open' : '');
-      L.marker(at, { interactive: false, opacity: 0, icon: L.divIcon({ className: '', iconSize: [0, 0]}) })
+    for (const tw of pub.towns) {
+      const at = TOWN_AT[tw.town];
+      if (!at) continue;
+      const open = tw.counts.new + tw.counts.noticed + tw.counts.progress;
+      const tip = document.createElement('span');
+      tip.textContent = `${tw.name}${open ? `: ${open} open` : ''}`;
+      L.marker(at, { interactive: false, opacity: 0, icon: L.divIcon({ className: '', iconSize: [0, 0] }) })
         .bindTooltip(tip, { permanent: true, direction: 'center' }).addTo(labels);
-    });
-  }
+    }
+  };
 
-  function addLegend() {
-    var ctl = L.control({ position: 'bottomleft' });
-    ctl.onAdd = function () {
-      var box = h('div', { class: 'maplegend' });
-      Object.keys(STATUS).forEach(function (s) {
-        box.appendChild(h('div', {}, h('span', { class: 'dot', style: 'background:' + COLOR[s] }), h('span', {}, STATUS[s])));
-      });
+  const addLegend = () => {
+    const ctl = L.control({ position: 'bottomleft' });
+    ctl.onAdd = () => {
+      const box = h('div', { class: 'maplegend' },
+        ...Object.entries(STATUS).map(([s, label]) => h('div', {}, h('span', { class: 'dot', style: `background:${COLOR[s]}` }), h('span', {}, label))));
       L.DomEvent.disableClickPropagation(box);
       return box;
     };
     ctl.addTo(map);
-  }
-  function renderPanel() {
-    var panel = $('gpanel'), box = clear(panel);
-    var rows = pub && !filters().town ? pub.towns.filter(function (tw) {
-      var c = tw.counts; return c.new + c.noticed + c.progress + c.resolved > 0;
-    }) : [];
+  };
+  const renderPanel = () => {
+    const panel = $('gpanel');
+    const box = clear(panel);
+    const rows = pub && !filters().town ? pub.towns.filter(({ counts: c }) => c.new + c.noticed + c.progress + c.resolved > 0) : [];
     panel.style.display = rows.length ? '' : 'none';
     panel.parentNode.classList.toggle('solo', !rows.length);
     if (!rows.length) return;
     box.appendChild(h('h3', {}, 'By town'));
-    rows.forEach(function (tw) {
-      var c = tw.counts;
+    for (const tw of rows) {
+      const c = tw.counts;
       box.appendChild(h('div', { class: 'item' }, h('b', {}, tw.name),
-        h('small', {}, c.new + ' new, ' + c.noticed + ' noticed, ' + c.progress + ' in progress, ' + c.resolved + ' resolved')));
-    });
-  }
+        h('small', {}, `${c.new} new, ${c.noticed} noticed, ${c.progress} in progress, ${c.resolved} resolved`)));
+    }
+  };
 
-  function refreshPublic() {
-    return DG.api.get('/dumping/map').then(function (r) { if (r.status === 200) { pub = r.body; towns = pub.towns; } return pub; });
-  }
+  const refreshPublic = async () => {
+    const r = await DG.api.get('/dumping/map');
+    if (r.status === 200) {
+      pub = r.body;
+      towns = pub.towns;
+    }
+    return pub;
+  };
 
-  function followTown() {
-    var sel = $('mtown'), id = DG.townId(), has = false;
-    Array.prototype.forEach.call(sel.options, function (o) { if (o.value && (o.value === id || o.getAttribute('data-n') === DG.townName())) { sel.value = o.value; has = true; } });
+  const zoomToTown = () => {
+    const id = filters().town;
+    if (id && CENTER[id]) map.setView(CENTER[id], 14);
+    else map.setView(REGION, 10);
+  };
+  const followTown = () => {
+    const sel = $('mtown');
+    const id = DG.townId();
+    let has = false;
+    for (const o of sel.options) {
+      if (o.value && (o.value === id || o.getAttribute('data-n') === DG.townName())) {
+        sel.value = o.value;
+        has = true;
+      }
+    }
     if (!has) sel.value = '';
     redraw();
     zoomToTown();
-  }
-  function zoomToTown() {
-    var t = filters().town;
-    if (t && CENTER[t]) map.setView(CENTER[t], 14);
-    else map.setView(REGION, 10);
-  }
+  };
 
-  function init() {
+  const init = async () => {
     if (!$('gmap')) return;
     $('mbanner').style.display = 'none';
-    map = DG.tileMap('gmap', function () { $('mbanner').style.display = 'block'; });
+    map = DG.tileMap('gmap', () => { $('mbanner').style.display = 'block'; });
     addLegend();
     layer = L.layerGroup().addTo(map);
 
-    ['mfilter', 'mstat'].forEach(function (id) { $(id).addEventListener('change', redraw); });
-    $('mtown').addEventListener('change', function () { redraw(); zoomToTown(); });
-
-    refreshPublic().then(function () {
-      fillFilters(); followTown();
-    }).catch(function () {
-      $('mbanner').textContent = 'The map could not load. Try again later.'; $('mbanner').style.display = 'block';
+    for (const id of ['mfilter', 'mstat']) $(id).addEventListener('change', redraw);
+    $('mtown').addEventListener('change', () => {
+      redraw();
+      zoomToTown();
     });
-    window.addEventListener('dg-town', function () { if (pub) followTown(); });
-    window.addEventListener('dg-lang', function () { if (layer) redraw(); });
-  }
+    window.addEventListener('dg-town', () => { if (pub) followTown(); });
+    window.addEventListener('dg-lang', () => { if (layer) redraw(); });
+
+    try {
+      await refreshPublic();
+      fillFilters();
+      followTown();
+    } catch {
+      $('mbanner').textContent = 'The map could not load. Try again later.';
+      $('mbanner').style.display = 'block';
+    }
+  };
   window.addEventListener('load', init);
 })();
 
-(function () {
+(() => {
   'use strict';
 
-  var DG = window.DumpGuard;
+  const DG = window.DumpGuard;
   if (!DG || !window.L) return;
-  var h = DG.h, clear = DG.clear;
-  var $ = function (id) { return document.getElementById(id); };
+  const { h, clear, when } = DG;
+  const $ = id => document.getElementById(id);
 
-  var TYPES = DG.dumpTypes;
-  var STATUS = { new: 'New', noticed: 'Noticed', progress: 'In progress', resolved: 'Resolved' };
-  var COLOR = DG.statusColor;
+  const TYPES = DG.dumpTypes;
+  const STATUS = { new: 'New', noticed: 'Noticed', progress: 'In progress', resolved: 'Resolved' };
+  const COLOR = DG.statusColor;
 
-  var token = null, reports = [], towns = [], selected = null, map = null, layer = null;
+  let token = null;
+  let reports = [];
+  let towns = [];
+  let selected = null;
+  let map = null;
+  let layer = null;
 
-  function base() { return (window.DUMPGUARD_API || '/api/v1').replace(/\/$/, ''); }
-  function authFetch(path, opts) {
-    opts = opts || {};
-    opts.headers = Object.assign({}, opts.headers, { authorization: 'Bearer ' + token });
-    return DG.request(path, opts);
-  }
-  function jsonPost(path, data) {
-    return authFetch(path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) });
-  }
-  var when = DG.when;
-  function townName(id) { var t = towns.filter(function (x) { return x.town === id; })[0]; return t ? t.name : id; }
+  const base = () => (window.DUMPGUARD_API || '/api/v1').replace(/\/$/, '');
+  const authFetch = (path, opts = {}) => DG.request(path, { ...opts, headers: { ...opts.headers, authorization: `Bearer ${token}` } });
+  const jsonPost = (path, data) => authFetch(path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) });
+  const townName = id => towns.find(x => x.town === id)?.name ?? id;
 
-  function filters() { return { type: $('gftype').value, town: $('gftown').value, status: $('gfstat').value }; }
-  function visible() {
-    var f = filters();
-    return reports.filter(function (r) { return (!f.type || r.dump_type === f.type) && (!f.town || r.region_id === f.town) && (!f.status || r.status === f.status); });
-  }
+  const filters = () => ({ type: $('gftype').value, town: $('gftown').value, status: $('gfstat').value });
+  const visible = () => {
+    const f = filters();
+    return reports.filter(r => (!f.type || r.dump_type === f.type) && (!f.town || r.region_id === f.town) && (!f.status || r.status === f.status));
+  };
 
-  function fillFilters() {
-    var t = clear($('gftype')); t.appendChild(h('option', { value: '' }, 'All types'));
-    Object.keys(TYPES).forEach(function (k) { t.appendChild(h('option', { value: k }, TYPES[k])); });
-    var w = clear($('gftown')); w.appendChild(h('option', { value: '' }, 'All towns'));
-    towns.forEach(function (tw) { w.appendChild(h('option', { value: tw.town }, tw.name)); });
-  }
+  const fillFilters = () => {
+    clear($('gftype')).append(h('option', { value: '' }, 'All types'), ...Object.entries(TYPES).map(([value, label]) => h('option', { value }, label)));
+    clear($('gftown')).append(h('option', { value: '' }, 'All towns'), ...towns.map(tw => h('option', { value: tw.town }, tw.name)));
+  };
 
-  function ensureMap() {
+  const ensureMap = () => {
     if (map) return;
-    map = DG.tileMap('gvmap', function () { $('gvbanner').style.display = 'block'; });
+    map = DG.tileMap('gvmap', () => { $('gvbanner').style.display = 'block'; });
     layer = L.layerGroup().addTo(map);
-  }
-  function drawMap(refit) {
+  };
+  const drawMap = refit => {
     layer.clearLayers();
-    var rows = visible(), pts = [];
-    rows.forEach(function (r) {
-      if (r.lat == null) return;
-      var on = selected && selected.id === r.id;
+    const rows = visible();
+    const pts = [];
+    for (const r of rows) {
+      if (r.lat == null) continue;
+      const on = selected && selected.id === r.id;
       L.circleMarker([r.lat, r.lng], { radius: on ? 11 : 7, color: on ? '#1f3a2a' : '#fff', weight: on ? 3 : 2, fillColor: COLOR[r.status], fillOpacity: 1 })
-        .addTo(layer).on('click', function () { select(r, false); });
+        .addTo(layer).on('click', () => select(r, false));
       pts.push([r.lat, r.lng]);
-    });
-    var missing = rows.length - pts.length;
-    $('gvcount').textContent = rows.length + (rows.length === 1 ? ' report' : ' reports') + (missing ? ', ' + missing + ' without a map point' : '');
+    }
+    const missing = rows.length - pts.length;
+    $('gvcount').textContent = `${rows.length} ${rows.length === 1 ? 'report' : 'reports'}${missing ? `, ${missing} without a map point` : ''}`;
     if (refit && pts.length) map.fitBounds(pts, { maxZoom: 15, padding: [40, 40] });
-  }
+  };
 
-  function renderList() {
-    var box = clear($('gvlist')), rows = visible();
-    if (!rows.length) { box.appendChild(h('p', { class: 'sm' }, 'No reports match these filters.')); return; }
-    rows.forEach(function (r) {
-      var row = h('div', { class: 'li' + (selected && selected.id === r.id ? ' on' : ''), role: 'button', tabindex: '0', onclick: function () { select(r, true); } },
-        h('span', { class: 'dot', style: 'background:' + COLOR[r.status] }),
-        h('span', { class: 'grow' }, h('b', {}, r.code), ' ' + (TYPES[r.dump_type] || r.dump_type) + ', ' + r.location_text,
-          h('small', {}, townName(r.region_id) + ' - ' + when(r.created_at))));
-      if (r.msg_count) row.appendChild(h('span', { class: 'msgmark' + (r.last_from_staff === false ? ' new' : '') }, r.last_from_staff === false ? 'Reporter replied' : 'Messaged'));
-      row.appendChild(h('span', { class: 'badge', style: 'background:' + COLOR[r.status] }, STATUS[r.status]));
+  const renderList = () => {
+    const box = clear($('gvlist'));
+    const rows = visible();
+    if (!rows.length) {
+      box.appendChild(h('p', { class: 'sm' }, 'No reports match these filters.'));
+      return;
+    }
+    for (const r of rows) {
+      const replied = r.last_from_staff === false;
+      const row = h('div', { class: `li${selected && selected.id === r.id ? ' on' : ''}`, role: 'button', tabindex: '0', onclick: () => select(r, true) },
+        h('span', { class: 'dot', style: `background:${COLOR[r.status]}` }),
+        h('span', { class: 'grow' }, h('b', {}, r.code), ` ${TYPES[r.dump_type] || r.dump_type}, ${r.location_text}`,
+          h('small', {}, `${townName(r.region_id)} - ${when(r.created_at)}`)));
+      if (r.msg_count) row.appendChild(h('span', { class: `msgmark${replied ? ' new' : ''}` }, replied ? 'Reporter replied' : 'Messaged'));
+      row.appendChild(h('span', { class: 'badge', style: `background:${COLOR[r.status]}` }, STATUS[r.status]));
       box.appendChild(row);
-    });
-  }
+    }
+  };
 
-  function redraw(refit) {
+  const redraw = refit => {
     if (!token) return;
     drawMap(refit);
     renderList();
     renderPanel();
-  }
+  };
 
-  function renderPanel() {
-    var box = clear($('gvpanel'));
-    if (!selected) {
-      box.appendChild(h('h3', {}, 'Select a report'));
-      var key = h('div', { class: 'key' });
-      Object.keys(STATUS).forEach(function (s) { key.appendChild(h('span', {}, h('i', { class: 'dot', style: 'background:' + COLOR[s] }), STATUS[s])); });
-      box.appendChild(key);
+  const renderPanel = () => {
+    const box = clear($('gvpanel'));
+    if (selected) {
+      box.appendChild(detail(selected));
       return;
     }
-    box.appendChild(detail(selected));
-  }
+    box.appendChild(h('h3', {}, 'Select a report'));
+    box.appendChild(h('div', { class: 'key' },
+      ...Object.entries(STATUS).map(([s, label]) => h('span', {}, h('i', { class: 'dot', style: `background:${COLOR[s]}` }), label))));
+  };
 
-  function detail(r) {
-    var box = h('div', {}, h('div', { class: 'dhead' }, h('h3', {}, r.code), h('span', { class: 'badge', style: 'background:' + COLOR[r.status] }, STATUS[r.status])));
-    box.appendChild(h('p', {}, h('b', {}, TYPES[r.dump_type] || r.dump_type), (DG.lang() === 'es' ? ' en ' : ' in ') + townName(r.region_id)));
-    box.appendChild(h('p', {}, r.location_text));
-    box.appendChild(h('p', {}, r.description));
+  const loadPhoto = async (r, img, msg) => {
+    try {
+      const res = await fetch(`${base()}/admin/dumping/photo?id=${encodeURIComponent(r.id)}`, { headers: { authorization: `Bearer ${token}` } });
+      if (!res.ok) throw new Error('photo');
+      img.src = URL.createObjectURL(await res.blob());
+      img.style.display = 'block';
+      msg.remove();
+    } catch {
+      msg.textContent = 'Photo could not be loaded.';
+    }
+  };
+
+  const detail = r => {
+    const box = h('div', {}, h('div', { class: 'dhead' }, h('h3', {}, r.code), h('span', { class: 'badge', style: `background:${COLOR[r.status]}` }, STATUS[r.status])));
+    box.append(
+      h('p', {}, h('b', {}, TYPES[r.dump_type] || r.dump_type), `${DG.lang() === 'es' ? ' en ' : ' in '}${townName(r.region_id)}`),
+      h('p', {}, r.location_text),
+      h('p', {}, r.description));
     if (r.notes) box.appendChild(h('p', { class: 'sm' }, r.notes));
-    box.appendChild(h('p', { class: 'sm' }, 'Filed ' + when(r.created_at) + (r.lat == null ? '. No map point.' : '')));
+    box.appendChild(h('p', { class: 'sm' }, `Filed ${when(r.created_at)}${r.lat == null ? '. No map point.' : ''}`));
     if (r.has_photo) {
-      var img = h('img', { alt: 'Report photo', class: 'shot', style: 'display:none' });
-      var msg = h('p', { class: 'sm' }, 'Loading photo...');
-      box.appendChild(msg); box.appendChild(img);
-      fetch(base() + '/admin/dumping/photo?id=' + encodeURIComponent(r.id), { headers: { authorization: 'Bearer ' + token } })
-        .then(function (res) { if (!res.ok) throw new Error('photo'); return res.blob(); })
-        .then(function (b) { img.src = URL.createObjectURL(b); img.style.display = 'block'; msg.remove(); })
-        .catch(function () { msg.textContent = 'Photo could not be loaded.'; });
+      const img = h('img', { alt: 'Report photo', class: 'shot', style: 'display:none' });
+      const msg = h('p', { class: 'sm' }, 'Loading photo...');
+      box.append(msg, img);
+      loadPhoto(r, img, msg);
     }
 
-    var sel = h('select', { 'aria-label': 'Status' });
-    Object.keys(STATUS).forEach(function (s) { sel.appendChild(h('option', { value: s }, STATUS[s])); });
+    const sel = h('select', { 'aria-label': 'Status' }, ...Object.entries(STATUS).map(([value, label]) => h('option', { value }, label)));
     sel.value = r.status;
-    var out = h('p', { class: 'sm', 'aria-live': 'polite' });
-    var save = h('button', { class: 'btn dark', type: 'button' }, 'Update status');
-    save.addEventListener('click', function () {
+    const out = h('p', { class: 'sm', 'aria-live': 'polite' });
+    const save = h('button', { class: 'btn dark', type: 'button' }, 'Update status');
+    const showStatusError = text => {
+      save.disabled = false;
+      out.className = 'err';
+      out.textContent = text;
+    };
+    save.addEventListener('click', async () => {
       save.disabled = true;
-      jsonPost('/admin/dumping/status', { id: r.id, status: sel.value }).then(function (res) {
+      try {
+        const res = await jsonPost('/admin/dumping/status', { id: r.id, status: sel.value });
+        if (res.status !== 200) {
+          showStatusError('Could not update. Sign in again.');
+          return;
+        }
         save.disabled = false;
-        if (res.status === 200) { r.status = sel.value; redraw(false); return; }
-        out.className = 'err'; out.textContent = 'Could not update. Sign in again.';
-      }).catch(function () { save.disabled = false; out.className = 'err'; out.textContent = 'Could not reach the server.'; });
+        r.status = sel.value;
+        redraw(false);
+      } catch {
+        showStatusError('Could not reach the server.');
+      }
     });
-    box.appendChild(h('div', { class: 'row tight' }, sel, save)); box.appendChild(out);
+    box.append(h('div', { class: 'row tight' }, sel, save), out, h('h4', {}, 'Messages with the reporter'));
 
-    box.appendChild(h('h4', {}, 'Messages with the reporter'));
-    var thread = h('div', { class: 'thread', 'aria-live': 'polite' }, h('p', { class: 'sm' }, 'Loading messages...'));
+    const thread = h('div', { class: 'thread', 'aria-live': 'polite' }, h('p', { class: 'sm' }, 'Loading messages...'));
     box.appendChild(thread);
     loadThread(r, thread);
-    var text = h('textarea', { rows: '3', maxlength: '500', 'aria-label': 'Message to the reporter', placeholder: 'Ask a question or give an update. Keep it short.' });
-    var err = h('p', { class: 'err', 'aria-live': 'polite' });
-    var send = h('button', { class: 'btn dark', type: 'button' }, 'Send message');
-    send.addEventListener('click', function () {
-      var body = text.value.trim();
-      if (!body) { err.textContent = 'Write a message first.'; return; }
-      err.textContent = ''; send.disabled = true;
-      jsonPost('/admin/dumping/message', { id: r.id, body: body }).then(function (res) {
+    const text = h('textarea', { rows: '3', maxlength: '500', 'aria-label': 'Message to the reporter', placeholder: 'Ask a question or give an update. Keep it short.' });
+    const err = h('p', { class: 'err', 'aria-live': 'polite' });
+    const send = h('button', { class: 'btn dark', type: 'button' }, 'Send message');
+    send.addEventListener('click', async () => {
+      const body = text.value.trim();
+      if (!body) {
+        err.textContent = 'Write a message first.';
+        return;
+      }
+      err.textContent = '';
+      send.disabled = true;
+      try {
+        const res = await jsonPost('/admin/dumping/message', { id: r.id, body });
         send.disabled = false;
-        if (res.status === 201) { text.value = ''; r.msg_count = (r.msg_count || 0) + 1; r.last_from_staff = true; loadThread(r, thread); renderList(); return; }
-        err.textContent = res.status === 409 ? 'This conversation is full.' : res.status === 401 ? 'Sign in again.' : 'Could not send the message. Try again.';
-      }).catch(function () { send.disabled = false; err.textContent = 'Could not reach the server.'; });
+        if (res.status === 201) {
+          text.value = '';
+          r.msg_count = (r.msg_count || 0) + 1;
+          r.last_from_staff = true;
+          loadThread(r, thread);
+          renderList();
+        } else {
+          err.textContent = res.status === 409 ? 'This conversation is full.' : res.status === 401 ? 'Sign in again.' : 'Could not send the message. Try again.';
+        }
+      } catch {
+        send.disabled = false;
+        err.textContent = 'Could not reach the server.';
+      }
     });
-    box.appendChild(text); box.appendChild(h('div', { class: 'row tight' }, send)); box.appendChild(err);
+    box.append(text, h('div', { class: 'row tight' }, send), err);
     return box;
-  }
+  };
 
-  function loadThread(r, el) {
-    authFetch('/admin/dumping/messages?id=' + encodeURIComponent(r.id)).then(function (res) {
+  const loadThread = async (r, el) => {
+    try {
+      const res = await authFetch(`/admin/dumping/messages?id=${encodeURIComponent(r.id)}`);
       if (selected !== r) return;
       clear(el);
-      if (res.status !== 200) { el.appendChild(h('p', { class: 'sm' }, 'Messages are not available right now.')); return; }
-      var list = res.body.messages;
-      if (!list.length) { el.appendChild(h('p', { class: 'sm' }, 'No messages yet.')); return; }
-      list.forEach(function (m) {
-        el.appendChild(h('div', { class: 'msg ' + (m.from === 'staff' ? 'out' : 'in') },
-          h('small', {}, (m.from === 'staff' ? 'Staff' : 'Reporter') + ' - ' + when(m.at)), h('p', {}, m.body)));
-      });
+      if (res.status !== 200) {
+        el.appendChild(h('p', { class: 'sm' }, 'Messages are not available right now.'));
+        return;
+      }
+      const list = res.body.messages;
+      if (!list.length) {
+        el.appendChild(h('p', { class: 'sm' }, 'No messages yet.'));
+        return;
+      }
+      for (const m of list) {
+        el.appendChild(h('div', { class: `msg ${m.from === 'staff' ? 'out' : 'in'}` },
+          h('small', {}, `${m.from === 'staff' ? 'Staff' : 'Reporter'} - ${when(m.at)}`), h('p', {}, m.body)));
+      }
       el.scrollTop = el.scrollHeight;
-    }).catch(function () { if (selected === r) { clear(el).appendChild(h('p', { class: 'sm' }, 'Messages are not available right now.')); } });
-  }
+    } catch {
+      if (selected === r) clear(el).appendChild(h('p', { class: 'sm' }, 'Messages are not available right now.'));
+    }
+  };
 
-  function select(r, pan) {
+  const select = (r, pan) => {
     selected = r;
     if (pan && r.lat != null) map.setView([r.lat, r.lng], Math.max(map.getZoom(), 15));
     redraw(false);
     if (pan) $('gvpanel').scrollIntoView({ block: 'nearest' });
-  }
+  };
 
-  function show(on) {
+  const show = on => {
     $('gsign').style.display = on ? 'none' : '';
     $('gdash').style.display = on ? 'block' : 'none';
-  }
-  function load() {
-    return authFetch('/admin/dumping').then(function (r) {
-      if (r.status === 200) reports = r.body.reports;
-      return r.status;
-    });
-  }
-  function staffLogin(user, pw) {
-    token = user + ':' + pw;
-    return load().then(function (status) {
+  };
+  const load = async () => {
+    const r = await authFetch('/admin/dumping');
+    if (r.status === 200) reports = r.body.reports;
+    return r.status;
+  };
+  DG.staffLogin = async (user, pw) => {
+    token = `${user}:${pw}`;
+    try {
+      const status = await load();
       if (status !== 200) {
         token = null;
         return { ok: false, message: status === 429 ? 'Too many attempts. Try again later.' : 'That username or password was not accepted.' };
       }
-      return DG.api.get('/dumping/map').then(function (m) { if (m.status === 200) towns = m.body.towns; }).catch(function () {}).then(function () {
-        show(true); ensureMap(); fillFilters(); selected = null;
-        redraw(true);
-        setTimeout(function () { map.invalidateSize(); drawMap(true); }, 80);
-        return { ok: true };
-      });
-    }).catch(function () { token = null; return { ok: false, message: 'Could not reach the server.' }; });
-  }
-  DG.staffLogin = staffLogin;
+      try {
+        const m = await DG.api.get('/dumping/map');
+        if (m.status === 200) towns = m.body.towns;
+      } catch {}
+      show(true);
+      ensureMap();
+      fillFilters();
+      selected = null;
+      redraw(true);
+      setTimeout(() => {
+        map.invalidateSize();
+        drawMap(true);
+      }, 80);
+      return { ok: true };
+    } catch {
+      token = null;
+      return { ok: false, message: 'Could not reach the server.' };
+    }
+  };
 
-  function signOut() {
-    token = null; reports = []; selected = null;
-    clear($('gvlist')); clear($('gvpanel'));
+  const signOut = () => {
+    token = null;
+    reports = [];
+    selected = null;
+    clear($('gvlist'));
+    clear($('gvpanel'));
     if (layer) layer.clearLayers();
     show(false);
-  }
+  };
 
-  function refresh() {
+  const refresh = async () => {
     $('gvrefresh').disabled = true;
-    load().then(function () {
-      $('gvrefresh').disabled = false;
-      if (selected) selected = reports.filter(function (x) { return x.id === selected.id; })[0] || null;
+    try {
+      await load();
+      if (selected) selected = reports.find(x => x.id === selected.id) || null;
       redraw(false);
-    }).catch(function () { $('gvrefresh').disabled = false; });
-  }
+    } catch {}
+    $('gvrefresh').disabled = false;
+  };
 
-  function init() {
+  const init = () => {
     if (!$('gdash')) return;
     show(false);
-    ['gftype', 'gftown', 'gfstat'].forEach(function (id) { $(id).addEventListener('change', function () { selected = null; redraw(true); }); });
+    for (const id of ['gftype', 'gftown', 'gfstat']) {
+      $(id).addEventListener('change', () => {
+        selected = null;
+        redraw(true);
+      });
+    }
     $('gvout').addEventListener('click', signOut);
     $('gvrefresh').addEventListener('click', refresh);
-    window.addEventListener('dg-lang', function () { if (token) redraw(false); });
-  }
+    window.addEventListener('dg-lang', () => { if (token) redraw(false); });
+  };
   document.addEventListener('DOMContentLoaded', init);
 })();
 
-(function () {
+(() => {
   'use strict';
 
-  var DG = window.DumpGuard;
+  const DG = window.DumpGuard;
   if (!DG) return;
 
-    var ES = {
+  const ES = {
     'Home': 'Inicio',
     'Pickup': 'Recogida',
     'Government sign-in': 'Inicio de sesión del gobierno',
@@ -1306,153 +1535,169 @@
     'See your pickup days': 'Vea sus días de recogida',
   };
 
-  var plural = function (n, one, many) { return n + ' ' + (Number(n) === 1 ? one : many); };
-  var lit = function (s) { return ES[s] || s; };
+  const plural = (n, one, many) => `${n} ${Number(n) === 1 ? one : many}`;
+  const lit = s => ES[s] || s;
 
-  var RX = [
-    [/^(\d+) reports? in this area$/, function (m) { return plural(m[1], 'reporte', 'reportes') + ' en esta área'; }],
-    [/^(New|Noticed|In progress|Resolved): (\d+)$/, function (m) { return lit(m[1]) + ': ' + m[2]; }],
-    [/^(\d+) areas? with (\d+) or more reports$/, function (m) { return plural(m[1], 'área', 'áreas') + ' con ' + m[2] + ' o más reportes'; }],
-    [/^(\d+) reports?(?:, (\d+) without a map point)?$/, function (m) { return plural(m[1], 'reporte', 'reportes') + (m[2] ? ', ' + m[2] + ' sin punto en el mapa' : ''); }],
-    [/^(.+): (\d+) open$/, function (m) { return m[1] + ': ' + m[2] + ' abiertos'; }],
-    [/^(\d+) new, (\d+) noticed, (\d+) in progress, (\d+) resolved$/, function (m) { return m[1] + ' nuevos, ' + m[2] + ' detectados, ' + m[3] + ' en proceso, ' + m[4] + ' resueltos'; }],
-    [/^Areas appear on the map once (\d+) or more reports are close together\.$/, function (m) { return 'Las áreas aparecen en el mapa cuando ' + m[1] + ' o más reportes están cerca unos de otros.'; }],
-    [/^Town labels: (on|off)$/, function (m) { return 'Etiquetas de municipios: ' + (m[1] === 'on' ? 'sí' : 'no'); }],
-    [/^Filed (.+?)(?:, last update (.+?))?(\. No map point\.)?$/, function (m) { return 'Presentado ' + m[1] + (m[2] ? ', última actualización ' + m[2] : '') + (m[3] ? '. Sin punto en el mapa.' : ''); }],
-    [/^(DG-[A-Z0-9]{5}): (Received|Noticed by officials|In progress|Resolved)$/, function (m) { return m[1] + ': ' + lit(m[2]); }],
-    [/^(DG-[A-Z0-9]{5}) - (.+?) - (.*)$/, function (m) { return m[1] + ' - ' + lit(m[2]) + ' - ' + m[3]; }],
-    [/^(.+): We are still finding verified pickup data for this area\. Check back soon\.$/, function (m) { return m[1] + ': ' + ES['We are still finding verified pickup data for this area. Check back soon.']; }],
-    [/^Reporting in (.+)$/, function (m) { return 'Reportando en ' + m[1]; }],
-    [/^(.*) · filed (.+)$/, function (m) { return m[1] + ' · presentado ' + m[2]; }],
-    [/^(Staff|Reporter|Officials|You) - (.+)$/, function (m) { return ({ Staff: 'Personal', Reporter: 'Quien reportó', Officials: 'Funcionarios', You: 'Usted' })[m[1]] + ' - ' + m[2]; }],
-    [/^No email is sent\. Your code is (\d+)\.$/, function (m) { return 'No se envía ningún correo. Su código es ' + m[1] + '.'; }],
+  const RX = [
+    [/^(\d+) reports? in this area$/, m => `${plural(m[1], 'reporte', 'reportes')} en esta área`],
+    [/^(New|Noticed|In progress|Resolved): (\d+)$/, m => `${lit(m[1])}: ${m[2]}`],
+    [/^(\d+) areas? with (\d+) or more reports$/, m => `${plural(m[1], 'área', 'áreas')} con ${m[2]} o más reportes`],
+    [/^(\d+) reports?(?:, (\d+) without a map point)?$/, m => `${plural(m[1], 'reporte', 'reportes')}${m[2] ? `, ${m[2]} sin punto en el mapa` : ''}`],
+    [/^(.+): (\d+) open$/, m => `${m[1]}: ${m[2]} abiertos`],
+    [/^(\d+) new, (\d+) noticed, (\d+) in progress, (\d+) resolved$/, m => `${m[1]} nuevos, ${m[2]} detectados, ${m[3]} en proceso, ${m[4]} resueltos`],
+    [/^Areas appear on the map once (\d+) or more reports are close together\.$/, m => `Las áreas aparecen en el mapa cuando ${m[1]} o más reportes están cerca unos de otros.`],
+    [/^Town labels: (on|off)$/, m => `Etiquetas de municipios: ${m[1] === 'on' ? 'sí' : 'no'}`],
+    [/^Filed (.+?)(?:, last update (.+?))?(\. No map point\.)?$/, m => `Presentado ${m[1]}${m[2] ? `, última actualización ${m[2]}` : ''}${m[3] ? '. Sin punto en el mapa.' : ''}`],
+    [/^(DG-[A-Z0-9]{5}): (Received|Noticed by officials|In progress|Resolved)$/, m => `${m[1]}: ${lit(m[2])}`],
+    [/^(DG-[A-Z0-9]{5}) - (.+?) - (.*)$/, m => `${m[1]} - ${lit(m[2])} - ${m[3]}`],
+    [/^(.+): We are still finding verified pickup data for this area\. Check back soon\.$/, m => `${m[1]}: ${ES['We are still finding verified pickup data for this area. Check back soon.']}`],
+    [/^Reporting in (.+)$/, m => `Reportando en ${m[1]}`],
+    [/^(.*) · filed (.+)$/, m => `${m[1]} · presentado ${m[2]}`],
+    [/^(Staff|Reporter|Officials|You) - (.+)$/, m => `${({ Staff: 'Personal', Reporter: 'Quien reportó', Officials: 'Funcionarios', You: 'Usted' })[m[1]]} - ${m[2]}`],
+    [/^No email is sent\. Your code is (\d+)\.$/, m => `No se envía ningún correo. Su código es ${m[1]}.`],
   ];
 
-  function es(en) {
-    var key = en.trim();
+  const es = en => {
+    const key = en.trim();
     if (!key) return en;
-    var out = ES[key];
+    let out = ES[key];
     if (!out) {
-      for (var i = 0; i < RX.length; i++) {
-        var m = RX[i][0].exec(key);
-        if (m) { out = RX[i][1](m); break; }
+      for (const [pattern, translate] of RX) {
+        const m = pattern.exec(key);
+        if (m) {
+          out = translate(m);
+          break;
+        }
       }
     }
-    return out ? en.replace(key, function () { return out; }) : en;
-  }
+    return out ? en.replace(key, () => out) : en;
+  };
 
-  var ATTRS = ['placeholder', 'aria-label', 'alt', 'title'];
-  var textRec = new WeakMap();
-  var attrRec = new WeakMap();
-  var observer = null, queued = false;
+  const ATTRS = ['placeholder', 'aria-label', 'alt', 'title'];
+  const textRec = new WeakMap();
+  const attrRec = new WeakMap();
+  let observer = null;
+  let queued = false;
+  let toggle = null;
 
-  function swap(cur, rec, spanish) {
-    var en = rec && rec.out === cur ? rec.en : cur;
-    var out = spanish ? es(en) : en;
-    return { en: en, out: out };
-  }
+  const swap = (cur, rec, spanish) => {
+    const en = rec && rec.out === cur ? rec.en : cur;
+    return { en, out: spanish ? es(en) : en };
+  };
 
-  function apply() {
+  const apply = () => {
     queued = false;
-    var spanish = DG.lang() === 'es';
+    const spanish = DG.lang() === 'es';
     if (observer) observer.disconnect();
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: function (n) {
-        var p = n.parentNode && n.parentNode.nodeName;
-        return p === 'SCRIPT' || p === 'STYLE' || p === 'NOSCRIPT' ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: n => {
+        const parent = n.parentNode && n.parentNode.nodeName;
+        return parent === 'SCRIPT' || parent === 'STYLE' || parent === 'NOSCRIPT' ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
       },
     });
-    var n;
-    while ((n = walker.nextNode())) {
-      var r = swap(n.nodeValue, textRec.get(n), spanish);
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      const r = swap(n.nodeValue, textRec.get(n), spanish);
       if (r.out !== n.nodeValue) n.nodeValue = r.out;
       if (r.out !== r.en) textRec.set(n, r); else textRec.delete(n);
     }
-    var els = document.body.querySelectorAll('[placeholder],[aria-label],[alt],[title]');
-    Array.prototype.forEach.call(els, function (el) {
-      var recs = attrRec.get(el) || {};
-      ATTRS.forEach(function (a) {
-        if (!el.hasAttribute(a)) return;
-        var cur = el.getAttribute(a), r = swap(cur, recs[a], spanish);
+    document.body.querySelectorAll('[placeholder],[aria-label],[alt],[title]').forEach(el => {
+      const recs = attrRec.get(el) || {};
+      for (const a of ATTRS) {
+        if (!el.hasAttribute(a)) continue;
+        const cur = el.getAttribute(a);
+        const r = swap(cur, recs[a], spanish);
         if (r.out !== cur) el.setAttribute(a, r.out);
         if (r.out !== r.en) recs[a] = r; else delete recs[a];
-      });
+      }
       attrRec.set(el, recs);
     });
     document.documentElement.lang = DG.lang();
     syncToggle();
     if (observer) observer.observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATTRS });
-  }
-  function queue() { if (!queued) { queued = true; setTimeout(apply, 40); } }
+  };
+  const queue = () => {
+    if (queued) return;
+    queued = true;
+    setTimeout(apply, 40);
+  };
 
-  var toggle = null;
-  function syncToggle() { if (toggle) toggle.value = DG.lang(); }
-  function addToggle() {
-    var ul = document.querySelector('#nav ul');
+  const syncToggle = () => {
+    if (toggle) toggle.value = DG.lang();
+  };
+  const addToggle = () => {
+    const ul = document.querySelector('#nav ul');
     if (!ul) return;
-    var li = document.createElement('li');
-    toggle = document.createElement('select');
-    toggle.id = 'navlang'; toggle.className = 'navlang'; toggle.setAttribute('aria-label', 'Language / Idioma');
-    [['en', 'English'], ['es', 'Español']].forEach(function (o) {
-      var op = document.createElement('option'); op.value = o[0]; op.textContent = o[1]; op.lang = o[0]; toggle.appendChild(op);
-    });
-    toggle.addEventListener('change', function () { DG.setLang(toggle.value); });
-    li.appendChild(toggle);
-    ul.insertBefore(li, ul.lastElementChild);
+    toggle = DG.h('select', { id: 'navlang', class: 'navlang', 'aria-label': 'Language / Idioma', onchange: () => DG.setLang(toggle.value) },
+      DG.h('option', { value: 'en', lang: 'en' }, 'English'), DG.h('option', { value: 'es', lang: 'es' }, 'Español'));
+    ul.insertBefore(DG.h('li', {}, toggle), ul.lastElementChild);
     syncToggle();
-  }
+  };
 
-  function init() {
+  const init = () => {
     addToggle();
     window.addEventListener('dg-lang', queue);
     observer = new MutationObserver(queue);
     apply();
-  }
+  };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
 
-(function () {
+(() => {
   'use strict';
-  var $ = function (id) { return document.getElementById(id); };
-  var DG = window.DumpGuard;
+  const $ = id => document.getElementById(id);
+  const DG = window.DumpGuard;
 
-  var ALIAS = { about: 'home', login: 'gov', signup: 'home', forgot: 'home', dash: 'home' };
+  const ALIAS = { about: 'home', login: 'gov', signup: 'home', forgot: 'home', dash: 'home' };
 
-  function go(v) {
-    v = ALIAS[v] || v;
-    if (!$('v-' + v)) v = 'home';
-    Array.prototype.forEach.call(document.querySelectorAll('.view'), function (e) { e.classList.toggle('on', e.id === 'v-' + v); });
-    Array.prototype.forEach.call(document.querySelectorAll('nav a, #tabs a'), function (a) { a.classList.toggle('act', a.getAttribute('data-go') === v); });
-    try { history.replaceState(null, '', '#' + v); } catch {}
+  const go = name => {
+    const view = ALIAS[name] || name;
+    const target = $(`v-${view}`) ? view : 'home';
+    document.querySelectorAll('.view').forEach(e => e.classList.toggle('on', e.id === `v-${target}`));
+    document.querySelectorAll('nav a, #tabs a').forEach(a => a.classList.toggle('act', a.getAttribute('data-go') === target));
+    try { history.replaceState(null, '', `#${target}`); } catch {}
     window.scrollTo(0, 0);
-    var view = $('v-' + v);
-    var heading = view ? view.querySelector('h1, h2') : null;
-    if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
+    const heading = $(`v-${target}`)?.querySelector('h1, h2');
+    if (heading) {
+      heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll: true });
+    }
     navStyle();
-    if (v === 'map') setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 60);
-  }
-  function navStyle() {
-    var home = $('v-home');
+    if (target === 'map') setTimeout(() => window.dispatchEvent(new Event('resize')), 60);
+  };
+  const navStyle = () => {
+    const home = $('v-home');
     $('nav').classList.toggle('solid', !(home && home.classList.contains('on')) || window.scrollY > window.innerHeight - 120);
-  }
-  document.addEventListener('click', function (e) {
-    var t = e.target.closest ? e.target.closest('[data-go]') : null;
-    if (t) { e.preventDefault(); go(t.getAttribute('data-go')); }
+  };
+  document.addEventListener('click', e => {
+    const link = e.target.closest?.('[data-go]');
+    if (!link) return;
+    e.preventDefault();
+    go(link.getAttribute('data-go'));
   });
   window.addEventListener('scroll', navStyle);
 
-  async function govLogin() {
-    var e = $('lerr'), u = $('le').value.trim(), pw = $('lp').value;
-    if (!u || !pw) return void (e.textContent = 'Enter the username and password.');
+  const govLogin = async () => {
+    const err = $('lerr');
+    const user = $('le').value.trim();
+    const pw = $('lp').value;
+    if (!user || !pw) {
+      err.textContent = 'Enter the username and password.';
+      return;
+    }
     $('lgo').disabled = true;
-    var r = await DG.staffLogin(u, pw);
+    const r = await DG.staffLogin(user, pw);
     $('lgo').disabled = false;
-    if (!r.ok) return void (e.textContent = r.message);
-    e.textContent = ''; $('le').value = ''; $('lp').value = '';
-  }
+    if (!r.ok) {
+      err.textContent = r.message;
+      return;
+    }
+    err.textContent = '';
+    $('le').value = '';
+    $('lp').value = '';
+  };
   $('lgo').onclick = govLogin;
-  $('lp').addEventListener('keydown', function (e) { if (e.key === 'Enter') govLogin(); });
-  $('le').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('lp').focus(); });
+  $('lp').addEventListener('keydown', e => { if (e.key === 'Enter') govLogin(); });
+  $('le').addEventListener('keydown', e => { if (e.key === 'Enter') $('lp').focus(); });
 
   go(location.hash.slice(1) || 'home');
 })();
